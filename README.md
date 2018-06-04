@@ -1,2 +1,4 @@
-# MIS
-MIS BABY
+Authors:
+Abuiza, Okimwa
+Gregorio, Marc Lawrence
+Navarro, Noriel
