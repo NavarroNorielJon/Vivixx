@@ -1,24 +1,40 @@
+<script>
+    function invalidUser() {
+        alert("Invalid User");
+        window.location.href = "/"
+    }
+    
+    function invalidPass() {
+        alert("Invalid Password");
+        window.location.href = "/"
+    }
+</script>
 <?php
-include "db.php";
+    include "db.php";
+    $connect = Connect();
 
-$connect = Connect();
-if(isset($_POST["username"]) && isset($_POST["password"])){
-    $username = mysqli_real_escape_string($connect, $_POST["username"]);
-    $password = mysqli_real_escape_string($connect, $_POST["password"]);
+    if( isset($_POST["user"]) && isset($_POST["password"])){
+        $user = mysqli_real_escape_string($connect, $_POST["user"]);
+        $password = mysqli_real_escape_string($connect, $_POST["password"]);
     
-    $stmt = "SELECT username FROM user WHERE username = '$username'";
-    $results = mysqli_query($connect, $stmt);
-    $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-    $count = mysqli_num_rows($row);
-    $userCheck = $row['username'];
+        $stmt = "SELECT username, password FROM user WHERE username = '$user'";
+        $results = mysqli_query($connect, $stmt);
+        $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
+        $count = mysqli_num_rows($results);
     
-    if($count == 1) {
-        if($username != $userCheck){
-            echo "No user";
-        }else
-            echo "Hi $username";
-    }else
-        echo "hello";
+        $stmt2 = "SELECT email, password FROM user WHERE email = '$user'";
+        $results2 = mysqli_query($connect, $stmt2);
+        $row2 = mysqli_fetch_array($results2, MYSQLI_ASSOC);
+        $count2 = mysqli_num_rows($results2);
+        $passwordCheck = $row['password'];
+        
+        if ($count == 1 or $count2 == 1) {
+            if ($password != $passwordCheck) {
+                echo "<script>invalidPass()</script>";
+            } else
+            echo "Hi $user";
+    } else
+        echo "<script>invalidUser()</script>";
 }
 	 
 ?>
