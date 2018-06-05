@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
     <title>MIS</title>
     <link type="text/css" rel="stylesheet" href="../Style/materialize/css/materialize.min.css" media="screen, projection">
@@ -14,7 +14,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
                 <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
-                <li><a href="../registration.html">Register</a></li>
+                <li><a href="../index.php" class="modal-trigger" data-target="signup">Sign-up</a></li>
 
                 </ul>
             </div>
@@ -54,6 +54,114 @@
 	           </form>
             </div>
         </div>
+			</div>
+		</div>
+		
+		<div class="modal" id="signup">    
+            <div class="modal-content">
+                
+                <div class="right-align">
+                    <button type="button" class="btn-flat modal-action modal-close"><i class="material-icons">close</i></button>
+                </div>
+                
+                <div>
+					<div class="center-align container valign-wrapper">
+						<div class="row white" id="reg-form">
+							<form action="Utilities/registration.php" method="post" class="col s12">
+								<div class=" input-field col s6">
+									<input type="text" name="first_name" id="fname" class="validate" required="required">
+									<label for="fname">First Name</label>
+								</div>
+
+								<div class="input-field col s6">
+									<input type="text" name="last_name" id="lname" class="validate" required="required">
+									<label for="lname">Last Name</label>
+								</div>
+
+								<div class="input-field col s12">
+									<input type="text" name="username" id="username" class="validate" required="required">
+									<label for="username">Username</label>
+								</div>
+
+								<div class="input-field col s12">
+									<input type="text" name="email" id="email" class="validate" required="required">
+									<label for="email">Email</label>
+								</div>
+
+								<div class="input-field col s12">
+									<input type="text" name="contact_number" id="contact" class="validate" required="required">
+									<label for="contact">Contact Number</label>
+								</div>
+
+								<div class="left-align">
+									<p>
+										<strong>Gender</strong> 
+
+										<label class="right-align">
+											<input class="with-gap" name="gender" type="radio" value="m" required="required"/>
+											<span>Male</span>
+										</label>
+
+										<label>
+											<input class="with-gap" name="gender" type="radio" value="f" required="required" class="right-align"/>
+											<span>Female</span>
+										</label>
+										
+									</p>
+									
+								</div>
+
+								<div class="input-field col s12">
+									<input type="text" class="datepicker" name="birthdate" id="bdate" class="validate" required="required">
+									<label for="bdate">Birthdate</label>
+								</div>
+
+								<div class="input-field col s6">
+									<input type="password" name="password" id="pass" class="validate" required="required">
+									<label for="pass">Password</label>
+								</div>
+
+								<div class="input-field col s6">
+									<input type="password" name="confirm_password" id="cpass" class="validate" required="required">
+									<label for="cpass">Confirm Password</label>
+								</div>
+
+								<div  class="input-field col s2" >
+									<input type="text" name="house_number" id="hnumber">
+									<label for="hnumber">House No.</label>
+								</div>
+
+								<div class="input-field col s2">
+									<input type="text" name="street" id="street">
+									<label for="street">Street</label>
+								</div>
+
+								<div class="input-field col s2">
+									<input type="text" name="barangay" id="barangay" class="validate" required="required">
+									<label for="barangay">Barangay</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input type="text" name="city" id="city" class="validate" required="required">
+									<label for="city">Municipality/City</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input type="text" name="province" id="province" class="validate" required="required">
+									<label for="province">Province</label>
+								</div>
+
+								<div>
+									<button type="submit" class="btn waves-effect waves-light">Sign Up</button>
+								</div>
+
+							</form>
+        				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
         
         
         
