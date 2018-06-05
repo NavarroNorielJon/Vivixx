@@ -11,13 +11,25 @@
         <nav>
             <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="../index.php">Login</a></li>
+                <li><a href="../index.html">Login</a></li>
                 <li><a href="#">Register</a></li>
                 </ul>
             </div>
         </nav>
-    
+        <button class="btn modal-trigger" data-target="modal1">Hi</button>
         
-        <script type="text/javascript" src="../Style/materialize/js/materialize.min.js"></script>
+        <div class="modal" id="modal1">
+            
+            <div class="modal-content">
+                <h4>Sample</h4>
+                <p>Some text</p>
+            </div>
+            
+            <div class="modal-footer">
+                <a href="#!" class="btn-flat modal-action modal-close">Close</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="../JavaScript/js/materialize.min.js"></script>
+        <script>M.AutoInit();</script>
     </body>
 </html>
