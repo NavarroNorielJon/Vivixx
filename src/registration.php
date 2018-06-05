@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'Utilities/db.php';
 $conn = Connect();
 $disconn = Disconnect();
 
@@ -58,7 +58,7 @@ if(!preg_match("/^09[0-9]{9}$/", $contact)){
             alert('Invalid Contact Number.');
             windows.history.back();
         </script>
-    "
+    ";
     exit;
 }
 
