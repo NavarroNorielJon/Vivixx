@@ -14,7 +14,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
                 <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
-                <li><a href="../index.php" class="modal-trigger" data-target="signup">Sign-up</a></li>
+                <li><a href="../registration.html"> Sign-up</a></li>
 
                 </ul>
             </div>
