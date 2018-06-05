@@ -10,7 +10,8 @@
 <body class="amber lighten-2">
     <div class="center-align container valign-wrapper">
         <div class="row white" id="reg-form">
-            <form action="registration.php" method="post" class="col s12">
+            <form action="Utilities/registration.php" method="post" class="col s12">
+                
                 <div class=" input-field col s6">
                     <input type="text" name="first_name" id="fname">
                     <label for="fname">First Name</label>
@@ -35,6 +36,7 @@
                     <h5>Gender</h5> 
                     <p>
                         <label>
+<<<<<<< HEAD
                             <input class="with-gap" name="gender" type="radio"/>
                                 <span>Male</span>
                         </label>
@@ -43,6 +45,16 @@
                             <input class="with-gap" name="gender" type="radio"/>
                                 <span>Female</span>
                             </label>
+=======
+                            <input class="with-gap" name="male" value="male" type="radio"/>
+                            <span>Male</span>
+                        </label>
+                         
+                        <label>
+                            <input class="with-gap" name="female" value="female" type="radio"/>
+                            <span>Female</span>
+                        </label>
+>>>>>>> 9353d6fc92d8ba296df70dfc42cf1d5eb756f416
                     </p>    
                 </div>
                 
@@ -84,7 +96,7 @@
                 </div>
                             
                 <div>
-                    <input type="submit" value="Sign up">
+                    <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
                 </div>
              
             </form>
