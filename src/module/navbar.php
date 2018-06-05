@@ -12,7 +12,7 @@
             <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="../index.php">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="../registration.html">Register</a></li>
                 </ul>
             </div>
         </nav>
