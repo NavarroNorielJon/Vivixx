@@ -19,8 +19,12 @@
                 <li><a href="#!" class="modal-trigger" data-target="signup">Sign-up</a></li>
 =======
                 <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
+<<<<<<< HEAD
                 <li><a href="../registration.html"> Sign-up</a></li>
 >>>>>>> cf3c495b9fb941dd07b7614752403f6f02c4e2c9
+=======
+                <li><a href=../index.php class="modal-trigger" data-target="signup"> Sign-up</a></li>
+>>>>>>> 720949a3f89468cd8fbbc72045f45830c2676034
 
                 </ul>
             </div>
@@ -74,6 +78,7 @@
 						<form action="Utilities/registration.php" method="post" class="col s12">
 
 							<div class=" input-field col s6">
+								<i class="material-icons prefix">account_circle</i>
 								<input type="text" name="first_name" id="fname" class="validate" required="required">
 								<label for="fname">First Name</label>
 							</div>
@@ -86,6 +91,7 @@
 							<div class="input-field col s12">
 								<input type="text" name="username" id="username" class="validate" required="required">
 								<label for="username">Username</label>
+								<span class="helper-text" data-error="username is used" data-success="perfect"></span>
 							</div>
 
 							<div class="input-field col s12">
