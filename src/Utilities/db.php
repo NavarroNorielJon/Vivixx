@@ -10,7 +10,7 @@ function Connect(){
 	return $connect;
 }
 
-function Disconnect(){
+function Disconnect($connect){
 	$connect -> close();
 }
 

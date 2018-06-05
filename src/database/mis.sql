@@ -26,6 +26,7 @@ CREATE TABLE `user` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
+  `date_registered` date NOT NULL,
   PRIMARY KEY (`username`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
@@ -38,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('gregoriorenz','gregoriorenz@email.com','gregoriorenz');
+INSERT INTO `user` VALUES ('asdasddadsadq','qwe@adad.omaq','$2y$10$S574jzrOn7aKeVnAhi9WfushowDO21S6rqFmaaOzhs3YP2D1oqFPC','2018-06-05');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,9 +58,8 @@ CREATE TABLE `user_info` (
   `contact_number` varchar(11) NOT NULL,
   `address` varchar(100) NOT NULL,
   `gender` enum('m','f') NOT NULL,
-  PRIMARY KEY (`username`),
   UNIQUE KEY `user_id_UNIQUE` (`username`),
-  CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `user_info` (`username`) ON UPDATE CASCADE
+  CONSTRAINT `user` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,7 +69,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('gregoriorenz','Marc Lawrence','Gregorio','1998-12-13','09653346612','Caluluan, Concepcion, Tarlac','m');
+INSERT INTO `user_info` VALUES ('asdasddadsadq','sadad','asdad','2018-06-03','09123456784','121, weweqwewqewqe, qwewqee, qweqweqwe','m');
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-05 11:31:34
+-- Dump completed on 2018-06-05 14:46:13
