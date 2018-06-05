@@ -90,6 +90,39 @@
             </form>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            indicators: true
+        });
+        autoplay();
+
+        var max = new Date();
+        max.setFullYear(max.getFullYear() - 5);
+        var min = new Date();
+        min.setFullYear(min.getFullYear() - 120);
+
+        var defDate = new Date();
+        defDate.setFullYear(defDate.getFullYear() - 18);
+
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'mm-dd-yyyy',
+                defaultDate: defDate,
+                minDate: min,
+                maxDate: max,
+                yearRange: 100,
+                setDefaultDate: true
+            });
+        });
+
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 4500);
+        }
+    });
+    </script>
     
     <script type="text/javascript" src="JavaScript/js/materialize.min.js"></script>
     <script>M.AutoInit();</script>
