@@ -127,8 +127,8 @@ if($connect->query($insert_stmt) === true){
 				alert('Registration Successful);
 				window.location.replace('/');
 			</script>
-		"
-	} else{
+		";
+	} else {
 		echo "Error: " . $query . "<br>" . $connect->error;
 	}
 } else {
