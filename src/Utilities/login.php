@@ -10,16 +10,17 @@
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $count = mysqli_num_rows($results);
-        $passwordCheck = $row['password'];
+        $passwordVerify = $row['password'];
         if ($count == 1) {
-            if ($password != $passwordCheck) {
+            if (password_verify($password, $passwordVerify)) {
+                echo "Hi $user";
+            } else
                 echo 
                     "<script>
                         alert('Invalid Password');
                         window.history.back();
                     </script>";
-            } else
-            echo "Hi $user";
+            
     } else
         echo 
             "<script>
