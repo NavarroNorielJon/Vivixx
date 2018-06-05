@@ -1,14 +1,3 @@
-<script>
-    function invalidUser() {
-        alert("Invalid User");
-        window.location.href = "/"
-    }
-    
-    function invalidPass() {
-        alert("Invalid Password");
-        window.location.href = "/"
-    }
-</script>
 <?php
     include "db.php";
     $connect = Connect();
@@ -30,11 +19,19 @@
         
         if ($count == 1 or $count2 == 1) {
             if ($password != $passwordCheck) {
-                echo "<script>invalidPass()</script>";
+                echo 
+                    "<script>
+                        alert('Invalid Password');
+                        window.history.back();
+                    </script>";
             } else
             echo "Hi $user";
     } else
-        echo "<script>invalidUser()</script>";
+        echo 
+            "<script>
+                alert('User not registered')
+                window.history.back();
+            </script>";
 }
 	 
 ?>

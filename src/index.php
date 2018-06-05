@@ -1,3 +1,7 @@
+<?php
+include "module/navbar.php";
+?>
+
 <html>
     <head>
 		<title>MIS</title>
