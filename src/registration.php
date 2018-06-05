@@ -1,16 +1,17 @@
 <?php
 include 'Utilities/db.php';
-$conn = Connect();
+$connect = Connect();
 $disconn = Disconnect();
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$birthdate = $_POST['bdate'];
+$birthdate = $_POST['birth_date'];
 $address = $_POST['address'];
 $gender = $_POST['gender'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$cpassword = $_POST['confirm_password'];
 $contact = $_POST['contact'];
 
 /**
