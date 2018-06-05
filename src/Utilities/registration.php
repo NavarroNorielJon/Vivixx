@@ -5,7 +5,7 @@ $connect = Connect();
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$birthdate = $_POST['birth_date'];
+$birthdate = $_POST['birthdate'];
 $address = $_POST['address'];
 $gender = $_POST['gender'];
 $username = $_POST['username'];
@@ -13,6 +13,29 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $cpassword = $_POST['confirm_password'];
 $contact = $_POST['contact_number'];
+
+$first_name = mysqli_real_escape_string($connect, $first_name);
+$last_name = mysqli_real_escape_string($connect, $last_name);
+$birthdate = mysqli_real_escape_string($connect, $birthdate);
+$address = mysqli_real_escape_string($connect, $address);
+$gender = mysqli_real_escape_string($connect, $gender);
+$username = mysqli_real_escape_string($connect, $username);
+$email = mysqli_real_escape_string($connect, $email);
+$password = mysqli_real_escape_string($connect, $password);
+$cpassword = mysqli_real_escape_string($connect, $cpassword);
+$contact = mysqli_real_escape_string($connect, $contact);
+
+if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
+    || empty($cpassword) || empty($birthdate) || empty($gender) || empty($address) || empty($contact)) {
+    echo "
+         <script>
+             alert('You must fill up all neccessary fields.');
+             window.history.back();
+         </script>
+     ";
+    exit;
+}
+
 
 /**
  *Checks if the email entered is following the *email@domain.extension
@@ -108,7 +131,7 @@ $password = password_hash($password,PASSWORD_DEFAULT);
 $insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`) VALUES ('$username','$email','$password');";
 
 if($connect->query($insert_stmt) === true){
-	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact_number','$address');";
+	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`,`gender`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact_number','$address','$gender');";
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
