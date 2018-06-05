@@ -4,16 +4,18 @@ $connect = Connect();
 
 $first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
 $last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
-$birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']
-);
-$address = mysqli_real_escape_string($connect, $_POST['address']);
+$birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
+$house_number = mysqli_real_escape_string($connect, $_POST['house_number']);
+$street = mysqli_real_escape_string($connect, $_POST['street']);
+$city = mysqli_real_escape_string($connect, $_POST['city']);
+$province = mysqli_real_escape_string($connect, $_POST['province']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
 $username = mysqli_real_escape_string($connect, $_POST['username']);
 $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 $contact = mysqli_real_escape_string($connect, $_POST['contact_number']);
-
+$address = "$house_number,$street,$city,$province";
 if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
     || empty($cpassword) || empty($birthdate) || empty($gender) || empty($address) || empty($contact)) {
     echo "
