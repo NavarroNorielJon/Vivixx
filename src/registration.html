@@ -13,63 +13,64 @@
             <form action="Utilities/registration.php" method="post" class="col s12">
                 
                 <div class=" input-field col s6">
-                    <input type="text" name="first_name" id="fname">
+                    <input type="text" name="first_name" id="fname" class="validate" required="required">
                     <label for="fname">First Name</label>
                 </div>
         
                 <div class="input-field col s6">
-                    <input type="text" name="last_name" id="lname">
+                    <input type="text" name="last_name" id="lname" class="validate" required="required">
                     <label for="lname">Last Name</label>
                 </div>
                 
                 <div class="input-field col s12">
-                    <input type="text" name="username" id="username">
+                    <input type="text" name="username" id="username" class="validate" required="required">
                     <label for="username">Username</label>
                 </div>
                 
                 <div class="input-field col s12">
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" class="validate" required="required">
                     <label for="email">Email</label>
                 </div>
                 
                 <div class="input-field col s12">
-                    <input type="text" name="contact_number" id="contact">
+                    <input type="text" name="contact_number" id="contact" class="validate" required="required">
                     <label for="contact">Contact Number</label>
                 </div>
                 
-                <div>
-                    <h5>Gender</h5> 
+                <div class="left-align">
                     <p>
-                        <label>
-                            <input class="with-gap" name="gender" type="radio"/>
-                                <span>Male</span>
+				        <strong>Gender</strong> 
+                        
+                        <label class="right-align">
+                            <input class="with-gap" name="gender" type="radio" value="m" required="required"/>
+                            <span>Male</span>
                         </label>
                          
                         <label>
-                            <input class="with-gap" name="gender" type="radio"/>
-                                <span>Female</span>
-                            </label>
+                            <input class="with-gap" name="gender" type="radio" value="f" required="required" class="right-align"/>
+                            <span>Female</span>
+                        </label>
                     </p>    
                 </div>
                 
                 <div class="input-field col s12">
-                    <input type="text" class="datepicker" name="birthdate" id="bdate">
-                    <label for="bdate">Birtdate</label>
+                    <input type="text" class="datepicker" name="birthdate" id="bdate" class="validate" required="required">
+                    <label for="bdate">Birthdate</label>
                 </div>
         
                 <div class="input-field col s6">
-                    <input type="password" name="password" id="pass">
+                    <input type="password" name="password" id="pass" class="validate" required="required">
                     <label for="pass">Password</label>
                 </div>
         
                 <div class="input-field col s6">
-                    <input type="password" name="confirm_password" id="cpass">
+                    <input type="password" name="confirm_password" id="cpass" class="validate" required="required">
                     <label for="cpass">Confirm Password</label>
                 </div>
         
                 
         
-                <div  class="input-field col s2">
+                <div  class="input-field col s2" >
                     <input type="text" name="house_number" id="hnumber">
                     <label for="hnumber">House No.</label>
                 </div>
@@ -78,14 +79,19 @@
                     <input type="text" name="street" id="street">
                     <label for="street">Street</label>
                 </div>
+				
+				<div class="input-field col s2">
+                    <input type="text" name="barangay" id="barangay" class="validate" required="required">
+                    <label for="street">Barangay</label>
+                </div>
         
-                <div class="input-field col s4">
-                    <input type="text" name="city" id="city">
+                <div class="input-field col s3">
+                    <input type="text" name="city" id="city" class="validate" required="required">
                     <label for="city">Municipality/City</label>
                 </div>
         
-                <div class="input-field col s4">
-                    <input type="text" name="province" id="province">
+                <div class="input-field col s3">
+                    <input type="text" name="province" id="province" class="validate" required="required">
                     <label for="province">Province</label>
                 </div>
                             
