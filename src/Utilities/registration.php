@@ -1,5 +1,5 @@
 <?php
-include 'Utilities/db.php';
+include 'db.php';
 $connect = Connect();
 
 $first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
@@ -122,7 +122,7 @@ $password = password_hash($password,PASSWORD_DEFAULT);
 $insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`) VALUES ('$username','$email','$password');";
 
 if($connect->query($insert_stmt) === true){
-	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`,`gender`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact_number','$address','$gender');";
+	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`,`gender`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact','$address','$gender');";
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
