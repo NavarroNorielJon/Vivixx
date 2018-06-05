@@ -29,6 +29,9 @@
                 <a href="#!" class="btn-flat modal-action modal-close">Close</a>
             </div>
         </div>
+        
+        
+        
         <script type="text/javascript" src="../JavaScript/js/materialize.min.js"></script>
         <script>M.AutoInit();</script>
     </body>
