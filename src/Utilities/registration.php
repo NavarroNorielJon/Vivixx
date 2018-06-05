@@ -63,7 +63,18 @@ if($result->num_rows > 0){
     ";
     exit;
 }
-
+/**
+ Checks if the passwords are the same
+*/
+if(!$password == $cpassword ){
+	echo "
+        <script>
+            alert('Invalid Password.');
+            window.history.back();
+        </script>
+    ";
+    exit;
+}
 /**
  *Checks if the contact entered is exactly 9 digits, else
  *it will return to the registration
@@ -112,6 +123,7 @@ if(strlen($password) < 8 || strlen($password) > 16){
     echo "
         <script>
             alert('Password length must be greater than 8 but less than 16 characters');
+			window.history.back();
         </script>
     ";
     exit;
