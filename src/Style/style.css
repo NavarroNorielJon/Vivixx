@@ -5,6 +5,15 @@ body {
     padding-top: 10%;
 }
 
+.modal {
+    margin-top: -4% !important;
+    max-width: 30% !important;
+    max-height: 100% !important;
+}
+
+#logo {
+    margin: 5%;
+}
 #login-form {
     padding: 5%;
     width: 45%;
@@ -18,4 +27,3 @@ body {
     padding: 5%;
     width: 75%;
 }
-
