@@ -14,8 +14,13 @@
             <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
+<<<<<<< HEAD
                 <li><a href="#!" class="modal-trigger" data-target="login">Login</a></li>
                 <li><a href="#!" class="modal-trigger" data-target="signup">Sign-up</a></li>
+=======
+                <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
+                <li><a href="../registration.html"> Sign-up</a></li>
+>>>>>>> cf3c495b9fb941dd07b7614752403f6f02c4e2c9
 
                 </ul>
             </div>
