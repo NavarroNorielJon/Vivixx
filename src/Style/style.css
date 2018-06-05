@@ -6,10 +6,16 @@ body {
 }
 
 #login-form {
-    width: 45%;
     padding: 5%;
+    width: 45%;
 }
 
 #navbar {
     margin-left: 2%;
 }
+
+#reg-form {
+    padding: 5%;
+    width: 75%;
+}
+

@@ -1,84 +1,98 @@
 <html>
+    
 <head>
-<title>Registration</title>
+    <title>MIS</title>
+    <link type="text/css" rel="stylesheet" href="Style/materialize/css/materialize.min.css" media="screen, projection">
+    <link type="text/css" rel="stylesheet" href="Style/style.css" media="screen, projection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-    <div>
-    <div>
-    <form action="registration.php" method="post">
-        <div>
-            <input type="text" name="first_name" id="fname">
-            <label for="fname">First Name</label>
-        </div>
+
+<body class="amber lighten-2">
+    <div class="center-align container valign-wrapper">
+        <div class="row white" id="reg-form">
+            <form action="registration.php" method="post" class="col s12">
+                <div class=" input-field col s6">
+                    <input type="text" name="first_name" id="fname">
+                    <label for="fname">First Name</label>
+                </div>
         
-        <div>
-            <input type="text" name="last_name" id="lname">
-            <label for="lname">Last Name</label>
-        </div>
+                <div class="input-field col s6">
+                    <input type="text" name="last_name" id="lname">
+                    <label for="lname">Last Name</label>
+                </div>
+                
+                <div class="input-field col s12">
+                    <input type="text" name="email" id="email">
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="input-field col s12">
+                    <input type="text" name="contact" id="contact">
+                    <label for="contact">Contact Number</label>
+                </div>
+                
+                <div>
+                    <h5>Gender</h5> 
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio"/>
+                                <span>Male</span>
+                        </label>
+                         
+                        <label>
+                            <input class="with-gap" name="group1" type="radio"/>
+                                <span>Female</span>
+                            </label>
+                    </p>    
+                </div>
+                
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker" name="birth_date" id="bdate">
+                    <label for="bdate">Birtdate</label>
+                </div>
         
-        <div>
-            <input type="text" name="house_number" id="hnumber">
-            <label for="hnumber">House Number</label>
-        </div>
+                <div class="input-field col s6">
+                    <input type="password" name="password" id="pass">
+                    <label for="pass">Password</label>
+                </div>
         
-        <div>
-            <input type="text" name="street" id="street">
-            <label for="street">Street</label>
-        </div>
+                <div class="input-field col s6">
+                    <input type="password" name="confirm_password" id="cpass">
+                    <label for="cpass">Confirm Password</label>
+                </div>
         
-        <div>
-            <input type="text" name="city" id="city">
-            <label for="city">Municipality/City</label>
-        </div>
+                
         
-        <div>
-            <input type="text" name="province" id="province">
-            <label for="province">Province</label>
-        </div>
+                <div  class="input-field col s2">
+                    <input type="text" name="house_number" id="hnumber">
+                    <label for="hnumber">House No.</label>
+                </div>
         
-        <div>
-            <input type="text" name="contact" id="contact">
-            <label for="contact">Contact</label>
-        </div>
+                <div class="input-field col s2">
+                    <input type="text" name="street" id="street">
+                    <label for="street">Street</label>
+                </div>
         
-        <div>
-            <input type="text" name="email" id="email">
-            <label for="email">Email</label>
-        </div>
+                <div class="input-field col s4">
+                    <input type="text" name="city" id="city">
+                    <label for="city">Municipality/City</label>
+                </div>
         
-        <div>
-            <input type="password" name="password" id="pass">
-            <label for="pass">Password</label>
-        </div>
-        
-        <div>
-            <input type="password" name="confirm_password" id="cpass">
-            <label for="cpass">Confirm Password</label>
-        </div>
-        
-        <div>
-            <input type="date" name="birth_date" id="bdate">
-            <label for="bdate">Birthdate</label>
-        </div>
-        
-        <div>
-            <input type="radio" name="gender" value="Male" id="male">
-            <label for="male">Male</label>
-        </div>
-        
-        <div>
-            <input type="radio" name="gender" value="Female" id="female">
-            <label for="female">Female</label>
-        </div>
-        
-        <div>
-            <input type="submit" value="Sign up">
-        </div>
+                <div class="input-field col s4">
+                    <input type="text" name="province" id="province">
+                    <label for="province">Province</label>
+                </div>
+                            
+                <div>
+                    <input type="submit" value="Sign up">
+                </div>
              
-    </form>
-    </div>
+            </form>
+        </div>
     </div>
     
+    <script type="text/javascript" src="JavaScript/js/materialize.min.js"></script>
+    <script>M.AutoInit();</script>
 </body>
-
+    
 </html>

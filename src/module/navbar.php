@@ -11,13 +11,10 @@
         <nav>
             <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-<<<<<<< HEAD
+
                 <li><a href="../index.php">Login</a></li>
                 <li><a href="../registration.html">Register</a></li>
-=======
-                <li><a href="../index.html">Login</a></li>
-                <li><a href="#">Register</a></li>
->>>>>>> bcc52e6aa053c06b5a58d7261e05ff10ce609cfc
+
                 </ul>
             </div>
         </nav>
