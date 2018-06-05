@@ -7,6 +7,7 @@ $last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
 $birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
 $house_number = mysqli_real_escape_string($connect, $_POST['house_number']);
 $street = mysqli_real_escape_string($connect, $_POST['street']);
+$barangay = mysqli_real_escape_string($connect, $_POST['barangay']);
 $city = mysqli_real_escape_string($connect, $_POST['city']);
 $province = mysqli_real_escape_string($connect, $_POST['province']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
@@ -15,9 +16,9 @@ $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 $contact = mysqli_real_escape_string($connect, $_POST['contact_number']);
-$address = "$house_number, $street, $city, $province";
+$address = "$house_number $street, $barangay, $city, $province";
 if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
-    || empty($cpassword) || empty($gender) || empty($address) || empty($contact)) {
+    || empty($cpassword) || empty($gender) || empty($address) || empty($contact) || empty($birthdate)) {
     echo "
          <script>
              alert('You must fill up all neccessary fields.');
@@ -66,7 +67,7 @@ if($result->num_rows > 0){
 /**
  Checks if the passwords are the same
 */
-if(!$password == $cpassword ){
+if($password != $cpassword ){
 	echo "
         <script>
             alert('Invalid Password.');
