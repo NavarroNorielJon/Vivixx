@@ -49,7 +49,7 @@
                     
                     <div class="center-align">
                     <button type="submit" class="waves-effect waves-light btn teal darken-3" name="submit">Login</button>
-                    <a href = "#" style="display: block; margin: 1rem;">Forgot password?</a>
+                    <a href = "send-reset.php" style="display: block; margin: 1rem;">Forgot password?</a>
                     </div>
 	           </form>
             </div>
