@@ -15,9 +15,9 @@ $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 $contact = mysqli_real_escape_string($connect, $_POST['contact_number']);
-$address = "$house_number,$street,$city,$province";
+$address = "$house_number, $street, $city, $province";
 if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
-    || empty($cpassword) || empty($birthdate) || empty($gender) || empty($address) || empty($contact)) {
+    || empty($cpassword) || empty($gender) || empty($address) || empty($contact)) {
     echo "
          <script>
              alert('You must fill up all neccessary fields.');
@@ -131,7 +131,8 @@ if(strlen($password) < 8 || strlen($password) > 16){
 }
 $password = password_hash($password,PASSWORD_DEFAULT);
 
-$insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`) VALUES ('$username','$email','$password');";
+$birthdate = date('Y-m-d',strtotime($birthdate));
+$insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
 
 if($connect->query($insert_stmt) === true){
 	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`,`gender`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact','$address','$gender');";
