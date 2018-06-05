@@ -2,7 +2,7 @@
 include "module/navbar.php";
 ?>
 
-<html>
+<!DOCTYPE html>
     <head>
 		<title>MIS</title>
         <link type="text/css" rel="stylesheet" href="Style/materialize/css/materialize.min.css" media="screen, projection">
