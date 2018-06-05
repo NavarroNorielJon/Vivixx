@@ -1,8 +1,12 @@
 <?php
-    require_once "connectToDb.php";
+    require_once "db.php";
     session_start();
 
     if(isset($_SESSION['user'])){
         $loggedin_user = $_SESSION['user'];
-        $checkUser = $_SESSION['user'];
+    } else {
+        header("location:/");
     }
+?>
+
+    
