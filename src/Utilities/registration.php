@@ -1,7 +1,7 @@
 <?php
 include 'Utilities/db.php';
 $connect = Connect();
-$disconn = Disconnect();
+
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
@@ -12,7 +12,7 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $cpassword = $_POST['confirm_password'];
-$contact = $_POST['contact'];
+$contact = $_POST['contact_number'];
 
 /**
  *Checks if the email entered is following the *email@domain.extension
@@ -32,8 +32,9 @@ if(!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",$email)){
     exit;
 }
 
-$sql = //query email;
-$result = $conn->query($sql);
+
+$sql = "SELECT * FROM user where email = '$email'";
+$result = $connect->query($sql);
 
 /**
  *If the result is greater than 0 output an alert and redirect
@@ -63,8 +64,8 @@ if(!preg_match("/^09[0-9]{9}$/", $contact)){
     exit;
 }
 
-$sql = //query contact;
-$result = $conn->query($sql);
+$sql = "SELECT * FROM user_info where contact_number = '$contact'";
+$result = $connect->query($sql);
 
 /**
  *Checks if the contact is already being used and will return
@@ -80,8 +81,8 @@ if($result->num_rows > 0){
     exit;
 }
 
-$sql = //query username;
-$result = $conn->query($sql);
+$sql = "SELECT * FROM user where username = '$username'";
+$result = $connect->query($sql);
 
 if($result->num_rows > 0){
     echo "
@@ -93,7 +94,7 @@ if($result->num_rows > 0){
     exit;
 }
 
-if(Strlen($password) < 8 || strlen($password) > 16){
+if(strlen($password) < 8 || strlen($password) > 16){
     echo "
         <script>
             alert('Password length must be greater than 8 but less than 16 characters');
@@ -102,4 +103,24 @@ if(Strlen($password) < 8 || strlen($password) > 16){
     exit;
     
 }
+$password = password_hash($password,PASSWORD_DEFAULT);
+
+$insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`) VALUES ('$username','$email','$password');";
+
+if($connect->query($insert_stmt) === true){
+	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact_number','$address');";
+	if($connect->query($insert_stmt) === true){
+		echo "
+			<script>
+				alert('Registration Successful);
+				window.location.replace('/');
+			</script>
+		"
+	} else{
+		echo "Error: " . $query . "<br>" . $connect->error;
+	}
+} else {
+	echo "Error: " . $query . "<br>" . $connect->error;
+}
+Disconnect($connect);
 ?>
