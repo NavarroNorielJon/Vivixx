@@ -14,8 +14,8 @@
             <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
-                <li><a href="../index.php" class="modal-trigger" data-target="signup">Sign-up</a></li>
+                <li><a href="#!" class="modal-trigger" data-target="login">Login</a></li>
+                <li><a href="#!" class="modal-trigger" data-target="signup">Sign-up</a></li>
 
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                     
                         <div class="center-align">
                             <button type="submit" class="waves-effect waves-light btn teal darken-3" name="submit">Login</button>
-                            <a href = "send-reset.php" style="display: block; margin: 1rem;">Forgot password?</a>
+                            <a a href="#!" class="modal-trigger" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
                         </div>
 	               </form>
                 </div>
@@ -159,6 +159,24 @@
 		</div>
 		<!-- End of Sign Up -->
 
+		<div class="modal" id="forgot">    
+            <div class="modal-content">
+                <div class="right-align">
+                    <button type="button" class="btn modal-action modal-close yellow darken-2"><i class="material-icons">close</i></button>
+                </div>
+                <h4>Enter Email</h4>
+                <div class="center-align">
+                    <div class="row">
+                    	<form>
+                    	<div class="input-field col s12">
+                    		<input type="email" id="fogotPassword" name="email" required="required">
+                    		<label for="fogotPassword">E-mail Address</label>
+                    	</div>
+                    	</form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="../JavaScript/js/materialize.min.js"></script>
         <script>M.AutoInit();</script>
     </body>
