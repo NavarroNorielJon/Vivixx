@@ -4,8 +4,6 @@
 
     if(isset($_SESSION['user'])){
         $loggedin_user = $_SESSION['user'];
-    } else {
-        header("location:/");
     }
 ?>
 

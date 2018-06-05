@@ -13,7 +13,9 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "Hi $user";
+                echo "<script>alert('Hi $user');
+                    window.location.replace('/');
+                        </script>";
             } else
                 echo 
                     "<script>

@@ -6,24 +6,24 @@ body {
 }
 
 #login {
+    padding: 0 !important;
     margin-top: -4% !important;
     max-width: 30% !important;
     max-height: 100% !important;
 }
 
-#logo {
-    margin: 5%;
+#signup {
+    padding: 0% !important;
+    margin-top: -4% !important;
+    max-width: 80% !important;
+    max-height: 100% !important;
 }
-#login-form {
-    padding: 5%;
-    width: 45%;
+
+#logo {
+    margin-top: -4%;
+    margin-bottom: 5%;
 }
 
 #navbar {
     margin-left: 2%;
-}
-
-#reg-form {
-    padding: 5%;
-    width: 75%;
 }
