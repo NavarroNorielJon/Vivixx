@@ -73,18 +73,23 @@
                 </div>
 
                 <h4>Registration Form</h4> 
-              
+				<!--Personal info-->
 				<div class="center-align">
 					<div class="row">
 						<form action="Utilities/registration.php" method="post" class="col s12" >
 
-							<div class=" input-field col s6">
+							<div class=" input-field col s5">
 								<i class="small material-icons prefix">person</i>
 								<input type="text" name="first_name" id="fname" class="validate" required="required">
 								<label for="fname">First Name</label>
 							</div>
-
-							<div class="input-field col s6">
+							
+							<div class="input-field col s2">
+								<input type="text" name="middle_name" id="mname" class="validate" required="required">
+								<label for="mname">Middle Name</label>
+							</div>
+							
+							<div class="input-field col s5">
 								<input type="text" name="last_name" id="lname" class="validate" required="required">
 								<label for="lname">Last Name</label>
 							</div>
@@ -106,30 +111,51 @@
 							<div class="input-field col s12">
 								<i class="small material-icons prefix">contact_phone</i>
 								<input type="text" name="contact_number" id="contact" onkeyup="helperText('contact',this.value,'validContact')" class="validate" required="required">
-								<label for="contact">Contact Number</label>
+								<label for="contact">Mobile Number</label>
 								<div id="validContact"></div>
 							</div>
 							
-							<div class="input-field col s12" >
+							<div class="input-field col s5" >
+								<i class="material-icons prefix">vpn_key</i>
 								<input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="validate" required="required">
 								<label for="pass">Password</label>
 								<div id="validPassword"></div>
 							</div>
-
-							<div class="input-field col s12" >
+							
+							<div class="input-field col s5" >
 								<input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation')" class="validate" required="required">
 								<label for="cpass">Confirm Password</label>
-								<div id="validConfirmation"></div>
+								<div id="validConfirmation"></div>		
 							</div>
 
-							<div class="input-field col s12">
+							<div class="switch input-field col s2">
+								<label>
+									<input id="hid" type="checkbox" onclick="showHide('password','cpass')">
+									<span><i class="material-icons" >remove_red_eye</i></span>
+								</label>
+							</div>
+							
+							<div class="input-field col s4">
 								<i class="small material-icons prefix">date_range</i>
 								<input type="date" name="birthdate" id="bdate" class="validate" required="required">
 								<label for="bdate">Birthdate</label>
 							</div>
 							
+							<div class="input-field col s2" >
+								<i class="small material-icons prefix">home</i>
+								<input type="text" name="age" id="age">
+								<label for="age">Age</label>
+							</div>
+							
+							<div class="input-field col s6" >
+								<i class="small material-icons prefix">home</i>
+								<input type="text" name="pbirth" id="pbirth">
+								<label for="pbirth">Place of Birth</label>
+							</div>
+							
 							<div class="left-align input-field col s12">
-								<p>
+								<div>
+									<i class="small material-icons prefix">wc</i>
 									<label class="right-align">
 										<input class="with-gap" name="gender" type="radio" value="m" required="required"/>
 										<span>Male</span>
@@ -139,42 +165,43 @@
 									<input class="with-gap" name="gender" type="radio" value="f" required="required" class="right-align"/>
 										<span>Female</span>
 									</label>		
-								</p>
+								</div>
 									
 							</div>
 							
-							<div class="input-field col s2" >
+							<div class="input-field col s12" >
 								<i class="small material-icons prefix">home</i>
-								<input type="text" name="house_number" id="hnumber">
-								<label for="hnumber">House No.</label>
+								<input type="text" name="address" id="address">
+								<label for="address">Address</label>
 							</div>
-
-							<div class="input-field col s2">
-								<input type="text" name="street" id="street">
-								<label for="street">Street</label>
+							
+							<div class="input-field col s4" >
+								<i class="small material-icons prefix">home</i>
+								<input type="text" name="citizenship" id="citizenship">
+								<label for="citizenship">Citizenship</label>
 							</div>
-
-							<div class="input-field col s2">
-								<input type="text" name="barangay" id="barangay" class="validate" required="required">
-								<label for="barangay">Barangay</label>
+							
+							<div class="input-field col s4" >
+								<i class="small material-icons prefix">home</i>
+								<input type="text" name="religion" id="religion">
+								<label for="religion">Religion</label>
 							</div>
-
-							<div class="input-field col s3">
-								<input type="text" name="city" id="city" class="validate" required="required">
-								<label for="city">Municipality/City</label>
+							
+							<div class="input-field col s4" >
+								<i class="small material-icons prefix">home</i>
+								<input type="dropdown" name="civil" id="civil">
+								<label for="civil">Civil Status</label>
 							</div>
-
-							<div class="input-field col s3">
-								<input type="text" name="province" id="province" class="validate" required="required">
-								<label for="province">Province</label>
-							</div>
-
-							<div>
-								<button type="submit" class="btn waves-effect waves-light">Sign Up</button>
+							
+							
+							
+							<div class="center-align">
+								<button type="submit" class="btn waves-effect waves-light col s12 " id="signbutton">Sign Up</button>
 							</div>
 						</form>
         			</div>
 				</div>
+				<!--end of Personal info-->
 			</div>
 		</div>
 		<!-- End of Sign Up -->

@@ -54,4 +54,13 @@ body {
 #strong{
 	color: green;
 }
-
+#signbutton{
+	padding-left: 25%;
+	padding-right: 25%;
+}
+#space{
+	padding-left: 2.5%;
+}
+#hid{
+	visibility: hidden;
+}

@@ -9,7 +9,7 @@ function helperText(type, str, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "Utilities/validator.php?type=" + type + "&" + type + "=" + str, true);
+		xmlhttp.open("GET", "utilities/validator.php?type=" + type + "&" + type + "=" + str, true);
 		xmlhttp.send();
 	}
 }
@@ -25,7 +25,20 @@ function confirmPass(type, str, passElement, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "Utilities/validator.php?type=" + type + "&" + type + "=" + str + "&password=" + pass, true);
+		xmlhttp.open("GET", "utilities/validator.php?type=" + type + "&" + type + "=" + str + "&password=" + pass, true);
 		xmlhttp.send();
 	}
+}
+
+function showHide() {
+    var pass = document.getElementById("password");
+	var pass1 = document.getElementById("cpass");
+    if (pass.type === "password" && pass1.type === "password") {
+        pass.type = "text";
+        pass1.type = "text";
+    } else {
+        pass.type = "password";
+        pass1.type = "password";
+    }
+	xmlhttp.send();
 }

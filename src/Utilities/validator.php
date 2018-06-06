@@ -13,7 +13,7 @@ switch ($type){
 			echo "<span class='invalid'>Invalid Email</span>";
 		} else if($result->num_rows > 0){
 			echo "<span class='invalid'>Email already exist</span>";
-		} else if($email == null){
+		} else if(empty($email)){
 			echo "<span class='invalid'>Required</span>";
 		}
 		break;
@@ -23,18 +23,22 @@ switch ($type){
 		$result = mysqli_query($connect,$stmt);
 		if($result->num_rows > 0){
 			echo "<span class='invalid'>Username already exist</span>";
-		}
+		}	
 		break;
-	case "contact":
+	case "contact_number":
 		$contact_number = $_REQUEST["contact_number"];
+		$stmt = "SELECT * FROM user_info where contact_number = '$contact_number';";
+		$result = mysqli_query($connect,$stmt);
 		if(!preg_match("/^09[0-9]{9}$/",$contact_number)){
 			echo "<span class='invalid'>Invalid Contact Number</span>";
+		} else if($result->num_rows > 0){
+			echo "<span class='invalid'>Contact Number already exist</span>";
 		}
 		break;
 	case "password":
 		$password = $_REQUEST["password"];
-		if(strlen($password) < 7 ){
-			echo "<span id='weak'>weak \npassword length must be greater than 7</span>";
+		if(strlen($password) < 8 ){
+			echo "<span id='weak'>weak \neight(8) characters minimum</span>";
 		} else if(strlen($password) > 8 && strlen($password) < 10){
 			echo "<span id='good'>good</span>";
 		} else if(strlen($password) > 10 && strlen($password) < 13){
@@ -42,7 +46,7 @@ switch ($type){
 		} else if(strlen($password) > 13 && strlen($password) < 16){
 			echo "<span id='strong'>strong</span>";
 		} else if(strlen($password) < 8 || strlen($password) > 16){
-			echo "<span class='invalid'>Password length must be greater than 8 and less than 16 characters</span>";
+			echo "<span class='invalid'>Password length must be 8 characters minimum and 16 characters maximum</span>";
 		}
 		break;
 	case "confirm_password":
