@@ -14,7 +14,7 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
-                header('location:/profile.php');
+                header('location:/');
             } else
                 echo 
                     "<script>

@@ -12,7 +12,7 @@
     <body>
         <nav class="yellow darken-3">
             <div class="nav-wrapper" id="navbar">
-                <a href="#" class="brand-logo">Vivixx</a>
+                <a href="/" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <?php
                         if(!isset($_SESSION['user'])){
@@ -22,7 +22,7 @@
                                 <li><a href='#'>About Us</a></li>";
                         }else
                             echo "
-                                <li><a href='#!'>$user_first</a></li>
+                                <li><a href='/profile.php'>$user_first</a></li>
                                 <li><a href='Utilities/logout.php'>Logout</a></li>";
                     ?>
                 </ul>
