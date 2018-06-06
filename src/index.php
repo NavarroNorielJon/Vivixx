@@ -1,6 +1,7 @@
 <?php
     include 'Utilities/session.php';
     include 'module/navbar.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +17,9 @@
 <body class="white">
     <?php
         if(!isset($_SESSION['user'])){
-            echo"
-            <div id='start-php'>
-                <img src='img/Logo.png' id='start-logo'>
-                <h4 class='center-align'>Vivixx Academy</h4>
-            </div>";
+            include 'logged_out.php';
         }else{
-            echo "<div class='center-align'><h1>Welcome to Vivixx Academy $user_first!</h1></div>";
+            include 'logged_in.php';
         }
     ?>
     

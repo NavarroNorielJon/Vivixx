@@ -12,24 +12,32 @@
     </head>
     
     <body>
-        <nav class="yellow darken-3">
-            <div class="nav-wrapper" id="navbar">
-                <a href="/" class="brand-logo">Vivixx</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <?php
-                        if(!isset($_SESSION['user'])){
-                            echo "
-                                <li><a href='#!' class='modal-trigger' data-target='login'>Login</a></li>
-                                <li><a href='#!' class='modal-trigger' data-target='signup'>Sign-up</a></li>
-                                <li><a href='#'>About Us</a></li>";
-                        }else
-                            echo "
-                                <li><a href='/profile.php'>$user_first</a></li>
-                                <li><a href='Utilities/logout.php'>Logout</a></li>";
-                    ?>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="yellow darken-3">
+                <div class="nav-wrapper" id="navbar">
+                    <a href="/" class="brand-logo">Vivixx</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-nav">Sample</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <?php
+                            if(!isset($_SESSION['user'])){
+                                echo "
+                                    <li><a href='#!' class='modal-trigger' data-target='login'>Login</a></li>
+                                    <li><a href='#!' class='modal-trigger' data-target='signup'>Sign-up</a></li>
+                                    ";
+                            }else
+                                echo "
+                                    <li><a href='/profile.php'>$user_first</a></li>
+                                    <li><a href='Utilities/logout.php'>Logout</a></li>";
+                        ?>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="#">Sample</a></li>
+            <li><a href="#">Sample2</a></li>
+        </ul>
         
         <!-- Login -->
         <div class="modal" id="login">    
