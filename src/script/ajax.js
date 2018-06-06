@@ -59,8 +59,8 @@ function confirmation(type, str, elementId){
 	}
 }
 
-function confirmLogin(type, str, passElement, elementId){
-	var pass = document.getElementById(passElement).value;
+function confirmLogin(type, str, eElement, elementId){
+	var userOrEmail = document.getElementById(eElement).value;
 	if(str.length == 0){
 		document.getElementById(elementId).innerHTML = "";
 		return;
@@ -71,7 +71,7 @@ function confirmLogin(type, str, passElement, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "utilities/login_validator.php?type=" + type + "&" + type + "=" + str + "&userOrEmail=" + pass, true);
+		xmlhttp.open("GET", "utilities/login_validator.php?type=" + type + "&" + type + "=" + str + "&userOrEmail=" + userOrEmail, true);
 		xmlhttp.send();
 	}
 }
