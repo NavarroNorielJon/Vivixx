@@ -13,9 +13,13 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
+<<<<<<< HEAD
                 echo "Hi $user";
                 $current=$_SERVER['REMOTE_USER'];
                 echo "User is= $current";
+=======
+                echo "<script>window.location.replace('/profile.php');</script>";
+>>>>>>> ac0331919868ba5d150dee00c38a55880448d57e
             } else
                 echo 
                     "<script>
