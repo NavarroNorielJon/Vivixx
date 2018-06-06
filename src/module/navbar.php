@@ -37,7 +37,7 @@
                 
                 <div class="center-align">
                     <img src="../img/Logo.png" id="logo">
-                    <form action="../Utilities/login.php" method="post" class="col s12 ">
+                    <form action="../utilities/login.php" method="post" class="col s12 ">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="text" name="user" class="validate" id="userOrEmail" required="required">
