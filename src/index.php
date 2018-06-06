@@ -1,5 +1,6 @@
 <?php
-include "module/navbar.php";
+    include 'Utilities/session.php';
+    include 'module/navbar.php';
 ?>
 
 <!DOCTYPE html>

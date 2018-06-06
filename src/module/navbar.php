@@ -14,9 +14,17 @@
             <div class="nav-wrapper" id="navbar">
                 <a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#!" class="modal-trigger" data-target="login">Login</a></li>
-                <li><a href="#!" class="modal-trigger" data-target="signup">Sign-up</a></li>
-                <li><a href="#">About Us</a></li>
+                    <?php
+                        if(!isset($_SESSION['user'])){
+                            echo "
+                                <li><a href='#!' class='modal-trigger' data-target='login'>Login</a></li>
+                                <li><a href='#!' class='modal-trigger' data-target='signup'>Sign-up</a></li>
+                                <li><a href='#'>About Us</a></li>";
+                        }else
+                            echo "
+                                <li><a href='#!'>$user_first</a></li>
+                                <li><a href='Utilities/logout.php'>Logout</a></li>";
+                    ?>
                 </ul>
             </div>
         </nav>

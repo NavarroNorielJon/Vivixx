@@ -1,5 +1,5 @@
 <?php
-    include "db.php";
+    include 'session.php';
     $connect = Connect();
 
     if( isset($_POST["user"]) && isset($_POST["password"])){
@@ -13,7 +13,8 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "<script>window.location.replace('/profile.php');</script>";
+                $_SESSION['user'] = $user;
+                header('location:/profile.php');
             } else
                 echo 
                     "<script>
