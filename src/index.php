@@ -14,9 +14,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
-    <body>
-        <div class="jumbotron" style="padding-top: 6%;">
-            <img src="img/logo2.png" style="width:40%; height:auto; margin-right:4%; margin-left:3%;"><br>
+    <body style="background-color:grey;">
+        <div class="jumbotron" style="background-color: white; padding-top: 6%;">
+            <img src="img/Lion.png" style="width:40%; height:auto; margin-right:4%; margin-left:3%;"><br>
             <form action="../Utilities/login.php" method="post" class="col s12 ">
                 
                 <div class="form-group">
