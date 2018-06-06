@@ -6,8 +6,6 @@
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
     <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="../script/modal.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
@@ -355,6 +353,8 @@
             </div>
         </div>
         <script type="text/javascript" src="../script/bootsrap/js/materialize.min.js"></script>
+		<script type="text/javascript" src="../script/modal.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
         <script>M.AutoInit();</script>
     </body>
 </html>

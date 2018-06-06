@@ -21,12 +21,14 @@
                 
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
-                    <input class="form-control" type="text" name="user" id="userOrEmail" required="required" placeholder="Username or Email-Address">
+                    <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userOrEmail" required="required" placeholder="Username or Email-Address">
+					<div id="validUserOrEmail"></div>
                 </div>
                 
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" class="form-control" required="required" name="password" id="pass" placeholder="Password">
+                    <input type="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userOrEmail',validPassword')" required="required" name="password" id="pass" placeholder="Password">
+					<div id="validPassword"></div>
                 </div>
                 
                 <div style="text-align: center;">    
@@ -35,6 +37,6 @@
                 </div>
 	       </form>
         </div>
+		<script type="text/javascript" src="../script/ajax.js"></script>
     </body>
-    
 </html>
