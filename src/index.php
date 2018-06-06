@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
     include 'util/session.php';
+=======
+    include 'utilities/session.php';
+>>>>>>> 222caafefe53dc6275321d3bae4330a7decd52b1
     include 'module/navbar2.0.php';
 ?>
 
@@ -17,7 +21,7 @@
     <body style="background-color:grey;">
         <div class="jumbotron" style="background-color: white; padding-top: 6%;">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-right:4%; margin-left:3%;"><br>
-            <form action="../Utilities/login.php" method="post" class="col s12 ">
+            <form action="../utilities/login.php" method="post" class="col s12 ">
                 
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>

@@ -6,8 +6,8 @@
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
     <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="../JavaScript/modal.js"></script>
-	<script type="text/javascript" src="../JavaScript/ajax.js"></script>
+    <script type="text/javascript" src="../script/modal.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
@@ -23,7 +23,9 @@
                                     ";
                             }else
                                 echo "
-                                    <li><a href='#!' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>$user_first</a></li>
+                                    <li>
+									<a href='#!' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>$user_first</a>
+									</li>
                                     ";
                         ?>
                     </ul>
@@ -74,7 +76,7 @@
 				
 				<div class="center-align">
 					<div class="row">
-						<form action="Utilities/registration.php" method="post" class="col s12" >
+						<form action="utilities/registration.php" method="post" class="col s12" >
 							
 							<!--START of user info-->
 							<h4>User Information</h4>
@@ -352,7 +354,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="../JavaScript/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../script/bootsrap/js/materialize.min.js"></script>
         <script>M.AutoInit();</script>
     </body>
 </html>
