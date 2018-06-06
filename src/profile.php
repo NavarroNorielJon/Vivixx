@@ -1,5 +1,6 @@
 <?php
-    require "Utilities/session.php"
+    require 'Utilities/session.php';
+    include 'module/navbar.php';
 ?>
 <html>
     <head>
