@@ -14,11 +14,17 @@
 </head>
     
 <body class="white">
-    <div id="start-php">
-        <img src="img/Logo.png" id="start-logo">
-        <h4 class="center-align">Vivixx Academy</h4>
-    </div>
-        
+    <?php
+        if(!isset($_SESSION['user'])){
+            echo"
+            <div id='start-php'>
+                <img src='img/Logo.png' id='start-logo'>
+                <h4 class='center-align'>Vivixx Academy</h4>
+            </div>";
+        }else{
+            echo "<div class='center-align'><h1>Welcome to Vivixx Academy $user_first!</h1></div>";
+        }
+    ?>
     
     <script type="text/javascript" src="JavaScript/js/materialize.min.js"></script>
 </body>
