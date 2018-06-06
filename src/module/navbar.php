@@ -13,9 +13,9 @@
     
     <body>
         <div class="navbar-fixed">
-            <nav class="yellow darken-3">
+            <nav class="grey darken-4">
                 <div class="nav-wrapper" id="navbar">
-                    <a href="/" class="brand-logo">Vivixx</a>
+                    <a href="#" class="brand-logo" data-targer="menu">Vivixx</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-nav">Sample</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <?php
@@ -26,8 +26,8 @@
                                     ";
                             }else
                                 echo "
-                                    <li><a href='/profile.php'>$user_first</a></li>
-                                    <li><a href='Utilities/logout.php'>Logout</a></li>";
+                                    <li><a href='#!' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>$user_first</a></li>
+                                    ";
                         ?>
                     </ul>
                 </div>
@@ -35,8 +35,18 @@
         </div>
         
         <ul class="sidenav" id="mobile-nav">
-            <li><a href="#">Sample</a></li>
-            <li><a href="#">Sample2</a></li>
+            <li><a href="#!">Profile</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+        
+        <ul id="menu" class="dropdown-content">
+            <li><a href="profile.php">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Transaction</a></li>
+            <li class="divider"></li>
+            <li><a href="Utilities/logout.php">Logout</a></li>
         </ul>
         
         <!-- Login -->

@@ -33,7 +33,7 @@ body {
 
 #navbar {
     margin-left: 5%;
-    margin-right: 0%;
+    margin-right: 3%;
 }
 
 #start-php {
@@ -54,4 +54,29 @@ body {
 #strong{
 	color: green;
 }
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #eeebeb;
+    overflow-x: hidden;
+    padding-top: 2%;
+    padding-left: 3%; 
+}
+
+.sidenav a {
+    
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
 
