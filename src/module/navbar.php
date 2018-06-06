@@ -24,7 +24,7 @@
                             }else
                                 echo "
                                     <li>
-									<a href='#!' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>$user_first</a>
+									<a href='utilities/logout.php' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>$user_first</a>
 									</li>
                                     ";
                         ?>
