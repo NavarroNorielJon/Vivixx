@@ -12,7 +12,13 @@ include "module/navbar.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
     
-<body class="amber lighten-2">
+<body class="white">
+    <div id="start-php">
+        <img src="img/Logo.png" id="start-logo">
+        <h4 class="center-align">Vivixx Academy</h4>
+    </div>
+        
+    
     <script type="text/javascript" src="JavaScript/js/materialize.min.js"></script>
 </body>
     

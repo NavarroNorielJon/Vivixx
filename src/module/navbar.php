@@ -10,22 +10,13 @@
     </head>
     
     <body>
-        <nav>
-            <div class="nav-wrapper teal darken-3"><a href="#" class="brand-logo">Vivixx</a>
+        <nav class="yellow darken-3">
+            <div class="nav-wrapper" id="navbar">
+                <a href="#" class="brand-logo">Vivixx</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-<<<<<<< HEAD
                 <li><a href="#!" class="modal-trigger" data-target="login">Login</a></li>
                 <li><a href="#!" class="modal-trigger" data-target="signup">Sign-up</a></li>
-=======
-                <li><a href="../index.php" class="modal-trigger" data-target="login">Login</a></li>
-<<<<<<< HEAD
-                <li><a href="../registration.html"> Sign-up</a></li>
->>>>>>> cf3c495b9fb941dd07b7614752403f6f02c4e2c9
-=======
-                <li><a href=../index.php class="modal-trigger" data-target="signup"> Sign-up</a></li>
->>>>>>> 720949a3f89468cd8fbbc72045f45830c2676034
-
+                <li><a href="#">About Us</a></li>
                 </ul>
             </div>
         </nav>

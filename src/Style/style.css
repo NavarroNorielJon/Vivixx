@@ -25,5 +25,12 @@ body {
 }
 
 #navbar {
-    margin-left: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#start-php {
+    position: absolute;
+    top: 35%;
+    left: 42%;
 }

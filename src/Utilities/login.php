@@ -13,9 +13,7 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "<script>alert('Hi $user');
-                    window.location.replace('/');
-                        </script>";
+                echo "<script>window.location.replace('/profile.php');</script>";
             } else
                 echo 
                     "<script>
