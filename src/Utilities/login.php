@@ -14,6 +14,8 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 echo "Hi $user";
+                $current=$_SERVER['REMOTE_USER'];
+                echo "User is= $current";
             } else
                 echo 
                     "<script>
