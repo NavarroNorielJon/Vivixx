@@ -13,6 +13,8 @@ switch ($type){
 			echo "<span class='invalid'>Invalid Email</span>";
 		} else if($result->num_rows > 0){
 			echo "<span class='invalid'>Email already exist</span>";
+		} else if($email == null){
+			echo "<span class='invalid'>Required</span>";
 		}
 		break;
 	case "username":
@@ -31,20 +33,22 @@ switch ($type){
 		break;
 	case "password":
 		$password = $_REQUEST["password"];
-		if(strlen($password) < 5 ){
-			echo "<span id='weak'>weak</span>";
-		} else if(strlen($password) > 5 || strlen($password) < 8){
+		if(strlen($password) < 7 ){
+			echo "<span id='weak'>weak \npassword length must be greater than 7</span>";
+		} else if(strlen($password) > 8 && strlen($password) < 10){
 			echo "<span id='good'>good</span>";
-		} else if(strlen($password) > 8 || strlen($password) < 10){
+		} else if(strlen($password) > 10 && strlen($password) < 13){
 			echo "<span id='average'>average</span>";
-		} else if(strlen($password) > 10 || strlen($password) < 16){
+		} else if(strlen($password) > 13 && strlen($password) < 16){
 			echo "<span id='strong'>strong</span>";
+		} else if(strlen($password) < 8 || strlen($password) > 16){
+			echo "<span class='invalid'>Password length must be greater than 8 and less than 16 characters</span>";
 		}
 		break;
 	case "confirm_password":
 		$confirm = $_REQUEST["confirm_password"];
 		$password = $_REQUEST["password"];
-		if ($password !== $confirm){
+		if ($password !==	 $confirm){
 			echo "<span class='invalid'>Password doesn't match</span>";
 		} else {
 			echo "<span class='valid'>Password matches</span>";

@@ -76,10 +76,10 @@
               
 				<div class="center-align">
 					<div class="row">
-						<form action="Utilities/registration.php" method="post" class="col s12">
+						<form action="Utilities/registration.php" method="post" class="col s12" >
 
 							<div class=" input-field col s6">
-								<i class="material-icons prefix">account_circle</i>
+								<i class="small material-icons prefix">person</i>
 								<input type="text" name="first_name" id="fname" class="validate" required="required">
 								<label for="fname">First Name</label>
 							</div>
@@ -90,26 +90,46 @@
 							</div>
 
 							<div class="input-field col s12">
+								<i class="small material-icons prefix">account_box</i>
 								<input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser')" class="validate" required="required">
 								<label for="username">Username</label>
 								<div id="validUser"></div>
 							</div>
 
 							<div class="input-field col s12">
+								<i class="small material-icons prefix">email</i>
 								<input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail')" class="validate" required="required">
 								<label for="email">Email</label>
 								<div id="validEmail"></div>
 							</div>
 
 							<div class="input-field col s12">
+								<i class="small material-icons prefix">contact_phone</i>
 								<input type="text" name="contact_number" id="contact" onkeyup="helperText('contact',this.value,'validContact')" class="validate" required="required">
 								<label for="contact">Contact Number</label>
 								<div id="validContact"></div>
 							</div>
+							
+							<div class="input-field col s12" >
+								<input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="validate" required="required">
+								<label for="pass">Password</label>
+								<div id="validPassword"></div>
+							</div>
 
+							<div class="input-field col s12" >
+								<input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation')" class="validate" required="required">
+								<label for="cpass">Confirm Password</label>
+								<div id="validConfirmation"></div>
+							</div>
+
+							<div class="input-field col s12">
+								<i class="small material-icons prefix">date_range</i>
+								<input type="date" name="birthdate" id="bdate" class="validate" required="required">
+								<label for="bdate">Birthdate</label>
+							</div>
+							
 							<div class="left-align input-field col s12">
 								<p>
-									<strong>Gender</strong> 
 									<label class="right-align">
 										<input class="with-gap" name="gender" type="radio" value="m" required="required"/>
 										<span>Male</span>
@@ -122,25 +142,9 @@
 								</p>
 									
 							</div>
-
-							<div class="input-field col s12">
-								<input type="date" name="birthdate" id="bdate" class="validate" required="required">
-								<label for="bdate">Birthdate</label>
-							</div>
-							<br>
-							<div class="input-field col s6">
-								<input type="password" name="password" id="pass" onkeyup="helperText('password',this.value,'validPassword')" class="validate" required="required">
-								<label for="pass">Password</label>
-								<div id="validPassword"></div>
-							</div>
-
-							<div class="input-field col s6">
-								<input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'confirm_password','validConfirmation')" class="validate" required="required">
-								<label for="cpass">Confirm Password</label>
-								<div id="validConfirmation"></div>
-							</div>
-
-							<div  class="input-field col s2" >
+							
+							<div class="input-field col s2" >
+								<i class="small material-icons prefix">home</i>
 								<input type="text" name="house_number" id="hnumber">
 								<label for="hnumber">House No.</label>
 							</div>

@@ -25,7 +25,7 @@ function confirmPass(type, str, passElement, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "Utilities/validator.php?type=" + type + "&" + type + "=" + srt + "&password=" + pass, true);
+		xmlhttp.open("GET", "Utilities/validator.php?type=" + type + "&" + type + "=" + str + "&password=" + pass, true);
 		xmlhttp.send();
 	}
 }
