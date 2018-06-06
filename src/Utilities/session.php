@@ -15,5 +15,3 @@
         $user_contact = $row['contact_number'];
     }
 ?>
-
-    
