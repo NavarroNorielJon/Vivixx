@@ -4,6 +4,12 @@ body {
 .container {
     padding-top: 10%;
 }
+.valid{
+	color: green;
+}
+.invalid{
+	color: red;
+}
 
 #login {
     padding: 0 !important;
@@ -14,9 +20,10 @@ body {
 
 #signup {
     padding: 0% !important;
-    margin-top: -4% !important;
+    margin-top: -4% !important; 
+	margin-bottom: -4% !important;
     max-width: 90% !important;
-    max-height: 100% !important;
+    max-height: 95% !important;
 }
 
 #logo {
@@ -47,9 +54,4 @@ body {
 #strong{
 	color: green;
 }
-.valid{
-	color: green;
-}
-.invalid{
-	color: red;
-}
+

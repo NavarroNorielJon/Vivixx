@@ -58,7 +58,7 @@ $result = $connect->query($sql);
 if($result->num_rows > 0){
     echo "
         <script>
-            alert('The Email address that you entered is already in use.');
+            alert('Email already exist.');
             window.history.back();
         </script>
     ";
@@ -70,7 +70,7 @@ if($result->num_rows > 0){
 if($password != $cpassword ){
 	echo "
         <script>
-            alert('Invalid Password.');
+            alert('Password doesn't match.');
             window.history.back();
         </script>
     ";
