@@ -6,5 +6,3 @@
         $loggedin_user = $_SESSION['user'];
     }
 ?>
-
-    
