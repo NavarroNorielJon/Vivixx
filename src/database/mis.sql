@@ -55,6 +55,7 @@ CREATE TABLE `user` (
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
   `date_registered` date NOT NULL,
+  `status` enum('enabled','disabled') NOT NULL DEFAULT 'enabled',
   PRIMARY KEY (`username`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
@@ -67,7 +68,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('asdasddadsadq','qwe@adad.omaq','$2y$10$S574jzrOn7aKeVnAhi9WfushowDO21S6rqFmaaOzhs3YP2D1oqFPC','2018-06-05'),('gregoriorenz','marc@gmail.com','$2y$10$WO5gUPmjZ20ruOMKlr38Luvg5UU1e8xQ77UJ4tLGquw60zXxE/7h6','2018-06-05'),('sfsdsdf','asdas@sadsa.cas','$2y$10$LEnUaxbN4.PHbKGqHj.19eoE0p5yt.6HmMQUlxuWfyzv3vCLiNdgW','2018-06-05');
+INSERT INTO `user` VALUES ('gregoriorenz','marc@gmail.com','$2y$10$WO5gUPmjZ20ruOMKlr38Luvg5UU1e8xQ77UJ4tLGquw60zXxE/7h6','2018-06-05','enabled'),('norielnavarro','noriel@gmail.com','$2y$10$b6fcyB/umBYz.3vIt56.u..JReJfVbPpp1XIuJnFff9QMyUN19y76','2018-06-05','enabled');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +98,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('asdasddadsadq','sadad','asdad','2018-06-03','09123456784','121, weweqwewqewqe, qwewqee, qweqweqwe','m'),('gregoriorenz','marc','gregorio','1998-12-13','09653346612','429 Dalisay St., Caluluan, Concepcion, Tarlac','m'),('sfsdsdf','fdsf','sfdsf','2018-06-14','09123456789','qe123 qeqwe, qeqw, qweq, qweq','m');
+INSERT INTO `user_info` VALUES ('gregoriorenz','marc','gregorio','1998-12-13','09653346612','429 Dalisay St., Caluluan, Concepcion, Tarlac','m'),('norielnavarro','noriel','navarro','1998-06-04','09653346611','429 dalisay, rose park, concepcion, tarlac','m');
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-05 16:40:38
+-- Dump completed on 2018-06-06 10:18:24

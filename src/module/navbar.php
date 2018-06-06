@@ -90,17 +90,19 @@
 							<div class="input-field col s12">
 								<input type="text" name="username" id="username" class="validate" required="required">
 								<label for="username">Username</label>
-								<span class="helper-text" data-error="username is used" data-success="perfect"></span>
+								<div id="validUser"></div>
 							</div>
 
 							<div class="input-field col s12">
 								<input type="text" name="email" id="email" class="validate" required="required">
 								<label for="email">Email</label>
+								<div id="validEmail"></div>
 							</div>
 
 							<div class="input-field col s12">
 								<input type="text" name="contact_number" id="contact" class="validate" required="required">
 								<label for="contact">Contact Number</label>
+								<div id="validContact"></div>
 							</div>
 
 							<div class="left-align input-field col s12">
@@ -127,11 +129,13 @@
 							<div class="input-field col s6">
 								<input type="password" name="password" id="pass" class="validate" required="required">
 								<label for="pass">Password</label>
+								<div id="validPassword"></div>
 							</div>
 
 							<div class="input-field col s6">
 								<input type="password" name="confirm_password" id="cpass" class="validate" required="required">
 								<label for="cpass">Confirm Password</label>
+								<div id="validConfirmation"></div>
 							</div>
 
 							<div  class="input-field col s2" >
