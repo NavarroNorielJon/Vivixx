@@ -3,8 +3,8 @@
 <html>
     <head>
     <title>MIS</title>
-    <link type="text/css" rel="stylesheet" href="../Style/materialize/css/materialize.min.css" media="screen, projection">
-    <link type="text/css" rel="stylesheet" href="../Style/style.css" media="screen, projection">
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+    <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="../JavaScript/modal.js"></script>
 	<script type="text/javascript" src="../JavaScript/ajax.js"></script>
@@ -12,17 +12,14 @@
     </head>
     
     <body>
-        <div class="navbar-fixed">
-            <nav class="grey darken-4">
-                <div class="nav-wrapper" id="navbar">
-                    <a href="#" class="brand-logo" data-targer="menu">Vivixx</a>
-                    <a href="#" class="sidenav-trigger" data-target="mobile-nav">Sample</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <nav class="navbar sticky-top navbar-dark bg-dark">
+                <a href="#" class="navbar-brand" style="font-family: rockwell" data-targer="menu">Vivixx</a>
+                    <ul class="navbar-nav mr-auto">
                         <?php
                             if(!isset($_SESSION['user'])){
                                 echo "
-                                    <li><a href='#!' class='modal-trigger' data-target='login'>Login</a></li>
-                                    <li><a href='#!' class='modal-trigger' data-target='signup'>Sign-up</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#!'>Login</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#!'>Sign-up</a></li>
                                     ";
                             }else
                                 echo "
@@ -30,25 +27,7 @@
                                     ";
                         ?>
                     </ul>
-                </div>
             </nav>
-        </div>
-        
-        <ul class="sidenav" id="mobile-nav">
-            <li><a href="#!">Profile</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-        </ul>
-        
-        <ul id="menu" class="dropdown-content">
-            <li><a href="profile.php">Profile</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">Transaction</a></li>
-            <li class="divider"></li>
-            <li><a href="Utilities/logout.php">Logout</a></li>
-        </ul>
-        
         <!-- Login -->
         <div class="modal" id="login">    
             <div class="modal-content">

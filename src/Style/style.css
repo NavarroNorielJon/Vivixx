@@ -1,6 +1,7 @@
 body {
     margin: 0;
 }
+
 .container {
     padding-top: 10%;
 }
@@ -24,6 +25,10 @@ body {
 	margin-bottom: -4% !important;
     max-width: 90% !important;
     max-height: 95% !important;
+}
+
+#sample {
+    font-family: rockwell;
 }
 
 #logo {
@@ -78,5 +83,28 @@ body {
     color: #f1f1f1;
 }
 
+/*Bootstrap CSS*/
+.navbar-brand {
+    font-size: 40px;
+    font-family: rockwell !important;
+}
 
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    bottom: 0;
+}
 
+@font-face {
+    font-family: rockwell;
+    src: url(../fonts/RockwellStd.otf);
+}
