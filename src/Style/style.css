@@ -15,7 +15,7 @@ body {
 #signup {
     padding: 0% !important;
     margin-top: -4% !important;
-    max-width: 80% !important;
+    max-width: 90% !important;
     max-height: 100% !important;
 }
 
@@ -33,4 +33,23 @@ body {
     position: absolute;
     top: 35%;
     left: 42%;
+}
+
+#weak{
+	color: red;
+}
+#good{
+	color: yellow;
+}
+#average{
+	color: orange;
+}
+#strong{
+	color: green;
+}
+.valid{
+	color: green;
+}
+.invalid{
+	color: red;
 }

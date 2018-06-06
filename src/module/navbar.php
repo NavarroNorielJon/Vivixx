@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="../Style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="../JavaScript/modal.js"></script>
+	<script type="text/javascript" src="../JavaScript/ajax.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
@@ -88,19 +90,19 @@
 							</div>
 
 							<div class="input-field col s12">
-								<input type="text" name="username" id="username" class="validate" required="required">
+								<input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser')" class="validate" required="required">
 								<label for="username">Username</label>
 								<div id="validUser"></div>
 							</div>
 
 							<div class="input-field col s12">
-								<input type="text" name="email" id="email" class="validate" required="required">
+								<input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail')" class="validate" required="required">
 								<label for="email">Email</label>
 								<div id="validEmail"></div>
 							</div>
 
 							<div class="input-field col s12">
-								<input type="text" name="contact_number" id="contact" class="validate" required="required">
+								<input type="text" name="contact_number" id="contact" onkeyup="helperText('contact',this.value,'validContact')" class="validate" required="required">
 								<label for="contact">Contact Number</label>
 								<div id="validContact"></div>
 							</div>
@@ -125,15 +127,15 @@
 								<input type="date" name="birthdate" id="bdate" class="validate" required="required">
 								<label for="bdate">Birthdate</label>
 							</div>
-
+							<br>
 							<div class="input-field col s6">
-								<input type="password" name="password" id="pass" class="validate" required="required">
+								<input type="password" name="password" id="pass" onkeyup="helperText('password',this.value,'validPassword')" class="validate" required="required">
 								<label for="pass">Password</label>
 								<div id="validPassword"></div>
 							</div>
 
 							<div class="input-field col s6">
-								<input type="password" name="confirm_password" id="cpass" class="validate" required="required">
+								<input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'confirm_password','validConfirmation')" class="validate" required="required">
 								<label for="cpass">Confirm Password</label>
 								<div id="validConfirmation"></div>
 							</div>
