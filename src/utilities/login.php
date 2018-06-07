@@ -2,8 +2,8 @@
     include 'session.php';
     $connect = Connect();
 
-    if(isset($_POST["user"]) && isset($_POST["password"])){
-        $user = mysqli_real_escape_string($connect, $_POST["user"]);
+    if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
+        $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
         $password = mysqli_real_escape_string($connect, $_POST["password"]);
         $stmt = "SELECT username, password FROM user WHERE username = '$user' or email = '$user' ";
         $results = mysqli_query($connect, $stmt);
@@ -16,7 +16,8 @@
             } else {
                 echo "<script>window.history.back();</script>";
             }
-        }
+        } else {
+            echo "<script>window.history.back();</script>";
     }
 
 ?>

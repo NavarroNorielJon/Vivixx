@@ -23,24 +23,13 @@
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
                     <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-					<div id="validUserOrEmail"></div>
+					          <div id="validUserOrEmail"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" placeholder="Password" name="password" id="pass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                    <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 					          <div id="validPassword"></div>
-                </div>
-
-                <div class="switch input-field col s2">
-                    <label>
-                        <input  type="checkbox" onclick="showPass()">
-                        <span><i class="material-icons" >remove_red_eye</i></span>
-                    </label>
-                </div>
-
-                <div class="form-group">
-
                 </div>
 
                 <div style="text-align: center;">
@@ -51,8 +40,15 @@
                         <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
 
+                    <div class="switch input-field col s2">
+                        <label>
+                            <input  type="checkbox" onclick="showPass()">
+                            <span><i class="material-icons" >remove_red_eye</i></span>
+                        </label>
+                    </div>
 
                 </div>
+
 	       </form>
 
         </div>
