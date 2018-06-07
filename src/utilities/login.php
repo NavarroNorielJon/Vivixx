@@ -1,7 +1,6 @@
 <?php
     include 'session.php';
     $connect = Connect();
-
     if(isset($_POST["user"]) && isset($_POST["password"])){
         $user = mysqli_real_escape_string($connect, $_POST["user"]);
         $password = mysqli_real_escape_string($connect, $_POST["password"]);
@@ -12,11 +11,12 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "Hi $user";
                 $_SESSION['user'] = $user;
                 header('location:/');
             }
         }
+    }else{
+        echo "<script>alert('Merong Mali');</script>";
     }
 	 
 ?>

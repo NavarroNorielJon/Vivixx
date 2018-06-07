@@ -1,6 +1,6 @@
 <?php
     include 'utilities/session.php';
-    include 'module/navbar2.0.php';
+    include 'module/navbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <body style="background-color:#005959;">
         <div class="jumbotron" id="login-form" style="background-color: white; padding-top: 6%;">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-            
+
             <form action="utilities/login.php" method="post" class="col s12 ">
 
                 <div class="form-group">
@@ -29,25 +29,27 @@
                 <div class="form-group">
                     <label for="pass">Password</label>
                     <input type="password" placeholder="Password" name="password" id="pass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
-					<div id="validPassword"></div>
+					          <div id="validPassword"></div>
+                </div>
+
+                <div class="switch input-field col s2">
+                    <label>
+                        <input  type="checkbox" onclick="showPass()">
+                        <span><i class="material-icons" >remove_red_eye</i></span>
+                    </label>
                 </div>
                 
                 <div style="text-align: center;">     
+                    
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
                         <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
                      <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
 
-                    <div class="switch input-field col s2">
-                        <label>
-                            <input  type="checkbox" onclick="showPass()">
-                            <span><i class="material-icons" >remove_red_eye</i></span>
-                        </label>
-                    </div>
-                </div>  
+                </div>
 	       </form>
-            
+
         </div>
 		<script type="text/javascript" src="../script/ajax.js"></script>
     </body>
