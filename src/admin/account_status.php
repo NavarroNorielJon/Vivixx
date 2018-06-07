@@ -30,8 +30,8 @@
                     
                     echo "
                     <tr>
-                    <td>" . $row["first_name"] . "</td>
-                    <td>" . $row["last_name"] . "</td>
+                    <td>" . ucwords($row["first_name"]) . "</td>
+                    <td>" . ucwords($row["last_name"]) . "</td>
                     <td>" . $row["username"] . "</td>
                     <td>" . $row["email"] . "</td>
                     <td>" . $row["status"] . "</td>
