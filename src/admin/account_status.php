@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../Style/materialize/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="../Style/materialize/css/materialize.min.css">
-        <script src="../JavaScript/jquery.min.js"></script>
+        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../script/bootstrap/bootstrap.min.css">
         <title>Table</title>
     </head>
     <body>
@@ -16,18 +15,18 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-            
+
             <?php
             include '../Utilities/db.php';
             $connect = Connect();
             $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
-            
+
             $result = $connect->query($sql);
 
             if($result-> num_rows > 0){
                 $counter = 0;
                 while($row = $result->fetch_assoc()){
-                    
+
                     echo "
                     <tr>
                     <td>" . ucwords($row["first_name"]) . "</td>
@@ -54,7 +53,7 @@
                     </script>';
                     $counter++;
                 }
-                
+
             }else{
                 echo "database has no query";
             }
@@ -77,11 +76,11 @@
                     <?php
                 echo "hh";
                 ?>
-                }             
-                
+                }
+
             });
-                
+
         </script>
-        
+
     </body>
 </html>
