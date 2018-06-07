@@ -42,7 +42,7 @@ function showHide() {
     }
 }
 function showPass() {
-    var pass = document.getElementById("pass");
+    var pass = document.getElementById("lpass");
     if (pass.type === "password") {
         pass.type = "text";
     } else {

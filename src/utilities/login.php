@@ -1,9 +1,8 @@
 <?php
     include 'session.php';
     $connect = Connect();
-
-    if(isset($_POST["user"]) && isset($_POST["password"])){
-        $user = mysqli_real_escape_string($connect, $_POST["user"]);
+    if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
+        $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
         $password = mysqli_real_escape_string($connect, $_POST["password"]);
         $stmt = "SELECT username, password FROM user WHERE username = '$user' or email = '$user' ";
         $results = mysqli_query($connect, $stmt);
@@ -12,11 +11,10 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "Hi $user";
                 $_SESSION['user'] = $user;
                 header('location:/');
             }
         }
     }
-
+	 
 ?>

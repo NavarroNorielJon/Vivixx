@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="../script/bootstrap/bootstrap.min.css">
         <title>Table</title>
+
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+
+
     </head>
     <body>
         <table border="1">
