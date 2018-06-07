@@ -1,6 +1,6 @@
 <?php
     include 'utilities/session.php';
-    include 'module/navbar.php';
+    include 'module/navbar2.0.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +28,13 @@
 
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
-					          <div id="validPassword"></div>
+                    <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','vPassword')" required="required" >
+					          <div id="vPassword"></div>
                 </div>
 
                 <div class="switch input-field col s2">
                     <label>
-                        <input  type="checkbox" onclick="showPass()">
+                        <input type="checkbox" onclick="showPass()">
                     </label>
                 </div>
 

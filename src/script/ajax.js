@@ -85,7 +85,7 @@ function confirmLogin(type, str, eElement, elementId){
 }
 
 function next(id,pass,conpass){
-	if(	document.getElementById(pass).value === document.getElementById(conpass).value {
+	if(	document.getElementById(pass).value === document.getElementById(conpass).value) {
 		document.getElementById(id).disabled = false;
 	} else {
 		document.getElementById(id).disabled = true;
