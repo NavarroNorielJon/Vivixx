@@ -12,9 +12,9 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                echo "Hi $user";
                 $_SESSION['user'] = $user;
-                header('location:/');
+            } else {
+                echo "<script>window.history.back();</script>";
             }
         }
     }
