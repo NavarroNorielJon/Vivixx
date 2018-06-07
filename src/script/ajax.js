@@ -84,10 +84,11 @@ function confirmLogin(type, str, eElement, elementId){
 	}
 }
 
-function next(id,pass,conpass){
-	if(	document.getElementById(pass).value === document.getElementById(conpass).value) {
-		document.getElementById(id).disabled = false;
+function nextButton(pass,conpass){
+	var valid = true;
+	if(document.getElementById(pass).value == document.getElementById(conpass).value) {
+		$("#next").attr("disabled",true);
 	} else {
-		document.getElementById(id).disabled = true;
+		$("#next").attr("disabled",false);
 	}
 }
