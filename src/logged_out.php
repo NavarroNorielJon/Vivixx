@@ -37,10 +37,18 @@
             </form>
         </div>
         
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button"  id="sample" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample</button>
+        <div class="dropdown-menu" aria-labelledby="sample">
+            <a class="dropdown-item">Sample1</a>
+            <a class="dropdown-item">Sample2</a>
+            <a class="dropdown-item">Sample3</a>
+        </div>
+        </div>
         
         
         <!-- Modal for forgot password -->
-        <div class="modal" id="forgot" tabindex="-1" role="dialog">
+        <div class="modal fade" id="forgot" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <!-- Header -->
