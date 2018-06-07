@@ -83,3 +83,12 @@ function confirmLogin(type, str, eElement, elementId){
 		xmlhttp.send();
 	}
 }
+
+function nextButton(pass,conpass){
+	var valid = true;
+	if(document.getElementById(pass).value == document.getElementById(conpass).value) {
+		$("#next").attr("disabled",true);
+	} else {
+		$("#next").attr("disabled",false);
+	}
+}

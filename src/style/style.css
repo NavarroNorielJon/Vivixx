@@ -45,6 +45,7 @@ body {
 	color: green;
 }
 
+<<<<<<< HEAD:src/style/style.css
 
 /*Bootstrap CSS*/
 #button1 {
@@ -53,10 +54,59 @@ body {
 }
 
 #button1:hover {
-    background-color: #fac213 !important;
+    background-color: #fac213;
     color: #005959;
 }
 
+=======
+
+/*Bootstrap CSS*/
+.footer {
+    background-color: #fac213;
+    text-align: center;
+    color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0.2%;
+    padding-bottom: 0%;
+}
+
+.footer p {
+    padding-top: 7px;
+    padding-bottom: 0;
+}
+
+.sidenav {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 20%;
+}
+
+.sidenav a {
+    padding: 5% 5% 8% 10%;
+    font-size: 30px;
+    display: block;
+}
+
+.navbar-brand {
+    font-size: 40px;
+    font-family: rockwell;
+}
+
+#button1 {
+    background-color: #005959;
+    color: #fac213;
+}
+
+#button1:hover {
+    background-color: #fac213;
+    color: #005959;
+}
+
+>>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
 #login-form {
     display: flex;
     width: 50%;
@@ -67,7 +117,11 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 30%;
+<<<<<<< HEAD:src/style/style.css
+    top: 25%;
+=======
+    top: 20%;
+>>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
     bottom: 0;
 }
 
@@ -94,6 +148,7 @@ body {
     color: #005959;
 }
 
+<<<<<<< HEAD:src/style/style.css
 .sidenav {
     position: absolute;
     height: 100%;
@@ -112,6 +167,8 @@ body {
     font-family: rockwell;
 }
 
+=======
+>>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
 @font-face {
     font-family: rockwell;
     src: url(../fonts/RockwellStd.otf);
