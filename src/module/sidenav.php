@@ -13,7 +13,7 @@
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
-        <a href="#">Logout</a>
+        <a href='utilities/logout.php' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>Logout</a>
     </div>
 </body>
 
