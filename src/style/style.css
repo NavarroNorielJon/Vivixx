@@ -48,8 +48,9 @@ body {
 
 /*Bootstrap CSS*/
 .footer {
+    background-color: #fac213;
     text-align: center;
-    color: white;
+    color: black;
     position: fixed;
     left: 0;
     bottom: 0;
