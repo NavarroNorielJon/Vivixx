@@ -35,10 +35,9 @@
                 <div class="switch input-field col s2">
                     <label>
                         <input  type="checkbox" onclick="showPass()">
-                        <span><i class="material-icons" >remove_red_eye</i></span>
                     </label>
                 </div>
-                
+
                 <div style="text-align: center;">
                     <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
 
