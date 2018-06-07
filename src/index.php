@@ -16,8 +16,9 @@
 
     <body style="background-color:#005959;">
         <div class="jumbotron" id="login-form" style="background-color: white; padding-top: 6%;">
-            <img src="img/Lion.png" style="width:40%; height:auto; margin-right:4%; margin-left:3%;"><br>
-            <form action="../utilities/login.php" method="post" class="col s12 ">
+            <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
+            
+            <form action="utilities/login.php" method="post" class="col s12 ">
 
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
@@ -40,7 +41,7 @@
                     
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
-                        <button type="button" class="btn" id="button1">Sign Up</button>
+                        <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
 
                     <div class="switch input-field col s2">
@@ -49,12 +50,9 @@
                             <span><i class="material-icons" >remove_red_eye</i></span>
                         </label>
                     </div>
-                </div>
-                
-                
-                
-                
+                </div>  
 	       </form>
+            
         </div>
 		<script type="text/javascript" src="../script/ajax.js"></script>
     </body>

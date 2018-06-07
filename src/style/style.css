@@ -60,17 +60,7 @@ body {
 
 #button1:hover {
     background-color: #fac213 !important;
-    color: #005959 !important;
-}
-
-#button2 {
-    background-color: #fac213; 
-    color: #005959
-}
-
-#button2:hover {
-    background-color: #005959 !important;
-    color:  #fac213 !important;
+    color: #005959;
 }
 
 #login-form {
@@ -78,6 +68,15 @@ body {
     width: 50%;
     height: 60%;
     padding-top: 500%;
+}
+
+#sign {
+    text-decoration: none;
+    color: #fac213;
+}
+
+#sign:hover {
+    color: #005959;
 }
 
 .sidenav {
