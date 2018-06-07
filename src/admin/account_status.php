@@ -59,28 +59,22 @@
                     echo '</td>';
                     echo "
                         <script>
-                        if($('#en".$row['username']."' === 'enable')){
                         $(document).ready(function(){
+                          if($('#en".$row['username']."').hasClass('btn-success')){
                               $('#en".$row['username']."').click(function(){
-                              $('#en".$row['username']."').removeClass('btn-succes');
+                              $('#en".$row['username']."').removeClass('btn-success');
                               $('#en".$row['username']."').addClass('btn-danger');
                               $('#en".$row['username']."').val('Disable');
                             });
-
+                          }else{
+                              $('#en".$row['username']."').click(function(){
+                              $('#en".$row['username']."').removeClass('btn-danger');
+                              $('#en".$row['username']."').addClass('btn-success');
+                              $('#en".$row['username']."').val('Enable');
+                              });
+                          }
                             $.ajax({url: 'update_status.php',method:'POST'});
-                      });
-                    }else{
-                    $(document).ready(function(){
-                            $('#en".$row['username']."').click(function(){
-                            $('#en".$row['username']."').removeClass('btn-danger');
-                            $('#en".$row['username']."').addClass('btn-success');
-                            $('#en".$row['username']."').val('Enable');
-                          });
-
-                          $.ajax({url: 'update_status.php',method:'POST'});
-                    });
-                  }
-
+                      }); //end document
                         </script>
                     </tr>";
                     $counter++;
