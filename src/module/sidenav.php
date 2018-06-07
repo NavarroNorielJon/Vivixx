@@ -1,4 +1,5 @@
 <html>
+
 <head>
    <title>Vivixx</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
@@ -16,5 +17,4 @@
         <a href='utilities/logout.php' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>Logout</a>
     </div>
 </body>
-
 </html>
