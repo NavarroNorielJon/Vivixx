@@ -46,18 +46,43 @@
                     if($row["status"] === "enabled"){
                       echo "
                       <div class='btn-group btn-group-toggle' data-toggle='button'>
-                      <label class='btn btn-danger'>
-                        <input type='checkbox' class ='aa'checked autocomplete='f'> Disable
-                      </label></div>
+                      <form action='update_status.php' method='POST'>
+                      <input type='hidden' value='".$row['username']."' name='username'>
+                      <input type='button' id='en".$row["username"]."' class='btn btn-danger'checked autocomplete='f' value='Disable' name='disable'></div></form>
                       ";
                     }else{
                       echo "<div class='btn-group btn-group-toggle' data-toggle='button'>
-                        <label class='btn btn-success'>
-                          <input type='checkbox' class='aa'checked autocomplete='f'> Enable
-                        </label>
-                        </div>";
+                      <form action='update_status.php' method='POST'>
+                        <input type='button' id='en".$row["username"]."' class='btn btn-success'checked autocomplete='f' value='Enable' name='enable'>
+                        </div></form>";
                     }
-                    echo "</td></tr>";
+                    echo '</td>';
+                    echo "
+                        <script>
+                        if($('#en".$row['username']."' === 'enable')){
+                        $(document).ready(function(){
+                              $('#en".$row['username']."').click(function(){
+                              $('#en".$row['username']."').removeClass('btn-succes');
+                              $('#en".$row['username']."').addClass('btn-danger');
+                              $('#en".$row['username']."').val('Disable');
+                            });
+
+                            $.ajax({url: 'update_status.php',method:'POST'});
+                      });
+                    }else{
+                    $(document).ready(function(){
+                            $('#en".$row['username']."').click(function(){
+                            $('#en".$row['username']."').removeClass('btn-danger');
+                            $('#en".$row['username']."').addClass('btn-success');
+                            $('#en".$row['username']."').val('Enable');
+                          });
+
+                          $.ajax({url: 'update_status.php',method:'POST'});
+                    });
+                  }
+
+                        </script>
+                    </tr>";
                     $counter++;
                 }
 
@@ -67,27 +92,5 @@
             $connect-> close();
             ?>
         </table>
-        <script>
-            $(".aa").change(function(){
-            if(this.checked){
-                function enable(str){
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function(){
-                        if(this.readyState == 4 && this.status == 200){
-                            document.getElementsByName().innerHTML = this.responseText;
-                        }
-                    }
-                    xmlhttp.open("POST", "update_status.php")
-                }
-                }else{
-                    <?php
-                echo "hh";
-                ?>
-                }
-
-            });
-
-        </script>
-
     </body>
 </html>
