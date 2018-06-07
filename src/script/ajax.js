@@ -40,7 +40,14 @@ function showHide() {
         pass.type = "password";
         pass1.type = "password";
     }
-	xmlhttp.send();
+}
+function showPass() {
+    var pass = document.getElementById("pass");
+    if (pass.type === "password") {
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
 }
 
 function confirmation(type, str, elementId){
@@ -65,6 +72,7 @@ function confirmLogin(type, str, eElement, elementId){
 		document.getElementById(elementId).innerHTML = "";
 		return;
 	} else {
+
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200){
