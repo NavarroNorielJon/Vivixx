@@ -15,8 +15,6 @@
                 header('location:/');
             }
         }
-    }else{
-        echo "<script>alert('Merong Mali');</script>";
     }
 	 
 ?>

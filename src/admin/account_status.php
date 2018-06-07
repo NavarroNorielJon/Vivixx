@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../Style/materialize/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="../Style/materialize/css/materialize.min.css">
-        <script src="../JavaScript/jquery.min.js"></script>
-        <title>Table</title>
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <table border="1">
