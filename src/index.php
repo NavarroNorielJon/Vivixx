@@ -30,7 +30,6 @@
                     <input type="password" placeholder="Password" name="password" id="pass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 					<div id="validPassword"></div>
                 </div>
-<<<<<<< HEAD
                 
                 <div class="form-group">
                     
@@ -38,23 +37,18 @@
                 
                 <div style="text-align: center;">    
                     <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
+                    
                     <div class="btn-group" role="group">
-                    <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
-                    <button type="button" class="btn" id="button1">Sign Up</button>
+                        <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
+                        <button type="button" class="btn" id="button1">Sign Up</button>
                     </div>
-=======
 
-                <div class="switch input-field col s2">
-					<label>
-						<input  type="checkbox" onclick="showPass()">
-						<span><i class="material-icons" >remove_red_eye</i></span>
-					</label>
-				</div>
-
-                <div style="text-align: center;">
-                <button type="submit" class="btn" style="background-color: #fac213;color: black" name="submit">Login</button>
-                <a a href="#!" class="modal-trigger" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
->>>>>>> 026db791b25ddb39c5eaa73902be9b6fa6edcbf3
+                    <div class="switch input-field col s2">
+                        <label>
+                            <input  type="checkbox" onclick="showPass()">
+                            <span><i class="material-icons" >remove_red_eye</i></span>
+                        </label>
+                    </div>
                 </div>
                 
                 
