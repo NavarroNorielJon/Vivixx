@@ -23,12 +23,12 @@
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
                     <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-					<div id="validUserOrEmail"></div>
+					          <div id="validUserOrEmail"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" placeholder="Password" name="password" id="pass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                    <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 					          <div id="validPassword"></div>
                 </div>
 
@@ -39,15 +39,16 @@
                     </label>
                 </div>
                 
-                <div style="text-align: center;">     
-                    
+                <div style="text-align: center;">
+                    <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
+
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
                         <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
                      <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
-
                 </div>
+
 	       </form>
 
         </div>
