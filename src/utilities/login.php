@@ -15,19 +15,8 @@
                 echo "Hi $user";
                 $_SESSION['user'] = $user;
                 header('location:/');
-            } else
-                echo 
-                    "<script>
-                        alert('Invalid Password');
-                        window.history.back();
-                    </script>";
-            
-    } else
-        echo 
-            "<script>
-                alert('User not registered')
-                window.history.back();
-            </script>";
-}
-	 
+            }
+        }
+    }
+
 ?>
