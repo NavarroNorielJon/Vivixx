@@ -30,13 +30,27 @@
 
         				<div class="form-group">
                   <label for="pass">Password</label>
-        					<input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');nextButton('password','cpass');" class="form-control" required="required">
-        				  <div id="validPassword"></div>
+                  <div class="input-group">
+                    <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');nextButton('password','cpass');" class="form-control" required="required">
+                    <div class="input-group-append">
+                        <button  type="button" class="btn" onclick="showPass()">
+                        <i class="material-icons">remove_red_eye</i>
+                        </button>
+                    </div>
+                  </div>
+                  <div id="validPassword"></div>
                 </div>
 
         				<div class="form-group" >
                     <label for="cpass">Confirm Password</label>
-        				    <input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpass');" class="form-control" required="required">
+                    <div class="input-group">
+                    <input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpass');" class="form-control" required="required">
+                      <div class="input-group-append">
+                          <button  type="button" class="btn" onclick="showPass()">
+                          <i class="material-icons">remove_red_eye</i>
+                          </button>
+                      </div>
+                    </div>
                     <div id="validConfirmation"></div>
                 </div>
 
@@ -94,7 +108,7 @@
                           </div>
 
                           <div class="row">
-                            
+
                             <div class=" form-group col-3 ">
                               <i class="small material-icons prefix" style="font-size:50px;">wc</i>
                               <label for="gender">Sex</label>
@@ -215,7 +229,7 @@
 
 
                           <div style="text-align: right">
-                            <button type="button" id="next" onclick="hideForm()">Next</button>
+                            <button type="button" id="next1" onclick="hideForm()">Next</button>
                           </div>
                       </form>
               </div>
@@ -227,5 +241,6 @@
     }
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="script/ajax.js"></script>
     </body>
 </html>
