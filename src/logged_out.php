@@ -15,20 +15,19 @@
 
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    
+
                     <div class="input-group">
                         <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
-                        
-                        <div id="vPassword"></div>
-                    
+
                         <div class="input-group-append">
                             <button  type="button" class="btn" onclick="showPass()">
                             <i class="material-icons" >remove_red_eye</i>
                             </button>
                         </div>
-                    </div>	          
+                    </div>
+                    <div id="vPassword"></div>
                 </div>
-                
+
                 <div style="text-align: center;">
                     <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
                     <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
@@ -36,7 +35,7 @@
                 </div>
             </form>
         </div>
-        
+
         <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button"  id="sample" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample</button>
         <div class="dropdown-menu" aria-labelledby="sample">
@@ -45,8 +44,8 @@
             <a class="dropdown-item">Sample3</a>
         </div>
         </div>
-        
-        
+
+
         <!-- Modal for forgot password -->
         <div class="modal fade" id="forgot" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -58,7 +57,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    
+
                     <!-- Body -->
                     <div class="modal-body">
                         <form>
@@ -68,7 +67,7 @@
                             </div>
                         </form>
                     </div>
-                    
+
                     <!--Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary">Send Email</button>
@@ -76,6 +75,6 @@
                 </div>
             </div>
         </div>
-        
+        <script type="text/javascript" src="script/ajax.js"></script>
 </body>
 </html>
