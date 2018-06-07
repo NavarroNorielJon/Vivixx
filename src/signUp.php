@@ -71,7 +71,7 @@
                           </div>
 
                           <div class="row">
-                            <div class="form-group col-2">
+                            <div class="form-group col-4">
               								<i class="material-icons" style="font-size:50px;">date_range</i>
                               <label for="bdate">Birthdate</label>
               								<input type="date" name="birthdate" id="bdate" class="form-control" required="required">
@@ -84,7 +84,37 @@
               								<input type="text" name="pbirth" id="pbirth" class="form-control">
               							</div>
 
-                            <div class=" form-group col-1">
+
+
+                    				<div class="form-group col-4" >
+                              <i class="small material-icons prefix" style="font-size:50px;">contact_phone</i>
+                              <label for="contact">Mobile Number</label>
+                              <input type="text" name="contact_number" class="form-control" id="contact" onkeyup="helperText('contact',this.value,'validContact')" class=" form-control" required="required">
+                              <div id="validContact"></div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="form-group col-3" >
+                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="height">Height</label>
+                              <input type="text" name="height" id="height" class="form-control">
+                            </div>
+
+                            <div class="form-group col-3" >
+                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="weight">Weight</label>
+                              <input type="text" name="weight" id="weight" class="form-control">
+                            </div>
+
+                            <div class="form-group col-3" >
+                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="blood">Blood Type</label>
+                              <input type="text" name="blood" id="blood" class="form-control">
+
+                            </div>
+
+                            <div class=" form-group col-3">
                               <i class="small material-icons prefix" style="font-size:50px;">wc</i>
               								<div>
               									<label class="right-align">
@@ -98,111 +128,92 @@
               									</label>
               								</div>
               							</div>
+                          </div>
 
-                    				<div class="form-group col-5" >
-                              <i class="small material-icons prefix" style="font-size:50px;">contact_phone</i>
-                              <label for="contact">Mobile Number</label>
-                              <input type="text" name="contact_number" class="form-control" id="contact" onkeyup="helperText('contact',this.value,'validContact')" class=" form-control" required="required">
-                              <div id="validContact"></div>
-                            </div>
+                          <div class="row">
+              							<div class="form-group col-7">
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="res_address">Residential Address</label>
+              								<input type="text" name="res_address" id="res_address" class="form-control">
+              							</div>
+
+              							<div class="form-group col-2 pads">
+                              <label for="rzip_code">Zip Code</label>
+              								<input type="text" name="rzip_code" id="rzip_code" class="form-control">
+              							</div>
+
+              							<div class="form-group col-3 pads">
+                              <label for="tel_num">Telephone NO.</label>
+              								<input type="text" name="tel_num" id="tel_num" class="form-control">
+              							</div>
                           </div>
 
 
-            							<div class="form-group col-5" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="res_address" id="res_address">
-            								<label for="res_address">Residential Address</label>
-            							</div>
+                          <div class="row">
+              							<div class="form-group col-7">
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="per_address">Permanent Address</label>
+              								<input type="text" name="per_address" id="per_address" class="form-control">
+              							</div>
 
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="rzip_code" id="rzip_code">
-            								<label for="rzip_code">Zip Code</label>
-            							</div>
+              							<div class="form-group col-2 pads">
+                              <label for="pzip_code">Zip Code</label>
+              								<input type="text" name="pzip_code" id="pzip_code" class="form-control">
+              							</div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="tel_num" id="tel_num">
-            								<label for="tel_num">Telephone NO.</label>
-            							</div>
+              							<div class="form-group col-3 pads" >
+                              <label for="tel_num1">Telephone NO.</label>
+              								<input type="text" name="tel_num1" id="tel_num1" class="form-control">
+              							</div>
+                          </div>
 
-            							<div class="form-group col-5" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="per_address" id="per_address">
-            								<label for="per_address">Permanent Address</label>
-            							</div>
+                          <div class="row">
+              							<div class="form-group col-4" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="citizenship">Citizenship</label>
+              								<input type="text" name="citizenship" id="citizenship" class="form-control">
+              							</div>
 
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="pzip_code" id="pzip_code">
-            								<label for="pzip_code">Zip Code</label>
-            							</div>
+              							<div class="form-group col-4" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="religion">Religion</label>
+              								<input type="text" name="religion" id="religion" class="form-control">
+              							</div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="tel_num1" id="tel_num1">
-            								<label for="tel_num1">Telephone NO.</label>
-            							</div>
+              							<div class="form-group col-4" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="civil">Civil Status</label>
+              								<input type="text" name="civil" id="civil" class="form-control">
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="citizenship" id="citizenship">
-            								<label for="citizenship">Citizenship</label>
-            							</div>
+              							</div>
+                          </div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="religion" id="religion">
-            								<label for="religion">Religion</label>
-            							</div>
+                          <div class="row">
+                            <div class="form-group col-3" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+              								<input type="text" name="sss" id="sss" class="form-control">
+              								<label for="sss">SSS NO.</label>
+              							</div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="civil" id="civil">
-            								<label for="civil">Civil Status</label>
-            							</div>
+              							<div class="form-group col-3" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+              								<input type="text" name="tin" id="tin" class="form-control">
+              								<label for="tin">TIN</label>
+              							</div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="height" id="height">
-            								<label for="height">Height</label>
-            							</div>
+              							<div class="form-group col-3" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+              								<input type="text" name="phn" id="phn" class="form-control">
+              								<label for="phn">PHILHEALTH NO.</label>
+              							</div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="weight" id="weight">
-            								<label for="weight">Weight</label>
-            							</div>
+              							<div class="form-group col-3" >
+              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+              								<input type="text" name="pgb" id="pgb" class="form-control">
+              								<label for="pgb">PAG-IBIG ID NO.</label>
+              							</div>
+                          </div>
 
-            							<div class="form-group col-4" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="blood" id="blood">
-            								<label for="blood">Blood Type</label>
-            							</div>
-
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="sss" id="sss">
-            								<label for="sss">SSS NO.</label>
-            							</div>
-
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="tin" id="tin">
-            								<label for="tin">TIN</label>
-            							</div>
-
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="phn" id="phn">
-            								<label for="phn">PHILHEALTH NO.</label>
-            							</div>
-
-            							<div class="form-group col-3" >
-            								<i class="small material-icons prefix">home</i>
-            								<input type="text" name="pgb" id="pgb">
-            								<label for="pgb">PAG-IBIG ID NO.</label>
-            							</div>
 
                           <div style="text-align: right">
                             <button type="button" id="next" onclick="hideForm()">Next</button>
