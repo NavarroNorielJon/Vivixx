@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="sidenav bg-dark">
-        <a href="#">1</a>
+        <a href="#"><?php echo "$user_first"?></a>
+        <div class="dropdown-divider"></div>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
-        <a href="#">5</a>
+        <a href="#">Logout</a>
     </div>
 </body>
 
