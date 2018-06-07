@@ -11,8 +11,6 @@ switch ($type){
 		$result = mysqli_query($connect, $stmt);
 		if(!$result->num_rows > 0){
 			echo "<span class='invalid'>User does not exists</span>";
-		} else {
-			echo "<span class='valid'>Valid</span>";
 		}
 		break;
 	case "password":
@@ -23,7 +21,6 @@ switch ($type){
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $passwordVerify = $row['password'];
 		if(password_verify($password, $passwordVerify)){
-			echo "<span class='valid'>Valid password</span>";
 		} else {
 			echo "<span class='invalid'>Invalid password</span>";
 		}
