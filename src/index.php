@@ -32,17 +32,12 @@
 					<div id="validPassword"></div>
                 </div>
                 
-                <div class="form-group">
-                    
-                </div>
-                
-                <div style="text-align: center;">    
-                    <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
-                    
+                <div style="text-align: center;">     
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
                         <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
+                     <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
 
                     <div class="switch input-field col s2">
                         <label>

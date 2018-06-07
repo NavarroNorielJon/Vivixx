@@ -1,3 +1,7 @@
+<?php
+    include 'module/navbar2.0.php';
+?>
+
 <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -9,8 +13,9 @@
     
     <body>				
         <!--START of user info-->
-		<div class="jumbotron">
+		<div class="jumbotron" id="signup-form">
             <form>
+                <h1>Registration Form</h1><br>
                 <div class="form-group">
                     <label for="username">Username</label>
 					<input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser')" class="form-control" required="required">
