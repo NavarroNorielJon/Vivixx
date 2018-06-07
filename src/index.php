@@ -1,6 +1,6 @@
 <?php
     include 'utilities/session.php';
-    include 'module/navbar.php';
+    include 'module/navbar2.0.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@
 
     <head>
         <title>Vivixx</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,23 +29,24 @@
 
                 <div class="form-group">
                     <label for="pass">Password</label>
+                    <div class="input-group">
                     <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                    
+                    <div class="input-group-appened">
+                        <button  type="button" class="btn" onclick="showPass()">
+                            <span><i class="material-icons" >remove_red_eye</i></span>
+                    </button>
+                    </div>
+                    </div>
 					          <div id="validPassword"></div>
                 </div>
 
-                <div class="switch input-field col s2">
-                    <label>
-                        <input  type="checkbox" onclick="showPass()">
-                        <span><i class="material-icons" >remove_red_eye</i></span>
-                    </label>
-                </div>
                 
                 <div style="text-align: center;">
-                    <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
-
+                
                     <div class="btn-group" role="group">
-                        <button type="submit" class="btn"  id="button1" name="submit">Login</button><br>
-                        <button type="button" class="btn" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
+                        <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
+                        <button type="button" class="btn" style="border: 2px solid #005959;" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
                     </div>
                      <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
                 </div>
