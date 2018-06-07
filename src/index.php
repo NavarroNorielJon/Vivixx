@@ -45,14 +45,60 @@
                 
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
-                        <button type="button" class="btn" style="border: 2px solid #005959;" id="button1"><a href="signUp.php" id="sign">Sign Up</a></button>
+                        <button type="button" class="btn" href="signUp.php" style="border: 2px solid #005959;" id="button1">Sign Up</button>
                     </div>
-                     <a a href="#!" data-target="forgot" style="display: block; margin: 1rem;">Forgot password?</a>
+                     <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
                 </div>
-
 	       </form>
-
         </div>
-		<script type="text/javascript" src="../script/ajax.js"></script>
+        
+        <!-- Modal for forgot password -->
+        <div class="modal" id="forgot" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h3>Forgot Password</h3>
+                    </div>
+                    
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <p>.....</p>
+                    </div>
+                    
+                    <!--Footer -->
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+		<script type="text/javascript" src="script/ajax.js"></script>
+        <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="script/bootstrap/bootstrap-toggle.min.js"></script>
     </body>
 </html>
