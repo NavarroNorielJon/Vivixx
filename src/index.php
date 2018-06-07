@@ -15,18 +15,18 @@
     </head>
 
     <body style="background-color:#005959;">
-        
+
         <?php
-            
+
             if(!isset($_SESSION['user'])){
                 include 'logged_out.php';
-                Yinclude 'module/footer.php';
+                include 'module/footer.php';
             } else {
                 include 'module/sidenav.php';
                 include 'logged_in.php';
                 }
         ?>
-        
+
         <script type="text/javascript" src="script/ajax.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>

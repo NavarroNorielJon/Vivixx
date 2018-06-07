@@ -7,7 +7,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -95,39 +94,38 @@
                           </div>
 
                           <div class="row">
-                            <div class="form-group col-3" >
-                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
-                              <label for="height">Height</label>
-                              <input type="text" name="height" id="height" class="form-control">
-                            </div>
-
-                            <div class="form-group col-3" >
-                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
-                              <label for="weight">Weight</label>
-                              <input type="text" name="weight" id="weight" class="form-control">
-                            </div>
-
-                            <div class="form-group col-3" >
-                              <i class="small material-icons prefix" style="font-size:50px;">home</i>
-                              <label for="blood">Blood Type</label>
-                              <input type="text" name="blood" id="blood" class="form-control">
-
-                            </div>
-
-                            <div class=" form-group col-3">
+                            
+                            <div class=" form-group col-3 ">
                               <i class="small material-icons prefix" style="font-size:50px;">wc</i>
-              								<div>
-              									<label class="right-align">
-              										<input class="with-gap" name="gender" type="radio" value="m" required="required"/>
-              										<span>Male</span>
-              									</label>
-
-              									<label>
-              									<input class="with-gap" name="gender" type="radio" value="f" required="required" class="right-align"/>
-              										<span>Female</span>
-              									</label>
-              								</div>
+                              <label for="gender">Sex</label>
+                              <select name="gender" class="form-control">
+                                <option selected disabled>Select Here:</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                              </select>
               							</div>
+
+                            <div class="form-group col-3 pads">
+                              <label for="height">Height</label>
+                              <input type="text" name="height" id="height" class="form-control" placeholder="(ft.)">
+                            </div>
+
+                            <div class="form-group col-3 pads">
+                              <label for="weight">Weight</label>
+                              <input type="text" name="weight" id="weight" class="form-control" placeholder="(kg.)">
+                            </div>
+
+                            <div class="form-group col-3 pads">
+                              <label for="blood">Blood Type</label>
+                              <select name="blood" class="form-control">
+                                <option selected disabled>Select Blood Type:</option>
+                                <option value="o">O</option>
+                                <option value="a">A</option>
+                                <option value="b">B</option>
+                                <option value="ab">AB</option>
+                              </select>
+
+                            </div>
                           </div>
 
                           <div class="row">
@@ -169,48 +167,49 @@
 
                           <div class="row">
               							<div class="form-group col-4" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
                               <label for="citizenship">Citizenship</label>
               								<input type="text" name="citizenship" id="citizenship" class="form-control">
               							</div>
 
               							<div class="form-group col-4" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
                               <label for="religion">Religion</label>
               								<input type="text" name="religion" id="religion" class="form-control">
               							</div>
 
               							<div class="form-group col-4" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
                               <label for="civil">Civil Status</label>
-              								<input type="text" name="civil" id="civil" class="form-control">
+                              <select name="civil" class="form-control">
+                                <option selected disabled>Select Civil Status:</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="annulled">Annulled</option>
+                                <option value="separated">Separated</option>
+                                <option value="other">Others</option>
+                              </select>
 
               							</div>
                           </div>
 
                           <div class="row">
                             <div class="form-group col-3" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="sss">SSS NO.</label>
               								<input type="text" name="sss" id="sss" class="form-control">
-              								<label for="sss">SSS NO.</label>
               							</div>
 
               							<div class="form-group col-3" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="tin">TIN</label>
               								<input type="text" name="tin" id="tin" class="form-control">
-              								<label for="tin">TIN</label>
               							</div>
 
               							<div class="form-group col-3" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="phn">PHILHEALTH NO.</label>
               								<input type="text" name="phn" id="phn" class="form-control">
-              								<label for="phn">PHILHEALTH NO.</label>
               							</div>
 
               							<div class="form-group col-3" >
-              								<i class="small material-icons prefix" style="font-size:50px;">home</i>
+                              <label for="pgb">PAG-IBIG ID NO.</label>
               								<input type="text" name="pgb" id="pgb" class="form-control">
-              								<label for="pgb">PAG-IBIG ID NO.</label>
               							</div>
                           </div>
 
@@ -227,5 +226,6 @@
       document.getElementById('personal_info').classList.remove("d-none");
     }
     </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>
 </html>
