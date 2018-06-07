@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+}
+
+.container {
+    padding-top: 10%;
+}
+.valid{
+	color: green;
+}
+.invalid{
+	color: red;
+}
+
+#sample {
+    font-family: rockwell;
+}
+
+#logo {
+    margin-top: -4%;
+    margin-bottom: 4%;
+}
+
+#navbar {
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+#start-php {
+    position: absolute;
+    top: 35%;
+    left: 42%;
+}
+
+#weak{
+	color: red;
+}
+#good{
+	color: yellow;
+}
+#average{
+	color: orange;
+}
+#strong{
+	color: green;
+}
+
+
+/*Bootstrap CSS*/
+#button1 {
+    background-color: #005959;
+    color: #fac213;
+}
+
+#button1:hover {
+    background-color: #fac213;
+    color: #005959;
+}
+
+#login-form {
+    display: flex;
+    width: 50%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 0;
+}
+
+#signup-form {
+    display: flex;
+    width: 30%;
+    padding-bottom: 3%;
+    justify-content: center;
+    align-items: center
+    margin: auto 0;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    right: 0;
+    padding-top: 2%;
+}
+
+#sign {
+    text-decoration: none;
+    color: #fac213;
+}
+
+#sign:hover {
+    color: #005959;
+}
+
+.sidenav {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 20%;
+}
+
+.sidenav a {
+    padding: 5% 5% 8% 10%;
+    font-size: 30px;
+    display: block;
+}
+
+.navbar-brand {
+    font-size: 40px;
+    font-family: rockwell;
+}
+
+@font-face {
+    font-family: rockwell;
+    src: url(../fonts/RockwellStd.otf);
+}
+
+#hid{
+	visibility: hidden;
+}
+
