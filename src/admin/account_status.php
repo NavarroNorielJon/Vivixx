@@ -7,11 +7,13 @@
 
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
 
 
     </head>
     <body>
-        <table border="1">
+        <table class="table" style="font-size: 18px">
+          <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -20,6 +22,7 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+          </thead>
 
             <?php
             include '../Utilities/db.php';
@@ -38,24 +41,23 @@
                     <td>" . ucwords($row["last_name"]) . "</td>
                     <td>" . $row["username"] . "</td>
                     <td>" . $row["email"] . "</td>
-                    <td>" . $row["status"] . "</td>
-                    <td><div class='switch'>
-                        <label>
-                          Off
-                          <input type='checkbox' name='switch' class='aa' value='".$row['username']."'>
-                          <span class='lever'></span>
-                          On
+                    <td>" . $row["status"] . "</td>";
+                    echo "<td>";
+                    if($row["status"] === "enabled"){
+                      echo "
+                      <div class='btn-group btn-group-toggle' data-toggle='button'>
+                      <label class='btn btn-danger'>
+                        <input type='checkbox' class ='aa'checked autocomplete='f'> Disable
+                      </label></div>
+                      ";
+                    }else{
+                      echo "<div class='btn-group btn-group-toggle' data-toggle='button'>
+                        <label class='btn btn-success'>
+                          <input type='checkbox' class='aa'checked autocomplete='f'> Enable
                         </label>
-                      </div></td>" .
-                    "</tr>";
-                    echo '
-                    <script type="text/javascript">
-                        if("'.$row["status"].'" === "enabled"){
-                        document.getElementsByName("switch")[' . $counter . '].checked = true;
-                        }else{
-                        document.getElementsByName("switch")[' . $counter . '].checked = false;
-                        }
-                    </script>';
+                        </div>";
+                    }
+                    echo "</td></tr>";
                     $counter++;
                 }
 
@@ -75,7 +77,7 @@
                             document.getElementsByName().innerHTML = this.responseText;
                         }
                     }
-                    xmlhttp.open("POST", "update_status.php?u")
+                    xmlhttp.open("POST", "update_status.php")
                 }
                 }else{
                     <?php
