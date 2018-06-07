@@ -7,11 +7,13 @@
 
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
 
 
     </head>
     <body>
-        <table border="1">
+        <table class="table" style="font-size: 18px">
+          <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -20,6 +22,7 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+          </thead>
 
             <?php
             include '../Utilities/db.php';
@@ -38,24 +41,48 @@
                     <td>" . ucwords($row["last_name"]) . "</td>
                     <td>" . $row["username"] . "</td>
                     <td>" . $row["email"] . "</td>
-                    <td>" . $row["status"] . "</td>
-                    <td><div class='switch'>
-                        <label>
-                          Off
-                          <input type='checkbox' name='switch' class='aa' value='".$row['username']."'>
-                          <span class='lever'></span>
-                          On
-                        </label>
-                      </div></td>" .
-                    "</tr>";
-                    echo '
-                    <script type="text/javascript">
-                        if("'.$row["status"].'" === "enabled"){
-                        document.getElementsByName("switch")[' . $counter . '].checked = true;
-                        }else{
-                        document.getElementsByName("switch")[' . $counter . '].checked = false;
-                        }
-                    </script>';
+                    <td>" . $row["status"] . "</td>";
+                    echo "<td>";
+                    if($row["status"] === "enabled"){
+                      echo "
+                      <div class='btn-group btn-group-toggle' data-toggle='button'>
+                      <form action='update_status.php' method='POST'>
+                      <input type='hidden' value='".$row['username']."' name='username'>
+                      <input type='button' id='en".$row["username"]."' class='btn btn-danger'checked autocomplete='f' value='Disable' name='disable'></div></form>
+                      ";
+                    }else{
+                      echo "<div class='btn-group btn-group-toggle' data-toggle='button'>
+                      <form action='update_status.php' method='POST'>
+                        <input type='button' id='en".$row["username"]."' class='btn btn-success'checked autocomplete='f' value='Enable' name='enable'>
+                        </div></form>";
+                    }
+                    echo '</td>';
+                    echo "
+                        <script>
+                        if($('#en".$row['username']."' === 'enable')){
+                        $(document).ready(function(){
+                              $('#en".$row['username']."').click(function(){
+                              $('#en".$row['username']."').removeClass('btn-succes');
+                              $('#en".$row['username']."').addClass('btn-danger');
+                              $('#en".$row['username']."').val('Disable');
+                            });
+
+                            $.ajax({url: 'update_status.php',method:'POST'});
+                      });
+                    }else{
+                    $(document).ready(function(){
+                            $('#en".$row['username']."').click(function(){
+                            $('#en".$row['username']."').removeClass('btn-danger');
+                            $('#en".$row['username']."').addClass('btn-success');
+                            $('#en".$row['username']."').val('Enable');
+                          });
+
+                          $.ajax({url: 'update_status.php',method:'POST'});
+                    });
+                  }
+
+                        </script>
+                    </tr>";
                     $counter++;
                 }
 
@@ -65,27 +92,5 @@
             $connect-> close();
             ?>
         </table>
-        <script>
-            $(".aa").change(function(){
-            if(this.checked){
-                function enable(str){
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function(){
-                        if(this.readyState == 4 && this.status == 200){
-                            document.getElementsByName().innerHTML = this.responseText;
-                        }
-                    }
-                    xmlhttp.open("POST", "update_status.php?u")
-                }
-                }else{
-                    <?php
-                echo "hh";
-                ?>
-                }
-
-            });
-
-        </script>
-
     </body>
 </html>
