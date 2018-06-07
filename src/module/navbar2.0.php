@@ -8,8 +8,8 @@
             <a class="navbar-brand" href="#">Vivixx</a>
         </nav>
         
-        <script type="text/javascript" src="../javaScript/bootsrap/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../JavaScript/ajax.js"></script>
+        <script type="text/javascript" src="../script/bootsrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
     
 </html>
