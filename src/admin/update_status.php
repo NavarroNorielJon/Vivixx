@@ -1,9 +1,9 @@
 <?php
-    if(isset($_POST["username"])){
-    	$username = $_POST["username"];
-    	include '../Utilities/db.php';
-
-    	$update = "UPDATE mis.user SET status=enabled WHERE username='".$username."';";
+include '../Utilities/db.php';
+$connect = Connect();
+$username = $_POST["username"];
+    if(isset($_POST["enable"])){
+    	$update = $conn->prepare("UPDATE mis.user SET status=disabled WHERE username='".$username."';");
     }else{
-    	$update = "UPDATE mis.user SET status=disabled WHERE username='".$username."';";
+    	$update = $conn->prepare("UPDATE mis.user SET status=enabled WHERE username='".$username."';");
     }
