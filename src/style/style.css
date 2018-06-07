@@ -45,8 +45,6 @@ body {
 	color: green;
 }
 
-<<<<<<< HEAD:src/style/style.css
-
 /*Bootstrap CSS*/
 #button1 {
     background-color: #005959;
@@ -57,8 +55,6 @@ body {
     background-color: #fac213;
     color: #005959;
 }
-
-=======
 
 /*Bootstrap CSS*/
 .footer {
@@ -106,7 +102,6 @@ body {
     color: #005959;
 }
 
->>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
 #login-form {
     display: flex;
     width: 50%;
@@ -117,11 +112,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-<<<<<<< HEAD:src/style/style.css
-    top: 25%;
-=======
     top: 20%;
->>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
     bottom: 0;
 }
 
@@ -139,6 +130,21 @@ body {
     padding-top: 2%;
 }
 
+#personal_info {
+    display: flex;
+    width: 75%;
+    padding-bottom: 3%;
+    justify-content: center;
+    align-items: center
+    margin: auto 0;
+    position: absolute;
+    top: 15%;
+    left: 12.5%;
+    right: 15%;
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
 #sign {
     text-decoration: none;
     color: #fac213;
@@ -148,7 +154,9 @@ body {
     color: #005959;
 }
 
-<<<<<<< HEAD:src/style/style.css
+.pads{
+  padding-top: 32px;
+}
 .sidenav {
     position: absolute;
     height: 100%;
@@ -167,14 +175,9 @@ body {
     font-family: rockwell;
 }
 
-=======
->>>>>>> 8c5188d779782179b6ffd82ab0601d68edbb5c44:src/style/style.css
+
+
 @font-face {
     font-family: rockwell;
     src: url(../fonts/RockwellStd.otf);
 }
-
-#hid{
-	visibility: hidden;
-}
-
