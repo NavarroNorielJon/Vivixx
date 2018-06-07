@@ -45,11 +45,22 @@ body {
 	color: green;
 }
 
+/*Bootstrap CSS*/
+#button1 {
+    background-color: #005959;
+    color: #fac213;
+}
+
+#button1:hover {
+    background-color: #fac213;
+    color: #005959;
+}
 
 /*Bootstrap CSS*/
 .footer {
+    background-color: #fac213;
     text-align: center;
-    color: white;
+    color: black;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -101,7 +112,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 20%;
     bottom: 0;
 }
 
@@ -113,24 +124,10 @@ body {
     align-items: center
     margin: auto 0;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 35%;
     right: 0;
     padding-top: 2%;
-}
-#personal_info {
-    display: flex;
-    width: 90%;
-    padding-bottom: 3%;
-    justify-content: center;
-    align-items: center
-    margin: auto 0;
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    right: 25%;
-    padding-top: 2%;
-    padding-right: 2%;
 }
 
 #sign {
@@ -159,13 +156,13 @@ body {
     font-size: 40px;
     font-family: rockwell;
 }
-.pads{
-  padding-top: 32px;
-}
-.size{
-  font-size: 50px;
-}
+
 @font-face {
     font-family: rockwell;
     src: url(../fonts/RockwellStd.otf);
 }
+
+#hid{
+	visibility: hidden;
+}
+
