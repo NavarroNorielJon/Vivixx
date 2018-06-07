@@ -24,6 +24,6 @@ switch ($type){
 		} else {
 			echo "<span class='invalid'>Invalid password</span>";
 		}
-		break;		
+		break;
 }
 ?>

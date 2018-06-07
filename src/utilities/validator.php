@@ -23,7 +23,9 @@ switch ($type){
 		$result = mysqli_query($connect,$stmt);
 		if($result->num_rows > 0){
 			echo "<span class='invalid'>Username already exist</span>";
-		}	
+		} else if(!$result->num_rows > 0 && strlen($username) > 5 ) {
+			echo "<span class='valid'>Username available</span>";
+		}
 		break;
 	case "contact_number":
 		$contact_number = $_REQUEST["contact_number"];
@@ -52,12 +54,12 @@ switch ($type){
 	case "confirm_password":
 		$confirm = $_REQUEST["confirm_password"];
 		$password = $_REQUEST["password"];
-		if ($password !=== $confirm){
+		if ($password !== $confirm) {
 			echo "<span class='invalid'>Password doesn't match</span>";
 		} else {
 			echo "<span class='valid'>Password matches</span>";
 		}
 		break;
-		
+
 }
 ?>

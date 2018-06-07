@@ -20,29 +20,28 @@
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
 
             <form action="utilities/login.php" method="post" class="col s12 ">
-
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
                     <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-					          <div id="validUserOrEmail"></div>
+				    <div id="validUserOrEmail"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="pass">Password</label>
+                    
                     <div class="input-group">
                     <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                    <div id="vPassword"></div>
                     
-                    <div class="input-group-appened">
+                    <div class="input-group-append">
                         <button  type="button" class="btn" onclick="showPass()">
-                            <span><i class="material-icons" >remove_red_eye</i></span>
-                    </button>
+                            <i class="material-icons" >remove_red_eye</i>
+                        </button>
                     </div>
                     </div>
-					          <div id="validPassword"></div>
+					          
                 </div>
-
-                
-                <div style="text-align: center;">
+            <div style="text-align: center;">
                 
                     <div class="btn-group" role="group">
                         <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>

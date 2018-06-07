@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="../script/bootstrap/bootstrap.min.css">
+        <title>Table</title>
+
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     </head>
     <body>
         <table border="1">
@@ -17,18 +20,18 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-            
+
             <?php
             include '../Utilities/db.php';
             $connect = Connect();
             $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
-            
+
             $result = $connect->query($sql);
 
             if($result-> num_rows > 0){
                 $counter = 0;
                 while($row = $result->fetch_assoc()){
-                    
+
                     echo "
                     <tr>
                     <td>" . ucwords($row["first_name"]) . "</td>
@@ -55,7 +58,7 @@
                     </script>';
                     $counter++;
                 }
-                
+
             }else{
                 echo "database has no query";
             }
@@ -78,11 +81,11 @@
                     <?php
                 echo "hh";
                 ?>
-                }             
-                
+                }
+
             });
-                
+
         </script>
-        
+
     </body>
 </html>
