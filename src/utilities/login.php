@@ -2,10 +2,9 @@
     include 'session.php';
     $connect = Connect();
 
-    if( isset($_POST["user"]) && isset($_POST["password"])){
+    if(isset($_POST["user"]) && isset($_POST["password"])){
         $user = mysqli_real_escape_string($connect, $_POST["user"]);
         $password = mysqli_real_escape_string($connect, $_POST["password"]);
-    
         $stmt = "SELECT username, password FROM user WHERE username = '$user' or email = '$user' ";
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
@@ -17,10 +16,8 @@
                 $current=$_SERVER['REMOTE_USER'];
                 echo "User is= $current";
                 echo "<script>window.location.replace('/profile.php');</script>";
-
                 $_SESSION['user'] = $user;
                 header('location:/');
-
             } else
                 echo 
                     "<script>
