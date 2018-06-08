@@ -1,6 +1,6 @@
 <?php
     include 'utilities/session.php';
-    include 'module/navbar.php';
+	include 'module/sidenav.php';
 ?>
 
 <html>
