@@ -14,28 +14,8 @@ body {
 
 
 /*Class*/
-.pads{
-  padding-top: 32px;
-}
 
-.sidenav {
-    position: absolute;
-    height: 100%;
-    z-index: 1;
-    width: 20%;
-}
-
-.sidenav a {
-    padding: 5% 5% 8% 10%;
-    font-size: 30px;
-    display: block;
-}
-
-.navbar-brand {
-    font-size: 40px;
-    font-family: rockwell;
-}
-
+/*Footer*/
 
 .footer {
     background-color: #fac213;
@@ -54,22 +34,9 @@ body {
     padding-bottom: 0;
 }
 
-.sidenav {
-    position: absolute;
-    height: 100%;
-    z-index: 1;
-    width: 20%;
-}
-
-.sidenav a {
-    padding: 5% 5% 8% 10%;
-    font-size: 30px;
-    display: block;
-}
-
-.navbar-brand {
-    font-size: 40px;
-    font-family: rockwell;
+.sidebar-header {
+    padding: 4vh;
+    color: white;
 }
 
 /*ID*/
@@ -147,6 +114,16 @@ body {
     right: 15%;
     padding-top: 2%;
     padding-right: 2%;
+}
+
+.pads{
+  padding-top: 32px;
+}
+
+#sidebar {
+    height: 100vh;
+    min-width: 250px;
+    max-width: 250px;
 }
 
 /*Font Style*/

@@ -16,10 +16,17 @@
         <?php
             if(!isset($_SESSION['user'])){
                 include 'logged_out.php';
-                include 'module/footer.php';
+                include 'module/footer.html';
                 } else {
-                    include 'module/sidenav.php';
-                    include 'logged_in.php';
+                    echo "<div class='row'>";
+                            echo "<div class='col-3'>";
+                                include 'module/sidenav.php';
+                            echo "</div>";
+                            
+                            echo "<div class='col-9'>";
+                                include 'logged_in.php';
+                            echo "</div>";
+                    echo "</div>";
                     }
         ?>
         <script type="text/javascript" src="script/ajax.js"></script>
