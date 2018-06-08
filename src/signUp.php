@@ -56,7 +56,7 @@
 
                         <div>
                             <a href="/"><button type="button" onclick="hideForm()" style="text-align: left">Home</button></a>
-                            <button type="button" id="next" onclick="hideForm()" style="text-align: right" disabled>Next</button>
+                            <button type="button" id="next" onclick="hideForm()" style="text-align: right" disabled="disabled">Next</button>
 
                         </div>
                     </div>
