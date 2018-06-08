@@ -13,10 +13,10 @@
                     <div class="form-group">
                         <label for="pass">Password</label>
                         <div class="input-group">
-                            <input type="password" placeholder="Password" name="password" id="lpass" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                            <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 
                             <div class="input-group-append">
-                                <button  type="button" class="btn" onclick="showPass()">
+                                <button  type="button" class="btn" onclick="showHide('password')">
                                 <i class="material-icons">remove_red_eye</i>
                                 </button>
                             </div>

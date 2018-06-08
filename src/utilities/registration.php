@@ -36,8 +36,12 @@ $pagibig_id_no = mysqli_real_escape_string($connect, $_POST['pagibig_id_no']);
 
 
 
+<<<<<<< HEAD
 if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
     || empty($cpassword) || empty($gender) || empty($address) || empty($contact) || empty($birthdate)) {
+=======
+if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
     echo "
          <script>
              alert('You must fill up all neccessary fields.');
@@ -56,7 +60,11 @@ if (empty($username) || empty($first_name) || empty($last_name) || empty($email)
  *2. if the condition is not met output an alert and redirect to the
  *   registration page.
  */
+<<<<<<< HEAD
 if(!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",$email)){
+=======
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
 
     echo "
         <script>

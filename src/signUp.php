@@ -9,24 +9,30 @@
     </head>
 
     <body>
-        <!--START of user info-->
+
+        <form action="utilities/registration.php" method="POST">
+                            <!-- START of user info-->
 		<div class="jumbotron" id="signup-form">
+<<<<<<< HEAD
             <form id="reg_form" action="utilities/registration.php">
+=======
+                <div id="signup_form">
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
                 <h1>Registration Form</h1><br>
                 <div class="form-group">
                     <label for="username">Username</label>
-					          <input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpass');" class="form-control" required="required">
+					          <input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser')" class="form-control" required="required">
                     <div id="validUser"></div>
 				        </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpass');" class=" form-control form-control" required="required">
+                    <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail')" class=" form-control form-control" required="required">
                     <div id="validEmail"></div>
                 </div>
 
         				<div class="form-group">
-                  <label for="pass">Password</label>
+                  <label for="password">Password</label>
                   <div class="input-group">
                     <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');" class="form-control" required="required">
                     <div class="input-group-append">
@@ -41,7 +47,11 @@
         				<div class="form-group" >
                     <label for="cpass">Confirm Password</label>
                     <div class="input-group">
+<<<<<<< HEAD
                     <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpass');" class="form-control" required="required">
+=======
+                    <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
                       <div class="input-group-append">
                           <button  type="button" class="btn" onclick="showHide('cpassword')">
                           <i class="material-icons">remove_red_eye</i>
@@ -52,14 +62,18 @@
                 </div>
 
                 <div style="text-align: right">
+<<<<<<< HEAD
                   <button type="button" id="next" onclick="hideForm()" disabled="disabled">Next</button>
+=======
+                  <button type="submit" id="next" onclick="hideForm()" disabled>Next</button>
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
                 </div>
-            </form>
-    </div>
-							<!--END OF user info-->
-              <!-- Start of Personal Info-->
+            </div>
+        </div>
+							<!-- END OF user info-->
+                            <!-- Start of Personal Info-->
               <div class="jumbotron d-none" id="personal_info" >
-                      <form id="per_info">
+                  <div id="personal_info">
                           <h1>Personal Information</h1><br>
                           <i class="large material-icons" style="font-size:50px;">person</i>
                           <div class="row">
@@ -223,14 +237,24 @@
               								<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control">
               							</div>
                           </div>
+<<<<<<< HEAD
 
 
                           <div style="text-align: right">
                             <button type="submit" id="next1">Submit</button>
                           </div>
                       </form>
+=======
+                      <div style="text-align: right">
+                          <button type="submit" id="next1">Submit</button>
+                      </div>
+                  </div>
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
               </div>
-              <!-- End of Personal Info -->
+                            <!-- End of Personal Info -->
+          </div>
+        </form>
+
     <script>
     function hideForm(){
       document.getElementById('reg_form').classList.add("d-none");

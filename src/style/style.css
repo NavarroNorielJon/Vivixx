@@ -87,7 +87,7 @@ body {
 
 /*Sign Up form*/
 
-#signup-form {
+#signup_form {
     display: flex;
     width: 30%;
     padding-bottom: 3%;

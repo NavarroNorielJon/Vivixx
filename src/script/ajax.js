@@ -73,9 +73,16 @@ function confirmLogin(type, str, eElement, elementId){
 }
 
 function nextButton(pass,conpass){
+<<<<<<< HEAD
 	if(document.getElementById(pass).value == document.getElementById(conpass).value) {
 		$("#next").attr("disabled",true);
+=======
+	var password = document.getElementById(pass).value;
+	var confirm_password = document.getElementById(conpass).value
+	if(password === confirm_password) {
+		$("#next").removeAttr("disabled");
+>>>>>>> c4aa08bdc8498d237b492b05c0d87c05dfd21a81
 	} else {
-		$("#next").attr("disabled",false);
+		$("#next").attr("disabled",true);
 	}
 }
