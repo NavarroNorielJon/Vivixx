@@ -40,7 +40,7 @@ switch ($type){
 	case "password":
 		$password = $_REQUEST["password"];
 		if(strlen($password) < 8 ){
-			echo "<span id='weak'>weak \neight(8) characters minimum</span>";
+			echo "<span id='weak'>weak eight(8) characters minimum</span>";
 		} else if(strlen($password) > 8 && strlen($password) < 10){
 			echo "<span id='good'>good</span>";
 		} else if(strlen($password) > 10 && strlen($password) < 13){

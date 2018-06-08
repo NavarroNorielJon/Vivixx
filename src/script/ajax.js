@@ -30,19 +30,8 @@ function confirmPass(type, str, passElement, elementId){
 	}
 }
 
-function showHide() {
-    var pass = document.getElementById("password");
-	var pass1 = document.getElementById("cpass");
-    if (pass.type === "password" && pass1.type === "password") {
-        pass.type = "text";
-        pass1.type = "text";
-    } else {
-        pass.type = "password";
-        pass1.type = "password";
-    }
-}
-function showPass() {
-    var pass = document.getElementById("lpass");
+function showHide(password) {
+    var pass = document.getElementById(password);
     if (pass.type === "password") {
         pass.type = "text";
     } else {
@@ -84,7 +73,6 @@ function confirmLogin(type, str, eElement, elementId){
 }
 
 function nextButton(pass,conpass){
-	var valid = true;
 	if(document.getElementById(pass).value == document.getElementById(conpass).value) {
 		$("#next").attr("disabled",true);
 	} else {
