@@ -10,11 +10,9 @@
     <body>
         <nav class="bg-dark" id="sidebar">
             <div class="sidebar-header">
-
-                <h2>Sample</h2>
-
-                <h2><?php echo "$user_first"; ?></h2>
+                <a class="navbar-brand" href="../profile"><?php echo "$user_first"; ?></a>
             </div>
+			<hr>
 
             <ul class="list-unstyled components">
                 <li><a href="#">Page1</a></li>
