@@ -12,26 +12,6 @@ body {
 	color: red;
 }
 
-#sample {
-    font-family: rockwell;
-}
-
-#logo {
-    margin-top: -4%;
-    margin-bottom: 4%;
-}
-
-#navbar {
-    margin-left: 5%;
-    margin-right: 3%;
-}
-
-#start-php {
-    position: absolute;
-    top: 35%;
-    left: 42%;
-}
-
 #weak{
 	color: red;
 }
