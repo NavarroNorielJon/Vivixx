@@ -1,5 +1,6 @@
 <?php
   include 'header.php';
+  include 'sorting_account_status.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -31,6 +32,30 @@
             $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
 
             $result = $connect->query($sql);
+
+            //sorting
+            if(isset($_POST["asc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by first_name asc;";
+              $result = $connect->query($sql);
+            }else if(isset($_POST["desc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by first_name desc;";
+              $result = $connect->query($sql);
+            }else if(isset($_POST["last_asc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by last_name asc;";
+              $result = $connect->query($sql);
+            }else if(isset($_POST["last_desc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by last_name desc;";
+              $result = $connect->query($sql);
+            }else if(isset($_POST["status_asc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by status asc;";
+              $result = $connect->query($sql);
+            }else if(isset($_POST["status_desc"])){
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info order by status desc;";
+              $result = $connect->query($sql);
+            }else{
+              $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
+              $result = $connect->query($sql);
+            }
 
             if($result-> num_rows > 0){
                 $counter = 0;
@@ -84,6 +109,8 @@
             }else{
                 echo "database has no query";
             }
+
+
             $connect-> close();
             ?>
         </table>
