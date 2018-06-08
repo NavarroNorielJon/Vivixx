@@ -14,7 +14,15 @@
 			</div>
 			
 			<div class="col-9">
-				<p>Hi! <?php echo "$user_first"?></p>
+				<div class="jumbotron" style="background-color: #fac213;">
+					<h1>Personal Information</h1>
+					<form>
+						<div class="form-group">
+								<label for="first"> First Name</label>
+								<input type="text" id="first" class="form-control" value="<?php echo "$user_first";?>" disabled>
+						</div>
+					</form>
+				</div>
 			</div>			
 		</div>
     </body>

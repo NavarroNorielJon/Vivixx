@@ -224,7 +224,7 @@
 
 					<div style="text-align: right">
                         <button type="button" onclick="nextForm('personal_info','signup_form')"><i class="material-icons" >arrow_back</i></button>
-                        <button type="button" onclick="nextForm('personal_info','family_background')"<i class="material-icons" >arrow_forward</i></button>
+                        <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
 					</div>
                     <!-- End of Personal Info-->
 			   </div>
@@ -344,7 +344,12 @@
       document.getElementById(currId).classList.add("d-none");
       document.getElementById(nextId).classList.remove("d-none");
     }
+		
+	function jon(){
+			swal("Good Jon", "Hiiii", "success");
+		}
     </script>
+	
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/ajax.js"></script>

@@ -1,5 +1,17 @@
+<script>
+	function sample()
+	{
+		swal({
+			title: 'Good Jon', 
+			text: 'Hiiii', 
+			type:'success'
+		 });	
+	}
+</script>
+
 <?php
     include 'session.php';
+	echo "<script type='text/javascript' src='script/sweetalert.min.js'></script>";
     $connect = Connect();
     if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
         $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
@@ -13,8 +25,16 @@
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
                 header('location:/');
-            }
-        } 
+            }else {
+				echo "<script>swal({
+			title: 'Good Jon', 
+			text: 'Hiiii', 
+			type:'success'
+		 });</script>";
+			}
+        }else {	
+			echo "mali";
+		} 
     }
 	 
 ?>
