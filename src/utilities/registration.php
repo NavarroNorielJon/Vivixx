@@ -99,7 +99,7 @@ if($password != $cpassword ){
  *Checks if the contact entered is exactly 9 digits, else
  *it will return to the registration
  */
-if(!preg_match("/^09[0-9]{9}$/", $contact)){
+if(!preg_match("/^09[0-9]{9}$/", $contact_number)){
     echo "
         <script>
             alert('Invalid Contact Number.');
@@ -109,7 +109,7 @@ if(!preg_match("/^09[0-9]{9}$/", $contact)){
     exit;
 }
 
-$sql = "SELECT * FROM user_info where contact_number = '$contact'";
+$sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
 $result = $connect->query($sql);
 
 /**
@@ -158,7 +158,7 @@ if($connect->query($insert_stmt) === true){
 	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`middle_name`,`last_name`,`birthdate`,
         `birth_place`,`contact_number`,`gender`,`height`,`weight`,`blood_type`,`residential_address`,`residential_zip`,`residential_tel_no`,
         `permanent_address`,`permanent_zip`,`permanent_tel_no`,`citizenship`,`religion`,`civil_status`,`sss_no`,`tin`,`philhealth_no`,`pagibig_id_no`)
-     VALUES ('$username', '$first_name','$middle_name','$last_name','$birthdate','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
+     VALUES ('$username', '$first_name','$middle_name','$last_name','$birthdate','$birth_place','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
      '$residential_zip','$residential_tel_no','$permanent_address','$permanent_zip','$permanent_tel_no','$citizenship','$religion','$civil_status',
      '$sss_no','$tin','$philhealth_no','$pagibig_id_no');";
 	if($connect->query($insert_stmt) === true){
@@ -169,10 +169,10 @@ if($connect->query($insert_stmt) === true){
 			</script>
 		";
 	} else {
-		echo "Error: " . $query . "<br>" . $connect->error;
+		echo "Error: <br>" . $connect->error;
 	}
 } else {
-	echo "Error: " . $query . "<br>" . $connect->error;
+	echo "Error: <br>" . $connect->error;
 }
 Disconnect($connect);
 ?>
