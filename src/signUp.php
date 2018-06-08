@@ -16,20 +16,20 @@
                         <h1>Registration Form</h1><br>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser')" class="form-control" required="required">
+                            <input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
                             <div id="validUser"></div>
     				    </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail')" class=" form-control form-control" required="required">
+                            <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class=" form-control form-control" required="required">
                             <div id="validEmail"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
                             <div class="input-group">
-                                <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');" class="form-control" required="required">
+                                <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
 
                                 <div class="input-group-append">
                                     <button  type="button" class="btn" onclick="showHide('password')">
@@ -55,8 +55,8 @@
                         </div>
 
                         <div>
-                            <a href="/"><button type="button" id="next" onclick="hideForm()" style="text-align: left">Home</button></a>
-                            <button type="button" id="next" style="text-align: right" disabled>Next</button>
+                            <a href="/"><button type="button" onclick="hideForm()" style="text-align: left">Home</button></a>
+                            <button type="button" id="next" onclick="hideForm()" style="text-align: right" disabled="disabled">Next</button>
 
                         </div>
                     </div>
@@ -74,12 +74,12 @@
                             <input type="text" name="first_name" id="fname" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-4">
+                        <div class="form-group col-4 pads">
                             <label for="mname">Middle Name</label>
                             <input type="text" name="middle_name" id="mname" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-4">
+                        <div class="form-group col-4 pads">
                             <label for="lname">Last Name</label>
                             <input type="text" name="last_name" id="lname" class="form-control" required="required">
                         </div>
