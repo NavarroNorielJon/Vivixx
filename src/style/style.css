@@ -26,17 +26,30 @@ body {
 }
 
 /*Bootstrap CSS*/
-#button1 {
-    background-color: #005959;
-    color: #fac213;
+
+.pads{
+  padding-top: 32px;
 }
 
-#button1:hover {
-    background-color: #fac213;
-    color: #005959;
+.sidenav {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 20%;
 }
 
-/*Bootstrap CSS*/
+.sidenav a {
+    padding: 5% 5% 8% 10%;
+    font-size: 30px;
+    display: block;
+}
+
+.navbar-brand {
+    font-size: 40px;
+    font-family: rockwell;
+}
+
+
 .footer {
     background-color: #fac213;
     text-align: center;
@@ -71,6 +84,8 @@ body {
     font-size: 40px;
     font-family: rockwell;
 }
+
+/*ID*/
 
 #button1 {
     background-color: #005959;
@@ -134,28 +149,7 @@ body {
     color: #005959;
 }
 
-.pads{
-  padding-top: 32px;
-}
-.sidenav {
-    position: absolute;
-    height: 100%;
-    z-index: 1;
-    width: 20%;
-}
-
-.sidenav a {
-    padding: 5% 5% 8% 10%;
-    font-size: 30px;
-    display: block;
-}
-
-.navbar-brand {
-    font-size: 40px;
-    font-family: rockwell;
-}
-
-
+/*Font Style*/
 
 @font-face {
     font-family: rockwell;
