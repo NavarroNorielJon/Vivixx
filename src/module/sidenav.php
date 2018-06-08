@@ -10,14 +10,14 @@
     <body>
         <nav class="bg-dark" id="sidebar">
             <div class="sidebar-header">
-                <h2>Sample</h2>
+                <h2><?php echo "$user_first"; ?></h2>
             </div>
             
             <ul class="list-unstyled components">
                 <li><a href="#">Page1</a></li>
                 <li><a href="#">Page2</a></li>    
                 <li><a href="#">Page3</a></li>    
-                <li><a href="#">Page4</a></li>    
+                <li><a href="../utilities/logout.php">Logout</a></li>    
             </ul>
         </nav>
             
