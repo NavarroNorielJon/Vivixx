@@ -1,9 +1,59 @@
+<script>
+	function sample()
+	{
+		swal({
+			title: 'Good Jon', 
+			text: 'Hiiii', 
+			type:'success'
+		 });	
+	}
+</script>
+
+<?php
+    include 'session.php';
+	echo "<script type='text/javascript' src='script/sweetalert.min.js'></script>";
+    $connect = Connect();
+    if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
+        $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
+        $password = mysqli_real_escape_string($connect, $_POST["password"]);
+        $stmt = "SELECT username, password FROM user WHERE username = '$user' or email = '$user' ";
+        $results = mysqli_query($connect, $stmt);
+        $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
+        $count = mysqli_num_rows($results);
+        $passwordVerify = $row['password'];
+        if ($count == 1) {
+            if (password_verify($password, $passwordVerify)) {
+                $_SESSION['user'] = $user;
+                header('location:/');
+            }else {
+				echo "<script>swal({
+			title: 'Good Jon', 
+			text: 'Hiiii', 
+			type:'success'
+		 });</script>";
+			}
+        }else {	
+			echo "mali";
+		} 
+    }
+	 
+?>
+
 <!DOCTYPE html>
 <html>
+	<head>
+        <title>Vivixx</title>
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+	
     <body class="white">
         <div class="jumbotron" id="login-form">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-                <form action="utilities/login.php" method="post" class="col s12 ">
+                <form method="post" class="col s12 ">
                     <div class="form-group">
                         <label for="userOrEmail">Username or Email-Address</label>
                         <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
