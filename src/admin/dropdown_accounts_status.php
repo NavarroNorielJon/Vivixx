@@ -32,10 +32,10 @@
         <button type="submit" class="dropdown-item" name="last_desc">Last Name Descending</button>
       </form>
       <form action="accounts_status.php" class="dropdown-item" method="POST">
-        <button type="submit" class="dropdown-item" name="status_asc">Status(Enabled First)</button>
+        <button type="submit" class="dropdown-item" name="status_desc">Status(Enabled First)</button>
       </form>
       <form action="accounts_status.php" class="dropdown-item" method="POST">
-        <button type="submit" class="dropdown-item" name="status_desc">Status(Disabled First)</button>
+        <button type="submit" class="dropdown-item" name="status_asc">Status(Disabled First)</button>
       </form>
     </div>
     </div>
