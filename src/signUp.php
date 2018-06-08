@@ -11,7 +11,7 @@
     <body>
 			<!-- START of user info-->
                 <form action="utilities/registration.php" method="POST">
-                    <div class="jumbotron" id="signup_form">
+                    <div class="jumbotron d-none" id="signup_form">
                         <div>
                         <h1>Registration Form</h1><br>
                         <div class="form-group">
@@ -55,15 +55,15 @@
                         </div>
 
                         <div>
-                            <a href="/"><button type="button" onclick="hideForm()" style="text-align: left">Home</button></a>
-                            <button type="button" id="next" onclick="hideForm()" style="text-align: right" disabled="disabled">Next</button>
+                            <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
+                            <button type="button" id="next" onclick="nextForm('signup_form','personal_info')" style="text-align: right" disabled="disabled"><i class="material-icons" >arrow_forward</i></button>
 
                         </div>
                     </div>
                 </div>
 
 			<!-- Start of Personal Info-->
-            <div class="jumbotron d-none" id="personal_info" >
+            <div class="jumbotron d-none" id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
 
@@ -221,20 +221,132 @@
 							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
               			</div>
 					</div>
-            <!-- End of Personal Info-->
+
 					<div style="text-align: right">
-                    	<button type="submit" id="next1">Submit</button>
+                        <button type="button" onclick="nextForm('personal_info','signup_form')"><i class="material-icons" >arrow_back</i></button>
+                        <button type="button" onclick="nextForm('personal_info','family_background')"<i class="material-icons" >arrow_forward</i></button>
 					</div>
+                    <!-- End of Personal Info-->
 			   </div>
-             </form>
-        </div>
+           </div>
+           <!-- Start of Family Background -->
+           <div class="jumbotron " id="family_background">
+               <div>
+                   <h1>Family Background</h1><br>
+
+
+                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Spouse's Name</h3>
+                   <div class="row">
+                       <div class="form-group col-4">
+                           <label for="sfname">First Name</label>
+                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="smname">Middle Name</label>
+                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="slname">Last Name</label>
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control" required="required">
+                       </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="form-group col-2">
+                           <label for="occupation">Occupation</label>
+                           <input type="text" name="occupation" id="occupation" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="employer">Employer</label>
+                           <input type="text" name="employer" id="employer" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="business_address">Business Address</label>
+                           <input type="text" name="business_address" id="business_address" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-2">
+                           <label for="spouse_tel_no">Telephone NO.</label>
+                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" class="form-control">
+                       </div>
+                   </div>
+
+
+                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Father's Name</h3>
+                   <div class="row">
+                       <div class="form-group col-4">
+
+                           <label for="ffname">First Name</label>
+                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="fmname">Middle Name</label>
+                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="flname">Last Name</label>
+                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required">
+                       </div>
+                   </div>
+
+                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Mother's Maiden Name</h3>
+                   <div class="row">
+                       <div class="form-group col-4">
+                           <label for="mfname">First Name</label>
+                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="mmname">Middle Name</label>
+                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="mlname">Last Name</label>
+                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required">
+                       </div>
+                   </div>
+
+                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Child/Children's Information</h3>
+                   <div class="row">
+                       <div class="form-group col-6">
+                           <label for="child_name">Name</label>
+                           <input type="text" name="child_name" id="child_name" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-6">
+                           <label for="child_birth">Date of Birth</label>
+                           <input type="date" name="child_birth" id="child_birth" class="form-control" required="required">
+                       </div>
+
+                   </div>
+                   <div style="text-align: right">
+                       <button type="button">Add</button>
+                   </div>
+
+                   <div style="text-align: right">
+                       <button type="button" onclick="nextForm('family_background','personal_info')"><i class="material-icons">arrow_back</i></button>
+                       <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button>
+                   </div>
+                   <!-- End of family background-->
+              </div>
+          </div>
+       </form>
+
     <script>
-    function hideForm(){
-      document.getElementById('signup_form').classList.add("d-none");
-      document.getElementById('personal_info').classList.remove("d-none");
+    function nextForm(currId,nextId){
+      document.getElementById(currId).classList.add("d-none");
+      document.getElementById(nextId).classList.remove("d-none");
     }
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/ajax.js"></script>
     </body>
 </html>
