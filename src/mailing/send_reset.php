@@ -8,13 +8,13 @@ use PHPMailer\PHPMailer\SMTP;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
-include 'Utilities/db.php';
-$conn = OpenCon();
+include '../Utilities/db.php';
+$conn = Connect();
 
 $email = $_POST['email'];
 $email = mysqli_real_escape_string($conn, $email);
 
-$sql = "SELECT * FROM accounts where email = '$email';";
+$sql = "SELECT * FROM user where email = '$email';";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@ try {
     $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'okimwaabuiza19@gmail.com'; // SMTP username
-    $mail->Password = 'bokuwaanimegadaisuki'; // SMTP password
+    $mail->Password = '0k1mw4N4I9'; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465; // TCP port to connect to
 

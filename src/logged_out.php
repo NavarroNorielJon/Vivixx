@@ -47,10 +47,11 @@
 
                     <!-- Body -->
                     <div class="modal-body">
-                        <form>
+                        <form action="mailing/send_reset.php" method="POST">
                             <div class="form-group">
                                 <label for="id">E-mail Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="E-mail Address">
+                                <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
+                                <button type="submit" class="btn btn-primary">Send Email</button>
                             </div>
                         </form>
                     </div>

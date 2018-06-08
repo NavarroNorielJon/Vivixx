@@ -9,7 +9,7 @@
     </head>
 
     <body>
-<!-- START of user info-->
+			<!-- START of user info-->
             <div class="jumbotron" id="signup_form">
                 <form action="utilities/registration.php" method="POST">
                     <h1>Registration Form</h1><br>
@@ -24,7 +24,7 @@
                         <label for="email">Email</label>
                         <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail')" class=" form-control form-control" required="required">
                         <div id="validEmail"></div>
-                    </div>
+                </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
