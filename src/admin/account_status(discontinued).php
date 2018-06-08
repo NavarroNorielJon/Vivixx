@@ -1,3 +1,4 @@
+
 <?php
   include 'header.php';
   include 'sorting_account_status.php';
@@ -6,10 +7,13 @@
 <html>
     <head>
         <title>Table</title>
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
         <link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-        <script type="text/javascript" src="../script/jquery.min.js"></script>
+        <script type="text/javascript" src="../script/popper.min.js"></script>
+        <script type="text/javascript" src="../script/ajax.js"></script>
+        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 
 
     </head>
@@ -63,27 +67,30 @@
 
                     echo "
                     <tr>
+
                     <td>" . ucwords($row["first_name"]) . "</td>
                     <td>" . ucwords($row["last_name"]) . "</td>
-                    <td>" . $row["username"] . "</td>
+                    <td><input type='hidden' name='username' value='".$row['username']."'>" . $row["username"] . "</td>
                     <td>" . $row["email"] . "</td>
                     <td>" . $row["status"] . "</td>";
                     echo "<td>";
                     if($row["status"] === "enabled"){
                       echo "
-                      <div class='btn-group btn-group-toggle' data-toggle='button'>
                       <form action='update_status.php' method='POST'>
+                      <div class='btn-group btn-group-toggle' data-toggle='button'>
                       <input type='hidden' value='".$row['username']."' name='username'>
-                      <input type='button' id='en".$row["username"]."' class='btn btn-danger'checked autocomplete='f' value='Disable' name='disable'></div></form>
+                      <input type='button' id='en".$row["username"]."' class='btn btn-danger'checked autocomplete='f' value='disable' name='disable'></div>
+                      </form>
                       ";
                     }else{
-                      echo "<div class='btn-group btn-group-toggle' data-toggle='button'>
+                      echo "
                       <form action='update_status.php' method='POST'>
-                        <input type='button' id='en".$row["username"]."' class='btn btn-success'checked autocomplete='f' value='Enable' name='enable'>
+                      <div class='btn-group btn-group-toggle' data-toggle='button'>
+                        <input type='submit' id='en".$row["username"]."' class='btn btn-success'checked autocomplete='f' value='enable' name='enable'>
                         </div></form>";
                     }
                     echo '</td>';
-                    echo "
+                    $script ="
                         <script>
                         $(document).ready(function(){
                           if($('#en".$row['username']."').hasClass('btn-success')){
@@ -99,9 +106,10 @@
                               $('#en".$row['username']."').val('Enable');
                               });
                           }
-                            $.ajax({url: 'update_status.php',method:'POST'});
+
                       }); //end document
                         </script>
+
                     </tr>";
                     $counter++;
                 }
