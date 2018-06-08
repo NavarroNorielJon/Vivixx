@@ -19,22 +19,22 @@
             aria-haspopup="true" aria-expanded="false">Sort by:
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="asc">First Name Ascending</button>
       </form>
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="desc">First Name Descending</button>
       </form>
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="last_asc">Last Name Ascending</button>
       </form>
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="last_desc">Last Name Descending</button>
       </form>
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="status_asc">Status(Enabled First)</button>
       </form>
-      <form action="account_status.php" class="dropdown-item" method="POST">
+      <form action="accounts_status.php" class="dropdown-item" method="POST">
         <button type="submit" class="dropdown-item" name="status_desc">Status(Disabled First)</button>
       </form>
     </div>

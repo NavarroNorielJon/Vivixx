@@ -26,7 +26,7 @@
                     </div>
 
                     <div style="text-align: center;">
-                        <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
+                        <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit"  data-toggle="modal" data-target="#message">Login</button><br>
                         <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
                         <a href="signUp.php" style="display: block">Sign Up</a>
                     </div>
@@ -63,5 +63,25 @@
                 </div>
             </div>
         </div>
+		
+		<!-- Modal for prompt -->
+		<div class="modal fade" id="message" role="dialog" tabindex="-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+						<?php 
+							if(!isset($_SESSION['user'])) {
+								echo "<p>Try lungs</p>";
+							} else {
+								echo "<p>$user_first</p>";
+							}
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
     </body>
 </html>
