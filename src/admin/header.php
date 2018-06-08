@@ -22,6 +22,19 @@
       <li class="nav-item"><a class="nav-link" href="logout.php" style="color:#fac213">Logout</a></li>
     </ul>
   </div>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle"
+          type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+    Sort by:
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <form action="sorting.php" class="dropdown-item" method="POST">
+      <button type="submit" class="dropdown-item" name="fname_asc">First Name Ascending</button>
+    </form>
+    <a class="dropdown-item" href="#!">Another action</a>
+  </div>
+</div>
 </nav>
 </body>
 </html>
