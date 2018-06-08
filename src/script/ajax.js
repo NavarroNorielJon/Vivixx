@@ -75,8 +75,8 @@ function confirmLogin(type, str, eElement, elementId){
 function nextButton(pass,conpass){
 	var password = document.getElementById(pass).value;
 	var confirm_password = document.getElementById(conpass).value
-	if( (document.getElementById('username').value != "") && (document.getElementById('email').value != "") && password != "" && confirm_password != "") {
-		if(password === confirm_password){
+	if( (document.getElementById('username').value != "") && (document.getElementById('email').value != "") ) {
+		if(password === confirm_password &&  password != "" && confirm_password != ""){
 			$("#next").attr("disabled",false);
 		} else {
 			$("#next").attr("disabled",true);
