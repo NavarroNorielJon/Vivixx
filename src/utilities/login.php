@@ -13,8 +13,12 @@
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
                 header('location:/');
-            }
-        }
+            } else {
+			echo "<script>alert('Lahat kayo Bobo!');
+				window.location.replace('/');
+			</script>";
+			}
+        } 
     }
 	 
 ?>
