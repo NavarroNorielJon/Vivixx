@@ -34,7 +34,6 @@
             include '../Utilities/db.php';
             $connect = Connect();
             $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
-
             $result = $connect->query($sql);
 
             //sorting
@@ -61,7 +60,7 @@
               $result = $connect->query($sql);
             }
 
-            if($result-> num_rows > 0){
+            if($result->num_rows > 0){
                 $counter = 0;
                 while($row = $result->fetch_assoc()){
 
