@@ -2,17 +2,40 @@
 include 'db.php';
 $connect = Connect();
 
-$first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
-$last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
-$birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
-$house_number = mysqli_real_escape_string($connect, $_POST['house_number']);
-$address = mysqli_real_escape_string($connect, $_POST['address']);
-$gender = mysqli_real_escape_string($connect, $_POST['gender']);
+//user credentials
 $username = mysqli_real_escape_string($connect, $_POST['username']);
 $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
-$contact = mysqli_real_escape_string($connect, $_POST['contact_number']);
+
+//personal information
+$first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
+$middle_name = mysqli_real_escape_string($connect, $_POST['middle_name']);
+$last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
+$birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
+$birth_place = mysqli_real_escape_string($connect,$_POST['pbirth']);
+$contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
+$gender = mysqli_real_escape_string($connect, $_POST['gender']);
+$height = mysqli_real_escape_string($connect, $_POST['height']);
+$weight = mysqli_real_escape_string($connect, $_POST['weight']);
+$blood_type = mysqli_real_escape_string($connect, $_POST['blood']);
+$residential_address = mysqli_real_escape_string($connect, $_POST['residential_address']);
+$residential_zip = mysqli_real_escape_string($connect, $_POST['residential_zip']);
+$residential_tel_no = mysqli_real_escape_string($connect, $_POST['residential_tel_no']);
+$permanent_address = mysqli_real_escape_string($connect, $_POST['permanent_address']);
+$permanent_zip = mysqli_real_escape_string($connect, $_POST['permanent_zip']);
+$permanent_tel_no = mysqli_real_escape_string($connect, $_POST['permanent_tel_no']);
+$citizenship = mysqli_real_escape_string($connect, $_POST['citizenship']);
+$religion = mysqli_real_escape_string($connect, $_POST['religion']);
+$civil_status = mysqli_real_escape_string($connect, $_POST['civil_status']);
+$sss_no = mysqli_real_escape_string($connect, $_POST['sss_no']);
+$tin = mysqli_real_escape_string($connect, $_POST['tin']);
+$philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
+$pagibig_id_no = mysqli_real_escape_string($connect, $_POST['pagibig_id_no']);
+//family background
+
+
+
 if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($password)
     || empty($cpassword) || empty($gender) || empty($address) || empty($contact) || empty($birthdate)) {
     echo "
@@ -20,6 +43,7 @@ if (empty($username) || empty($first_name) || empty($last_name) || empty($email)
              alert('You must fill up all neccessary fields.');
              window.history.back();
          </script>
+
      ";
     exit;
 }
@@ -33,7 +57,7 @@ if (empty($username) || empty($first_name) || empty($last_name) || empty($email)
  *   registration page.
  */
 if(!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",$email)){
-    
+
     echo "
         <script>
             alert('Invalid Email.');
@@ -61,7 +85,7 @@ if($result->num_rows > 0){
     exit;
 }
 /**
- Checks if the passwords are the same
+ *Checks if the passwords are the same
 */
 if($password != $cpassword ){
 	echo "
@@ -124,7 +148,7 @@ if(strlen($password) < 8 || strlen($password) > 16){
         </script>
     ";
     exit;
-    
+
 }
 $password = password_hash($password,PASSWORD_DEFAULT);
 
@@ -132,7 +156,12 @@ $birthdate = date('Y-m-d',strtotime($birthdate));
 $insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
 
 if($connect->query($insert_stmt) === true){
-	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`last_name`,`birthdate`,`contact_number`,`address`,`gender`) VALUES ('$username', '$first_name','$last_name','$birthdate','$contact','$address','$gender');";
+	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`middle_name`,`last_name`,`birthdate`,
+        `birth_place`,`contact_number`,`gender`,`height`,`weight`,`blood_type`,`residential_address`,`residential_zip`,`residential_tel_no`,
+        `permanent_address`,`permanent_zip`,`permanent_tel_no`,`citizenship`,`religion`,`civil_status`,`sss_no`,`tin`,`philhealth_no`,`pagibig_id_no`)
+     VALUES ('$username', '$first_name','$middle_name','$last_name','$birthdate','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
+     '$residential_zip','$residential_tel_no','$permanent_address','$permanent_zip','$permanent_tel_no','$citizenship','$religion','$civil_status',
+     '$sss_no','$tin','$philhealth_no','$pagibig_id_no');";
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>

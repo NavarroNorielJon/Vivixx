@@ -1,20 +1,17 @@
-<?php
-    include 'module/navbar2.0.php';
-?>
+
 
 <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
         <!--START of user info-->
 		<div class="jumbotron" id="signup-form">
-            <form id="reg_form">
+            <form id="reg_form" action="utilities/registration.php">
                 <h1>Registration Form</h1><br>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -31,9 +28,9 @@
         				<div class="form-group">
                   <label for="pass">Password</label>
                   <div class="input-group">
-                    <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');nextButton('password','cpass');" class="form-control" required="required">
+                    <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword');" class="form-control" required="required">
                     <div class="input-group-append">
-                        <button  type="button" class="btn" onclick="showPass()">
+                        <button  type="button" class="btn" onclick="showHide('password')">
                         <i class="material-icons">remove_red_eye</i>
                         </button>
                     </div>
@@ -44,9 +41,9 @@
         				<div class="form-group" >
                     <label for="cpass">Confirm Password</label>
                     <div class="input-group">
-                    <input type="password" name="confirm_password" id="cpass" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpass');" class="form-control" required="required">
+                    <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpass');" class="form-control" required="required">
                       <div class="input-group-append">
-                          <button  type="button" class="btn" onclick="showPass()">
+                          <button  type="button" class="btn" onclick="showHide('cpassword')">
                           <i class="material-icons">remove_red_eye</i>
                           </button>
                       </div>
@@ -55,7 +52,7 @@
                 </div>
 
                 <div style="text-align: right">
-                  <button type="button" id="next" onclick="hideForm()">Next</button>
+                  <button type="button" id="next" onclick="hideForm()" disabled="disabled">Next</button>
                 </div>
             </form>
     </div>
@@ -145,18 +142,18 @@
                           <div class="row">
               							<div class="form-group col-7">
               								<i class="small material-icons prefix" style="font-size:50px;">home</i>
-                              <label for="res_address">Residential Address</label>
-              								<input type="text" name="res_address" id="res_address" class="form-control">
+                              <label for="residential_address">Residential Address</label>
+              								<input type="text" name="residential_address" id="residential_address" class="form-control">
               							</div>
 
               							<div class="form-group col-2 pads">
-                              <label for="rzip_code">Zip Code</label>
-              								<input type="text" name="rzip_code" id="rzip_code" class="form-control">
+                              <label for="residential_zip">Zip Code</label>
+              								<input type="text" name="residential_zip" id="residential_zip" class="form-control">
               							</div>
 
               							<div class="form-group col-3 pads">
-                              <label for="tel_num">Telephone NO.</label>
-              								<input type="text" name="tel_num" id="tel_num" class="form-control">
+                              <label for="residential_tel_no">Telephone NO.</label>
+              								<input type="text" name="residential_tel_no" id="residential_tel_no" class="form-control">
               							</div>
                           </div>
 
@@ -164,18 +161,18 @@
                           <div class="row">
               							<div class="form-group col-7">
               								<i class="small material-icons prefix" style="font-size:50px;">home</i>
-                              <label for="per_address">Permanent Address</label>
-              								<input type="text" name="per_address" id="per_address" class="form-control">
+                              <label for="permanent_address">Permanent Address</label>
+              								<input type="text" name="permanent_address" id="permanent_address" class="form-control">
               							</div>
 
               							<div class="form-group col-2 pads">
-                              <label for="pzip_code">Zip Code</label>
-              								<input type="text" name="pzip_code" id="pzip_code" class="form-control">
+                              <label for="permanent_zip">Zip Code</label>
+              								<input type="text" name="permanent_zip" id="permanent_zip" class="form-control">
               							</div>
 
               							<div class="form-group col-3 pads" >
-                              <label for="tel_num1">Telephone NO.</label>
-              								<input type="text" name="tel_num1" id="tel_num1" class="form-control">
+                              <label for="permanent_tel_no">Telephone NO.</label>
+              								<input type="text" name="permanent_tel_no" id="permanent_tel_no" class="form-control">
               							</div>
                           </div>
 
@@ -191,8 +188,8 @@
               							</div>
 
               							<div class="form-group col-4" >
-                              <label for="civil">Civil Status</label>
-                              <select name="civil" class="form-control">
+                              <label for="civil_status">Civil Status</label>
+                              <select name="civil_status" class="form-control">
                                 <option selected disabled>Select Civil Status:</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
@@ -207,8 +204,8 @@
 
                           <div class="row">
                             <div class="form-group col-3" >
-                              <label for="sss">SSS NO.</label>
-              								<input type="text" name="sss" id="sss" class="form-control">
+                              <label for="sss_no">SSS NO.</label>
+              								<input type="text" name="sss_no" id="sss_no" class="form-control">
               							</div>
 
               							<div class="form-group col-3" >
@@ -217,19 +214,19 @@
               							</div>
 
               							<div class="form-group col-3" >
-                              <label for="phn">PHILHEALTH NO.</label>
-              								<input type="text" name="phn" id="phn" class="form-control">
+                              <label for="philhealth_no ">PHILHEALTH NO.</label>
+              								<input type="text" name="philhealth_no" id="philhealth_no" class="form-control">
               							</div>
 
               							<div class="form-group col-3" >
-                              <label for="pgb">PAG-IBIG ID NO.</label>
-              								<input type="text" name="pgb" id="pgb" class="form-control">
+                              <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
+              								<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control">
               							</div>
                           </div>
 
 
                           <div style="text-align: right">
-                            <button type="button" id="next1" onclick="hideForm()">Next</button>
+                            <button type="submit" id="next1">Submit</button>
                           </div>
                       </form>
               </div>

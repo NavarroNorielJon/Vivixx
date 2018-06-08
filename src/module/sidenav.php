@@ -1,20 +1,30 @@
 <html>
-
-<head>
-   <title>Vivixx</title>
-    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-    <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div class="sidenav bg-dark">
-        <a href="#"><?php echo "$user_first"?></a>
-        <div class="dropdown-divider"></div>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href='utilities/logout.php' class='dropdown-trigger' data-target='menu' style=' font-size: 28px; width=1000%;'>Logout</a>
-    </div>
-</body>
+     <head>
+        <title>Vivixx</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <nav class="bg-dark" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Sample</h2>
+            </div>
+            
+            <ul class="list-unstyled components">
+                <li><a href="#">Page1</a></li>
+                <li><a href="#">Page2</a></li>    
+                <li><a href="#">Page3</a></li>    
+                <li><a href="#">Page4</a></li>    
+            </ul>
+        </nav>
+            
+        <div id="content">
+            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                Toggle Sidebar
+            </button>
+        </div>
+    </body>
 </html>
