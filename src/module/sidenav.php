@@ -10,28 +10,17 @@
     <body>
         <nav class="bg-dark" id="sidebar">
             <div class="sidebar-header">
-
-                <h2>Sample</h2>
-
-                <h2><?php echo "$user_first"; ?></h2>
+                <a class="navbar-brand" href="../profile"><?php echo "$user_first"; ?></a>
             </div>
+			<hr>
 
             <ul class="list-unstyled components">
                 <li><a href="#">Page1</a></li>
                 <li><a href="#">Page2</a></li>
                 <li><a href="#">Page3</a></li>
-
                 <li><a href="#">Page4</a></li>
-
                 <li><a href="../utilities/logout.php">Logout</a></li>
-
             </ul>
         </nav>
-
-        <div id="content">
-            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                Toggle Sidebar
-            </button>
-        </div>
     </body>
 </html>

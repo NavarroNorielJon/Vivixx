@@ -1,6 +1,5 @@
 <?php
     include 'utilities/session.php';
-    include 'module/navbar.php';
 ?>
 
 <html>
@@ -9,6 +8,14 @@
     </head>
     
     <body>
-        <p>Hi! <?php echo "$user_first"?></p>
+		<div class="row">
+        	<div class="col-3">
+				<?php include 'module/sidenav.php'?>
+			</div>
+			
+			<div class="col-9">
+				<p>Hi! <?php echo "$user_first"?></p>
+			</div>			
+		</div>
     </body>
 </html>
