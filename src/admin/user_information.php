@@ -1,27 +1,35 @@
+<?php
+  include 'header.php';
+ ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../Style/materialize/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="../Style/materialize/css/materialize.min.css"> 
+      <link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+      <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+      <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+      <script type="text/javascript" src="../script/jquery.min.js"></script>
         <title>Table</title>
     </head>
     <body>
-        <table border="1">
+        <table class="table">
+          <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Gender</th>
                 <th>Birth Date</th>
                 <th>Address</th>
-                <th>Contact Number</th> 
+                <th>Contact Number</th>
                 <th>Email</th>
             </tr>
-            
+          </thead>
+
             <?php
             include '../Utilities/db.php';
             $connect = Connect();
             $sql = "select * from user_info natural join user;";
-            
+
             $result = $connect->query($sql);
 
             if($result-> num_rows > 0){
@@ -42,12 +50,12 @@
                     <td>" . $row['email'] . "</td>
                     </tr>";
                 }
-                
+
             }else{
                 echo "database has no query";
             }
             $connect-> close();
             ?>
-        </table>     
+        </table>
     </body>
 </html>

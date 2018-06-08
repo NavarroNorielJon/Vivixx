@@ -1,10 +1,11 @@
+<?php
+  include 'header.php';
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
-
-        <link rel="stylesheet" href="../script/bootstrap/bootstrap.min.css">
         <title>Table</title>
-
+        <link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <script type="text/javascript" src="../script/jquery.min.js"></script>
@@ -12,7 +13,7 @@
 
     </head>
     <body>
-        <table class="table" style="font-size: 18px">
+        <table class="table">
           <thead>
             <tr>
                 <th>First Name</th>
