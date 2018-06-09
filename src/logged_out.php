@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <body class="white">
+    <body  style="background-color:#005959;">
         <div class="jumbotron" id="login-form">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
                 <form action="utilities/login.php" method="post" class="col s12 ">

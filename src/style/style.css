@@ -136,9 +136,28 @@ body {
 }
 
 #sidebar {
-    height: 100vh;
+	text-align: center;
+    height: 100%;
     min-width: 250px;
     max-width: 250px;
+	position: fixed;
+}
+
+#sidebar a {
+	color: white;
+}
+
+#sidebar a:hover {
+	color: #fac213;
+	text-decoration: underline;
+}
+
+
+#side-logo {
+	display: block;
+	margin: 0 auto;
+	width: 90%;
+	height: auto;
 }
 
 /*Font Style*/

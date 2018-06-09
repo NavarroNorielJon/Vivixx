@@ -10,12 +10,12 @@
     <body>
         <nav class="bg-dark" id="sidebar">
             <div class="sidebar-header">
-                <a class="navbar-brand" href="../profile"><?php echo "$user_first"; ?></a>
+            	<img src="../img/Lion.png" id="side-logo">  
             </div>
 			<hr>
 
             <ul class="list-unstyled components">
-                <li><a href="#">Page1</a></li>
+                <li><a class="navbar-brand" href="../profile"><?php echo "$user_first"; ?></a></li>
                 <li><a href="#">Page2</a></li>
                 <li><a href="#">Page3</a></li>
                 <li><a href="#">Page4</a></li>

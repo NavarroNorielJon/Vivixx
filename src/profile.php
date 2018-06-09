@@ -14,16 +14,24 @@
 			</div>
 			
 			<div class="col-9">
-				<div class="jumbotron" style="background-color: #fac213;">
+				<div class="jumbotron" style="width:100%;">
 					<h1>Personal Information</h1>
+					
 					<form>
-						<div class="form-group">
+						<div class="row">
+							<div class="form-group col-6">
 								<label for="first"> First Name</label>
 								<input type="text" id="first" class="form-control" value="<?php echo "$user_first";?>" disabled>
+							</div>
+							<div class="form-group col-6">
+								<label for="first"> Last Name</label>
+								<input type="text" id="first" class="form-control" value="<?php echo "$user_last";?>" disabled>
+							</div>
 						</div>
 					</form>
+					
 				</div>
-			</div>			
+			</div>
 		</div>
     </body>
 </html>
