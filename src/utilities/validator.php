@@ -41,13 +41,13 @@ switch ($type){
 		$password = $_REQUEST["password"];
 		if(strlen($password) < 8 ){
 			echo "<span id='weak'>weak eight(8) characters minimum</span>";
-		} else if(strlen($password) > 8 && strlen($password) < 10){
+		} else if(strlen($password) >= 8 && strlen($password) <= 10){
 			echo "<span id='good'>good</span>";
-		} else if(strlen($password) > 10 && strlen($password) < 13){
+		} else if(strlen($password) >= 10 && strlen($password) <= 13){
 			echo "<span id='average'>average</span>";
-		} else if(strlen($password) > 13 && strlen($password) < 16){
+		} else if(strlen($password) >= 14 && strlen($password) <= 16){
 			echo "<span id='strong'>strong</span>";
-		} else if(strlen($password) < 8 || strlen($password) > 16){
+		} else if(strlen($password) <= 8 || strlen($password) >= 16){
 			echo "<span class='invalid'>Password length must be 8 characters minimum and 16 characters maximum</span>";
 		}
 		break;

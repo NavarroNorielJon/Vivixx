@@ -6,14 +6,14 @@
                 <form action="utilities/login.php" method="post" class="col s12 ">
                     <div class="form-group">
                         <label for="userOrEmail">Username or Email-Address</label>
-                        <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                        <input class="form-control" type="text" autocomplete="off" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
                         <div id="validUserOrEmail"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="pass">Password</label>
                         <div class="input-group">
-                            <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
+                            <input type="password" placeholder="Password" autocomplete="off" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 
                             <div class="input-group-append">
                                 <button  type="button" class="btn" onclick="showHide('password')">
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-		
+
 		<script>
 			function jon()
 			{

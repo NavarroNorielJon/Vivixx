@@ -16,13 +16,13 @@
                         <h1>Registration Form</h1><br>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
+                            <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
                             <div id="validUser"></div>
     				    </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class=" form-control form-control" required="required">
+                            <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class=" form-control form-control" required="required">
                             <div id="validEmail"></div>
                         </div>
 
@@ -230,7 +230,7 @@
 			   </div>
            </div>
            <!-- Start of Family Background -->
-           <div class="jumbotron " id="family_background">
+           <div class="jumbotron" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
 
@@ -317,7 +317,7 @@
                    <div class="row">
                        <div class="form-group col-6">
                            <label for="child_name">Name</label>
-                           <input type="text" name="child_name" id="child_name" class="form-control" required="required">
+                           <input type="text" placeholder="First name Middle initial. Last name" name="child_name" id="child_name" class="form-control" required="required">
                        </div>
 
                        <div class="form-group col-6">
@@ -326,7 +326,7 @@
                        </div>
 
                    </div>
-                   <div style="text-align: right">
+                   <div style="text-align: right; margin-bottom:2%;">
                        <button type="button">Add</button>
                    </div>
 
@@ -344,12 +344,12 @@
       document.getElementById(currId).classList.add("d-none");
       document.getElementById(nextId).classList.remove("d-none");
     }
-		
+
 	function jon(){
 			swal("Good Jon", "Hiiii", "success");
 		}
     </script>
-	
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/ajax.js"></script>
