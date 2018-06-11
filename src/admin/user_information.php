@@ -21,6 +21,7 @@
           include 'data_information.php';
            ?>
          </div>
+         <!--script for calling data table library-->
          <script>
          $('#table').dataTable( {
           "columnDefs": [

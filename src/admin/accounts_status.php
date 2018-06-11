@@ -22,6 +22,7 @@
        include 'data_accounts.php';
         ?>
       </div>
+      <!-- script for calling datatables library -->
       <script>
       $('#table').dataTable( {
       "columnDefs": [
