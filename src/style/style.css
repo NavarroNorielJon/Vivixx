@@ -113,6 +113,13 @@ body {
     padding-bottom: 3%;
     justify-content: center;
     align-items: center;
+    margin: auto 0;
+    position: absolute;
+    top: 3%;
+    left: 12.5%;
+    right: 15%;
+    padding-top: 2%;
+    padding-right: 2%;
 }
 
 #family_background {
@@ -157,13 +164,8 @@ body {
 
 #side-logo {
 	display: block;
-<<<<<<< HEAD
-	margin: 2%;
-	width: 90%;
-=======
 	margin: 0 auto !important;
 	width: 120px;
->>>>>>> c18c1ff714755528f7a041bdb5810ae5bea43b9c
 	height: auto;
 }
 

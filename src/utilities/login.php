@@ -13,7 +13,7 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
-                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE birthdate ='null'";
+                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE username='$user' and birth_place is null";
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
                     header('location:/information');
