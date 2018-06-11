@@ -1,6 +1,6 @@
 <?php
     include 'db.php';
-	echo "<script type='text/javascript' src='script/sweetalert.min.js'></script>";
+    session_start();
     $connect = Connect();
     if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
         $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
@@ -12,7 +12,6 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                session_start();
                 $_SESSION['user'] = $user;
                 $test = "SELECT * FROM user_info NATURAL JOIN user WHERE birthdate ='null'";
                 $result = mysqli_query($connect,$test);
