@@ -44,22 +44,20 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
+					<form action="mailing/send_reset.php" method="POST">
                     <!-- Body -->
-                    <div class="modal-body">
-                        <form action="mailing/send_reset.php" method="POST">
-                            <div class="form-group">
-                                <label for="id">E-mail Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
-                                <button type="submit" class="btn btn-primary">Send Email</button>
-                            </div>
-                        </form>
+					<div class="modal-body">   
+                    	<div class="form-group">
+                        	<label for="id">E-mail Address</label>
+                           	<input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
+                    	</div> 
                     </div>
 
                     <!--Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary">Send Email</button>
                     </div>
+					</form>
                 </div>
             </div>
         </div>

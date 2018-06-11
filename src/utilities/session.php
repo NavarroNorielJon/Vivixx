@@ -14,4 +14,8 @@
         $user_last = $row['last_name'];
         $user_contact = $row['contact_number'];
     }
+
+    if(!isset($_SESSION['user'])){
+        header('location:/');
+    }
 ?>

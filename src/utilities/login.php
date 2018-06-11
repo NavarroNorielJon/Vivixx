@@ -1,14 +1,3 @@
-<script>
-	function sample()
-	{
-		swal({
-			title: 'Good Jon', 
-			text: 'Hiiii', 
-			type:'success'
-		 });	
-	}
-</script>
-
 <?php
     include 'session.php';
 	echo "<script type='text/javascript' src='script/sweetalert.min.js'></script>";
@@ -24,16 +13,14 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
-                header('location:/');
+                header('location:/logged_in');
             }else {
-				echo "<script>swal({
-			title: 'Good Jon', 
-			text: 'Hiiii', 
-			type:'success'
-		 });</script>";
+				echo "<script>alert('Invalid username or password');
+					  	window</script>";
 			}
         }else {	
-			echo "mali";
+			echo "<script>alert('User does not exist');
+				  window.location.href = '/'";
 		} 
     }
 	 
