@@ -10,11 +10,12 @@
     <body>
 		<div class="row">
         	<div class="col-3">
-				<?php include 'module/sidenav.php';?>
+				<?php include 'modules/sidenav.php';?>
 			</div>
 
 			<div class="col-9">
                 <h1>Personal Information</h1>
+                
                 <div class="jumbotron" id="personal_info">
 
                     <div class="row">

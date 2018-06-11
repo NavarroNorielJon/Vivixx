@@ -15,7 +15,7 @@
     <body>
     	<div class="row">
         	<div class="col-3">
-        		<?php include 'module/sidenav.php'; ?>
+        		<?php include 'modules/sidenav.php'; ?>
         	</div>
 
         	<div class='col-9'>
