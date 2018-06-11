@@ -157,13 +157,8 @@ body {
 
 #side-logo {
 	display: block;
-<<<<<<< HEAD
 	margin: 2%;
 	width: 90%;
-=======
-	margin: 0 auto !important;
-	width: 120px;
->>>>>>> c18c1ff714755528f7a041bdb5810ae5bea43b9c
 	height: auto;
 }
 
