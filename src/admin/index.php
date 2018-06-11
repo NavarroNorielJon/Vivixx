@@ -13,10 +13,9 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="container">
   <h3>Some contents here</h3>
   <p>Introduction message</p>
 </div>
-
 </body>
 </html>
