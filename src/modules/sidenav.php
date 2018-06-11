@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
      <head>
         <title>Vivixx</title>
@@ -23,7 +24,7 @@
                 <li>
                     <a class="navbar-brand" href="../profile" id="user_name">
                         <i class="large material-icons">account_circle</i>
-                        <?php echo "$username"; ?>
+                        <?php echo "$first_name"; ?>
                     </a>
                 </li>
 

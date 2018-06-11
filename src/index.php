@@ -61,16 +61,19 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="mailing/send_reset.php" method="POST">
-                        <!-- Body -->
-                        <div class="modal-body">
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form action="mailing/send_reset.php" method="POST">
                             <div class="form-group">
                                 <label for="id">E-mail Address</label>
                                 <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
                             </div>
-                        </div>
-                        <button type="button" class="btn btn-primary">Send Email</button>
-                    </form>
+
+                            <div style="text-align: right;">
+                                <button type="button" class="btn btn-primary">Send Email</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,7 +154,7 @@
                                     </div>
                                 </div>
                             
-                                <div style="text-align: center;">
+                                <div style="text-align: right;">
                                     <button type="submit" class="btn" id="button1" onclick="loginSuccess()">Submit</button>
                                 </div>
                             </div>
