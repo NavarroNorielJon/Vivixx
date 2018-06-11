@@ -20,34 +20,34 @@
     <body  style="background-color:#005959;">
         <div class="jumbotron" id="login-form">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-                <form action="utilities/login.php" method="post" class="col s12 ">
-                    <div class="form-group">
-                        <label for="userOrEmail">Username or Email-Address</label>
-                        <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-                        <div id="validUserOrEmail"></div>
-                    </div>
+            <form action="utilities/login.php" method="post" class="col s12 ">
+                <div class="form-group">
+                    <label for="userOrEmail">Username or Email-Address</label>
+                    <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                    <div id="validUserOrEmail"></div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="pass">Password</label>
-                        <div class="input-group">
-                            <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','vPassword')" required="required" >
-
-                            <div class="input-group-append">
-                                <button  type="button" class="btn" onclick="showHide('password','icon')">
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','vPassword')" required="required" >
+                    
+                        <div class="input-group-append">
+                            <button  type="button" class="btn" onclick="showHide('password','icon')">
                                 <i class="material-icons" id="icon">visibility</i>
-                                </button>
-                            </div>
+                            </button>
                         </div>
-
-                        <div id="vPassword"></div>
                     </div>
+                    
+                    <div id="vPassword"></div>
+                </div>
 
-                    <div style="text-align: center;">
-                        <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
-                        <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
-                        <a href="#!" data-toggle="modal" data-target="#signupForm" style="display: block">Sign Up</a>
-                    </div>
-                </form>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
+                    <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
+                    <a href="#!" data-toggle="modal" data-target="#signupForm" style="display: block">Sign Up</a>
+                </div>
+            </form>
         </div>
 
         <!-- Modal for forgot password -->
@@ -62,22 +62,19 @@
                         </button>
                     </div>
                     <form action="mailing/send_reset.php" method="POST">
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="id">E-mail Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="id">E-mail Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
+                            </div>
                         </div>
-                    </div>
-
-                    <!--Footer -->
-                    <div class="modal-footer">
                         <button type="button" class="btn btn-primary">Send Email</button>
-                    </div>
                     </form>
                 </div>
             </div>
         </div>
+        <!-- End of forgot password -->
 
         <!-- Modal for Register -->
         <div class="modal fade" id="signupForm" tabindex="-1" role="dialog">
@@ -89,10 +86,9 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    
+                    <!-- Body -->
                     <div class="modal-body">
                         <form action="utilities/registration.php" method="POST">
-                        <div>
                             <div>
                                 <!-- Full Name -->
                                 <div class="row">
@@ -125,44 +121,43 @@
                                         <div id="validEmail"></div>
                                 </div>
 
-                            <div class="row">
-                            <div class="form-group col-6">
-                                <label for="password">Password</label>
-                                <div class="input-group">
-                                    <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="password">Password</label>
+                                        <div class="input-group">
+                                            <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
 
-                                    <div class="input-group-append">
-                                        <button  type="button" class="btn" onclick="showHide('password','icon')">
-                                            <i class="material-icons" id="icon">visibility</i>
-                                        </button>
+                                            <div class="input-group-append">
+                                                <button  type="button" class="btn" onclick="showHide('password','icon')">
+                                                    <i class="material-icons" id="icon">visibility</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="validPassword"></div>
+                                    </div>
+
+                                    <div class="form-group col-6" >
+                                        <label for="cpass">Confirm Password</label>
+                                        <div class="input-group">
+                                            <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
+
+                                            <div class="input-group-append">
+                                                <button  type="button" class="btn" onclick="showHide('cpassword','icon1')">
+                                                    <i class="material-icons" id="icon1">visibility</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="validConfirmation"></div>
                                     </div>
                                 </div>
-                                <div id="validPassword"></div>
-                            </div>
-
-                            <div class="form-group col-6" >
-                                <label for="cpass">Confirm Password</label>
-                                <div class="input-group">
-                                    <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
-
-                                    <div class="input-group-append">
-                                        <button  type="button" class="btn" onclick="showHide('cpassword','icon1')">
-                                            <i class="material-icons" id="icon1">visibility</i>
-                                        </button>
-                                    </div>
+                            
+                                <div>
+                                    <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
+                                    <button type="submit" onclick="loginSuccess()">Submit</button>
                                 </div>
-                                <div id="validConfirmation"></div>
                             </div>
-                        </div>
-                            <div>
-                                <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
-                                <button type="submit" onclick="loginSuccess()">Submit</button>
-                            </div>
+                        </form>
                     </div>
-                </div>
-            </form>
-                 </div>
-
                 </div>
             </div>
         </div>
