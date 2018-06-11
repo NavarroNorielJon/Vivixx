@@ -1,11 +1,10 @@
 <?php
-include 'db.php';
-include 'session.php';
+include 'utilities/db.php';
+include 'utilities/session.php';
 $connect = Connect();
 
 
 //personal information
-
 $birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
 $birth_place = mysqli_real_escape_string($connect,$_POST['pbirth']);
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
@@ -41,37 +40,21 @@ $father_last_name = mysqli_real_escape_string($connect, $_POST['father_last_name
 $mother_first_name = mysqli_real_escape_string($connect, $_POST['mother_first_name']);
 $mother_middle_name = mysqli_real_escape_string($connect, $_POST['mother_middle_name']);
 $mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name']);
-$child_name = mysqli_real_escape_string($connect, $_POST['child_name']);
-$child_birth = mysqli_real_escape_string($connect, $_POST['child_birth']);
+$child_name = $_POST['child_name'];
+$child_birth =$_POST['child_birth'];
 
 
-if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
-    echo "
-         <script>
-             alert('You must fill up all neccessary fields.');
-             window.history.back();
-         </script>
+// if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
+//     echo "
+//          <script>
+//              alert('You must fill up all neccessary fields.');
+//              window.history.back();
+//          </script>
+//
+//      ";
+//     exit;
+// }
 
-     ";
-    exit;
-}
-
-$sql = "SELECT * FROM user where email = '$email'";
-$result = $connect->query($sql);
-
-/**
- *If the result is greater than 0 output an alert and redirect
- *to the registration
- */
-if($result->num_rows > 0){
-    echo "
-        <script>
-            alert('Email already exist.');
-            window.history.back();
-        </script>
-    ";
-    exit;
-}
 
 
 $sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
@@ -91,21 +74,35 @@ if($result->num_rows > 0){
     exit;
 }
 $birthdate = date('Y-m-d',strtotime($birthdate));
+// $child_birth = date('Y-m-d',strtotime($child_birth));
 
-$insert_stmt = "INSERT INTO `user_info`(`birth_place`,`contact_number`,`gender`,`height`,`weight`,`blood_type`,`residential_address`,`residential_zip`,`residential_tel_no`,
-    `permanent_address`,`permanent_zip`,`permanent_tel_no`,`citizenship`,`religion`,`civil_status`,`sss_no`,`tin`,`philhealth_no`,`pagibig_id_no`)
- VALUES ('$birthdate','$birth_place','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
- '$residential_zip','$residential_tel_no','$permanent_address','$permanent_zip','$permanent_tel_no','$citizenship','$religion','$civil_status',
- '$sss_no','$tin','$philhealth_no','$pagibig_id_no');";
+$insert_stmt = "UPDATE `user_info` SET `birthdate`='$birthdate', `birth_place`='$birth_place', `contact_number`='$contact_number', `gender`='$gender', `height`='$height', `weight`='$weight',
+ `blood_type`='$blood_type', `residential_address`='$residential_address', `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
+  `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship', `religion`='$religion', `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
+  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `username`='$username';";
 
 if($connect->query($insert_stmt) === true){
-    $insert_stmt = "INSERT INTO `user_background`(`username`,) VALUES();";
-    if(){
-
+    $insert_stmt = "INSERT INTO `user_background`(`username`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
+    `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
+    `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES('$username','$spouse_first_name','$spouse_middle_name',
+    '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
+    '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
+    if($connect->query($insert_stmt) === true){
+        // for ($i=1; $i < count($child_name); $i++) {
+        //     $insert_stmt="INSERT INTO `user_offspring` (`child_id`,`name`,`birth`) VALUES ('null','$child_name[$i]','$child_birth[$i]');";
+        //     if($connect->query() === true){
+        //         echo "<script>
+        //                 alert('DONE!');
+        //               </script>";
+        //     }
+        // }
+        echo "<script>
+                alert('DOne');
+              </script>";
     }
     echo "<script>
-            alert('Welcome');
-            window.location.replace('/home');
+            alert('$username');
+
           </script>";
 } else {
     echo "<script>
