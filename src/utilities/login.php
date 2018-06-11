@@ -13,19 +13,26 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
-                header('location:/home');
+                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE birthdate ='null'";
+                $result = mysqli_query($connect,$test);
+                if($result->num_rows > 0){
+                    header('location:/information');
+                }else{
+                    header('location:/home');
+                }
+
             }else {
 				echo "<script>
                         alert('Invalid username or password');
                         window.location = '/';
                       </script>";
 			}
-        }else {	
+        }else {
 			echo "<script>
                     alert('User does not exist');
                     window.location = '/';
 				  </script>";
-		} 
+		}
     }
-	 
+
 ?>
