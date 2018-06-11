@@ -1,7 +1,7 @@
 <?php
     require_once 'db.php';
     session_start();
-    
+
     $connect = Connect();
     if(isset($_SESSION['user'])){
         $current_user = $_SESSION['user'];
@@ -12,7 +12,6 @@
         $user_email = $row['email'];
         $user_first = $row['first_name'];
         $user_last = $row['last_name'];
-        $user_contact = $row['contact_number'];
     }
 
     if(!isset($_SESSION['user'])){
