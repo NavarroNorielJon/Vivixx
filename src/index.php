@@ -80,8 +80,8 @@
         </div>
 
         <!-- Modal for Register -->
-        <div class="modal fade sign-up" id="signupForm" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade" id="signupForm" tabindex="-1" role="dialog">
+            <div class="modal-dialog sign-up" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3>Register</h3>
