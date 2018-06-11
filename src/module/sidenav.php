@@ -13,17 +13,17 @@
 			<!-- Header -->
 			<div class="sidebar-header">
                 <a href="/home">
-            	   <img src="../img/Lion.png" id="side-logo">  
+            	   <img src="../img/Lion.png" id="side-logo">
                 </a>
 				<hr>
             </div>
-			
+
 			<!-- Links -->
             <ul class="list-unstyled components" style="text-align: left;">
                 <li>
                     <a class="navbar-brand" href="../profile" id="user_name">
                         <i class="large material-icons">account_circle</i>
-                        <?php echo "$user_first"; ?>
+                        <?php echo "$username"; ?>
                     </a>
                 </li>
 
@@ -45,9 +45,9 @@
                     <a href="#">
                         <i class="large material-icons">event</i>
                         Events
-                    </a>   
+                    </a>
                 </li>
-                
+
                 <li style="position:absolute;
     bottom:0;">
                     <a href="../utilities/logout.php">
