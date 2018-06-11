@@ -1,5 +1,8 @@
 <?php
     include 'utilities/session.php';
+    if (isset($_SESSION['user'])) {
+        echo "<script>window.location = '/logged_in';</script>";
+    }
 ?>
 
 <!DOCTYPE html>
