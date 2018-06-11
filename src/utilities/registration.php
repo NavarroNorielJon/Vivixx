@@ -34,25 +34,25 @@ $philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
 $pagibig_id_no = mysqli_real_escape_string($connect, $_POST['pagibig_id_no']);
 
 //family background
-$spouse_first_name = mysqli_real_escape_string($connect, $_POST['spouse_first_name']);
-$spouse_middle_name = mysqli_real_escape_string($connect, $_POST['spouse_middle_name']);
-$spouse_last_name = mysqli_real_escape_string($connect, $_POST['spouse_last_name']);
-$occupation = mysqli_real_escape_string($connect, $_POST['occupation']);
-$employer = mysqli_real_escape_string($connect, $_POST['employer']);
-$business_address = mysqli_real_escape_string($connect, $_POST['business_address']);
-$spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
-$father_first_name = mysqli_real_escape_string($connect, $_POST['father_first_name']);
-$father_middle_name = mysqli_real_escape_string($connect, $_POST['father_middle_name']);
-$father_last_name = mysqli_real_escape_string($connect, $_POST['father_last_name']);
-$mother_first_name = mysqli_real_escape_string($connect, $_POST['mother_first_name']);
-$mother_middle_name = mysqli_real_escape_string($connect, $_POST['mother_middle_name']);
-$mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name']);
-$child_name = mysqli_real_escape_string($connect, $_POST['child_name']);
-$child_birth = mysqli_real_escape_string($connect, $_POST['child_birth']);
+// $spouse_first_name = mysqli_real_escape_string($connect, $_POST['spouse_first_name']);
+// $spouse_middle_name = mysqli_real_escape_string($connect, $_POST['spouse_middle_name']);
+// $spouse_last_name = mysqli_real_escape_string($connect, $_POST['spouse_last_name']);
+// $occupation = mysqli_real_escape_string($connect, $_POST['occupation']);
+// $employer = mysqli_real_escape_string($connect, $_POST['employer']);
+// $business_address = mysqli_real_escape_string($connect, $_POST['business_address']);
+// $spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
+// $father_first_name = mysqli_real_escape_string($connect, $_POST['father_first_name']);
+// $father_middle_name = mysqli_real_escape_string($connect, $_POST['father_middle_name']);
+// $father_last_name = mysqli_real_escape_string($connect, $_POST['father_last_name']);
+// $mother_first_name = mysqli_real_escape_string($connect, $_POST['mother_first_name']);
+// $mother_middle_name = mysqli_real_escape_string($connect, $_POST['mother_middle_name']);
+// $mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name']);
+// $child_name = mysqli_real_escape_string($connect, $_POST['child_name']);
+// $child_birth = mysqli_real_escape_string($connect, $_POST['child_birth']);
 
-for ($i=0; $i < ; $i++) {
-
-}
+// for ($i=0; $i < ; $i++) {
+//
+// }
 
 
 

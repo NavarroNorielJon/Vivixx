@@ -45,7 +45,7 @@
                     <div style="text-align: center;">
                         <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
                         <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
-                        <a href="signUp.php" style="display: block">Sign Up</a>
+                        <a href="signup" style="display: block">Sign Up</a>
                     </div>
                 </form>
         </div>
