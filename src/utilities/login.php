@@ -13,7 +13,7 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 $_SESSION['user'] = $user;
-                header('location:/logged_in');
+                header('location:/home');
             }else {
 				echo "<script>alert('Invalid username or password');
 					  	window</script>";

@@ -1,7 +1,8 @@
 <?php
-    include 'utilities/session.php';
+    include 'utilities/db.php';
+    session_start();
     if (isset($_SESSION['user'])) {
-        echo "<script>window.location = '/logged_in';</script>";
+        echo "<script>window.location = '/home';</script>";
     }
 ?>
 
