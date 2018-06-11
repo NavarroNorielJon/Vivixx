@@ -15,7 +15,13 @@ body {
 
 /*Class*/
 
-    /*Footer*/
+  /*Sign Up*/
+.sign-up {
+  min-width: 110vh;
+  max-width: 110vh;
+}
+
+  /*Footer*/
 
 .footer {
     background-color: #fac213;
@@ -33,21 +39,11 @@ body {
     padding-top: 7px;
     padding-bottom: 0;
 }
-
-.profile-image {
-    margin: 30px auto 30px auto;
-    max-height: 200px;
-    min-height: 200px;
-    max-width: 200px;
-    min-width: 200px;
-    border: 3px solid black;
-    border-radius: 150px;
-}
-
+  /*End of footer*/
 
 /*ID*/
 
-    /*Password*/
+  /*Password*/
 
 #weak{
 	color: red;

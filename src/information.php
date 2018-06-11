@@ -11,6 +11,7 @@
     <body style="background-color: #005959;">
 
 			<!-- Start of Personal Info-->
+            <form action="info" method="POST">
              <div class="jumbotron " id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
@@ -243,13 +244,13 @@
                    <div class="row">
                        <div class="form-group col-6">
                            <label for="child_name">Name</label>
-                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" required="required">
+                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control">
                        </div>
 
                        <div class="form-group col-6">
                            <label for="child_birth">Date of Birth</label>
                            <div class="input-group">
-                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required">
+                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" >
                                <div class="input-group-append">
                                    <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
                                </div>
