@@ -19,7 +19,7 @@
 							<form action="/utilities/upload.php" method="post" enctype="multipart/form-data">
 								<div class="input-group" id="profile-image">
 								Profile Image
-								<input type="file" class="form-control-file" name="prof-image">
+								<input type="file" class="form-control-file" name="image">
 								<div class="input-group-appened">
 								<input type="submit" value="Upload Image" name="submit">
 								</div>
