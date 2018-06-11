@@ -84,7 +84,7 @@
             <div class="modal-dialog sign-up" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3>Register</h3>
+                        <h1>Registration Form</h1>
                         <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -92,9 +92,9 @@
                     
                     <div class="modal-body">
                         <form action="utilities/registration.php" method="POST">
-                    <div>
                         <div>
-                            <h1>Registration Form</h1><br>
+                            <div>
+                                <!-- Full Name -->
                                 <div class="row">
                                     <div class="form-group col-4">
                                         <label for="fname">First Name</label>
@@ -110,36 +110,38 @@
                                         <label for="lname">Last Name</label>
                                         <input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" required="required">
                                     </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
-                                <div id="validUser"></div>
-                            </div>
-
-                            <div class="form-group col-6">
-                                <label for="email">Email</label>
-                                <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class=" form-control form-control" required="required">
-                                <div id="validEmail"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <div class="input-group">
-                                <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
-
-                                <div class="input-group-append">
-                                    <button  type="button" class="btn" onclick="showHide('password','icon')">
-                                        <i class="material-icons" id="icon">visibility</i>
-                                    </button>
                                 </div>
-                            </div>
-                            <div id="validPassword"></div>
-                        </div>
+                                <!-- End -->
+                                
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
+                                    <div id="validUser"></div>
+                                </div>
 
-                        <div class="form-group" >
-                            <label for="cpass">Confirm Password</label>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class="form-control form-control" required="required">
+                                        <div id="validEmail"></div>
+                                </div>
+
+                            <div class="row">
+                            <div class="form-group col-6">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
+
+                                    <div class="input-group-append">
+                                        <button  type="button" class="btn" onclick="showHide('password','icon')">
+                                            <i class="material-icons" id="icon">visibility</i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="validPassword"></div>
+                            </div>
+
+                            <div class="form-group col-6" >
+                                <label for="cpass">Confirm Password</label>
                                 <div class="input-group">
                                     <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
 
@@ -150,12 +152,12 @@
                                     </div>
                                 </div>
                                 <div id="validConfirmation"></div>
+                            </div>
                         </div>
-
-                        <div>
-                            <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
-                            <button type="submit" onclick="loginSuccess()">Submit</button>
-                        </div>
+                            <div>
+                                <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
+                                <button type="submit" onclick="loginSuccess()">Submit</button>
+                            </div>
                     </div>
                 </div>
             </form>
