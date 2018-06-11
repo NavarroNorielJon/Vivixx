@@ -1,7 +1,7 @@
 <?php
     include 'utilities/session.php';
 ?>
-
+<!DOCTYPE html>
 <html>
     <head>
         <title>Profile</title>
