@@ -11,7 +11,7 @@
     <body>
 			<!-- START of user info-->
                 <form action="utilities/registration.php" method="POST">
-                    <div class="jumbotron d-none" id="signup_form">
+                    <div class="jumbotron " id="signup_form">
                         <div>
                         <h1>Registration Form</h1><br>
                         <div class="form-group">
@@ -32,8 +32,8 @@
                                 <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
 
                                 <div class="input-group-append">
-                                    <button  type="button" class="btn" onclick="showHide('password')">
-                                        <i class="material-icons">remove_red_eye</i>
+                                    <button  type="button" class="btn" onclick="showHide('password','icon')">
+                                        <i class="material-icons" id="icon">visibility</i>
                                     </button>
                                 </div>
                             </div>
@@ -46,8 +46,8 @@
                                     <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
 
                                     <div class="input-group-append">
-                                        <button  type="button" class="btn" onclick="showHide('cpassword')">
-                                            <i class="material-icons">remove_red_eye</i>
+                                        <button  type="button" class="btn" onclick="showHide('cpassword','icon1')">
+                                            <i class="material-icons" id="icon1">visibility</i>
                                         </button>
                                     </div>
                                 </div>
@@ -230,7 +230,7 @@
 			   </div>
            </div>
            <!-- Start of Family Background -->
-           <div class="jumbotron" id="family_background">
+           <div class="jumbotron d-none" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
 
@@ -325,7 +325,7 @@
                            <div class="input-group">
                                <input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required">
                                <div class="input-group-append">
-                                   <button class="btn btn-success" type="button" onclick="add()">&plus;</button>
+                                   <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
                                </div>
                            </div>
                        </div>
@@ -335,7 +335,8 @@
 
                    <div style="text-align: right">
                        <button type="button" onclick="nextForm('family_background','personal_info')"><i class="material-icons">arrow_back</i></button>
-                       <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button>
+                       <!-- <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button> -->
+                       <button type="submit">Submit</button>
                    </div>
                    <!-- End of family background-->
               </div>
