@@ -1,5 +1,5 @@
 <?php
-    include 'session.php';
+    include 'db.php';
 	echo "<script type='text/javascript' src='script/sweetalert.min.js'></script>";
     $connect = Connect();
     if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
@@ -12,15 +12,20 @@
         $passwordVerify = $row['password'];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
+                session_start();
                 $_SESSION['user'] = $user;
                 header('location:/home');
             }else {
-				echo "<script>alert('Invalid username or password');
-					  	window</script>";
+				echo "<script>
+                        alert('Invalid username or password');
+                        window.location = '/';
+                      </script>";
 			}
         }else {	
-			echo "<script>alert('User does not exist');
-				  window.location.href = '/'";
+			echo "<script>
+                    alert('User does not exist');
+                    window.location = '/';
+				  </script>";
 		} 
     }
 	 

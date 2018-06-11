@@ -16,6 +16,10 @@
 			<div class="col-9">
 				<div class="jumbotron" style="width:100%;">
 					<h1>Personal Information</h1>
+
+					<div class="profile-image">
+						<p>Jon</p>
+					</div>
 					
 					<form>
 						<div class="row">
