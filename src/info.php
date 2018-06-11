@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'session.php';
 $connect = Connect();
 
 
@@ -91,14 +92,17 @@ if($result->num_rows > 0){
 }
 $birthdate = date('Y-m-d',strtotime($birthdate));
 
-$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`middle_name`,`last_name`,`birthdate`,
-    `birth_place`,`contact_number`,`gender`,`height`,`weight`,`blood_type`,`residential_address`,`residential_zip`,`residential_tel_no`,
+$insert_stmt = "INSERT INTO `user_info`(`birth_place`,`contact_number`,`gender`,`height`,`weight`,`blood_type`,`residential_address`,`residential_zip`,`residential_tel_no`,
     `permanent_address`,`permanent_zip`,`permanent_tel_no`,`citizenship`,`religion`,`civil_status`,`sss_no`,`tin`,`philhealth_no`,`pagibig_id_no`)
- VALUES ('$username', '$first_name','$middle_name','$last_name','$birthdate','$birth_place','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
+ VALUES ('$birthdate','$birth_place','$contact_number','$gender','$height','$weight','$blood_type','$residential_address',
  '$residential_zip','$residential_tel_no','$permanent_address','$permanent_zip','$permanent_tel_no','$citizenship','$religion','$civil_status',
  '$sss_no','$tin','$philhealth_no','$pagibig_id_no');";
 
-if($connect->query($insert_stmt)===true){
+if($connect->query($insert_stmt) === true){
+    $insert_stmt = "INSERT INTO `user_background`(`username`,) VALUES();";
+    if(){
+
+    }
     echo "<script>
             alert('Welcome');
             window.location.replace('/home');

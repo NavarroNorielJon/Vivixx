@@ -46,11 +46,11 @@
                         <div class="form-group">
                             <label for="password">Password</label>
                             <div class="input-group">
-                                <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
+                                <input type="password" name="rpassword" id="rpassword" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
 
                                 <div class="input-group-append">
-                                    <button  type="button" class="btn" onclick="showHide('password','icon')">
-                                        <i class="material-icons" id="icon">visibility</i>
+                                    <button  type="button" class="btn" onclick="showHide('rpassword','icon2')">
+                                        <i class="material-icons" id="icon2">visibility</i>
                                     </button>
                                 </div>
                             </div>
