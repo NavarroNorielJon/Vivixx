@@ -84,7 +84,7 @@ body {
     position: absolute;
     width: 50%;
     right: 0;
-    top: 20%;
+    top: 17%;
     }
 
 /*Sign Up form*/
@@ -118,6 +118,10 @@ body {
     padding-right: 2%;
 }
 
+#home-content {
+  margin-top: 3%;
+  margin-left: -3%;
+}
 #family_background {
     display: flex;
     width: 75%;
