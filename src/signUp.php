@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
+    <body style="background-color: #005959;">
 			<!-- START of user info-->
                 <form action="utilities/registration.php" method="POST">
                     <div class="jumbotron " id="signup_form">

@@ -8,18 +8,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
+    <body style="overflow: hidden;">
         <nav id="sidebar">
 			<!-- Header -->
 			<div class="sidebar-header">
-            	<img src="../img/Lion.png" id="side-logo">  
+                <a href="/home">
+            	   <img src="../img/Lion.png" id="side-logo">  
+                </a>
 				<hr>
             </div>
 			
 			<!-- Links -->
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components" style="text-align: left;">
                 <li>
-                    <a class="navbar-brand" href="../profile">
+                    <a class="navbar-brand" href="../profile" id="user_name">
                         <i class="large material-icons">account_circle</i>
                         <?php echo "$user_first"; ?>
                     </a>
@@ -46,7 +48,8 @@
                     </a>   
                 </li>
                 
-                <li>
+                <li style="position:absolute;
+    bottom:0;">
                     <a href="../utilities/logout.php">
                         <i class="large material-icons">power_settings_new</i>
                         Logout
