@@ -30,12 +30,16 @@ function confirmPass(type, str, passElement, elementId){
 	}
 }
 
-function showHide(password) {
+function showHide(password,ic) {
     var pass = document.getElementById(password);
+	var icon = document.getElementById(ic);
     if (pass.type === "password") {
+		icon.innerHTML = "visibility_off";
         pass.type = "text";
     } else {
         pass.type = "password";
+		icon.innerHTML = "visibility";
+
     }
 }
 
@@ -92,7 +96,7 @@ function add(){
 	var newDataField = document.createElement("div");
 	newDataField.setAttribute("class", "form-group removeclass"+increment);
 	var removeDiv = 'removeclass' + increment;
-	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');">&minus;</button></div></div></div></div>';
+	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
 function remove(cid){

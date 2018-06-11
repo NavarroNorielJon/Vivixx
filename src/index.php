@@ -33,8 +33,8 @@
                             <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','validPassword')" required="required" >
 
                             <div class="input-group-append">
-                                <button  type="button" class="btn" onclick="showHide('password')">
-                                <i class="material-icons">remove_red_eye</i>
+                                <button  type="button" class="btn" onclick="showHide('password','icon')">
+                                <i class="material-icons" id="icon">visibility</i>
                                 </button>
                             </div>
                         </div>
@@ -63,11 +63,11 @@
                     </div>
                     <form action="mailing/send_reset.php" method="POST">
                     <!-- Body -->
-                    <div class="modal-body">   
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="id">E-mail Address</label>
                             <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
-                        </div> 
+                        </div>
                     </div>
 
                     <!--Footer -->
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="script/ajax.js"></script>
         <script type="text/javascript" src="script/jquery.min.js"></script>
         <script type="text/javascript" src="script/popper.min.js"></script>
