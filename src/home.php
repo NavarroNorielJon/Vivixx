@@ -19,7 +19,7 @@
         	</div>
 
         	<div class='col-9'>
-            	<h1>Welcome to Vivixx Academy <a href="utilities/logout.php"><?php echo "$email!"?></a></h1>
+            	<h1>Welcome to Vivixx Academy <?php echo "$email!"?></h1>
         	</div>
         </div>
     </body>
