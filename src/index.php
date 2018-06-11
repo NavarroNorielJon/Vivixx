@@ -151,9 +151,8 @@
                                     </div>
                                 </div>
                             
-                                <div>
-                                    <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
-                                    <button type="submit" onclick="loginSuccess()">Submit</button>
+                                <div style="text-align: center;">
+                                    <button type="submit" class="btn" id="button1" onclick="loginSuccess()">Submit</button>
                                 </div>
                             </div>
                         </form>
