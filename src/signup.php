@@ -69,37 +69,33 @@
 
                     <div class="row">
                         <div class="form-group col-4">
-                            <i class="large material-icons" style="font-size:50px;">person</i>
                             <label for="fname">First Name</label>
-                            <input type="text" name="first_name" id="fname" class="form-control" required="required">
+                            <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-4 pads">
+                        <div class="form-group col-4 ">
                             <label for="mname">Middle Name</label>
-                            <input type="text" name="middle_name" id="mname" class="form-control" required="required">
+                            <input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-4 pads">
+                        <div class="form-group col-4 ">
                             <label for="lname">Last Name</label>
-                            <input type="text" name="last_name" id="lname" class="form-control" required="required">
+                            <input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group col-4">
-              		        <i class="material-icons" style="font-size:50px;">date_range</i>
                             <label for="bdate">Birthdate</label>
               		        <input type="date" name="birthdate" id="bdate" class="form-control" required="required">
               		    </div>
 
                         <div class="form-group col-4" >
-              		        <i class="material-icons" style="font-size:50px;">home</i>
                             <label for="pbirth">Place of Birth</label>
               		        <input type="text" name="pbirth" id="pbirth" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col-4" >
-                            <i class="small material-icons prefix" style="font-size:50px;">contact_phone</i>
                             <label for="contact">Mobile Number</label>
                             <input type="text" name="contact_number" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                 <div id="validContact"></div>
@@ -108,7 +104,6 @@
 
                     <div class="row">
                         <div class=" form-group col-3 ">
-                            <i class="small material-icons prefix" style="font-size:50px;">wc</i>
                             <label for="gender">Sex</label>
                             <select name="gender" class="form-control" required="required">
                                 <option selected disabled>Select Here:</option>
@@ -117,17 +112,17 @@
                             </select>
               		    </div>
 
-                        <div class="form-group col-3 pads">
+                        <div class="form-group col-3 ">
                             <label for="height">Height</label>
                             <input type="text" name="height" id="height" class="form-control" placeholder="(ft.)" required="required">
                         </div>
 
-                        <div class="form-group col-3 pads">
+                        <div class="form-group col-3 ">
                             <label for="weight">Weight</label>
                               <input type="text" name="weight" id="weight" class="form-control" placeholder="(kg.)" required="required">
                         </div>
 
-                        <div class="form-group col-3 pads">
+                        <div class="form-group col-3 ">
                             <label for="blood">Blood Type</label>
                             <select name="blood" class="form-control" required="required">
                                 <option selected disabled>Select Blood Type:</option>
@@ -141,17 +136,16 @@
 
                     <div class="row">
                         <div class="form-group col-7">
-              		        <i class="small material-icons prefix" style="font-size:50px;">home</i>
                             <label for="residential_address">Residential Address</label>
-              		        <input type="text" name="residential_address" id="residential_address" class="form-control" required="required">
+              		        <input type="text" name="residential_address" id="residential_address" autocomplete="off" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-2 pads">
+                        <div class="form-group col-2 ">
                             <label for="residential_zip">Zip Code</label>
-                            <input type="text" name="residential_zip" id="residential_zip" class="form-control" required="required">
+                            <input type="text" name="residential_zip" id="residential_zip" autocomplete="off"class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-3 pads">
+                        <div class="form-group col-3 ">
                             <label for="residential_tel_no">Telephone NO.</label>
               		        <input type="text" name="residential_tel_no" id="residential_tel_no" class="form-control">
                         </div>
@@ -159,19 +153,18 @@
 
                     <div class="row">
               			<div class="form-group col-7">
-             				<i class="small material-icons prefix" style="font-size:50px;">home</i>
                             <label for="permanent_address">Permanent Address</label>
               				<input type="text" name="permanent_address" id="permanent_address" class="form-control" required="required">
               			</div>
 
-              			<div class="form-group col-2 pads">
+              			<div class="form-group col-2 ">
                             <label for="permanent_zip">Zip Code</label>
               				<input type="text" name="permanent_zip" id="permanent_zip" class="form-control" required="required">
               			</div>
 
-              			<div class="form-group col-3 pads" >
+              			<div class="form-group col-3 " >
                         	<label for="permanent_tel_no">Telephone NO.</label>
-              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" class="form-control" required="required">
+              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" class="form-control">
               			</div>
 					</div>
 

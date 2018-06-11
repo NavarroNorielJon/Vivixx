@@ -69,8 +69,45 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('gregoriorenz','marc@gmail.com','$2y$10$nMEchw60dFTvOeeqpE/ZaO5kKWS/QI3y07adccJUKEOeRU9MHMvsW','2018-06-08','enabled','user'),('norielnavarro','noriel@gmail.com','$2y$10$b6fcyB/umBYz.3vIt56.u..JReJfVbPpp1XIuJnFff9QMyUN19y76','2018-06-05','enabled','user');
+INSERT INTO `user` VALUES ('marclawrence','mar@gmail.com','$2y$10$lHT7kIpCtjLETX5wPGJVnuHGXo6zrF0h8W/v.fJhgsIb9Wxg7yXqG','2018-06-11','enabled','user'),('norielnavarro','noriel@gmail.com','$2y$10$b6fcyB/umBYz.3vIt56.u..JReJfVbPpp1XIuJnFff9QMyUN19y76','2018-06-05','enabled','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_background`
+--
+
+DROP TABLE IF EXISTS `user_background`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_background` (
+  `username` int(11) NOT NULL,
+  `child_id` int(11) NOT NULL AUTO_INCREMENT,
+  `spouse_first_name` varchar(100) NOT NULL,
+  `spouse_middle_name` varchar(100) NOT NULL,
+  `spouse_last_name` varchar(100) NOT NULL,
+  `occupation` varchar(100) NOT NULL,
+  `employer` varchar(100) NOT NULL,
+  `business_address` varchar(100) NOT NULL,
+  `spouse_tel_no` varchar(100) NOT NULL,
+  `father_first_name` varchar(100) NOT NULL,
+  `father_middle_name` varchar(100) NOT NULL,
+  `father_last_name` varchar(100) NOT NULL,
+  `mother_first_name` varchar(100) NOT NULL,
+  `mother_middle_name` varchar(100) NOT NULL,
+  `mother_last_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `child_id_UNIQUE` (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_background`
+--
+
+LOCK TABLES `user_background` WRITE;
+/*!40000 ALTER TABLE `user_background` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_background` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -82,6 +119,7 @@ DROP TABLE IF EXISTS `user_info`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_info` (
   `username` varchar(50) NOT NULL,
+  `profile_image` mediumblob NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `middle_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
@@ -101,10 +139,10 @@ CREATE TABLE `user_info` (
   `citizenship` varchar(45) NOT NULL,
   `religion` varchar(45) NOT NULL,
   `civil_status` enum('single','married','widowed','annulled','separated','other') NOT NULL,
-  `sss_no` int(11) DEFAULT NULL,
-  `tin` int(11) DEFAULT NULL,
-  `philhealth_no` int(11) DEFAULT NULL,
-  `pagibig_id_no` int(11) DEFAULT NULL,
+  `sss_no` int(11) NOT NULL,
+  `tin` int(11) NOT NULL,
+  `philhealth_no` int(11) NOT NULL,
+  `pagibig_id_no` int(11) NOT NULL,
   UNIQUE KEY `user_id_UNIQUE` (`username`),
   CONSTRAINT `user` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -116,8 +154,33 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('gregoriorenz','qewqe','weqeqe','wqeqwewqewqewq','2018-06-20','qwewq','09653346612','m','5\'8',232,'o','wewqeqweqw',2316,0,'qwewqeqwe',2316,0,'qwewqewq','qewqwqeq','single',0,0,0,0),('norielnavarro','noriel','','navarro','1998-12-16','','09653346611','m','0',0,'o','429 dalisay, rose park, concepcion, tarlac',0,NULL,'',0,NULL,'','','single',NULL,NULL,NULL,NULL);
+INSERT INTO `user_info` VALUES ('marclawrence','','Marc Lawrence','Sison','Gregorio','1998-12-13','Quezon City','09653346612','m','5\'7',55,'o','lot 7, block 8, phase 1, eaglecrest , bakakeng',2600,2147483647,'429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,2147483647,'Filipino','Catholic','single',321651132,651561315,2147483647,1981651613),('norielnavarro','','noriel','','navarro','1998-12-16','','09653346611','m','0',0,'o','429 dalisay, rose park, concepcion, tarlac',0,NULL,'',0,NULL,'','','single',0,0,0,0);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_offspring`
+--
+
+DROP TABLE IF EXISTS `user_offspring`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_offspring` (
+  `child_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `birthdate` date NOT NULL,
+  PRIMARY KEY (`child_id`),
+  CONSTRAINT `child_id` FOREIGN KEY (`child_id`) REFERENCES `user_background` (`child_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_offspring`
+--
+
+LOCK TABLES `user_offspring` WRITE;
+/*!40000 ALTER TABLE `user_offspring` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_offspring` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -129,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-08 14:13:39
+-- Dump completed on 2018-06-11 14:34:39
