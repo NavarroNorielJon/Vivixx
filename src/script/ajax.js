@@ -85,3 +85,16 @@ function nextButton(pass,conpass){
 		$("#next").attr("disabled",true);
 	}
 }
+var increment = 1;
+function add(){
+	increment++;
+	var dataFields = document.getElementById('child');
+	var newDataField = document.createElement("div");
+	newDataField.setAttribute("class", "form-group removeclass"+increment);
+	var removeDiv = 'removeclass' + increment;
+	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');">&minus;</button></div></div></div></div>';
+	dataFields.appendChild(newDataField);
+}
+function remove(cid){
+	$('.removeclass'+cid).remove();
+}
