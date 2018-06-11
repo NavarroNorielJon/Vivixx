@@ -79,35 +79,37 @@
             </div>
         </div>
 
-        <div class="modal fade" id="signupForm" tabindex="-1" role="dialog">
+        <!-- Modal for Register -->
+        <div class="modal fade sign-up" id="signupForm" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3>Sign Up</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <h3>Register</h3>
+                        <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    
                     <div class="modal-body">
                         <form action="utilities/registration.php" method="POST">
                     <div>
                         <div>
-                        <h1>Registration Form</h1><br>
-                        <div class="row">
-                            <div class="form-group col-4">
-                                <label for="fname">First Name</label>
-                                <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control" required="required">
-                            </div>
+                            <h1>Registration Form</h1><br>
+                                <div class="row">
+                                    <div class="form-group col-4">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control" required="required">
+                                    </div>
 
-                            <div class="form-group col-4 ">
-                                <label for="mname">Middle Name</label>
-                                <input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control" required="required">
-                            </div>
+                                    <div class="form-group col-4 ">
+                                        <label for="mname">Middle Name</label>
+                                        <input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control" required="required">
+                                    </div>
 
-                            <div class="form-group col-4 ">
-                                <label for="lname">Last Name</label>
-                                <input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" required="required">
-                            </div>
+                                    <div class="form-group col-4 ">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" required="required">
+                                    </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
@@ -157,8 +159,7 @@
                     </div>
                 </div>
             </form>
-                    </div>
-                   
+                    </div>       
                 </div>
             </div>
         </div>
@@ -168,5 +169,6 @@
         <script type="text/javascript" src="script/popper.min.js"></script>
         <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="script/sweetalert.min.js"></script>
+        <?php include 'modules/footer.html'; ?>
     </body>
 </html>
