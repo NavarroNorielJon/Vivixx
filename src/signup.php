@@ -56,7 +56,7 @@
 
                         <div>
                             <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
-                            <button type="button" id="next" onclick="nextForm('signup_form','personal_info')" style="text-align: right" disabled="disabled"><i class="material-icons" >arrow_forward</i></button>
+                            <button type="button" id="next" onclick="nextForm('signup_form','personal_info')" style="text-align: right" ><i class="material-icons" >arrow_forward</i></button>
 
                         </div>
                     </div>
@@ -224,13 +224,13 @@
 
 					<div style="text-align: right">
                         <button type="button" onclick="nextForm('personal_info','signup_form')"><i class="material-icons" >arrow_back</i></button>
-                        <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
+                        <button type="submit">Submit</button>
 					</div>
                     <!-- End of Personal Info-->
 			   </div>
            </div>
            <!-- Start of Family Background -->
-           <div class="jumbotron d-none" id="family_background">
+           <!-- <div class="jumbotron d-none" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
 
@@ -335,12 +335,12 @@
 
                    <div style="text-align: right">
                        <button type="button" onclick="nextForm('family_background','personal_info')"><i class="material-icons">arrow_back</i></button>
-                       <!-- <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button> -->
-                       <button type="submit">Submit</button>
+                       <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button>
+
                    </div>
-                   <!-- End of family background-->
+                   <-End of family background->
               </div>
-          </div>
+          </div> -->
        </form>
 
     <script>
