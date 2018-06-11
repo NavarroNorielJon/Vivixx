@@ -1,5 +1,5 @@
 <?php
-	include 'utilities/session.php'; 
+	include 'utilities/session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,9 +17,9 @@
         	<div class="col-3">
         		<?php include 'module/sidenav.php'; ?>
         	</div>
-        	
+
         	<div class='col-9'>
-            	<h1>Welcome to Vivixx Academy <a href="utilities/logout.php"><?php echo "$user_first!"?></a></h1>
+            	<h1>Welcome to Vivixx Academy <a href="utilities/logout.php"><?php echo "$username!"?></a></h1>
         	</div>
         </div>
     </body>
