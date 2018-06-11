@@ -23,6 +23,7 @@ if($result-> num_rows > 0){
         }else{
             $gender = "Female";
         }
+        //print data in table
         echo "
         <tr>
         <td>" . ucwords($row['first_name']) . "</td>
