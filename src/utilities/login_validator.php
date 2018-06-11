@@ -14,8 +14,8 @@ switch ($type){
 		}
 		break;
 	case "password":
-		$password = mysqli_real_escape_string($connect,$_REQUEST["vPassword"]);
-		$userOrEmail = mysqli_real_escape_string($connect,$_REQUEST["userEmail"]);
+		$password = mysqli_real_escape_string($connect,$_REQUEST["password"]);
+		$userOrEmail = mysqli_real_escape_string($connect,$_REQUEST["userOrEmail"]);
 		$stmt = "SELECT password FROM user where email = '$userOrEmail' or username='$userOrEmail';";
 		$results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
