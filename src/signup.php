@@ -73,7 +73,7 @@
 
                         <div>
                             <a href="/"><button type="button" style="text-align: left"><i class="material-icons" >home</i></button></a>
-                            <button type="submit">Submit</button>
+                            <button type="submit" onclick="loginSuccess()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -85,13 +85,14 @@
       document.getElementById(nextId).classList.remove("d-none");
     }
 
-	function jon(){
-			swal("Good Jon", "Hiiii", "success");
+	function loginSuccess(){
+			swal("Registration Success","" , "success");
 		}
     </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script/ajax.js"></script>
+    <script type="text/javascript" src="script/sweetalert.min.js"></script>
     </body>
 </html>
