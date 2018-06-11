@@ -174,10 +174,10 @@ if(strlen($password) < 8 || strlen($password) > 16){
 $password = password_hash($password,PASSWORD_DEFAULT);
 
 // $birthdate = date('Y-m-d',strtotime($birthdate));
-$insert_stmt = "INSERT INTO `user`(`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
+$insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
 
 if($connect->query($insert_stmt) === true){
-	$insert_stmt = "INSERT INTO `user_info`(`username`,`first_name`,`middle_name`,`last_name`) VALUES ('$username','$first_name','middle_name','last_name');";
+	$insert_stmt = "INSERT INTO `user_info` (`username`,`first_name`,`middle_name`,`last_name`) VALUES ('$username','$first_name','$middle_name','$last_name');";
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
