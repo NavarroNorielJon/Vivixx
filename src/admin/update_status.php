@@ -1,6 +1,6 @@
 <script src='../script/jquery.min.js'></script>
 <?php
-include '../Utilities/db.php';
+include '../utilities/session.php';
 $connect = Connect();
 $username = $_POST["username"];
     if(isset($_POST["enable"])){
