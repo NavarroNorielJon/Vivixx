@@ -10,6 +10,7 @@
 <html>
     <head>
         <title>Vivixx</title>
+		<meta charset="utf-8">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
@@ -18,16 +19,16 @@
     </head>
 
     <body  style="background-color:#005959;">
-        <div class="jumbotron" id="login-form">
+        <div class="jumbotron col-sm-12" id="login-form">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
             <form action="utilities/login.php" method="post" class="col s12 " id="login">
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <label for="userOrEmail">Username or Email-Address</label>
                     <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
                     <div id="validUserOrEmail"></div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <label for="pass">Password</label>
                     <div class="input-group">
                         <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','vPassword')" required="required" >
@@ -51,7 +52,7 @@
         </div>
 
         <!-- Modal for forgot password -->
-        <div class="modal fade" id="forgot" tabindex="-1" role="dialog">
+        <div class="modal fade col-sm-12" id="forgot" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <!-- Header -->
@@ -165,9 +166,6 @@
                 </div>
             </div>
         </div>
-		
-		<div id="sample"></div>
-
         <script type="text/javascript" src="script/ajax.js"></script>
         <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="script/popper.min.js"></script>
