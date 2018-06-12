@@ -5,6 +5,11 @@
 <html>
     <head>
         <title>Profile</title>
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -45,20 +50,38 @@
 
                     <div class="row">
                         <div class="form-group col-4">
-            				<label for="first"> Email</label>
+            				<label for="email"> Email</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$email";?>" disabled>
         				</div>
 
                         <div class="form-group col-4">
-            				<label for="first"> Middle Name</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$middle_name";?>" disabled>
+            				<label for="birth_date">Birth Date</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$birth_date";?>" disabled>
         				</div>
 
         				<div class="form-group col-4">
-            				<label for="first"> Last Name</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$last_name";?>" disabled>
+            				<label for="contact_number">Contact Number</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$contact_number";?>" disabled>
         				</div>
                     </div>
+
+                    <div class="row">
+                        <div class="form-group col-4">
+            				<label for="gender"> Gender</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$gender";?>" disabled>
+        				</div>
+
+                        <div class="form-group col-4">
+            				<label for="height">Height</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$height";?>" disabled>
+        				</div>
+
+        				<div class="form-group col-4">
+            				<label for="contact_number">Contact Number</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$contact_number";?>" disabled>
+        				</div>
+                    </div>
+
                 </div>
 			</div>
 		</div>
