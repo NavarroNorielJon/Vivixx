@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	
-<body>
+<body style="background-color:white !important;";>
 	<table class="table" id="table">
   		<thead>
     		<tr>
@@ -20,7 +20,7 @@
         		<th>Address</th>
         		<th>Contact Number</th>
         		<th>Email</th>
-        		<th>Show more data</th>
+        		<th>Edit or View data</th>
     		</tr>
   		</thead>
 		
@@ -62,15 +62,21 @@ $connect-> close();
 ?>
 </table>
 	
-	<div class="modal fade" id="1st" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
+	<div class="modal fade" id="1st" tabindex="-1" role="dialog" >
+	<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
         <div class="modal-content">
-            <div class="modal-header">
-				<h1>Hi</h1>
-            </div>
+            <!-- <div class="modal-header">
+				<?php
+					
+				?>
+            </div> -->
 
-            <div class="modal-body">
-            	<p>Sample Text.....</p>
+            <div class="modal-body" >
+            	
+				<?php
+					include 'update_information.php';
+				?>
+				
             </div>
         </div>
     </div>
