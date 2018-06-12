@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<html>
+<head>
+	 <title>Vivixx</title>
+		<meta charset="utf-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 <table class="table" id="table">
   <thead>
     <tr>
@@ -13,7 +24,6 @@
   </thead>
 <?php
 include '../Utilities/db.php';
-include 'show_all.php';
 $connect = Connect();
 
 $sql = "select * from user_info natural join user;";
@@ -51,3 +61,24 @@ if($result-> num_rows > 0){
 $connect-> close();
 ?>
 </table>
+	
+	<div class="modal fade" id="1st" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+				<h1>Hi</h1>
+            </div>
+
+            <div class="modal-body">
+            	<p>Sample Text.....</p>
+            </div>
+        </div>
+    </div>
+</div>		
+  		<script type="text/javascript" src="../script/ajax.js"></script>
+        <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../script/popper.min.js"></script>
+        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+</body>	
+</html>
