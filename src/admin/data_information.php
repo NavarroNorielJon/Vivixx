@@ -25,8 +25,6 @@
   		</thead>
 		
 		<?php
-			include '../Utilities/db.php';
-			$connect = Connect();
 			$sql = "select * from user_info natural join user;";
 			$result = $connect->query($sql);
 			
