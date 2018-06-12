@@ -29,7 +29,7 @@ body {
 
 .header-logo {
 	width:70px;
-	height: auto; 
+	height: auto;
 	margin-right:10px;"
 }
 
@@ -37,7 +37,7 @@ body {
 .sign-up {
 	min-width: 110vh;
 	max-width: 110vh;
-	
+
 }
  /* End*/
 
@@ -113,16 +113,17 @@ body {
 #personal_info {
     display: flex;
     width: 75%;
-    padding-bottom: 3%;
+    padding-top: 2%;
+    padding-right: 2%;
     justify-content: center;
     align-items: center;
     margin: auto 0;
     position: absolute;
-    top: 3%;
+    top: 1%;
     left: 12.5%;
     right: 15%;
-    padding-top: 2%;
-    padding-right: 2%;
+    bottom: 3%;
+
 }
 
 #home-content {

@@ -24,7 +24,7 @@
             <form action="utilities/login.php" method="post" class="col s12 " id="login">
                 <div class="form-group col-sm-12">
                     <label for="userOrEmail">Username or Email-Address</label>
-                    <input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                    <input class="form-control" type="text" autocomplete="off" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
                     <div id="validUserOrEmail"></div>
                 </div>
 

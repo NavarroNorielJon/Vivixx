@@ -1,6 +1,6 @@
 <?php
-include 'utilities/db.php';
-include 'utilities/session.php';
+include 'db.php';
+include 'session.php';
 $connect = Connect();
 
 
