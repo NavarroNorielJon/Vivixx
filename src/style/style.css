@@ -113,17 +113,10 @@ body {
 #personal_info {
     display: flex;
     width: 75%;
-    padding-top: 2%;
-    padding-right: 2%;
     justify-content: center;
     align-items: center;
-    margin: auto 0;
-    position: absolute;
-    top: 1%;
-    left: 12.5%;
-    right: 15%;
-    bottom: 3%;
-
+    margin: 2% 2% 2% 12%;
+    position: center;
 }
 
 #home-content {
