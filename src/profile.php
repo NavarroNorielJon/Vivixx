@@ -12,37 +12,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
+    <body style="overflow:hidden">
 		<div class="row">
         	<div class="col-3">
 				<?php include 'modules/sidenav.php';?>
 			</div>
 
-			<div class="col-9" style="overflow:hidden">
-                <h1>Profile</h1>
+			<div class="col-9">
+                <h1 style="margin:2% 2%;">General Information</h1>
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="margin-right:8%;">
 
                     <div class="row">
 
-                        <div class="row">
-                            <div class="form-group col-12">
-                				<label for="first"> Username</label>
-                				<input type="text" id="first" class="form-control" value="<?php echo "$username";?>" disabled>
-            				</div>
-                        </div>
+                        <div class="form-group col-4">
+                			<div class="thumbnail"><img src="img/profile-images/lion.png" style="height:50%;width:50%;"></div>
+            			</div>
 
-        				<div class="form-group col-2">
+                        <div class="form-group col-4">
+                			<label for="first"> Username</label>
+                			<input type="text" id="first" class="form-control" value="<?php echo "$username";?>" disabled>
+            			</div>
+
+                        <div class="form-group col-4"></div>
+                    </div>
+
+                    <div class="row">
+
+        				<div class="form-group col-4">
             				<label for="first"> First Name</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$first_name";?>" disabled>
         				</div>
 
-                        <div class="form-group col-2">
+                        <div class="form-group col-4">
             				<label for="first"> Middle Name</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$middle_name";?>" disabled>
         				</div>
 
-        				<div class="form-group col-3">
+        				<div class="form-group col-4">
             				<label for="first"> Last Name</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$last_name";?>" disabled>
         				</div>
