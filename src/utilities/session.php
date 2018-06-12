@@ -1,7 +1,6 @@
 <?php
     require_once 'db.php';
     session_start();
-
     $connect = Connect();
     if(isset($_SESSION['user'])){
         $current_user = $_SESSION['user'];

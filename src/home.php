@@ -3,6 +3,7 @@
 ?>
 <script>
 	function sample() {
+		
 		swal("Welcome to Vivixx Academy" ,"<?php echo "$first_name" ?>", "success");
 		}
 	
@@ -14,6 +15,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<?php echo "<script>swal('Welcome to Vivixx Academy' , '$first_name', 'success');</script>"?>
         <title>Vivixx</title>
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
