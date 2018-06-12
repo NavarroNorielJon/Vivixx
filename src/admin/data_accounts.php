@@ -24,16 +24,16 @@
           if($row["status"] === "enabled"){
             $button = "
             <input name='disable' value='Disable' style='display: none;'>
-            <input class='btn btn-danger' type='submit' value='Disable'>";
+            <button class='btn btn-danger' type='submit' value='Disable'>Disable";
           }else{
             $button = "
             <input name='enable' value='Enable' style='display: none;'>
-            <input class='btn btn-success' type='submit' value='Enable'>";
+            <button class='btn btn-success' type='submit' value='Enable'>Enable";
           }
           //print data in table
             echo "
             <tr>
-            <form action='update_status.php' method='POST'>
+            <form action='update_status.php' method='POST' id='button'>
             <td>" . ucwords($row['first_name']) . "</td>
             <td>" . ucwords($row['last_name']) . "</td>
             <td><input type='hidden' name='username' value='".$row['username']."'>" . $row['username'] . "</td>
@@ -52,3 +52,19 @@
     $connect-> close();
     ?>
   </table>
+  <script>
+   var button = $('button');
+   console.log(button);
+	button.submit(function(e){
+		e.preventDefault();
+		
+		$.ajax({
+			url: "update_status.php",
+			type: button.attr('method'),
+			data: button.serialize(),
+			success: function(response){
+				$('#table').html(response);
+			}
+		});
+	});
+  </script>
