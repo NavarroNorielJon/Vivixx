@@ -20,7 +20,7 @@
                 if($result->num_rows > 0){
                     header('location:/update_information');
                     if(isset($_SESSION['birth_date'])){
-                        header('location:update_information');
+                        header('location:/update_information');
                     }
                 }else{
                     header('location:/home');
