@@ -73,7 +73,11 @@ if(strlen($password) < 8 || strlen($password) > 16){
     exit;
 
 }
+<<<<<<< HEAD
 $password = password_hash($password, PASSWORD_DEFAULT);
+=======
+ $password = password_hash($password, PASSWORD_DEFAULT);
+>>>>>>> dcad0785a211c5366758f7680d4dc96a47bb498a
 
 
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
@@ -87,7 +91,7 @@ if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
 				alert('Registration Successful. Please complete all the information after logging in');
-				window.location.replace('/');
+                window.location.replace('/');
 			</script>
 		";
 	} else {

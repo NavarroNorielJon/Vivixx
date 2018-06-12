@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: mis_new
+-- Host: localhost    Database: mis
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.32-MariaDB
 
@@ -52,13 +52,13 @@ CREATE TABLE `user` (
   `username` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `date_registered` date NOT NULL,
-  `status` enum('enabled','disabled') DEFAULT NULL,
-  `type` enum('admin','user') DEFAULT NULL,
+  `status` enum('enabled','disabled') DEFAULT 'enabled',
+  `type` enum('admin','user') DEFAULT 'user',
   PRIMARY KEY (`username`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +67,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('marc1234',8,'marc1234@email.ocm','$2y$10$dtWYv56w.prmPXio2c6UOOpnHaudp3AhtkCGKBi8JZ4uRrBDYXv2K','2018-06-12','enabled','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,6 +151,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
+INSERT INTO `user_info` VALUES (8,'marc1234','marc1234','marc1234',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-12 11:28:25
+-- Dump completed on 2018-06-12 13:48:30

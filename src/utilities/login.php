@@ -14,7 +14,7 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 if($_SESSION['user'] = $user && $type === "user"){
-                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE (email='$user' username='$user') and birth_place is null";
+                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE (email='$user' or username='$user') and birth_place is null";
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
