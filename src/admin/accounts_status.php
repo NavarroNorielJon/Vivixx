@@ -21,18 +21,17 @@
 		<?php
        		include 'data_accounts.php';
         ?>
-	</div>
-	
-	<!-- script for calling datatables library -->
-	<script>
-		$(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": [5,6] }
-				]
-			});
-			$('#table').DataTable();
-		});
-	</script>
-</body>
+      </div>
+      <!-- script for calling datatables library -->
+      <script>
+      $(document).ready(function(){
+      $('#table').dataTable( {
+      "columnDefs": [
+        { "orderable": false, "targets": 5 }
+      ]
+      });
+      $('#table').DataTable();
+      });
+      </script>
+     </body>
 </html>
