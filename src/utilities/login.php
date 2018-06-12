@@ -29,13 +29,11 @@
             }else {
 				echo "<script>
                         alert('Invalid username or password');
-                        window.location = '/';
                       </script>";
 			}
         }else {
 			echo "<script>
                     alert('User does not exist');
-                    window.location = '/';
 				  </script>";
 		}
     }
