@@ -2,9 +2,9 @@
     include 'db.php';
     session_start();
     $connect = Connect();
-    if(isset($_POST["userOrEmail"]) && isset($_POST["password"])){
+    if(isset($_POST["userOrEmail"]) && isset($_POST["login_password"])){
         $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
-        $password = mysqli_real_escape_string($connect, $_POST["password"]);
+        $password = mysqli_real_escape_string($connect, $_POST["login_password"]);
         $stmt = "SELECT username, password, type FROM user WHERE username = '$user' or email = '$user' ";
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
@@ -14,7 +14,7 @@
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
                 if($_SESSION['user'] = $user && $type === "user"){
-                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE (email='$user' username='$user') and birth_place is null";
+                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE (email='$user' or username='$user') and birth_place is null";
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
@@ -34,6 +34,7 @@
         }else {
 			echo "<script>
                     alert('User does not exist');
+					window.location = '/';
 				  </script>";
 		}
     }

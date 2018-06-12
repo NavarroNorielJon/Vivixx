@@ -1,7 +1,6 @@
 <?php
     require_once 'db.php';
     session_start();
-
     $connect = Connect();
     if(isset($_SESSION['user'])){
         $current_user = $_SESSION['user'];
@@ -13,7 +12,7 @@
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
         $last_name = $row['last_name'];
-        $birthdate = $row['birthdate'];
+        $birth_date = $row['birth_date'];
         $birth_place = $row['birth_place'];
         $contact_number = $row['contact_number'];
         $gender = $row['gender'];

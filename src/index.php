@@ -156,12 +156,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-
-		<div id="sample"></div>
-
->>>>>>> 2457acc0fe393586d32bb50be1d44a973b2b5736
         <script type="text/javascript" src="script/ajax.js"></script>
         <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="script/popper.min.js"></script>

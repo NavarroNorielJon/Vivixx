@@ -5,7 +5,7 @@ $connect = Connect();
 
 
 //personal information
-$birthdate = mysqli_real_escape_string($connect, $_POST['birth_date']);
+$birth_date = mysqli_real_escape_string($connect, $_POST['birth_date']);
 $birth_place = mysqli_real_escape_string($connect,$_POST['pbirth']);
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
