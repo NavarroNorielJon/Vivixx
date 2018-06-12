@@ -18,7 +18,7 @@
 				<?php include 'modules/sidenav.php';?>
 			</div>
 
-			<div class="col-9">
+			<div class="col-9" style="">
                 <h1>Profile</h1>
 
                 <div class="jumbotron">

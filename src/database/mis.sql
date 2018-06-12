@@ -80,7 +80,6 @@ DROP TABLE IF EXISTS `user_background`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_background` (
   `bg_id` int(11) NOT NULL,
-  `child_id` int(11) DEFAULT NULL,
   `spouse_first_name` varchar(45) DEFAULT NULL,
   `spouse_middle_name` varchar(45) DEFAULT NULL,
   `spouse_last_name` varchar(45) DEFAULT NULL,
@@ -105,6 +104,7 @@ CREATE TABLE `user_background` (
 
 LOCK TABLES `user_background` WRITE;
 /*!40000 ALTER TABLE `user_background` DISABLE KEYS */;
+INSERT INTO `user_background` VALUES (8,'','','','','','','','mike','fidel','ramos','mama','bigmom','kaido');
 /*!40000 ALTER TABLE `user_background` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +151,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (8,'marc1234','marc1234','marc1234',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user_info` VALUES (8,'Marc Lawrence','Sison','Gregorio','1970-01-01','Quezon City','09653346612','m','5\'7',55,'o','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','Filipino','Catholic','single',213133,21323113,123212131,132131212);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-12 15:53:06
+-- Dump completed on 2018-06-12 16:35:30
