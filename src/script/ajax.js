@@ -42,40 +42,21 @@ function showHide(password,ic) {
 
     }
 }
+function showPas(password,pass2,ic) {
+    var pass = document.getElementById(password);
+	var pass2 = document.getElementById(pass2);
+	var icon = document.getElementById(ic);
+    if (pass.type === "password") {
+		icon.innerHTML = "visibility_off";
+		pass.type = "text";
+        pass2.type = "text";
+    } else {
+		pass.type = "password";
+        pass2.type = "password";
+		icon.innerHTML = "visibility";
 
-function confirmation(type, str, elementId){
-	if(str.length == 0){
-		document.getElementById(elementId).innerHTML = "";
-		return;
-	} else {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200){
-				document.getElementById(elementId).innerHTML = this.responseText;
-			}
-		};
-		xmlhttp.open("GET", "utilities/login_validator.php?type=" + type + "&" + type + "=" + str, true);
-		xmlhttp.send();
-	}
+    }
 }
-
-function confirmLogin(type, str, eElement, elementId){
-	var userOrEmail = document.getElementById(eElement).value;
-	if(str.length == 0){
-		document.getElementById(elementId).innerHTML = "";
-		return;
-	} else {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200){
-				document.getElementById(elementId).innerHTML = this.responseText;
-			}
-		};
-		xmlhttp.open("GET", "utilities/login_validator.php?type=" + type + "&" + type + "=" + str + "&userOrEmail=" + userOrEmail, true);
-		xmlhttp.send();
-	}
-}
-
 function nextButton(pass,conpass){
 	var password = document.getElementById(pass).value;
 	var confirm_password = document.getElementById(conpass).value
@@ -89,6 +70,7 @@ function nextButton(pass,conpass){
 		$("#next").attr("disabled",true);
 	}
 }
+
 var increment = 1;
 function add(){
 	increment++;

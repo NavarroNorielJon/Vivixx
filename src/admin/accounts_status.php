@@ -29,7 +29,7 @@
       "columnDefs": [
         { "orderable": false, "targets": 5 }
       ]
-    } );
+      });
       $('#table').DataTable();
       });
       </script>

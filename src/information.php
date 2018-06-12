@@ -11,7 +11,7 @@
     <body style="background-color: #005959;">
 
 			<!-- Start of Personal Info-->
-            <form action="info" method="POST">
+            <form action="update_info" method="POST">
              <div class="jumbotron " id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
