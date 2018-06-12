@@ -41,6 +41,13 @@
                         Salary Request
                     </a>
                 </li>
+				
+				<li>
+                    <a href="#">
+                        <i class="large material-icons">attach_money</i>
+                        Leave Request
+                    </a>
+                </li>
 
                 <li>
                     <a href="#">

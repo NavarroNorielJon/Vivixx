@@ -1,6 +1,16 @@
 <?php
 	include 'utilities/session.php';
 ?>
+<script>
+	function sample() {
+		swal("Welcome to Vivixx Academy" ,"<?php echo "$first_name" ?>", "success");
+		}
+	
+	function hi() {
+		alert("Hi");
+	}
+</script>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,13 +22,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
-    <body>
+    <body onload="sample()">
     	<div class="row no-gutters">
-        	<div class="col-3">
+        	<div class="col-sm-3">
         		<?php include 'modules/sidenav.php'; ?>
         	</div>
 
-        	<div class='col-9'  id="home-content">
+        	<div class='col-sm-9'  id="home-content">
             	<div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Announcements</h4>
@@ -27,8 +37,8 @@
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <div style="text-align: right"><a><button class="btn btn-primary">See more</button></a></div>
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        
+                        <div style="text-align: right"><a><button class="btn btn-primary" onclick="sample();">See more</button></a></div>
                     </div>
             </div>
                     <div class="row" style="padding-top: 5%;">
@@ -41,7 +51,7 @@
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        
                                     <div style="text-align: right"><a><button class="btn btn-primary">See more</button></a></div>
                                 </div>
                             </div>
@@ -56,8 +66,8 @@
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        
+                                    
                                 <div style="text-align: right">
                                     <a>
                                         <button class="btn btn-primary">See more</button>
@@ -69,5 +79,10 @@
                 </div>
             </div>
         </div>
+		<script type="text/javascript" src="script/ajax.js"></script>
+        <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="script/popper.min.js"></script>
+        <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="script/sweetalert.min.js"></script>
     </body>
 </html>
