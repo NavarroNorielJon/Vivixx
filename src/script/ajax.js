@@ -102,3 +102,20 @@ function add(){
 function remove(cid){
 	$('.removeclass'+cid).remove();
 }
+
+function verifyLogin() {
+	var loginForm = $('#login');
+	loginForm.submit(function(e){
+		e.preventDefault();
+		
+		$.ajax({
+			url: loginForm.attr('action'),
+			type: loginForm.attr('method'),
+			dataType: 'html',
+			data: loginForm.serialize(),
+			success: function(response){
+				$('#verifyLogin').html(response);
+			}
+		});
+	});
+}

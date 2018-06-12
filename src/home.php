@@ -13,7 +13,6 @@
 	</head>
 
     <body>
-        <div>
     	<div class="row no-gutters">
         	<div class="col-3">
         		<?php include 'modules/sidenav.php'; ?>

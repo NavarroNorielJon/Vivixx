@@ -18,9 +18,10 @@
     </head>
 
     <body  style="background-color:#005959;">
+		<div id="verifyLogin"></div>
         <div class="jumbotron" id="login-form">
             <img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-            <form action="utilities/login.php" method="post" class="col s12 ">
+            <form action="utilities/login.php" method="post" class="col s12 " id="login">
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
                     <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
@@ -43,7 +44,7 @@
                 </div>
 
                 <div style="text-align: center;">
-                    <button type="submit" class="btn" style="border: 2px solid #005959;" id="button1" name="submit">Login</button><br>
+                    <button type="submit" class="btn" style="border: 2px solid #005959;" id="loginButton" name="submit">Login</button><br>
                     <a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
                     <a href="#!" data-toggle="modal" data-target="#signupForm" style="display: block">Sign Up</a>
                 </div>
@@ -165,10 +166,11 @@
         </div>
 
         <script type="text/javascript" src="script/ajax.js"></script>
-        <script type="text/javascript" src="script/jquery.min.js"></script>
+        <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="script/popper.min.js"></script>
         <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="script/sweetalert.min.js"></script>
+		<script>verifyLogin();</script>
         <?php include 'modules/footer.html'; ?>
     </body>
 </html>
