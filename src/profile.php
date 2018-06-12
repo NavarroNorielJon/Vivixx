@@ -18,7 +18,7 @@
 				<?php include 'modules/sidenav.php';?>
 			</div>
 
-			<div class="col-9" style="">
+			<div class="col-9" style="overflow:hidden">
                 <h1>Profile</h1>
 
                 <div class="jumbotron">
@@ -68,17 +68,17 @@
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="gender"> Gender</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$gender";?>" disabled>
+            				<input type="text" id="first" class="form-control" value="<?php if ($gender === 'm') {echo 'Male';} else {echo 'Female';}?>" disabled>
         				</div>
 
                         <div class="form-group col-4">
             				<label for="height">Height</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$height";?>" disabled>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$height";?> ft" disabled>
         				</div>
 
         				<div class="form-group col-4">
-            				<label for="contact_number">Contact Number</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$contact_number";?>" disabled>
+            				<label for="weight">Weight</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$weight";?> kg" disabled>
         				</div>
                     </div>
 
