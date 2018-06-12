@@ -73,7 +73,7 @@ if(strlen($password) < 8 || strlen($password) > 16){
     exit;
 
 }
-$password = password_hash($password,PASSWORD_DEFAULT);
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
