@@ -12,7 +12,7 @@
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
         $last_name = $row['last_name'];
-        $birth_date = $row['birth_date'];
+        $birthdate = $row['birthdate'];
         $birth_place = $row['birth_place'];
         $contact_number = $row['contact_number'];
         $gender = $row['gender'];
