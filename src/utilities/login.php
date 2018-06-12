@@ -18,9 +18,12 @@
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
-                    header('location:/update_information');
-                    if(isset($_SESSION['birth_date'])){
-                        header('location:/update_information');
+                    header('location:update_information');
+                    echo "<script>
+                            alert('Invalid username or password');
+                          </script>";
+                    if(isset($_SESSION['']) && ){
+                        header('location:update_information');
                     }
                 }else{
                     header('location:/home');
