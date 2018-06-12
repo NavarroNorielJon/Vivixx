@@ -40,7 +40,7 @@
 
         	$show = "
         			<input name='show' value='show' style='display: none;'>
-        			<a href='#!' data-toggle='modal' data-target='#1st'><button class='btn btn-warning' type='submit' value='show'>Show more</a>";
+        			<a href='#!' data-toggle='modal' data-target='#1st'><input class='btn btn-warning' type='submit' value='show more'></a>";
         	
 			//print data in table
         	echo "
