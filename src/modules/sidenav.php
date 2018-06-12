@@ -41,7 +41,7 @@
                         Salary Request
                     </a>
                 </li>
-				
+
 				<li>
                     <a href="#">
                         <i class="large material-icons">attach_money</i>
@@ -56,8 +56,7 @@
                     </a>
                 </li>
 
-                <li style="position:absolute;
-    bottom:0;">
+                <li style="position:absolute;bottom:5%;">
                     <a href="../utilities/logout.php">
                         <i class="large material-icons">power_settings_new</i>
                         Logout
