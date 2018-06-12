@@ -10,9 +10,11 @@
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $count = mysqli_num_rows($results);
         $passwordVerify = $row['password'];
+        $type = $row["type"];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                $_SESSION['user'] = $user;
+
+                if($_SESSION['user'] = $user){
                 $test = "SELECT * FROM user_info NATURAL JOIN user WHERE birthdate ='null'";
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
@@ -20,6 +22,9 @@
                 }else{
                     header('location:/home');
                 }
+            }elseif($type === "admin"){
+                header('location:admin/index');
+            }
 
             }else {
 				echo "<script>
