@@ -6,7 +6,7 @@ $type = $_REQUEST['type'];
 
 switch ($type){
 	case "email":
-		$email = $_REQUEST["email"];
+		$email = mysqli_real_escape_string($connect,$_REQUEST["email"]);
 		$stmt = "SELECT * FROM user where email = '$email';";
 		$result = mysqli_query($connect, $stmt);
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -18,7 +18,7 @@ switch ($type){
 		}
 		break;
 	case "username":
-		$username = $_REQUEST["username"];
+		$username = mysqli_real_escape_string($connect,$_REQUEST["username"]);
 		$stmt = "SELECT * FROM user where username = '$username';";
 		$result = mysqli_query($connect,$stmt);
 		if($result->num_rows > 0){
@@ -28,7 +28,7 @@ switch ($type){
 		}
 		break;
 	case "contact_number":
-		$contact_number = $_REQUEST["contact_number"];
+		$contact_number = mysqli_real_escape_string($connect,$_REQUEST["contact_number"]);
 		$stmt = "SELECT * FROM user_info where contact_number = '$contact_number';";
 		$result = mysqli_query($connect,$stmt);
 		if(!preg_match("/^09[0-9]{9}$/",$contact_number)){
@@ -38,7 +38,7 @@ switch ($type){
 		}
 		break;
 	case "password":
-		$password = $_REQUEST["password"];
+		$password = mysqli_real_escape_string($connect, $_REQUEST["password"]);
 		if(strlen($password) < 8 ){
 			echo "<span id='weak'>weak eight(8) characters minimum</span>";
 		} else if(strlen($password) >= 8 && strlen($password) <= 10){
@@ -52,8 +52,8 @@ switch ($type){
 		}
 		break;
 	case "confirm_password":
-		$confirm = $_REQUEST["confirm_password"];
-		$password = $_REQUEST["password"];
+		$confirm = mysqli_real_escape_string($connect, $_REQUEST["confirm_password"]);
+		$password = mysqli_real_escape_string($connect, $_REQUEST["password"]);
 		if ($password !== $confirm) {
 			echo "<span class='invalid'>Password doesn't match</span>";
 		} else {

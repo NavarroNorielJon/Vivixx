@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label for="pass">Password</label>
                     <div class="input-group">
-                        <input type="password" placeholder="Password" name="password" id="password" class="form-control" required="required" >
+                        <input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
 
                         <div class="input-group-append">
                             <button  type="button" class="btn" onclick="showHide('password','icon')">
@@ -126,7 +126,7 @@
 
                                 <div class="row">
                                     <div class="form-group col-6">
-                                        <label for="password">Password</label>
+                                        <label for="reg_pass">Password</label>
                                             <input type="password" name="password" id="regpass" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
                                         <div id="validPassword"></div>
                                     </div>
@@ -134,7 +134,7 @@
                                     <div class="form-group col-6" >
                                         <label for="cpass">Confirm Password</label>
                                         <div class="input-group">
-                                            <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation')" class="form-control" required="required">
+                                            <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'regpass','validConfirmation')" class="form-control" required="required">
 
                                             <div class="input-group-append">
                                                 <button  type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </div>
-		
+
 		<div id="sample"></div>
 
         <script type="text/javascript" src="script/ajax.js"></script>
