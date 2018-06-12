@@ -18,7 +18,10 @@
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
-                    header('location:/information');
+                    header('location:/update_information');
+                    if(isset($_SESSION['birth_date'])){
+                        header('location:/update_information');
+                    }
                 }else{
                     header('location:/home');
                 }
