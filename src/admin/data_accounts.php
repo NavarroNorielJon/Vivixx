@@ -8,11 +8,12 @@
         <th>Email</th>
         <th>Status</th>
         <th>Action</th>
+        <th>Show more data</th>
     </tr>
   </thead>
 
     <?php
-    include '../Utilities/db.php';
+    include '../utilities/session.php';
     $connect = Connect();
     $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
     $result = $connect->query($sql);
@@ -33,17 +34,16 @@
           //print data in table
             echo "
             <tr>
-            <form action='update_status.php' method='POST' id='button'>
+            <form action='update_status.php' method='POST'>
             <td>" . ucwords($row['first_name']) . "</td>
             <td>" . ucwords($row['last_name']) . "</td>
             <td><input type='hidden' name='username' value='".$row['username']."'>" . $row['username'] . "</td>
             <td>" . $row['email'] . "</td>
             <td>" . $row['status'] . "</td>
             <td>
-             ".$button."
-
+             ".$button."</td>
             </form>
-            ";
+            </tr>";
           }
         }else {
          echo "database has no query";
@@ -52,19 +52,3 @@
     $connect-> close();
     ?>
   </table>
-  <script>
-   var button = $('button');
-   console.log(button);
-	button.submit(function(e){
-		e.preventDefault();
-		
-		$.ajax({
-			url: "update_status.php",
-			type: button.attr('method'),
-			data: button.serialize(),
-			success: function(response){
-				$('#table').html(response);
-			}
-		});
-	});
-  </script>
