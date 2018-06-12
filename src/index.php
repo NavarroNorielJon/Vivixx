@@ -23,23 +23,21 @@
             <form action="utilities/login.php" method="post" class="col s12 ">
                 <div class="form-group">
                     <label for="userOrEmail">Username or Email-Address</label>
-                    <input class="form-control" type="text" onkeyup="confirmation('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                    <input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
                     <div id="validUserOrEmail"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="pass">Password</label>
                     <div class="input-group">
-                        <input type="password" placeholder="Password" name="password" id="password" class="form-control" onkeyup="confirmLogin('password',this.value,'userEmail','vPassword')" required="required" >
-                    
+                        <input type="password" placeholder="Password" name="password" id="password" class="form-control" required="required" >
+
                         <div class="input-group-append">
                             <button  type="button" class="btn" onclick="showHide('password','icon')">
                                 <i class="material-icons" id="icon">visibility</i>
                             </button>
                         </div>
                     </div>
-                    
-                    <div id="vPassword"></div>
                 </div>
 
                 <div style="text-align: center;">
@@ -111,7 +109,7 @@
                                     </div>
                                 </div>
                                 <!-- End -->
-                                
+
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
@@ -127,15 +125,7 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="password">Password</label>
-                                        <div class="input-group">
                                             <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
-
-                                            <div class="input-group-append">
-                                                <button  type="button" class="btn" onclick="showHide('password','icon')">
-                                                    <i class="material-icons" id="icon">visibility</i>
-                                                </button>
-                                            </div>
-                                        </div>
                                         <div id="validPassword"></div>
                                     </div>
 
@@ -153,7 +143,7 @@
                                         <div id="validConfirmation"></div>
                                     </div>
                                 </div>
-                            
+
                                 <div style="text-align: right;">
                                     <button type="submit" class="btn" id="button1" onclick="loginSuccess()">Submit</button>
                                 </div>

@@ -48,15 +48,6 @@ if($password != $cpassword ){
  *Checks if the contact entered is exactly 9 digits, else
  *it will return to the registration
  */
-if(!preg_match("/^09[0-9]{9}$/", $contact_number)){
-    echo "
-        <script>
-            alert('Invalid Contact Number.');
-            windows.history.back();
-        </script>
-    ";
-    exit;
-}
 
 
 $sql = "SELECT * FROM user where username = '$username'";
@@ -86,9 +77,12 @@ $password = password_hash($password,PASSWORD_DEFAULT);
 
 
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
-
 if($connect->query($insert_stmt) === true){
-	$insert_stmt = "INSERT INTO `user_info` (`username`,`first_name`,`middle_name`,`last_name`) VALUES ('$username','$first_name','$middle_name','$last_name');";
+    $sql = "SELECT user_id FROM user where username='$username';";
+    $result = $connect->query($sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $id = $row['user_id'];
+	$insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`middle_name`,`last_name`) VALUES ('$id','$first_name','$middle_name','$last_name');";
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
@@ -99,7 +93,8 @@ if($connect->query($insert_stmt) === true){
 	} else {
 		echo "Error: <br>" . $connect->error;
 	}
-} else {
+} else
+{
 	echo "Error: <br>" . $connect->error;
 }
 Disconnect($connect);

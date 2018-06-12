@@ -45,22 +45,14 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <div class="input-group">
                                 <input type="password" name="rpassword" id="rpassword" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
-
-                                <div class="input-group-append">
-                                    <button  type="button" class="btn" onclick="showHide('rpassword','icon2')">
-                                        <i class="material-icons" id="icon2">visibility</i>
-                                    </button>
-                                </div>
-                            </div>
                             <div id="validPassword"></div>
                         </div>
 
                         <div class="form-group" >
                             <label for="cpass">Confirm Password</label>
                                 <div class="input-group">
-                                    <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
+                                    <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation')" class="form-control" required="required">
 
                                     <div class="input-group-append">
                                         <button  type="button" class="btn" onclick="showHide('cpassword','icon1')">

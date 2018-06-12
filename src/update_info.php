@@ -5,7 +5,7 @@ $connect = Connect();
 
 
 //personal information
-$birthdate = mysqli_real_escape_string($connect, $_POST['birthdate']);
+$birthdate = mysqli_real_escape_string($connect, $_POST['birth_date']);
 $birth_place = mysqli_real_escape_string($connect,$_POST['pbirth']);
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
@@ -76,15 +76,15 @@ if($result->num_rows > 0){
 $birthdate = date('Y-m-d',strtotime($birthdate));
 // $child_birth = date('Y-m-d',strtotime($child_birth));
 
-$insert_stmt = "UPDATE `user_info` SET `birthdate`='$birthdate', `birth_place`='$birth_place', `contact_number`='$contact_number', `gender`='$gender', `height`='$height', `weight`='$weight',
+$insert_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number', `gender`='$gender', `height`='$height', `weight`='$weight',
  `blood_type`='$blood_type', `residential_address`='$residential_address', `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
   `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship', `religion`='$religion', `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
   `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `username`='$username';";
-
+$sql = "SELECT FROM user_info where username='$username';"
 if($connect->query($insert_stmt) === true){
-    $insert_stmt = "INSERT INTO `user_background`(`username`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
+    $insert_stmt = "INSERT INTO `user_background`(`bg_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
     `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
-    `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES('$username','$spouse_first_name','$spouse_middle_name',
+    `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('null','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
     if($connect->query($insert_stmt) === true){
@@ -101,7 +101,7 @@ if($connect->query($insert_stmt) === true){
               </script>";
     }
     echo "<script>
-            alert('$username');
+            alert('DOne');
 
           </script>";
 } else {
