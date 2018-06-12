@@ -23,10 +23,11 @@
          </div>
          <!--script for calling data table library-->
          <script>
+         $(document).ready(function(){
          $('#table').dataTable( {
           "columnDefs": [
             { "orderable": false, "targets": 5 }
-            
+
           ],
           "responsive": true,
           "order": [
@@ -34,6 +35,7 @@
           ]
         } );
          $('#table').DataTable();
+         });
         </script>
     </body>
 </html>

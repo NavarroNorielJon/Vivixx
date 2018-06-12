@@ -125,17 +125,17 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="password">Password</label>
-                                            <input type="password" name="password" id="password" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
+                                            <input type="password" name="password" id="regpass" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" required="required">
                                         <div id="validPassword"></div>
                                     </div>
 
                                     <div class="form-group col-6" >
                                         <label for="cpass">Confirm Password</label>
                                         <div class="input-group">
-                                            <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation');nextButton('password','cpassword');" class="form-control" required="required">
+                                            <input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'password','validConfirmation')" class="form-control" required="required">
 
                                             <div class="input-group-append">
-                                                <button  type="button" class="btn" onclick="showHide('cpassword','icon1')">
+                                                <button  type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
                                                     <i class="material-icons" id="icon1">visibility</i>
                                                 </button>
                                             </div>

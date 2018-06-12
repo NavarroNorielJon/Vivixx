@@ -10,27 +10,30 @@
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $count = mysqli_num_rows($results);
         $passwordVerify = $row['password'];
+        $type = $row["type"];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-                $_SESSION['user'] = $user;
+                if($_SESSION['user'] = $user && $type === "user"){
                 $test = "SELECT * FROM user_info NATURAL JOIN user WHERE username='$user' and birth_place is null";
+                $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
                     header('location:/information');
                 }else{
                     header('location:/home');
                 }
+            }elseif($type === "admin"){
+                header('location:../admin/index');
+            }
 
             }else {
 				echo "<script>
                         alert('Invalid username or password');
-                        window.location = '/';
                       </script>";
 			}
         }else {
 			echo "<script>
                     alert('User does not exist');
-                    window.location = '/';
 				  </script>";
 		}
     }

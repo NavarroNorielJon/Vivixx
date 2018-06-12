@@ -42,7 +42,21 @@ function showHide(password,ic) {
 
     }
 }
+function showPas(password,pass2,ic) {
+    var pass = document.getElementById(password);
+	var pass2 = document.getElementById(pass2);
+	var icon = document.getElementById(ic);
+    if (pass.type === "password") {
+		icon.innerHTML = "visibility_off";
+		pass.type = "text";
+        pass2.type = "text";
+    } else {
+		pass.type = "password";
+        pass2.type = "password";
+		icon.innerHTML = "visibility";
 
+    }
+}
 function nextButton(pass,conpass){
 	var password = document.getElementById(pass).value;
 	var confirm_password = document.getElementById(conpass).value
