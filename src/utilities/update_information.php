@@ -31,7 +31,7 @@
 
                         <div class="form-group col-4" >
                             <label for="contact">Mobile Number</label>
-                            <input type="text" name="contact_number" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
+                            <input type="text" name="contact_number" autocomplete="off" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                 <div id="validContact"></div>
                         </div>
                     </div>
