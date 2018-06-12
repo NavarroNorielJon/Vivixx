@@ -18,7 +18,6 @@
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
-<<<<<<< HEAD
                     header('location:update_information');
                     echo "<script>
                             alert('Invalid username or password');
@@ -26,16 +25,10 @@
                     // if(isset($_SESSION['']) && ){
                     //     header('location:update_information');
                     // }
-=======
-                    header('location:/update_information');
-                    if(isset($_SESSION['birth_date'])){
-                        header('location:update_information');
-                    }
->>>>>>> f17b507a4e86d4c780b8f3329aab7c96b3284b32
                 }else{
                     header('location:/home');
                 }
-            }elseif($type === "admin"){
+            }else if($type === "admin"){
                 header('location:../admin/index');
             }
 
