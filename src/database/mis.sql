@@ -135,7 +135,7 @@ CREATE TABLE `user_info` (
   `permanent_tel_no` varchar(45) DEFAULT NULL,
   `citizenship` varchar(45) DEFAULT NULL,
   `religion` varchar(45) DEFAULT NULL,
-  `civil_status` varchar(45) DEFAULT NULL,
+  `civil_status` enum('single','married','widowed','annulled','separated','other') DEFAULT NULL,
   `sss_no` int(11) DEFAULT NULL,
   `tin` int(11) DEFAULT NULL,
   `philhealth_no` int(11) DEFAULT NULL,
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-12 13:48:30
+-- Dump completed on 2018-06-12 14:10:52
