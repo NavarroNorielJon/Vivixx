@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="col-9">
-                <h1>Personal Information</h1>
+                <h1>Profile</h1>
 
                 <div class="jumbotron">
 
@@ -26,7 +26,7 @@
                 				<input type="text" id="first" class="form-control" value="<?php echo "$username";?>" disabled>
             				</div>
                         </div>
-                        
+
         				<div class="form-group col-2">
             				<label for="first"> First Name</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$first_name";?>" disabled>
