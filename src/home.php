@@ -13,13 +13,11 @@
 	</head>
 
     <body>
-        <div>
     	<div class="row no-gutters">
         	<div class="col-3">
         		<?php include 'modules/sidenav.php'; ?>
         	</div>
 
-<<<<<<< HEAD
         	<div class='col-9'  id="home-content">
             	<div class="card">
                     <div class="card-body">

@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-/*Registration and Login*/
+/*Registration and Login validation*/
 
 .valid{
 	color: green;
@@ -15,14 +15,14 @@ body {
 
 /*Class*/
 
-  /*Sign Up*/
+ /*Sign Up*/
 .sign-up {
   min-width: 110vh;
   max-width: 110vh;
 }
+ /* End*/
 
-  /*Footer*/
-
+ /*Footer*/
 .footer {
     background-color: #fac213;
     text-align: center;
