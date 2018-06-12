@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	
+	<?php
+	include '../Utilities/db.php';
+	$connect = Connect();
+	?>
 <head>
 	<title>Bootstrap Example</title>
 	<meta charset="utf-8">
