@@ -25,6 +25,7 @@
                     // if(isset($_SESSION['']) && ){
                     //     header('location:update_information');
                     // }
+
                 }else{
                     header('location:/home');
                 }
