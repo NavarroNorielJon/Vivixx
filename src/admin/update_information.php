@@ -1,14 +1,15 @@
 
 <?php
-    include '../Utilities/db.php';
+    
+    include '../Utilities/session.php';
     $connect = Connect();
-    $personal_info = "select * from mis.user_info;";
+    $personal_info = "select * from mis.user_info where user_id='8';";
     $result = $connect->query($personal_info);
     $family_bg = "select * from mis.user_background;";
     $result1 = $connect->query($family_bg);
 
     $row = $result->fetch_assoc();
-    $row = $result1->fetch_assoc();
+    $row1 = $result1->fetch_assoc();
 ?>
 <html>
     <head>
@@ -22,14 +23,14 @@
 
 			<!-- Start of Personal Info-->
             <form action="update_info" method="POST">
-             <div class="jumbotron " id="personal_info">
+             <!-- <div class="jumbotron " id="personal_info"> -->
                 <div>
                     <h1>Personal Information</h1><br>
                     <div class="row">
                         <div class="form-group col-4">
                             <label for="bdate">Birthdate</label>
                             <br>
-              		        <input type="date" name="birthdate" id="bdate"  class="form-control" required="required" value="<?php echo $row["birthdate"];?>">
+              		        <input type="date" name="birthdate" id="bdate"  class="form-control" required="required" value="<?php echo $row["birth_date"];?>">
               		    </div>
 
                         <div class="form-group col-4" >
@@ -178,39 +179,39 @@
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
-                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" required="required" value="<?php echo $row["spouse_first_name"];?>">
+                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" required="required" value="<?php echo $row1["spouse_first_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="smname">Middle Name</label>
-                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" required="required" value="<?php echo $row["spouse_middle_name"];?>">
+                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" required="required" value="<?php echo $row1["spouse_middle_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="slname">Last Name</label>
-                           <input type="text" name="spouse_last_name" id="slname" class="form-control" required="required" value="<?php echo $row["spouse_last_name"];?>">
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control" required="required" value="<?php echo $row1["spouse_last_name"];?>">
                        </div>
                    </div>
 
                    <div class="row">
                        <div class="form-group col-2">
                            <label for="occupation">Occupation</label>
-                           <input type="text" name="occupation" id="occupation" class="form-control" required="required" value="<?php echo $row["occupation"];?>">
+                           <input type="text" name="occupation" id="occupation" class="form-control" required="required" value="<?php echo $row1["occupation"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="employer">Employer</label>
-                           <input type="text" name="employer" id="employer" class="form-control" required="required" value="<?php echo $row["employer"];?>">
+                           <input type="text" name="employer" id="employer" class="form-control" required="required" value="<?php echo $row1["employer"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="business_address">Business Address</label>
-                           <input type="text" name="business_address" id="business_address" class="form-control" required="required" value="<?php echo $row["business_address"];?>">
+                           <input type="text" name="business_address" id="business_address" class="form-control" required="required" value="<?php echo $row1["business_address"];?>">
                        </div>
 
                        <div class="form-group col-2">
                            <label for="spouse_tel_no">Telephone NO.</label>
-                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" class="form-control" value="<?php echo $row["spouse_tel_no"];?>">
+                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" class="form-control" value="<?php echo $row1["spouse_tel_no"];?>">
                        </div>
                    </div>
 
@@ -220,17 +221,17 @@
                        <div class="form-group col-4">
 
                            <label for="ffname">First Name</label>
-                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required" value="<?php echo $row["father_first_name"];?>">
+                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required" value="<?php echo $row1["father_first_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="fmname">Middle Name</label>
-                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required" value="<?php echo $row["father_middle_name"];?>">
+                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required" value="<?php echo $row1["father_middle_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="flname">Last Name</label>
-                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required" value="<?php echo $row["father_last_name"];?>">
+                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required" value="<?php echo $row1["father_last_name"];?>">
                        </div>
                    </div>
 
@@ -238,17 +239,17 @@
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="mfname">First Name</label>
-                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required" value="<?php echo $row["mother_first_name"];?>">
+                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required" value="<?php echo $row1["mother_first_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="mmname">Middle Name</label>
-                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required" value="<?php echo $row["mother_middle_name"];?>">
+                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required" value="<?php echo $row1["mother_middle_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="mlname">Last Name</label>
-                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required" value="<?php echo $row["mother_last_name"];?>">
+                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required" value="<?php echo $row1["mother_last_name"];?>">
                        </div>
                    </div>
 
@@ -258,7 +259,7 @@
                    <div class="row">
                        <div class="form-group col-6">
                            <label for="child_name">Name</label>
-                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" value="<?php echo $row["child_id"];?>">
+                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control">
                        </div>
 
                        <div class="form-group col-6">
@@ -279,7 +280,7 @@
 
                    </div>
               </div>
-          </div>
+          <!-- </div> -->
        </form>
 
     <script>
