@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <?php
   include 'header.php';
  ?>
-
  <html>
      <head>
          <title>Table</title>
@@ -24,12 +24,14 @@
       </div>
       <!-- script for calling datatables library -->
       <script>
+      $(document).ready(function(){
       $('#table').dataTable( {
       "columnDefs": [
         { "orderable": false, "targets": 5 }
       ]
     } );
       $('#table').DataTable();
+      });
       </script>
      </body>
 </html>

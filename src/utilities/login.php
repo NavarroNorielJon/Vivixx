@@ -13,14 +13,9 @@
         $type = $row["type"];
         if ($count == 1) {
             if (password_verify($password, $passwordVerify)) {
-<<<<<<< HEAD
-
-                if($_SESSION['user'] = $user){
+                if($_SESSION['user'] = $user && $type === "user"){
                 $test = "SELECT * FROM user_info NATURAL JOIN user WHERE birthdate ='null'";
-=======
                 $_SESSION['user'] = $user;
-                $test = "SELECT * FROM user_info NATURAL JOIN user WHERE username='gregoriorenz1' and birth_place is null";
->>>>>>> 759fc6f9a00621c1880f3f87721022d63935c996
                 $result = mysqli_query($connect,$test);
                 if($result->num_rows > 0){
                     header('location:/information');
@@ -28,7 +23,7 @@
                     header('location:/home');
                 }
             }elseif($type === "admin"){
-                header('location:admin/index');
+                header('location:../admin/index');
             }
 
             }else {

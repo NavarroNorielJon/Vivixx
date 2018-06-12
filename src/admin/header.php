@@ -13,7 +13,7 @@
 <nav class="navbar navbar-light" id="fade" style="background-color:#005959">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php"><img src="../img/Lion.png" id="logo"></a>
+      <img src="../img/Lion.png" id="logo">
     </div>
     <ul class="nav navbar">
       <li class="nav-item"><a class="nav-link" href="index.php" style="color:white">Home</a></li>

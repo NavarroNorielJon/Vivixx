@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <table class="table" id="table">
   <thead>
     <tr>

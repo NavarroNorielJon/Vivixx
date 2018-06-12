@@ -169,6 +169,11 @@ body {
 	height: auto;
 }
 
+#logo {
+  height: 100px;
+  width: 100px;
+}
+
 /*Font Style*/
 
 @font-face {
