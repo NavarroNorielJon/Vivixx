@@ -20,7 +20,7 @@
         		<th>Address</th>
         		<th>Contact Number</th>
         		<th>Email</th>
-        		<th>Show more data</th>
+        		<th>Edit or View data</th>
     		</tr>
   		</thead>
 		
