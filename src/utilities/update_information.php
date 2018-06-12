@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -112,18 +112,23 @@
               				<input type="text" name="religion" id="religion" class="form-control">
               			</div>
 
-              			<div class="form-group col-4" >
-                        	<label for="civil_status">Civil Status</label>
-                         	<select name="civil_status" class="form-control" required="required">
-                            	<option selected disabled>Select Civil Status:</option>
+                        <div class="form-group col-2" >
+                            <label for="civil_status">Civil Status</label>
+                            <select name="civil_status" class="form-control" required="required">
+                                <option selected disabled>Select Civil Status:</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="widowed">Widowed</option>
                                 <option value="annulled">Annulled</option>
                                 <option value="separated">Separated</option>
-                                <option value="other">Others</option>
+                                <option >Others:  placeholde="Please Specify"</option>
                              </select>
-						</div>
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label for="civil_status">If other:</label>
+                            <input class="form-control" name="other" disabled="disabled" placeholde="Please Specify">
+                        </div>
 					</div>
 
                     <div class="row">
@@ -161,12 +166,12 @@
               			</div>
 
               			<div class="form-group col-3" >
-							<label for="philhealth_no ">PHILHEALTH NO.</label>
+							<label for="philhealth_no ">Year Graduated</label>
 							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-3" >
-							<label for="pagibig_id_no">PAG-IBIG ID NO.</label>
+							<label for="pagibig_id_no">Highest Level</label>
 							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
               			</div>
 					</div>
@@ -305,6 +310,6 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="script/ajax.js"></script>
+    <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 </html>

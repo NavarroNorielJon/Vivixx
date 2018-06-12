@@ -23,9 +23,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<audio autoplay>
+	<!-- <audio autoplay>
 		<source src="../audio/welcome.mp3" type="audio/mpeg">
-	</audio>
+	</audio> -->
     <body onload="sample()">
     	<div class="row no-gutters">
         	<div class="col-sm-3">
