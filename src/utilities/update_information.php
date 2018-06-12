@@ -1,5 +1,7 @@
-
-
+<?php
+    include 'session.php';
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -14,7 +16,7 @@
             <form action="update_info" method="POST">
              <div class="jumbotron " id="personal_info">
                 <div>
-                    <h1>Personal Information</h1><br>
+                    <h2>Personal Information</h2><br>
                     <div class="row">
                         <div class="form-group col-4">
                             <label for="bdate">Birthdate</label>
@@ -123,7 +125,7 @@
                              </select>
 						</div>
 					</div>
-                    
+
                     <div class="row">
                     	<div class="form-group col-3" >
 							<label for="sss_no">SSS NO.</label>
@@ -146,10 +148,33 @@
               			</div>
 					</div>
 
+                    <h2>Educational Background</h2><br>
+                    <div class="row">
+                    	<div class="form-group col-3" >
+							<label for="sss_no">Level</label>
+							<input type="text" name="sss_no" id="sss_no" class="form-control" required="required">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="tin">Name of School</label>
+              				<input type="text" name="tin" id="tin" class="form-control" required="required">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="philhealth_no ">PHILHEALTH NO.</label>
+							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="pagibig_id_no">PAG-IBIG ID NO.</label>
+							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
+              			</div>
+					</div>
+
 					<div style="text-align: right">
                         <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
-
 					</div>
+
 			   </div>
            </div>
 
@@ -159,8 +184,44 @@
                <div>
                    <h1>Family Background</h1><br>
 
+                   <h4><i class="large material-icons" style="font-size:30px;">person</i>Father's Name</h4>
+                   <div class="row">
+                       <div class="form-group col-4">
 
-                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Spouse's Name</h4>
+                           <label for="ffname">First Name</label>
+                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="fmname">Middle Name</label>
+                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="flname">Last Name</label>
+                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required">
+                       </div>
+                   </div>
+
+                   <h4><i class="large material-icons" style="font-size:30px;">person</i>Mother's Maiden Name</h4>
+                   <div class="row">
+                       <div class="form-group col-4">
+                           <label for="mfname">First Name</label>
+                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="mmname">Middle Name</label>
+                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required">
+                       </div>
+
+                       <div class="form-group col-4">
+                           <label for="mlname">Last Name</label>
+                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required">
+                       </div>
+                   </div>
+
+                   <h4><i class="large material-icons" style="font-size:30px;">person</i>Spouse's Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
@@ -201,44 +262,7 @@
                    </div>
 
 
-                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Father's Name</h4>
-                   <div class="row">
-                       <div class="form-group col-4">
-
-                           <label for="ffname">First Name</label>
-                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required">
-                       </div>
-
-                       <div class="form-group col-4">
-                           <label for="fmname">Middle Name</label>
-                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required">
-                       </div>
-
-                       <div class="form-group col-4">
-                           <label for="flname">Last Name</label>
-                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required">
-                       </div>
-                   </div>
-
-                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Mother's Maiden Name</h4>
-                   <div class="row">
-                       <div class="form-group col-4">
-                           <label for="mfname">First Name</label>
-                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required">
-                       </div>
-
-                       <div class="form-group col-4">
-                           <label for="mmname">Middle Name</label>
-                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required">
-                       </div>
-
-                       <div class="form-group col-4">
-                           <label for="mlname">Last Name</label>
-                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required">
-                       </div>
-                   </div>
-
-                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Child/Children's Information</h4>
+                   <h4><i class="large material-icons" style="font-size:30px;">person</i>Child/Children's Information</h4>
                    <div id="child">
                    </div>
                    <div class="row">
