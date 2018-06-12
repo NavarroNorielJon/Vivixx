@@ -32,8 +32,7 @@
         $tin = $row['tin'];
         $philhealth_no = $row['philhealth_no'];
         $pagibig_id_no = $row['pagibig_id_no'];
-
-
+		
     }
 
     if(!isset($_SESSION['user'])){

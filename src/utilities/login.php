@@ -22,9 +22,9 @@
                     echo "<script>
                             alert('Invalid username or password');
                           </script>";
-                    if(isset($_SESSION['']) && ){
-                        header('location:update_information');
-                    }
+                    // if(isset($_SESSION['']) && ){
+                    //     header('location:update_information');
+                    // }
                 }else{
                     header('location:/home');
                 }

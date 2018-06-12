@@ -8,7 +8,6 @@
         <th>Email</th>
         <th>Status</th>
         <th>Action</th>
-        <th>Show more data</th>
     </tr>
   </thead>
 
