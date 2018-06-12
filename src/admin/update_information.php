@@ -23,7 +23,7 @@
 
 			<!-- Start of Personal Info-->
             <form action="update_info" method="POST">
-             <!-- <div class="jumbotron " id="personal_info"> -->
+             <div class="jumbotron " id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
                     <div class="row">
@@ -170,7 +170,7 @@
 
 
            <!-- Start of Family Background -->
-           <div class="jumbotron d-none" id="family_background">
+           <div class="jumbotron" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
 
@@ -179,34 +179,34 @@
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
-                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" required="required" value="<?php echo $row1["spouse_first_name"];?>">
+                           <input type="text" name="spouse_first_name" id="sfname" class="form-control"  value="<?php echo $row1["spouse_first_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="smname">Middle Name</label>
-                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" required="required" value="<?php echo $row1["spouse_middle_name"];?>">
+                           <input type="text" name="spouse_middle_name" id="smname" class="form-control"  value="<?php echo $row1["spouse_middle_name"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="slname">Last Name</label>
-                           <input type="text" name="spouse_last_name" id="slname" class="form-control" required="required" value="<?php echo $row1["spouse_last_name"];?>">
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control" " value="<?php echo $row1["spouse_last_name"];?>">
                        </div>
                    </div>
 
                    <div class="row">
                        <div class="form-group col-2">
                            <label for="occupation">Occupation</label>
-                           <input type="text" name="occupation" id="occupation" class="form-control" required="required" value="<?php echo $row1["occupation"];?>">
+                           <input type="text" name="occupation" id="occupation" class="form-control" value="<?php echo $row1["occupation"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="employer">Employer</label>
-                           <input type="text" name="employer" id="employer" class="form-control" required="required" value="<?php echo $row1["employer"];?>">
+                           <input type="text" name="employer" id="employer" class="form-control"  value="<?php echo $row1["employer"];?>">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="business_address">Business Address</label>
-                           <input type="text" name="business_address" id="business_address" class="form-control" required="required" value="<?php echo $row1["business_address"];?>">
+                           <input type="text" name="business_address" id="business_address" class="form-control"  value="<?php echo $row1["business_address"];?>">
                        </div>
 
                        <div class="form-group col-2">
@@ -280,7 +280,7 @@
 
                    </div>
               </div>
-          <!-- </div> -->
+          </div>
        </form>
 
     <script>
