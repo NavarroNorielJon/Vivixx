@@ -26,7 +26,7 @@
          $(document).ready(function(){
          $('#table').dataTable( {
           "columnDefs": [
-            { "orderable": false, "targets": 5 }
+            { "orderable": false, "targets": [6,7] }
 
           ],
           "responsive": true,
