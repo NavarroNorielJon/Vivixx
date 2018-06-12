@@ -23,7 +23,7 @@
 
                         <div class="form-group col-4" >
                             <label for="pbirth">Place of Birth</label>
-              		        <input type="text" name="pbirth" id="pbirth" class="form-control" required="required">
+              		        <input type="text" name="birth_place" id="pbirth" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col-4" >
@@ -123,7 +123,7 @@
                              </select>
 						</div>
 					</div>
-
+                    
                     <div class="row">
                     	<div class="form-group col-3" >
 							<label for="sss_no">SSS NO.</label>
