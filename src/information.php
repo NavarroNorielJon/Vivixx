@@ -2,16 +2,17 @@
 
 <html>
     <head>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-
     <body style="background-color: #005959;">
 
 			<!-- Start of Personal Info-->
-             <div class="jumbotron d-none" id="personal_info">
+            <form action="info" method="POST">
+             <div class="jumbotron " id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
                     <div class="row">
@@ -149,7 +150,6 @@
                         <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
 
 					</div>
-                     End of Personal Info
 			   </div>
            </div>
 
@@ -160,7 +160,7 @@
                    <h1>Family Background</h1><br>
 
 
-                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Spouse's Name</h3>
+                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Spouse's Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
@@ -201,7 +201,7 @@
                    </div>
 
 
-                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Father's Name</h3>
+                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Father's Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
 
@@ -220,7 +220,7 @@
                        </div>
                    </div>
 
-                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Mother's Maiden Name</h3>
+                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Mother's Maiden Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="mfname">First Name</label>
@@ -238,32 +238,32 @@
                        </div>
                    </div>
 
-                   <h3><i class="large material-icons" style="font-size:50px;">person</i>Child/Children's Information</h3>
+                   <h4><i class="large material-icons" style="font-size:50px;">person</i>Child/Children's Information</h4>
+                   <div id="child">
+                   </div>
                    <div class="row">
                        <div class="form-group col-6">
                            <label for="child_name">Name</label>
-                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" required="required">
+                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control">
                        </div>
 
                        <div class="form-group col-6">
                            <label for="child_birth">Date of Birth</label>
                            <div class="input-group">
-                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" required="required">
+                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" >
                                <div class="input-group-append">
                                    <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
                                </div>
                            </div>
                        </div>
                    </div>
-                   <div id="child">
-                   </div>
+
 
                    <div style="text-align: right">
                        <button type="button" onclick="nextForm('family_background','personal_info')"><i class="material-icons">arrow_back</i></button>
-                       <button type="button" onclick="nextForm('','')"><i class="material-icons" >arrow_forward</i></button>
+                       <button type="submit">Submit</button>
 
                    </div>
-                   <-End of family background->
               </div>
           </div>
        </form>
