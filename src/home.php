@@ -18,12 +18,12 @@
 		<nav id="sidebar">
 			<div class="sidebar-header">
 				<img src="../img/Lion.png">
+				<ul class="list-unstyled components"><li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li></ul>
 			</div>
 			
 			<!-- Sidebar Links -->
-        	<ul class="list-unstyled components" data-spy="affix">
+        	<ul class="list-unstyled components">
             	<li class="active"><a href="home.php"><i class="material-icons">home</i> Home</a></li>
-				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
 				<li> 
 					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<ul class="collapse list-unstyled" id="requests">
