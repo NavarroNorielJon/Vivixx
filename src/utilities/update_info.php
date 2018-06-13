@@ -74,7 +74,7 @@ if($result->num_rows > 0){
     exit;
 }
 $birth_date = date('Y-m-d',strtotime($birth_date));
-// $child_birth = date('Y-m-d',strtotime($child_birth));
+
 
 $sql = "SELECT user_id FROM user where username='$username'";
 $result = $connect->query($sql);
@@ -92,22 +92,22 @@ if($connect->query($insert_stmt) === true){
     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
-    if($connect->query($insert_stmt) === true){
-        // for ($i=1; $i < count($child_name); $i++) {
-        //     $insert_stmt="INSERT INTO `user_offspring` (`child_id`,`name`,`birth`) VALUES ('null','$child_name[$i]','$child_birth[$i]');";
-        //     if($connect->query() === true){
-        //         echo "<script>
-        //                 alert('DONE!');
-        //               </script>";
-        //     }
-        // }
+    if($child_name != ''){
+        foreach ($child_name as $value1) {
+            foreach ($child_birth as $key => $value2) {
+            }
+            $insert_stmt="INSERT INTO `user_offspring` (`user_id`,`name`,`birth_date`)
+                VALUES ('$id','$value1','$value2');";
+            $connect->query($insert_stmt);
+        }
         echo "<script>
-                alert('DOne');
+                alert('Done');
+                window.location.replace('/');
               </script>";
     }
     echo "<script>
             alert('DOne');
-
+            window.location.replace('/');
           </script>";
 } else {
     echo "<script>
