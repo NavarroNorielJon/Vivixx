@@ -95,8 +95,8 @@ if($connect->query($insert_stmt) === true){
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
     if($connect->query($insert_stmt) === true){
-        foreach ($child_name as $key => $value1) {
-            foreach ($child_birth as $key => $value2) {
+        foreach ($child_name as $value1) {
+            foreach ($child_birth as $value2) {
             }
             $insert_stmt="INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
                 VALUES ('null','$value1','$value2',$id);";
