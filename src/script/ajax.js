@@ -57,10 +57,8 @@ function showPas(password,pass2,ic) {
 
     }
 }
-function nextButton(pass,conpass){
-	var password = document.getElementById(pass).value;
-	var confirm_password = document.getElementById(conpass).value
-	if( (document.getElementById('username').value != "") && (document.getElementById('email').value != "") ) {
+function nextButton(){
+	if(getElementsByClassName('form-control')) {
 		if(password === confirm_password &&  password != "" && confirm_password != ""){
 			$("#next").attr("disabled",false);
 		} else {
@@ -100,6 +98,11 @@ function verifyLogin() {
 			}
 		});
 	});
+}
+
+function nextForm(currId,nextId){
+  document.getElementById(currId).classList.add("d-none");
+  document.getElementById(nextId).classList.remove("d-none");
 }
 
 function numberInput(evt){

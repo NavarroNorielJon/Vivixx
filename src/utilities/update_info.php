@@ -43,6 +43,8 @@ $mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name
 $child_name = $_POST['child_name'];
 $child_birth =$_POST['child_birth'];
 
+$child_name = array_map('mysqli_real_escape_string', $child_name);
+$child_birth = array_map('mysqli_real_escape_string', $child_birth);
 
 // if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
 //     echo "
@@ -93,15 +95,18 @@ if($connect->query($insert_stmt) === true){
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
     if($connect->query($insert_stmt) === true){
-        foreach ($child_name as $value1) {
+        foreach ($child_name as $key => $value1) {
             foreach ($child_birth as $key => $value2) {
             }
             $insert_stmt="INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
                 VALUES ('null','$value1','$value2',$id);";
-            $connect->query($insert_stmt);
+            if ($connect->query($insert_stmt) === true) {
+                $insert
+            }
         }
         echo "<script>
-                alert('DOne');
+                alert('Done');
+                window.location.replace('/');
               </script>";
     }
 } else {

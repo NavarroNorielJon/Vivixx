@@ -154,31 +154,97 @@
               			</div>
 					</div>
 
-                    <!-- <h2>Educational Background</h2><br>
+                    <h2>Educational Background</h2><br>
+
                     <div class="row">
                     	<div class="form-group col-3" >
-							<label for="sss_no">Level</label>
-							<input type="text" name="sss_no" id="sss_no" class="form-control" required="required" autocomplete="off">
+							<label for="level">Elementary</label>
+							<input type="text" name="level[]" id="level" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
-							<label for="tin">Name of School</label>
-              				<input type="text" name="tin" id="tin" class="form-control" required="required" autocomplete="off">
+							<label for="school_name">Name of School</label>
+              				<input type="text" name="school_name[]" id="school_name" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
-							<label for="philhealth_no ">Year Graduated</label>
-							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required" autocomplete="off">
+							<label for="yr_grad">Year Graduated</label>
+							<input type="text" name="yr_grad[]" id="yr_grad" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
-							<label for="pagibig_id_no">Highest Level</label>
-							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required" autocomplete="off">
+							<label for="high_level">Highest Level</label>
+							<input type="text" name="high_level" id="high_level" class="form-control" required="required" autocomplete="off">
               			</div>
-					</div> -->
+					</div>
+
+                    <div class="row">
+                    	<div class="form-group col-3" >
+							<label for="level">Secondary</label>
+							<input type="text" name="level[]" id="level" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="school_name">Name of School</label>
+              				<input type="text" name="school_name[]" id="school_name" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="yr_grad">Year Graduated</label>
+							<input type="text" name="yr_grad[]" id="yr_grad" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="high_level">Highest Level</label>
+							<input type="text" name="high_level" id="high_level" class="form-control" required="required" autocomplete="off">
+              			</div>
+					</div>
+
+                    <div class="row">
+                    	<div class="form-group col-3" >
+							<label for="level">College</label>
+							<input type="text" name="level[]" id="level" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="school_name">Name of School</label>
+              				<input type="text" name="school_name[]" id="school_name" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="yr_grad">Year Graduated</label>
+							<input type="text" name="yr_grad[]" id="yr_grad" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="high_level">Highest Level</label>
+							<input type="text" name="high_level" id="high_level" class="form-control" required="required" autocomplete="off">
+              			</div>
+					</div>
+                    <div class="row">
+                    	<div class="form-group col-3" >
+							<label for="level">Post Grad</label>
+							<input type="text" name="level[]" id="level" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="school_name">Name of School</label>
+              				<input type="text" name="school_name[]" id="school_name" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="yr_grad">Year Graduated</label>
+							<input type="text" name="yr_grad[]" id="yr_grad" class="form-control" required="required" autocomplete="off">
+              			</div>
+
+              			<div class="form-group col-3" >
+							<label for="high_level">Highest Level</label>
+							<input type="text" name="high_level" id="high_level" class="form-control" required="required" autocomplete="off">
+              			</div>
+					</div>
 
 					<div style="text-align: right">
-                        <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
+                        <button type="button" onclick="nextForm('personal_info','family_background')" ><i class="material-icons">arrow_forward</i></button>
 					</div>
 
 			   </div>
@@ -298,19 +364,6 @@
               </div>
           </div>
        </form>
-
-    <script>
-    function nextForm(currId,nextId){
-      document.getElementById(currId).classList.add("d-none");
-      document.getElementById(nextId).classList.remove("d-none");
-    }
-
-	function jon(){
-        swal("Good Jon", "Hiiii", "success");
-	}
-    </script>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
