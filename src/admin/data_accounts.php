@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<html>
+<head>
+	<title>Vivixx</title>
+    
+</head>
+	
+<body style="background-color:white !important;";>
 <table class="table" id="table">
   <thead>
     <tr>
@@ -23,24 +30,22 @@
           if($row["status"] === "enabled"){
             $button = "
             <input name='disable' value='Disable' style='display: none;'>
-            <button class='btn btn-danger' type='submit' value='Disable'>Disable";
+            <a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' class='show btn btn-danger'>Disable</a>";
           }else{
             $button = "
             <input name='enable' value='Enable' style='display: none;'>
-            <button class='btn btn-success' type='submit' value='Enable'>Enable";
+            <a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
           }
           //print data in table
             echo "
             <tr>
-            <form action='update_status.php' method='POST'>
             <td>" . ucwords($row['first_name']) . "</td>
             <td>" . ucwords($row['last_name']) . "</td>
-            <td><input type='hidden' name='username' value='".$row['username']."'>" . $row['username'] . "</td>
+            <td>" . $row['username'] . "</td>
             <td>" . $row['email'] . "</td>
             <td>" . $row['status'] . "</td>
             <td>
              ".$button."</td>
-            </form>
             </tr>";
           }
         }else {
@@ -50,3 +55,21 @@
     $connect-> close();
     ?>
   </table>
+
+  <div id="result1">
+	</div>		
+		<script>
+			$(document).ready(function(){
+				$('.show').click(function(e){
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res){
+							$('#result1').html(res);
+						}
+					});
+				});
+			});
+		</script>
+ </body>
+</html>

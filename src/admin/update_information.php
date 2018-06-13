@@ -12,14 +12,16 @@
     $row = $result->fetch_assoc();
     $row1 = $result1->fetch_assoc();
 ?>
-    <body style="background-color: #005959;">
         <div class="modal fade" id="1st" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content">
                 <div class="modal-header">
                 <?php
-					
-                    ?>
+                    $user = $_GET["fname"];
+                    $user_middle = $_GET["mname"];
+                    $user_last = $_GET["lname"];
+                    echo "<h1>" ."Information of ". $user . " " . $user_middle . " " . $user_last ."</h1>";
+                ?>
                 </div>
     
                 <div id=class="modal-body" >

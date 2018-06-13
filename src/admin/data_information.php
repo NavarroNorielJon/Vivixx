@@ -33,11 +33,10 @@
 
         	$show = "
         			<input name='show' value='show' style='display: none;'>
-        			<a href='update_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
+        			<a href='update_information.php?user_id=".$row['user_id']."& fname=".$row['first_name']."& mname=".$row['middle_name'] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
         	
 			//print data in table
         	echo "
-        		<form action='update_information.php' method='POST'>
 					<tr>
 						<td>" . ucwords($row['first_name']) . "</td>
 						<td>" . ucwords($row['last_name']) . "</td>
@@ -46,8 +45,7 @@
 						<td>" . $row['contact_number'] . "</td>
 						<td>" . $row['email'] . "</td>
 						<td>" . $show ."</td>
-					</tr>
-        		</form>";
+					</tr>";
     }
 
 }else{
