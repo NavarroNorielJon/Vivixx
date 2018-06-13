@@ -1,3 +1,11 @@
+<?php
+    include 'utilities/db.php';
+    session_start();
+    if (isset($_SESSION['user'])) {
+        echo "<script>window.location = '/home';</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     
@@ -151,20 +159,13 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="script/ajax.js"></script>
+	
 	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="script/popper.min.js"></script>
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="script/ajax.js"></script>
 	<?php include 'modules/footer.html'; ?>
 </body>
 	
 </html>
-
-<?php
-    include 'utilities/db.php';
-    session_start();
-    if (isset($_SESSION['user'])) {
-        echo "<script>window.location = '/home';</script>";
-    }
-?>
