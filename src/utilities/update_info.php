@@ -106,6 +106,7 @@ if($connect->query($insert_stmt) === true){
         }
         echo "<script>
                 alert('Done');
+                window.location.replace('/');
               </script>";
     }
 } else {
