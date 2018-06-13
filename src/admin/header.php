@@ -5,19 +5,14 @@
 	$connect = Connect();
 	?>
 <head>
-	<title>Bootstrap Example</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-	<script src="../script/jquery.min.js"></script>
-	<script src="../script/bootstrap/bootstrap.min.js"></script>
+	<title>Bootstrap Example</title>	
 </head>
 
 <body>
 	<nav class="navbar navbar-light" id="fade" style="background-color:#005959">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<img src="../img/Lion.png" id="logo">
+				<a href="index.php"><img src="../img/Lion.png" id="logo"></a>
 			</div>
 			
 			<ul class="nav navbar">
