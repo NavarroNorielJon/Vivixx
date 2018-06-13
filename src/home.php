@@ -15,7 +15,7 @@
 <body onload="sample()">
 	<div class="row no-gutters">
 		<div class="col-sm-3">
-			<?php include 'modules/sidenav.php'; ?>
+			<?php include 'modules/sidebar.php'; ?>
 		</div>
 
 		<div class='col-sm-9'  id="home-content">
