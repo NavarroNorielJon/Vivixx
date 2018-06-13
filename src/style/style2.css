@@ -9,6 +9,10 @@ ul ul a {
 	padding-left: 30px !important;	
 }
 
+#leave_form {
+	margin: 50px 100px 50px 100px;
+}
+
 #sidebar {
 	background-color: #008080;
 	max-width: 250px;
@@ -63,11 +67,4 @@ ul ul a {
 
 .wrapper {
 	display: flex;
-}
-
-
-@media (max-width: 768px) {
-	#sidebar {
-		margin-left: 250px;
-	}
 }

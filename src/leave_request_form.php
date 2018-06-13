@@ -14,22 +14,44 @@
 </head>
 
 <body>
-	<div class="container-fluid">
-		<div class="jumbotron">
-			<form>
-				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
-				
-				<div class="row">
-					<div class="form-group col">
-						<label for="employee_name">Employee</label>
-						<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName">
+	
+	<div class="wrapper">
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<img src="../img/Lion.png">
+			</div>
+			
+			<!-- Sidebar Links -->
+        	<ul class="list-unstyled components" data-spy="affix">
+            	<li><a href="home.php"><i class="material-icons">home</i> Home</a></li>
+				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
+				<li class="active"> 
+					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
+					<ul class="collapse list-unstyled" id="requests">
+						<li class="active"><a href="#">Salary Request</a></li>
+						<li class="active"><a href="#">Leave Request</a></li>
+					</ul>
+				</li>
+            	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li>
+            	<li><a href="utilities/logout.php" id="logout"> 
+						<i class="material-icons">power_settings_new</i> Logout</a></li>
+        	</ul>
+		</nav>
+		
+		<div id="content">
+			<form id="leave_form">
+				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>	
+					<div class="row">
+						<div class="form-group col">
+							<label for="employee_name">Employee</label>
+							<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName">
+						</div>
+
+						<div class="form-group col">
+							<label for="department">Department</label>
+							<input type="text" class="form-control" id="department" placeholder="department" name="dept">
+						</div>
 					</div>
-					
-					<div class="form-group col">
-						<label for="department">Department</label>
-						<input type="text" class="form-control" id="department" placeholder="department" name="dept">
-					</div>
-				</div>
 				
 				<div class="row">
 					<div class="form-group col">
@@ -83,11 +105,13 @@
 					
 					<div class="row">
 						<div class="form-group col">
-							<input type="date" class="form-control">
+							<label for="start_date">From</label>
+							<input type="date" class="form-control" >
 						</div>
 						
 						<div class="form-group col">
-							<input type="date" class="form-control">
+							<label for="end_date">To</label>
+							<input type="date" class="form-control" id="end_date">
 						</div>
 					</div>
 				</div>
