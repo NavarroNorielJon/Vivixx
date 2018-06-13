@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Update Information</title>
         <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
@@ -20,7 +21,7 @@
                     <div class="row">
                         <div class="form-group col-4">
                             <label for="bdate">Birthdate</label>
-              		        <input type="date" name="birthdate" id="bdate" class="form-control" required="required">
+              		        <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
               		    </div>
 
                         <div class="form-group col-4" >
@@ -30,7 +31,7 @@
 
                         <div class="form-group col-4" >
                             <label for="contact">Mobile Number</label>
-                            <input type="text" name="contact_number" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
+                            <input type="text" name="contact_number" autocomplete="off" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                 <div id="validContact"></div>
                         </div>
                     </div>
@@ -115,19 +116,19 @@
                         <div class="form-group col-2" >
                             <label for="civil_status">Civil Status</label>
                             <select name="civil_status" class="form-control" required="required">
-                                <option selected disabled>Select Civil Status:</option>
+                                <option selected disabled>Select:</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="widowed">Widowed</option>
                                 <option value="annulled">Annulled</option>
                                 <option value="separated">Separated</option>
-                                <option >Others:  placeholde="Please Specify"</option>
+                                <option>Others</option>
                              </select>
                         </div>
 
                         <div class="form-group col-2">
-                            <label for="civil_status">If other:</label>
-                            <input class="form-control" name="other" disabled="disabled" placeholde="Please Specify">
+                            <label for="civil_status">If Other:</label>
+                            <input class="form-control" name="other" disabled="disabled" placeholder="Please Specify">
                         </div>
 					</div>
 
@@ -153,7 +154,7 @@
               			</div>
 					</div>
 
-                    <h2>Educational Background</h2><br>
+                    <!-- <h2>Educational Background</h2><br>
                     <div class="row">
                     	<div class="form-group col-3" >
 							<label for="sss_no">Level</label>
@@ -174,7 +175,7 @@
 							<label for="pagibig_id_no">Highest Level</label>
 							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
               			</div>
-					</div>
+					</div> -->
 
 					<div style="text-align: right">
                         <button type="button" onclick="nextForm('personal_info','family_background')"><i class="material-icons" >arrow_forward</i></button>
@@ -225,39 +226,40 @@
                            <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required">
                        </div>
                    </div>
-
+                   <hr>
+                   <h5 style="text-align:center;">***Optional***</h5><br>
                    <h4><i class="large material-icons" style="font-size:30px;">person</i>Spouse's Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
-                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" required="required">
+                           <input type="text" name="spouse_first_name" id="sfname" class="form-control">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="smname">Middle Name</label>
-                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" required="required">
+                           <input type="text" name="spouse_middle_name" id="smname" class="form-control">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="slname">Last Name</label>
-                           <input type="text" name="spouse_last_name" id="slname" class="form-control" required="required">
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control">
                        </div>
                    </div>
 
                    <div class="row">
                        <div class="form-group col-2">
                            <label for="occupation">Occupation</label>
-                           <input type="text" name="occupation" id="occupation" class="form-control" required="required">
+                           <input type="text" name="occupation" id="occupation" class="form-control">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="employer">Employer</label>
-                           <input type="text" name="employer" id="employer" class="form-control" required="required">
+                           <input type="text" name="employer" id="employer" class="form-control" >
                        </div>
 
                        <div class="form-group col-4">
                            <label for="business_address">Business Address</label>
-                           <input type="text" name="business_address" id="business_address" class="form-control" required="required">
+                           <input type="text" name="business_address" id="business_address" class="form-control">
                        </div>
 
                        <div class="form-group col-2">

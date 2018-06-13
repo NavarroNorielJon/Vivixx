@@ -9,7 +9,7 @@ function helperText(type, str, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "utilities/validator.php?type=" + type + "&" + type + "=" + str, true);
+		xmlhttp.open("GET", "../utilities/validator.php?type=" + type + "&" + type + "=" + str, true);
 		xmlhttp.send();
 	}
 }
@@ -89,7 +89,7 @@ function verifyLogin() {
 	var loginForm = $('#login');
 	loginForm.submit(function(e){
 		e.preventDefault();
-		
+
 		$.ajax({
 			url: loginForm.attr('action'),
 			type: loginForm.attr('method'),

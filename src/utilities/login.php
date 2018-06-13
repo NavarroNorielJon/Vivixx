@@ -5,15 +5,16 @@
     if(isset($_POST["userOrEmail"]) && isset($_POST["login_password"])){
         $user = mysqli_real_escape_string($connect, $_POST["userOrEmail"]);
         $password = mysqli_real_escape_string($connect, $_POST["login_password"]);
-        $stmt = "SELECT username, password, type FROM user WHERE username = '$user' or email = '$user' ";
+        $stmt = "SELECT username, password, type, status FROM user WHERE username = '$user' or email = '$user' ";
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $count = mysqli_num_rows($results);
         $passwordVerify = $row['password'];
         $type = $row["type"];
+        $status = $row["status"];
         if ($count == 1) {
-            if (password_verify($password, $passwordVerify)) {
-                if($_SESSION['user'] = $user && $type === "user"){
+            if (password_verify($password, $passwordVerify) && $status === "enabled") {
+                if($_SESSION['user'] = $user && $type === "user" ){
                 $test = "SELECT * FROM user_info NATURAL JOIN user WHERE (email='$user' or username='$user') and birth_place is null";
                 $_SESSION['user'] = $user;
                 $result = mysqli_query($connect,$test);
@@ -32,12 +33,20 @@
             }elseif($type === "admin"){
                 header('location:../admin/index');
             }
-
-            }else {
-				echo "<script>
-                        alert('Invalid username or password');
+            }elseif(!password_verify($password, $passwordVerify) && $status === "enabled") {
+                echo "<script>
+                        alert('Invalid username or password or disabled');
+                        window.location = '/';
                       </script>";
-			}
+                
+                
+				
+			}else{
+                echo "<script>
+                        alert('Account is disabled');
+                        window.location = '/';
+                      </script>";
+            }
         }else {
 			echo "<script>
                     alert('User does not exist');
