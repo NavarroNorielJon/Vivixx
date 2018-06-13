@@ -43,7 +43,7 @@
                 </li>
 
 				<li>
-                    <a href="#">
+                    <a href="../leave_request_form">
                         <i class="large material-icons">attach_money</i>
                         Leave Request
                     </a>
