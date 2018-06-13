@@ -13,12 +13,10 @@ ul ul a {
 	background-color: #008080;
 	max-width: 250px;
 	min-width: 250px;
-	min-height: 100vh;
+	height: 100vh;
+	position: fixed;
+	z-index: 9999;
 	transition: all 0.3s;
-}
-
-#sidebar.active {
-	margin-left: -200px;
 }
 
 #sidebar ul.components {
@@ -58,22 +56,18 @@ ul ul a {
 	height: auto;
 }
 
-.content {
-	padding-right: 50px;
+#content {
+	padding: 10px 5px 10px 3px;
+	margin-left: 255px;
 }
 
 .wrapper {
 	display: flex;
-	align-items: stretch;
 }
 
 
 @media (max-width: 768px) {
 	#sidebar {
 		margin-left: 250px;
-	}
-	
-	#sidebar.active {
-		margin-left: 0;
 	}
 }

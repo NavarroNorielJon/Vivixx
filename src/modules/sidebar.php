@@ -20,7 +20,7 @@
 			</div>
 			
 			<!-- Sidebar Links -->
-        	<ul class="list-unstyled components">
+        	<ul class="list-unstyled components" data-spy="affix">
             	<li class="active"><a href="#"><i class="material-icons">home</i> Home</a></li>
 				<li><a href="#"><i class="material-icons">person</i> Profile</a></li>
 				<li> 
