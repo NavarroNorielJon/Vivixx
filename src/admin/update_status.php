@@ -1,9 +1,11 @@
 <?php
-	echo "<script src='../script/jquery.min.js'></script>";
 	include '../utilities/session.php';
 	$connect = Connect();
-	$username = $_POST["username"];
-		if(isset($_POST["enable"])){
+	// $username = $_POST["username"];
+	// echo $username;
+	$username = $_GET["username"];
+
+		if(isset($_GET["enable"])){
     		$update = "UPDATE user SET status='enabled' WHERE username='$username'";
 
     	}else{
@@ -11,4 +13,4 @@
     	}
 	
 	$result = $connect->query($update);
-	header("Location: accounts_status.php");
+header("location:success_accounts.php");

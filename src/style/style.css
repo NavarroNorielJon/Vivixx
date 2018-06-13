@@ -123,6 +123,10 @@ body {
   margin-top: 3%;
   margin-left: -3%;
 }
+
+a:active, a:hover, a:focus{
+    color: #fac213;
+}
 #family_background {
     display: flex;
     width: 75%;

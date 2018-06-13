@@ -26,12 +26,12 @@
 
                         <div class="form-group col-4" >
                             <label for="pbirth">Place of Birth</label>
-              		        <input type="text" name="birth_place" id="pbirth" class="form-control" required="required">
+              		        <input type="text" stle="text-transform:capitalize;" name="birth_place" id="pbirth" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col-4" >
                             <label for="contact">Mobile Number</label>
-                            <input type="text" name="contact_number" autocomplete="off" class="form-control" id="contact" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
+                                <input type="text" name="contact_number" maxlength="11" autocomplete="off" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                 <div id="validContact"></div>
                         </div>
                     </div>
@@ -48,12 +48,12 @@
 
                         <div class="form-group col-3 ">
                             <label for="height">Height</label>
-                            <input type="text" name="height" id="height" class="form-control" placeholder="(ft.)" required="required">
+                            <input type="text" name="height" id="height" class="form-control" autocomplete="off" placeholder="(ft.)" required="required">
                         </div>
 
                         <div class="form-group col-3 ">
                             <label for="weight">Weight</label>
-                              <input type="text" name="weight" id="weight" class="form-control" placeholder="(kg.)" required="required">
+                              <input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" required="required">
                         </div>
 
                         <div class="form-group col-3 ">
@@ -76,41 +76,41 @@
 
                         <div class="form-group col-2 ">
                             <label for="residential_zip">Zip Code</label>
-                            <input type="text" name="residential_zip" id="residential_zip" autocomplete="off"class="form-control" required="required">
+                            <input type="text" name="residential_zip" class="form-control num" id="residential_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off"  required="required">
                         </div>
 
                         <div class="form-group col-3 ">
                             <label for="residential_tel_no">Telephone NO.</label>
-              		        <input type="text" name="residential_tel_no" id="residential_tel_no" class="form-control">
+              		        <input type="text" name="residential_tel_no" id="residential_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
 
                     <div class="row">
               			<div class="form-group col-7">
                             <label for="permanent_address">Permanent Address</label>
-              				<input type="text" name="permanent_address" id="permanent_address" class="form-control" required="required">
+              				<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-2 ">
                             <label for="permanent_zip">Zip Code</label>
-              				<input type="text" name="permanent_zip" id="permanent_zip" class="form-control" required="required">
+              				<input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-3 " >
                         	<label for="permanent_tel_no">Telephone NO.</label>
-              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" class="form-control">
+              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 					</div>
 
                     <div class="row">
               			<div class="form-group col-4" >
                         	<label for="citizenship">Citizenship</label>
-              					<input type="text" name="citizenship" id="citizenship" class="form-control" required="required">
+              					<input type="text" name="citizenship" id="citizenship" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-4" >
                         	<label for="religion">Religion</label>
-              				<input type="text" name="religion" id="religion" class="form-control">
+              				<input type="text" name="religion" id="religion" class="form-control" autocomplete="off" required="required">
               			</div>
 
                         <div class="form-group col-2" >
@@ -135,22 +135,22 @@
                     <div class="row">
                     	<div class="form-group col-3" >
 							<label for="sss_no">SSS NO.</label>
-							<input type="text" name="sss_no" id="sss_no" class="form-control" required="required">
+							<input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="tin">TIN</label>
-              				<input type="text" name="tin" id="tin" class="form-control" required="required">
+              				<input type="text" name="tin" id="tin" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="philhealth_no ">PHILHEALTH NO.</label>
-							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required">
+							<input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
+							<input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 					</div>
 
@@ -158,22 +158,22 @@
                     <div class="row">
                     	<div class="form-group col-3" >
 							<label for="sss_no">Level</label>
-							<input type="text" name="sss_no" id="sss_no" class="form-control" required="required">
+							<input type="text" name="sss_no" id="sss_no" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="tin">Name of School</label>
-              				<input type="text" name="tin" id="tin" class="form-control" required="required">
+              				<input type="text" name="tin" id="tin" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="philhealth_no ">Year Graduated</label>
-							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required">
+							<input type="text" name="philhealth_no" id="philhealth_no" class="form-control" required="required" autocomplete="off">
               			</div>
 
               			<div class="form-group col-3" >
 							<label for="pagibig_id_no">Highest Level</label>
-							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required">
+							<input type="text" name="pagibig_id_no" id="pagibig_id_no" class="form-control" required="required" autocomplete="off">
               			</div>
 					</div> -->
 
@@ -195,17 +195,17 @@
                        <div class="form-group col-4">
 
                            <label for="ffname">First Name</label>
-                           <input type="text" name="father_first_name" id="ffname" class="form-control" required="required">
+                           <input type="text" name="father_first_name" id="ffname" class="form-control" autocomplete="off" required="required">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="fmname">Middle Name</label>
-                           <input type="text" name="father_middle_name" id="fmname" class="form-control" required="required">
+                           <input type="text" name="father_middle_name" id="fmname" class="form-control" autocomplete="off" required="required">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="flname">Last Name</label>
-                           <input type="text" name="father_last_name" id="flname" class="form-control" required="required">
+                           <input type="text" name="father_last_name" id="flname" class="form-control" autocomplete="off" required="required">
                        </div>
                    </div>
 
@@ -213,58 +213,58 @@
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="mfname">First Name</label>
-                           <input type="text" name="mother_first_name" id="mfname" class="form-control" required="required">
+                           <input type="text" name="mother_first_name" id="mfname" class="form-control" autocomplete="off" required="required">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="mmname">Middle Name</label>
-                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" required="required">
+                           <input type="text" name="mother_middle_name" id="mmname" class="form-control" autocomplete="off" required="required">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="mlname">Last Name</label>
-                           <input type="text" name="mother_last_name" id="mlname" class="form-control" required="required">
+                           <input type="text" name="mother_last_name" id="mlname" class="form-control" autocomplete="off" required="required">
                        </div>
                    </div>
                    <hr>
-                   <h5 style="text-align:center;">***Optional***</h5><br>
+                   <h5 style="text-align:center;">Leave this blank if</h5><br>
                    <h4><i class="large material-icons" style="font-size:30px;">person</i>Spouse's Name</h4>
                    <div class="row">
                        <div class="form-group col-4">
                            <label for="sfname">First Name</label>
-                           <input type="text" name="spouse_first_name" id="sfname" class="form-control">
+                           <input type="text" name="spouse_first_name" id="sfname" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="smname">Middle Name</label>
-                           <input type="text" name="spouse_middle_name" id="smname" class="form-control">
+                           <input type="text" name="spouse_middle_name" id="smname" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="slname">Last Name</label>
-                           <input type="text" name="spouse_last_name" id="slname" class="form-control">
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control" autocomplete="off">
                        </div>
                    </div>
 
                    <div class="row">
                        <div class="form-group col-2">
                            <label for="occupation">Occupation</label>
-                           <input type="text" name="occupation" id="occupation" class="form-control">
+                           <input type="text" name="occupation" id="occupation" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="employer">Employer</label>
-                           <input type="text" name="employer" id="employer" class="form-control" >
+                           <input type="text" name="employer" id="employer" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-4">
                            <label for="business_address">Business Address</label>
-                           <input type="text" name="business_address" id="business_address" class="form-control">
+                           <input type="text" name="business_address" id="business_address" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-2">
                            <label for="spouse_tel_no">Telephone NO.</label>
-                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" class="form-control">
+                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
                        </div>
                    </div>
 
@@ -275,13 +275,13 @@
                    <div class="row">
                        <div class="form-group col-6">
                            <label for="child_name">Name</label>
-                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control">
+                           <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" autocomplete="off">
                        </div>
 
                        <div class="form-group col-6">
                            <label for="child_birth">Date of Birth</label>
                            <div class="input-group">
-                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" >
+                               <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
                                <div class="input-group-append">
                                    <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
                                </div>
@@ -306,12 +306,12 @@
     }
 
 	function jon(){
-			swal("Good Jon", "Hiiii", "success");
-		}
+        swal("Good Jon", "Hiiii", "success");
+	}
     </script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 </html>

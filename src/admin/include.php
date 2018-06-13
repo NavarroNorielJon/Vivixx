@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="../style/datatables.css">
 
     <!--scripts-->
-    <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../script/datatables.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>  
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../script/datatables.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
     </head>
 </html>
