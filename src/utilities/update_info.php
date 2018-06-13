@@ -92,7 +92,7 @@ if($connect->query($insert_stmt) === true){
     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
-    if($connect->query($insert_stmt) === true){
+    if($child_name != ''){
         foreach ($child_name as $value1) {
             foreach ($child_birth as $key => $value2) {
             }
@@ -101,13 +101,13 @@ if($connect->query($insert_stmt) === true){
             $connect->query($insert_stmt);
         }
         echo "<script>
-                alert('DOne');
-                window.history.back();
+                alert('Done');
+                window.location.replace('/');
               </script>";
     }
     echo "<script>
             alert('DOne');
-            window.history.back();
+            window.location.replace('/');
           </script>";
 } else {
     echo "<script>

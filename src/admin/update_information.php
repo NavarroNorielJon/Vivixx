@@ -3,7 +3,8 @@
     
     include '../Utilities/session.php';
     $connect = Connect();
-    $personal_info = "select * from mis.user_info where user_id='8';";
+    $user_id = $_GET["user_id"];
+    $personal_info = "select * from mis.user_info where user_id= '$user_id';";
     $result = $connect->query($personal_info);
     $family_bg = "select * from mis.user_background;";
     $result1 = $connect->query($family_bg);
@@ -11,19 +12,20 @@
     $row = $result->fetch_assoc();
     $row1 = $result1->fetch_assoc();
 ?>
-<html>
-    <head>
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
     <body style="background-color: #005959;">
-
+        <div class="modal fade" id="1st" tabindex="-1" role="dialog" >
+        <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
+            <div class="modal-content">
+                <div class="modal-header">
+                <?php
+					
+                    ?>
+                </div>
+    
+                <div id=class="modal-body" >
 			<!-- Start of Personal Info-->
             <form action="update_info" method="POST">
-             <div class="jumbotron " id="personal_info">
+             <div class="jumbotron" id="personal_info">
                 <div>
                     <h1>Personal Information</h1><br>
                     <div class="row">
@@ -170,7 +172,7 @@
 
 
            <!-- Start of Family Background -->
-           <div class="jumbotron" id="family_background">
+           <div class="jumbotron d-none" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
 
@@ -189,7 +191,7 @@
 
                        <div class="form-group col-4">
                            <label for="slname">Last Name</label>
-                           <input type="text" name="spouse_last_name" id="slname" class="form-control" " value="<?php echo $row1["spouse_last_name"];?>">
+                           <input type="text" name="spouse_last_name" id="slname" class="form-control"  value="<?php echo $row1["spouse_last_name"];?>">
                        </div>
                    </div>
 
@@ -206,7 +208,7 @@
 
                        <div class="form-group col-4">
                            <label for="business_address">Business Address</label>
-                           <input type="text" name="business_address" id="business_address" class="form-control"  value="<?php echo $row1["business_address"];?>">
+                           <input type="text" name="business_address" id="business_address" class="form-control" value="<?php echo $row1["business_address"];?>">
                        </div>
 
                        <div class="form-group col-2">
@@ -282,20 +284,19 @@
               </div>
           </div>
        </form>
+       </div>
+        </div>
+    </div>
+</div>
 
     <script>
     function nextForm(currId,nextId){
       document.getElementById(currId).classList.add("d-none");
       document.getElementById(nextId).classList.remove("d-none");
     }
-
-	function jon(){
-			swal("Good Jon", "Hiiii", "success");
-		}
     </script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../script/ajax.js"></script>
-    </body>
-</html>
+    <script>
+        $(document).ready(function(){
+            $("#1st").modal("show");
+        });
+    </script>

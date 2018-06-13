@@ -2,12 +2,7 @@
 <html>
 <head>
 	<title>Vivixx</title>
-	<meta charset="utf-8">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-    <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 </head>
 	
 <body style="background-color:white !important;";>
@@ -38,11 +33,11 @@
 
         	$show = "
         			<input name='show' value='show' style='display: none;'>
-        			<a href='#!' data-toggle='modal' data-target='#1st'><input class='btn btn-warning' type='submit' value='show more'></a>";
+        			<a href='update_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
         	
 			//print data in table
         	echo "
-        		<form action='show_all' method='POST'>
+        		<form action='update_information.php' method='POST'>
 					<tr>
 						<td>" . ucwords($row['first_name']) . "</td>
 						<td>" . ucwords($row['last_name']) . "</td>
@@ -62,29 +57,20 @@ $connect-> close();
 ?>
 </table>
 	
-	<div class="modal fade" id="1st" tabindex="-1" role="dialog" >
-	<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
-        <div class="modal-content">
-            <!-- <div class="modal-header">
-				<?php
-					
-				?>
-            </div> -->
-
-            <div class="modal-body" >
-            	
-				<?php
-					include 'update_information.php';
-				?>
-				
-            </div>
-        </div>
-    </div>
-</div>		
-  		<script type="text/javascript" src="../script/ajax.js"></script>
-        <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="../script/popper.min.js"></script>
-        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<div id="result">
+	</div>		
+		<script>
+			$(document).ready(function(){
+				$('.show').click(function(e){
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res){
+							$('#result').html(res);
+						}
+					});
+				});
+			});
+		</script>
 </body>	
 </html>
