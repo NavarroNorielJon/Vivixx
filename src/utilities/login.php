@@ -30,7 +30,7 @@
                 }else{
                     header('location:/home');
                 }
-            }elseif($type === "admin"){
+            } elseif($type === "admin"){
                 header('location:../admin/index');
             }
             }elseif(!password_verify($password, $passwordVerify) && $status === "enabled") {
@@ -38,9 +38,9 @@
                         alert('Invalid username or password or disabled');
                         window.location = '/';
                       </script>";
-                
-                
-				
+
+
+
 			}else{
                 echo "<script>
                         alert('Account is disabled');

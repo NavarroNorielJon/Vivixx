@@ -8,6 +8,7 @@
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $username = $row['username'];
+        $user_id = $row['user_id'];
         $email = $row['email'];
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
@@ -32,7 +33,6 @@
         $tin = $row['tin'];
         $philhealth_no = $row['philhealth_no'];
         $pagibig_id_no = $row['pagibig_id_no'];
-		
     }
 
     if(!isset($_SESSION['user'])){

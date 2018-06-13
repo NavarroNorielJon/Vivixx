@@ -1,5 +1,6 @@
 <?php
     include 'utilities/session.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +32,7 @@
 
                         <div class="form-group col-4">
                 			<label for="first"> Username</label>
-                			<input type="text" id="first" class="form-control" value="<?php echo "$username";?>" disabled>
+                			<p><?php echo "$username";?></p>
             			</div>
 
                         <div class="form-group col-4"></div>
@@ -57,8 +58,8 @@
 
                     <div class="row">
                         <div class="form-group col-4">
-            				<label for="email"> Email</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$email";?>" disabled>
+            				<label for="birth_place"> Birth Place</label>
+            				<input type="text" id="first" class="form-control" value="<?php echo "$birth_place";?>" disabled>
         				</div>
 
                         <div class="form-group col-4">
@@ -86,6 +87,24 @@
         				<div class="form-group col-4">
             				<label for="weight">Weight</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$weight";?> kg" disabled>
+        				</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-4" id="off">
+            				<label for="offsprint">Offspring</label>
+            				<p>
+                            <?php
+                            $sql = "SELECT child_name FROM user_offspring where user_id='$user_id';";
+                            $res = $connect->query($sql);
+                            if ($res->num_rows > 0) {
+                                while ($row = $res->fetch_assoc()) {
+                                    echo $row['child_name']."
+                                    \n";
+                                }
+                            }
+                            ?></p>
+
         				</div>
                     </div>
 

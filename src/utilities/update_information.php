@@ -81,7 +81,7 @@
 
                         <div class="form-group col-3 ">
                             <label for="residential_tel_no">Telephone NO.</label>
-              		        <input type="text" name="residential_tel_no" id="residential_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+              		        <input type="text" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@
 
               			<div class="form-group col-3 " >
                         	<label for="permanent_tel_no">Telephone NO.</label>
-              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+              				<input type="text" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
               			</div>
 					</div>
 
@@ -264,7 +264,7 @@
 
                        <div class="form-group col-2">
                            <label for="spouse_tel_no">Telephone NO.</label>
-                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
+                           <input type="text" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
                        </div>
                    </div>
 

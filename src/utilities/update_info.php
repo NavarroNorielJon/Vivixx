@@ -92,23 +92,18 @@ if($connect->query($insert_stmt) === true){
     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
-    if($child_name != ''){
+    if($connect->query($insert_stmt) === true){
         foreach ($child_name as $value1) {
             foreach ($child_birth as $key => $value2) {
             }
-            $insert_stmt="INSERT INTO `user_offspring` (`user_id`,`name`,`birth_date`)
-                VALUES ('$id','$value1','$value2');";
+            $insert_stmt="INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
+                VALUES ('null','$value1','$value2',$id);";
             $connect->query($insert_stmt);
         }
         echo "<script>
-                alert('Done');
-                window.location.replace('/');
+                alert('DOne');
               </script>";
     }
-    echo "<script>
-            alert('DOne');
-            window.location.replace('/');
-          </script>";
 } else {
     echo "<script>
             alert('Failure');
