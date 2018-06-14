@@ -1,6 +1,6 @@
 
 <?php
-    
+    include '../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $personal_info = "select * from mis.user_info where user_id= '$user_id';";

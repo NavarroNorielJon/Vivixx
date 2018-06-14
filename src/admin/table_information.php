@@ -22,7 +22,6 @@
 		<?php
 			$sql = "select * from user_info natural join user;";
 			$result = $connect->query($sql);
-			
 			if($result-> num_rows > 0){
     			while($row = $result->fetch_assoc()){
         			if($row["gender"] === "m"){

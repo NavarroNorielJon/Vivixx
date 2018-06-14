@@ -1,7 +1,6 @@
 <?php
+	include '../utilities/db.php';
 	$connect = Connect();
-	// $username = $_POST["username"];
-	// echo $username;
 	$username = $_GET["username"];
 
 		if(isset($_GET["enable"])){

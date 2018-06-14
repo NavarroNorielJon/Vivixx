@@ -23,7 +23,6 @@
     $result = $connect->query($sql);
 
     if($result-> num_rows > 0){
-        $counter = 0;
         while($row = $result->fetch_assoc()){
           //enable or disable button
           if($row["status"] === "enabled"){
