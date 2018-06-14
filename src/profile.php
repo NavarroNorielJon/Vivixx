@@ -33,7 +33,7 @@
                     <div class="row">
 
         				<div class="form-group col-4">
-            				<label for="first"> First Name</label>
+            				<sub><label for="first"> First Name</label></sub>
             				<input type="text" id="first" class="form-control-plaintext" value="<?php echo "$first_name";?>" disabled>
         				</div>
 
