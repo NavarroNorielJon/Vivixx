@@ -1,18 +1,118 @@
 a, a:hover, a:active {
 	color: #fff;
 	text-decoration: none;
-	transition: all 0.3s;
 }
+
+h1::selection {
+	color: #fff;
+	background-color: #005959;
+}
+
 
 ul ul a {
 	font-size: 0.9em !important;
 	padding-left: 30px !important;	
 }
 
+.message {
+	color: #1a1a1a;
+	font-size: 5rem;
+	transition: 2s;
+}
+
+#content {
+	padding: 10px 5px 10px 3px;
+	margin-left: 255px;
+}
+/*index*/
+.index-body {
+	opacity: 0;
+	transition: 2s;
+}
+
+#index {
+	background-attachment: fixed;
+	background-image: url(../img/bg2.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+#index .index-content {
+	text-align: center;
+	height:100vh;"
+}
+
+#index .index-content img {
+	display: block;
+	margin: 10vh auto 5vh auto;
+	width: 35%;
+}
+
+#index .index-form{
+	background-color: rgba(128, 128, 128, 0.8); 
+	height:100vh;
+	padding-top: 50px;
+}
+
+#index .index-form > a {
+	background-color: rgba(128, 128, 128, 0.8); 
+	height:100vh;"
+	padding: 100px;
+	text-align: center;
+}
+
+#index .index-form .forgot:hover {
+	text-decoration: underline;
+}
+
+#index .index-form .forgot:focus {
+	outline: none;
+}
+
+#index .index-form .login-button {
+	background-color: #005959;
+	color: #fff;
+	font-size: 1rem;
+	padding: 5px auto 20px auto;
+	margin-bottom: 20%;
+}
+
+#index .index-form #signup-link {
+	visibility: hidden;
+}
+
+#index .index-form #signup-link:hover {
+	text-decoration: underline;
+}
+
+
+#index .index-form #signup-link:focus {
+	outline: none;
+}
+
+#index .index-form .signup-button{
+	border-radius: 0;
+	background-color: #005959;
+	color: #fff;
+	bottom: 0;
+	font-size: 2rem;
+	padding: 25px;
+	position: absolute;
+	width: 100%;
+}
+
+#index .index-form button:hover{
+	background-color: #e6ffff;
+	color: inherit;
+}
+
+/*end of index*/
 #leave_form {
 	margin: 50px 100px 50px 100px;
 }
 
+/*sidebar*/
 #sidebar {
 	background-color: #008080;
 	max-width: 250px;
@@ -20,7 +120,6 @@ ul ul a {
 	height: 100vh;
 	position: fixed;
 	z-index: 9999;
-	transition: all 0.3s;
 }
 
 #sidebar ul.components {
@@ -60,11 +159,33 @@ ul ul a {
 	height: auto;
 }
 
-#content {
-	padding: 10px 5px 10px 3px;
-	margin-left: 255px;
-}
-
 .wrapper {
 	display: flex;
+}
+/*end of sidebar*/
+
+@media(max-width: 980px) {
+	.message {
+		font-size: 3rem;
+	}
+	
+	#index .index-form button{
+		font-size: 2rem;
+	}
+	
+	#index .index-form .login-button {
+		margin-bottom: 20px;
+	}
+	
+	#index .index-form .signup-button {
+		visibility: hidden;	
+	}
+	
+	#index .index-form #signup-link {
+		visibility: visible;
+	}
+}
+
+@media(max-width: 576){
+	background-image: url(img/bg2-sm.jpg);
 }
