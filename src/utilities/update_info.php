@@ -41,10 +41,28 @@ $mother_first_name = mysqli_real_escape_string($connect, $_POST['mother_first_na
 $mother_middle_name = mysqli_real_escape_string($connect, $_POST['mother_middle_name']);
 $mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name']);
 $child_name = $_POST['child_name'];
-$child_birth =$_POST['child_birth'];
+$child_birth = $_POST['child_birth'];
 
-$child_name = array_map('mysqli_real_escape_string', $child_name);
-$child_birth = array_map('mysqli_real_escape_string', $child_birth);
+
+
+//Educational background
+$elem_school_name = mysqli_real_escape_string($connect, $_POST['elem_school_name']);
+$elem_yr_grad = mysqli_real_escape_string($connect, $_POST['elem_yr_grad']);
+$elem_high_level = mysqli_real_escape_string($connect, $_POST['elem_high_level']);
+
+$sec_school_name = mysqli_real_escape_string($connect, $_POST['sec_school_name']);
+$sec_yr_grad = mysqli_real_escape_string($connect, $_POST['sec_yr_grad']);
+$sec_high_level = mysqli_real_escape_string($connect, $_POST['sec_high_level']);
+
+$col_school_name = mysqli_real_escape_string($connect, $_POST['col_school_name']);
+$col_yr_grad = mysqli_real_escape_string($connect, $_POST['col_yr_grad']);
+$col_high_level = mysqli_real_escape_string($connect, $_POST['col_high_level']);
+
+$post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name']);
+$post_yr_grad = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
+$post_high_level = mysqli_real_escape_string($connect, $_POST['post_high_level']);
+
+
 
 // if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
 //     echo "
@@ -78,6 +96,11 @@ if($result->num_rows > 0){
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 
+$elementary = $elem_school_name . "," . $elem_yr_grad ."," . $elem_high_level;
+$secondary = $sec_school_name . "," . $sec_yr_grad . "," . $sec_high_level;
+$college = $col_school_name . "," . $col_yr_grad . "," . $col_high_level;
+$post_grad = $post_school_name . "," . $post_yr_grad . "," . $post_high_level;
+
 $sql = "SELECT user_id FROM user where username='$username'";
 $result = $connect->query($sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -87,7 +110,7 @@ $insert_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `blood_type`='$blood_type', `residential_address`='$residential_address', `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
   `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship', `religion`='$religion', `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
   `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
-$sql = "SELECT FROM user_info where user_id='$id';";
+
 if($connect->query($insert_stmt) === true){
     $insert_stmt = "INSERT INTO `user_background`(`bg_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
     `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
@@ -98,21 +121,39 @@ if($connect->query($insert_stmt) === true){
         foreach ($child_name as $value1) {
             foreach ($child_birth as $value2) {
             }
-            $insert_stmt="INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
-                VALUES ('null','$value1','$value2',$id);";
+            $insert_stmt = "INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
+                VALUES ('null','$value1','$value2','$id');";
             if ($connect->query($insert_stmt) === true) {
-                $insert
+                $insert_stmt = "INSERT INTO `user_educ` (`educ_id`,`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
+                    VALUES ('null','$id','$elementary','$secondary','$college','$post_grad');";
+                if($connect->query($insert_stmt) === true){
+                    echo "<script>
+                            window.location = '/';
+                          </script>";
+                          exit;
+                }else {
+                    echo "<script>
+                            alert('error');
+                            window.location = '/';
+                          </script>";
+                          exit;
+                }
             }
+            echo "<script>
+                    window.location = '/';
+                  </script>";
+                  exit;
         }
         echo "<script>
-                alert('Done');
-                window.location.replace('/');
+                window.location = '/';
               </script>";
+              exit;
     }
 } else {
     echo "<script>
             alert('Failure');
             window.history.back();
           </script>";
+          exit;
 }
 ?>
