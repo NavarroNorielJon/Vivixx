@@ -19,7 +19,7 @@
                     $user = $_GET["fname"];
                     $user_middle = $_GET["mname"];
                     $user_last = $_GET["lname"];
-                    echo "<h1>" ."Information of ". $user . " " . $user_middle . " " . $user_last ."</h1>";
+                    echo "<h1>" ."Information of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
                 ?>
                 </div>
     

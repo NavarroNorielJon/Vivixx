@@ -10,10 +10,12 @@
     <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
         <div class="modal-content" id="message">
                 <?php
-                    echo "a;lsdkf;ld";
+                    echo "Account successfully Enabled or Disabled.";
                 ?>
-                <a href="accounts_status.php" class="btn btn-primary" id="ok">Ok</a>
-
+                <div id="ok">
+                <br>
+                    <a href="accounts_status.php" class="btn btn-primary" style="width:25%;">Ok</a>
+                </div>
         </div>
     </div>
 </div>
