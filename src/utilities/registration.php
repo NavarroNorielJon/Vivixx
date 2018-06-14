@@ -34,7 +34,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 /**
  *Checks if the passwords are the same
 */
-if($password != $cpassword ){
+if($password !== $cpassword ){
 	echo "
         <script>
             alert('Password doesn't match.');
@@ -73,7 +73,7 @@ if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
 				alert('Registration Successful. Your username is $username');
-
+                window.location.replace('/');
 			</script>
 		";
 	} else {
