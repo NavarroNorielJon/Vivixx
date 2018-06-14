@@ -16,6 +16,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `leave_req`
+--
+
+DROP TABLE IF EXISTS `leave_req`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leave_req` (
+  `leave_req_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `employee` varchar(100) NOT NULL,
+  `department` varchar(100) NOT NULL,
+  `position` varchar(45) NOT NULL,
+  `date_hired` date NOT NULL,
+  `date_filed` date NOT NULL,
+  `reason` varchar(100) NOT NULL,
+  `contact_address` varchar(100) NOT NULL,
+  `contact_number` int(11) NOT NULL,
+  `from` date NOT NULL,
+  `to` date NOT NULL,
+  PRIMARY KEY (`leave_req_id`),
+  UNIQUE KEY `leave_req_id_UNIQUE` (`leave_req_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leave_req`
+--
+
+LOCK TABLES `leave_req` WRITE;
+/*!40000 ALTER TABLE `leave_req` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leave_req` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `logs`
 --
 
@@ -57,8 +91,9 @@ CREATE TABLE `user` (
   `status` enum('enabled','disabled') DEFAULT 'enabled',
   `type` enum('admin','user') DEFAULT 'user',
   PRIMARY KEY (`username`),
-  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `user_id_UNIQUE` (`user_id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +102,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('gregorio',13,'gregorio@gmail.com','$2y$10$Jjtf1JTMDAe7PudECXY2uulyMoR7GFESp2ZAIGZO1PGWbIBt4lc1W','2018-06-13','enabled','user'),('gregoriorenz',12,'gregoriorenz@gmail.com','$2y$10$gn8kN5XswbF/LhtG9RCdoOPUhVn5FHI/6HnWuu1cWaAQuXQWPLgii','2018-06-12','enabled','user'),('marc1234',8,'marc1234@gmail.com','$2y$10$dtWYv56w.prmPXio2c6UOOpnHaudp3AhtkCGKBi8JZ4uRrBDYXv2K','2018-06-12','enabled','user'),('norielj',10,'noriel@gmail.com','$2y$10$pvceVzKF0QuZIsPex.N22e.f0WGu1gFcuwvLnjQrJbfMsETxvArg2','2018-06-12','enabled','user'),('norieljon',9,'norieljon@email.com','$2y$10$ph5R6IThhzW6DXDu/dHnX.KBncFqMAPN5KhC/NEpK0TQEjLGqgroy','2018-06-12','enabled','user');
+INSERT INTO `user` VALUES ('HRWqeyuiyr',2,'hello123@email.cm','$2y$10$WLBB1PG5y3gCP9sRh/qSceeynyPJtKsfELTZlgwoDWxJzJHKWAXNm','2018-06-14','enabled','user'),('MLGregorio',1,'gregorio12@gmail.com','$2y$10$a1QKsNjx5LmrqBglLJcG7..NzyRgkPQ4LRLrSpDJ.IlzExNx6BFAK','2018-06-14','enabled','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,8 +139,38 @@ CREATE TABLE `user_background` (
 
 LOCK TABLES `user_background` WRITE;
 /*!40000 ALTER TABLE `user_background` DISABLE KEYS */;
-INSERT INTO `user_background` VALUES (8,'','','','','','','','mike','fidel','ramos','mama','bigmom','kaido'),(12,'','','','','','','','okimwa','navarro','abuiza','noriel','pangilinan','navarro');
+INSERT INTO `user_background` VALUES (1,'','','','','','','','MLGregorio','MLGregorio','MLGregorio','MLGregorio','MLGregorio','MLGregorio'),(2,'','','','','','','','wqertyu','qwerty','wqerty','werty','werty','werty');
 /*!40000 ALTER TABLE `user_background` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_educ`
+--
+
+DROP TABLE IF EXISTS `user_educ`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_educ` (
+  `educ_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `elementary` varchar(100) NOT NULL,
+  `secondary` varchar(100) NOT NULL,
+  `college` varchar(100) DEFAULT NULL,
+  `post_grad` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`educ_id`),
+  KEY `userid_idx` (`user_id`),
+  CONSTRAINT `userid1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_educ`
+--
+
+LOCK TABLES `user_educ` WRITE;
+/*!40000 ALTER TABLE `user_educ` DISABLE KEYS */;
+INSERT INTO `user_educ` VALUES (1,2,'wqertyu,wert,','wertyui,werty,','werty,,qwertyui',',,');
+/*!40000 ALTER TABLE `user_educ` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -151,7 +216,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (8,'Marc Lawrence','Sison','Gregorio','1998-12-13','Quezon City','09653346612','m','5\'7',55,'o','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','Filipino','Catholic','single',213133,21323113,123212131,132131212),(9,'Noriel','Pangilinan','Navarro',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,'Noriel jon','Pangilinan','Navarro',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,'Marc Lawrence','Sison','Gregorio','1998-12-13','quezon city','09653346613','m','5\'7',60,'o','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','429 Dalisay St. Caluluan, Concepcion, Tarlac',2316,'09653346612','Filipino','Catholic','Others',13121123,132131231,132131213,2147483647),(13,'Marc Lawrence','Sison','Gregorio','2018-06-14',NULL,'09123456789','m','131',123,'a','qwertuio',1234,'2131212','qwertuio',1232,'2131231','qwertuio','qwertuio','single',1232131313,2147483647,12313,3123);
+INSERT INTO `user_info` VALUES (1,'marc','lawrence','gregorio','2018-06-01','MLGregorio','123456789','m','3456',234,'a','MLGregorio',2134,'12345','MLGregorio',3245,'123456','MLGregorio','MLGregorio','married',234567,2435678,2345678,2345678),(2,'hello','rw6etyuio','wqeyuiyr','2018-06-14','qwretyu','678123456','f','wqerty',231,'a','13233213213',2321,'1232132','21321123213',1321,'1321321','wqertyu','wqertyui','annulled',12345678,2134567890,2134567890,213456789);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,14 +229,14 @@ DROP TABLE IF EXISTS `user_offspring`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_offspring` (
   `off_id` int(11) NOT NULL AUTO_INCREMENT,
-  `child_name` varchar(50) NOT NULL,
-  `child_birth_date` date NOT NULL,
+  `child_name` varchar(50) DEFAULT NULL,
+  `child_birth_date` date DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`off_id`),
   UNIQUE KEY `user_id_UNIQUE` (`off_id`),
   KEY `userid_idx` (`user_id`),
   CONSTRAINT `userid` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +245,7 @@ CREATE TABLE `user_offspring` (
 
 LOCK TABLES `user_offspring` WRITE;
 /*!40000 ALTER TABLE `user_offspring` DISABLE KEYS */;
+INSERT INTO `user_offspring` VALUES (1,'','0000-00-00',1),(2,'wqertyu','2018-06-12',2);
 /*!40000 ALTER TABLE `user_offspring` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -192,4 +258,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-13 14:45:39
+-- Dump completed on 2018-06-14 13:58:24
