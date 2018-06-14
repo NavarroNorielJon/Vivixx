@@ -6,7 +6,6 @@ $connect = Connect();
 $first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
 $middle_name = mysqli_real_escape_string($connect, $_POST['middle_name']);
 $last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
-$username = mysqli_real_escape_string($connect, $_POST['username']);
 $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
@@ -35,7 +34,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 /**
  *Checks if the passwords are the same
 */
-if($password != $cpassword ){
+if($password !== $cpassword ){
 	echo "
         <script>
             alert('Password doesn't match.');
@@ -49,20 +48,6 @@ if($password != $cpassword ){
  *it will return to the registration
  */
 
-
-$sql = "SELECT * FROM user where username = '$username'";
-$result = $connect->query($sql);
-
-if($result->num_rows > 0){
-    echo "
-        <script>
-            alert('Username is already in use');
-            window.history.back();
-        </script>
-    ";
-    exit;
-}
-
 if(strlen($password) < 8 || strlen($password) > 16){
     echo "
         <script>
@@ -73,8 +58,8 @@ if(strlen($password) < 8 || strlen($password) > 16){
     exit;
 
 }
-
- $password = password_hash($password, PASSWORD_DEFAULT);
+$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name);
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
@@ -87,7 +72,7 @@ if($connect->query($insert_stmt) === true){
 	if($connect->query($insert_stmt) === true){
 		echo "
 			<script>
-				alert('Registration Successful. Please complete all the information after logging in');
+				alert('Registration Successful. Your username is $username');
                 window.location.replace('/');
 			</script>
 		";

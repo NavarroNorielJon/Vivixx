@@ -1,5 +1,6 @@
 <?php
   include 'header.php';
+  
  ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
           <h1>User Information</h1>
           <div id="content">
           <?php
-          include 'data_information.php';
+          include 'table_information.php';
            ?>
          </div>
 	<!--script for calling data table library-->

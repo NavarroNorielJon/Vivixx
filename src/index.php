@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 	<title>Vivixx</title>
 	<meta charset="utf-8">
@@ -22,7 +22,7 @@
 <body  style="background-color:#005959;">
 	<div class="jumbotron col-sm-12" id="login-form">
     	<img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-		
+
 		<form action="utilities/login.php" method="post" class="col s12 " id="login">
         	<div class="form-group col-sm-12">
             	<label for="userOrEmail">Username or Email-Address</label>
@@ -34,7 +34,7 @@
             	<label for="pass">Password</label>
                 <div class="input-group">
                 	<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
-					
+
                     	<div class="input-group-append">
                         	<button  type="button" class="btn" onclick="showHide('password','icon')">
                             	<i class="material-icons" id="icon">visibility</i>
@@ -64,7 +64,7 @@
                     	<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				
+
 				<!-- Body -->
                 <div class="modal-body">
                 	<form action="mailing/send_reset.php" method="POST">
@@ -94,7 +94,7 @@
                     	<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				
+
 				<!-- Body -->
                 <div class="modal-body">
                 	<form action="utilities/registration.php" method="POST">
@@ -117,15 +117,10 @@
 						</div>
 						<!-- End of sign up modal -->
 
-						<div class="form-group">
-                        	<label for="username">Username</label>
-                            <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
-                            <div id="validUser"></div>
-						</div>
 
                         <div class="form-group">
                         	<label for="email">Email</label>
-                            <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class="form-control form-control" required="required">
+                            <input type="text" name="email" id="remail" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class="form-control" required="required">
                             <div id="validEmail"></div>
 						</div>
 
@@ -159,7 +154,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="script/popper.min.js"></script>
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
@@ -167,5 +161,5 @@
 	<script type="text/javascript" src="script/ajax.js"></script>
 	<?php include 'modules/footer.html'; ?>
 </body>
-	
+
 </html>

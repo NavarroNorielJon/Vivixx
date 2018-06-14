@@ -1,7 +1,5 @@
 <?php
 	include 'header.php';
-	include '../utilities/session.php';
-
  ?>
 
 <!DOCTYPE html>

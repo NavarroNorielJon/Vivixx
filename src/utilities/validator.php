@@ -17,16 +17,6 @@ switch ($type){
 			echo "<span class='invalid'>Required</span>";
 		}
 		break;
-	case "username":
-		$username = mysqli_real_escape_string($connect,$_REQUEST["username"]);
-		$stmt = "SELECT * FROM user where username = '$username';";
-		$result = mysqli_query($connect,$stmt);
-		if($result->num_rows > 0){
-			echo "<span class='invalid'>Username already exist</span>";
-		} else if(!$result->num_rows > 0 && strlen($username) > 5 ) {
-			echo "<span class='valid'>Username available</span>";
-		}
-		break;
 	case "contact_number":
 		$contact_number = mysqli_real_escape_string($connect,$_REQUEST["contact_number"]);
 		$stmt = "SELECT * FROM user_info where contact_number = '$contact_number';";
@@ -64,7 +54,8 @@ switch ($type){
 		$userOrEmail = mysqli_real_escape_string($connect,$_REQUEST["userOrEmail"]);
 		$stmt = "SELECT * FROM user where email = '$userOrEmail' or username='$userOrEmail';";
 		$result = mysqli_query($connect, $stmt);
-		if(!$result->num_rows > 0){
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		if($userOrEmail !== $row['username'] && $userOrEmail !== $row['email']){
 			echo "<span class='invalid'>User does not exists</span>";
 		}
 		break;
