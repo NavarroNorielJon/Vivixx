@@ -25,29 +25,21 @@
                 <div class="jumbotron" style="margin-right:8%;">
 
                     <div class="row">
-
                         <div class="form-group col-4">
                 			<div class="thumbnail"><img src="img/profile-images/lion.png" style="height:50%;width:50%;"></div>
             			</div>
-
-                        <div class="form-group col-4">
-                			<label for="first"> Username</label>
-                			<p><?php echo "$username";?></p>
-            			</div>
-
-                        <div class="form-group col-4"></div>
                     </div>
 
                     <div class="row">
 
         				<div class="form-group col-4">
             				<label for="first"> First Name</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$first_name";?>" disabled>
+            				<input type="text" id="first" class="form-control-plaintext" value="<?php echo "$first_name";?>" disabled>
         				</div>
 
                         <div class="form-group col-4">
-            				<label for="first"> Middle Name</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$middle_name";?>" disabled>
+            				<sublabel for="first"> Middle Name</sublabel>
+            				<input type="text" id="first" class="form-control-plaintext" value="<?php echo "$middle_name";?>" disabled>
         				</div>
 
         				<div class="form-group col-4">
