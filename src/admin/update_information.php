@@ -24,7 +24,7 @@
                 ?>
                 </div>
     
-                <div id=class="modal-body" >
+                <div class="modal-body" >
 			<!-- Start of Personal Info-->
             <form action="update_info" method="POST">
              <div class="jumbotron" id="personal_info">
@@ -174,6 +174,7 @@
 
 
            <!-- Start of Family Background -->
+           <div class="modal-body" >
            <div class="jumbotron d-none" id="family_background">
                <div>
                    <h1>Family Background</h1><br>
@@ -281,7 +282,7 @@
                    <div style="text-align: right">
                        <button type="button" onclick="nextForm('family_background','personal_info')"><i class="material-icons">arrow_back</i></button>
                        <button type="submit">Submit</button>
-
+                    </div>
                    </div>
               </div>
           </div>

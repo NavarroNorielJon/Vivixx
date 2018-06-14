@@ -185,3 +185,12 @@ a:active, a:hover, a:focus{
     font-family: rockwell;
     src: url(../fonts/RockwellStd.otf);
 }
+
+#message {
+    width: 200px;
+    margin: 0 auto;
+}
+#a {
+    width: 25%;
+    text-align: center;
+}
