@@ -14,7 +14,7 @@
     <script src="main.js"></script>
 </head>
 <body style="text-align:center;">
-    <form action="#" method="POST">
+    <form action="validate_reset_password.php" method="POST">
         <input type="text" name="pass" placeholder="Enter New Password">
         <br>
         <input type="text" name="cpass" placeholder="Confirm Password">

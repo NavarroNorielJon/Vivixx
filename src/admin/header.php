@@ -2,6 +2,7 @@
 <html lang="en">
 	<?php
 	include '../Utilities/db.php';
+	include '../utilities/session.php';
 	$connect = Connect();
 	?>
 <head>

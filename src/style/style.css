@@ -187,10 +187,11 @@ a:active, a:hover, a:focus{
 }
 
 #message {
-    width: 200px;
+    width: 300px;
     margin: 0 auto;
+    text-align: center;
 }
-#a {
-    width: 25%;
+#ok {
+    width:50%;
     text-align: center;
 }

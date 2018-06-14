@@ -1,5 +1,4 @@
 <?php
-	include '../utilities/session.php';
 	$connect = Connect();
 	// $username = $_POST["username"];
 	// echo $username;

@@ -19,7 +19,6 @@
   </thead>
 
     <?php
-    include '../utilities/session.php';
     $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
     $result = $connect->query($sql);
 
