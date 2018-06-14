@@ -26,7 +26,11 @@
 
                     <div class="row">
                         <div class="form-group col-4">
-                			<div class="thumbnail"><img src="img/profile-images/lion.png" style="height:50%;width:50%;"></div>
+                			<div class="thumbnail"><img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:50%;width:50%;"></div>
+                            <form action="utilities/upload.php" method="POST" enctype="multipart/form-data">
+                                <input class="btn-primary" type="file" name="image" ><br>
+                                <button class="btn btn-primary" type="submit" name="upload">Upload</button>
+                            </form>
             			</div>
                     </div>
 

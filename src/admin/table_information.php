@@ -32,7 +32,7 @@
 
         	$show = "
         			<input name='show' value='show' style='display: none;'>
-        			<a href='update_information.php?user_id=".$row['user_id']."& fname=".$row['first_name']."& mname=".$row['middle_name'] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+        			<a href='view_information.php?user_id=".$row['user_id']."& fname=".$row['first_name']."& mname=".$row['middle_name'] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
         	
 			//print data in table
         	echo "

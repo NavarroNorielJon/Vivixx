@@ -9,6 +9,7 @@
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $username = $row['username'];
         $user_id = $row['user_id'];
+        $prof_image = $row['prof_image'];
         $email = $row['email'];
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
