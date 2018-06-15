@@ -32,7 +32,7 @@
 					</ul>
 				</li>
             	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
-            	<li><a href="utilities/logout.php" id="logout">
+            	<li><a href="../utilities/logout.php" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout</a></li>
         	</ul>
 		</nav>
