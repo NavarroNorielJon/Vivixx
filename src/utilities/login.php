@@ -23,9 +23,9 @@
                         $_SESSION['user'] = $user;
                         $result = mysqli_query($connect,$test);
                         if ($result->num_rows > 0 ) {
-                            header('location:update_information');
+                            header('location:../pages/update_information');
                         } else {
-                            header('location:/home');
+                            header('location:../pages/home');
                         }
                     } elseif ($type === "admin") {
                         header('location:../admin/index');
