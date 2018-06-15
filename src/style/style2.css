@@ -14,6 +14,19 @@ ul ul a {
 	padding-left: 30px !important;	
 }
 
+/*index*/
+.body {
+	opacity: 0;
+	transition: 2s;
+}
+
+.valid{
+	color: green;
+}
+.invalid{
+	color: red;
+}
+
 .message {
 	color: #1a1a1a;
 	font-size: 5rem;
@@ -23,11 +36,6 @@ ul ul a {
 #content {
 	padding: 10px 5px 10px 3px;
 	margin-left: 255px;
-}
-/*index*/
-.body {
-	opacity: 0;
-	transition: 2s;
 }
 
 #index {
@@ -66,8 +74,15 @@ ul ul a {
 	text-decoration: underline;
 }
 
+#forgot .forgot-header {
+}
+
 #index .index-form .forgot:focus {
 	outline: none;
+}
+
+.eye {
+	padding: 3px 2px 0 2px;
 }
 
 #index .index-form .login-button {
@@ -111,6 +126,7 @@ ul ul a {
 #leave_form {
 	margin: 50px 100px 50px 100px;
 }
+
 
 /*sidebar*/
 #sidebar {
@@ -164,23 +180,55 @@ ul ul a {
 }
 /*end of sidebar*/
 
-.signup-content {
+/*Sign Up*/
+#signup-form .signup-content {
 	border-radius: 0;
 	box-shadow: 3px 3px;
 }
 
-.signup-content input {
+#signup-form .signup-content input {
 	border-radius: 0;
 }
 
-.signup-header {
+#signup-form .signup-content button{
+	border-radius: 0;
+	padding: 1px 3px 1px 3px	;
+}
+
+#signup-form .signup-header {
 	background-color: #e6e6e6;
 }
+
+/*Forgot password*/
+#forgot-form .forgot-content {
+	border-radius: 0;
+	box-shadow: 3px 3px;
+}
+
+#forgot-form .forgot-content input {
+	border-radius: 0;
+}
+
+#forgot-form .forgot-content button{
+	border-radius: 0;
+	padding: 1px 3px 1px 3px	;
+}
+
+#forgot-form .forgot-header {
+	background-color: #e6e6e6;
+}
+
+
 
 @media(max-width: 980px) {
 	.message {
 		font-size: 3rem;
 	}
+
+	#signup-form .signup-header h1 {
+		font-size: 3rem
+	}
+
 	
 	#index .index-form button{
 		font-size: 2rem;
@@ -199,6 +247,12 @@ ul ul a {
 	}
 }
 
-@media(max-width: 576){
+@media(max-width: 650px) {
+	#signup-form .signup-header h1 {
+		font-size: 3rem
+	}
+}
+
+@media(max-width: 576px){
 	background-image: url(img/bg2-sm.jpg);
 }
