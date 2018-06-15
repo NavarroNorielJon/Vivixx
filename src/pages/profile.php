@@ -36,8 +36,46 @@
             </ul>
         </nav>
 
-        <div id="content">
-            <h1> Personal Information </h1>
+        <div class="container-fluid" id="profile">
+            <div class="profile-header">
+            <h1> PERSONAL INFORMATION </h1><hr>
+            </div>
+
+            <div class="profile-content">
+                <!-- <div class="row">
+                        <div class="form-group col-4">
+                            <div class="thumbnail"><img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:50%;width:50%;"></div>
+                            <form action="utilities/upload.php" method="POST" enctype="multipart/form-data">
+                                <input class="btn-primary" type="file" name="image" ><br>
+                                <button class="btn btn-primary" type="submit" name="upload">Upload</button>
+                            </form>
+                        </div>
+                </div> -->
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control-plaintext" value="<?php echo "$full_name";?>" disabled>
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="contact_number">Contact Number</label>
+                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo "$contact_number";?>" disabled>
+                        </div>
+
+                        <div class="col-4">
+                            <div  style="height:250px;width:250px;border: 2px solid black"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-4 city-address">
+                        <label for="city_address">City Address</label>
+                        <input type="text" id="city_address" class="form-control-plaintext" value="<?php echo "$residential_address";?>" disabled>
+                    </div>
+
+                    <div class="form-group col-4 permanent-address">
+                        <label for="permanent_address">Permanent Address</label>
+                        <input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo "$permanent_address";?>" disabled>
+                    </div>
+            </div>
         </div>
     </div>
 
@@ -55,34 +93,6 @@
 
 
 <!-- 
-    <body>
-		<div class="row">
-			<div class="col-9">
-                <h1 style="margin:2% 2%;">General Information</h1>
-                <div class="jumbotron" style="margin-right:8%;">
-                    <div class="row">
-                        <div class="form-group col-4">
-                			<div class="thumbnail"><img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:50%;width:50%;"></div>
-                            <form action="utilities/upload.php" method="POST" enctype="multipart/form-data">
-                                <input class="btn-primary" type="file" name="image" ><br>
-                                <button class="btn btn-primary" type="submit" name="upload">Upload</button>
-                            </form>
-            			</div>
-                    </div>
-                    <div class="row">
-        				<div class="form-group col-4">
-            				<sub><label for="first"> First Name</label></sub>
-            				<input type="text" id="first" class="form-control-plaintext" value="<?php echo "$first_name";?>" disabled>
-        				</div>
-                        <div class="form-group col-4">
-            				<sublabel for="first"> Middle Name</sublabel>
-            				<input type="text" id="first" class="form-control-plaintext" value="<?php echo "$middle_name";?>" disabled>
-        				</div>
-        				<div class="form-group col-4">
-            				<label for="first"> Last Name</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$last_name";?>" disabled>
-        				</div>
-    				</div>
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="birth_place"> Birth Place</label>
@@ -97,6 +107,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$contact_number";?>" disabled>
         				</div>
                     </div>
+                    
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="gender"> Gender</label>
@@ -111,6 +122,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$weight";?> kg" disabled>
         				</div>
                     </div>
+                    
                     <div class="row">
                         <div class="form-group col-4" id="off">
             				<label for="offsprint">Offspring</label>
