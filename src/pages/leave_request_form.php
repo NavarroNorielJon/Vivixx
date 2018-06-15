@@ -1,4 +1,4 @@
-<?php include 'utilities/session.php'; ?>
+<?php include '../utilities/session.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -8,8 +8,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="style/style2.css">
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -33,7 +33,7 @@
 					</ul>
 				</li>
             	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li>
-            	<li><a href="utilities/logout.php" id="logout">
+            	<li><a href="../utilities/logout.php" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout</a></li>
         	</ul>
 		</nav>
@@ -119,9 +119,9 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="script/ajax.js"></script>
-	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="script/popper.min.js"></script>
-	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
+	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../script/popper.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
 </body>
