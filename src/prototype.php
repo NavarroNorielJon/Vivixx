@@ -105,7 +105,7 @@
         	<div class="modal-content">
             	<!-- Header -->
                 <div class="modal-header">
-					<img src="img/Lion.png" class="header-logo">
+					<img src="img/Lion.png" style="height:auto; width:15%;" class="header-logo">
                     <h1>Forgot Password</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     	<span aria-hidden="true">&times;</span>
@@ -117,11 +117,11 @@
                 	<form action="mailing/send_reset.php" method="POST">
                     	<div class="form-group">
                         	<label for="id">E-mail Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="email" required>
 						</div>
 
 						<div style="text-align: right;">
-                        	<button type="button" class="btn btn-primary">Send Email</button>
+                        	<button type="submit" class="btn btn-primary">Send Email</button>
 						</div>
 					</form>
 				</div>
@@ -133,8 +133,8 @@
 	<!-- Modal for Register -->
     <div class="modal fade" id="signupForm" tabindex="-1" role="dialog">
     	<div class="modal-dialog sign-up" role="document">
-        	<div class="modal-content">
-            	<div class="modal-header">
+        	<div class="modal-content signup-content">
+            	<div class="modal-header signup-header">
 					<img src="img/Lion.png" style="height:auto; width:25%;" >
                     <h1>Registration Form</h1>
 					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
@@ -161,12 +161,6 @@
 								<label for="lname">Last Name</label>
 								<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" required="required">
 							</div>
-						</div>
-
-						<div class="form-group">
-                        	<label for="username">Username</label>
-                            <input type="text" name="username" id="username" autocomplete="off" onkeyup="helperText('username',this.value,'validUser');nextButton('password','cpassword');" class="form-control" required="required">
-                            <div id="validUser"></div>
 						</div>
 
                         <div class="form-group">
@@ -198,7 +192,7 @@
 						</div>
 
 						<div style="text-align: right;">
-							<button type="submit" class="btn buttons" id="button1" onclick="loginSuccess()">Submit</button>
+							<button type="submit" class="btn btn-primary" id="button1" onclick="loginSuccess()">Submit</button>
 						</div>
 					</form>
 				</div>
