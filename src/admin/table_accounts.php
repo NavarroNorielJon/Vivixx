@@ -19,7 +19,7 @@
   </thead>
   
     <?php
-    $sql = "select username, email, first_name, last_name,status from user natural join user_info;";
+    $sql = "select username, email, first_name, last_name,status from user natural join user_info where type='user';";
     $result = $connect->query($sql);
 
     if($result-> num_rows > 0){
@@ -46,9 +46,7 @@
              ".$button."</td>
             </tr>";
           }
-        }else {
-         echo "database has no query";
-    }
+        }
 
     $connect-> close();
     ?>

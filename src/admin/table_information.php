@@ -20,15 +20,27 @@
   		</thead>
 		
 		<?php
-			$sql = "select * from user_info natural join user;";
+			$sql = "select * from user_info natural join user where type='user';";
 			$result = $connect->query($sql);
 			if($result-> num_rows > 0){
     			while($row = $result->fetch_assoc()){
         			if($row["gender"] === "m"){
             			$gender = "Male";
-        			}else{
+        			}else if($row["gender"] === "f"){
             			$gender = "Female";
-        	}
+        			}else{
+						$gender = "Not set";
+					}
+					if(!isset($row["residential_address"])){
+						$address = "Not set";
+					}else{
+						$address = $row["residential_address"];
+					}
+					if(!isset($row["contact_number"])){
+						$contact = "Not set";
+					}else{
+						$contact = $row["contact_number"];
+					}
 
         	$show = "
         			<input name='show' value='show' style='display: none;'>
@@ -40,15 +52,13 @@
 						<td>" . ucwords($row['first_name']) . "</td>
 						<td>" . ucwords($row['last_name']) . "</td>
 						<td>" . $gender . "</td>
-						<td>" . $row['residential_address'] . "</td>
-						<td>" . $row['contact_number'] . "</td>
+						<td>" . $address . "</td>
+						<td>" . $contact . "</td>
 						<td>" . $row['email'] . "</td>
 						<td>" . $show ."</td>
 					</tr>";
     }
 
-}else{
-    echo "database has no query";
 }
 $connect-> close();
 ?>

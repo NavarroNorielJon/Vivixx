@@ -3,7 +3,7 @@
     include '../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id);";
+    $personal_info = "SELECT * FROM user natural join user_info natural join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id) where type='user';";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
 ?>
