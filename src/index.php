@@ -2,7 +2,7 @@
     include 'utilities/db.php';
     session_start();
     if (isset($_SESSION['user'])) {
-        echo "<script>window.location = '/home';</script>";
+        echo "<script>window.location = 'pages/home';</script>";
     }
 ?>
 
