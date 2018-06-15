@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
                 window.history.back();
             </script>
         ";
+        exit();
 }
 
 $developmentMode = true;
@@ -72,7 +73,7 @@ try {
     <h1>Reset Your Password</h1>
     <p>You have requested to reset your password in our site, to continue click on the link below.</p>
     ";
-    $body .= "<a class='pure-button pure-button-primary' href='www.vivixx.com/password.php?account=" . $username . "." . $password . "'>Reset My Password</a>";
+    $body .= "<a class='pure-button pure-button-primary' href='http://vivixx.com/utilities/reset_password.php?account=" . $username . "." . $password . "'>Reset My Password</a>";
     $body .= "<p>If you didn't request for reset password, ignore this message</p>";
     $body .= "</div>";
 

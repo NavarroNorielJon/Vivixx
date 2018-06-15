@@ -14,6 +14,7 @@
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
         $last_name = $row['last_name'];
+        $full_name = $first_name ." " . $middle_name ." " . $last_name;
         $birth_date = $row['birth_date'];
         $birth_place = $row['birth_place'];
         $contact_number = $row['contact_number'];

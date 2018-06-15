@@ -6,6 +6,7 @@
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
 ?>
+    <form action="accept_or_reject.php" method="POST">
     <div class="modal fade" id="request" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content">
@@ -17,7 +18,7 @@
                         echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
                     ?>
                 </div>
-    
+
                 <div class="modal-body">
                     <div class="row">
 						<div class="form-group col">
@@ -51,7 +52,7 @@
                     <div>
                         <div class="form-group">
                             <label for="other_reason">Reason for Leave</label>
-                            <input type="text" class="form-control" id="other_reason" disabled>
+                            <input type="text" class="form-control" id="reason" disabled>
                         </div>
                         
                         <div class="row">
@@ -100,10 +101,16 @@
                         </div>
 				    </div>
 
+                    <div style="text-align:right">
+                        <input type="submit" name="reject" value="Reject">
+                        <input type="submit" name="accept" value="Accept">
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    </form>
     <script>
         $(document).ready(function(){
             $("#request").modal("show");

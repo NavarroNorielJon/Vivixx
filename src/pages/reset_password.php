@@ -1,7 +1,4 @@
-<?php
-    include '../admin/include.php';
-    include '../admin/header.php';
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -11,13 +8,13 @@
     <title>Reset Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../style/style.css">
-    <script src="main.js"></script>
 </head>
 <body style="text-align:center;">
     <form action="validate_reset_password.php" method="POST">
-        <input type="text" name="pass" placeholder="Enter New Password">
+        <input name="account" type="text" style="display: none;" value="<?php echo $_GET['account'];?>">
+        <input type="text" name="new_pass" placeholder="Enter New Password">
         <br>
-        <input type="text" name="cpass" placeholder="Confirm Password">
+        <input type="text" name="confirm_pass" placeholder="Confirm Password">
         <br>
         <input type="submit" name="submit" value="submit">
     </form>

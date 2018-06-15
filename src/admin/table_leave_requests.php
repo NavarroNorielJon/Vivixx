@@ -15,7 +15,7 @@
         </thead>
 
         <?php
-        $sql = "select * from user natural join user_info;";
+        $sql = "select * from leave_req;";
         $result = $connect->query($sql);
 
         if($result-> num_rows > 0){
@@ -32,9 +32,7 @@
                 <td>" . $show ."</td>
                 </tr>";
             }
-            }else {
-            echo "database has no query";
-        }
+            }
 
         $connect-> close();
         ?>
