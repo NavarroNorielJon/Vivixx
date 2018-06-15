@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 	<title>Vivixx</title>
 	<meta charset="utf-8">
@@ -22,15 +22,15 @@
 <body class="body" id="body">
 	<!-- container -->
 	<div class="containter-fluid" id="index">
-		<div class="row no-gutters">	
+		<div class="row no-gutters">
 			<div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 index-content">
 				<img class="image" id="image" src="img/Lion.png">
 				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
 			</div>
-			
+
 			<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 index-form">
 				<div class="text-center"><h3 style="color: white; margin-bottom: 2vh;">Login</h3></div>
-				
+
 				<form action="utilities/login.php" method="post" class="col s12 " id="login">
         			<div class="form-group col-sm-12">
             			<label for="userOrEmail">Username or Email-Address</label>
@@ -42,15 +42,15 @@
             			<label for="pass">Password</label>
                 		<div class="input-group">
                 			<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
-					
+
                     		<div class="input-group-append">
-                        		<button  type="button" class="btn" onclick="showHide('password','icon')">
+                        		<button  type="button" class="btn" onkeypress="showHide('password','icon')">
                             		<i class="material-icons" id="icon">visibility</i>
                             	</button>
                         	</div>
 						</div>
 					</div>
-					
+
 					<div class="text-center">
 						<a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;" class="forgot">Forgot password?</a>
             			<button type="submit" class="btn login-button" name="submit">
@@ -59,16 +59,16 @@
 						<a href="#!" data-toggle="modal" id="signup-link" data-target="#signupForm">Sign Up</a>
 					</div>
 				</form>
-				
+
 				<button  type="button" class="btn signup-button" href="#!" data-toggle="modal" data-target="#signupForm">Sign Up</button>
-				
+
 			</div>
 		</div>
 	</div>
 <!--
 	<div class="jumbotron col-sm-12">
     	<img src="img/Lion.png" style="width:40%; height:auto; margin-top: -10%; margin-right:4%; margin-left:3%;">
-		
+
 		<form action="utilities/login.php" method="post" class="col s12 " id="login">
         	<div class="form-group col-sm-12">
             	<label for="userOrEmail">Username or Email-Address</label>
@@ -80,7 +80,7 @@
             	<label for="pass">Password</label>
                 <div class="input-group">
                 	<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
-					
+
                     	<div class="input-group-append">
                         	<button  type="button" class="btn" onclick="showHide('password','icon')">
                             	<i class="material-icons" id="icon">visibility</i>
@@ -111,7 +111,7 @@
                     	<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				
+
 				<!-- Body -->
                 <div class="modal-body">
                 	<form action="mailing/send_reset.php" method="POST">
@@ -141,7 +141,7 @@
                     	<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				
+
 				<!-- Body -->
                 <div class="modal-body">
                 	<form action="utilities/registration.php" method="POST">
@@ -199,7 +199,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="script/popper.min.js"></script>
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
@@ -212,5 +212,5 @@
 		}
 	</script>
 </body>
-	
+
 </html>
