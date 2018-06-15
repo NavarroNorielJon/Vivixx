@@ -1,5 +1,5 @@
 <?php
-    include 'session.php';
+    include '../utilities/session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
     <body style="background-color: #005959;">
 
 			<!-- Start of Personal Info-->
-            <form action="update_info" method="POST">
+            <form action="../utilities/update_info" method="POST">
              <div class="jumbotron " id="personal_info">
                 <div>
                     <h2>Personal Information</h2><br>

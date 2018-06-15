@@ -27,7 +27,6 @@
 				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
 				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
 			</div>
-			
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
 				<div class="text-center"><h3 style="color: white; margin-bottom: 2vh;">Login</h3></div>
 				

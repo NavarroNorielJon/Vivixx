@@ -1,4 +1,4 @@
-<?php include 'utilities/session.php'; ?>
+<?php include '../utilities/session.php'; ?>
 
 <!DOCTYPE html>
 <html>

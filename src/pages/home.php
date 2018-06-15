@@ -1,7 +1,7 @@
-<?php include 'utilities/session.php'?>
+<?php include '../utilities/session.php'?>
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 	<title>Vivixx</title>
 	<meta charset="utf-8">
@@ -11,32 +11,32 @@
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-	
+
 <body>
-	
+
 	<div class="wrapper">
 		<nav id="sidebar">
 			<div class="sidebar-header">
 				<img src="../img/Lion.png">
 			</div>
-			
+
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
 				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
             	<li class="active"><a href="home.php"><i class="material-icons">home</i> Home</a></li>
-				<li> 
+				<li>
 					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active"><a href="#">Salary Request</a></li>
 						<li class="active"><a href="leave_request_form.php">Leave Request</a></li>
 					</ul>
 				</li>
-            	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li>
-            	<li><a href="utilities/logout.php" id="logout"> 
+            	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
+            	<li><a href="utilities/logout.php" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout</a></li>
         	</ul>
 		</nav>
-		
+
 		<div id="content">
 			<div class="card">
 				<div class="card-body">
@@ -47,7 +47,7 @@
                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					
+
 					<div style="text-align: right">
 						<a>
 							<button class="btn btn-primary" onclick="sample();">
@@ -57,8 +57,8 @@
 					</div>
 				</div>
 			</div>
-                    
-			<div class="row" style="padding-top: 5%;">        
+
+			<div class="row" style="padding-top: 5%;">
 				<div class="col">
 					<div class="card">
 						<div class="card-body">
@@ -71,7 +71,7 @@
                            		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                            		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 							</p>
-                            
+
 							<div style="text-align: right">
 								<a>
 									<button class="btn btn-primary">See more</button>
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-		
+
 	<script type="text/javascript" src="../script/ajax.js"></script>
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>

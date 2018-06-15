@@ -7,25 +7,25 @@
 		if ($_FILES['image']['size'] < 800000) {
 			if ($connect->query($sql) === true) {
 				echo "<script>
-						window.location = '/profile';
+						window.location = '../pages/profile';
 					  </script>";
 			} else {
 				echo "<script>
 						alert('Error uploading');
-						window.location = '/profile';
+						window.location = '../pages/profile';
 					  </script>";
 			}
 		}else {
 			echo "<script>
 					alert('Your file is too large');
-					window.location = '/profile';
+					window.location = '../pages/profile';
 				  </script>";
 		}
 
 	} else {
 		echo "<script>
 				alert('$connect->error');
-				window.location = '/profile';
+				window.location = '../pages/profile';
 			  </script>";
 	}
 
