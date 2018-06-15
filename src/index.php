@@ -44,7 +44,7 @@
 			</div>
 
 			<div style="text-align: center;">
-            	<button type="submit" class="btn buttons" style="border: 2px solid #005959;" id="loginButton" name="submit">Login
+            	<button type="submit" id="login" class="btn buttons" style="border: 2px solid #005959;" id="loginButton" name="submit">Login
 				</button><br>
 				<a a href="#!" data-toggle="modal" data-target="#forgot" style="display: block; margin: 1rem;">Forgot password?</a>
 				<a href="#!" data-toggle="modal" data-target="#signupForm" style="display: block">Sign Up</a>

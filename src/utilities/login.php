@@ -34,24 +34,26 @@
                     echo "<script>
                             alert('Invalid password');
                             window.location = '/';
-                          </script>";
+                             </script>";
                 }elseif (password_verify($password, $passwordVerify) && $status === "disabled") {
                     echo "<script>
                             alert('Your account is disabled');
                             window.location = '/';
-                          </script>";
+                             </script>";
                 }
             } else{
                 echo "<script>
                         alert('User does not exist');
                         window.location = '/';
-                      </script>";
+                         </script>";
+                         exit;
             }
         } else {
             echo "<script>
                     alert('Invalid username or password.');
                     window.location = '/';
-                  </script>";
+                     </script>";
+                     exit;
         }
     }
 ?>
