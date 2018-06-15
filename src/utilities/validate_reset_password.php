@@ -11,10 +11,11 @@ $conf_password = $_POST['confirm_pass'];
 if ($password != $conf_password){
     echo "
         <script>
-            alert('Password don't match');
-            window.location.replace('/');
+            alert('Password don\'t match');
+            window.history.back();
         </script>
         ";
+        exit();
 }
 
 $sql = "SELECT CONCAT(username, '.', password), password FROM user where  CONCAT(username, '.', password) = '$account'";
@@ -28,19 +29,22 @@ if ($result->num_rows > 0) {
         echo "
         <script>
             alert('You have successfully changed your password.');
+            location.href = '/';
         </script>
         ";
     } else {
         echo "
         <script>
             alert('Password do not match.');
+            window.history.back();
         </script>
         ";
+        exit();
     }
 } else {
     echo "
         <script>
-            alert('Error in resetting your password, this link might be already expired!!!!!!!!!!!1.');
+            alert('Error in resetting your password, this link might be already expired.');
         </script>
         ";
 }
