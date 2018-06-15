@@ -398,7 +398,24 @@
                     </div>
                 </div>
                 <!-- Emergency Information Sheet  -->
-
+                <!-- Confirmation -->
+                <div class="card">
+                    <div class="card-header" id="confirmation">
+                        <h5 class="mb-0">
+                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#confirm" aria-expanded="false" aria-controls="confirm">
+                                Confirmation
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="confirm" class="collapse" aria-labelledby="confirmation" data-parent="#accordion">
+                        <div class="card-body">
+                            <h3>Agreement</h3>
+                            <p>The information above are true and correct. If ever the information will have </p>
+                            <button type="button" class="btn btn-primary">Go back</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
 
