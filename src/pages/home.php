@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body class="body" id="body">
 
 	<div class="wrapper">
 		<nav id="sidebar">
@@ -110,4 +110,10 @@
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script>
+		window.onload = function() {
+			var body = document.getElementById('body');
+			body.style.opacity = "1";
+		}
+	</script>
 </body>
