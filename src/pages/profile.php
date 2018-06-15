@@ -16,7 +16,7 @@
     <body style="overflow:hidden">
 		<div class="row">
         	<div class="col-3">
-				<?php include 'modules/sidenav.php';?>
+				<?php include '../modules/sidenav.php';?>
 			</div>
 
 			<div class="col-9">
