@@ -31,11 +31,7 @@
 						<li class="active"><a href="leave_request_form.php">Leave Request</a></li>
 					</ul>
 				</li>
-<<<<<<< HEAD
-            	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li>
-=======
             	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
->>>>>>> 3e00e2bd3358a52d11a94ef4f03a24b2a5acb024
             	<li><a href="../utilities/logout.php" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout</a></li>
         	</ul>
