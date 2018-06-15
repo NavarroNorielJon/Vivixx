@@ -56,13 +56,28 @@
                             <label for="name">Full Name</label>
                             <input type="text" id="name" class="form-control-plaintext" value="<?php echo "$full_name";?>" disabled>
                         </div>
-                        <div class="form-group col-4">
+                        <div class="form-group col-4 number">
                             <label for="contact_number">Contact Number</label>
-                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo "$contact_number";?>" disabled>
+                            <input type="text" id="contact_number" class="form-control-plaintext" value="<?php echo "$contact_number";?>" disabled>
                         </div>
 
                         <div class="col-4">
                             <div  style="height:250px;width:250px;border: 2px solid black"></div>
+                        </div>
+                    </div>
+
+                    <div class="row  birth_information">
+                        <div class="form-group col-4">
+                            <label for="birth_place"> Birth Place</label>
+                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo "$birth_place";?>" disabled>
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="birth_date">Birth Date</label>
+                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo "$birth_date";?>" disabled>
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" class="form-control-plaintext" value="19" disabled>
                         </div>
                     </div>
 
@@ -75,6 +90,7 @@
                         <label for="permanent_address">Permanent Address</label>
                         <input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo "$permanent_address";?>" disabled>
                     </div>
+
             </div>
         </div>
     </div>
@@ -101,10 +117,6 @@
                         <div class="form-group col-4">
             				<label for="birth_date">Birth Date</label>
             				<input type="text" id="first" class="form-control" value="<?php echo "$birth_date";?>" disabled>
-        				</div>
-        				<div class="form-group col-4">
-            				<label for="contact_number">Contact Number</label>
-            				<input type="text" id="first" class="form-control" value="<?php echo "$contact_number";?>" disabled>
         				</div>
                     </div>
                     
