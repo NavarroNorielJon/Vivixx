@@ -6,14 +6,13 @@
 	$connect = Connect();
 	?>
 <head>
-	<title>Bootstrap Example</title>
 	<?php
 		include 'include.php';
 	?>
 </head>
 
 <body>
-	<nav class="navbar navbar-light" id="fade" style="background-color:#005959">
+	<nav class="navbar navbar-expand navbar-light" id="fade" style="background-color:#005959">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="index.php"><img src="../img/Lion.png" id="logo"></a>

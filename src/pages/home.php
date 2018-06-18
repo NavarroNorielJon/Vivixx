@@ -1,4 +1,7 @@
-<?php include '../utilities/session.php'?>
+<?php 
+	include '../utilities/session.php';
+	include '../utilities/check_session.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,13 +20,13 @@
 	<div class="wrapper">
 		<nav id="sidebar">
 			<div class="sidebar-header">
-				<img src="../img/Lion.png">
+				<a href="home"><img src="../img/Lion.png"></a>
 			</div>
 
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
 				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
-            	<li class="active"><a href="#"><i class="material-icons">home</i> Home</a></li>
+            	<li class="active"><a href="home"><i class="material-icons">home</i> Home</a></li>
 				<li>
 					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<ul class="collapse list-unstyled" id="requests">
@@ -38,9 +41,9 @@
 		</nav>
 
 		<div id="content">
-			<div class="card">
+			<div class="card cards">
 				<div class="card-body">
-					<h4 class="card-title">Announcements</h4>
+					<h4 class="card-title">Notifications</h4>
 					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 	veniam,
                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -58,47 +61,25 @@
 				</div>
 			</div>
 
-			<div class="row" style="padding-top: 5%;">
-				<div class="col">
-					<div class="card">
-						<div class="card-body">
-							<h4 class="card-title">Calendar</h4>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                           		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                           		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                           		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                           		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                           		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-
-							<div style="text-align: right">
-								<a>
-									<button class="btn btn-primary">See more</button>
-								</a>
-							</div>
-						</div>
+			<div>
+				<div class="card events">
+					<div class="event-header">
+						<h4 class="card-title">Upcoming Events</h4>
 					</div>
-				</div>
+					<div class="card-body event-body">
+						<p class="card-text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
 
-				<div class="col">
-					<div class="card">
-						<div class="card-body">
-							<h4 class="card-title">Upcoming Events</h4>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-
-							<div style="text-align: right">
-								<a>
-									<button class="btn btn-primary">See more</button>
-								</a>
-							</div>
+						<div style="text-align: right">
+							<a>
+								<button type="button" class="btn btn-primary">See more</button>
+							</a>
 						</div>
 					</div>
 				</div>

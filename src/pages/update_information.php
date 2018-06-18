@@ -1,5 +1,6 @@
 <?php
     include '../utilities/session.php';
+	include '../utilities/check_user_info.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,8 +12,13 @@
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="background-color: #005959;">
+    <body style="background-color: #e6e6e6;">
+        <div class="" style="background-color: #005959; color:white;">
+			<div class="text-center" style="padding: 5px 0 5px 0">
+            	<h1>Update Information Form</h1>
+			</div>
 
+        </div>
         <form action="../utilities/update_info" method="POST">
             <div id="accordion">
                 <!-- Personal Information -->
@@ -123,7 +129,7 @@
 
                                 <div class="form-group col-2" >
                                     <label for="civil_status">Civil Status</label>
-                                    <select name="civil_status" class="form-control" required="required">
+                                    <select name="civil_status" id="civil_status" class="form-control" required="required">
                                         <option selected disabled>Select:</option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
@@ -213,8 +219,8 @@
                                 </div>
                             </div>
                             <hr>
-                            <h5 style="text-align:center;">Leave this blank if</h5><br>
-                            <h4>Spouse's Name</h4>
+                            <h4>Spouse's Name(Optional)</h4>
+							<sub>Note: If you dont have a spouse, it's unneccessary to fill up the form below</sub>
                             <div class="row">
 
                                 <div class="form-group col-4">
@@ -411,27 +417,33 @@
                         <div class="card-body">
                             <h3>Agreement</h3>
                             <p>The information above are true and correct. If ever the information will have </p>
-                            <button type="button" class="btn btn-primary">Go back</button>
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <div style="text-align:right;">
+                                <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#content1" aria-expanded="false" aria-controls="content1">
+                                    Go back
+                                </button>
+                                <button type="submit" class="btn btn-success" onsubmit="success()">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-
     <script>
-    function nextForm(currId,nextId){
-      document.getElementById(currId).classList.add("d-none");
-      document.getElementById(nextId).classList.remove("d-none");
-    }
-
-	function jon(){
-        swal("Good Jon", "Hiiii", "success");
-	}
+        function success() {
+            swal({
+                  title: "Ajax request example",
+                  text: "Submit to run ajax request",
+                  type: "info",
+                  showCancelButton: true,
+                  closeOnConfirm: false,
+                  showLoaderOnConfirm: true
+                }, function () {
+                  setTimeout(function () {
+                    swal("Ajax request finished!");
+                  }, 2000);
+                });
+        }
     </script>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
