@@ -10,7 +10,7 @@ h1::selection {
 
 ul ul a {
 	font-size: 0.9em !important;
-	padding-left: 30px !important;	
+	padding-left: 30px !important;
 }
 
 .body {
@@ -74,13 +74,13 @@ ul ul a {
 }
 
 #index .index-form{
-	background-color: rgba(128, 128, 128, 0.8); 
+	background-color: rgba(128, 128, 128, 0.8);
 	height:100vh;
 	padding-top: 50px;
 }
 
 #index .index-form > a {
-	background-color: rgba(128, 128, 128, 0.8); 
+	background-color: rgba(128, 128, 128, 0.8);
 	height:100vh;"
 	padding: 100px;
 	text-align: center;
@@ -340,19 +340,19 @@ ul ul a {
 		font-size: 3rem
 	}
 
-	
+
 	#index .index-form button{
 		font-size: 2rem;
 	}
-	
+
 	#index .index-form .login-button {
 		margin-bottom: 20px;
 	}
-	
+
 	#index .index-form .signup-button {
-		visibility: hidden;	
+		visibility: hidden;
 	}
-	
+
 	#index .index-form #signup-link {
 		visibility: visible;
 	}
