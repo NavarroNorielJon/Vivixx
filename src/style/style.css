@@ -112,10 +112,10 @@ body {
 
 #personal_info {
     display: flex;
-    width: 75%;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 2% 2% 2% 12%;
+    margin: 2% 2% 2% 6%;
     position: center;
 }
 
@@ -193,4 +193,7 @@ a:active, a:hover, a:focus{
 }
 #ok {
     text-align: center;
+}
+#second {
+    overflow-y:scroll;
 }

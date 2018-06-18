@@ -1,22 +1,8 @@
 
-<?php
-    include '../utilities/db.php';
-    $connect = Connect();
-    $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id);";
-    $result = $connect->query($personal_info);
-    $row = $result->fetch_assoc();
-?>
-    <div class="modal fade" id="1st" tabindex="-1" role="dialog" >
+    <div class="modal fade" id="second" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <?php
-                        $user = $_GET["fname"];
-                        $user_middle = $_GET["mname"];
-                        $user_last = $_GET["lname"];
-                        echo "<h1>" ."Information of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
-                    ?>
                 </div>
     
                 <div class="modal-body" id="personal_info">
@@ -290,7 +276,6 @@
                                     </div>
                                 </div>
                                 <hr>
-                            <h5 style="text-align:center;">Leave this blank if</h5><br>
                             <h3><i class="large material-icons" style="font-size:30px;">person</i>Spouse's Name</h3>
                                 <div class="row">
                                     <div class="form-group col-4">
@@ -368,7 +353,5 @@
     }
     </script>
     <script>
-        $(document).ready(function(){
-            $("#1st").modal("show");
-        });
+
     </script>
