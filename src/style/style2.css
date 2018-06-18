@@ -310,16 +310,14 @@ ul ul a {
 }
 
 #reset-form {
-	background-image: url(../img/Lion.png);
+	background-image: url(../img/bg2.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 47%;
-	background-color: #005959;
 }
 
 #reset-form .resetPassword {
-	background-color: #fff;
+	background-color: #f9f2ec;
 	margin: 25vh 40vw auto 73vh;
 	padding: 5vh 5vh 5vh 5vh;
 	box-shadow: 3px 3px;
@@ -328,13 +326,13 @@ ul ul a {
 	opacity: 0;
 }
 
-#reset-form .resetPassword input[type=text] {
+#reset-form .resetPassword input[type=password] {
 	border-radius: 0;
 	width: 70%;
 	transition: all 0.6s
 }
 
-#reset-form .resetPassword input[type=text]:focus {
+#reset-form .resetPassword input[type=password]:focus {
 	width: 100%;
 }
 

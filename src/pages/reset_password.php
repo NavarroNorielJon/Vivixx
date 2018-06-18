@@ -20,12 +20,12 @@
 
 			<div class="form-group">
 				<label for="new_password">New Password</label>
-				<input type="text" class="form-control" name="new_pass" placeholder="Enter New Password" id="new_password">
+				<input type="password" class="form-control" name="new_pass" placeholder="Enter New Password" id="new_password">
 			</div>
 
 			<div class="form-group">
 				<label for="confirm_password">Re-enter Password</label>
-				<input type="text" class="form-control" name="confirm_pass" placeholder="Re-enter Password">
+				<input type="password" class="form-control" name="confirm_pass" placeholder="Re-enter Password">
 			</div>
 
 			<div class="text-right">
