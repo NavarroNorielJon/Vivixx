@@ -9,8 +9,8 @@ h1::selection {
 }
 
 ul ul a {
-	font-size: 0.9vw !important;
-	padding-left: 30px !important;
+	font-size: 0.9vw;
+	padding-left: 30px;
 }
 
 #sidebar i {
@@ -29,7 +29,7 @@ ul ul a {
 /*Home*/
 #content {
 	padding: 10px 5px 10px 3px;
-	margin-left: 35%;
+	margin-left: 19%;
 }
 
 #content .cards {
@@ -408,9 +408,10 @@ ul ul a {
 }
 
 	#profile {
-		padding-left: 24vw;
 		background-color: #e6e6e6;
 	}
+
+	
 }
 
 @media(max-width: 576px){

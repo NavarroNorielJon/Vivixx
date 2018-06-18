@@ -20,23 +20,41 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="home"><img src="../img/Lion.png"></a>
+                <a href="home" class="sidebar-logo"><img src="../img/Lion.png"></a>
             </div>
 
             <!-- Sidebar Links -->
             <ul class="list-unstyled components">
-                <li  class="active"><a href="profile"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
-                <li><a href="home"><i class="material-icons">home</i> Home</a></li>
+                <li  class="active">
+					<a href="profile" class="sidebar-item">
+					<i class="material-icons">person</i><?php echo "$first_name"?></a>
+					<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
+				</li>
                 <li>
-                    <a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
+					<a href="home" class="sidebar-item"><i class="material-icons">home</i> Home</a>
+					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
+				</li>
+				
+                <li>
+                    <a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
+					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
+					
                     <ul class="collapse list-unstyled" id="requests">
-                        <li class="active"><a href="#">Salary Request</a></li>
-                        <li class="active"><a href="leave_request_form">Leave Request</a></li>
+                        <li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
+                        <li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
+						
+						<li class="active"><a href="#requests" class="icon">SR</a></li>
+						<li class="active"><a href="leave_request_form.php" class="icon">LR</a>
                     </ul>
                 </li>
-                <li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
-                <li><a href="../utilities/logout" id="logout">
-                        <i class="material-icons">power_settings_new</i> Logout</a></li>
+                <li>
+					<a href="#" class="sidebar-item"><i class="material-icons">info_outline</i> About</a>
+					<a class="icon" href="#"><i class="material-icons">info_outline</i></a>
+				</li><hr>
+                <li><a href="../utilities/logout" class="sidebar-item" id="logout">
+                        <i class="material-icons">power_settings_new</i> Logout</a>
+					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+				</li>
             </ul>
         </nav>
 
