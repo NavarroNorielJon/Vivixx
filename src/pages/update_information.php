@@ -421,7 +421,7 @@
                                 <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#content1" aria-expanded="false" aria-controls="content1">
                                     Go back
                                 </button>
-                                <button type="submit" class="btn btn-success" oninvalid="success()">Submit</button>
+                                <button type="submit" class="btn btn-success" onsubmit="success()">Submit</button>
                             </div>
                         </div>
                     </div>
