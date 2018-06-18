@@ -1,25 +1,11 @@
 
-<?php
-    include '../utilities/db.php';
-    $connect = Connect();
-    $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id);";
-    $result = $connect->query($personal_info);
-    $row = $result->fetch_assoc();
-?>
-    <div class="modal fade" id="1st" tabindex="-1" role="dialog" >
+    <div class="modal fade" id="second" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <?php
-                        $user = $_GET["fname"];
-                        $user_middle = $_GET["mname"];
-                        $user_last = $_GET["lname"];
-                        echo "<h1>" ."Information of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
-                    ?>
                 </div>
     
-                <div class="modal-body" id="personal_info">
+                <div class="modal-body" id="personal_info1">
 			        <!-- Start of Personal Info-->
                     <form action="update_info" method="POST">
                         <div>
@@ -47,7 +33,14 @@
                                 <div class=" form-group col-3 ">
                                     <label for="gender">Sex</label>
                                     <select name="gender" class="form-control" required="required">
-                                        <option selected disabled >Select Here:</option>
+                                        <?php
+                                            if($row['gender'] === 'm'){
+                                                $gender = "Male";
+                                            }else{
+                                                $gender = "Female";
+                                            }
+                                        ?>
+                                        <option selected disabled ><?php echo $gender ?></option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
@@ -66,7 +59,7 @@
                                 <div class="form-group col-3 ">
                                     <label for="blood">Blood Type</label>
                                     <select name="blood" class="form-control" required="required">
-                                        <option selected disabled>Select Blood Type:</option>
+                                        <option selected disabled><?php echo ucwords($row['blood_type'])?></option>
                                         <option value="o">O</option>
                                         <option value="a">A</option>
                                         <option value="b">B</option>
@@ -123,7 +116,7 @@
                                 <div class="form-group col-2" >
                                     <label for="civil_status">Civil Status</label>
                                     <select name="civil_status" class="form-control" required="required">
-                                        <option selected disabled>Select:</option>
+                                        <option selected disabled><?php echo ucwords($row["civil_status"]) ?></option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="widowed">Widowed</option>
@@ -290,7 +283,6 @@
                                     </div>
                                 </div>
                                 <hr>
-                            <h5 style="text-align:center;">Leave this blank if</h5><br>
                             <h3><i class="large material-icons" style="font-size:30px;">person</i>Spouse's Name</h3>
                                 <div class="row">
                                     <div class="form-group col-4">
@@ -353,10 +345,14 @@
                                 <div id="child"></div>
 
                                 <div style="text-align: right">
+                                    
                                     <button type="submit">Submit</button>
                                 </div>
                     </form>
                 </div>
+                                <div id="back">
+                                    <a href="view_information.php"><button> Back</button></a>
+                                </div>
             </div>
         </div>
     </div>
@@ -368,7 +364,8 @@
     }
     </script>
     <script>
-        $(document).ready(function(){
-            $("#1st").modal("show");
+        $("button[data-dismiss-modal=back]").click(function () {
+            $('#second').modal('hide');
+            $('#first').modal('show');
         });
     </script>
