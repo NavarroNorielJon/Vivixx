@@ -1,4 +1,8 @@
-<?php include '../utilities/session.php'?>
+<?php
+    include '../utilities/session.php';
+    $today = date("Y-m-d");
+    $age = date_diff(date_create($birth_date),date_create($today))->y   ;
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +10,7 @@
     <title>Vivixx</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,23 +20,41 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="home"><img src="../img/Lion.png"></a>
+                <a href="home" class="sidebar-logo"><img src="../img/Lion.png"></a>
             </div>
 
             <!-- Sidebar Links -->
             <ul class="list-unstyled components">
-                <li  class="active"><a href="#"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
-                <li><a href="home"><i class="material-icons">home</i> Home</a></li>
+                <li  class="active">
+					<a href="profile" class="sidebar-item">
+					<i class="material-icons">person</i><?php echo "$first_name"?></a>
+					<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
+				</li>
                 <li>
-                    <a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
+					<a href="home" class="sidebar-item"><i class="material-icons">home</i> Home</a>
+					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
+				</li>
+				
+                <li>
+                    <a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
+					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
+					
                     <ul class="collapse list-unstyled" id="requests">
-                        <li class="active"><a href="#">Salary Request</a></li>
-                        <li class="active"><a href="leave_request_form.php">Leave Request</a></li>
+                        <li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
+                        <li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
+						
+						<li class="active"><a href="#requests" class="icon">SR</a></li>
+						<li class="active"><a href="leave_request_form.php" class="icon">LR</a>
                     </ul>
                 </li>
-                <li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
-                <li><a href="../utilities/logout.php" id="logout">
-                        <i class="material-icons">power_settings_new</i> Logout</a></li>
+                <li>
+					<a href="#" class="sidebar-item"><i class="material-icons">info_outline</i> About</a>
+					<a class="icon" href="#"><i class="material-icons">info_outline</i></a>
+				</li><hr>
+                <li><a href="../utilities/logout" class="sidebar-item" id="logout">
+                        <i class="material-icons">power_settings_new</i> Logout</a>
+					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+				</li>
             </ul>
         </nav>
 
@@ -62,7 +84,9 @@
                         </div>
 
                         <div class="col-4">
-                            <div  style="height:250px;width:250px;border: 2px solid black"></div>
+                            <div  style="height:250px;width:250px;border: 2px solid black">
+                                <img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:250px;width:250px;">
+                            </div>
                         </div>
                     </div>
 
@@ -77,7 +101,7 @@
                         </div>
                         <div class="form-group col-4">
                             <label for="age">Age</label>
-                            <input type="text" id="age" class="form-control-plaintext" value="19" disabled>
+                            <input type="text" id="age" class="form-control-plaintext" value="<?php echo $age;?>" disabled>
                         </div>
                     </div>
 
@@ -108,7 +132,7 @@
 </body>
 
 
-<!-- 
+<!--
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="birth_place"> Birth Place</label>
@@ -119,7 +143,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$birth_date";?>" disabled>
         				</div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="gender"> Gender</label>
@@ -134,7 +158,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$weight";?> kg" disabled>
         				</div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group col-4" id="off">
             				<label for="offsprint">Offspring</label>
