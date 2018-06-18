@@ -1,8 +1,7 @@
 <?php
-    include 'utilities/db.php';
-    session_start();
+    include 'utilities/session.php';
     if (isset($_SESSION['user'])) {
-        echo "<script>window.location = 'pages/home';</script>";
+        echo "<script>window.location = 'pages/';</script>";
     }
 ?>
 
@@ -27,8 +26,13 @@
 				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
 				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
 			</div>
+			
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
-				<div class="text-center"><h3 style="color: white; margin-bottom: 2vh;">Login</h3></div>
+				<div class="text-center">
+					<h3 style="color: white; margin-bottom: 4vh;">
+						Login
+					</h3>
+				</div>
 				
 				<form action="utilities/login.php" method="post" class="col s12 " id="login">
         			<div class="form-group col-sm-12">
@@ -54,13 +58,15 @@
 						<a href="#!" data-toggle="modal" data-target="#forgot-form" style="display: block; margin: 1rem;" class="forgot">Forgot password?</a>
             			<button type="submit" class="btn login-button" name="submit">
 							Login
-						</button><br>
+						</button>
+						
+						<br>
+						
 						<a href="#!" data-toggle="modal" id="signup-link" data-target="#signup-form">Sign Up</a>
 					</div>
 				</form>
 				
 				<button  type="button" class="btn signup-button" href="#!" data-toggle="modal" data-target="#signup-form">Sign Up</button>
-				
 			</div>
 		</div>
 	</div>

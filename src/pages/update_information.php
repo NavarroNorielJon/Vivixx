@@ -1,5 +1,6 @@
 <?php
     include '../utilities/session.php';
+	include '../utilities/check_user_info.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,9 +12,11 @@
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="background-color: #005959;">
-        <div class="" style="background-color: white;">
-            <h1>Update Information<super><font style="color:red;">*</font></super></h1>
+    <body style="background-color: #e6e6e6;">
+        <div class="" style="background-color: #005959; color:white;">
+			<div class="text-center" style="padding: 5px 0 5px 0">
+            	<h1>Update Information Form</h1>
+			</div>
 
         </div>
         <form action="../utilities/update_info" method="POST">
@@ -216,8 +219,8 @@
                                 </div>
                             </div>
                             <hr>
-                            <h5 style="text-align:center;">Leave this blank if</h5><br>
-                            <h4>Spouse's Name</h4>
+                            <h4>Spouse's Name(Optional)</h4>
+							<sub>Note: If you dont have a spouse, it's unneccessary to fill up the form below</sub>
                             <div class="row">
 
                                 <div class="form-group col-4">

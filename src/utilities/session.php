@@ -11,6 +11,7 @@
         $user_id = $row['user_id'];
         $prof_image = $row['prof_image'];
         $email = $row['email'];
+		$type = $row['type'];
         $first_name = $row['first_name'];
         $middle_name = $row['middle_name'];
         $last_name = $row['last_name'];
@@ -35,9 +36,5 @@
         $tin = $row['tin'];
         $philhealth_no = $row['philhealth_no'];
         $pagibig_id_no = $row['pagibig_id_no'];
-    }
-
-    if(!isset($_SESSION['user'])){
-        header('location:/');
     }
 ?>
