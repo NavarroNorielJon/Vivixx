@@ -23,20 +23,29 @@
             </div>
 
         </div>
-        <form id="validate_form" action="../utilities/update_info" method="POST">
-            <div id="accordion">
-                <!-- Personal Information -->
-                <div class="card">
-                    <div class="card-header" id="heading1">
-                        <h5 class="mb-0">
-                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#content1" aria-expanded="true" aria-controls="content1">
-                                Personal Information
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="content1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
-                        <div class="card-body">
+        <div >
+            <form id="validate_form" class="form-horizontal" action="../utilities/update_info" method="POST">
+                    <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Background</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="emer-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit</a>
+                        </li>
 
+                    </ul>
+
+                    <div class="tab-content" id="tabContent">
+                        <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                             <!-- <div class="row">
 
                                 <div class="form-group col-4">
@@ -186,20 +195,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Personal Information -->
-                <!-- Family Background  -->
-                <div class="card">
-                    <div class="card-header" id="heading2">
-                        <h5 class="mb-0">
-                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#content2" aria-expanded="false" aria-controls="content2">
-                                Family Background
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="content2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-                        <div class="card-body">
+
+                        <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
                             <h4>Father's Name</h4>
                             <div class="row">
                                 <div class="form-group col-4">
@@ -238,7 +235,7 @@
                             </div>
                             <hr>
                             <h4>Spouse's Name(Optional)</h4>
-							<sub>Note: If you dont have a spouse, it's unneccessary to fill up the form below</sub>
+                            <sub>Note: If you dont have a spouse, it's unneccessary to fill up the form below</sub>
                             <div class="row">
 
                                 <div class="form-group col-4">
@@ -301,20 +298,7 @@
 
                             <div id="child"></div>
                         </div>
-                    </div>
-                </div>
-                <!-- Family Background  -->
-                <!-- Educational Background  -->
-                <div class="card">
-                    <div class="card-header" id="heading3">
-                        <h5 class="mb-0">
-                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#content3" aria-expanded="true" aria-controls="content3">
-                                Educational Background
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="content3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
                             <div class="row">
                                 <div class="form-group col-2" >
                                     <p>Elementary</p>
@@ -403,48 +387,17 @@
 
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Educational Background  -->
-                <!-- Emergency Information Sheet  -->
-                <div class="card">
-                    <div class="card-header" id="heading4">
-                        <h5 class="mb-0">
-                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#content4" aria-expanded="false" aria-controls="content4">
-                                Emergency Information Sheet
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="content4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="tab-pane fade" id="emergency" role="tabpanel" aria-labelledby="emergency-tab">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="tab-pane fade text-center" id="submit" role="tabpanel" aria-labelledby="submit-tab">
+                            <br>
+                            <button type="button" class="btn btn-info">Back</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </div>
-                </div>
-                <!-- Emergency Information Sheet  -->
-                <!-- Confirmation -->
-                <div class="card">
-                    <div class="card-header" id="confirmation">
-                        <h5 class="mb-0">
-                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#confirm" aria-expanded="false" aria-controls="confirm">
-                                Confirmation
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="confirm" class="collapse" aria-labelledby="confirmation" data-parent="#accordion">
-                        <div class="card-body">
-                            <h3>Agreement</h3>
-                            <p>The information above are true and correct. If ever the information will have </p>
-                            <div style="text-align:right;">
-                                <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#content1" aria-expanded="false" aria-controls="content1">
-                                    Go back
-                                </button>
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
@@ -452,16 +405,3 @@
     <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 </html>
-<!-- <div class="card">
-    <div class="card-header" id="heading4">
-        <h5 class="mb-0">
-            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#content4" aria-expanded="false" aria-controls="content4">
-                Emergency Information Sheet
-            </button>
-        </h5>
-    </div>
-    <div id="content4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-        <div class="card-body">
-        </div>
-    </div>
-</div> -->
