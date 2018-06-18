@@ -40,34 +40,34 @@
 		</nav>
 
 		<div id="content">
-			<form id="leave_form" action="" method="POST">
+			<form id="leave_form" action="../utilities/leave_request" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
 					<div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
+							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employee_name" value="<?php echo $full_name?>" disabled>
 						</div>
 
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<input type="text" class="form-control" id="department" placeholder="Department" name="dept">
+							<input type="text" class="form-control" id="department" placeholder="Department" name="department">
 						</div>
 					</div>
 
 				<div class="row">
 					<div class="form-group col">
 						<label for="position">Position</label>
-						<input type="text" class="form-control" id="position" placeholder="Position" name="employeePosition">
+						<input type="text" class="form-control" id="position" placeholder="Position" name="position">
 					</div>
 
 					<div class="form-group col">
 						<label for="date_hired">Date Hired</label>
-						<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="dateHired">
+						<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">
 					</div>
 
 					<div class="form-group col">
 						<label for="date_filed">Date Filed</label>
-						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="dateFilled">
+						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
 					</div>
 				</div><hr>
 
@@ -91,12 +91,12 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="address_leave">Contact Address during leave</label>
-							<input type="text" class="form-control" id="address_leave">
+							<input type="text" class="form-control" id="address_leave" name="contact_address">
 						</div>
 
 						<div class="form-group col">
 							<label for="number_leave">Contact Number during leave</label>
-							<input type="text" class="form-control" id="number_leave">
+							<input type="text" class="form-control" id="number_leave" name="contact_number">
 						</div>
 					</div>
 				</div><hr>
@@ -107,12 +107,12 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="start_date">From</label>
-							<input type="date" class="form-control" >
+							<input type="date" class="form-control" name="from">
 						</div>
 
 						<div class="form-group col">
 							<label for="end_date">To</label>
-							<input type="date" class="form-control" id="end_date">
+							<input type="date" class="form-control" id="end_date" name="to">
 						</div>
 					</div>
 

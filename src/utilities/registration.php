@@ -10,7 +10,16 @@ $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 
+if (empty($first_name) || empty($middle_name) || empty($last_name) || empty($email) || empty($password) || empty($cpassword)) {
+    echo "
+         <script>
+             alert('You must fill up all neccessary fields.');
+             window.history.back();
+         </script>
 
+     ";
+    exit;
+}
 /**
  *Checks if the email entered is following the *email@domain.extension
  *1. create a condition which will be followed in registering the
