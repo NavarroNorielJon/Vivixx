@@ -1,4 +1,8 @@
-<?php include '../utilities/session.php'?>
+<?php
+    include '../utilities/session.php';
+    $todate = date("Y-m-d");
+    $age = date_diff(date_create($birth_date),date_create($todate));
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +10,7 @@
     <title>Vivixx</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -62,7 +66,9 @@
                         </div>
 
                         <div class="col-4">
-                            <div  style="height:250px;width:250px;border: 2px solid black"></div>
+                            <div  style="height:250px;width:250px;border: 2px solid black">
+                                <img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:250px;width:250px;">
+                            </div>
                         </div>
                     </div>
 
@@ -77,7 +83,7 @@
                         </div>
                         <div class="form-group col-4">
                             <label for="age">Age</label>
-                            <input type="text" id="age" class="form-control-plaintext" value="19" disabled>
+                            <input type="text" id="age" class="form-control-plaintext" value="<?php echo $age->format("%Y");?>" disabled>
                         </div>
                     </div>
 
@@ -108,7 +114,7 @@
 </body>
 
 
-<!-- 
+<!--
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="birth_place"> Birth Place</label>
@@ -119,7 +125,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$birth_date";?>" disabled>
         				</div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group col-4">
             				<label for="gender"> Gender</label>
@@ -134,7 +140,7 @@
             				<input type="text" id="first" class="form-control" value="<?php echo "$weight";?> kg" disabled>
         				</div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group col-4" id="off">
             				<label for="offsprint">Offspring</label>

@@ -32,6 +32,20 @@
                     </div>
                     <div id="content1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
                         <div class="card-body">
+
+                            <!-- <div class="row">
+
+                                <div class="form-group col-4">
+                                    <label for="prof_image">Profile Image</label>
+                                    <input type="file" name="prof_image"/>
+                                </div>
+
+                                <div class="form-group col-4">
+                                    <label for="prof_image">Signature</label>
+                                    <input type="file"/>
+                                </div>
+                            </div> -->
+
                             <div class="row">
                                 <div class="form-group col-4">
                                     <label for="bdate">Birthdate</label>
@@ -421,29 +435,25 @@
                                 <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#content1" aria-expanded="false" aria-controls="content1">
                                     Go back
                                 </button>
-                                <button type="submit" class="btn btn-success" onsubmit="success()">Submit</button>
+                                <button type="submit" class="btn btn-success" onclick="swal({
+                                      title: "Ajax request example",
+                                      text: "Submit to run ajax request",
+                                      type: "info",
+                                      showCancelButton: true,
+                                      closeOnConfirm: false,
+                                      showLoaderOnConfirm: true
+                                    }, function () {
+                                      setTimeout(function () {
+                                        swal("Ajax request finished!");
+                                      }, 2000);
+                                    });">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-    <script>
-        function success() {
-            swal({
-                  title: "Ajax request example",
-                  text: "Submit to run ajax request",
-                  type: "info",
-                  showCancelButton: true,
-                  closeOnConfirm: false,
-                  showLoaderOnConfirm: true
-                }, function () {
-                  setTimeout(function () {
-                    swal("Ajax request finished!");
-                  }, 2000);
-                });
-        }
-    </script>
+
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
