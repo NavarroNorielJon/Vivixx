@@ -25,21 +25,13 @@
 
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
-				<li><a href="profile"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
-            	<li class="active"><a href="home"><i class="material-icons">home</i> Home</a></li>
-				
-				<li>
-					<a href="profile.php" class="sidebar-item">
-					<i class="material-icons">person</i> <?php echo "$first_name"?></a>
-					<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
-				</li>
-				
+
             	<li class="active">
 					<a href="profile.php" class="sidebar-item">
 					<i class="material-icons">home</i>Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
-				
+
 				<li>
 					<a href="#" class="icon">SR</a>
 					<a href="leave_request_form.php" class="icon">LR</a>
@@ -59,7 +51,7 @@
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
 					<i class="material-icons">power_settings_new</i> Logout
 					</a>
-					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>
 				</li>
         	</ul>
 		</nav>
