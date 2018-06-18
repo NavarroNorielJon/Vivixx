@@ -45,7 +45,7 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
+							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
 						</div>
 
 						<div class="form-group col">
