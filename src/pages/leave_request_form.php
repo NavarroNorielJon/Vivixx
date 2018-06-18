@@ -23,8 +23,9 @@
 
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components" data-spy="affix">
-            	<li><a href="home.php"><i class="material-icons">home</i> Home</a></li>
+
 				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
+				<li><a href="home.php"><i class="material-icons">home</i> Home</a></li>
 				<li class="active">
 					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<ul class="collapse list-unstyled" id="requests">
