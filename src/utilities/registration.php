@@ -67,10 +67,18 @@ if(strlen($password) < 8 || strlen($password) > 16){
     exit;
 
 }
-$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name);
+$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name) . rand (0, 999);
+
+$stmt = "SELECT username from user WHERE username = '$username'";
+$result = $connect->query($stmt);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$vUsername = $row['username'];
+	
+while ($username === $vUsername) {
+	$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name) . rand(0, 999);
+}
+
 $password = password_hash($password, PASSWORD_DEFAULT);
-
-
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
 if($connect->query($insert_stmt) === true){
     $sql = "SELECT user_id FROM user where username='$username';";
