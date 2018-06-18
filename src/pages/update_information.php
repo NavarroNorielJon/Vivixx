@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="background-color: #e6e6e6;">
+    <body>
         <div class="" style="background-color: #005959; color:white;">
 			<div class="text-center" style="padding: 5px 0 5px 0">
             	<h1>Update Information Form </h1>
@@ -24,26 +24,27 @@
 
         </div>
         <div >
-            <form id="validate_form" class="form-horizontal" action="../utilities/update_info" method="POST">
-                    <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Background</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " id="emer-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit</a>
-                        </li>
 
-                    </ul>
+                <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Background</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="emer-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit</a>
+                    </li>
 
+                </ul>
+                
+                <form id="update_form" class="form-horizontal" action="../utilities/update_info" method="POST">
                     <div class="tab-content" id="tabContent">
                         <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                             <!-- <div class="row">
@@ -61,13 +62,13 @@
 
                             <div class="row">
                                 <div class="form-group col-4">
-                                    <label for="bdate">Birthdate</label>
+                                    <label >Birthdate</label>
                                     <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group col-4" >
-                                    <label for="pbirth">Place of Birth</label>
-                                    <input type="text" stle="text-transform:capitalize;" name="birth_place" autocomplete="off" id="pbirth" class="form-control" required="required">
+                                    <label >Place of Birth</label>
+                                    <input type="text" style="text-transform:capitalize;" name="birth_place" autocomplete="off" id="pbirth" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group col-4" >
@@ -235,9 +236,9 @@
                             </div>
                             <hr>
                             <h4>Spouse's Name(Optional)</h4>
-                            <sub>Note: If you dont have a spouse, it's unneccessary to fill up the form below</sub>
+                            <sub><strong>Note:</strong> If you dont have a spouse, it's unneccessary to fill up the form below</sub>     <br>
                             <div class="row">
-
+                                 <br>
                                 <div class="form-group col-4">
                                     <label for="sfname">First Name</label>
                                     <input type="text" name="spouse_first_name" id="sfname" class="form-control" autocomplete="off">
@@ -398,6 +399,80 @@
                     </div>
             </form>
         </div>
+    <script>
+        $(document).ready(function() {
+            $('#update_form')
+            .bootstrapValidator({
+                // Only disabled elements are excluded
+                // The invisible elements belonging to inactive tabs must be validated
+                excluded: [':disabled'],
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    birth_date: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The full name is required'
+                            }
+                        }
+                    },
+                    company: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The company name is required'
+                            }
+                        }
+                    },
+                    address: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The address is required'
+                            }
+                        }
+                    },
+                    city: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The city is required'
+                            }
+                        }
+                    }
+                }
+            })
+            // Called when a field is invalid
+            .on('error.field.bv', function(e, data) {
+                // data.element --> The field element
+                var $tabPane = data.element.parents('.tab-pane'),
+                    tabId    = $tabPane.attr('id');
+                    $('a[href="#' + tabId + '"][data-toggle="tab"]')
+                    .parent()
+                    .find('i')
+                    .removeClass('fa-check')
+                    .addClass('fa-times');
+                })
+            // Called when a field is valid
+            .on('success.field.bv', function(e, data) {
+                // data.bv      --> The BootstrapValidator instance
+                // data.element --> The field element
+                var $tabPane = data.element.parents('.tab-pane'),
+                    tabId    = $tabPane.attr('id'),
+                    $icon    = $('a[href="#' + tabId + '"][data-toggle="tab"]')
+                                .parent()
+                                .find('i')
+                                .removeClass('fa-check fa-times');
+
+                // Check if the submit button is clicked
+                if (data.bv.getSubmitButton()) {
+                    // Check if all fields in tab are valid
+                    var isValidTab = data.bv.isValidContainer($tabPane);
+                    $icon.addClass(isValidTab ? 'fa-check' : 'fa-times');
+                }
+            });
+        });
+    </script>
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
