@@ -201,5 +201,8 @@ a:active, a:hover, a:focus{
 #text {
     resize: none;
     height:300px;
-    width:300px;
+    width:500px;
+ }
+ #container{
+     margin-left: 35%;
  }

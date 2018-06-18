@@ -8,15 +8,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../style/style.css" />
 </head>
 <body>
+    <div id="container">
     <form action="submit_announcement.php" method="POST">
+                <div class="row">
+                    <div class="col">
+                <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="col">
+                <input type="date" class="form-control">
+</div>
+                </div>
             <div id="border">
-                    <textarea id='text'></textarea>
+                    <textarea id='text' placeholder="Content"></textarea>
                 </div>
                 <div id="result">
                     remaining characters: <span id="totalChars">1000</span><br/>
             </div>
             <input type="submit" value="submit">
     </form>
+    </div>
 </body>
 <script>
     counter = function() {

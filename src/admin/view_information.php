@@ -127,7 +127,7 @@
                                 </div>
 
                                 <div class="form-group col-3" >
-                                    <label for="philhealth_no ">PHILHEALTH NO.</label>
+                                    <label for="philhealth_no ">PHILHEALTH NO.</la-bel>
                                     <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['philhealth_no']?></textbox  >
                                 </div>
 
@@ -413,7 +413,7 @@
                                     <div class="form-group col-6">
                                         <label for="child_birth">Date of Birth</label>
                                         <div class="textbox  form-group">
-                                            <textbox  class="form-control" disabled><?php echo $row['child_birth_date']?></textbox  >
+                                            <textbox  class="form-control" disabled><?php echo $row['child_birth_date']?></textbox>
                                         </div>
                                     </div>
                                 </div>
