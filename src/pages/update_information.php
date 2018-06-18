@@ -23,7 +23,7 @@
             </div>
 
         </div>
-        <form action="../utilities/update_info" method="POST">
+        <form id="validate_form" action="../utilities/update_info" method="POST">
             <div id="accordion">
                 <!-- Personal Information -->
                 <div class="card">
@@ -417,7 +417,6 @@
                     </div>
                     <div id="content4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
                         <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </div>
                     </div>
                 </div>
@@ -446,7 +445,78 @@
                 </div>
             </div>
         </form>
+    <script>
+    $(document).ready(function() {
+        $("#accordion").accordion({
+        autoHeight: false,
+        navigation: true,
+        });
 
+        $("#validate_form").validate({
+            rules: {
+                birth_date: "required",
+                birth_place: "required",
+                contact_number: "required",
+                gender: "required",
+                height: "required",
+                weight: "required",
+                blood_type: "required",
+                residential_address: "required",
+                residential_zip: "required",
+                residential_tel_no: "required",
+                permanent_address: "required",
+                permanent_zip: "required",
+                permanent_tel_no: "required",
+                citizenship: "required",
+                religion: "required",
+                civil_status: "required",
+                sss_no: "required",
+                tin: "required",
+                philhealth_no: "required",
+                pagibig_id_no: "required",
+                father_first_name: "required",
+                father_middle_name: "required",
+                father_last_name: "required",
+                mother_first_name: "required",
+                mother_middle_name: "required",
+                mother_last_name: "required",
+
+                AccordionField: {
+                    required: true
+                }
+            },
+            ignore: [],
+            messages: {
+                birth_date: "Please enter your birth date",
+                birth_place: "Please enter your birth place",
+                contact_number: "Please enter your mobile number",
+                gender: "Please enter your gender",
+                height: "Please enter your heigh",
+                weight: "Please enter your weight",
+                blood_type: "Please enter your blood type",
+                residential_address: "Please enter your residential address",
+                residential_zip: "Please enter your zip code",
+                residential_tel_no: "Please enter your telephone number",
+                permanent_address: "Please enter your permanent address",
+                permanent_zip: "Please enter your zip code",
+                permanent_tel_no: "Please enter your telephone number",
+                citizenship: "Please enter your citizenship",
+                religion: "Please enter your religion",
+                civil_status: "Please enter your civil status",
+                sss_no: "Please enter your SSS number",
+                tin: "Please enter your TIN",
+                philhealth_no: "Please enter your philhealth ID number",
+                pagibig_id_no: "Please enter your pagibig ID number",
+                father_first_name: "Please enter the first name",
+                father_middle_name: "Please enter the middle name",
+                father_last_name: "Please enter the last name",
+                mother_first_name: "Please enter the first name",
+                mother_middle_name: "Please enter the middle name",
+                mother_last_name: "Please enter the last name"
+            }
+        });
+    });
+    </script>
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
