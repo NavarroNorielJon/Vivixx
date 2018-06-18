@@ -15,8 +15,12 @@
     <body style="background-color: #e6e6e6;">
         <div class="" style="background-color: #005959; color:white;">
 			<div class="text-center" style="padding: 5px 0 5px 0">
-            	<h1>Update Information Form</h1>
+            	<h1>Update Information Form </h1>
 			</div>
+            <div class="text-right" style="padding: -25px 0 -25px 0">
+                <button><a href="../utilities/logout" id="logout">
+                        <i class="material-icons">power_settings_new</i> Logout</a></button>
+            </div>
 
         </div>
         <form action="../utilities/update_info" method="POST">
@@ -435,18 +439,7 @@
                                 <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#content1" aria-expanded="false" aria-controls="content1">
                                     Go back
                                 </button>
-                                <button type="submit" class="btn btn-success" onclick="swal({
-                                      title: "Ajax request example",
-                                      text: "Submit to run ajax request",
-                                      type: "info",
-                                      showCancelButton: true,
-                                      closeOnConfirm: false,
-                                      showLoaderOnConfirm: true
-                                    }, function () {
-                                      setTimeout(function () {
-                                        swal("Ajax request finished!");
-                                      }, 2000);
-                                    });">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </div>
                     </div>

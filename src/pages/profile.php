@@ -1,7 +1,7 @@
 <?php
     include '../utilities/session.php';
-    $todate = date("Y-m-d");
-    $age = date_diff(date_create($birth_date),date_create($todate));
+    $today = date("Y-m-d");
+    $age = date_diff(date_create($birth_date),date_create($today))->y   ;
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,17 +25,17 @@
 
             <!-- Sidebar Links -->
             <ul class="list-unstyled components">
-                <li  class="active"><a href="#"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
+                <li  class="active"><a href="profile"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
                 <li><a href="home"><i class="material-icons">home</i> Home</a></li>
                 <li>
                     <a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
                     <ul class="collapse list-unstyled" id="requests">
                         <li class="active"><a href="#">Salary Request</a></li>
-                        <li class="active"><a href="leave_request_form.php">Leave Request</a></li>
+                        <li class="active"><a href="leave_request_form">Leave Request</a></li>
                     </ul>
                 </li>
                 <li><a href="#"> <i class="material-icons">info_outline</i> About</a></li><hr>
-                <li><a href="../utilities/logout.php" id="logout">
+                <li><a href="../utilities/logout" id="logout">
                         <i class="material-icons">power_settings_new</i> Logout</a></li>
             </ul>
         </nav>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="form-group col-4">
                             <label for="age">Age</label>
-                            <input type="text" id="age" class="form-control-plaintext" value="<?php echo $age->format("%Y");?>" disabled>
+                            <input type="text" id="age" class="form-control-plaintext" value="<?php echo $age;?>" disabled>
                         </div>
                     </div>
 

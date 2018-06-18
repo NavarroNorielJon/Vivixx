@@ -25,7 +25,7 @@ ul ul a {
 /*Home*/
 #content {
 	padding: 10px 5px 10px 3px;
-	margin-left: 255px;
+	margin-left: 35%;
 }
 
 #content .cards {
@@ -147,7 +147,8 @@ ul ul a {
 /*end of index*/
 
 #leave_form {
-	margin: 50px 100px 50px 100px;
+	margin: 10% 2% 10% 0;
+
 }
 
 /*sidebar*/

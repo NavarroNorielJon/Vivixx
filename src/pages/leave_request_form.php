@@ -24,13 +24,13 @@
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components" data-spy="affix">
 
-				<li><a href="profile.php"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
-				<li><a href="home.php"><i class="material-icons">home</i> Home</a></li>
+				<li><a href="profile"><i class="material-icons">person</i> <?php echo "$first_name"?></a></li>
+				<li><a href="home"><i class="material-icons">home</i> Home</a></li>
 				<li class="active">
 					<a href="#requests" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active"><a href="#">Salary Request</a></li>
-						<li class="active"><a href="#">Leave Request</a></li>
+						<li class="active"><a href="leave_request_form">Leave Request</a></li>
 					</ul>
 				</li>
             	<li><a href="#"> <i class="material-icons">info_outline</i> About</a></li>
@@ -40,12 +40,12 @@
 		</nav>
 
 		<div id="content">
-			<form id="leave_form">
+			<form id="leave_form" action="" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
 					<div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName">
+							<input type="text" class="form-control" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
 						</div>
 
 						<div class="form-group col">
@@ -115,6 +115,11 @@
 							<input type="date" class="form-control" id="end_date">
 						</div>
 					</div>
+
+					<div style="text-align:right">
+						<button class="btn btn-success">Submit</button>
+					</div>
+
 				</div>
 			</form>
 		</div>
