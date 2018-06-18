@@ -13,16 +13,16 @@
     <form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST">
 		<div class="row form-goup">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Subject">
+				<input name="subject" type="text" class="form-control" placeholder="Subject" required>
 			</div>
 			
 			<div class="col">
-				<input type="date" class="form-control">
+				<input name="date" type="date" class="form-control" required>
 			</div>
 		</div>
           
 		<div id="border">
-			<textarea id='text' placeholder="Content"></textarea>
+			<textarea name="body" id='text' placeholder="Content" required></textarea>
 		</div>
 		
 		<div id="result">
