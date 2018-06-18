@@ -27,17 +27,17 @@
                             <div class="row">
                                 <div class="form-group col-4">
                                     <label for="bdate">Birthdate</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['birth_date']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['birth_date']?></textbox>
                                 </div>
 
                                 <div class="form-group col-4" >
                                     <label for="pbirth">Place of Birth</label>
-                                    <textbox style="height:36px;" style="height:36px;" style="text-transform:capitalize;" class="form-control" disabled><?php echo $row['birth_place']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" style="text-transform:capitalize;" class="form-control" disabled><?php echo $row['birth_place']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-4" >
                                     <label for="contact">Mobile Number</label>
-                                    <textbox style="height:36px;" style="height:36px;"  class="form-control" class=" form-control" disabled><?php echo $row['contact_number']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;"  class="form-control" class=" form-control" disabled><?php echo $row['contact_number']?></textbox  >
                                     <div id="validContact"></div>
                                 </div>
                             </div>
@@ -45,95 +45,95 @@
                             <div class="row">
                                 <div class=" form-group col-3 ">
                                     <label for="gender">Sex</label>
-                                    <textbox style="height:36px;" style="height:36px;"  class="form-control" disabled><?php if($row['gender'] === 'm'){echo 'Male';}else{echo 'Female';}?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;"  class="form-control" disabled><?php if($row['gender'] === 'm'){echo 'Male';}else{echo 'Female';}?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3 ">
                                     <label for="height">Height</label>
-                                    <textbox style="height:36px;" style="height:36px;"  class="form-control" disabled><?php echo $row['height']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;"  class="form-control" disabled><?php echo $row['height']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3 ">
                                     <label for="weight">Weight</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['weight']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['weight']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3 ">
                                     <label for="blood">Blood Type</label>
-                                    <textbox style="height:36px;" style="height:36px;"  class="form-control" disabled><?php echo ucwords($row['blood_type'])?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;"  class="form-control" disabled><?php echo ucwords($row['blood_type'])?></textbox  >
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="form-group col-7">
                                     <label for="residential_address">Residential Address</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['residential_address']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['residential_address']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-2 ">
                                     <label for="residential_zip">Zip Code</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control num" disabled><?php echo $row['residential_zip']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control num" disabled><?php echo $row['residential_zip']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3 ">
                                     <label for="residential_tel_no">Telephone NO.</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['residential_tel_no']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['residential_tel_no']?></textbox  >
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="form-group col-7">
                                     <label for="permanent_address">Permanent Address</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['permanent_address']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['permanent_address']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-2 ">
                                     <label for="permanent_zip">Zip Code</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['permanent_zip']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['permanent_zip']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3 " >
                                     <label for="permanent_tel_no">Telephone NO.</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['permanent_tel_no']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['permanent_tel_no']?></textbox  >
                                 </div>
 					        </div>
 
                             <div class="row">
               			        <div class="form-group col-4" >
                         	        <label for="citizenship">Citizenship</label>
-              					    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['citizenship']?></textbox style="height:36px;" style="height:36px;">
+              					    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['citizenship']?></textbox  >
               			        </div>
 
                                 <div class="form-group col-4" >
                                     <label for="religion">Religion</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['religion']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['religion']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-2" >
                                     <label for="civil_status">Civil Status</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['civil_status']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['civil_status']?></textbox  >
                                 </div>
 					        </div>
 
                             <div class="row">
                                 <div class="form-group col-3" >
                                     <label for="sss_no">SSS NO.</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['sss_no']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['sss_no']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
                                     <label for="tin">TIN</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['tin']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['tin']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
                                     <label for="philhealth_no ">PHILHEALTH NO.</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['philhealth_no']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['philhealth_no']?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
                                     <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['pagibig_id_no']?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['pagibig_id_no']?></textbox  >
                                 </div>
                             </div>
 
@@ -153,7 +153,7 @@
                                             $name = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled ><?php echo $name ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled ><?php echo $name ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -166,7 +166,7 @@
                                             $year = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" autocomplete="off" disabled value = "<?php echo $year ?>"></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" autocomplete="off" disabled value = "<?php echo $year ?>"></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -179,7 +179,7 @@
                                             $level = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox  >
                                 </div>
 
 					        </div>
@@ -199,7 +199,7 @@
                                             $name = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -212,7 +212,7 @@
                                             $year = "Not set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -225,7 +225,7 @@
                                             $level = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox  >
                                 </div>
 
 					        </div>
@@ -245,7 +245,7 @@
                                             $name = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -258,7 +258,7 @@
                                             $year = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -271,7 +271,7 @@
                                             $level = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox  >
                                 </div>
 
 					        </div>
@@ -291,7 +291,7 @@
                                             $name = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $name ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -304,7 +304,7 @@
                                             $year = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $year ?></textbox  >
                                 </div>
 
                                 <div class="form-group col-3" >
@@ -317,7 +317,7 @@
                                             $level = "Not Set";
                                         }
                                     ?>
-                                    <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox style="height:36px;" style="height:36px;">
+                                    <textbox  style="height:36px;" class="form-control" disabled><?php echo $level ?></textbox  >
                                 </div>
 
 					        </div>
@@ -330,17 +330,17 @@
                                 <div class="row">
                                     <div class="form-group col-4">
                                         <label for="ffname">First Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['father_first_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['father_first_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="fmname">Middle Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['father_middle_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['father_middle_name']?></textbox  >
                                     </div> 
 
                                     <div class="form-group col-4">
                                         <label for="flname">Last Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['father_last_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['father_last_name']?></textbox  >
                                     </div>
                                 </div>
 
@@ -348,17 +348,17 @@
                                 <div class="row">
                                     <div class="form-group col-4">
                                         <label for="mfname">First Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['mother_first_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['mother_first_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="mmname">Middle Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['mother_middle_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['mother_middle_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="mlname">Last Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['mother_last_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['mother_last_name']?></textbox  >
                                     </div>
                                 </div>
                                 <hr>
@@ -366,39 +366,39 @@
                                 <div class="row">
                                     <div class="form-group col-4">
                                         <label for="sfname">First Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['spouse_first_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['spouse_first_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="smname">Middle Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['spouse_middle_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['spouse_middle_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="slname">Last Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['spouse_last_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['spouse_last_name']?></textbox  >
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-2">
                                         <label for="occupation">Occupation</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['occupation']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['occupation']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="employer">Employer</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['employer']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['employer']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-4">
                                         <label for="business_address">Business Address</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['business_address']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['business_address']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-2">
                                         <label for="spouse_tel_no">Telephone NO.</label>
-                                        <textbox style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['spouse_tel_no']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['spouse_tel_no']?></textbox  >
                                     </div>
                                 </div>
 
@@ -407,13 +407,13 @@
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="child_name">Name</label>
-                                        <textbox style="height:36px;" style="height:36px;" style="height:36px;" class="form-control" disabled><?php echo $row['child_name']?></textbox style="height:36px;" style="height:36px;">
+                                        <textbox   style="height:36px;" class="form-control" disabled><?php echo $row['child_name']?></textbox  >
                                     </div>
 
                                     <div class="form-group col-6">
                                         <label for="child_birth">Date of Birth</label>
-                                        <div class="textbox style="height:36px;" style="height:36px;"-group">
-                                            <textbox style="height:36px;" class="form-control" disabled><?php echo $row['child_birth_date']?></textbox style="height:36px;" style="height:36px;">
+                                        <div class="textbox  form-group">
+                                            <textbox  class="form-control" disabled><?php echo $row['child_birth_date']?></textbox  >
                                         </div>
                                     </div>
                                 </div>
@@ -428,7 +428,7 @@
             </div>
         </div>
     </div>
-<?php 
+    <?php 
     include 'edit_information.php';
     ?>
     <script>

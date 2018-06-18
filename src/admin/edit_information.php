@@ -5,7 +5,7 @@
                 <div class="modal-header">
                 </div>
     
-                <div class="modal-body" id="personal_info">
+                <div class="modal-body" id="personal_info1">
 			        <!-- Start of Personal Info-->
                     <form action="update_info" method="POST">
                         <div>
@@ -33,7 +33,14 @@
                                 <div class=" form-group col-3 ">
                                     <label for="gender">Sex</label>
                                     <select name="gender" class="form-control" required="required">
-                                        <option selected disabled >Select Here:</option>
+                                        <?php
+                                            if($row['gender'] === 'm'){
+                                                $gender = "Male";
+                                            }else{
+                                                $gender = "Female";
+                                            }
+                                        ?>
+                                        <option selected disabled ><?php echo $gender ?></option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
@@ -52,7 +59,7 @@
                                 <div class="form-group col-3 ">
                                     <label for="blood">Blood Type</label>
                                     <select name="blood" class="form-control" required="required">
-                                        <option selected disabled>Select Blood Type:</option>
+                                        <option selected disabled><?php echo ucwords($row['blood_type'])?></option>
                                         <option value="o">O</option>
                                         <option value="a">A</option>
                                         <option value="b">B</option>
@@ -109,7 +116,7 @@
                                 <div class="form-group col-2" >
                                     <label for="civil_status">Civil Status</label>
                                     <select name="civil_status" class="form-control" required="required">
-                                        <option selected disabled>Select:</option>
+                                        <option selected disabled><?php echo ucwords($row["civil_status"]) ?></option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="widowed">Widowed</option>
@@ -338,10 +345,14 @@
                                 <div id="child"></div>
 
                                 <div style="text-align: right">
+                                    
                                     <button type="submit">Submit</button>
                                 </div>
                     </form>
                 </div>
+                                <div id="back">
+                                    <a href="view_information.php"><button> Back</button></a>
+                                </div>
             </div>
         </div>
     </div>
@@ -353,5 +364,8 @@
     }
     </script>
     <script>
-
+        $("button[data-dismiss-modal=back]").click(function () {
+            $('#second').modal('hide');
+            $('#first').modal('show');
+        });
     </script>

@@ -110,12 +110,13 @@ body {
     padding-top: 2%;
 }
 
-#personal_info {
+
+#personal_info1 {
     display: flex;
-    width: 100%;
+    width: 75%;
     justify-content: center;
     align-items: center;
-    margin: 2% 2% 2% 6%;
+    margin: 2% 2% 2% 12%;
     position: center;
 }
 
@@ -197,3 +198,8 @@ a:active, a:hover, a:focus{
 #second {
     overflow-y:scroll;
 }
+#text {
+    resize: none;
+    height:300px;
+    width:300px;
+ }

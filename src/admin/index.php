@@ -1,14 +1,12 @@
 <?php
 	include 'header.php';
+	include 'include.php';
  ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Bootstrap Example</title>
-	<?php
-   		include 'include.php';
-  	?>
 </head>
 
 <body>
@@ -21,6 +19,12 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	</div>
+		<div style="text-align:center;">
+			<?php
+				include 'announcement.php';
+			?>
+		</div>
+
 </body>
 
 </html>
