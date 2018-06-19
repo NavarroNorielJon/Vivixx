@@ -77,7 +77,7 @@
 
                         <div class="col-4">
 
-                                <div style="height:250px;width:250px;border: 2px solid black">
+                                <div style="height:250px;width:250px;">
                                     <img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:250px;width:250px;">
                                     <!-- <form action="../utilities/upload.php" method="POST" enctype="multipart/form-data">
                                         <input class="btn-primary" type="file" name="image"><br>
