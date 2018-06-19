@@ -1,5 +1,5 @@
 <?php
 include '../utilities/db.php';
 $connect = Connect();
-
-$name = $_POST["#"]
+$req_id=$_POST["req_id"];
+echo $req_id;

@@ -23,7 +23,7 @@
       $(document).ready(function(){
       $('#leave').dataTable( {
       "columnDefs": [
-        { "orderable": false, "targets": 3 }
+        { "orderable": false, "targets": 4 }
       ]
       });
       $('#leave').DataTable();
