@@ -28,6 +28,19 @@ ul ul a {
 
 }
 
+#weak{
+	color: red;
+}
+#good{
+	color: #ff9900;
+}
+#average{
+	color: #4DB82C;
+}
+#strong{
+	color: green;
+}
+
 #update-information .container a{
 	color: #005959 !important;
 }

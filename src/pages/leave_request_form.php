@@ -27,20 +27,20 @@
 					<i class="material-icons">person</i> <?php echo "$first_name"?></a>
 					<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
 				</li>
-				
+
             	<li>
 					<a href="profile.php" class="sidebar-item">
 					<i class="material-icons">home</i>Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
-				
+
 				<li  class="active">
 					<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false"><i class="material-icons">work</i> Requests</a>
 					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
 						<li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
-						
+
 						<li class="active"><a href="#requests" class="icon">SR</a></li>
 						<li class="active"><a href="leave_request_form.php" class="icon">LR</a></li>
 					</ul>
@@ -55,13 +55,13 @@
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
 					<i class="material-icons">power_settings_new</i> Logout
 					</a>
-					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>
 				</li>
         	</ul>
 		</nav>
 
 		<div id="leave">
-			<form id="leave_form" action="" method="POST">
+			<form id="leave_form" action="../utilities/leave_request" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
 					<div class="row">
 						<div class="form-group col">
@@ -71,24 +71,24 @@
 
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<input type="text" class="form-control" id="department" placeholder="Department" name="dept">
+							<input type="text" class="form-control" id="department" placeholder="Department" name="department">
 						</div>
 					</div>
 
 				<div class="row">
 					<div class="form-group col">
 						<label for="position">Position</label>
-						<input type="text" class="form-control" id="position" placeholder="Position" name="employeePosition">
+						<input type="text" class="form-control" id="position" placeholder="Position" name="position">
 					</div>
 
 					<div class="form-group col">
 						<label for="date_hired">Date Hired</label>
-						<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="dateHired">
+						<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">
 					</div>
 
 					<div class="form-group col">
 						<label for="date_filed">Date Filed</label>
-						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="dateFilled">
+						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
 					</div>
 				</div><hr>
 
@@ -112,12 +112,12 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="address_leave">Contact Address during leave</label>
-							<input type="text" class="form-control" id="address_leave">
+							<input type="text" class="form-control" name="contact_address" id="address_leave">
 						</div>
 
 						<div class="form-group col">
 							<label for="number_leave">Contact Number during leave</label>
-							<input type="text" class="form-control" id="number_leave">
+							<input type="text" class="form-control" name="contact_number" id="number_leave">
 						</div>
 					</div>
 				</div><hr>
@@ -128,12 +128,12 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="start_date">From</label>
-							<input type="date" class="form-control" >
+							<input type="date" class="form-control" name="from">
 						</div>
 
 						<div class="form-group col">
 							<label for="end_date">To</label>
-							<input type="date" class="form-control" id="end_date">
+							<input type="date" class="form-control" name="to" id="end_date">
 						</div>
 					</div>
 

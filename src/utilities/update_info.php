@@ -62,7 +62,10 @@ $post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name
 $post_yr_grad = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
 $post_high_level = mysqli_real_escape_string($connect, $_POST['post_high_level']);
 
+//Emergency info Sheet
 
+
+//tutor info sheet
 
 // if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
 //     echo "
