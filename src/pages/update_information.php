@@ -10,6 +10,7 @@
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     </head>
     <body id="update-information">
         <div class="update-information-header">
@@ -149,7 +150,18 @@
                                     <label for="religion">Religion</label>
                                     <input type="text" name="religion" id="religion" class="form-control" autocomplete="off" required="required">
                                 </div>
-
+								
+									<script>
+                                    $(function() {
+                                              $('#civil_status').change(function(){
+                                                
+                                           
+                                                $('#' + $(this).val()).show();
+                                              });
+                                            });
+                                    </script>
+																			
+                                 
                                 <div class="form-group col-2" >
                                     <label for="civil_status">Civil Status</label>
                                     <select name="civil_status" id="civil_status" class="form-control" required="required">
@@ -159,13 +171,17 @@
                                         <option value="widowed">Widowed</option>
                                         <option value="annulled">Annulled</option>
                                         <option value="separated">Separated</option>
-                                        <option>Others</option>
+                                        <option value="others">Others</option>
                                      </select>
+								
+									 
+									 
                                 </div>
+								
 
-                                <div class="form-group col-2">
-                                    <label for="civil_status">If Other:</label>
-                                    <input class="form-control" name="other" disabled="disabled" placeholder="Please Specify">
+                                <div id='others' style='display:none' class="form-group col-2">
+                                    <label for="civil_status" >If Other:</label>
+                                    <input id="oth" class="form-control" name="civil_status"  placeholder="Please Specify">
                                 </div>
                             </div>
 
@@ -398,7 +414,7 @@
 
 
     </script>
-    <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    
     <script type="text/javascript" src="../script/popper.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="../script/sweetalert.min.js"></script>
