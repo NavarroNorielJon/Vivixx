@@ -595,8 +595,7 @@
 
                 <div class="tab-pane fade text-center" id="submit" role="tabpanel" aria-labelledby="submit-tab">
                     <br>
-                    <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
-                        <button type="button" class="btn btn-info">Back</button></a>
+                        <button type="button" class="btn btn-info"><a data-toggle="tab" href="#emergency">Back</a></button>
                         <button type="submit" class="btn btn-success">Submit</button>
                 </div>
 

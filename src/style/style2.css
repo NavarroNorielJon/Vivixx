@@ -28,6 +28,19 @@ ul ul a {
 
 }
 
+#weak{
+	color: red;
+}
+#good{
+	color: #ff9900;
+}
+#average{
+	color: #4DB82C;
+}
+#strong{
+	color: green;
+}
+
 #update-information .container a{
 	color: #005959 !important;
 }
@@ -412,7 +425,7 @@ ul ul a {
 #container-announcement {
 	width: 80%;
 	padding: 2% 10% 10% 10%;
-	margin: 0% auto auto 10%;
+	margin: 5% auto auto 10%;
 }
 
 #container-announcement #border #text {
@@ -421,18 +434,12 @@ ul ul a {
 	height: 50vh;
 }
 
-#profile {
-		background-color: #e6e6e6;
-	}
-
-@media(max-width: 1192px) {
-	.wrapper #content {
-		margin-left: 250px;
-	}
-}
-
 @media(max-width: 980px) {
-	
+	#signup-form .signup-header h1 {
+		font-size: 3vw
+	}
+
+
 	#index .index-form button{
 		font-size: 2vw;
 	}
@@ -453,7 +460,10 @@ ul ul a {
 		max-width: 60px;
 		min-width: 60px;
 	}
-	
+
+	#sidebar ul.components {
+	}
+
 	#sidebar .sidebar-header{
 		padding-left: 0 !important;
 		background-color:
@@ -472,18 +482,17 @@ ul ul a {
 		display: block;
 		font-size: 1.3rem;
 	}
-	
-	#signup-form .signup-header h1 {
-		font-size: 3vw
-	}
 
 	.message {
 		display: none;
 	}
-	
-	.wrapper #content {
-		margin-left: 55px;
+
+}
+
+	#profile {
+		background-color: #e6e6e6;
 	}
+
 
 }
 
