@@ -123,11 +123,11 @@ if($connect->query($update_stmt) === true){
         foreach ($child_name as $value1) {
             foreach ($child_birth as $value2) {
             }
-            $insert_stmt = "INSERT INTO `user_offspring` (`off_id`,`child_name`,`child_birth_date`,`user_id`)
-                VALUES ('null','$value1','$value2','$id');";
+            $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`)
+                VALUES ('$value1','$value2','$id');";
             if ($connect->query($insert_stmt) === true) {
-                $insert_stmt = "INSERT INTO `user_educ` (`educ_id`,`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
-                    VALUES ('null','$id','$elementary','$secondary','$college','$post_grad');";
+                $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
+                    VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
                 if($connect->query($insert_stmt) === true){
                     echo "<script>
                             window.location = '/';
