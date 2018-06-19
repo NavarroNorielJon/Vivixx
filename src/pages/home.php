@@ -15,50 +15,71 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="body" id="body">
-
+<body>
 	<div class="wrapper">
 		<nav id="sidebar">
 			<div class="sidebar-header">
 				<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
 			</div>
-
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
 				<li>
 					<a href="profile.php" class="sidebar-item">
-					<i class="material-icons">person</i> <?php echo "$first_name"?></a>
-					<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
+						<i class="material-icons">person</i> <?php echo "$first_name"?>
+					</a>
+					<a href="profile.php" class="icon">
+						<i class="material-icons">person</i>
+					</a>
 				</li>
 				
             	<li class="active">
 					<a href="profile.php" class="sidebar-item">
-					<i class="material-icons">home</i>Home</a>
-					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
+						<i class="material-icons">home</i>Home
+					</a>
+					<a class="icon" href="home.php">
+						<i class="material-icons">home</i>
+					</a>
 				</li>
 				
 				<li>
-					<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false"><i class="material-icons">work</i> Requests</a>
-					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
+					<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false"><i class="material-icons">work</i> Requests
+					</a>
+					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false">
+						<i class="material-icons">work</i>
+					</a>
+					
 					<ul class="collapse list-unstyled" id="requests">
-						<li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
-						<li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
-						
-						<li class="active"><a href="#requests" class="icon">SR</a></li>
-						<li class="active"><a href="leave_request_form.php" class="icon">LR</a></li>
+						<li class="active">
+							<a href="#" class="sidebar-item">Salary Request</a>
+						</li>
+						<li class="active">
+							<a href="leave_request_form" class="sidebar-item">Leave Request</a>
+						</li>
+						<li class="active">
+							<a href="#requests" class="icon">SR</a>
+						</li>
+						<li class="active">
+							<a href="leave_request_form.php" class="icon">LR</a>
+						</li>
 					</ul>
 				</li>
-            	<li>
+            	
+				<li>
 					<a href="#" class="sidebar-item">
 						<i class="material-icons">info_outline</i> About
 					</a>
-					<a class="icon"><i class="material-icons">info_outline</i></a>
-				</li><hr>
+					<a class="icon">
+						<i class="material-icons">info_outline</i>
+					</a>
+				</li>
+				<hr>
             	<li>
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
-					<i class="material-icons">power_settings_new</i> Logout
+						<i class="material-icons">power_settings_new</i> Logout
 					</a>
-					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+					<a class="icon" href="../utilities/logout.php">
+						<i class="material-icons">power_settings_new</i>
+					</a>						
 				</li>
         	</ul>
 		</nav>
@@ -114,10 +135,4 @@
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>
-	<script>
-		window.onload = function() {
-			var body = document.getElementById('body');
-			body.style.opacity = "1";
-		}
-	</script>
 </body>

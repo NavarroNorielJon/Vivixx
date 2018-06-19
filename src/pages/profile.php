@@ -34,15 +34,15 @@
 					<a href="home" class="sidebar-item"><i class="material-icons">home</i> Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
-				
+
                 <li>
                     <a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
-					
+
                     <ul class="collapse list-unstyled" id="requests">
                         <li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
                         <li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
-						
+
 						<li class="active"><a href="#requests" class="icon">SR</a></li>
 						<li class="active"><a href="leave_request_form.php" class="icon">LR</a>
                     </ul>
@@ -53,7 +53,7 @@
 				</li><hr>
                 <li><a href="../utilities/logout" class="sidebar-item" id="logout">
                         <i class="material-icons">power_settings_new</i> Logout</a>
-					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>						
+					<a class="icon" href="../utilities/logout.php"><i class="material-icons">power_settings_new</i></a>
 				</li>
             </ul>
         </nav>
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="col-4">
-                            <div  style="height:250px;width:250px;border: 2px solid black">
+                            <div style="height:250px;width:250px;border: 2px solid black">
                                 <img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:250px;width:250px;">
                             </div>
                         </div>
