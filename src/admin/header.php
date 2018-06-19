@@ -23,6 +23,7 @@
 				<li class="nav-item"><a class="nav-link" href="accounts_status.php" style="color:white">Accounts</a></li>
 				<li class="nav-item"><a class="nav-link" href="user_information.php" style="color:white">User</a></li>
 				<li class="nav-item"><a class="nav-link" href="leave_requests.php" style="color:white">Leave Requests</a></li>
+				<li class="nav-item"><a class="nav-link" href="#" style="color:white">Summary of Pay</a></li>
 				<li class="nav-item"><a class="nav-link" href="logout.php" style="color:#fac213">Logout</a></li>
 			</ul>
 		</div>
