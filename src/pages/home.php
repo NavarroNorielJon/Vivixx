@@ -1,6 +1,10 @@
 <?php
 	include '../utilities/session.php';
-	include '../utilities/check_session.php';
+	if($type == "admin") {
+		echo "<script>window.location = '../admin/';</script>";
+	}else {
+		echo "<script>alert('$type');</script>";
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,22 +25,23 @@
 			<div class="sidebar-header">
 				<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
 			</div>
+			
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
 				<li>
-					<a href="profile.php" class="sidebar-item">
+					<a href="profile" class="sidebar-item">
 						<i class="material-icons">person</i> <?php echo "$first_name"?>
 					</a>
-					<a href="profile.php" class="icon">
+					<a href="profile" class="icon" data-toggle="tooltip" data-placement="right" title="Profile">
 						<i class="material-icons">person</i>
 					</a>
 				</li>
 				
             	<li class="active">
-					<a href="profile.php" class="sidebar-item">
+					<a href="home" class="sidebar-item">
 						<i class="material-icons">home</i>Home
 					</a>
-					<a class="icon" href="home.php">
+					<a class="icon" href="home" data-toggle="tooltip" data-placement="right" title="Home">
 						<i class="material-icons">home</i>
 					</a>
 				</li>
@@ -50,16 +55,18 @@
 					
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active">
-							<a href="#" class="sidebar-item">Salary Request</a>
+							<a href="#" class="sidebar-item">
+								Salary Request
+							</a>
 						</li>
 						<li class="active">
 							<a href="leave_request_form" class="sidebar-item">Leave Request</a>
 						</li>
 						<li class="active">
-							<a href="#requests" class="icon">SR</a>
+							<a href="#requests" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
 						</li>
 						<li class="active">
-							<a href="leave_request_form.php" class="icon">LR</a>
+							<a href="leave_request_form.php" class="icon" data-toggle="tooltip" data-placement="right" title="Leave Request">LR</a>
 						</li>
 					</ul>
 				</li>
@@ -68,7 +75,7 @@
 					<a href="#" class="sidebar-item">
 						<i class="material-icons">info_outline</i> About
 					</a>
-					<a class="icon">
+					<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
 						<i class="material-icons">info_outline</i>
 					</a>
 				</li>
@@ -77,7 +84,7 @@
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout
 					</a>
-					<a class="icon" href="../utilities/logout.php">
+					<a class="icon" href="../utilities/logout.php" data-toggle="tooltip" data-placement="right" title="Logout">
 						<i class="material-icons">power_settings_new</i>
 					</a>						
 				</li>
@@ -105,34 +112,37 @@
 				</div>
 			</div>
 
-			<div>
-				<div class="card cards">
-					<div class="event-header">
-						<h4 class="card-title">Upcoming Events</h4>
-					</div>
-					<div class="card-body">
-						<p class="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
+			<div class="card cards">
+				<div class="event-header">
+					<h4 class="card-title">Upcoming Events</h4>
+				</div>
+				
+				<div class="card-body">
+					<p class="card-text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
 
-						<div style="text-align: right">
-							<a>
-								<button type="button" class="btn btn-primary">See more</button>
-							</a>
-						</div>
+					<div style="text-align: right">
+						<a>
+							<button type="button" class="btn btn-primary">See more</button>
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>
+	<script type="text/javascript">
+		$(function(){
+  			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 </body>
