@@ -67,6 +67,7 @@
 
 		<form id="update_form" action="../utilities/update_info" method="POST">
 			<div class="tab-content" id="tabContent">
+
 				<div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
 					<!--
 					<div class="row">
@@ -197,7 +198,6 @@
 							<input id="oth" class="form-control" name="civil_status"  placeholder="Please Specify">
 						</div>
 					</div>
-				</div>
 
 				<div class="row">
 					<div class="form-group col" >
