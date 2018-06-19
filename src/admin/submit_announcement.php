@@ -8,7 +8,7 @@
     $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`) VALUES ('$subject', 
             '$body', '$date');";
     if($connect->query($sql) === true){
-        header("location: index.php");
+        
     } else{
         print_r($connect->error);
     }
