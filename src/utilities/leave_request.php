@@ -4,7 +4,7 @@
     $connect = Connect();
 
 
-    $employee = $full_name;
+    $employee = $first_name . "," . $middle_name . "," . $last_name;
     $department = mysqli_real_escape_string($connect, $_POST['department']);
     $position = mysqli_real_escape_string($connect, $_POST['position']);
     $date_hired  = mysqli_real_escape_string($connect, $_POST['date_hired']);

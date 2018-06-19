@@ -37,7 +37,10 @@
                         <a class="nav-link" id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background<i class="fa"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet<i class="fa"></i></a>
+                        <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">Emergency Information Sheet<i class="fa"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="false">Tutor's Info Sheet<i class="fa"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit<i class="fa"></i></a>
@@ -45,8 +48,9 @@
 
                 </ul>
 
-                <form id="update_form"action="../utilities/update_info" method="POST">
+                <form id="update_form" action="../utilities/update_info" method="POST">
                     <div class="tab-content" id="tabContent">
+
                         <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                             <!-- <div class="row">
 
@@ -299,105 +303,280 @@
 
                             <div id="child"></div>
                         </div>
-                        <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
-                            <div class="row">
-                                <div class="form-group col-2" >
-                                    <p>Elementary</p>
-                                </div>
 
-                                <div class="form-group col-3" >
+                        <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
+
+                            <h5>Elementary</h5>
+                            <div class="row">
+
+                                <div class="form-group col">
                                     <label for="school_name">Name of School</label>
                                     <input type="text" name="elem_school_name" id="elem_school_name" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="yr_grad">Year Graduated</label>
                                     <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="high_level">Highest Level</label>
                                     <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                                 </div>
 
                             </div>
 
+                            <h5>Secondary</h5>
                             <div class="row">
-                                <div class="form-group col-2" >
-                                    <p>Secondary</p>
-                                </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="school_name">Name of School</label>
                                     <input type="text" name="sec_school_name" id="sec_school_name" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="yr_grad">Year Graduated</label>
                                     <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="high_level">Highest Level</label>
                                     <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                                 </div>
 
                             </div>
 
+                            <h5>College</h5>
                             <div class="row">
-                                <div class="form-group col-2" >
-                                    <p>College</p>
-                                </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="school_name">Name of School</label>
                                     <input type="text" name="col_school_name" id="col_school_name" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="yr_grad">Year Graduated</label>
                                     <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control"  autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="high_level">Highest Level</label>
                                     <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                                 </div>
 
                             </div>
 
+                            <h6>Post Grad</h5>
                             <div class="row">
-                                <div class="form-group col-2" >
-                                    <p>Post Grad</p>
-                                </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="school_name">Name of School</label>
                                     <input type="text" name="post_school_name" id="post_school_name" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="yr_grad">Year Graduated</label>
                                     <input type="text" name="post_yr_grad" id="post_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col">
                                     <label for="high_level">Highest Level</label>
                                     <input type="text" name="post_high_level" id="post_high_level" placeholder="(If Undergraduate)" class="form-control"  autocomplete="off">
                                 </div>
 
                             </div>
                         </div>
+
                         <div class="tab-pane fade" id="emergency" role="tabpanel" aria-labelledby="emergency-tab">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                            <h5>Main City Address</h5>
+                            <div style="height:500px;width:1110px;border: 5px solid black">
+                            </div>
+                            <hr>
+                            <h6>Your Housemates</h6>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="hname">Name of Housemate</label>
+                                    <input type="text" name="hname" id="hname" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label for="rel">Relationship</label>
+                                    <input type="text" name="rel" id="rel" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="mnumber1" id="mnumber1" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="mnumber2" id="mnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="hname">Name of Housemate</label>
+                                    <input type="text" name="hname2" id="hname2" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label for="rel">Relationship</label>
+                                    <input type="text" name="rel2" id="rel2"  class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="mnumber3" id="mnumber3" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="mnumber4" id="mnumber4" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <h6>Your Closest Living Relatives</h6>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="hname">Name of relative</label>
+                                    <input type="text" name="rname1" id="rname1" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label for="rel">Relationship</label>
+                                    <input type="text" name="rrel1" id="rrel1" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="rmnumber1" id="rmnumber1" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="rmnumber2" id="rmnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="hname">Name of relative</label>
+                                    <input type="text" name="rname2" id="rname2" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label for="rel">Relationship</label>
+                                    <input type="text" name="rrel2" id="rrel2"  class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="rmnumber3" id="rmnumber3" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label for="high_level">Mobile Number</label>
+                                    <input type="text" name="rmnumber3" id="rmnumber3" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="form-group col">
+                                    <label for="rel"><h6>Secondary City Address</h6></label>
+                                    <input type="text" class="form-control" placeholder="(Your alternate address when you are not at Main City Address)">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label><h6>Provincial/Permanent Address</h6></label>
+                                    <input type="text" class="form-control" >
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Tutor's Full Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Nickname</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label>Mobile number/s</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col-2">
+                                    <label>Landline Number/s</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Accounts</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Company Email address</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Skype Account</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>QQ Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info">Back</button>
+                            <button type="button" class="btn btn-info">Next</button>
+                        </div>
+
                         <div class="tab-pane fade text-center" id="submit" role="tabpanel" aria-labelledby="submit-tab">
                             <br>
-                            <button type="button" class="btn btn-info">Back</button>
+                            <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
+                                <button type="button" class="btn btn-info">Back</button></a>    
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
+
                     </div>
-            </form>
+                </form>
+
         </div>
     <script>
         var form = $(#update_form).show();
