@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Vivixx</title>
+    <link type="text/css" rel="stylesheet" href="../style/style2.css">
 </head>
 <body>
     <form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST">
