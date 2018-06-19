@@ -2,8 +2,6 @@
 	include '../utilities/session.php';
 	if($type == "admin") {
 		echo "<script>window.location = '../admin/';</script>";
-	}else {
-		echo "<script>alert('$type');</script>";
 	}
 ?>
 <!DOCTYPE html>
