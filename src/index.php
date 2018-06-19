@@ -129,17 +129,17 @@
 						<div class="row">
                         	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
                             	<label for="fname">First Name</label>
-                                <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control" placeholder="First Name" required="required">
+                                <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control text-transform" placeholder="First Name" required="required">
 							</div>
 
 							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<label for="mname">Middle Name</label>
-								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control" placeholder="Middle Name" required="required">
+								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name" required="required">
 							</div>
 
 							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<label for="lname">Last Name</label>
-								<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control" placeholder="Last Name" required="required">
+								<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control text-transform" placeholder="Last Name" required="required">
 							</div>
 						</div>
 
