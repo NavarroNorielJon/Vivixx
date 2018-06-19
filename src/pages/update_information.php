@@ -1,6 +1,5 @@
 <?php
     include '../utilities/session.php';
-	include '../utilities/check_user_info.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,22 +8,17 @@
         <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-        <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div class="" style="background-color: #005959; color:white;">
-			<div class="text-center" style="padding: 5px 0 5px 0">
-            	<h1>Update Information Form </h1>
-			</div>
-            <div class="text-right" style="padding: -25px 0 -25px 0">
-                <button type="button" class="btn btn-default"><a href="../utilities/logout" id="logout">
-                        <i class="material-icons">power_settings_new</i></a></button>
-            </div>
-
-        </div>
-        <div class="container">
-
+    <body id="update-information">
+        <div class="update-information-header">
+            <h1>Update Information Form </h1>
+			<button type="button" class="btn btn-default logout"><a href="../utilities/logout" id="logout">
+            <i class="material-icons">power_settings_new</i></a></button>
+		</div>
+		
+		<div class="container">
                 <ul class="nav nav-tabs justify-content-end mb-3" id="tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information<i class="fa"></i></a>
@@ -62,17 +56,17 @@
                             </div> -->
 
                             <div class="row">
-                                <div class="form-group col">
+                                <div class="form-group col-3">
                                     <label >Birthdate</label>
                                     <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col" >
+                                <div class="form-group col-6" >
                                     <label >Place of Birth</label>
                                     <input type="text" style="text-transform:capitalize;" name="birth_place" autocomplete="off" id="pbirth" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col" >
+                                <div class="form-group col-3" >
                                     <label for="contact">Mobile Number</label>
                                         <input type="text" name="contact_number" maxlength="11" autocomplete="off" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                         <div id="validContact"></div>
