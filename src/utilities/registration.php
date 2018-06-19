@@ -10,6 +10,12 @@ $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
 $cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 
+
+$first_name = ucwords($first_name);
+$middle_name = ucwords($middle_name);
+$last_name = ucwords($last_name);
+
+
 if (empty($first_name) || empty($middle_name) || empty($last_name) || empty($email) || empty($password) || empty($cpassword)) {
     echo "
          <script>
@@ -73,7 +79,7 @@ $stmt = "SELECT username from user WHERE username = '$username'";
 $result = $connect->query($stmt);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $vUsername = $row['username'];
-	
+
 while ($username === $vUsername) {
 	$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name) . rand(0, 999);
 }

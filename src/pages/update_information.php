@@ -25,47 +25,48 @@
 			</a>
 		</button>
 	</div>
+    <form id="update_form" action="../utilities/update_info" method="POST">
+	       <div class="container">
+		<ul class="nav nav-tabs" id="tab" role="tablist">
 
-	<div class="container">
-		<ul class="nav nav-tabs justify-content-end mb-3" id="tab" role="tablist">
-			<li class="nav-item">
+            <li class="nav-item">
 				<a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-	controls="home" aria-selected="true">
-					Personal Information<i class="fa"></i>
+					Personal Information
 				</a>
 			</li>
 
 			<li class="nav-item">
 				<a class="nav-link" id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">
-					Family Background<i class="fa"></i>
+					Family Background
 				</a>
 			</li>
 
 			<li class="nav-item">
 				<a class="nav-link" id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">
-					Educational Background<i class="fa"></i>
+					Educational Background
 				</a>
 			</li>
 
 			<li class="nav-item">
 				<a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
-					Emergency Information Sheet<i class="fa"></i>
+					Emergency Information Sheet
 				</a>
 			</li>
 
 			<li class="nav-item">
 				<a class="nav-link" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="false">
-					Tutor's Info Sheet<i class="fa"></i>
+					Tutor's Info Sheet
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">
-					Submit<i class="fa"></i>
+				<a  class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">
+                    Submit
 				</a>
 			</li>
 		</ul>
 
-		<form id="update_form" action="../utilities/update_info" method="POST">
+
 			<div class="tab-content" id="tabContent">
 
                 <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
@@ -226,6 +227,9 @@
                             <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
+
+                    <a class="btn btn-primary btnPrevious">Back</a>
+    				<a class="btn btn-info btnNext">Next</a>
 				</div>
 
                 <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
@@ -330,6 +334,9 @@
                         </div>
                         <div id="child">
                         </div>
+
+                        <a class="btn btn-primary btnPrevious">Back</a>
+        				<a class="btn btn-info btnNext">Next</a>
                     </div>
                 </div>
 
@@ -409,200 +416,212 @@
                     </div>
 
                     </div>
+
+                    <a class="btn btn-primary btnPrevious">Back</a>
+    				<a class="btn btn-info btnNext">Next</a>
                 </div>
 
                 <div class="tab-pane fade" id="emergency" role="tabpanel" aria-labelledby="emergency-tab">
-                <h5>Main City Address</h5>
-                <div>
-                    <div id="maps">
+                    <h5>Main City Address</h5>
+                    <div>
+                        <div id="maps">
+        				</div>
+                        <input type="text" id="lat" name="lat" class="d-none" >
+                        <input type="text" id="lng" name="lng" class="d-none" >
+                    </div>
+    				<hr>
+    				<h6>Your Housemates</h6>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label for="hname">Name of Housemate</label>
+    						<input type="text" name="hname1" id="hname1" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col-2">
+    						<label for="rel">Relationship</label>
+    						<input type="text" name="hrel1" id="hrel1" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="mnumber11" id="mnumber11" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="mnumber12" id="mnumber12" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
     				</div>
-                    <input type="text"  id="lat" name="lat" class="d-none">
-                    <input type="text"  id="lng" name="lng" class="d-none">
+
+    				<div class="row">
+    					<div class="form-group col">
+    						<label for="hname">Name of Housemate</label>
+    						<input type="text" name="hname2" id="hname2" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col-2">
+    						<label for="rel">Relationship</label>
+    						<input type="text" name="hrel2" id="hrel2"  class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="mnumber21" id="mnumber21" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="mnumber22" id="mnumber22" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
+    				</div>
+
+    				<h6>Your Closest Living Relatives</h6>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label for="hname">Name of relative</label>
+    						<input type="text" name="rname1" id="rname1" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col-2">
+    						<label for="rel">Relationship</label>
+    						<input type="text" name="rrel1" id="rrel1" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="rmnumber11" id="rmnumber11" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="rmnumber12" id="rmnumber12" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
+    				</div>
+
+    				<div class="row">
+    					<div class="form-group col">
+    						<label for="hname">Name of relative</label>
+    						<input type="text" name="rname2" id="rname2" class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col-2">
+    						<label for="rel">Relationship</label>
+    						<input type="text" name="rrel2" id="rrel2"  class="form-control text-transform" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="rmnumber21" id="rmnumber21" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
+    					</div>
+
+    					<div class="form-group col">
+    						<label for="high_level">Mobile Number</label>
+    						<input type="text" name="rmnumber22" id="rmnumber22" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    					</div>
+    				</div>
+
+    				<div class="row">
+    					<div class="form-group col">
+    						<label for="secondary_add"><h6>Secondary City Address</h6></label>
+    						<input type="text" name="secondary_add" class="form-control text-transform" placeholder="(Your alternate address when you are not at Main City Address)">
+    					</div>
+
+    					<div class="form-group col">
+    						<label><h6>Provincial/Permanent Address</h6></label>
+    						<input type="text" name="provincial_add" class="form-control text-transform" >
+    					</div>
+    				</div>
+
+                    <a class="btn btn-primary btnPrevious">Back</a>
+    				<a class="btn btn-info btnNext">Next</a>
                 </div>
-				<hr>
-				<h6>Your Housemates</h6>
-				<div class="row">
-					<div class="form-group col">
-						<label for="hname">Name of Housemate</label>
-						<input type="text" name="hname" id="hname" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col-2">
-						<label for="rel">Relationship</label>
-						<input type="text" name="rel" id="rel" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="mnumber1" id="mnumber1" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="mnumber2" id="mnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col">
-						<label for="hname">Name of Housemate</label>
-						<input type="text" name="hname2" id="hname2" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col-2">
-						<label for="rel">Relationship</label>
-						<input type="text" name="rel2" id="rel2"  class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="mnumber3" id="mnumber3" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="mnumber4" id="mnumber4" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-				</div>
-
-				<h6>Your Closest Living Relatives</h6>
-				<div class="row">
-					<div class="form-group col">
-						<label for="hname">Name of relative</label>
-						<input type="text" name="rname1" id="rname1" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col-2">
-						<label for="rel">Relationship</label>
-						<input type="text" name="rrel1" id="rrel1" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="rmnumber1" id="rmnumber1" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="rmnumber2" id="rmnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col">
-						<label for="hname">Name of relative</label>
-						<input type="text" name="rname2" id="rname2" class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col-2">
-						<label for="rel">Relationship</label>
-						<input type="text" name="rrel2" id="rrel2"  class="form-control text-transform" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="rmnumber3" id="rmnumber3" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
-					</div>
-
-					<div class="form-group col">
-						<label for="high_level">Mobile Number</label>
-						<input type="text" name="rmnumber3" id="rmnumber3" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col">
-						<label for="rel"><h6>Secondary City Address</h6></label>
-						<input type="text" class="form-control text-transform" placeholder="(Your alternate address when you are not at Main City Address)">
-					</div>
-
-					<div class="form-group col">
-						<label><h6>Provincial/Permanent Address</h6></label>
-						<input type="text" class="form-control text-transform" >
-					</div>
-				</div>
-            </div>
 
                 <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
-                <div class="row">
-					<div class="form-group col">
-						<label>Tutor's Full Name</label>
-						<input type="text" class="form-control">
-					</div>
+                    <div class="row">
+    					<div class="form-group col">
+    						<label>Tutor's Full Name</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col">
-						<label>Nickname</label>
-						<input type="text" class="form-control">
-					</div>
+    					<div class="form-group col">
+    						<label>Nickname</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col-2">
-						<label>Mobile number/s</label>
-						<input type="text" class="form-control">
-					</div>
+    					<div class="form-group col-2">
+    						<label>Mobile number/s</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col-2">
-						<label>Landline Number/s</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+    					<div class="form-group col-2">
+    						<label>Landline Number/s</label>
+    						<input type="text" class="form-control">
+    					</div>
+    				</div>
 
-				<div class="row">
-					<div class="form-group col">
-						<label>Accounts</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label>Accounts</label>
+    						<input type="text" class="form-control">
+    					</div>
+    				</div>
 
-				<div class="row">
-					<div class="form-group col">
-						<label>Company Email address</label>
-						<input type="text" class="form-control">
-					</div>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label>Company Email address</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col">
-						<label>Password</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+    					<div class="form-group col">
+    						<label>Password</label>
+    						<input type="text" class="form-control">
+    					</div>
+    				</div>
 
-				<div class="row">
-					<div class="form-group col">
-						<label>Skype Account</label>
-						<input type="text" class="form-control">
-					</div>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label>Skype Account</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col">
-						<label>Password</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+    					<div class="form-group col">
+    						<label>Password</label>
+    						<input type="text" class="form-control">
+    					</div>
+    				</div>
 
-				<div class="row">
-					<div class="form-group col">
-						<label>QQ Number</label>
-						<input type="text" class="form-control">
-					</div>
+    				<div class="row">
+    					<div class="form-group col">
+    						<label>QQ Number</label>
+    						<input type="text" class="form-control">
+    					</div>
 
-					<div class="form-group col">
-						<label>Password</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+    					<div class="form-group col">
+    						<label>Password</label>
+    						<input type="text" class="form-control">
+    					</div>
+    				</div>
 
-				<button type="button" class="btn btn-info">Back</button>
-				<button type="button" class="btn btn-info">Next</button>
-            </div>
-
-                <div class="tab-pane fade text-center" id="submit" role="tabpanel" aria-labelledby="submit-tab">
-                    <br>
-                        <button type="button" class="btn btn-info"><a data-toggle="tab" href="#emergency">Back</a></button>
-                        <button type="submit" class="btn btn-success">Submit</button>
+    				<a class="btn btn-primary btnPrevious">Back</a>
+    				<a class="btn btn-info btnNext">Next</a>
                 </div>
 
+                <div class="tab-pane fade" id="submit" role="tabpanel" aria-labelledby="submit-tab">
+                    <button type="submit">Submit</button>
+                </div>
             </div>
-		</form>
-	</div>
 
+	</div>
+    </form>
+    <script>
+        $('.btnNext').click(function(){
+            $('.nav-tabs > .nav-item').next('li').find('a').trigger('click');
+        });
+
+        $('.btnPrevious').click(function(){
+            $('.nav-tabs > .nav-item').prev('li').find('a').trigger('click');
+        });
+    </script>
 	<script>
         function initMap(){
             var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
@@ -627,7 +646,6 @@
                 }
             );
         }
-
 	</script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap">

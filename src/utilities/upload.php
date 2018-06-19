@@ -1,5 +1,6 @@
 <?php
  	include 'session.php';
+
 	$connect = Connect();
 	if (isset($_POST['upload'])) {
 		$file = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
