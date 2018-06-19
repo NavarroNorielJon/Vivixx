@@ -68,105 +68,102 @@
 		<form id="update_form" action="../utilities/update_info" method="POST">
 			<div class="tab-content" id="tabContent">
 
-
                 <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label for="prof_image">Profile Image</label>
+                            <input type="file" name="prof_image"/>
+                        </div>
 
-					<div class="row">
-						<div class="form-group col-4">
-							<label for="prof_image">Profile Image</label>
-							<input type="file" name="prof_image"/>
-						</div>
+                        <div class="form-group col-4">
+                            <label for="prof_image">Signature</label>
+                            <input type="file"/>
+                        </div>
+                    </div>
 
-						<div class="form-group col-4">
-							<label for="prof_image">Signature</label>
-							<input type="file"/>
-						</div>
-					</div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label >Birthdate</label>
+                            <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
+                        </div>
 
+                        <div class="form-group col">
+                            <label >Place of Birth</label>
+                            <input type="text" name="birth_place" autocomplete="off" id="pbirth" class="form-control text-transform" required="required">
+                        </div>
 
-					<div class="row">
-						<div class="form-group col">
-							<label >Birthdate</label>
-							<input type="date" name="birth_date" id="bdate" class="form-control" required="required">
-						</div>
+                        <div class="form-group col" >
+                            <label for="contact">Mobile Number</label>
+                            <input type="text" name="contact_number" maxlength="11" autocomplete="off" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
+                            <div id="validContact"></div>
+                        </div>
+                    </div>
 
-						<div class="form-group col">
-							<label >Place of Birth</label>
-							<input type="text" name="birth_place" autocomplete="off" id="pbirth" class="form-control text-transform" required="required">
-						</div>
+                    <div class="row">
+                        <div class=" form-group col">
+                            <label for="gender">Sex</label>
+                            <select name="gender" class="form-control" required="required">
+                                <option selected disabled>Select Here:</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </div>
 
-						<div class="form-group col" >
-							<label for="contact">Mobile Number</label>
-							<input type="text" name="contact_number" maxlength="11" autocomplete="off" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
-							<div id="validContact"></div>
-						</div>
-					</div>
+                        <div class="form-group col">
+                            <label for="height">Height</label>
+                            <input type="text" name="height" id="height" class="form-control" autocomplete="off" placeholder="(ft.)" required="required">
+                        </div>
 
-					<div class="row">
-						<div class=" form-group col">
-							<label for="gender">Sex</label>
-							<select name="gender" class="form-control custom-select" required="required">
-								<option selected disabled>Select Here:</option>
-								<option value="m">Male</option>
-								<option value="f">Female</option>
-							</select>
-						</div>
+                        <div class="form-group col">
+                            <label for="weight">Weight</label>
+                            <input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" required="required">
+                        </div>
 
-						<div class="form-group col">
-							<label for="height">Height</label>
-							<input type="text" name="height" id="height" class="form-control" autocomplete="off" placeholder="(ft.)" required="required">
-						</div>
+                        <div class="form-group col">
+                            <label for="blood">Blood Type</label>
+                            <select name="blood" class="form-control" required="required">
+                                <option selected disabled>Select Blood Type:</option>
+                                <option value="o">O</option>
+                                <option value="a">A</option>
+                                <option value="b">B</option>
+                                <option value="ab">AB</option>
+                            </select>
+                        </div>
+                    </div>
 
-						<div class="form-group col">
-							<label for="weight">Weight</label>
-							<input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" required="required">
-						</div>
-
-						<div class="form-group col">
-							<label for="blood">Blood Type</label>
-							<select name="blood" class="form-control" required="required">
-								<option selected disabled>Select Blood Type:</option>
-								<option value="o">O</option>
-								<option value="a">A</option>
-								<option value="b">B</option>
-								<option value="ab">AB</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="form-group col-7">
-							<label for="residential_address">Residential Address</label>
-							<input type="text" name="residential_address" id="residential_address" autocomplete="off" class="form-control text-transform" required="required">
-						</div>
-
-						<div class="form-group col-2 ">
-							<label for="residential_zip">Zip Code</label>
-							<input type="text" name="residential_zip" class="form-control" id="residential_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off"  required="required">
-						</div>
-
-						<div class="form-group col-3 ">
-							<label for="residential_tel_no">Telephone NO.</label>
-							<input type="text" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
-						</div>
-					</div>
-
-					<div class="row">
+                    <div class="row">
                         <div class="form-group col-7">
-							<label for="permanent_address">Permanent Address</label>
-							<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" class="form-control text-transform" required="required">
-						</div>
+                            <label for="residential_address">Residential Address</label>
+                            <input type="text" name="residential_address" id="residential_address" autocomplete="off" class="form-control text-transform" required="required">
+                        </div>
 
-						<div class="form-group col-2 ">
-							<label for="permanent_zip">Zip Code</label>
-							<input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" class="form-control" required="required">
-						</div>
+                        <div class="form-group col-2 ">
+                            <label for="residential_zip">Zip Code</label>
+                            <input type="text" name="residential_zip" class="form-control" id="residential_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off"  required="required">
+                        </div>
 
-						<div class="form-group col-3 " >
-							<label for="permanent_tel_no">Telephone NO.</label>
-							<input type="text" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
-						</div>
-					</div>
+                        <div class="form-group col-3 ">
+                            <label for="residential_tel_no">Telephone NO.</label>
+                            <input type="text" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-7">
+                            <label for="permanent_address">Permanent Address</label>
+                            <input type="text" name="permanent_address" id="permanent_address" autocomplete="off" class="form-control text-transform" required="required">
+                        </div>
+
+                        <div class="form-group col-2 ">
+                            <label for="permanent_zip">Zip Code</label>
+                            <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" class="form-control" required="required">
+                        </div>
+
+                        <div class="form-group col-3 " >
+                            <label for="permanent_tel_no">Telephone NO.</label>
+                            <input type="text" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="form-group col-4" >
@@ -175,251 +172,253 @@
                         </div>
 
 
-						<div class="form-group col-4" >
-							<label for="religion">Religion</label>
-							<input type="text" name="religion" id="religion" class="form-control" autocomplete="off" required="required">
-						</div>
+                        <div class="form-group col-4" >
+                            <label for="religion">Religion</label>
+                            <input type="text" name="religion" id="religion" class="form-control" autocomplete="off" required="required">
+                        </div>
 
-						<script>
-							$(function() {
-								$('#civil_status').change(function(){
+                        <script>
+                            $(function() {
+                                $('#civil_status').change(function(){
                                     $('#others').hide();
-									$('#' + $(this).val()).show();
-								});
-							});
-						</script>
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script>
 
-						<div class="form-group col-2" >
-							<label for="civil_status">Civil Status</label>
-							<select name="civil_status" id="civil_status" class="form-control" required="required">
-								<option selected disabled>Select:</option>
-								<option value="single">Single</option>
-								<option value="married">Married</option>
-								<option value="widowed">Widowed</option>
-								<option value="annulled">Annulled</option>
-								<option value="separated">Separated</option>
-								<option value="others">Others</option>
-							</select>
-						</div>
+                        <div class="form-group col-2" >
+                            <label for="civil_status">Civil Status</label>
+                            <select name="civil_status" id="civil_status" class="form-control" required="required">
+                                <option selected disabled>Select:</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="annulled">Annulled</option>
+                                <option value="separated">Separated</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
 
-						<div id='others' style='display:none' class="form-group col">
-							<label for="civil_status" >If Others:</label>
-							<input id="oth" class="form-control" name="civil_status"  placeholder="Please Specify">
-						</div>
-					</div>
+                        <div id='others' style='display:none' class="form-group col">
+                            <label for="civil_status" >If Others:</label>
+                            <input id="oth" class="form-control" name="civil_status"  placeholder="Please Specify">
+                        </div>
+                    </div>
 
                     <div class="row">
-    					<div class="form-group col">
-    						<label for="sss_no">SSS NO.</label>
-    						<input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="sss_no">SSS NO.</label>
+                            <input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="tin">TIN</label>
-    						<input type="text" name="tin" id="tin" onkeypress="numberInput(event)" autocomplete="off" 	class="form-control" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="tin">TIN</label>
+                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" autocomplete="off" 	class="form-control" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="philhealth_no ">PHILHEALTH NO.</label>
-    						<input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="philhealth_no ">PHILHEALTH NO.</label>
+                            <input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-    						<input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
+                            <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                        </div>
                     </div>
-			    </div>
+				</div>
 
                 <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
-    				<h5>Father's Name</h5>
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="ffname">First Name</label>
-    						<input type="text" name="father_first_name" id="ffname" class="form-control text-transform" autocomplete="off" required="required">
-    					</div>
+                    <h5>Father's Name</h5>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="ffname">First Name</label>
+                            <input type="text" name="father_first_name" id="ffname" class="form-control text-transform" autocomplete="off" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="fmname">Middle Name</label>
-    						<input type="text" name="father_middle_name" id="fmname" class="form-control text-transform" autocomplete="off" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="fmname">Middle Name</label>
+                            <input type="text" name="father_middle_name" id="fmname" class="form-control text-transform" autocomplete="off" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="flname">Last Name</label>
-    						<input type="text" name="father_last_name" id="flname" class="form-control text-transform" autocomplete="off" required="required">
-    					</div>
-    				</div>
+                        <div class="form-group col">
+                            <label for="flname">Last Name</label>
+                            <input type="text" name="father_last_name" id="flname" class="form-control text-transform" autocomplete="off" required="required">
+                        </div>
+                    </div>
 
-    				<h5>Mother's Maiden Name</h5>
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="mfname">First Name</label>
-    						<input type="text" name="mother_first_name" id="mfname" class="form-control text-transform" autocomplete="off" required="required">
-    					</div>
+                    <h5>Mother's Maiden Name</h5>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="mfname">First Name</label>
+                            <input type="text" name="mother_first_name" id="mfname" class="form-control text-transform" autocomplete="off" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="mmname">Middle Name</label>
-    						<input type="text" name="mother_middle_name" id="mmname" class="form-control text-transform" 	autocomplete="off" required="required">
-    					</div>
+                        <div class="form-group col">
+                            <label for="mmname">Middle Name</label>
+                            <input type="text" name="mother_middle_name" id="mmname" class="form-control text-transform" 	autocomplete="off" required="required">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="mlname">Last Name</label>
-    						<input type="text" name="mother_last_name" id="mlname" class="form-control text-transform" autocomplete="off" required="required">
-    					</div>
-    				</div>
-    				<hr>
+                        <div class="form-group col">
+                            <label for="mlname">Last Name</label>
+                            <input type="text" name="mother_last_name" id="mlname" class="form-control text-transform" autocomplete="off" required="required">
+                        </div>
+                    </div>
+                    <hr>
 
-    				<h5>Spouse's Name(Optional)</h5>
-    				<sub>
-    					<strong>Note:</strong> If you dont have a spouse, it's unneccessary to fill up the form below
-    				</sub>
-    				<br>
+                    <h5>Spouse's Name(Optional)</h5>
+                    <sub>
+                        <strong>Note:</strong> If you dont have a spouse, it's unneccessary to fill up the form below
+                    </sub>
+                    <br>
 
-    				<div class="row">
-    				<br>
-    					<div class="form-group col">
-    						<label for="sfname">First Name</label>
-    						<input type="text" name="spouse_first_name" id="sfname" class="form-control text-transform" autocomplete="off">
-    					</div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="sfname">First Name</label>
+                            <input type="text" name="spouse_first_name" id="sfname" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="smname">Middle Name</label>
-    						<input type="text" name="spouse_middle_name" id="smname" class="form-control text-transform" autocomplete="off">
-    					</div>
+                        <div class="form-group col">
+                            <label for="smname">Middle Name</label>
+                            <input type="text" name="spouse_middle_name" id="smname" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="slname">Last Name</label>
-    						<input type="text" name="spouse_last_name" id="slname" class="form-control text-transform" autocomplete="off">
-    					</div>
-    				</div>
+                        <div class="form-group col">
+                            <label for="slname">Last Name</label>
+                            <input type="text" name="spouse_last_name" id="slname" class="form-control text-transform" autocomplete="off">
+                        </div>
+                    </div>
 
-    				<div class="row">
-    					<div class="form-group col-2">
-    						<label for="occupation">Occupation</label>
-    						<input type="text" name="occupation" id="occupation" class="form-control text-transform" autocomplete="off">
-    					</div>
+                    <div class="row">
+                        <div class="form-group col-2">
+                            <label for="occupation">Occupation</label>
+                            <input type="text" name="occupation" id="occupation" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col-4">
-    						<label for="employer">Employer</label>
-    						<input type="text" name="employer" id="employer" class="form-control text-transform" autocomplete="off">
-    					</div>
+                        <div class="form-group col-4">
+                            <label for="employer">Employer</label>
+                            <input type="text" name="employer" id="employer" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col-4">
-    						<label for="business_address">Business Address</label>
-    						<input type="text" name="business_address" id="business_address" class="form-control text-transform" autocomplete="off">
-    					</div>
+                        <div class="form-group col-4">
+                            <label for="business_address">Business Address</label>
+                            <input type="text" name="business_address" id="business_address" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col-2">
-    						<label for="spouse_tel_no">Telephone NO.</label>
-    						<input type="text" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
-    					</div>
-    				</div>
+                        <div class="form-group col-2">
+                            <label for="spouse_tel_no">Telephone NO.</label>
+                            <input type="text" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
+                        </div>
+                    </div>
 
 
-    				<h5>Child/Children's Information</h5>
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="child_name">Name</label>
-    						<input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
-    					</div>
+                    <h5>Child/Children's Information</h5>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="child_name">Name</label>
+                            <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col">
-    						<label for="child_birth">Date of Birth</label>
-    						<div class="input-group">
-    							<input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
-    							<div class="input-group-append">
-    								<button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
-    							</div>
-    						</div>
-    					</div>
-				</div>
-
-				<div id="child"></div>
-			</div>
+                        <div class="form-group col">
+                            <label for="child_birth">Date of Birth</label>
+                            <div class="input-group">
+                                <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="child">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
-				<h5>Elementary</h5>
-				<div class="row">
-					<div class="form-group col">
-						<label for="school_name">Name of School</label>
-						<input type="text" name="elem_school_name" id="elem_school_name" class="form-control text-transform" autocomplete="off">
-					</div>
+                    <h5>Elementary</h5>
+                    <div class="row">
+                    <div class="form-group col">
+                        <label for="school_name">Name of School</label>
+                        <input type="text" name="elem_school_name" id="elem_school_name" class="form-control text-transform" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="yr_grad">Year Graduated</label>
-						<input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="yr_grad">Year Graduated</label>
+                        <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="high_level">Highest Level</label>
-						<input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="high_level">Highest Level</label>
+                        <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                    </div>
 
-				</div>
+                    </div>
 
-				<h5>Secondary</h5>
-				<div class="row">
-					<div class="form-group col">
-						<label for="school_name">Name of School</label>
-						<input type="text" name="sec_school_name" id="sec_school_name" class="form-control text-transform" autocomplete="off">
-					</div>
+                    <h5>Secondary</h5>
+                    <div class="row">
+                    <div class="form-group col">
+                        <label for="school_name">Name of School</label>
+                        <input type="text" name="sec_school_name" id="sec_school_name" class="form-control text-transform" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="yr_grad">Year Graduated</label>
-						<input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="yr_grad">Year Graduated</label>
+                        <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="high_level">Highest Level</label>
-						<input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="high_level">Highest Level</label>
+                        <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                    </div>
 
-				</div>
+                    </div>
 
-				<h5>College</h5>
-				<div class="row">
-					<div class="form-group col">
-						<label for="school_name">Name of School</label>
-						<input type="text" name="col_school_name" id="col_school_name" class="form-control text-transform" autocomplete="off">
-					</div>
+                    <h5>College</h5>
+                    <div class="row">
+                    <div class="form-group col">
+                        <label for="school_name">Name of School</label>
+                        <input type="text" name="col_school_name" id="col_school_name" class="form-control text-transform" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="yr_grad">Year Graduated</label>
-						<input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control"  autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="yr_grad">Year Graduated</label>
+                        <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control"  autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="high_level">Highest Level</label>
-						<input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="high_level">Highest Level</label>
+                        <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                    </div>
 
-				</div>
+                    </div>
 
-				<h6>Post Grad</h6>
-				<div class="row">
-					<div class="form-group col">
-						<label for="school_name">Name of School</label>
-						<input type="text" name="post_school_name" id="post_school_name" class="form-control text-transform" autocomplete="off">
-					</div>
+                    <h5>Post Grad</h5>
+                    <div class="row">
+                    <div class="form-group col">
+                        <label for="school_name">Name of School</label>
+                        <input type="text" name="post_school_name" id="post_school_name" class="form-control text-transform" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="yr_grad">Year Graduated</label>
-						<input type="text" name="post_yr_grad" id="post_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="yr_grad">Year Graduated</label>
+                        <input type="text" name="post_yr_grad" id="post_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                    </div>
 
-					<div class="form-group col">
-						<label for="high_level">Highest Level</label>
-						<input type="text" name="post_high_level" id="post_high_level" placeholder="(If Undergraduate)" class="form-control"  autocomplete="off">
-					</div>
+                    <div class="form-group col">
+                        <label for="high_level">Highest Level</label>
+                        <input type="text" name="post_high_level" id="post_high_level" placeholder="(If Undergraduate)" class="form-control"  autocomplete="off">
+                    </div>
 
-				</div>
-
-			</div>
+                    </div>
+                </div>
 
                 <div class="tab-pane fade" id="emergency" role="tabpanel" aria-labelledby="emergency-tab">
-				<h5>Main City Address</h5>
-				<div style="height:500px;width:1110px;border: 5px solid black">
-				</div>
+                <h5>Main City Address</h5>
+                <div>
+                    <div id="maps">
+    				</div>
+                    <input type="text"  id="lat" name="lat" class="d-none">
+                    <input type="text"  id="lng" name="lng" class="d-none">
+                </div>
 				<hr>
 				<h6>Your Housemates</h6>
 				<div class="row">
@@ -522,10 +521,10 @@
 						<input type="text" class="form-control text-transform" >
 					</div>
 				</div>
-			</div>
+            </div>
 
                 <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
-				<div class="row">
+                <div class="row">
 					<div class="form-group col">
 						<label>Tutor's Full Name</label>
 						<input type="text" class="form-control">
@@ -592,22 +591,48 @@
 
 				<button type="button" class="btn btn-info">Back</button>
 				<button type="button" class="btn btn-info">Next</button>
-			</div>
+            </div>
 
                 <div class="tab-pane fade text-center" id="submit" role="tabpanel" aria-labelledby="submit-tab">
-				<br>
-				<a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
-					<button type="button" class="btn btn-info">Back</button></a>
-					<button type="submit" class="btn btn-success">Submit</button>
-			</div>
+                    <br>
+                    <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
+                        <button type="button" class="btn btn-info">Back</button></a>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+
             </div>
 		</form>
 	</div>
 
 	<script>
-		var form = $(#update_form).show();
-	</script>
+        function initMap(){
+            var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+            var myOptions = {
+              zoom: 18,
+              center: myLatlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                draggable:true
+            });
+            google.maps.event.addListener(
+                marker,
+                'drag',
+                function() {
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                }
+            );
+        }
+
+	</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap">
+    </script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
