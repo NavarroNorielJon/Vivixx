@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
-include '../Utilities/db.php';
+include '../utilities/db.php';
 $conn = Connect();
 
 $email = $_POST['email'];
