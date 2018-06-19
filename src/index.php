@@ -47,7 +47,7 @@
                 			<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
 
                     		<div class="input-group-append">
-                        		<button  type="button" class="btn eye" onclick="showHide('password','icon')">
+                        		<button type="button" class="btn eye" onclick="showHide('password','icon')">
                             		<i class="material-icons" id="icon">visibility</i>
                             	</button>
                         	</div>
