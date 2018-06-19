@@ -1,3 +1,6 @@
+<?php
+	include '../utilities/check_user_info.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

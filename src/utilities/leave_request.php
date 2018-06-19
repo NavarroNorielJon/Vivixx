@@ -21,9 +21,9 @@
     $to = date('Y-m-d', strtotime($to));
 
 
-    $insert_stmt = "INSERT INTO `leave_req` ( `leave_req_id`,`user_id`, `employee`, `department`,
+    $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`,
                 `position`, `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
-                 VALUES ('null','$user_id', '$employee', '$department', '$position', '$date_hired', '$date_filed', '$reason', '$contact_address',
+                 VALUES ('$user_id', '$employee', '$department', '$position', '$date_hired', '$date_filed', '$reason', '$contact_address',
                  '$contact_number', '$from', '$to') ;";
     if ($connect->query($insert_stmt) === true) {
         echo "  <script>
