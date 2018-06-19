@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<div class="container" id="container">
+	<div style="text-align:center;">
 		<h1>Announcements</h1>
 	</div>
 		<div style="text-align:center;">

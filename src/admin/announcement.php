@@ -1,7 +1,3 @@
-<?php
-    include 'include.php';
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
