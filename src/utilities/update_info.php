@@ -63,9 +63,45 @@ $post_yr_grad = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
 $post_high_level = mysqli_real_escape_string($connect, $_POST['post_high_level']);
 
 //Emergency info Sheet
+$long = mysqli_real_escape_string($connect, $_POST['lng']);
+$lat = mysqli_real_escape_string($connect, $_POST['lat']);
+    //Housemate
+$h_name1 = mysqli_real_escape_string($connect, $_POST['hname1']);
+$h_mobile_number11 = mysqli_real_escape_string($connect, $_POST['mnumber11']);
+$h_mobile_number12 = mysqli_real_escape_string($connect, $_POST['mnumber12']);
+$h_relationship1 = mysqli_real_escape_string($connect, $_POST['hrel1']);
 
+$h_name2 = mysqli_real_escape_string($connect, $_POST['hname2']);
+$h_mobile_number21 = mysqli_real_escape_string($connect, $_POST['mnumber21']);
+$h_mobile_number22 = mysqli_real_escape_string($connect, $_POST['mnumber22']);
+$h_relationship2 = mysqli_real_escape_string($connect, $_POST['hrel2']);
+    //Relatives
+$r_name1 = mysqli_real_escape_string($connect, $_POST['rname1']);
+$r_mobile_number11 = mysqli_real_escape_string($connect, $_POST['rmnumber11']);
+$r_mobile_number12 = mysqli_real_escape_string($connect, $_POST['rmnumber12']);
+$r_relationship1 = mysqli_real_escape_string($connect, $_POST['rrel1']);
+
+$r_name2 = mysqli_real_escape_string($connect, $_POST['rname2']);
+$r_mobile_number21 = mysqli_real_escape_string($connect, $_POST['rmnumber21']);
+$r_mobile_number22 = mysqli_real_escape_string($connect, $_POST['rmnumber22']);
+$r_relationship2 = mysqli_real_escape_string($connect, $_POST['rrel2']);
+
+$secondary_address = mysqli_real_escape_string($connect, $_POST['secondary_add']);
+$provincial_address = mysqli_real_escape_string($connect, $_POST['provincial_add']);
 
 //tutor info sheet
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$nickname = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+
 
 // if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
 //     echo "
