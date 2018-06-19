@@ -14,5 +14,6 @@
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+    <script src="../script/jquery.form.min.js"></script>
     </head>
 </html>

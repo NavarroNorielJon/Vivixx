@@ -1,13 +1,12 @@
+<?php
+    include 'include.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Vivixx</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST">
@@ -51,6 +50,13 @@
 
 </body>
 <script>
+$('#container-announcement').ajaxForm({
+    url: 'submit_announcement.php',
+    method: 'post',
+    success: function () {
+        $("#announcement").modal("show");
+    }
+});
     counter = function() {
         var value = $('#text').val();
             var negative = 1000;
@@ -65,9 +71,6 @@
 
     };
     $(document).ready(function() {
-        $("#btn").click(function(){
-            $("#announcement").modal("show");
-        });
         $('#text').keyup(counter);
     });
     

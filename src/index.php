@@ -1,5 +1,5 @@
 <?php
-    include 'utilities/session.php';
+    include 'utilities/db.php';
     if (isset($_SESSION['user'])) {
         echo "<script>window.location = 'pages/';</script>";
     }

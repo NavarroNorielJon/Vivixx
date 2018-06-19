@@ -24,19 +24,19 @@
 			<!-- Sidebar Links -->
         	<ul class="list-unstyled components">
 				<li>
-					<a href="profile.php" class="sidebar-item">
+					<a href="profile" class="sidebar-item">
 						<i class="material-icons">person</i> <?php echo "$first_name"?>
 					</a>
-					<a href="profile.php" class="icon">
+					<a href="profile" class="icon" data-toggle="tooltip" data-placement="right" title="Profile">
 						<i class="material-icons">person</i>
 					</a>
 				</li>
 				
             	<li class="active">
-					<a href="profile.php" class="sidebar-item">
+					<a href="home" class="sidebar-item">
 						<i class="material-icons">home</i>Home
 					</a>
-					<a class="icon" href="home.php">
+					<a class="icon" href="home" data-toggle="tooltip" data-placement="right" title="Home">
 						<i class="material-icons">home</i>
 					</a>
 				</li>
@@ -50,16 +50,18 @@
 					
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active">
-							<a href="#" class="sidebar-item">Salary Request</a>
+							<a href="#" class="sidebar-item">
+								Salary Request
+							</a>
 						</li>
 						<li class="active">
 							<a href="leave_request_form" class="sidebar-item">Leave Request</a>
 						</li>
 						<li class="active">
-							<a href="#requests" class="icon">SR</a>
+							<a href="#requests" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
 						</li>
 						<li class="active">
-							<a href="leave_request_form.php" class="icon">LR</a>
+							<a href="leave_request_form.php" class="icon" data-toggle="tooltip" data-placement="right" title="Leave Request">LR</a>
 						</li>
 					</ul>
 				</li>
@@ -68,7 +70,7 @@
 					<a href="#" class="sidebar-item">
 						<i class="material-icons">info_outline</i> About
 					</a>
-					<a class="icon">
+					<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
 						<i class="material-icons">info_outline</i>
 					</a>
 				</li>
@@ -77,7 +79,7 @@
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
 						<i class="material-icons">power_settings_new</i> Logout
 					</a>
-					<a class="icon" href="../utilities/logout.php">
+					<a class="icon" href="../utilities/logout.php" data-toggle="tooltip" data-placement="right" title="Logout">
 						<i class="material-icons">power_settings_new</i>
 					</a>						
 				</li>
@@ -135,4 +137,9 @@
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>
+	<script type="text/javascript">
+		$(function(){
+  			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 </body>
