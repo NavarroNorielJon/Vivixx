@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="col">
-				<input name="date" type="date" class="form-control" required>
+				<input name="date" type="date" class="form-control" required min="2018-01-02">
 			</div>
 		</div>
           
@@ -29,8 +29,26 @@
 			remaining characters: <span id="totalChars">1000</span><br/>
 		</div>
 		<br>
-		<input class="btn btn-primary" type="submit" value="submit">
+		<input id="btn" class="btn btn-primary" type="submit" value="submit">
 	</form>
+
+    <div id="result">
+    </div>
+
+    <div class="modal fade" id="announcement" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
+            <div class="modal-content" id="message">
+                <?php
+                    echo "Announcement successfully sent and will be announced on the specified date.";
+                ?>
+                <div id="ok">
+                <br>
+                    <a href="index.php" class="btn btn-primary" style="width:25%;">Ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script>
     counter = function() {
@@ -47,7 +65,12 @@
 
     };
     $(document).ready(function() {
+        $("#btn").click(function(){
+            $("#announcement").modal("show");
+        });
         $('#text').keyup(counter);
     });
+    
+    
 </script>
 </html>

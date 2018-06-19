@@ -18,7 +18,5 @@
 				include 'announcement.php';
 			?>
 		</div>
-
 </body>
-
 </html>
