@@ -25,6 +25,9 @@ ul ul a {
 	opacity: 0;
 	transition: 2s;
 }
+#background{
+	background-image: url(../img/background.jpg);
+}
 
 /*Home*/
 #content {
@@ -391,45 +394,45 @@ ul ul a {
 	#index .index-form #signup-link {
 		visibility: visible;
 	}
-	
+
 	#sidebar {
 		max-width: 60px;
 		min-width: 60px;
 	}
-	
+
 	#sidebar ul.components {
 	}
-	
+
 	#sidebar .sidebar-header{
 		padding-left: 0 !important;
-		background-color: 
+		background-color:
 	}
-	
+
 	#sidebar .sidebar-header img {
 		margin: 0 0 0 3vh;
 	}
-	
+
 	#sidebar .sidebar-item {
 		display: none;
 	}
-	
+
 	#sidebar .icon {
 		padding-left: 15px;
 		display: block;
 		font-size: 1.3rem;
 	}
-	
+
 	.message {
 		display: none;
 	}
-	
+
 }
 
 	#profile {
 		background-color: #e6e6e6;
 	}
 
-	
+
 }
 
 @media(max-width: 576px){

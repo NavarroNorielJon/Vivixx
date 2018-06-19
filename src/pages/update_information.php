@@ -18,33 +18,34 @@
             	<h1>Update Information Form </h1>
 			</div>
             <div class="text-right" style="padding: -25px 0 -25px 0">
-                <button><a href="../utilities/logout" id="logout">
-                        <i class="material-icons">power_settings_new</i> Logout</a></button>
+                <button type="button" class="btn btn-default"><a href="../utilities/logout" id="logout">
+                        <i class="material-icons">power_settings_new</i></a></button>
             </div>
 
         </div>
-        <div >
+        <div class="container">
 
-                <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
+                <ul class="nav nav-tabs justify-content-end mb-3" id="tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information</a>
+                        <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">Personal Information<i class="fa"></i></a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Background</a>
+                        <a class="nav-link" id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">Family Background<i class="fa"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background</a>
+                        <a class="nav-link" id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">Educational Background<i class="fa"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " id="emer-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet</a>
+                        <a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emer" aria-selected="false">Emergency Information Sheet<i class="fa"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit</a>
+                        <a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">Submit<i class="fa"></i></a>
                     </li>
 
                 </ul>
-                
-                <form id="update_form" class="form-horizontal" action="../utilities/update_info" method="POST">
+
+                <form id="update_form"action="../utilities/update_info" method="POST">
                     <div class="tab-content" id="tabContent">
                         <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                             <!-- <div class="row">
@@ -61,17 +62,17 @@
                             </div> -->
 
                             <div class="row">
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label >Birthdate</label>
                                     <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col-4" >
+                                <div class="form-group col" >
                                     <label >Place of Birth</label>
                                     <input type="text" style="text-transform:capitalize;" name="birth_place" autocomplete="off" id="pbirth" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col-4" >
+                                <div class="form-group col" >
                                     <label for="contact">Mobile Number</label>
                                         <input type="text" name="contact_number" maxlength="11" autocomplete="off" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
                                         <div id="validContact"></div>
@@ -79,26 +80,26 @@
                             </div>
 
                             <div class="row">
-                                <div class=" form-group col-3 ">
+                                <div class=" form-group col">
                                     <label for="gender">Sex</label>
-                                    <select name="gender" class="form-control" required="required">
+                                    <select name="gender" class="form-control custom-select" required="required">
                                         <option selected disabled>Select Here:</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
                                 </div>
 
-                                <div class="form-group col-3 ">
+                                <div class="form-group col">
                                     <label for="height">Height</label>
                                     <input type="text" name="height" id="height" class="form-control" autocomplete="off" placeholder="(ft.)" required="required">
                                 </div>
 
-                                <div class="form-group col-3 ">
+                                <div class="form-group col">
                                     <label for="weight">Weight</label>
                                       <input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" required="required">
                                 </div>
 
-                                <div class="form-group col-3 ">
+                                <div class="form-group col">
                                     <label for="blood">Blood Type</label>
                                     <select name="blood" class="form-control" required="required">
                                         <option selected disabled>Select Blood Type:</option>
@@ -175,22 +176,22 @@
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-3" >
+                                <div class="form-group col" >
                                     <label for="sss_no">SSS NO.</label>
                                     <input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col" >
                                     <label for="tin">TIN</label>
                                     <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col" >
                                     <label for="philhealth_no ">PHILHEALTH NO.</label>
                                     <input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                                 </div>
 
-                                <div class="form-group col-3" >
+                                <div class="form-group col" >
                                     <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
                                     <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                                 </div>
@@ -198,58 +199,57 @@
                         </div>
 
                         <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
-                            <h4>Father's Name</h4>
+                            <h5>Father's Name</h5>
                             <div class="row">
-                                <div class="form-group col-4">
-
+                                <div class="form-group col">
                                     <label for="ffname">First Name</label>
                                     <input type="text" name="father_first_name" id="ffname" class="form-control" autocomplete="off" required="required">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="fmname">Middle Name</label>
                                     <input type="text" name="father_middle_name" id="fmname" class="form-control" autocomplete="off" required="required">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="flname">Last Name</label>
                                     <input type="text" name="father_last_name" id="flname" class="form-control" autocomplete="off" required="required">
                                 </div>
                             </div>
 
-                            <h4>Mother's Maiden Name</h4>
+                            <h5>Mother's Maiden Name</h5>
                             <div class="row">
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="mfname">First Name</label>
                                     <input type="text" name="mother_first_name" id="mfname" class="form-control" autocomplete="off" required="required">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="mmname">Middle Name</label>
                                     <input type="text" name="mother_middle_name" id="mmname" class="form-control" autocomplete="off" required="required">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="mlname">Last Name</label>
                                     <input type="text" name="mother_last_name" id="mlname" class="form-control" autocomplete="off" required="required">
                                 </div>
                             </div>
                             <hr>
-                            <h4>Spouse's Name(Optional)</h4>
+                            <h5>Spouse's Name(Optional)</h5>
                             <sub><strong>Note:</strong> If you dont have a spouse, it's unneccessary to fill up the form below</sub>     <br>
                             <div class="row">
                                  <br>
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="sfname">First Name</label>
                                     <input type="text" name="spouse_first_name" id="sfname" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="smname">Middle Name</label>
                                     <input type="text" name="spouse_middle_name" id="smname" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-4">
+                                <div class="form-group col">
                                     <label for="slname">Last Name</label>
                                     <input type="text" name="spouse_last_name" id="slname" class="form-control" autocomplete="off">
                                 </div>
@@ -278,15 +278,15 @@
                             </div>
 
 
-                            <h4>Child/Children's Information</h4>
+                            <h5>Child/Children's Information</h5>
 
                             <div class="row">
-                                <div class="form-group col-6">
+                                <div class="form-group col">
                                     <label for="child_name">Name</label>
                                     <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control" autocomplete="off">
                                 </div>
 
-                                <div class="form-group col-6">
+                                <div class="form-group col">
                                     <label for="child_birth">Date of Birth</label>
                                     <div class="input-group">
                                         <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
@@ -400,78 +400,9 @@
             </form>
         </div>
     <script>
-        $(document).ready(function() {
-            $('#update_form')
-            .bootstrapValidator({
-                // Only disabled elements are excluded
-                // The invisible elements belonging to inactive tabs must be validated
-                excluded: [':disabled'],
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    birth_date: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The full name is required'
-                            }
-                        }
-                    },
-                    company: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The company name is required'
-                            }
-                        }
-                    },
-                    address: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The address is required'
-                            }
-                        }
-                    },
-                    city: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The city is required'
-                            }
-                        }
-                    }
-                }
-            })
-            // Called when a field is invalid
-            .on('error.field.bv', function(e, data) {
-                // data.element --> The field element
-                var $tabPane = data.element.parents('.tab-pane'),
-                    tabId    = $tabPane.attr('id');
-                    $('a[href="#' + tabId + '"][data-toggle="tab"]')
-                    .parent()
-                    .find('i')
-                    .removeClass('fa-check')
-                    .addClass('fa-times');
-                })
-            // Called when a field is valid
-            .on('success.field.bv', function(e, data) {
-                // data.bv      --> The BootstrapValidator instance
-                // data.element --> The field element
-                var $tabPane = data.element.parents('.tab-pane'),
-                    tabId    = $tabPane.attr('id'),
-                    $icon    = $('a[href="#' + tabId + '"][data-toggle="tab"]')
-                                .parent()
-                                .find('i')
-                                .removeClass('fa-check fa-times');
+        var form = $(#update_form).show();
 
-                // Check if the submit button is clicked
-                if (data.bv.getSubmitButton()) {
-                    // Check if all fields in tab are valid
-                    var isValidTab = data.bv.isValidContainer($tabPane);
-                    $icon.addClass(isValidTab ? 'fa-check' : 'fa-times');
-                }
-            });
-        });
+
     </script>
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../script/popper.min.js"></script>
