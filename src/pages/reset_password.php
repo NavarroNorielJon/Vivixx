@@ -1,3 +1,6 @@
+<?php
+	include '../utilities/check_user_info.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +16,9 @@
 </head>
 
 <body id="reset-form">
-	<div class="container-fluid resetPassword" id="resetPassword">
+	<div class="container-fluid  resetPassword" id="resetPassword">
 		<h3>Reset Password</h3><hr><br>
-		<form action="../utilities/validate_reset_password.php" method="POST">
+		<form action="validate_reset_password.php" method="POST">
 			<input type="text" name="account" style="display:none; "value="<?php echo $_GET['account'];?>">
 
 			<div class="form-group">
@@ -33,7 +36,7 @@
 			</div>
 		</form>
 	</div>
-
+	
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
