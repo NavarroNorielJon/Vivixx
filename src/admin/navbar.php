@@ -24,20 +24,20 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="#">Accounts</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="#">Users</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="#">Leaver Request</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="#">Summary of Pay</a>
 				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Logout</a>
+				<li class="nav-item">
+					<a class="nav-link logout" href="#">Logout</a>
 				</li>
 			</ul>
 		</div>
