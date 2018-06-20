@@ -2,7 +2,8 @@
     include '../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $leave_request = "SELECT * FROM mis.leave_req natural join user where user_id='$user_id';";
+    $req_id = $_GET["req_id"];
+    $leave_request = "SELECT * FROM mis.leave_req natural join user where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
 ?>
@@ -15,7 +16,7 @@
                         $user = $_GET["fname"];
                         $user_middle = $_GET["mname"];
                         $user_last = $_GET["lname"];
-                        echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
+                        echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) .$req_id." ".$user_id."</h1>";
                     ?>
                 </div>
 
@@ -23,36 +24,36 @@
                     <div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName" disabled>
+							<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName" disabled value="<?php echo ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last)?>">
 						</div>
 
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<input type="text" class="form-control" id="department" placeholder="department" name="dept" disabled>
+							<input type="text" class="form-control" id="department" placeholder="department" name="dept" disabled value="<?php echo $row['department']?>">
 						</div>
 					</div>
 
                     <div class="row">
                         <div class="form-group col">
                             <label for="position">Position</label>
-                            <input type="text" class="form-control" id="position" placeholder="Position" name="employeePosition" disabled>
+                            <input type="text" class="form-control" id="position" placeholder="Position" name="employeePosition" disabled value="<?php echo $row['position']?>">
                         </div>
                         
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
-                            <input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="dateHired" disabled>
+                            <input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="dateHired" disabled value="<?php echo $row['date_hired']?>">
                         </div>
                         
                         <div class="form-group col">
                             <label for="date_filed">Date Filed</label>
-                            <input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="dateFilled" disabled>
+                            <input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="dateFilled" disabled value="<?php echo $row['date_filed']?>">
                         </div>
 				    </div><hr>
 
                     <div>
                         <div class="form-group">
                             <label for="other_reason">Reason for Leave</label>
-                            <input type="text" class="form-control" id="reason" disabled>
+                            <input type="text" class="form-control" id="reason" disabled value="<?php echo $row['reason']?>">
                         </div>
                         
                         <div class="row">
@@ -75,12 +76,12 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="address_leave">Contact Address during leave</label>
-                                <input type="text" class="form-control" id="address_leave" disabled>
+                                <input type="text" class="form-control" id="address_leave" disabled value="<?php echo $row['contact_address']?>">
                             </div>
                             
                             <div class="form-group col">
                                 <label for="number_leave">Contact Number during leave</label>
-                                <input type="text" class="form-control" id="number_leave" disabled>
+                                <input type="text" class="form-control" id="number_leave" disabled value="<?php echo $row['contact_number']?>">
                             </div>
                         </div>
 				    </div><hr>
@@ -91,12 +92,12 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="start_date">From</label>
-                                <input type="date" class="form-control" disabled>
+                                <input type="date" class="form-control" disabled value="<?php echo $row['from']?>">
                             </div>
                             
                             <div class="form-group col">
                                 <label for="end_date">To</label>
-                                <input type="date" class="form-control" id="end_date" disabled>
+                                <input type="date" class="form-control" id="end_date" disabled value="<?php echo $row['to']?>">
                             </div>
                         </div>
 				    </div>

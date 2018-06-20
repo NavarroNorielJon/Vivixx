@@ -3,7 +3,7 @@
     include '../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id) where type='user';";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id) where type='user' and user_id='$user_id';";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
 ?>
@@ -15,7 +15,7 @@
                         $user = $_GET["fname"];
                         $user_middle = $_GET["mname"];
                         $user_last = $_GET["lname"];
-                        echo "<h1>" ."Information of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) ."</h1>";
+                        echo "<h1>" ."Information of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) .$user_id."</h1>";
                     ?>
                 </div>
     
@@ -413,7 +413,7 @@
                                     <div class="form-group col-6">
                                         <label for="child_birth">Date of Birth</label>
                                         <div class="textbox  form-group">
-                                            <textbox  class="form-control" disabled><?php echo $row['child_birth_date']?></textbox>
+                                            <textbox  style="height:36px;" class="form-control" disabled><?php echo $row['child_birth_date']?></textbox>
                                         </div>
                                     </div>
                                 </div>
