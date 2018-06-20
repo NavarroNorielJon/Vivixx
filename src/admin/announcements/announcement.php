@@ -21,7 +21,7 @@
 		</div>
 		
 		<div id="result">
-			remaining characters: <span id="totalChars">1000</span><br/>
+			Remaining characters: <span id="totalChars">1000</span><br/>
 		</div>
 		<br>
 		<input id="btn" class="btn btn-primary" type="submit" value="submit">
@@ -44,8 +44,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div>	
 </body>
 <script>
 $('#container-announcement').ajaxForm({
