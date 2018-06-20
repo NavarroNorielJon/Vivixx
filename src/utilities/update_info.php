@@ -171,11 +171,15 @@ if($connect->query($update_stmt) === true){
                     $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
                                     `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
                     if ($connect->query($insert_stmt) === true) {
-                        $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                                        `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                        $insert_stmt = "INSERT INTO `housemates`(`h_id`,`h_name`,`h_mobile_number`,`h_relationship`) VALUES ('$id','$h_name','$h_mobile_number','$h_relationship');";
                         if ($connect->query($insert_stmt) === true) {
-                            $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                                            `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                            $insert_stmt = "INSERT INTO `relatives`(`r_id`,`r_name`,`h_mobile_number`,`r_relationship`) VALUES ('$id','$r_name','$r_mobile_number','$r_relationship');";
+                        } else {
+                            echo "<script>
+                                    alert('error');
+                                    window.history.back();
+                                  </script>";
+                                  exit;
                         }
                     } else {
                         echo "<script>
