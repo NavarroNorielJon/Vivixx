@@ -1,0 +1,38 @@
+#navigation-bar {
+	background-color: #005959;
+	padding: 0 0 0 5px;
+	max-height: 70px;
+	min-height: 70px
+}
+
+#navigation-bar .navbar-brand {
+	font-size: 2rem;
+	font-family: rockwell;
+	margin: 3px 5px 5px 15px;
+	height: auto;
+}
+
+#navigation-bar #nav-logo {
+	width: 7%;
+	height: auto;
+	padding: 0;
+	background-color: white;
+}
+
+#navigation-bar .navbar-nav .nav-link {
+	display: block;
+	padding: 23px 10px 23px 10px;
+	color: #fff;
+}
+
+#navigation-bar .navbar-nav .nav-link:hover {
+	background-color: #009999;
+}
+
+#navigation-bar .navbar-nav .logout:hover {
+	background-color: #ff1a1a;
+}
+
+#navigation-bar .navbar-nav .active {
+	background-color: #009999;
+}
