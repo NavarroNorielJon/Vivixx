@@ -90,17 +90,17 @@ $secondary_address = mysqli_real_escape_string($connect, $_POST['secondary_add']
 $provincial_address = mysqli_real_escape_string($connect, $_POST['provincial_add']);
 
 //tutor info sheet
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$nickname = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
-$tutor_name = mysqli_real_escape_string($connect, $_POST['']);
+$tutor_name = mysqli_real_escape_string($connect, $_POST['tutor_name']);
+$nickname = mysqli_real_escape_string($connect, $_POST['nickname']);
+$mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
+$landline = mysqli_real_escape_string($connect, $_POST['landline']);
+$account = mysqli_real_escape_string($connect, $_POST['acc']);
+$com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
+$e_pass = mysqli_real_escape_string($connect, $_POST['e_pass']);
+$skype = mysqli_real_escape_string($connect, $_POST['skype']);
+$s_pass = mysqli_real_escape_string($connect, $_POST['s_pass']);
+$qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
+$qq_pass = mysqli_real_escape_string($connect, $_POST['qq_pass']);
 
 
 // if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
@@ -168,6 +168,22 @@ if($connect->query($update_stmt) === true){
                 $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
                     VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
                 if($connect->query($insert_stmt) === true){
+                    $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
+                                    `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                    if ($connect->query($insert_stmt) === true) {
+                        $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
+                                        `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                        if ($connect->query($insert_stmt) === true) {
+                            $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
+                                            `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                        }
+                    } else {
+                        echo "<script>
+                                alert('error');
+                                window.history.back();
+                              </script>";
+                              exit;
+                    }
                     echo "<script>
                             window.location = '/';
                           </script>";
