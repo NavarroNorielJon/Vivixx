@@ -26,6 +26,7 @@
 		<br>
 		<input id="btn" class="btn btn-primary" type="submit" value="submit">
         <input type="file" name="file">
+        <input type="file" name="image">
 	</form>
 
     <div id="result">
