@@ -171,11 +171,26 @@ if($connect->query($update_stmt) === true){
                     $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
                                     `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
                     if ($connect->query($insert_stmt) === true) {
-                        $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                                        `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                        $insert_stmt = "INSERT INTO `housemates`(`h_id`,`h_name`,`h_mobile_number`,`h_relationship`) VALUES ('$id','$h_name','$h_mobile_number','$h_relationship');";
                         if ($connect->query($insert_stmt) === true) {
-                            $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                                            `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address','$secondary_address','$provincial_address','$id','$id');";
+                            $insert_stmt = "INSERT INTO `relatives`(`r_id`,`r_name`,`h_mobile_number`,`r_relationship`) VALUES ('$id','$r_name','$r_mobile_number','$r_relationship');";
+                            if ($connect->query($insert_stmt) === true) {
+                                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
+                                                `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
+                                                '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
+                                if ($connect->query($insert_stmt) === true) {
+                                    echo "<script>
+                                            window.location = '/';
+                                          </script>";
+                                          exit;
+                                }
+                            }
+                        } else {
+                            echo "<script>
+                                    alert('error');
+                                    window.history.back();
+                                  </script>";
+                                  exit;
                         }
                     } else {
                         echo "<script>
@@ -184,10 +199,7 @@ if($connect->query($update_stmt) === true){
                               </script>";
                               exit;
                     }
-                    echo "<script>
-                            window.location = '/';
-                          </script>";
-                          exit;
+
                 }else {
                     echo "<script>
                             alert('error');
@@ -202,15 +214,9 @@ if($connect->query($update_stmt) === true){
                       </script>";
                       exit;
             }
-            echo "<script>
-                    window.location = '/';
-                  </script>";
-                  exit;
+
         }
-        echo "<script>
-                window.location = '/';
-              </script>";
-              exit;
+
     }else {
         echo "<script>
                 alert('error');
