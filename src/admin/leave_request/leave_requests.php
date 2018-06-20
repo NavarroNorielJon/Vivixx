@@ -24,7 +24,7 @@
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="index" class="navbar-brand">Vivixx</a>
+			<a href="../index" class="navbar-brand">Vivixx</a>
 			
 			<div class="ml-auto">
 				<ul class="navbar-nav">
