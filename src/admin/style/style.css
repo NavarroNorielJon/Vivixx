@@ -12,6 +12,13 @@
 	height: auto;
 }
 
+#navigation-bar #nav-logo {
+	width: 7%;
+	height: auto;
+	padding: 0;
+	background-color: white;
+}
+
 #navigation-bar .navbar-nav .nav-link {
 	display: block;
 	padding: 23px 10px 23px 10px;
@@ -19,7 +26,7 @@
 }
 
 #navigation-bar .navbar-nav .nav-link:hover {
-	background-color: #009999;
+	background-color: #00b3b3;
 }
 
 #navigation-bar .navbar-nav .logout:hover {
@@ -28,4 +35,20 @@
 
 #navigation-bar .navbar-nav .active {
 	background-color: #009999;
+}
+
+#wrapper .index-content {
+	margin-top: 90px;
+}
+
+#wrapper .accounts-content {
+	margin-top: 100px;
+}
+
+#wrapper .user-content {
+	margin-top: 100px;
+}
+
+#wrapper .leave-request-content {
+	margin-top: 100px;
 }

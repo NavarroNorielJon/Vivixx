@@ -1,3 +1,8 @@
+<?php
+	include '../../utilities/db.php';
+	include '../../utilities/session.php';
+	$connect = Connect();
+	?>
 <!DOCTYPE html>
 <html>
 <head>

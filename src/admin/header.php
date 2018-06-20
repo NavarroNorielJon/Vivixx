@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?php
-	include '../Utilities/db.php';
-	include '../utilities/session.php';
+	include '../../utilities/db.php';
+	include '../../utilities/session.php';
 	$connect = Connect();
 	?>
 <head>

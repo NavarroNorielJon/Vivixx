@@ -1,3 +1,5 @@
+<?php include '../../utilities/session.php'; ?> 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Leave Requests</title>
@@ -43,20 +45,21 @@
         ?>
         </table>
     </div>
-    <div id="result">
-	</div>		
-		<script>
-			$(document).ready(function(){
-				$('.show').click(function(e){
-					e.preventDefault();
-					$.ajax({
-						url: $(this).attr('href'),
-						success: function(res){
-							$('#result').html(res);
-						}
-					});
-				});
-			});
-		</script>
+    <div id="result"></div>		
+		
+	<!-- Script for showing the show more content inside a modal -->
+	<script>	
+		$(document).ready(function(){	
+			$('.show').click(function(e){	
+				e.preventDefault();
+				$.ajax({	
+					url: $(this).attr('href'),	
+					success: function(res){	
+						$('#result').html(res);	
+					}
+				});	
+			});	
+		});
+	</script>
 </body>
 </html>
