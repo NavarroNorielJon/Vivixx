@@ -27,7 +27,7 @@
 	</div>
     <form id="update_form" action="../utilities/update_info" method="POST">
 	       <div class="container">
-		<ul class="nav nav-tabs" id="tab" role="tablist">
+		<ul class="nav nav-tabs mb-4" id="tab" role="tablist">
 
             <li class="nav-item">
 				<a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-	controls="home" aria-selected="true">
@@ -318,12 +318,12 @@
 
                     <h5>Child/Children's Information</h5>
                     <div class="row">
-                        <div class="form-group col">
+                        <div class="form-group col-6">
                             <label for="child_name">Name</label>
                             <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
                         </div>
 
-                        <div class="form-group col">
+                        <div class="form-group col-6">
                             <label for="child_birth">Date of Birth</label>
                             <div class="input-group">
                                 <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
@@ -332,12 +332,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="child">
-                        </div>
-
-                        <a class="btn btn-primary btnPrevious">Back</a>
-        				<a class="btn btn-info btnNext">Next</a>
                     </div>
+                    <div id="child"></div>
+                    <a class="btn btn-primary btnPrevious">Back</a>
+                    <a class="btn btn-info btnNext">Next</a>
                 </div>
 
                 <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
@@ -345,7 +343,7 @@
                     <div class="row">
                     <div class="form-group col">
                         <label for="school_name">Name of School</label>
-                        <input type="text" name="elem_school_name" id="elem_school_name" class="form-control text-transform" autocomplete="off">
+                        <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                     </div>
 
                     <div class="form-group col">
@@ -364,7 +362,7 @@
                     <div class="row">
                     <div class="form-group col">
                         <label for="school_name">Name of School</label>
-                        <input type="text" name="sec_school_name" id="sec_school_name" class="form-control text-transform" autocomplete="off">
+                        <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                     </div>
 
                     <div class="form-group col">
@@ -383,7 +381,7 @@
                     <div class="row">
                     <div class="form-group col">
                         <label for="school_name">Name of School</label>
-                        <input type="text" name="col_school_name" id="col_school_name" class="form-control text-transform" autocomplete="off">
+                        <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                     </div>
 
                     <div class="form-group col">
@@ -402,7 +400,7 @@
                     <div class="row">
                     <div class="form-group col">
                         <label for="school_name">Name of School</label>
-                        <input type="text" name="post_school_name" id="post_school_name" class="form-control text-transform" autocomplete="off">
+                        <input type="text" name="post_school_name" id="post_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                     </div>
 
                     <div class="form-group col">
@@ -426,76 +424,72 @@
                     <div>
                         <div id="maps">
         				</div>
-                        <input type="text" id="lat" name="lat" class="d-none" >
-                        <input type="text" id="lng" name="lng" class="d-none" >
+                        <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()" required>
+                        <input type="text" id="lng" name="lng" class="d-none" required>
+                        <br>
+                        <div>
+                            <label><h6>Main address</h6></label>
+                            <input type="text" id="main_address" class="form-control" name="main_address">
+                        </div>
                     </div>
     				<hr>
     				<h6>Your Housemates</h6>
     				<div class="row">
     					<div class="form-group col">
     						<label for="hname">Name of Housemate</label>
-    						<input type="text" name="hname1" id="hname1" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="hname[]" id="hname1" class="form-control text-transform" autocomplete="off">
     					</div>
 
-    					<div class="form-group col-2">
+    					<div class="form-group col">
     						<label for="rel">Relationship</label>
-    						<input type="text" name="hrel1" id="hrel1" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="hrel[]" id="hrel1" class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber11" id="mnumber11" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="mnumber[]" id="mnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
 
-    					<div class="form-group col">
-    						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber12" id="mnumber12" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
+
     				</div>
 
     				<div class="row">
     					<div class="form-group col">
     						<label for="hname">Name of Housemate</label>
-    						<input type="text" name="hname2" id="hname2" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="hname[]" id="hname2" class="form-control text-transform" autocomplete="off">
     					</div>
 
-    					<div class="form-group col-2">
+    					<div class="form-group col">
     						<label for="rel">Relationship</label>
-    						<input type="text" name="hrel2" id="hrel2"  class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="hrel[]" id="hrel2"  class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber21" id="mnumber21" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="mnumber[]" id="mnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
 
-    					<div class="form-group col">
-    						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber22" id="mnumber22" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
+
     				</div>
 
     				<h6>Your Closest Living Relatives</h6>
     				<div class="row">
     					<div class="form-group col">
     						<label for="hname">Name of relative</label>
-    						<input type="text" name="rname1" id="rname1" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="rname[]" id="rname1" class="form-control text-transform" autocomplete="off">
     					</div>
 
-    					<div class="form-group col-2">
+    					<div class="form-group col">
     						<label for="rel">Relationship</label>
-    						<input type="text" name="rrel1" id="rrel1" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="rrel[]" id="rrel1" class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber11" id="rmnumber11" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
+    						<input type="text" name="rmnumber[]" id="rmnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
 
-    					<div class="form-group col">
-    						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber12" id="rmnumber12" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
+
     				</div>
 
     				<div class="row">
@@ -504,19 +498,14 @@
     						<input type="text" name="rname2" id="rname2" class="form-control text-transform" autocomplete="off">
     					</div>
 
-    					<div class="form-group col-2">
+    					<div class="form-group col">
     						<label for="rel">Relationship</label>
     						<input type="text" name="rrel2" id="rrel2"  class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber21" id="rmnumber21" maxlength="11" onkeypress="numberInput(event)" 	class="form-control" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber22" id="rmnumber22" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="rmnumber[]" id="rmnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
     				</div>
 
@@ -550,55 +539,55 @@
 
     					<div class="form-group col-2">
     						<label>Mobile number</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="mobile" id="mobile" class="form-control">
     					</div>
 
     					<div class="form-group col-2">
     						<label>Landline Number</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="landline" id="landline" class="form-control">
     					</div>
     				</div>
 
     				<div class="row">
     					<div class="form-group col">
     						<label>Accounts</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="acc" id="acc" class="form-control">
     					</div>
     				</div>
 
     				<div class="row">
     					<div class="form-group col">
     						<label>Company Email address</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="com_email" id="com_email" class="form-control">
     					</div>
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="e_pass" id="e_pass" class="form-control">
     					</div>
     				</div>
 
     				<div class="row">
     					<div class="form-group col">
     						<label>Skype Account</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="skype" id="skype" class="form-control">
     					</div>
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="s_pass" id="s_pass" class="form-control">
     					</div>
     				</div>
 
     				<div class="row">
     					<div class="form-group col">
     						<label>QQ Number</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="qq_num" id="qq_num" class="form-control">
     					</div>
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="qq_pass" id="qq_pass" class="form-control">
     					</div>
     				</div>
 
@@ -645,6 +634,14 @@
                     document.getElementById('lng').value = marker.position.lng();
                 }
             );
+        }
+
+        function invalid(){
+            swal({
+                title: "Error",
+                text: "Please complete all the required information",
+                icon: "error",
+            });
         }
 	</script>
     <script async defer
