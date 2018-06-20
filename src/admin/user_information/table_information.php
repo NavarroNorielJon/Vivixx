@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Vivixx</title>
-    
+	<title>Vivixx PH</title> 
 </head>
 	
-<body style="background-color:white !important;";>
+<body>
 	<table class="table" id="table">
   		<thead>
     		<tr>
@@ -20,6 +19,7 @@
   		</thead>
 		
 		<?php
+		include '../../utilities/session.php';
 			$sql = "select * from user_info natural join user where type='user';";
 			$result = $connect->query($sql);
 			if($result-> num_rows > 0){

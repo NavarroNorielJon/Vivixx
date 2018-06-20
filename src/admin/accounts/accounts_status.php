@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Table</title>
+	<title>Vivixx Ph</title>
   	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -34,16 +34,16 @@
 						<a class="nav-link" href="accounts_status">Accounts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="user_information/user_information">Users</a>
+						<a class="nav-link" href="../user_information/user_information">Users</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="leave_request/leave_requests">Leaver Request</a>
+						<a class="nav-link" href="../leave_request/leave_requests">Leaver Request</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link logout" href="logout.php">Logout</a>
+						<a class="nav-link logout" href="../logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
