@@ -1,29 +1,24 @@
 <?php
-    include '../utilities/db.php';
+    include '../../utilities/db.php';
     $connect = Connect();
     $subject = $_POST["subject"];
     $date = $_POST["date"];
     $body = $_POST["body"];
 
-    if(isset($_POST["file"])){
+    if(isset($_POST["submit"])){
         $file = $_FILES["file"];
         $fileName = $file["name"];
         $fileType = $file["type"];
         $fileSize = $file["size"];
         $fileTemp = $file["tmp_name"];
-        $fileError = $file["error"];
 
-        $fileGetExt = explode(".", $fileName);
-        $fileExt = strtoLower(end($fileGetEXt));
-
+        $fileGetExt = explode(".", $fileName)[1];
+        $fileExt = strtoLower($fileGetExt);
         if($fileError === 0){
-            if($fileSize < 1000){
-                $fileNewName = uniqid('', true). "." . $fileExt;
-                $path = 'file uploads/'. $fileNewName;
+            if($fileSize < 10000000){
+                $path = 'file uploads/'. $fileName;
                 move_uploaded_file($fileTemp, $path);
-                
-                $fileDbase = base64_encode($file$fileType);
-                $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`) VALUES ('$subject', '$body', '$date');";
+                header("location: ../index.php?successbaby");
 
             }else{
                 echo "File is too big.";
@@ -34,6 +29,7 @@
         }
     }
 
+    $image = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
     $file = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-    $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`) VALUES ('$subject', '$body', '$date');";
+    $sql = "INSERT into `announcement` (`subject`, `announcement`,`image`, `attachment`, `date`) VALUES ('$subject', '$body', '$image','$file' ,'$date');";
     $connect->query($sql);

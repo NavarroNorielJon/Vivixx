@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Vivixx</title>
-    <link type="text/css" rel="stylesheet" href="../style/style2.css">
+    <link type="text/css" rel="stylesheet" href="../../style/style2.css">
 </head>
 <body>
-    <form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+    <form action="announcements/submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
 		<div class="row form-goup">
 			<div class="col">
 				<input name="subject" type="text" class="form-control" placeholder="Subject" required>
@@ -24,9 +24,10 @@
 			remaining characters: <span id="totalChars">1000</span><br/>
 		</div>
 		<br>
-		<input id="btn" class="btn btn-primary" type="submit" value="submit">
         <input type="file" name="file">
         <input type="file" name="image">
+		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
+        
 	</form>
 
     <div id="result">
@@ -49,7 +50,7 @@
 </body>
 <script>
 $('#container-announcement').ajaxForm({
-    url: 'submit_announcement.php',
+    url: 'announcements/submit_announcement.php',
     method: 'post',
     success: function () {
         $("#announcement").modal("show");
