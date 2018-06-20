@@ -36,3 +36,11 @@
 #navigation-bar .navbar-nav .active {
 	background-color: #009999;
 }
+
+#wrapper .index-content {
+	margin-top: 90px;
+}
+
+#wrapper .accounts-content {
+	margin-top: 100px;
+}
