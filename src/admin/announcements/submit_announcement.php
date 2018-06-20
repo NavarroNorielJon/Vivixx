@@ -11,6 +11,7 @@
         $fileType = $file["type"];
         $fileSize = $file["size"];
         $fileTemp = $file["tmp_name"];
+        $fileError = $file["error"];
 
         $fileGetExt = explode(".", $fileName)[1];
         $fileExt = strtoLower($fileGetExt);
@@ -18,18 +19,22 @@
             if($fileSize < 10000000){
                 $path = 'file uploads/'. $fileName;
                 move_uploaded_file($fileTemp, $path);
+
+                $file = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
+                $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
+                $sql = "INSERT into `announcement` (`subject`, `announcement`, `image` ,`attachment`, `date`) VALUES ('$subject', '$body', '$image' ,'$file' ,'$date');";
+                $connect->query($sql);
                 header("location: ../index.php?successbaby");
 
             }else{
-                echo "File is too big.";
+                echo "
+                    <script>
+                        alert('The attachment you have uploaded is too big');
+                    </script>
+                ";
             }
 
         }else{
-            echo "There was an error in uploading your file, please try again.";
+            echo "There was an error in uploading the attachment, please try again.";
         }
     }
-
-    $image = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
-    $file = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-    $sql = "INSERT into `announcement` (`subject`, `announcement`,`image`, `attachment`, `date`) VALUES ('$subject', '$body', '$image','$file' ,'$date');";
-    $connect->query($sql);
