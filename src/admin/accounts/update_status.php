@@ -1,5 +1,5 @@
 <?php
-	include '../utilities/db.php';
+	include '../../utilities/session.php';
 	$connect = Connect();
 	$username = $_GET["username"];
 
