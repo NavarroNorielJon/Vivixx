@@ -18,6 +18,22 @@
     <script src="../../script/jquery.form.min.js"></script>
 </head>
 <body>
+	
+<a href="#" data-toggle="modal" data-target="#hi">Hi</a>
+	<div class="modal fade" id="hi" tabindex="-1" role="dialog"   data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h1 class="text-center">Success</h1>
+					<div class="text-right">
+						<a class="btn btn-primary" class="success-button" href="accounts_status.php" style="">Done</a>
+					</div>	
+				</div>
+					
+			</div>
+		</div>
+	</div>
+	
 <div class="modal fade" id="success" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
         <div class="modal-content" id="message">
@@ -34,7 +50,7 @@
 </body>
 <script>
         $(document).ready(function(){
-            $("#success").modal("show");
+            $("#hi").modal("show");
         });
     </script>
 </html>

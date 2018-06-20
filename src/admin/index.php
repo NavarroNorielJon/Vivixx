@@ -50,10 +50,7 @@
 		<div class="index-content container-fluid">
 			<div style="text-align:center;">
 				<h1>Announcements</h1>
-				
-				<?php
-					include 'announcements/announcement.php';
-				?>
+				<?php include 'announcements/announcement.php'; ?>
 			</div>	
 		</div>
 		
