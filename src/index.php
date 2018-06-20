@@ -125,7 +125,7 @@
 
 				<!-- Body -->
                 <div class="modal-body">
-                	<form  id="signup_form" >
+                	<form  id="signup_form" action="../utilities/registration.php" method="post">
 						<!-- Full Name -->
 						<div class="row">
                         	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
@@ -135,7 +135,7 @@
 
 							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
 								<label for="mname">Middle Name</label>
-								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name" required="required">
+								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name (Optional)" >
 							</div>
 
 							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">

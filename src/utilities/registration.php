@@ -73,15 +73,22 @@ if(strlen($password) < 8 || strlen($password) > 16){
     exit;
 
 }
-$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name) . rand (0, 999);
+
+if (!empty($middle_name)) {
+    $username = $first_name[0] . $middle_name[0] . $last_name;
+}else {
+    $username = $first_name[0] . $last_name;
+}
 
 $stmt = "SELECT username from user WHERE username = '$username'";
 $result = $connect->query($stmt);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $vUsername = $row['username'];
 
+$counter = 0;
 while ($username === $vUsername) {
-	$username = strtoupper($first_name[0]) . strtoupper($middle_name[0]) . ucfirst($last_name) . rand(0, 999);
+    $username = $username[counter] . strtoupper($username[1]) . $last_name;
+    $counter++;
 }
 
 $password = password_hash($password, PASSWORD_DEFAULT);
