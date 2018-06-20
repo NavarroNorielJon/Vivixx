@@ -540,21 +540,21 @@
                     <div class="row">
     					<div class="form-group col">
     						<label>Tutor's Full Name</label>
-    						<input type="text" class="form-control">
+    						<input type="text" name="tutor_name" id="tutor_name" class="form-control">
     					</div>
 
     					<div class="form-group col">
     						<label>Nickname</label>
+    						<input type="text" name="nickname" id="nickname" class="form-control">
+    					</div>
+
+    					<div class="form-group col-2">
+    						<label>Mobile number</label>
     						<input type="text" class="form-control">
     					</div>
 
     					<div class="form-group col-2">
-    						<label>Mobile number/s</label>
-    						<input type="text" class="form-control">
-    					</div>
-
-    					<div class="form-group col-2">
-    						<label>Landline Number/s</label>
+    						<label>Landline Number</label>
     						<input type="text" class="form-control">
     					</div>
     				</div>

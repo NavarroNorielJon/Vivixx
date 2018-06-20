@@ -25,18 +25,20 @@ ul ul a {
 	height: 400px;
 	width: 100%;
 	border: solid 2px black;
-
 }
 
 #weak{
 	color: red;
 }
+
 #good{
 	color: #ff9900;
 }
+
 #average{
 	color: #4DB82C;
 }
+
 #strong{
 	color: green;
 }
@@ -86,6 +88,7 @@ ul ul a {
 	opacity: 0;
 	transition: 2s;
 }
+
 #background{
 	background-image: url(../img/background.jpg);
 }
