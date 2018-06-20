@@ -167,17 +167,16 @@ if ($connect->query($update_stmt) === true) {
                         $insert_stmt = "INSERT INTO `relative`(`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
                     }
                 }
-                if($connect->query($insert_stmt) === true){
             }
+                $connect->query($insert_stmt);
             foreach ($h_name as $key => $hname) {
                 foreach ($h_relationship as $key => $hrel) {
                     foreach ($h_mobile_number as $key => $hnum) {
                         $insert_stmt = "INSERT INTO `housemate`(`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
                     }
                 }
-                if($connect->query($insert_stmt) === true){
-
             }
+            $connect->query($insert_stmt);
             $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
                             `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
                             '$secondary_address','$provincial_address','$id','$id');";
@@ -185,8 +184,8 @@ if ($connect->query($update_stmt) === true) {
                 $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
                                 `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
-                if ($connect->query($insert_stmt) === true) {
-                }
+                $connect->query($insert_stmt);
+
             }
         }
     }

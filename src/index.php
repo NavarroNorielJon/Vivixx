@@ -125,7 +125,7 @@
 
 				<!-- Body -->
                 <div class="modal-body">
-                	<form action="utilities/registration.php" method="POST">
+                	<form  id="signup_form" >
 						<!-- Full Name -->
 						<div class="row">
                         	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
@@ -182,6 +182,8 @@
 	</div>
 
 	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="script/alerts.js"></script>
 	<script type="text/javascript" src="script/popper.min.js"></script>
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script/sweetalert.min.js"></script>

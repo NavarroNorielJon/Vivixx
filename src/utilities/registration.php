@@ -92,19 +92,7 @@ if($connect->query($insert_stmt) === true){
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $id = $row['user_id'];
 	$insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`middle_name`,`last_name`) VALUES ('$id','$first_name','$middle_name','$last_name');";
-	if($connect->query($insert_stmt) === true){
-		echo "
-			<script>
-				alert('Registration Successful. Your username is $username');
-                window.location.replace('/');
-			</script>
-		";
-	} else {
-		echo "Error: <br>" . $connect->error;
-	}
-} else
-{
-	echo "Error: <br>" . $connect->error;
+	$connect->query($insert_stmt);
 }
 Disconnect($connect);
 ?>

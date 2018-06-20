@@ -25,7 +25,7 @@
 			</a>
 		</button>
 	</div>
-    <form id="update_form" action="../utilities/update_info" method="POST">
+    <form id="update_form" id="update_form" action="../utilities/update_info" method="POST">
 	       <div class="container">
 		<ul class="nav nav-tabs mb-4" id="tab" role="tablist">
 
@@ -647,6 +647,8 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap">
     </script>
+    <script type="text/javascript" src="script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
