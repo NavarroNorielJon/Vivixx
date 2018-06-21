@@ -49,13 +49,13 @@ try {
     }
     $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'okimwaabuiza19@gmail.com'; // SMTP username
-    $mail->Password = '0k1mw4N4I9'; // SMTP password
+    $mail->Username = 'vivixxcorporation@gmail.com'; // SMTP username
+    $mail->Password = 'vivixxcorp123'; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465; // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('okimwaabuiza19@gmail.com', 'VIVIXX');
+    $mail->setFrom('vivixxcorporation@gmail.com', 'VIVIXX');
     // $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
     $mail->addAddress($email); // Name is optional
     // $mail->addReplyTo('zenad.scarlet@gmail.com', 'Information');

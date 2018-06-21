@@ -448,9 +448,8 @@
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber[]" id="mnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="mnumber[]" id="mnumber1" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
-
 
     				</div>
 
@@ -467,7 +466,7 @@
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="mnumber[]" id="mnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="mnumber[]" id="mnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
 
 
@@ -487,7 +486,7 @@
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber[]" id="rmnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="rmnumber[]" id="rmnumber1" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
 
 
@@ -506,7 +505,7 @@
 
     					<div class="form-group col">
     						<label for="high_level">Mobile Number</label>
-    						<input type="text" name="rmnumber[]" id="rmnumber" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+    						<input type="text" name="rmnumber[]" id="rmnumber2" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
     					</div>
     				</div>
 
@@ -627,23 +626,11 @@
 
 	</div>
     </form>
-<<<<<<< HEAD
-=======
-	
+
 	<div id="footer">
 		<p>Vivixx Corporation</p>
 	</div>
-	
-    <script>
-        $('.btnNext').click(function(){
-            $('.nav-tabs > .nav-item').next('li').find('a').trigger('click');
-        });
 
-        $('.btnPrevious').click(function(){
-            $('.nav-tabs > .nav-item').prev('li').find('a').trigger('click');
-        });
-    </script>
->>>>>>> f9ee577db4300a3c8b5f0302b7183fc578caeab6
 	<script>
         function initMap(){
             var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
