@@ -1,5 +1,6 @@
 <?php
     include '../utilities/session.php';
+	include '../modules/footer.html';
 ?>
 <!DOCTYPE html>
 <html>
@@ -602,6 +603,11 @@
 
 	</div>
     </form>
+	
+	<div id="footer">
+		<p>Vivixx Corporation</p>
+	</div>
+	
     <script>
         $('.btnNext').click(function(){
             $('.nav-tabs > .nav-item').next('li').find('a').trigger('click');
