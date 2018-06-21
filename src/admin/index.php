@@ -11,19 +11,23 @@
     <link rel="stylesheet" href="../style/datatables.css">
 	
     <!--scripts-->
-	<script type="text/javascript" src="../script/ajax.js"></script>  
+	<script src="../script/jquery.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script src="../script/jquery.form.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
-    <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-    <script src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>  
 </head>
 
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="index" class="navbar-brand">Vivixx</a>
+			<a href="index" class="navbar-brand" style="margin-right:51vw;">Vivixx</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+			</button>
 			
-			<div class="ml-auto">
+			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
 						<a class="nav-link" href="index">Home</a>
@@ -55,5 +59,11 @@
 		</div>
 		
 	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+		});
+	</script>
 </body>
 </html>
