@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
+    <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -93,7 +94,7 @@
 				</div><hr>
 				<script>
 					$(function() {
-						$('#reason').change(function(){
+						$('#reason1').change(function(){
 							$('#others').hide();
 							$('#' + $(this).val()).show();
 						});
@@ -101,7 +102,7 @@
 				</script>
 				<div>
 					<div>
-						<select class="custom-select form-group" name="reason" id="reason">
+						<select class="custom-select form-group" name="reason" id="reason1">
 							<option selected disabled>Reason for leave</option>
 							<option value="Vacation">Vacation</option>
 							<option value="Emergency">Emergency Leave</option>
