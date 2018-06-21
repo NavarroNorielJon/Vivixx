@@ -35,7 +35,7 @@
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
 
-				<li  class="active">
+				<li class="active">
 					<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false"><i class="material-icons">work</i> Requests</a>
 					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
 					<ul class="collapse list-unstyled" id="requests">
@@ -43,7 +43,7 @@
 						<li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
 
 						<li class="active"><a href="#requests" class="icon">SR</a></li>
-						<li class="active"><a href="leave_request_form.php" class="icon">LR</a></li>
+						<li class="active"><a href="leave_request_form" class="icon">LR</a></li>
 					</ul>
 				</li>
             	<li>
@@ -74,33 +74,43 @@
 							<label for="department">Department</label>
 							<select class="custom-select form-group" name="department">
 								<option selected disabled>Choose your Department</option>
-								<option value="Vacation">Vacation</option>
-								<option value="Emergency">Emergency Leave</option>
-								<option value="Maternal Leave">Maternity Leave</option>
-								<option value="Paternal Leave">Paternity Leave</option>
-								<option value="Sick Leave">Sick Leave</option>
-								<option value="Sent Home">Sent Home</option>
-								<option value="others">Others</option>
+								<option value="Administration">Administration</option>
+								<option value="Administration Support / HR">Administration Support / HR</option>
+								<option value="IT Support">IT Support</option>
+								<option value="Non-voice Account">Non-voice Account</option>
+								<option value="Phone ESL">Phone ESL</option>
+								<option value="Video ESL">Video ESL</option>
+								<option value="Voice Account">Voice Account</option>
 							</select>
 						</div>
 					</div>
 
-				<div class="row">
-					<div class="form-group col">
-						<label for="position">Position</label>
-						<input type="text" class="form-control" id="position" placeholder="Position" name="position">
-					</div>
+					<div class="row">
 
-					<div class="form-group col">
-						<label for="date_hired">Date Hired</label>
-						<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">
-					</div>
+						<div class="form-group col">
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="position">
+								<option selected disabled>Choose your Department</option>
+								<option value="Administration">Administration</option>
+								<option value="Administration Support / HR">Administration Support / HR</option>
+								<option value="IT Support">IT Support</option>
+								<option value="Non-voice Account">Non-voice Account</option>
+								<option value="Phone ESL">Phone ESL</option>
+								<option value="Video ESL">Video ESL</option>
+								<option value="Voice Account">Voice Account</option>
+							</select>
+						</div>
 
-					<div class="form-group col">
-						<label for="date_filed">Date Filed</label>
-						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
-					</div>
-				</div><hr>
+						<div class="form-group col">
+							<label for="date_hired">Date Hired</label>
+							<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">
+						</div>
+
+						<div class="form-group col">
+							<label for="date_filed">Date Filed</label>
+							<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
+						</div>
+					</div><hr>
 				<script>
 					$(function() {
 						$('#reason1').change(function(){
@@ -113,7 +123,7 @@
 					<div>
 						<label>Reason</label>
 						<select class="custom-select form-group" name="reason" id="reason1">
-							<option selected disabled>Reason for leave</option>
+							<option selected disabled>Reason for leave:</option>
 							<option value="Vacation">Vacation</option>
 							<option value="Emergency">Emergency Leave</option>
 							<option value="Maternal Leave">Maternity Leave</option>
