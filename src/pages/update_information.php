@@ -1,5 +1,6 @@
 <?php
     include '../utilities/session.php';
+	include '../modules/footer.html';
 ?>
 <!DOCTYPE html>
 <html>
@@ -626,6 +627,23 @@
 
 	</div>
     </form>
+<<<<<<< HEAD
+=======
+	
+	<div id="footer">
+		<p>Vivixx Corporation</p>
+	</div>
+	
+    <script>
+        $('.btnNext').click(function(){
+            $('.nav-tabs > .nav-item').next('li').find('a').trigger('click');
+        });
+
+        $('.btnPrevious').click(function(){
+            $('.nav-tabs > .nav-item').prev('li').find('a').trigger('click');
+        });
+    </script>
+>>>>>>> f9ee577db4300a3c8b5f0302b7183fc578caeab6
 	<script>
         function initMap(){
             var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
