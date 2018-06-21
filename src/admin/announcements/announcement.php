@@ -24,8 +24,16 @@
 			Remaining characters: <span id="totalChars">1000</span><br/>
 		</div>
 		<br>
+        <div>
+        Upload Attachment
+        <br>
         <input type="file" name="file">
+        </div>
+        <div>
+        Upload Image
+        <br>
         <input type="file" name="image">
+        </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
         
 	</form>
