@@ -16,15 +16,17 @@
 	<script src="../script/jquery.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>  
+	
 </head>
 
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="index" class="navbar-brand" style="margin-right:51vw;">Vivixx</a>
+			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -47,6 +49,9 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="announcements/announcement.php">Announcement</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link logout" href="logout.php">Logout</a>
 					</li>
 				</ul>
@@ -56,7 +61,7 @@
 		<div class="index-content container-fluid">
 			<div style="text-align:center;">
 				<h1>Announcements</h1>
-				<?php include 'announcements/announcement.php'; ?>
+				hgjdskal;f'
 			</div>	
 		</div>
 		
@@ -66,6 +71,7 @@
 		$(document).ready(function() {
 			$(".dropdown-toggle").dropdown();
 		});
+		
 	</script>
 </body>
 </html>

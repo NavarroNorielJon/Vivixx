@@ -1,7 +1,27 @@
 <?php
-include '../utilities/db.php';
+include '../../utilities/session.php';
 $connect = Connect();
 $req_id=$_POST["req_id"];
-echo $req_id;
+$update = "";
 
-$sql = "select";
+if(isset($_POST["accept"])){
+    $update = "UPDATE `mis`.`leave_req` SET `status`='accepted' WHERE `leave_req_id`='$req_id';";
+    header("location:leave_requests.php?acceptedbaby");
+}else{
+    echo "
+        <script>
+            alert('Error in updating status');
+        </script>
+    ";
+}
+if(isset($_POST["reject"])){
+    $update = "UPDATE `mis`.`leave_req` SET `status`='rejected' WHERE `leave_req_id`='$req_id';";
+    header("location:leave_requests.php?rejectedbaby");
+}else{
+    echo "
+        <script>
+            alert('Error in updating status');
+        </script>
+    ";
+}
+$result = $connect->query($update);

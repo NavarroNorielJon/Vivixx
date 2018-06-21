@@ -24,7 +24,7 @@
                 $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
                 $sql = "INSERT into `announcement` (`subject`, `announcement`, `image` ,`attachment`, `date`) VALUES ('$subject', '$body', '$image' ,'$file' ,'$date');";
                 $connect->query($sql);
-                header("location: ../index.php?successbaby");
+                header("location: ../index.php");
 
             }else{
                 echo "

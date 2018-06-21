@@ -1,3 +1,6 @@
+<?php 
+	include '../../utilities/session.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +27,7 @@
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="index" class="navbar-brand" style="margin-right:51vw;">Vivixx</a>
+			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -47,6 +50,9 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link logout" href="../logout.php">Logout</a>
 					</li>
 				</ul>
@@ -55,20 +61,71 @@
 		
 		<div class="leave-request-content container-fluid">
 			<h1>Leave Requests</h1>
-			<?php include 'table_leave_requests.php'; ?>
-		</div>
+				<table class="table" id="leave">
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Middle Name</th>
+							<th>Last Name</th>
+							<th>Contact Number</th>
+							<th>View</th>
+						</tr>
+					</thead>
+
+					<?php
+					$sql = "select * from leave_req where status='pending';";
+					$result = $connect->query($sql);
+					
+					if($result-> num_rows > 0){
+						while($row = $result->fetch_assoc()){
+							$fname = explode(",",$row["employee"])[0];
+							$mname = explode(",",$row["employee"])[1];
+							$lname = explode(",",$row["employee"])[2];
+						$show = "
+								<input name='show' value='show' style='display: none;'>
+								<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
+						//print data in table
+							echo "
+							<tr>
+							<td>" . ucwords($fname) . "</td>
+							<td>" . ucwords($mname) . "</td>
+							<td>" . ucwords($lname) . "</td>
+							<td>" . $row['contact_number'] . "</td>
+							<td>" . $show ."</td>
+							</tr>";
+						}
+						}
+
+					$connect-> close();
+					?>
+        		</table>
+    	</div>
+    	<div id="result"></div>
 	</div>
 		
-      <!-- script for calling datatables library -->
       <script>
-      $(document).ready(function(){
-      $('#leave').dataTable( {
-      "columnDefs": [
-        { "orderable": false, "targets": 4 }
-      ]
-      });
-      $('#leave').DataTable();
-      });
+	  	//Script for showing the show more content inside a modal
+	  	$(document).ready(function(){	
+			$('.show').click(function(e){	
+				e.preventDefault();
+				$.ajax({	
+					url: $(this).attr('href'),	
+					success: function(res){	
+						$('#result').html(res);	
+					}
+				});	
+			});	
+		});
+		
+		//script for calling datatables library
+		$(document).ready(function(){
+		$('#leave').dataTable( {
+		"columnDefs": [
+			{ "orderable": false, "targets": 4 }
+		]
+		});
+		$('#leave').DataTable();
+		});
       </script>
 </body>
 </html>
