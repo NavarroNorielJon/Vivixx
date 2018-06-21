@@ -1,5 +1,5 @@
 <?php
-    include '../utilities/db.php';
+    include '../../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $req_id = $_GET["req_id"];

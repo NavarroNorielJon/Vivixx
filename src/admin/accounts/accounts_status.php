@@ -1,3 +1,8 @@
+<?php
+	include '../../utilities/db.php';
+	include '../../utilities/session.php';
+	$connect = Connect();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +24,7 @@
     <script src="../../script/jquery.form.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
@@ -54,13 +59,72 @@
 		
 		<div class="accounts-content container-fluid">
 			<h1>Accounts</h1>
-			<?php include 'table_accounts.php'; ?>		
+				<table class="table" id="table">
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+							<th>Email</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+  
+					<?php
+					$sql = "select username, email, first_name, last_name,status from user natural join user_info where type='user';";
+					$result = $connect->query($sql);
+
+					if($result-> num_rows > 0){
+						while($row = $result->fetch_assoc()){
+						//enable or disable button
+						if($row["status"] === "enabled"){
+							$button = "
+							<input name='disable' value='Disable' style='display: none;'>
+							<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' class='show btn btn-danger'>Disable</a>";
+						}else{
+							$button = "
+							<input name='enable' value='Enable' style='display: none;'>
+							<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
+						}
+						//print data in table
+							echo "
+							<tr>
+							<td>" . ucwords($row['first_name']) . "</td>
+							<td>" . ucwords($row['last_name']) . "</td>
+							<td>" . $row['username'] . "</td>
+							<td>" . $row['email'] . "</td>
+							<td>" . $row['status'] . "</td>
+							<td>
+							".$button."</td>
+							</tr>";
+						}
+						}
+
+					$connect-> close();
+					?>
+  				</table>
+
+  				<div id="result1">
+				</div>			
 		</div>
-		
 	</div>
 	
-	<!-- script for calling datatables library -->
+	
       <script>
+	  	//script for calling modal
+	  	$(document).ready(function(){
+			$('.show').click(function(e){
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res){
+						$('#result1').html(res);
+					}
+				});
+			});
+		});
+		//script for calling datatables library
       	$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [

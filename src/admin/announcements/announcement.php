@@ -12,7 +12,7 @@
 			</div>
 			
 			<div class="col">
-				<input name="date" type="date" class="form-control" id="date" required min="2018-01-02">
+				<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
 			</div>
 		</div>
           
@@ -35,8 +35,10 @@
         <input type="file" name="image">
         </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
-        
+        <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
+        <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
 	</form>
+        
 
     <div id="result">
     </div>
@@ -56,6 +58,9 @@
     </div>	
 </body>
 <script>
+$(".date").datepicker({
+    showButtonPanel: true
+});
 $('#container-announcement').ajaxForm({
     url: 'announcements/submit_announcement.php',
     method: 'post',
@@ -78,11 +83,9 @@ $('#container-announcement').ajaxForm({
     };
     $(document).ready(function() {
         $('#text').keyup(counter);
+        
     });
-    $('#date').datepicker({
-        showOtherMonths: true
-        // selectOtherMonths: true
-    });
+    
     
     
 </script>
