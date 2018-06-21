@@ -27,7 +27,7 @@
         <div>
         Upload Attachment
         <br>
-        <input type="file" name="file">
+        <input type="file" name="file" multiple>
         </div>
         <div>
         Upload Image
