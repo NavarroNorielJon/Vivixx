@@ -49,7 +49,7 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="announcements/view_announcement.php">Announcement</a>
+						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link logout" href="logout.php">Logout</a>
@@ -61,7 +61,7 @@
 		<div class="index-content container-fluid">
 			<div style="text-align:center;">
 				<h1>Announcements</h1>
-				<?php include 'announcements/announcement.php'; ?>
+				<?php include '../announcements/announcement.php'; ?>
 			</div>	
 		</div>
 		
