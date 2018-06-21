@@ -156,7 +156,11 @@ if ($connect->query($update_stmt) === true) {
                 $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`)
                     VALUES ('$name','$birth','$id');";
             }
-            $connect->query($insert_stmt);
+            if ($connect->query($insert_stmt)) {
+            }else {
+                print_r($connect->error);
+                print_r();
+            }
         }
         $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
             VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
@@ -167,7 +171,11 @@ if ($connect->query($update_stmt) === true) {
                         $insert_stmt = "INSERT INTO `relative`(`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
                     }
                 }
-                $connect->query($insert_stmt);
+                if ($connect->query($insert_stmt)) {
+                }else {
+                    print_r($connect->error);
+                    print_r('4');
+                }
             }
 
             foreach ($h_name as $key => $hname) {
@@ -176,7 +184,11 @@ if ($connect->query($update_stmt) === true) {
                         $insert_stmt = "INSERT INTO `housemate`(`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
                     }
                 }
-                $connect->query($insert_stmt);
+                if ($connect->query($insert_stmt)) {
+                }else {
+                    print_r($connect->error);
+                    print_r('5');
+                }
             }
 
             $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
@@ -188,9 +200,21 @@ if ($connect->query($update_stmt) === true) {
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
 
+            }else {
+                print_r($connect->error);
+                print_r('6');
             }
+        }else {
+            print_r($connect->error);
+            print_r('3');
         }
+    }else {
+        print_r($connect->error);
+        print_r('2');
     }
+}else {
+    print_r($connect->error);
+    print_r('1');
 }
 
 ?>
