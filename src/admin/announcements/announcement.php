@@ -3,6 +3,7 @@
 <head>
     <title>Vivixx</title>
     <link type="text/css" rel="stylesheet" href="../../style/style2.css">
+    <link type="text/css" rel="stylesheet" href="../style/jquery-ui.min.css">
 </head>
 <body>
     <form action="announcements/submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
@@ -12,7 +13,7 @@
 			</div>
 			
 			<div class="col">
-				<input name="date" type="date" class="form-control" required min="2018-01-02">
+				<input name="date" type="date" class="form-control" id="date" required min="2018-01-02">
 			</div>
 		</div>
           
@@ -78,6 +79,10 @@ $('#container-announcement').ajaxForm({
     };
     $(document).ready(function() {
         $('#text').keyup(counter);
+    });
+    $('#date').datepicker({
+        showOtherMonths: true
+        // selectOtherMonths: true
     });
     
     
