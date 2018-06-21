@@ -38,7 +38,7 @@
 				<form action="utilities/login.php" method="post" class="col s12 " id="login">
         			<div class="form-group col-sm-12">
             			<label for="userOrEmail">Username or Email-Address</label>
-                		<input class="form-control" type="text" autocomplete="off" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                		<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
                 		<div id="validUserOrEmail"></div>
 					</div>
 
@@ -128,17 +128,17 @@
                 	<form  id="signup_form" action="../utilities/registration.php" method="post">
 						<!-- Full Name -->
 						<div class="row">
-                        	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                        	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             	<label for="fname">First Name</label>
                                 <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control text-transform" placeholder="First Name" required="required">
 							</div>
 
-							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
 								<label for="mname">Middle Name</label>
 								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name (Optional)" >
 							</div>
 
-							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-4">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
 								<label for="lname">Last Name</label>
 								<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control text-transform" placeholder="Last Name" required="required">
 							</div>
