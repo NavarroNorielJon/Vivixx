@@ -33,8 +33,8 @@
 			
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="index">Home</a>
+					<li class="nav-item">
+						<a class="nav-link" href="../index">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status">Accounts</a>
@@ -49,7 +49,7 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="announcement.php">Announcement</a>
+						<a class="nav-link active" href="announcement.php">Announcement</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link logout" href="logout.php">Logout</a>
