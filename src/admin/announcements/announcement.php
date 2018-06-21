@@ -3,7 +3,6 @@
 <head>
     <title>Vivixx</title>
     <link type="text/css" rel="stylesheet" href="../../style/style2.css">
-    <link type="text/css" rel="stylesheet" href="../style/jquery-ui.min.css">
 </head>
 <body>
     <form action="announcements/submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
