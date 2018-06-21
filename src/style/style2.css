@@ -418,12 +418,8 @@ ul ul a {
 #reset-form .resetPassword input[type=password] {
 	border-radius: 0;
 	width: 70%;
-	transition: all 0.6s
 }
 
-#reset-form .resetPassword input[type=password]:focus {
-	width: 100%;
-}
 
 #container-announcement {
 	width: 80%;
