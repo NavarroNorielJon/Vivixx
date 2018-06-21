@@ -30,7 +30,7 @@
 		<ul class="nav nav-tabs mb-4" id="tab" role="tablist">
 
             <li class="nav-item">
-				<a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-	controls="home" aria-selected="true">
+				<a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="home" aria-selected="true">
 					Personal Information
 				</a>
 			</li>
@@ -189,7 +189,7 @@
 
                         <div class="form-group col-2" >
                             <label for="civil_status">Civil Status</label>
-                            <select name="civil_status" id="civil_status" class="form-control" required="required">
+                            <select name="civil_status" id="civil_status" class="custom-select form-group" required="required">
                                 <option selected disabled>Select:</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
@@ -201,25 +201,25 @@
                         </div>
 
                         <div id='others' style='display:none' class="form-group col">
-                            <label for="civil_status" >If Others:</label>
-                            <input id="oth" class="form-control" name="civil_status"  placeholder="Please Specify">
+                            <label for="civil_status" >(Please Specify)</label>
+                            <input id="oth" class="form-control" name="civil_status">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group col">
                             <label for="sss_no">SSS NO.</label>
-                            <input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                            <input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" maxlength="10" autocomplete="off" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col">
                             <label for="tin">TIN</label>
-                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" autocomplete="off" 	class="form-control" required="required">
+                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="7" autocomplete="off" 	class="form-control" required="required">
                         </div>
 
                         <div class="form-group col">
                             <label for="philhealth_no ">PHILHEALTH NO.</label>
-                            <input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                            <input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col">
@@ -228,7 +228,7 @@
                         </div>
                     </div>
 
-                    <a class="btn btn-primary btnPrevious">Back</a>
+
     				<a class="btn btn-info btnNext">Next</a>
 				</div>
 
@@ -626,15 +626,6 @@
 
 	</div>
     </form>
-    <script>
-        $('.btnNext').click(function(){
-            $('.nav-tabs > .nav-item').next('li').find('a').trigger('click');
-        });
-
-        $('.btnPrevious').click(function(){
-            $('.nav-tabs > .nav-item').prev('li').find('a').trigger('click');
-        });
-    </script>
 	<script>
         function initMap(){
             var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
@@ -671,8 +662,8 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap">
     </script>
-    <script type="text/javascript" src="script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="script/alerts.js"></script>
+    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>

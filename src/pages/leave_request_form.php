@@ -91,22 +91,30 @@
 						<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
 					</div>
 				</div><hr>
-
+				<script>
+					$(function() {
+						$('#reason').change(function(){
+							$('#others').hide();
+							$('#' + $(this).val()).show();
+						});
+					});
+				</script>
 				<div>
-					<select class="custom-select form-group" name="reason">
-						<option selected disabled>Reason for leave</option>
-						<option value="Vacation">Vacation</option>
-						<option value="Emergency">Emergency Leave</option>
-						<option value="Maternal Leave">Maternity Leave</option>
-						<option value="Paternal Leave">Paternity Leave</option>
-						<option value="Sick Leave">Sick Leave</option>
-						<option value="Sent Home">Sent Home</option>
-						<option value="Others">Others</option>
-					</select>
-
-					<div class="form-group">
+					<div>
+						<select class="custom-select form-group" name="reason" id="reason">
+							<option selected disabled>Reason for leave</option>
+							<option value="Vacation">Vacation</option>
+							<option value="Emergency">Emergency Leave</option>
+							<option value="Maternal Leave">Maternity Leave</option>
+							<option value="Paternal Leave">Paternity Leave</option>
+							<option value="Sick Leave">Sick Leave</option>
+							<option value="Sent Home">Sent Home</option>
+							<option value="others">Others</option>
+						</select>
+					</div>
+					<div id="others" class="form-group" style='display:none'>
 						<label for="other_reason">(Please Specify)</label>
-						<input type="text" class="form-control" id="other_reason">
+						<input type="text" class="form-control" name="others" id="other_reason">
 					</div>
 
 					<div class="row">
@@ -117,7 +125,7 @@
 
 						<div class="form-group col">
 							<label for="number_leave">Contact Number during leave</label>
-							<input type="text" class="form-control" name="contact_number" id="number_leave">
+							<input type="text" class="form-control" name="contact_number" onkeypress="numberInput(event)" maxlength="11" id="number_leave">
 						</div>
 					</div>
 				</div><hr>
@@ -146,9 +154,10 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="../script/ajax.js"></script>
-	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
 </body>
