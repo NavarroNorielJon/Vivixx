@@ -72,7 +72,16 @@
 
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<input type="text" class="form-control" id="department" placeholder="Department" name="department">
+							<select class="custom-select form-group" name="department">
+								<option selected disabled>Choose your Department</option>
+								<option value="Vacation">Vacation</option>
+								<option value="Emergency">Emergency Leave</option>
+								<option value="Maternal Leave">Maternity Leave</option>
+								<option value="Paternal Leave">Paternity Leave</option>
+								<option value="Sick Leave">Sick Leave</option>
+								<option value="Sent Home">Sent Home</option>
+								<option value="others">Others</option>
+							</select>
 						</div>
 					</div>
 
@@ -102,6 +111,7 @@
 				</script>
 				<div>
 					<div>
+						<label>Reason</label>
 						<select class="custom-select form-group" name="reason" id="reason1">
 							<option selected disabled>Reason for leave</option>
 							<option value="Vacation">Vacation</option>
