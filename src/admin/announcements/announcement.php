@@ -12,7 +12,7 @@
 			</div>
 			
 			<div class="col">
-				<input name="date" type="date" class="form-control" required min="2018-01-02">
+				<input name="date" type="date" class="form-control" id="date" required min="2018-01-02">
 			</div>
 		</div>
           
@@ -24,8 +24,16 @@
 			Remaining characters: <span id="totalChars">1000</span><br/>
 		</div>
 		<br>
+        <div>
+        Upload Attachment
+        <br>
         <input type="file" name="file">
+        </div>
+        <div>
+        Upload Image
+        <br>
         <input type="file" name="image">
+        </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
         
 	</form>
@@ -70,6 +78,10 @@ $('#container-announcement').ajaxForm({
     };
     $(document).ready(function() {
         $('#text').keyup(counter);
+    });
+    $('#date').datepicker({
+        showOtherMonths: true
+        // selectOtherMonths: true
     });
     
     

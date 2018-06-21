@@ -502,3 +502,7 @@ ul ul a {
 @media(max-width: 576px){
 	background-image: url(img/bg2-sm.jpg);
 }
+
+#second {
+    overflow-y:scroll;
+}
