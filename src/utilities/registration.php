@@ -74,22 +74,42 @@ if(strlen($password) < 8 || strlen($password) > 16){
 
 }
 
-if (!empty($middle_name)) {
-    $username = $first_name[0] . $middle_name[0] . $last_name;
-}else {
-    $username = $first_name[0] . $last_name;
-}
 
-$stmt = "SELECT username from user WHERE username = '$username'";
+
+$stmt = "SELECT username from user";
 $result = $connect->query($stmt);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $vUsername = $row['username'];
-
-$counter = 0;
-while ($username === $vUsername) {
-    $username = $username[counter] . strtoupper($username[1]) . $last_name;
-    $counter++;
+$usernames = [];
+if($statement = $connect->prepare($stmt)){
+    $statement->execute();
+    $statement->bind_result($uname);
+    while($statement->fetch()){
+        $usernames[] = $uname;
+    }
+    $statement->close();
 }
+
+
+
+$username = "";
+$counter = 1;
+if (!empty($middle_name) || $middle_name != '') {
+    $username = $first_name[0] . $middle_name[0] . $last_name;
+    while (in_array($username, $usernames)) {
+        $username = strtoupper(substr($first_name,0,$counter)) . $middle_name[0] . $last_name;
+        $counter++;
+    }
+    echo $username;
+}else {
+    $username = $first_name[0] . $last_name;
+    while (in_array($username, $usernames)) {
+        $username = strtoupper(substr($first_name,0,$counter)) . strtoupper($username[1]) . $last_name;
+        $counter++;
+    }
+}
+
+
 
 $password = password_hash($password, PASSWORD_DEFAULT);
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";

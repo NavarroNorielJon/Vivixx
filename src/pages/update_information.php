@@ -496,12 +496,12 @@
     				<div class="row">
     					<div class="form-group col">
     						<label for="hname">Name of relative</label>
-    						<input type="text" name="rname2" id="rname2" class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="rname[]" id="rname2" class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
     						<label for="rel">Relationship</label>
-    						<input type="text" name="rrel2" id="rrel2"  class="form-control text-transform" autocomplete="off">
+    						<input type="text" name="rrel[]" id="rrel2"  class="form-control text-transform" autocomplete="off">
     					</div>
 
     					<div class="form-group col">
@@ -564,7 +564,15 @@
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" name="e_pass" id="e_pass" class="form-control">
+                            <div class="input-group">
+                    			<input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required" >
+
+                        		<div class="input-group-append">
+                            		<button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
+                                		<i class="material-icons" id="icon1">visibility</i>
+                                	</button>
+                            	</div>
+    						</div>
     					</div>
     				</div>
 
@@ -576,7 +584,15 @@
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" name="s_pass" id="s_pass" class="form-control">
+                            <div class="input-group">
+                    			<input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required" >
+
+                        		<div class="input-group-append">
+                            		<button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
+                                		<i class="material-icons" id="icon2">visibility</i>
+                                	</button>
+                            	</div>
+    						</div>
     					</div>
     				</div>
 
@@ -588,7 +604,15 @@
 
     					<div class="form-group col">
     						<label>Password</label>
-    						<input type="text" name="qq_pass" id="qq_pass" class="form-control">
+                            <div class="input-group">
+                    			<input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required" >
+
+                        		<div class="input-group-append">
+                            		<button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
+                                		<i class="material-icons" id="icon3">visibility</i>
+                                	</button>
+                            	</div>
+    						</div>
     					</div>
     				</div>
 
