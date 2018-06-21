@@ -8,7 +8,7 @@
         $sql = "SELECT username, email FROM user WHERE username = '$user' or email ='$user';";
         $result = mysqli_query($connect,$sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user === $row['username']) {
+        if ($user === $row['username'] || $user === $row['email']) {
             $stmt = "SELECT username, password, type, status FROM user WHERE username = '$user' or email = '$user';";
             $results = mysqli_query($connect, $stmt);
             $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
