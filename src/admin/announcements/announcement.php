@@ -58,7 +58,7 @@
     </div>	
 </body>
 <script>
-$(".date").datepicker({
+$("#date").datepicker({
     showButtonPanel: true
 });
 $('#container-announcement').ajaxForm({

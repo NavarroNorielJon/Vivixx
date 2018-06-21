@@ -47,6 +47,9 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="announcements/view_announcement.php">Announcement</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link logout" href="../logout.php">Logout</a>
 					</li>
 				</ul>

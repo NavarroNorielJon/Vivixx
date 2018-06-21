@@ -17,8 +17,10 @@
                         $user_middle = $_GET["mname"];
                         $user_last = $_GET["lname"];
                         echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) .$req_id." ".$user_id."</h1>";
+                        echo $req_id;
                     ?>
                 </div>
+                <input type="hidden" name="req_id" value="<?php echo $req_id?>">
 
                 <div class="modal-body">
                     <div class="row">
@@ -103,8 +105,8 @@
 				    </div>
 
                     <div style="text-align:right">
-                        <input type="submit" name="reject" value="Reject">
-                        <input type="submit" name="accept" value="Accept">
+                        <input type="submit" class="btn btn-danger" name="reject" value="Reject">
+                        <input type="submit" class="btn btn-success" name="accept" value="Accept">
                     </div>
 
                 </div>

@@ -16,8 +16,10 @@
 	<script src="../script/jquery.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>  
+	
 </head>
 
 <body>
@@ -69,6 +71,7 @@
 		$(document).ready(function() {
 			$(".dropdown-toggle").dropdown();
 		});
+		
 	</script>
 </body>
 </html>
