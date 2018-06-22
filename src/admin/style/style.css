@@ -1,55 +1,44 @@
+/*This stylesheet is created mainly for the styling of the admin's side*/
+
 #navigation-bar {
 	background-color: #005959;
-	padding: 0 0 0 5px;
 	max-height: 70px;
-	min-height: 70px
+	min-height: 70px;
+	padding: 0 0 0 5px;
+}
+
+#navigation-bar #nav-logo {
+	background-color: white;
+	height: auto;
+	padding: 0;
+	width: 7%;
 }
 
 #navigation-bar .navbar-brand {
 	font-size: 2rem;
 	font-family: rockwell;
+	height: auto;
 	margin: 3px 5px 5px 15px;
-	height: auto;
-}
-
-#navigation-bar #nav-logo {
-	width: 7%;
-	height: auto;
-	padding: 0;
-	background-color: white;
-}
-
-#navigation-bar .navbar-nav .nav-link {
-	display: block;
-/*	padding: 23px 10px 23px 10px;*/
-	color: #fff;
-}
-
-#navigation-bar .navbar-nav .nav-link:hover {
-	background-color: #00b3b3;
-}
-
-#navigation-bar .navbar-nav .logout:hover {
-	background-color: #ff1a1a;
 }
 
 #navigation-bar .navbar-nav .active {
 	background-color: #009999;
 }
 
-#wrapper .index-content {
-	margin-top: 90px;
+#navigation-bar .navbar-nav .logout:hover {
+	background-color: #ff1a1a;
+}
+
+#navigation-bar .navbar-nav .nav-link {
+	color: #fff;
+	display: block;
+}
+
+#navigation-bar .navbar-nav .nav-link:hover {
+	background-color: #00b3b3;
 }
 
 #wrapper .accounts-content {
-	margin-top: 100px;
-}
-
-#wrapper .user-content {
-	margin-top: 100px;
-}
-
-#wrapper .leave-request-content {
 	margin-top: 100px;
 }
 
@@ -57,11 +46,26 @@
 	margin-top: 100px;
 }
 
+#wrapper .index-content {
+	margin-top: 90px;
+}
+
+#wrapper .leave-request-content {
+	margin-top: 100px;
+}
+
 #wrapper #navbar-content {
 	background-color: inherit;
 }
+<<<<<<< HEAD
 #text {
     resize: none;
     height:300px;
     width:500px;
  }
+=======
+
+#wrapper .user-content {
+	margin-top: 100px;
+}
+>>>>>>> dbd0edd083d65733f57f6ecc3d8775e8a6a41e43
