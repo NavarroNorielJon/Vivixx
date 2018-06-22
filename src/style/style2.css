@@ -13,68 +13,70 @@ ul ul a {
 	padding-left: 30px;
 }
 
-#update-information .container {
-	padding-top: 15px;
-}
-
 .text-transform {
 	text-transform: capitalize;
 }
 
 #maps{
+	border: solid 2px black;
 	height: 400px;
 	width: 100%;
-	border: solid 2px black;
 }
 
-#weak{
-	color: red;
+/*style for the validation for the password*/
+#average{
+	color: #4DB82C;
 }
 
 #good{
 	color: #ff9900;
 }
 
-#average{
-	color: #4DB82C;
-}
-
 #strong{
 	color: green;
+}
+/*end*/
+
+
+/*Style for the update information page*/
+#update-information .container {
+	padding-top: 15px;
 }
 
 #update-information .container a{
 	color: #005959 !important;
 }
 
+#update-information .container a:focus {
+	background-color: #005959;
+	color: #fff !important;
+}
+
+#update-information .container a:hover{
+	background-color: #005959;
+	color: #fff !important;
+}
+
 #update-information .update-information-header {
 	background-color: #005959;
 	color:white;
-	width: 100%;
 	max-height: 108px;
 	min-height: 108px;
 	padding-top: 25px;
 	text-align: center;
+	width: 100%;
 }
 
 #update-information .logout {
-	position: absolute;
-	left: 95.4vw;
-	border-radius: 0;
-	margin: -15px 0 0 0;
 	background-color: #ff1a1a;
+	border-radius: 0;
+	left: 95.4vw;
+	margin: -15px 0 0 0;
 	padding: 5px 10px 5px 10px;
+	position: absolute;
 }
+/*end*/
 
-#update-information .container a:hover{
-	color: #fff !important;
-	background-color: #005959;
-}
-
-#update-information .container a:focus {
-	color: #fff !important;
-	background-color: #005959;
-}
 
 #sidebar i {
 	margin-right: 10px;
@@ -478,9 +480,9 @@ ul ul a {
 	}
 
 	#sidebar .icon {
-		padding-left: 15px;
 		display: block;
 		font-size: 1.3rem;
+		padding-left: 15px;
 	}
 
 	.message {
@@ -502,15 +504,15 @@ ul ul a {
 	}
 
 #footer {
-	margin-top: 2%;
-	padding: 5px 0px 3px 0px;
-	z-index: 9999 !important;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
 	background-color: #003333;
+	bottom: 0;
 	color: white;
 	font-family: serif;
+	left: 0;
+	margin-top: 2%;
+	padding: 5px 0px 3px 0px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 9999 !important;
 }

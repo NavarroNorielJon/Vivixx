@@ -40,8 +40,8 @@ $('#signup_form').ajaxForm({
     success: function () {
         swal({
             type: 'success',
-            title: 'Success!',
-            text: "Thank you for registering in VIVIXX Corporation!",
+            title: 'Successfully Registerd',
+            text: "Your username is ",
             icon: 'success',
             showConfirmButton: true,
         }).then(function(){
