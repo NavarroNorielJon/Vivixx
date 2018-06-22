@@ -3,11 +3,12 @@ ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
-    if(){
+
+    
       $subject = $_POST["subject"];
       $date = $_POST["date"];
       $body = $_POST["body"];
-    }
+
       $file_names = [];
       $file_paths = [];
       $file_tmp_names = [];
