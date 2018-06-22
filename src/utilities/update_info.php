@@ -23,6 +23,10 @@ $permanent_tel_no = mysqli_real_escape_string($connect, $_POST['permanent_tel_no
 $citizenship = mysqli_real_escape_string($connect, $_POST['citizenship']);
 $religion = mysqli_real_escape_string($connect, $_POST['religion']);
 $civil_status = mysqli_real_escape_string($connect, $_POST['civil_status']);
+
+if ($civil_status === "others") {
+    $civil_status = mysqli_real_escape_string($connect, $_POST['other_civil']);
+}
 $sss_no = mysqli_real_escape_string($connect, $_POST['sss_no']);
 $tin = mysqli_real_escape_string($connect, $_POST['tin']);
 $philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
@@ -49,20 +53,42 @@ $child_birth = $_POST['child_birth'];
 
 // //Educational background
 $elem_school_name = mysqli_real_escape_string($connect, $_POST['elem_school_name']);
-$elem_yr_grad = mysqli_real_escape_string($connect, $_POST['elem_yr_grad']);
-$elem_high_level = mysqli_real_escape_string($connect, $_POST['elem_high_level']);
+$elem_status = mysqli_real_escape_string($connect, $_POST['option1']);
+
+if ($elem_status === "g1") {
+    $elem_res = mysqli_real_escape_string($connect, $_POST['elem_yr_grad']);
+
+} else {
+    $elem_res = mysqli_real_escape_string($connect, $_POST['elem_high_level']);
+}
 
 $sec_school_name = mysqli_real_escape_string($connect, $_POST['sec_school_name']);
-$sec_yr_grad = mysqli_real_escape_string($connect, $_POST['sec_yr_grad']);
-$sec_high_level = mysqli_real_escape_string($connect, $_POST['sec_high_level']);
+$sec_status = mysqli_real_escape_string($connect, $_POST['option2']);
+
+if ($sec_status === "g2") {
+    $sec_res = mysqli_real_escape_string($connect, $_POST['sec_yr_grad']);
+} else {
+    $sec_res = mysqli_real_escape_string($connect, $_POST['sec_high_level']);
+}
 
 $col_school_name = mysqli_real_escape_string($connect, $_POST['col_school_name']);
-$col_yr_grad = mysqli_real_escape_string($connect, $_POST['col_yr_grad']);
-$col_high_level = mysqli_real_escape_string($connect, $_POST['col_high_level']);
+$col_status = mysqli_real_escape_string($connect, $_POST['option3']);
+
+if ($col_status === "g3") {
+    $col_res = mysqli_real_escape_string($connect, $_POST['col_yr_grad']);
+}else {
+    $col_res = mysqli_real_escape_string($connect, $_POST['col_high_level']);
+}
 
 $post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name']);
-$post_yr_grad = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
-$post_high_level = mysqli_real_escape_string($connect, $_POST['post_high_level']);
+$post_status = mysqli_real_escape_string($connect, $_POST['option4']);
+
+if ($post_status === "g4") {
+    $post_res = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
+}else {
+    $post_res = mysqli_real_escape_string($connect, $_POST['post_high_level']);
+
+}
 //
 // //Emergency info Sheet
 $long = mysqli_real_escape_string($connect, $_POST['lng']);
@@ -129,10 +155,10 @@ if($result->num_rows > 0){
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 
-$elementary = $elem_school_name . "," . $elem_yr_grad ."," . $elem_high_level;
-$secondary = $sec_school_name . "," . $sec_yr_grad . "," . $sec_high_level;
-$college = $col_school_name . "," . $col_yr_grad . "," . $col_high_level;
-$post_grad = $post_school_name . "," . $post_yr_grad . "," . $post_high_level;
+$elementary = $elem_school_name . "|" . $elem_res;
+$secondary = $sec_school_name . "|" . $sec_res;
+$college = $col_school_name . "|" . $col_res;
+$post_grad = $post_school_name . "|" . $post_res;
 
 $sql = "SELECT user_id FROM user where username='$username'";
 $result = $connect->query($sql);

@@ -5,70 +5,36 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>Update Information</title>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-	<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-</head>
+    <head>
+        <title>Update Information</title>
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+        <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+    </head>
 
-<body id="update-information">
-	<div class="update-information-header">
-		<h1>Update Information Form </h1>
-		<button type="button" class="btn btn-default logout">
-			<a href="../utilities/logout" id="logout">
-				<i class="material-icons">
-					power_settings_new
-				</i>
-			</a>
-		</button>
-	</div>
-    <form id="update_form" id="update_form" action="../utilities/update_info" method="POST">
+    <body id="update-information">
+        <div class="update-information-header">
+            <h1>Update Information Form
+            </h1>
+            <button type="button" class="btn btn-default logout">
+                <a href="../utilities/logout" id="logout">
+                    <i class="material-icons">
+                        power_settings_new
+                    </i>
+                </a>
+            </button>
+        </div>
         <div class="container">
-    		<ul class="nav nav-tabs mb-4" id="tab" role="tablist">
-
-                <li class="nav-item">
-                    <a class="nav-link active show" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personals" aria-selected="true">
-    					Personal Information
-    				</a>
-    			</li>
-
-    			<li class="nav-item">
-    				<a class="nav-link" id="family-tab" data-toggle="tab" href="#family" role="tab" aria-controls="family" aria-selected="false">
-    					Family Background
-    				</a>
-    			</li>
-
-    			<li class="nav-item">
-    				<a class="nav-link" id="educ-tab" data-toggle="tab" href="#educ" role="tab" aria-controls="educ" aria-selected="false">
-    					Educational Background
-    				</a>
-    			</li>
-
-    			<li class="nav-item">
-    				<a class="nav-link" id="emergency-tab" data-toggle="tab" href="#emergency" role="tab" aria-controls="emergency" aria-selected="false">
-    					Emergency Information Sheet
-    				</a>
-    			</li>
-
-    			<li class="nav-item">
-    				<a class="nav-link" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="false">
-    					Tutor's Info Sheet
-    				</a>
-    			</li>
-
-    			<li class="nav-item">
-    				<a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false">
-                        Submit
-    				</a>
-    			</li>
-    		</ul>
-			<div class="tab-content" id="tabContent">
-                <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <form id="update_form">
+                <fieldset id="personal">
+                    <h2>Step 1: Personal Information</h2>
                     <div class="row">
                         <div class="form-group col-4">
                             <label for="prof_image">Profile Image</label>
@@ -92,9 +58,19 @@
                             <input type="text" name="birth_place" autocomplete="off" placeholder="address" id="pbirth" class="form-control text-transform" required="required">
                         </div>
 
-                        <div class="form-group col" >
+                        <div class="form-group col">
                             <label for="contact">Mobile Number</label>
-                            <input type="tel" name="contact_number" maxlength="11" autocomplete="off"  placeholder="Mobile Number" class="form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" class=" form-control" required="required">
+                            <input
+                                type="tel"
+                                name="contact_number"
+                                maxlength="11"
+                                autocomplete="off"
+                                placeholder="Mobile Number"
+                                class=" form-control"
+                                id="contact"
+                                onkeypress="numberInput(event)"
+                                onkeyup="helperText('contact_number',this.value,'validContact')"
+                                required="required">
                             <div id="validContact"></div>
                         </div>
                     </div>
@@ -103,18 +79,17 @@
                         <div class=" form-group col">
                             <label for="gender">Sex</label>
                             <select name="gender" class="form-control" required="required">
-                                <option selected disabled>Select Here:</option>
+                                <option selected="selected" disabled="disabled">Select Here:</option>
                                 <option value="m">Male</option>
                                 <option value="f">Female</option>
                             </select>
                         </div>
 
-
                         <div class="form-group col">
                             <label for="height">Height</label>
                             <div class="row no-gutters ">
                                 <div class="form-group col">
-                                    <input type="text" name="ft" id="ft" class="form-control" autocomplete="off" placeholder="(ft.)" maxlength="2" onkeypress="numberInput(event)"  required="required">
+                                    <input type="text" name="ft" id="ft" class="form-control" autocomplete="off" placeholder="(ft.)" maxlength="2" onkeypress="numberInput(event)" required="required">
                                 </div>
                                 <div class="form-group col">
                                     <input type="text" name="in" id="in" class="form-control" autocomplete="off" placeholder="(in.)" maxlength="2" onkeypress="numberInput(event)" required="required">
@@ -130,7 +105,7 @@
                         <div class="form-group col">
                             <label for="blood">Blood Type</label>
                             <select name="blood" class="form-control" required="required">
-                                <option selected disabled>Select Blood Type:</option>
+                                <option selected="selected" disabled="disabled">Select Blood Type:</option>
                                 <option value="o">O</option>
                                 <option value="a">A</option>
                                 <option value="b">B</option>
@@ -147,7 +122,7 @@
 
                         <div class="form-group col-2 ">
                             <label for="residential_zip">Zip Code</label>
-                            <input type="text" name="residential_zip" class="form-control" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off"  required="required">
+                            <input type="text" name="residential_zip" class="form-control" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
                         </div>
 
                         <div class="form-group col-3 ">
@@ -167,37 +142,36 @@
                             <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control" required="required">
                         </div>
 
-                        <div class="form-group col-3 " >
+                        <div class="form-group col-3 ">
                             <label for="permanent_tel_no">Telephone NO.</label>
                             <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="Telephone number" class="form-control" required="required">
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="form-group col-4" >
+                        <div class="form-group col-4">
                             <label for="citizenship">Citizenship</label>
                             <input type="text" name="citizenship" id="citizenship" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
                         </div>
 
-
-                        <div class="form-group col-4" >
+                        <div class="form-group col-4">
                             <label for="religion">Religion</label>
                             <input type="text" name="religion" id="religion" class="form-control text-transform" autocomplete="off" placeholder="Religion" required="required">
                         </div>
 
                         <script>
-                            $(function() {
-                                $('#civil_status').change(function(){
+                            $(function () {
+                                $('#civil_status').change(function () {
                                     $('#others').hide();
                                     $('#' + $(this).val()).show();
                                 });
                             });
                         </script>
 
-                        <div class="form-group col-2" >
+                        <div class="form-group col-2">
                             <label for="civil_status">Civil Status</label>
                             <select name="civil_status" id="civil_status" class="custom-select form-group" required="required">
-                                <option selected disabled>Select:</option>
+                                <option selected="selected" disabled="disabled">Select:</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="widowed">Widowed</option>
@@ -208,8 +182,8 @@
                         </div>
 
                         <div id='others' style='display:none' class="form-group col">
-                            <label for="civil_status">(Please Specify)</label>
-                            <input id="oth" class="form-control" placeholder=""  name="civil_status">
+                            <label for="other_civil">(Please Specify)</label>
+                            <input id="oth" class="form-control" placeholder="" name="other_civil">
                         </div>
                     </div>
 
@@ -221,7 +195,7 @@
 
                         <div class="form-group col">
                             <label for="tin">TIN</label>
-                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="7" autocomplete="off" 	class="form-control" required="required">
+                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="7" autocomplete="off" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col">
@@ -234,13 +208,12 @@
                             <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
+                    <input type="button" class="next btn btn-primary" value="Next" onclick="onTop()" id="first_next"/>
+                </fieldset>
 
-
-    				<a class="btn btn-info btnNext">Next</a>
-				</div>
-
-                <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
-                    <h5>Father's Name</h5>
+                <fieldset id="family">
+                    <h2>Step 2: Family Background</h2>
+                    <h5 id="sample">Father's Name</h5>
                     <div class="row">
                         <div class="form-group col">
                             <label for="ffname">First Name</label>
@@ -279,7 +252,8 @@
 
                     <h5>Spouse's Name(Optional)</h5>
                     <sub>
-                        <strong>Note:</strong> If you dont have a spouse, it's unneccessary to fill up the form below
+                        <strong>Note:</strong>
+                        If you dont have a spouse, it's unneccessary to fill up the form below
                     </sub>
                     <br>
 
@@ -322,7 +296,6 @@
                         </div>
                     </div>
 
-
                     <h5>Child/Children's Information</h5>
                     <div class="row">
                         <div class="form-group col-6">
@@ -335,352 +308,508 @@
                             <div class="input-group">
                                 <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
                                 <div class="input-group-append">
-                                    <button class="btn btn-success" type="button" onclick="add()"><i class="large material-icons">add</i></button>
+                                    <button class="btn btn-success" type="button" onclick="add()">
+                                        <i class="large material-icons">add</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="child"></div>
-                    <a class="btn btn-primary btnPrevious">Back</a>
-                    <a class="btn btn-info btnNext">Next</a>
-                </div>
+                    <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="second_next" value="Next"/>
+                </fieldset>
 
-                <div class="tab-pane fade" id="educ" role="tabpanel" aria-labelledby="educ-tab">
+                <fieldset id="educational">
+                    <h2>Step 3: Educational Background</h2>
                     <h5>Elementary</h5>
                     <div class="row">
-                    <div class="form-group col">
-                        <label for="school_name">Name of School</label>
-                        <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
-                    </div>
+                        <div class="form-group col">
+                            <label for="school_name">Name of School</label>
+                            <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                        </div>
+                        <script>
+                            $(function () {
+                                $('#option1').change(function () {
+                                    $('#g1').hide();
+                                    $('#u1').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script>
+                        <div class="form-group col">
+                            <label for="option1">Status</label>
+                            <select name="option1" id="option1" class="form-control" required="required">
+                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option value="g1">Graduated</option>
+                                <option value="u1">Undergraduate</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="yr_grad">Year Graduated</label>
-                        <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-                    </div>
+                        <div class="form-group col" id="g1" style="display:none">
+                            <label for="yr_grad">Year Graduated</label>
+                            <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="high_level">Highest Level</label>
-                        <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-                    </div>
+                        <div class="form-group col" id="u1" style="display:none">
+                            <label for="high_level">Highest Level</label>
+                            <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                        </div>
 
                     </div>
 
                     <h5>Secondary</h5>
                     <div class="row">
-                    <div class="form-group col">
-                        <label for="school_name">Name of School</label>
-                        <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
-                    </div>
+                        <div class="form-group col">
+                            <label for="school_name">Name of School</label>
+                            <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                        </div>
+                        <script>
+                            $(function () {
+                                $('#option2').change(function () {
+                                    $('#g2').hide();
+                                    $('#u2').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script>
+                        <div class="form-group col">
+                            <label for="option2">Status</label>
+                            <select name="option2" id="option2" class="form-control" required="required">
+                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option value="g2">Graduated</option>
+                                <option value="u2">Undergraduate</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="yr_grad">Year Graduated</label>
-                        <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-                    </div>
+                        <div class="form-group col" id="g2" style="display:none">
+                            <label for="yr_grad">Year Graduated</label>
+                            <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="high_level">Highest Level</label>
-                        <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-                    </div>
+                        <div class="form-group col" id="u2" style="display:none">
+                            <label for="high_level">Highest Level</label>
+                            <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                        </div>
 
                     </div>
 
                     <h5>College</h5>
                     <div class="row">
-                    <div class="form-group col">
-                        <label for="school_name">Name of School</label>
-                        <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
-                    </div>
+                        <div class="form-group col">
+                            <label for="school_name">Name of School</label>
+                            <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="yr_grad">Year Graduated</label>
-                        <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control"  autocomplete="off">
-                    </div>
+                        <script>
+                            $(function () {
+                                $('#option3').change(function () {
+                                    $('#g3').hide();
+                                    $('#u3').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script>
+                        <div class="form-group col">
+                            <label for="option3">Status</label>
+                            <select name="option3" id="option3" class="form-control" required="required">
+                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option value="g3">Graduated</option>
+                                <option value="u3">Undergraduate</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group col">
-                        <label for="high_level">Highest Level</label>
-                        <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
-                    </div>
+                        <div class="form-group col" id="g3" style="display:none">
+                            <label for="yr_grad">Year Graduated</label>
+                            <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col" id="u3" style="display:none">
+                            <label for="high_level">Highest Level</label>
+                            <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                        </div>
 
                     </div>
 
                     <h5>Post Grad</h5>
                     <div class="row">
-                    <div class="form-group col">
-                        <label for="school_name">Name of School</label>
-                        <input type="text" name="post_school_name" id="post_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                        <div class="form-group col">
+                            <label for="school_name">Name of School</label>
+                            <input type="text" name="post_school_name" id="post_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                        </div>
+
+                        <script>
+                            $(function () {
+                                $('#option4').change(function () {
+                                    $('#g4').hide();
+                                    $('#u4').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script>
+                        <div class="form-group col">
+                            <label for="option4">Status</label>
+                            <select name="option4" id="option4" class="form-control" required="required">
+                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option value="g4">Graduated</option>
+                                <option value="u4">Undergraduate</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col" id="g4" style="display:none">
+                            <label for="yr_grad">Year Graduated</label>
+                            <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col" id="u4" style="display:none">
+                            <label for="high_level">Highest Level</label>
+                            <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                        </div>
+
                     </div>
 
-                    <div class="form-group col">
-                        <label for="yr_grad">Year Graduated</label>
-                        <input type="text" name="post_yr_grad" id="post_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
-                    </div>
+                    <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="third_next" value="Next"/>
+                </fieldset>
 
-                    <div class="form-group col">
-                        <label for="high_level">Highest Level</label>
-                        <input type="text" name="post_high_level" id="post_high_level" placeholder="(If Undergraduate)" class="form-control"  autocomplete="off">
-                    </div>
-
-                    </div>
-
-                    <a class="btn btn-primary btnPrevious">Back</a>
-    				<a class="btn btn-info btnNext">Next</a>
-                </div>
-
-                <div class="tab-pane fade" id="emergency" role="tabpanel" aria-labelledby="emergency-tab">
+                <fieldset id="emergency">
+                    <h2>Step 4: Emergency Information Sheet</h2>
                     <h5>Main City Address</h5>
                     <div>
-                        <div id="maps">
-        				</div>
-                        <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()" required>
-                        <input type="text" id="lng" name="lng" class="d-none" required>
+                        <div id="maps"></div>
+                        <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()" required="required">
+                        <input type="text" id="lng" name="lng" class="d-none" required="required">
                         <br>
                         <div>
-                            <label><h6>Main address</h6></label>
+                            <label>
+                                <h6>Main address</h6>
+                            </label>
                             <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address">
                         </div>
                         <br>
                         <super>(Your alternate address when you are not at Main City Address)</super>
-        				<div class="row">
-        					<div class="form-group col">
-        						<label for="secondary_add"><h6>Secondary City Address</h6></label>
-        						<input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address">
-        					</div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label for="secondary_add">
+                                    <h6>Secondary City Address</h6>
+                                </label>
+                                <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address">
+                            </div>
 
-        					<div class="form-group col">
-        						<label><h6>Provincial/Permanent Address</h6></label>
-        						<input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" >
-        					</div>
-        				</div>
+                            <div class="form-group col">
+                                <label>
+                                    <h6>Provincial/Permanent Address</h6>
+                                </label>
+                                <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform">
+                            </div>
+                        </div>
                     </div>
-    				<hr>
-    				<h6>Your Housemates</h6>
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="hname">Name of Housemate</label>
-    						<input type="text" name="hname[]" id="hname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rel">Relationship</label>
-    						<input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="mnumber1">Mobile Number</label>
-    						<input type="tel" name="mnumber[]" id="mnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
-
-    				</div>
-
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="hname">Name of Housemate</label>
-    						<input type="text" name="hname[]" id="hname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rel">Relationship</label>
-    						<input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="mnumber2">Mobile Number</label>
-    						<input type="tel" name="mnumber[]" id="mnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
-
-
-    				</div>
-
-    				<h6>Your Closest Living Relatives</h6>
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="hname">Name of relative</label>
-    						<input type="text" name="rname[]" id="rname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rel">Relationship</label>
-    						<input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rmnumber1">Mobile Number</label>
-    						<input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
-
-
-    				</div>
-
-    				<div class="row">
-    					<div class="form-group col">
-    						<label for="hname">Name of relative</label>
-    						<input type="text" name="rname[]" id="rname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rel">Relationship</label>
-    						<input type="text" name="rrel[]" id="rrel2" placeholder="Relationship"  class="form-control text-transform" autocomplete="off">
-    					</div>
-
-    					<div class="form-group col">
-    						<label for="rmnumber2">Mobile Number</label>
-    						<input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
-    					</div>
-    				</div>
-
-                    <a class="btn btn-primary btnPrevious">Back</a>
-    				<a class="btn btn-info btnNext">Next</a>
-                </div>
-
-                <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
+                    <hr>
+                    <h6>Your Housemates</h6>
                     <div class="row">
-    					<div class="form-group col">
-    						<label>Tutor's Full Name</label>
-    						<input type="text" name="tutor_name" id="tutor_name" placeholder="full name" class="form-control text-transform">
-    					</div>
+                        <div class="form-group col">
+                            <label for="hname">Name of Housemate</label>
+                            <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col">
-    						<label>Nickname</label>
-    						<input type="text" name="nickname" id="nickname" placeholder="nickname" class="form-control text-transform">
-    					</div>
+                        <div class="form-group col">
+                            <label for="rel">Relationship</label>
+                            <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col-2">
-    						<label>Mobile number</label>
-    						<input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" onkeypress="numberInput(event)" maxlength="11" class="form-control">
-    					</div>
+                        <div class="form-group col">
+                            <label for="mnumber1">Mobile Number</label>
+                            <input type="tel" name="mnumber[]" id="mnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col-2">
-    						<label>Landline Number</label>
-    						<input type="tel" name="landline" id="landline" placeholder="Landline" onkeypress="numberInput(event)" maxlength="7" class="form-control">
-    					</div>
-    				</div>
+                    </div>
 
-    				<div class="row">
-    					<div class="form-group col">
-    						<label>Accounts</label>
-    						<input type="text" name="acc" id="acc" placeholder="Accounts" class="form-control">
-    					</div>
-    				</div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="hname">Name of Housemate</label>
+                            <input type="text" name="hname[]" id="hname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    				<div class="row">
-    					<div class="form-group col">
-    						<label>Company Email address</label>
-    						<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
-    					</div>
+                        <div class="form-group col">
+                            <label for="rel">Relationship</label>
+                            <input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                        </div>
 
-    					<div class="form-group col">
-    						<label>Password</label>
+                        <div class="form-group col">
+                            <label for="mnumber2">Mobile Number</label>
+                            <input type="tel" name="mnumber[]" id="mnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                        </div>
+
+                    </div>
+                    <hr>
+                    <h6>Your Closest Living Relatives</h6>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="hname">Name of relative</label>
+                            <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="rel">Relationship</label>
+                            <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="rmnumber1">Mobile Number</label>
+                            <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="hname">Name of relative</label>
+                            <input type="text" name="rname[]" id="rname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="rel">Relationship</label>
+                            <input type="text" name="rrel[]" id="rrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="rmnumber2">Mobile Number</label>
+                            <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                        </div>
+                    </div>
+                    <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
+                    <input type="button" name="password" class="next btn btn-primary" id="fourth_next" value="Next"/>
+                </fieldset>
+
+                <fieldset id="tutor">
+                    <h2>Step 5: Tutor Info Sheet</h2>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label>Tutor's Full Name</label>
+                            <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" class="form-control text-transform">
+                        </div>
+
+                        <div class="form-group col">
+                            <label>Nickname</label>
+                            <input type="text" name="nickname" id="nickname" placeholder="nickname" class="form-control text-transform">
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label>Mobile number</label>
+                            <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" onkeypress="numberInput(event)" maxlength="11" class="form-control">
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label>Landline Number</label>
+                            <input type="tel" name="landline" id="landline" placeholder="Landline" onkeypress="numberInput(event)" maxlength="7" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            <label>Accounts</label>
+                            <input type="text" name="acc" id="acc" placeholder="Accounts" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            <label>Company Email address</label>
+                            <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                        </div>
+
+                        <div class="form-group col">
+                            <label>Password</label>
                             <div class="input-group">
-                    			<input type="password" placeholder="Password" name="c_password" id="c_password"  class="form-control" required="required" >
+                                <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
 
-                        		<div class="input-group-append">
-                            		<button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
-                                		<i class="material-icons" id="icon1">visibility</i>
-                                	</button>
-                            	</div>
-    						</div>
-    					</div>
-    				</div>
+                                <div class="input-group-append">
+                                    <button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
+                                        <i class="material-icons" id="icon1">visibility</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    				<div class="row">
-    					<div class="form-group col">
-    						<label>Skype Account</label>
-    						<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-    					</div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label>Skype Account</label>
+                            <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+                        </div>
 
-    					<div class="form-group col">
-    						<label>Password</label>
+                        <div class="form-group col">
+                            <label>Password</label>
                             <div class="input-group">
-                    			<input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required" >
+                                <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
 
-                        		<div class="input-group-append">
-                            		<button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
-                                		<i class="material-icons" id="icon2">visibility</i>
-                                	</button>
-                            	</div>
-    						</div>
-    					</div>
-    				</div>
+                                <div class="input-group-append">
+                                    <button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
+                                        <i class="material-icons" id="icon2">visibility</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    				<div class="row">
-    					<div class="form-group col">
-    						<label>QQ Number</label>
-    						<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
-    					</div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label>QQ Number</label>
+                            <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                        </div>
 
-    					<div class="form-group col">
-    						<label>Password</label>
+                        <div class="form-group col">
+                            <label>Password</label>
                             <div class="input-group">
-                    			<input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required" >
+                                <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
 
-                        		<div class="input-group-append">
-                            		<button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
-                                		<i class="material-icons" id="icon3">visibility</i>
-                                	</button>
-                            	</div>
-    						</div>
-    					</div>
-    				</div>
+                                <div class="input-group-append">
+                                    <button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
+                                        <i class="material-icons" id="icon3">visibility</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="fifth_next" value="Next"/>
+                </fieldset>
 
-    				<a class="btn btn-primary btnPrevious">Back</a>
-    				<a class="btn btn-info btnNext">Next</a>
-                </div>
+                <fieldset>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
+                    <input type="submit" name="submit" class="submit btn btn-success" value="Submit"/>
+                </fieldset>
+            </form>
 
-                <div class="tab-pane fade" id="submit" role="tabpanel" aria-labelledby="submit-tab">
-                    <button type="submit">Submit</button>
-                </div>
-            </div>
+            <div id="footer"></div>
         </div>
-    </form>
 
-	<div id="footer">
-		<p>Vivixx Corporation</p>
-	</div>
-    <script>
-        $('btnNext').click(function () {
-            $('.nav-tabs > .active ').next('li').find('a').trigger('click');
-        });
-    </script>
+        <div id="footer">
+            <p>Vivixx Corporation</p>
+        </div>
 
-	<script>
-        function initMap(){
-            var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-            var myOptions = {
-              zoom: 18,
-              center: myLatlng,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+        <script>
+            function initMap() {
+                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+                var myOptions = {
+                    zoom: 18,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-            var marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-                draggable:true
-            });
-            google.maps.event.addListener(
-                marker,
-                'drag',
-                function() {
+                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+                google.maps.event.addListener(marker, 'drag', function () {
                     document.getElementById('lat').value = marker.position.lat();
                     document.getElementById('lng').value = marker.position.lng();
-                }
-            );
-        }
+                });
+            }
 
-        function invalid(){
-            swal({
-                title: "Error",
-                text: "Please complete all the required information",
-                icon: "error",
+            function invalid() {
+                swal({title: "Error", text: "Please complete all the required information", icon: "error"});
+            }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                var current = 1,
+                    current_step,
+                    next_step,
+                    steps;
+                steps = $("fieldset").length;
+                $(".next").click(function () {
+                    current_step = $(this).parent();
+                    next_step = $(this).parent().next();
+                    next_step.show();
+                    current_step.hide();
+                    setProgressBar(++current);
+                });
+                $(".previous").click(function () {
+                    current_step = $(this).parent();
+                    next_step = $(this).parent().prev();
+                    next_step.show();
+                    current_step.hide();
+                    setProgressBar(--current);
+                });
+                setProgressBar(current);
+                // Change progress bar action
+                function setProgressBar(curStep) {
+                    var percent = parseFloat(100 / steps) * curStep;
+                    percent = percent.toFixed();
+                    $(".progress-bar").css("width", percent + "%").html(percent + "%");
+                }
             });
-        }
-	</script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="../script/alerts.js"></script>
-	<script type="text/javascript" src="../script/popper.min.js"></script>
-	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>
-</body>
+        </script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#personal :input[required]').keyup(function () {
+                    $('#personal :input[required]').each(function () {
+                        if ($(this).val() == '') {
+                            $('#first_next').attr("disabled", true);
+                        } else {
+                            $('#first_next').attr("disabled", false);
+
+                        }
+                    });
+                });
+
+                $('#family :input[required]').keyup(function () {
+                    $('#family :input[required]').each(function () {
+                        if ($(this).val() == '') {
+                            $('#second_next').attr("disabled", true);
+                        } else {
+                            $('#second_next').attr("disabled", false);
+                        }
+                    });
+                });
+
+                $('#educational :input[required]').keyup(function () {
+                    $('#educational :input[required]').each(function () {
+                        if ($(this).val() == '') {
+                            $('#third_next').attr("disabled", true);
+                        } else {
+                            $('#third_next').attr("disabled", false);
+                        }
+                    });
+                });
+
+                $('#emergency :input[required]').keyup(function () {
+                    $('#emergency :input[required]').each(function () {
+                        if ($(this).val() == '') {
+                            $('#fourth_next').attr("disabled", true);
+                        } else {
+                            $('#fourth_next').attr("disabled", false);
+                        }
+                    });
+                });
+
+                $('#tutor :input[required]').keyup(function () {
+                    $('#tutor :input[required]').each(function () {
+                        if ($(this).val() == '') {
+                            $('#fifth_next').attr("disabled", true);
+                        } else {
+                            $('#fifth_next').attr("disabled", false);
+                        }
+                    });
+                });
+            });
+
+            function onTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+        <script type="text/javascript" src="../script/alerts.js"></script>
+        <script type="text/javascript" src="../script/popper.min.js"></script>
+        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../script/ajax.js"></script>
+    </body>
 
 </html>

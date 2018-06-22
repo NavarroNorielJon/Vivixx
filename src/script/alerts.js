@@ -4,6 +4,7 @@ $('#update_form').ajaxForm({
     error: function (){
         swal({
             type: 'error',
+            icon: 'warning',
             title: 'Error!',
             text: "Something is wrong",
             showConfirmButton: true,
@@ -16,7 +17,6 @@ $('#update_form').ajaxForm({
             title: 'Success!',
             icon: 'success',
             text: "Thank you!",
-            showConfirmButton: true,
             timer: 2500
         }).then(function(){
             window.location = '/home';

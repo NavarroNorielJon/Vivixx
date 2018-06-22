@@ -60,9 +60,9 @@ ul ul a {
 #update-information .update-information-header {
 	background-color: #005959;
 	color:white;
-	max-height: 108px;
-	min-height: 108px;
-	padding-top: 25px;
+	max-height: 70px;
+	min-height: 70px;
+	padding-top: 5px;
 	text-align: center;
 	width: 100%;
 }
@@ -71,9 +71,16 @@ ul ul a {
 	background-color: #ff1a1a;
 	border-radius: 0;
 	left: 95.4vw;
-	margin: -15px 0 0 0;
+	margin: -32px 0 0 0;
 	padding: 5px 10px 5px 10px;
 	position: absolute;
+}
+#update_form fieldset:not(:first-of-type) {
+	display: none;
+}
+
+.container #update_form{
+	margin-bottom: 10%;
 }
 /*end*/
 
@@ -509,11 +516,10 @@ ul ul a {
 	color: white;
 	font-family: serif;
 	left: 0;
-	margin-top: 2%;
+	margin-top: 5%;
 	padding: 5px 0px 3px 0px;
 	position: fixed;
 	text-align: center;
 	width: 100%;
 	z-index: 9999 !important;
 }
-
