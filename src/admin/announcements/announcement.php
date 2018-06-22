@@ -81,7 +81,7 @@
         <div>
         Upload Attachment
         <br>
-        <input type="file" name="file" multiple>
+        <input type="file" name="file[]" multiple>
         </div>
         <div>
         Upload Image
@@ -116,35 +116,38 @@
 	
 	
 <script>
-$("#date").datepicker({
-    showButtonPanel: true
-});
-$('#container-announcement').ajaxForm({
-    url: 'announcements/submit_announcement.php',
-    method: 'post',
-    success: function () {
-        $("#announcement").modal("show");
-    }
-});
-    counter = function() {
-        var value = $('#text').val();
-            var negative = 1000;
-        if (value.length == 0) {
-            $('#totalChars').html(1000);
-            return;
-        }
-        var regex = /\s+/gi;
-        var totalChars = value.length;
-            var remainder = negative - totalChars;
-        $('#totalChars').html(remainder);
-
-    };
-    $(document).ready(function() {
-        $('#text').keyup(counter);
-        
+	$("input[type = 'submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length) > 4){
+            alert("You are only allowed to upload a maximum of 4 files");
+        }else{
+			document.getElementById("container-announcement").submit();
+		}
     });
-    
-    
-    
+
+	$('#container-announcement').ajaxForm({
+		url: 'submit_announcement.php',
+		method: 'post',
+		success: function () {
+			$("#announcement").modal("show");
+		}
+	});
+		
+	counter = function() {
+		var value = $('#text').val();
+		var negative = 1000;
+		if (value.length == 0) {
+			$('#totalChars').html(1000);
+			return;
+		}
+		var regex = /\s+/gi;
+		var totalChars = value.length;
+		var remainder = negative - totalChars;
+		$('#totalChars').html(remainder);
+	};
+
+	$(document).ready(function() {
+		$('#text').keyup(counter);	
+	});
 </script>
 </html>
