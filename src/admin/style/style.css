@@ -60,3 +60,8 @@
 #wrapper #navbar-content {
 	background-color: inherit;
 }
+#text {
+    resize: none;
+    height:300px;
+    width:500px;
+ }
