@@ -1,14 +1,14 @@
 <?php
     include 'utilities/db.php';
+	
 	session_start();
-    if (isset($_SESSION['user'])) {
-        echo "<script>window.location = 'pages/';</script>";
+	if (isset($_SESSION['user'])) {
+		echo "<script>window.location = 'pages/';</script>";
     }
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Vivixx</title>
 	<meta charset="utf-8">
