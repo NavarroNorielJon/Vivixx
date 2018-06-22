@@ -1,135 +1,161 @@
+/*This stylesheet is created mainly for the employee's side*/
+
+/*Style for html elements*/
 a, a:hover, a:active {
 	color: #fff;
 	text-decoration: none;
 }
 
 h1::selection {
-	color: #fff;
 	background-color: #005959;
+	color: #fff;
 }
 
 ul ul a {
 	font-size: 0.9vw;
 	padding-left: 30px;
 }
+/*end*/
 
-#update-information .container {
-	padding-top: 15px;
+/*--------------------------------------------------------------*/
+/*Id, and Classes that are used on one or more pages*/
+.body {
+	opacity: 0;
+	transition: 2s;
+}
+
+#footer {
+	background-color: #003333;
+	bottom: 0;
+	color: white;
+	font-family: serif;
+	left: 0;
+	margin-top: 2%;
+	padding: 5px 0px 3px 0px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 9999 !important;
+}
+
+.invalid {
+	color: red;
+}
+
+.message {
+	color: #1a1a1a;
+	font-size: 5vw;
+	transition: 2s;
 }
 
 .text-transform {
 	text-transform: capitalize;
 }
 
-#maps{
-	height: 400px;
-	width: 100%;
-	border: solid 2px black;
+.valid{
+	color: green;
 }
 
-#weak{
-	color: red;
+/*style for the validation for the password*/
+#average{
+	color: #4DB82C;
 }
 
 #good{
 	color: #ff9900;
 }
 
-#average{
-	color: #4DB82C;
-}
-
 #strong{
 	color: green;
+}
+/*end*/
+/*--------------------------------------------------------------*/
+
+/*Style for the update information page*/
+#maps{
+	border: solid 2px black;
+	height: 400px;
+	width: 100%;
+}
+
+#update-information .container {
+	padding-top: 15px;
 }
 
 #update-information .container a{
 	color: #005959 !important;
 }
 
+#update-information .container a:focus {
+	background-color: #005959;
+	color: #fff !important;
+}
+
+#update-information .container a:hover{
+	background-color: #005959;
+	color: #fff !important;
+}
+
 #update-information .update-information-header {
 	background-color: #005959;
 	color:white;
-	width: 100%;
 	max-height: 108px;
 	min-height: 108px;
 	padding-top: 25px;
 	text-align: center;
+	width: 100%;
 }
 
 #update-information .logout {
-	position: absolute;
-	left: 95.4vw;
-	border-radius: 0;
-	margin: -15px 0 0 0;
 	background-color: #ff1a1a;
+	border-radius: 0;
+	left: 95.4vw;
+	margin: -15px 0 0 0;
 	padding: 5px 10px 5px 10px;
+	position: absolute;
 }
 
-#update-information .container a:hover{
-	color: #fff !important;
-	background-color: #005959;
+#update_form .container {
+	margin-bottom: 60px;
 }
 
-#update-information .container a:focus {
-	color: #fff !important;
-	background-color: #005959;
-}
+/*end*/
+/*--------------------------------------------------------------*/
 
-#sidebar i {
-	margin-right: 10px;
-}
-
-#index label {
-	color: White;
-}
-
-.body {
-	opacity: 0;
-	transition: 2s;
-}
-
-#background{
-	background-image: url(../img/background.jpg);
-}
-
-/*Home*/
+/*Style for home*/
 #content {
-	padding: 10px 5px 10px 3px;
 	margin-left: 19%;
-}
-
-#leave {
 	padding: 10px 5px 10px 3px;
-	margin-left: 28%;
 }
 
 #content .cards {
-	margin: 2% 3% 2% 3%;
 	background-color:  #f2f2f2;
+	margin: 2% 3% 2% 3%;
 }
 
 #content .events {
-	margin: 2% 3% 2% 3%;
-	height: 53vh;
-	font-size: 1.2vw;
 	background-color:  #f2f2f2;
+	font-size: 1.2vw;
+	height: 53vh;
+	margin: 2% 3% 2% 3%;
+}
+
+#content .events .event-body button[type=button] {
+	margin-top: 13vh;
 }
 
 #content .events .event-header {
 	padding: 15px 0 2px 15px;
 }
 
-#content .events .event-body button[type=button] {
-	margin-top: 13vh;
+#leave {
+	margin-left: 28%;
+	padding: 10px 5px 10px 3px;
 }
-/*End of homepage*/
+/*end*/
+/*--------------------------------------------------------------*/
 
 /*index*/
-.invalid{
-	color: red;
-}
-
 .eye {
 	padding: 3px 2px 0 2px;
 }
@@ -137,14 +163,14 @@ ul ul a {
 #index {
 	background-attachment: fixed;
 	background-image: url(../img/bg2.jpg);
-	background-repeat: no-repeat;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #index .index-content {
-	text-align: center;
 	height:100vh;"
+	text-align: center;
 }
 
 #index .index-content img {
@@ -153,7 +179,7 @@ ul ul a {
 	max-width: 40%;
 }
 
-#index .index-form{
+#index .index-form {
 	background-color: rgba(128, 128, 128, 0.8);
 	height:100vh;
 	padding-top: 50px;
@@ -166,7 +192,7 @@ ul ul a {
 	text-align: center;
 }
 
-#index .index-form button:hover{
+#index .index-form button:hover {
 	background-color: #e6ffff;
 	color: inherit;
 }
@@ -179,12 +205,27 @@ ul ul a {
 	text-decoration: underline;
 }
 
+#index label {
+	color: White;
+}
+
 #index .index-form .login-button {
 	background-color: #005959;
 	color: #fff;
 	font-size: 2vw;
-	padding: 5px auto 20px auto;
 	margin-bottom: 20%;
+	padding: 5px auto 20px auto;
+}
+
+#index .index-form .signup-button {
+	background-color: #005959;
+	border-radius: 0;
+	bottom: 0;
+	color: #fff;
+	font-size: 2vw;
+	padding: 25px;
+	position: absolute;
+	width: 100%;
 }
 
 #index .index-form #signup-link {
@@ -198,83 +239,39 @@ ul ul a {
 #index .index-form #signup-link:hover {
 	text-decoration: underline;
 }
+/*end*/
+/*--------------------------------------------------------------*/
 
-#index .index-form .signup-button{
-	border-radius: 0;
-	background-color: #005959;
-	color: #fff;
-	bottom: 0;
-	font-size: 2vw;
-	padding: 25px;
-	position: absolute;
-	width: 100%;
-}
-
-.message {
-	color: #1a1a1a;
-	font-size: 5vw;
-	transition: 2s;
-}
-
-.valid{
-	color: green;
-}
-
-/*end of index*/
-
+/*Style for leave form*/
 #leave_form {
 	margin: 10% 2% 10% 0;
 	width: 130%;
 
 }
+/*end*/
+/*--------------------------------------------------------------*/
 
 /*sidebar*/
 #sidebar {
 	background-color: #008080;
-	max-width: 250px;
-	min-width: 250px;
 	height: 100%;
-	top: 0;
 	left: 0;
+	max-width: 250px;
+	min-width: 250px;	
 	position: fixed;
 	overflow: hidden;
-	z-index: 1;
 	transition: all 0.7s;
+	top: 0;
+	z-index: 1;
 }
 
-#sidebar .sidebar-logo-sm {
-	text-align: center;
-	visibility: hidden;
+#sidebar i {
+	margin-right: 10px;
 }
 
 #sidebar .icon {
 	color: white;
 	display: none;
-}
-
-#sidebar ul.components {
-	padding: 20px 0;
-}
-
-#sidebar ul li a {
-	padding: 10px;
-	font-size: 1.1vw;
-	display: block;
-}
-
-#sidebar ul li a:hover {
-	color: #005959;
-	background-color: #ffffff;
-}
-
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-	color: #fff;
-	background-color: #009999;
-}
-
-#sidebar ul li ul a:hover {
-	color: #005959;
-	background-color: #fff;
 }
 
 #sidebar .sidebar-header {
@@ -284,24 +281,51 @@ ul ul a {
 }
 
 #sidebar .sidebar-header img {
-	width: 70%;
 	margin-left: 27px;
 	height: auto;
+	width: 70%;
+}
+
+#sidebar .sidebar-logo-sm {
+	text-align: center;
+	visibility: hidden;
+}
+
+#sidebar ul.components {
+	padding: 20px 0;
+}
+
+#sidebar ul li a {
+	display: block;
+	font-size: 1.1vw;
+	padding: 10px;
+}
+
+#sidebar ul li a:hover {
+	background-color: #ffffff;
+	color: #005959;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+	background-color: #009999;
+	color: #fff;
+}
+
+#sidebar ul li ul a:hover {
+	background-color: #fff;
+	color: #005959;
 }
 
 .wrapper {
 	display: flex;
 }
 /*end of sidebar*/
+/*--------------------------------------------------------------*/
 
-/*Sign Up*/
+/*style for the signup form and/or page */
 #signup-form .signup-content {
 	border-radius: 0;
 	box-shadow: 3px 3px;
-}
-
-#signup-form .signup-content input {
-	border-radius: 0;
 }
 
 #signup-form .signup-content button{
@@ -309,10 +333,15 @@ ul ul a {
 	padding: 1px 3px 1px 3px	;
 }
 
+#signup-form .signup-content input {
+	border-radius: 0;
+}
+
 #signup-form .signup-header {
 	background-color: #e6e6e6;
 }
 /*End of signup*/
+/*--------------------------------------------------------------*/
 
 /*Forgot password*/
 #forgot-form .forgot-content {
@@ -320,27 +349,26 @@ ul ul a {
 	box-shadow: 3px 3px;
 }
 
-#forgot-form .forgot-content input {
-	border-radius: 0;
-}
-
 #forgot-form .forgot-content button{
 	border-radius: 0;
 	padding: 1px 3px 1px 3px	;
 }
 
+#forgot-form .forgot-content input {
+	border-radius: 0;
+}
+
 #forgot-form .forgot-header {
 	background-color: #e6e6e6;
 }
+/*end*/
+/*--------------------------------------------------------------*/
 
-/*Forgot End*/
-
-/*Profile*/
-
+/* Style for the profile page*/
 #profile {
-	position: fixed;
 	background-color: #e6e6e6;
 	height: 100vh;
+	position: fixed;
 }
 
 #profile .profile-header {
@@ -353,98 +381,95 @@ ul ul a {
 	margin-top: 2vw;
 }
 
-#profile .profile-content #name{
-	font-size: 1.5vw;
-	width: 350px;
-}
-
-#profile .profile-content .city-address{
-	/*margin-top: -15%;*/
+#profile .profile-content .address{
 	margin-left: -1vw;
-}
-
-#profile .profile-content .city-address input[type=text]{
-	font-size: 1.5vw;
-	width: 600px;
-}
-
-#profile .profile-content .permanent-address{
-	/*margin-top: -%;*/
-	margin-left: -1vw;
+	margin-top: -15%;
 }
 
 #profile .profile-content .birth_information{
-	width: 80%;
 	margin-left: -1vw;
 	margin-top: -15%;
+	width: 80%;
 }
 
 #profile .profile-content .birth_information input[type=text]{
 	font-size: 1.5vw;
 }
 
+#profile .profile-content .city-address {
+	/*margin-top: -15%;*/
+	margin-left: -1vw;
+}
+
+#profile .profile-content .city-address input[type=text] {
+	font-size: 1.5vw;
+	width: 600px;
+}
+
+#profile .profile-content #name {
+	font-size: 1.5vw;
+	width: 350px;
+}
+
+#profile .profile-content .number input[type=text] {
+	font-size: 1.5vw;
+	width: 600px;
+}
+
+#profile .profile-content .permanent-address{
+	margin-left: -1vw;
+}
+
 #profile .profile-content .permanent-address input[type=text]{
 	font-size: 1.5vw;
 	width: 600px;
 }
+/*end*/
+/*--------------------------------------------------------------*/
 
-#profile .profile-content .number input[type=text]{
-	font-size: 1.5vw;
-	width: 600px;
-}
-
-#profile .profile-content .address{
-	margin-top: -15%;
-	margin-left: -1vw;
-}
-
+/*Style for the reset form*/
 #reset-form {
-	background-image: url(../img/bg2.jpg);
 	background-attachment: fixed;
+	background-image: url(../img/bg2.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
 #reset-form .resetPassword {
 	background-color: #f9f2ec;
-	margin: 25vh 40vw auto 73vh;
-	padding: 5vh 5vh 5vh 5vh;
 	box-shadow: 3px 3px;
+	margin: 25vh 40vw auto 73vh;
+	opacity: 0;
+	padding: 5vh 5vh 5vh 5vh;
 	transition: all 0.7s;
 	width: 30vw;
-	opacity: 0;
 }
 
 #reset-form .resetPassword input[type=password] {
 	border-radius: 0;
 	width: 70%;
 }
+/*end*/
+/*--------------------------------------------------------------*/
 
+/*Style for announcement*/
 
 #container-announcement {
-	width: 80%;
-	padding: 2% 10% 10% 10%;
 	margin: 5% auto auto 10%;
+	padding: 2% 10% 10% 10%;
+	width: 80%;
 }
 
 #container-announcement #border #text {
+	height: 50vh;
 	margin-top: 2%;
 	width: 100%;
-	height: 50vh;
 }
 
-#update_form .container {
-	margin-bottom: 60px;
-}
 
 @media(max-width: 980px) {
-	#signup-form .signup-header h1 {
-		font-size: 3vw
-	}
-
-
-	#index .index-form button{
-		font-size: 2vw;
+	#index .index-form button {
+	font-size: 2vw;
 	}
 
 	#index .index-form .login-button {
@@ -458,10 +483,20 @@ ul ul a {
 	#index .index-form #signup-link {
 		visibility: visible;
 	}
-
+	
+	.message {
+		display: none;
+	}
+	
 	#sidebar {
 		max-width: 60px;
 		min-width: 60px;
+	}
+	
+	#sidebar .icon {
+		display: block;
+		font-size: 1.3rem;
+		padding-left: 15px;
 	}
 
 	#sidebar .sidebar-header{
@@ -476,42 +511,12 @@ ul ul a {
 	#sidebar .sidebar-item {
 		display: none;
 	}
-
-	#sidebar .icon {
-		padding-left: 15px;
-		display: block;
-		font-size: 1.3rem;
+	
+	#signup-form .signup-header h1 {
+		font-size: 3vw
 	}
-
-	.message {
-		display: none;
-	}
-
 }
 
 @media(max-width: 576px){
 	background-image: url(img/bg2-sm.jpg);
 }
-
-#second {
-    overflow-y:scroll;
-}
-
-#profile {
-		background-color: #e6e6e6;
-	}
-
-#footer {
-	margin-top: 2%;
-	padding: 5px 0px 3px 0px;
-	z-index: 9999 !important;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
-	background-color: #003333;
-	color: white;
-	font-family: serif;
-}
-
