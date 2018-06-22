@@ -3,7 +3,6 @@ ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
-
     
       $subject = $_POST["subject"];
       $date = $_POST["date"];
@@ -42,6 +41,6 @@ ini_set('upload_max_filesize', '64M');
                     $connect->query($add_attachment);
                 }
                
-               header("location: ../index.php");
+               header("location: announcement.php");
         }
     }
