@@ -59,7 +59,7 @@
 		</nav>
 		
 		<div class="announcement-content container-fluid">
-			<form action="announcements/submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
 		<div class="row form-goup">
 			<div class="col">
 				<input name="subject" type="text" class="form-control" placeholder="Subject" required>
