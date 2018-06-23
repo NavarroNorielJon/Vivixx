@@ -15,6 +15,9 @@
 	$from = date('Y-m-d', strtotime($from));
     $position = mysqli_real_escape_string($connect, $_POST['position']);
     $reason = mysqli_real_escape_string($connect, $_POST['reason']);
+    if ($reason === "others") {
+        $reason = mysqli_real_escape_string($connect, $_POST['others']);
+    }
     $to = mysqli_real_escape_string($connect, $_POST['to']);
     $to = date('Y-m-d', strtotime($to));
 
@@ -22,21 +25,5 @@
 		`position`, `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
 		VALUES ('$user_id', '$employee', '$department', '$position', '$date_hired', '$date_filed', '$reason', '$contact_address',
 		'$contact_number', '$from', '$to') ;";
-
-    if ($connect->query($insert_stmt) === true) {
-		echo " <script>
-               	alert('Please wait for the response of the admin');
-                window.location = '../pages/leave_request_form';
-               </script>
-			 ";
-		exit;
-		
-    } else {
-		echo " <script>
-				alert('Error');
-                window.location = '../pages/leave_request_form';
-               </script>
-        	 ";
-        exit;
-    }
+    $connect->query($insert_stmt);
 ?>

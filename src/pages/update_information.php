@@ -32,7 +32,7 @@
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <form id="update_form">
+            <form id="update_form" action="../utilities/update_info" method="post">
                 <fieldset id="personal">
                     <h2>Step 1: Personal Information</h2>
                     <div class="row">
@@ -67,6 +67,8 @@
                                 autocomplete="off"
                                 placeholder="Mobile Number"
                                 class=" form-control"
+                                pattern="09[0-9]{9}"
+                                title="09"
                                 id="contact"
                                 onkeypress="numberInput(event)"
                                 onkeyup="helperText('contact_number',this.value,'validContact')"

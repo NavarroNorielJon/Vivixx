@@ -30,7 +30,7 @@
 				</li>
 
             	<li>
-					<a href="profile.php" class="sidebar-item">
+					<a href="home.php" class="sidebar-item">
 					<i class="material-icons">home</i>Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
