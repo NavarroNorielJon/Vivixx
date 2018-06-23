@@ -197,7 +197,7 @@
 
                         <div class="form-group col">
                             <label for="tin">TIN</label>
-                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="7" autocomplete="off" class="form-control" required="required">
+                            <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
                         </div>
 
                         <div class="form-group col">
@@ -207,7 +207,7 @@
 
                         <div class="form-group col">
                             <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                            <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                            <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
                     <input type="button" class="next btn btn-primary" value="Next" onclick="onTop()" id="first_next"/>
