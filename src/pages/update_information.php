@@ -317,7 +317,7 @@
                     </div>
                     <div id="child"></div>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="second_next" value="Next"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="second_next" value="Next" disabled="disabled"/>
                 </fieldset>
 
                 <fieldset id="educational">
@@ -458,18 +458,17 @@
 
                         <div class="form-group col" id="g4" style="display:none">
                             <label for="yr_grad">Year Graduated</label>
-                            <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                            <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                         </div>
 
                         <div class="form-group col" id="u4" style="display:none">
                             <label for="high_level">Highest Level</label>
-                            <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                            <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                         </div>
 
                     </div>
-
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="third_next" value="Next"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="third_next" value="Next" disabled="disabled"/>
                 </fieldset>
 
                 <fieldset id="emergency">
@@ -578,7 +577,7 @@
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" id="fourth_next" value="Next"/>
+                    <input type="button" name="password" class="next btn btn-primary" id="fourth_next" value="Next" disabled="disabled"/>
                 </fieldset>
 
                 <fieldset id="tutor">
@@ -672,14 +671,10 @@
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="fifth_next" value="Next"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="fifth_next" value="Next" disabled="disabled"/>
                 </fieldset>
 
                 <fieldset>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
                     <input type="submit" name="submit" class="submit btn btn-success" value="Submit"/>
                 </fieldset>
