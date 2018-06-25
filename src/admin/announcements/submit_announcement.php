@@ -3,7 +3,7 @@ ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
-    
+
       $subject = $_POST["subject"];
       $date = $_POST["date"];
       $body = $_POST["body"];
@@ -33,14 +33,14 @@ ini_set('upload_max_filesize', '64M');
              $result = $connect->query($get_latest_announcement);
              $results = $result->fetch_assoc();
              $announcement_id = $results['id'];
-             
+
                 for($x = 0; $x< count($file_names); $x++){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents('file uploads/'.$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
+                    $add_attachment = "Insert into attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
                     $connect->query($add_attachment);
                 }
-               
+
                header("location: announcement.php");
         }
     }
