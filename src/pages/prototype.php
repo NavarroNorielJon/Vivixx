@@ -19,57 +19,39 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body  id="index">
 	<!-- container -->
-	<div class="containter-fluid" id="index">
-		<div class="row no-gutters">
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
-				<a href="#login-form"><img class="image" id="image" src="../img/Lion.png"></a>
+	<div class="jumbotron"  id="login">
+		<form action="utilities/login.php" method="post" class="col s12">
+			<div class="form-group col-sm-12">
+				<label for="userOrEmail">Username or Email-Address</label>
+				<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+				<div id="validUserOrEmail"></div>
 			</div>
 
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
-				<div class="text-center">
-					<h3 style="color: white; margin-bottom: 4vh;">
-						Login
-					</h3>
-				</div>
+			<div class="form-group col-sm-12">
+				<label for="pass">Password</label>
+				<div class="input-group">
+					<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
 
-				<form action="utilities/login.php" method="post" class="col s12" id="login">
-        			<div class="form-group col-sm-12">
-            			<label for="userOrEmail">Username or Email-Address</label>
-                		<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-                		<div id="validUserOrEmail"></div>
-					</div>
-
-            		<div class="form-group col-sm-12">
-            			<label for="pass">Password</label>
-                		<div class="input-group">
-                			<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
-
-                    		<div class="input-group-append">
-                        		<button type="button" class="btn eye" onclick="showHide('password','icon')">
-                            		<i class="material-icons" id="icon">visibility</i>
-                            	</button>
+					<div class="input-group-append">
+						<button type="button" class="btn eye" onclick="showHide('password','icon')">
+							<i class="material-icons" id="icon">visibility</i>
+						</button>
                         	</div>
 						</div>
 					</div>
 
 					<div class="text-center">
-						<a href="#!" data-toggle="modal" data-target="#forgot-form" style="display: block; margin: 1rem;" class="forgot">Forgot password?</a>
-            			<button type="submit" class="btn login-button" name="submit">
+            			<button type="submit" class="btn login-button" name="submit" style="display: block; margin: auto;">
 							Login
 						</button>
-
-						<br>
-
-						<a href="#!" data-toggle="modal" id="signup-link" data-target="#signup-form">Sign Up</a>
+						
+						<p style="display: inline-block;"><a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or <a href="#!" data-toggle="modal" data-target="#signup-form">Sign Up</a></p>
 					</div>
 				</form>
 
-				<button  type="button" class="btn signup-button" href="#!" data-toggle="modal" data-target="#signup-form">Sign Up</button>
-			</div>
 		</div>
-	</div>
 
 	<!-- Modal for forgot password -->
     <div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
