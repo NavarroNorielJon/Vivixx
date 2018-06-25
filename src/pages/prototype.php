@@ -13,19 +13,30 @@
 	<title>Vivixx</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="style/style2.css">
+=======
+    <link rel="shortcut icon" href="../img/Lion.png" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../style/style2.css">
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="body" id="body">
+<body>
 	<!-- container -->
 	<div class="containter-fluid" id="index">
 		<div class="row no-gutters">
+<<<<<<< HEAD
 			<div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 index-content">
 				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
 				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
+=======
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
+				<a href="#login-form"><img class="image" id="image" src="../img/Lion.png"></a>
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
 			</div>
 <<<<<<< HEAD:src/prototype.php
 			
@@ -36,7 +47,7 @@
 >>>>>>> 492cef6010a33906182b11658aebf5a961f36c58:src/pages/prototype.php
 				<div class="text-center"><h3 style="color: white; margin-bottom: 2vh;">Login</h3></div>
 
-				<form action="utilities/login.php" method="post" class="col s12 " id="login">
+				<form action="utilities/login.php" method="post" class="col s12" id="login">
         			<div class="form-group col-sm-12">
             			<label for="userOrEmail">Username or Email-Address</label>
                 		<input class="form-control" type="text" autocomplete="off" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
@@ -118,12 +129,25 @@
     	<div class="modal-dialog" role="document">
         	<div class="modal-content">
             	<!-- Header -->
+<<<<<<< HEAD
                 <div class="modal-header">
 					<img src="img/Lion.png" style="height:auto; width:15%;" class="header-logo">
                     <h1>Forgot Password</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     	<span aria-hidden="true">&times;</span>
 					</button>
+=======
+                <div class="modal-header forgot-header">
+					<div class="row">
+            			<div class="col-3">
+							<img src="../img/Lion.png" style="height:auto; width:65%;" >
+						</div>
+
+						<div class="col-9">
+                    		<h3>Forgot Password</h3>
+						</div>
+					</div>
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
 				</div>
 
 				<!-- Body -->
@@ -149,11 +173,23 @@
     	<div class="modal-dialog" role="document">
         	<div class="modal-content signup-content">
             	<div class="modal-header signup-header">
+<<<<<<< HEAD
 					<img src="img/Lion.png" style="height:auto; width:25%;" >
                     <h3>Registration Form</h3>
 					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
                     	<span aria-hidden="true">&times;</span>
 					</button>
+=======
+            		<div class="row">
+            			<div class="col-3">
+							<img src="../img/Lion.png" style="height:auto; width:65%;" >
+						</div>
+
+						<div class="col-9">
+                    		<h3>Registration Form</h3>
+						</div>
+					</div>
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
 				</div>
 
 				<!-- Body -->
@@ -214,6 +250,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="script/popper.min.js"></script>
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
@@ -225,6 +262,21 @@
 			body.style.opacity = "1";
 		}
 		
+=======
+	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../script/alerts.js"></script>
+	<script type="text/javascript" src="../script/popper.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
+	<script>
+//		window.onload = function() {
+//			var body = document.getElementById('body');
+//			body.style.opacity = "1";
+//		}
+
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
 		$('a[href^="#"]').on('click', function(event) {
     		var target = $(this.getAttribute('href'));
     		if( target.length ) {
