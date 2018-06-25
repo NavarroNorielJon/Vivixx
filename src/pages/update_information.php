@@ -76,7 +76,6 @@
                                 <input type="file" />
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -121,7 +120,6 @@
                                 <label for="weight">Weight</label>
                                 <input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" required="required">
                             </div>
-
                             <div class="form-group col">
                                 <label for="blood">Blood Type</label>
                                 <select name="blood" class="form-control" required="required">
@@ -137,7 +135,7 @@
                         <div class="row">
                             <div class="form-group col-7">
                                 <label for="residential_address">Residential Address</label>
-                                <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
+                                <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required>
                             </div>
 
                             <div class="form-group col-2 ">
@@ -374,12 +372,12 @@
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
                             </div>
 
                         </div>
@@ -411,12 +409,12 @@
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
                             </div>
 
                         </div>
@@ -449,12 +447,12 @@
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
                             </div>
 
                         </div>
@@ -487,12 +485,12 @@
 
                             <div class="form-group col" id="g4" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
                             </div>
 
                             <div class="form-group col" id="u4" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" value="asdf">
+                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
                             </div>
 
                         </div>
@@ -501,7 +499,6 @@
                             <button type="button" class="btn btn-next">Next</button>
                         </div>
                     </fieldset>
-
                     <fieldset>
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
@@ -610,6 +607,7 @@
                         <div class="f1-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-next">Next</button>
+
                         </div>
                     </fieldset>
 
@@ -770,61 +768,6 @@
             });
         </script>
         <script type="text/javascript">
-            $('#first_next').attr("disabled", true);
-            $(document).ready(function () {
-                $('#personal :input[required]').keyup(function () {
-                   $('#personal :input[required]').each(function () {
-                        console.log($(this).val() + $(this).index());
-                        if ($(this).val() == '') {
-                            $('#first_next').attr("disabled", true);
-                        } else {
-                            $('#first_next').attr("disabled", false);
-
-                        }
-                   });
-                });
-
-                $('#family :input[required]').keyup(function () {
-                    $('#family :input[required]').each(function () {
-                        if ($(this).val() == '') {
-                            $('#second_next').attr("disabled", true);
-                        } else {
-                            $('#second_next').attr("disabled", false);
-                        }
-                    });
-                });
-
-                $('#educational :input[required]').keyup(function () {
-                    $('#educational :input[required]').each(function () {
-                        if ($(this).val() == '') {
-                            $('#third_next').attr("disabled", true);
-                        } else {
-                            $('#third_next').attr("disabled", false);
-                        }
-                    });
-                });
-
-                $('#emergency :input[required]').keyup(function () {
-                    $('#emergency :input[required]').each(function () {
-                        if ($(this).val() == '') {
-                            $('#fourth_next').attr("disabled", true);
-                        } else {
-                            $('#fourth_next').attr("disabled", false);
-                        }
-                    });
-                });
-
-                $('#tutor :input[required]').keyup(function () {
-                    $('#tutor :input[required]').each(function () {
-                        if ($(this).val() == '') {
-                            $('#fifth_next').attr("disabled", true);
-                        } else {
-                            $('#fifth_next').attr("disabled", false);
-                        }
-                    });
-                });
-            });
-
             function onTop() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;

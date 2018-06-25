@@ -611,9 +611,11 @@ body {
 }
 
 .f1 .input-error {
-    border-color: #005959;
+    border-color: #f35b3f;
 }
-
+.input-error {
+    border-color: #f35b3f;
+}
 
 @media(max-width: 576px){
 	background-image: url(img/bg2-sm.jpg);
