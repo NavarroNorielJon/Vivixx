@@ -42,12 +42,6 @@ ul ul a {
 	color: red;
 }
 
-.message {
-	color: #1a1a1a;
-	font-size: 5vw;
-	transition: 2s;
-}
-
 .text-transform {
 	text-transform: capitalize;
 }
@@ -166,7 +160,7 @@ ul ul a {
 
 #index {
 	background-attachment: fixed;
-	background-image: url(../img/bg2.jpg);
+	background-image: url(../img/building.jpeg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -486,10 +480,6 @@ ul ul a {
 
 	#index .index-form #signup-link {
 		visibility: visible;
-	}
-
-	.message {
-		display: none;
 	}
 
 	#sidebar {
