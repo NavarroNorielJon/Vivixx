@@ -511,12 +511,8 @@ ul ul a {
 	}
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
     color: #888;
     line-height: 30px;
-    text-align: center;
 }
 
 /***** Top content *****/
@@ -573,6 +569,7 @@ body {
     color: #fff;
     line-height: 40px;
     border-radius: 50%;
+	text-align: center;
 }
 
 .f1-step.activated .f1-step-icon {
@@ -610,5 +607,3 @@ body {
 @media(max-width: 576px){
 	background-image: url(img/bg2-sm.jpg);
 }
-
-

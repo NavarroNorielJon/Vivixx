@@ -42,23 +42,33 @@
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
                         </div>
                         <div class="f1-step active">
-                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                            <div class="f1-step-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
                             <p>Personal Information</p>
                         </div>
                         <div class="f1-step">
-                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                            <div class="f1-step-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
                             <p>Family Background</p>
                         </div>
                         <div class="f1-step">
-                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                            <div class="f1-step-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
                             <p>Educational Background</p>
                         </div>
                         <div class="f1-step">
-                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                            <div class="f1-step-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
                             <p>Emergency Information</p>
                         </div>
                         <div class="f1-step">
-                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                            <div class="f1-step-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
                             <p>Tutor Information</p>
                         </div>
                     </div>
@@ -68,12 +78,12 @@
                         <div class="row">
                             <div class="form-group col-4">
                                 <label for="prof_image">Profile Image</label>
-                                <input type="file" name="prof_image" />
+                                <input type="file" name="prof_image"/>
                             </div>
 
                             <div class="form-group col-4">
                                 <label for="prof_image">Signature</label>
-                                <input type="file" />
+                                <input type="file"/>
                             </div>
                         </div>
                         <div class="row">
@@ -89,7 +99,17 @@
 
                             <div class="form-group col">
                                 <label for="contact">Mobile Number</label>
-                                <input type="tel" name="contact_number" maxlength="11" autocomplete="off" placeholder="Mobile Number" class=" form-control" pattern="09[0-9]{9}" title="09" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" required="required">
+                                <input
+                                    type="tel"
+                                    name="contact_number"
+                                    maxlength="11"
+                                    autocomplete="off"
+                                    placeholder="Mobile Number"
+                                    class=" form-control"
+                                    id="contact"
+                                    onkeypress="numberInput(event)"
+                                    onkeyup="helperText('contact_number',this.value,'validContact')"
+                                    required="required">
                                 <div id="validContact"></div>
                             </div>
                         </div>
@@ -135,7 +155,7 @@
                         <div class="row">
                             <div class="form-group col-7">
                                 <label for="residential_address">Residential Address</label>
-                                <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required>
+                                <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
                             </div>
 
                             <div class="form-group col-2 ">
@@ -178,13 +198,12 @@
                             </div>
 
                             <script>
-                                $(function() {
-                                    $('#civil_status').change(function() {
+                                $(function () {
+                                    $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
-
                             </script>
 
                             <div class="form-group col-2">
@@ -352,14 +371,13 @@
                                 <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                             </div>
                             <script>
-                                $(function() {
-                                    $('#option1').change(function() {
+                                $(function () {
+                                    $('#option1').change(function () {
                                         $('#g1').hide();
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
-
                             </script>
                             <div class="form-group col">
                                 <label for="option1">Status</label>
@@ -372,12 +390,12 @@
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
+                                <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -389,14 +407,13 @@
                                 <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                             </div>
                             <script>
-                                $(function() {
-                                    $('#option2').change(function() {
+                                $(function () {
+                                    $('#option2').change(function () {
                                         $('#g2').hide();
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
-
                             </script>
                             <div class="form-group col">
                                 <label for="option2">Status</label>
@@ -409,12 +426,12 @@
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
+                                <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -427,14 +444,13 @@
                             </div>
 
                             <script>
-                                $(function() {
-                                    $('#option3').change(function() {
+                                $(function () {
+                                    $('#option3').change(function () {
                                         $('#g3').hide();
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
-
                             </script>
                             <div class="form-group col">
                                 <label for="option3">Status</label>
@@ -447,12 +463,12 @@
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
+                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -465,14 +481,13 @@
                             </div>
 
                             <script>
-                                $(function() {
-                                    $('#option4').change(function() {
+                                $(function () {
+                                    $('#option4').change(function () {
                                         $('#g4').hide();
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
-
                             </script>
                             <div class="form-group col">
                                 <label for="option4">Status</label>
@@ -485,12 +500,12 @@
 
                             <div class="form-group col" id="g4" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off" >
+                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u4" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off" >
+                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
