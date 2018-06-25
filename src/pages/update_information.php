@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" method="post" id="update_form" class="f1">
+                <form role="form" action="" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -99,7 +99,17 @@
 
                             <div class="form-group col">
                                 <label for="contact">Mobile Number</label>
-                                <input type="tel" name="contact_number" maxlength="11" autocomplete="off" placeholder="Mobile Number" class=" form-control" id="contact" onkeypress="numberInput(event)" onkeyup="helperText('contact_number',this.value,'validContact')" required="required">
+                                <input
+                                    type="tel"
+                                    name="contact_number"
+                                    maxlength="11"
+                                    autocomplete="off"
+                                    placeholder="Mobile Number"
+                                    class=" form-control"
+                                    id="contact"
+                                    onkeypress="numberInput(event)"
+                                    onkeyup="helperText('contact_number',this.value,'validContact')"
+                                    required="required">
                                 <div id="validContact"></div>
                             </div>
                         </div>
@@ -741,7 +751,37 @@
                 swal({title: "Error", text: "Please complete all the required information", icon: "error"});
             }
         </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
 
+                var current = 1,
+                    current_step,
+                    next_step,
+                    steps;
+                steps = $("fieldset").length;
+                $(".next").click(function () {
+                    current_step = $(this).parent();
+                    next_step = $(this).parent().next();
+                    next_step.show();
+                    current_step.hide();
+                    setProgressBar(++current);
+                });
+                $(".previous").click(function () {
+                    current_step = $(this).parent();
+                    next_step = $(this).parent().prev();
+                    next_step.show();
+                    current_step.hide();
+                    setProgressBar(--current);
+                });
+                setProgressBar(current);
+                // Change progress bar action
+                function setProgressBar(curStep) {
+                    var percent = parseFloat(100 / steps) * curStep;
+                    percent = percent.toFixed();
+                    $(".progress-bar").css("width", percent + "%").html(percent + "%");
+                }
+            });
+        </script>
         <script type="text/javascript">
             function onTop() {
                 document.body.scrollTop = 0;
