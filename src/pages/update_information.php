@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class=" form-group col">
                             <label for="gender">Sex</label>
-                            <select name="gender" class="form-control" required="required">
+                            <select name="gender" id="gender" class="form-control" required="required">
                                 <option selected="selected" disabled="disabled">Select Here:</option>
                                 <option value="m">Male</option>
                                 <option value="f">Female</option>
@@ -106,7 +106,7 @@
 
                         <div class="form-group col">
                             <label for="blood">Blood Type</label>
-                            <select name="blood" class="form-control" required="required">
+                            <select name="blood" id="blood" class="form-control" required="required">
                                 <option selected="selected" disabled="disabled">Select Blood Type:</option>
                                 <option value="o">O</option>
                                 <option value="a">A</option>
@@ -342,7 +342,7 @@
                         <div class="form-group col">
                             <label for="option1">Status</label>
                             <select name="option1" id="option1" class="form-control" required="required">
-                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option disabled="disabled">Select:</option>
                                 <option value="g1">Graduated</option>
                                 <option value="u1">Undergraduate</option>
                             </select>
@@ -378,7 +378,7 @@
                         <div class="form-group col">
                             <label for="option2">Status</label>
                             <select name="option2" id="option2" class="form-control" required="required">
-                                <option selected="selected" disabled="disabled">Select:</option>
+                                <option disabled="disabled">Select:</option>
                                 <option value="g2">Graduated</option>
                                 <option value="u2">Undergraduate</option>
                             </select>
@@ -745,14 +745,15 @@
 
             $(document).ready(function () {
                 $('#personal :input[required]').keyup(function () {
-                    $('#personal :input[required]').each(function () {
-                        if ($(this).val() == '') {
-                            $('#first_next').attr("disabled", true);
-                        } else {
-                            $('#first_next').attr("disabled", false);
+                    //$('#personal :input[required]').each(function () {
+                    console.log('asdfasdfas');
+                    if ($('#gender').val() == 'null' || $('#blood').val() == 'null' || $('#bdate').val() == '' || $('#civil_status').val() == 'null') {
+                        $('#first_next').attr("disabled", true);
+                    } else {
+                        $('#first_next').attr("disabled", false);
 
-                        }
-                    });
+                    }
+                    //});
                 });
 
                 $('#family :input[required]').keyup(function () {
