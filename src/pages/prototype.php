@@ -27,11 +27,25 @@
 				<label for="userOrEmail">Username or Email-Address</label>
 				<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
 				<div id="validUserOrEmail"></div>
+=======
+	<div class="containter-fluid" id="index">
+		<div class="row no-gutters">
+<<<<<<< HEAD
+			<div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 index-content">
+				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
+				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
+=======
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
 				<a href="#login-form"><img class="image" id="image" src="../img/Lion.png"></a>
+>>>>>>> 172d046d1d24570206aa9b7f20f75c4b80610166
+>>>>>>> 9b22df480d69de5494ffdd35db8f200dc8a76a38
 			</div>
-
+<<<<<<< HEAD:src/prototype.php
+			
 			<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 index-form" id="login-form">
+=======
+
+<<<<<<< HEAD
 			<div class="form-group col-sm-12">
 				<label for="pass">Password</label>
 				<div class="input-group">
@@ -41,6 +55,9 @@
 						<button type="button" class="btn eye" onclick="showHide('password','icon')">
 							<i class="material-icons" id="icon">visibility</i>
 						</button>
+=======
+			<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 index-form">
+>>>>>>> 492cef6010a33906182b11658aebf5a961f36c58:src/pages/prototype.php
 				<div class="text-center"><h3 style="color: white; margin-bottom: 2vh;">Login</h3></div>
 
 				<form action="utilities/login.php" method="post" class="col s12" id="login">
