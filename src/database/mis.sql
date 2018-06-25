@@ -26,7 +26,6 @@ CREATE TABLE `announcement` (
   `announcement_id` int(11) NOT NULL AUTO_INCREMENT,
   `subject` varchar(45) NOT NULL,
   `announcement` varchar(1000) NOT NULL,
-  `attachment` longblob,
   `image` longblob,
   `date` date NOT NULL,
   PRIMARY KEY (`announcement_id`),
@@ -41,6 +40,32 @@ CREATE TABLE `announcement` (
 LOCK TABLES `announcement` WRITE;
 /*!40000 ALTER TABLE `announcement` DISABLE KEYS */;
 /*!40000 ALTER TABLE `announcement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attachments`
+--
+
+DROP TABLE IF EXISTS `attachments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `attachments` (
+  `attachment_id` int(11) NOT NULL,
+  `attachment` longblob NOT NULL,
+  `announcement_id` int(11) NOT NULL,
+  PRIMARY KEY (`attachment_id`),
+  KEY `attach-announce_idx` (`announcement_id`),
+  CONSTRAINT `attach-announce` FOREIGN KEY (`announcement_id`) REFERENCES `announcement` (`announcement_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attachments`
+--
+
+LOCK TABLES `attachments` WRITE;
+/*!40000 ALTER TABLE `attachments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `attachments` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -427,4 +452,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-25 15:30:13
+-- Dump completed on 2018-06-25 15:56:39
