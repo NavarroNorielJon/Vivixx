@@ -421,7 +421,7 @@
                                 <div id="child"></div>
 
                                 <div style="text-align: right">
-                                <a href="edit_information.php"><button type="submit" class="btn btn-default" data-dismiss-modal="first">Edit</button></a>
+                                <button type="submit" class="btn btn-default" data-dismiss-modal="first">Edit</button>
                                 </div>
                     </div>
                 </div>

@@ -59,7 +59,7 @@
 		</nav>
 		
 		<div class="announcement-content container-fluid">
-			<form action="submit_announcement.php" name="form" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
 		<div class="row form-goup">
 			<div class="col">
 				<input name="subject" type="text" class="form-control" placeholder="Subject" required>
@@ -116,22 +116,22 @@
 	
 	
 <script>
-		// $("input[type = 'submit']").click(function(){
-		//     var $fileUpload = $("input[type='file']");
-		//     if (parseInt($fileUpload.get(0).files.length) > 4){
-		//         alert("You are only allowed to upload a maximum of 4 files");
-		//     }else{
-		// 		document.getElementById("form").submit();
-		// 	}
-		// });
+	$("input[type = 'submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length) > 4){
+            alert("You are only allowed to upload a maximum of 4 files");
+        }else{
+			document.getElementById("container-announcement").submit();
+		}
+    });
 
-	// $('#container-announcement').ajaxForm({
-	// 	url: 'submit_announcement.php',
-	// 	method: 'post',
-	// 	success: function () {
-	// 		$("#announcement").modal("show");
-	// 	}
-	// });
+	$('#container-announcement').ajaxForm({
+		url: 'submit_announcement.php',
+		method: 'post',
+		success: function () {
+			$("#announcement").modal("show");
+		}
+	});
 		
 	counter = function() {
 		var value = $('#text').val();
