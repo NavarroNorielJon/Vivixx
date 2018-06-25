@@ -85,10 +85,9 @@ $post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name
 $post_status = mysqli_real_escape_string($connect, $_POST['option4']);
 
 if ($post_status === "g4") {
-    $post_res = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
+    $post_res = mysqli_real_escape_string($connect, $_POST['pos_yr_grad']);
 }else {
-    $post_res = mysqli_real_escape_string($connect, $_POST['post_high_level']);
-
+    $post_res = mysqli_real_escape_string($connect, $_POST['pos_high_level']);
 }
 
 // //Emergency info Sheet
@@ -117,11 +116,11 @@ $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
 $account = mysqli_real_escape_string($connect, $_POST['acc']);
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
-$e_pass = mysqli_real_escape_string($connect, $_POST['e_pass']);
+$e_pass = mysqli_real_escape_string($connect, $_POST['c_password']);
 $skype = mysqli_real_escape_string($connect, $_POST['skype']);
-$s_pass = mysqli_real_escape_string($connect, $_POST['s_pass']);
+$s_pass = mysqli_real_escape_string($connect, $_POST['s_password']);
 $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
-$qq_pass = mysqli_real_escape_string($connect, $_POST['qq_pass']);
+$qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
 $sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
 $result = $connect->query($sql);
@@ -202,22 +201,17 @@ if ($connect->query($update_stmt) === true) {
                                 `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
-
             }else {
                 print_r($connect->error);
-                print_r('6');
             }
         }else {
             print_r($connect->error);
-            print_r('3');
         }
     }else {
         print_r($connect->error);
-        print_r('2');
     }
 }else {
     print_r($connect->error);
-    print_r('1');
 }
 
 ?>
