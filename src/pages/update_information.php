@@ -476,35 +476,35 @@
                 <fieldset id="emergency">
                     <h2>Step 4: Emergency Information Sheet</h2>
                     <h5>Main City Address</h5>
-                    <div>
-                        <div id="maps"></div>
-                        <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()" required="required">
-                        <input type="text" id="lng" name="lng" class="d-none" required="required">
-                        <br>
-                        <div>
-                            <label>
-                                <h6>Main address</h6>
-                            </label>
-                            <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address">
-                        </div>
-                        <br>
-                        <super>(Your alternate address when you are not at Main City Address)</super>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="secondary_add">
-                                    <h6>Secondary City Address</h6>
-                                </label>
-                                <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address">
-                            </div>
 
-                            <div class="form-group col">
-                                <label>
-                                    <h6>Provincial/Permanent Address</h6>
-                                </label>
-                                <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform">
-                            </div>
+                    <div id="maps"></div>
+                    <input type="text" id="lat" name="lat" class="d-none" required="required">
+                    <input type="text" id="lng" name="lng" class="d-none" required="required">
+                    <br>
+                    <div>
+                        <label>
+                            <h6>Main address</h6>
+                        </label>
+                        <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required="required">
+                    </div>
+                    <br>
+                    <super>(Your alternate address when you are not at Main City Address)</super>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="secondary_add">
+                                <h6>Secondary City Address</h6>
+                            </label>
+                            <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address" required="required">
+                        </div>
+
+                        <div class="form-group col">
+                            <label>
+                                <h6>Provincial/Permanent Address</h6>
+                            </label>
+                            <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
                         </div>
                     </div>
+
                     <hr>
                     <h6>Your Housemates</h6>
                     <div class="row">
