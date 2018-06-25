@@ -210,7 +210,7 @@
                             <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
                         </div>
                     </div>
-                    <input type="button" class="next btn btn-primary" value="Next" onclick="onTop()" id="first_next" disabled="disabled"/>
+                    <input type="button" class="next btn btn-primary" value="Next" onclick="onTop()" id="first_next"/>
                 </fieldset>
 
                 <fieldset id="family">
@@ -319,7 +319,7 @@
                     </div>
                     <div id="child"></div>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="second_next" value="Next" disabled="disabled"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="second_next" value="Next"/>
                 </fieldset>
 
                 <fieldset id="educational">
@@ -342,7 +342,7 @@
                         <div class="form-group col">
                             <label for="option1">Status</label>
                             <select name="option1" id="option1" class="form-control" required="required">
-                                <option disabled="disabled">Select:</option>
+                                <option selected="selected" disabled="disabled">Select:</option>
                                 <option value="g1">Graduated</option>
                                 <option value="u1">Undergraduate</option>
                             </select>
@@ -378,7 +378,7 @@
                         <div class="form-group col">
                             <label for="option2">Status</label>
                             <select name="option2" id="option2" class="form-control" required="required">
-                                <option disabled="disabled">Select:</option>
+                                <option selected="selected" disabled="disabled">Select:</option>
                                 <option value="g2">Graduated</option>
                                 <option value="u2">Undergraduate</option>
                             </select>
@@ -470,7 +470,7 @@
 
                     </div>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="third_next" value="Next" disabled="disabled"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="third_next" value="Next"/>
                 </fieldset>
 
                 <fieldset id="emergency">
@@ -579,7 +579,7 @@
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" id="fourth_next" value="Next" disabled="disabled"/>
+                    <input type="button" name="password" class="next btn btn-primary" id="fourth_next" value="Next"/>
                 </fieldset>
 
                 <fieldset id="tutor">
@@ -673,7 +673,7 @@
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous btn btn-default" onclick="onTop()" value="Previous"/>
-                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="fifth_next" value="Next" disabled="disabled"/>
+                    <input type="button" name="password" class="next btn btn-primary" onclick="onTop()" id="fifth_next" value="Next"/>
                 </fieldset>
 
                 <fieldset>
