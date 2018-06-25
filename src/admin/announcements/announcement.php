@@ -34,16 +34,16 @@
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="../index">Home</a>
+						<a class="nav-link" href="../index.php">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../accounts/accounts_status">Accounts</a>
+						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../user_information/user_information">Users</a>
+						<a class="nav-link" href="../user_information/user_information.php">Users</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../leave_request/leave_requests">Leaver Request</a>
+						<a class="nav-link" href="../leave_request/leave_requests.php">Leaver Request</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Summary of Pay</a>

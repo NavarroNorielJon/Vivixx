@@ -28,7 +28,7 @@
                             header('location:../pages/home');
                         }
                     } elseif ($type === "admin") {
-                        header('location:../admin/index');
+                        header('location:../admin/index.php');
                     }
                 }elseif (!password_verify($password, $passwordVerify) && $status === "enabled") {
                     echo "<script>
