@@ -145,7 +145,7 @@
 
                         <div class="form-group">
                         	<label for="email">Email</label>
-                            <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail');nextButton('password','cpassword');" class="form-control form-control" placeholder="E-mail Address" required="required">
+                            <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail')" class="form-control form-control" placeholder="E-mail Address" required="required">
                             <div id="validEmail"></div>
 						</div>
 
