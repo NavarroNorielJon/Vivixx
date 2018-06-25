@@ -152,12 +152,11 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $id = $row['user_id'];
 
 $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
- `gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type', `residential_address`='$residential_address',
+ `gender`='$gender', `height`='$height', `weight`='$weight',`blood_type`='$blood_type', `residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
  `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship',
  `religion`='$religion', `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
- echo $update_stmt;
 
 if ($connect->query($update_stmt) === true) {
     $insert_stmt = "INSERT INTO `user_background`(`bg_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
