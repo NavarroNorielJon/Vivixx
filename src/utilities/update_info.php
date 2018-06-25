@@ -27,6 +27,7 @@ $civil_status = mysqli_real_escape_string($connect, $_POST['civil_status']);
 if ($civil_status === "others") {
     $civil_status = mysqli_real_escape_string($connect, $_POST['other_civil']);
 }
+
 $sss_no = mysqli_real_escape_string($connect, $_POST['sss_no']);
 $tin = mysqli_real_escape_string($connect, $_POST['tin']);
 $philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
@@ -84,23 +85,22 @@ $post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name
 $post_status = mysqli_real_escape_string($connect, $_POST['option4']);
 
 if ($post_status === "g4") {
-    $post_res = mysqli_real_escape_string($connect, $_POST['post_yr_grad']);
+    $post_res = mysqli_real_escape_string($connect, $_POST['pos_yr_grad']);
 }else {
-    $post_res = mysqli_real_escape_string($connect, $_POST['post_high_level']);
-
+    $post_res = mysqli_real_escape_string($connect, $_POST['pos_high_level']);
 }
-//
+
 // //Emergency info Sheet
 $long = mysqli_real_escape_string($connect, $_POST['lng']);
 $lat = mysqli_real_escape_string($connect, $_POST['lat']);
 $coordinates = $lat . "," . $long;
 $main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
-//
+
 //     //Housemate
 $h_name = $_POST['hname'];
 $h_relationship = $_POST['hrel'];
 $h_mobile_number = $_POST['mnumber'];
-//
+
 //     //Relatives
 $r_name = $_POST['rname'];
 $r_relationship = $_POST['rrel'];
@@ -108,7 +108,7 @@ $r_mobile_number =$_POST['rmnumber'];
 
 $secondary_address = mysqli_real_escape_string($connect, $_POST['secondary_add']);
 $provincial_address = mysqli_real_escape_string($connect, $_POST['provincial_add']);
-//
+
 // //tutor info sheet
 $tutor_name = mysqli_real_escape_string($connect, $_POST['tutor_name']);
 $nickname = mysqli_real_escape_string($connect, $_POST['nickname']);
@@ -116,25 +116,11 @@ $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
 $account = mysqli_real_escape_string($connect, $_POST['acc']);
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
-$e_pass = mysqli_real_escape_string($connect, $_POST['e_pass']);
+$e_pass = mysqli_real_escape_string($connect, $_POST['c_password']);
 $skype = mysqli_real_escape_string($connect, $_POST['skype']);
-$s_pass = mysqli_real_escape_string($connect, $_POST['s_pass']);
+$s_pass = mysqli_real_escape_string($connect, $_POST['s_password']);
 $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
-$qq_pass = mysqli_real_escape_string($connect, $_POST['qq_pass']);
-
-
-// if (empty($username)|| empty($email) || empty($password) || empty($cpassword)) {
-//     echo "
-//          <script>
-//              alert('You must fill up all neccessary fields.');
-//              window.history.back();
-//          </script>
-//
-//      ";
-//     exit;
-// }
-
-
+$qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
 $sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
 $result = $connect->query($sql);
@@ -184,11 +170,7 @@ if ($connect->query($update_stmt) === true) {
                 $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`)
                     VALUES ('$name','$birth','$id');";
             }
-            if ($connect->query($insert_stmt)) {
-            }else {
-                print_r($connect->error);
-                print_r();
-            }
+            $connect->query($insert_stmt);
         }
         $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
             VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
@@ -199,11 +181,7 @@ if ($connect->query($update_stmt) === true) {
                         $insert_stmt = "INSERT INTO `relative`(`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
                     }
                 }
-                if ($connect->query($insert_stmt)) {
-                }else {
-                    print_r($connect->error);
-                    print_r('4');
-                }
+                $connect->query($insert_stmt);
             }
 
             foreach ($h_name as $key => $hname) {
@@ -212,11 +190,7 @@ if ($connect->query($update_stmt) === true) {
                         $insert_stmt = "INSERT INTO `housemate`(`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
                     }
                 }
-                if ($connect->query($insert_stmt)) {
-                }else {
-                    print_r($connect->error);
-                    print_r('5');
-                }
+                $connect->query($insert_stmt);
             }
 
             $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
@@ -227,22 +201,17 @@ if ($connect->query($update_stmt) === true) {
                                 `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
-
             }else {
                 print_r($connect->error);
-                print_r('6');
             }
         }else {
             print_r($connect->error);
-            print_r('3');
         }
     }else {
         print_r($connect->error);
-        print_r('2');
     }
 }else {
     print_r($connect->error);
-    print_r('1');
 }
 
 ?>

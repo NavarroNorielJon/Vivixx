@@ -1,28 +1,28 @@
-$('#update_form').ajaxForm({
-    url: '../utilities/update_info',
-    method: 'post',
-    error: function (){
-        swal({
-            type: 'error',
-            icon: 'warning',
-            title: 'Error!',
-            text: "Something is wrong",
-            showConfirmButton: true,
-            timer: 2500
-        });
-    },
-    success: function () {
-        swal({
-            type: 'success',
-            title: 'Success!',
-            icon: 'success',
-            text: "Thank you!",
-            timer: 2500
-        }).then(function(){
-            window.location = '/home';
-        });
-    }
-});
+// $('#update_form').ajaxForm({
+//     url: '../utilities/update_info',
+//     method: 'post',
+//     error: function (){
+//         swal({
+//             type: 'error',
+//             icon: 'warning',
+//             title: 'Error!',
+//             text: "Something is wrong",
+//             showConfirmButton: true,
+//             timer: 2500
+//         });
+//     },
+//     success: function () {
+//         swal({
+//             type: 'success',
+//             title: 'Success!',
+//             icon: 'success',
+//             text: "Thank you!",
+//             timer: 2500
+//         }).then(function(){
+//             window.location ='/';
+//         });
+//     }
+// });
 
 $('#signup_form').ajaxForm({
     url: '../utilities/registration.php',
