@@ -13,18 +13,18 @@
 	<title>Vivixx</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/Lion.png" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="body" id="body">
+<body>
 	<!-- container -->
 	<div class="containter-fluid" id="index">
 		<div class="row no-gutters">
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
-				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
+				<a href="#login-form"><img class="image" id="image" src="../img/Lion.png"></a>
 			</div>
 
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
@@ -34,7 +34,7 @@
 					</h3>
 				</div>
 
-				<form action="utilities/login.php" method="post" class="col s12 " id="login">
+				<form action="utilities/login.php" method="post" class="col s12" id="login">
         			<div class="form-group col-sm-12">
             			<label for="userOrEmail">Username or Email-Address</label>
                 		<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
@@ -79,7 +79,7 @@
                 <div class="modal-header forgot-header">
 					<div class="row">
             			<div class="col-3">
-							<img src="img/Lion.png" style="height:auto; width:65%;" >
+							<img src="../img/Lion.png" style="height:auto; width:65%;" >
 						</div>
 
 						<div class="col-9">
@@ -113,7 +113,7 @@
             	<div class="modal-header signup-header">
             		<div class="row">
             			<div class="col-3">
-							<img src="img/Lion.png" style="height:auto; width:65%;" >
+							<img src="../img/Lion.png" style="height:auto; width:65%;" >
 						</div>
 
 						<div class="col-9">
@@ -180,18 +180,18 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="script/alerts.js"></script>
-	<script type="text/javascript" src="script/popper.min.js"></script>
-	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="script/ajax.js"></script>
+	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../script/alerts.js"></script>
+	<script type="text/javascript" src="../script/popper.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
 	<script>
-		window.onload = function() {
-			var body = document.getElementById('body');
-			body.style.opacity = "1";
-		}
+//		window.onload = function() {
+//			var body = document.getElementById('body');
+//			body.style.opacity = "1";
+//		}
 
 		$('a[href^="#"]').on('click', function(event) {
     		var target = $(this.getAttribute('href'));
