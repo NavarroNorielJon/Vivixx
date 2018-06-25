@@ -25,7 +25,6 @@
 		<div class="row no-gutters">
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
 				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
-				<h1 class="message" id="message">TO TEACH IS TO LEARN</h1>
 			</div>
 
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
