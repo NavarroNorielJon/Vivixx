@@ -65,6 +65,27 @@ ul ul a {
 /*end*/
 /*--------------------------------------------------------------*/
 
+#login {
+	border-radius: 0;
+	box-shadow: #404040 6px 7px;
+	margin: 0 auto;
+	width: 30%;
+	padding: 100px 5px 60px 5px; 
+	margin-top: 13vh;
+}
+
+#login p {
+	color: black;
+}
+
+#login a {
+	color: #3333ff;
+}
+
+#login a:focus {
+	outline: none;
+}
+
 /*Style for the update information page*/
 #maps{
 	border: solid 2px black;
@@ -72,8 +93,18 @@ ul ul a {
 	width: 100%;
 }
 
+#update-information {
+	background-image: url(../img/building.jpeg);
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+}
+
 #update-information .container {
 	padding-top: 15px;
+	background-color: pink;
 }
 
 #update-information .container a{
@@ -204,15 +235,21 @@ ul ul a {
 }
 
 #index label {
-	color: White;
+	color: black;
 }
 
-#index .index-form .login-button {
+#index .login-button {
 	background-color: #005959;
 	color: #fff;
-	font-size: 2vw;
-	margin-bottom: 20%;
-	padding: 5px auto 20px auto;
+	font-size: 1.3vw;
+	margin-top: 5vh !important;
+	margin-bottom: 5vh !important;
+	transition: all 0.4s;
+}
+
+#index .login-button:hover {
+	background-color: #fac213;
+	font-size: 1vw;
 }
 
 #index .index-form .signup-button {
@@ -518,8 +555,9 @@ body {
 
 .f1 {
     padding: 25px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 4px;
+	color: black;
 }
 
 .f1 h3 {
