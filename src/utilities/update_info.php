@@ -81,7 +81,7 @@ if ($col_status === "g3") {
     $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_high_level']));
 }
 
-$post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['post_school_name']));
+$post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['pos_school_name']));
 $post_status = ucwords(mysqli_real_escape_string($connect, $_POST['option4']));
 
 if ($post_status === "g4") {
