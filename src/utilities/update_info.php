@@ -108,6 +108,11 @@ $r_mobile_number =$_POST['rmnumber'];
 
 $secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
 $provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
+$answer = mysqli_real_escape_string($connect, $_POST['yesorno']);
+if ($answer === "yes") {
+    $answer = mysqli_real_escape_string($connect, $_POST['answer']);
+}
+
 
 // //tutor info sheet
 $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']));
@@ -194,8 +199,8 @@ if ($connect->query($update_stmt) === true) {
             }
 
             $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                            `provincial_address`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
-                            '$secondary_address','$provincial_address','$id','$id');";
+                            `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
+                            '$secondary_address','$provincial_address','$answer','$id','$id');";
             if ($connect->query($insert_stmt) === true) {
                 $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
                                 `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',

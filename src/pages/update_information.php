@@ -631,7 +631,7 @@
                             </script>
                             <div class="form-group col">
                                 <label for="quest">Do you plan on relocating soon? </label>
-                                <select name="option4" id="quest" class="form-control">
+                                <select name="yesorno" id="quest" class="form-control">
                                     <option selected="selected" disabled="disabled">Select: Yes or No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
