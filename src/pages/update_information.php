@@ -245,7 +245,7 @@
                             </div>
                         </div>
                         <div class="f1-buttons">
-                            <button type="button" class="btn btn-next">Next</button>
+                            <button type="button" class="btn pages btn-next">Next</button>
                         </div>
                     </fieldset>
 
@@ -318,17 +318,17 @@
                                 <input type="text" name="occupation" id="occupation" placeholder="occupation" class="form-control text-transform" autocomplete="off">
                             </div>
 
-                            <div class="form-group col-4">
+                            <div class="form-group col-2">
                                 <label for="employer">Employer</label>
                                 <input type="text" name="employer" id="employer" placeholder=" employer" class="form-control text-transform" autocomplete="off">
                             </div>
 
-                            <div class="form-group col-4">
+                            <div class="form-group col">
                                 <label for="business_address">Business Address</label>
                                 <input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off">
                             </div>
 
-                            <div class="form-group col-2">
+                            <div class="form-group col-3">
                                 <label for="spouse_tel_no">Telephone NO.</label>
                                 <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="Telephone number" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
                             </div>
@@ -355,8 +355,8 @@
                         </div>
                         <div id="child"></div>
                         <div class="f1-buttons">
-                            <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="button" class="btn btn-next">Next</button>
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="button" class="btn pages btn-next">Next</button>
                         </div>
                     </fieldset>
 
@@ -489,7 +489,7 @@
                             </script>
                             <div class="form-group col">
                                 <label for="option4">Status</label>
-                                <select name="option4" id="option4" class="form-control" required="required">
+                                <select name="option4" id="option4" class="form-control">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="g4">Graduated</option>
                                     <option value="u4">Undergraduate</option>
@@ -508,8 +508,8 @@
 
                         </div>
                         <div class="f1-buttons">
-                            <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="button" class="btn btn-next">Next</button>
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="button" class="btn pages btn-next">Next</button>
                         </div>
                     </fieldset>
 
@@ -518,14 +518,14 @@
                         <h5>Main City Address</h5>
                         <div>
                             <div id="maps"></div>
-                            <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()" required="required">
-                            <input type="text" id="lng" name="lng" class="d-none" required="required">
+                            <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()">
+                            <input type="text" id="lng" name="lng" class="d-none">
                             <br>
                             <div>
                                 <label>
                                     <h6>Main address</h6>
                                 </label>
-                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address">
+                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required>
                             </div>
                             <br>
                             <super>(Your alternate address when you are not at Main City Address)</super>
@@ -541,7 +541,7 @@
                                     <label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform">
+                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required>
                                 </div>
                             </div>
                         </div>
@@ -550,17 +550,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off" required>
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off" required>
                             </div>
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off" required>
                             </div>
 
                         </div>
@@ -587,17 +587,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off" required>
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off" required>
                             </div>
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off" required>
                             </div>
 
                         </div>
@@ -617,11 +617,36 @@
                                 <label for="rmnumber2">Mobile Number</label>
                                 <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
                             </div>
-                        </div>
-                        <div class="f1-buttons">
-                            <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="button" class="btn btn-next">Next</button>
 
+                        </div>
+
+                        <div class="row">
+                            <script>
+                                $(function () {
+                                    $('#quest').change(function () {
+                                        $('#yes').hide();
+                                        $('#' + $(this).val()).show();
+                                    });
+                                });
+                            </script>
+                            <div class="form-group col">
+                                <label for="quest">Do you plan on relocating soon? </label>
+                                <select name="option4" id="quest" class="form-control">
+                                    <option selected="selected" disabled="disabled">Select: Yes or No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="Yes" style="display:none">
+                                <label for="answer">If yes, where will be your new address?</label>
+                                <input type="text" name="answer" class="form-control" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="f1-buttons">
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="button" class="btn pages btn-next">Next</button>
                         </div>
                     </fieldset>
 
@@ -716,8 +741,8 @@
                             </div>
                         </div>
                         <div class="f1-buttons">
-                            <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="submit" class="btn btn-submit">Submit</button>
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="submit" class="btn pages btn-submit">Submit</button>
                         </div>
                     </fieldset>
                 </form>
