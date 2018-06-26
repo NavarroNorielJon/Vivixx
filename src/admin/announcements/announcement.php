@@ -120,18 +120,19 @@
         var $fileUpload = $("input[type='file']");
         if (parseInt($fileUpload.get(0).files.length) > 4){
             alert("You are only allowed to upload a maximum of 4 files");
+			window.location="announcement.php";
         }else{
 			document.getElementById("container-announcement").submit();
 		}
     });
 
-	$('#container-announcement').ajaxForm({
-		url: 'submit_announcement.php',
-		method: 'post',
-		success: function () {
-			$("#announcement").modal("show");
-		}
-	});
+	// $('#container-announcement').ajaxForm({
+	// 	url: 'submit_announcement.php',
+	// 	method: 'post',
+	// 	success: function () {
+	// 		$("#announcement").modal("show");
+	// 	}
+	// });
 		
 	counter = function() {
 		var value = $('#text').val();
