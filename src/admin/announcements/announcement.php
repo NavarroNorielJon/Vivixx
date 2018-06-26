@@ -60,43 +60,6 @@
 			</div>
 		</nav>
 		
-<<<<<<< HEAD
-		<div class="announcement-content container-fluid">
-			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
-		<div class="row form-goup">
-			<div class="col">
-				<input name="subject" type="text" class="form-control" placeholder="Subject" required>
-			</div>
-			
-			<div class="col">
-				<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
-			</div>
-		</div>
-          
-		<div id="border" style="padding-top: 25px;">
-			<textarea name="body" id='text' placeholder="Text Content" required></textarea>
-		</div>
-		
-		<div id="result">
-			Remaining characters: <span id="totalChars">1000</span><br/>
-		</div>
-		<br>
-        <div>
-        Upload Attachment
-        <br>
-        <input type="file" name="file[]" multiple>
-        </div>
-        <div>
-        Upload Image
-        <br>
-        <input type="file" name="image">
-        </div>
-		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
-        <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
-        <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
-	</form>
-        
-=======
 		<div class="accounts-content container-fluid">
 			<h1>Announcements</h1>
 				<table class="table" id="table">
@@ -139,7 +102,6 @@
 							</tr>";
 						}
 					}
->>>>>>> 897169a3c3d39841a2066f1160295c3e42a4e181
 
 					$connect-> close();
 					?>
