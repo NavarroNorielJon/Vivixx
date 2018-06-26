@@ -24,15 +24,12 @@
 
     <body id="update-information">
         <div class="update-information-header">
-            <h1>Update Information Form
-            </h1>
-            <button type="button" class="btn btn-default logout">
-                <a href="../utilities/logout" id="logout">
-                    <i class="material-icons">
-                        power_settings_new
-                    </i>
-                </a>
-            </button>
+            <h1>Update Information Form</h1>
+            <a href="../utilities/logout" class="btn" id="logout">
+            	<i class="material-icons">
+                	power_settings_new
+                </i>
+            </a>
         </div>
 
         <div class="row">
@@ -728,7 +725,7 @@
         </div>
 
         <div id="footer">
-            <p>Vivixx Corporation</p>
+            <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
 
         <script>
