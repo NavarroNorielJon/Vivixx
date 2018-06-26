@@ -11,6 +11,7 @@
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -70,36 +71,101 @@
 							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
 						</div>
 
+						<script>
+							$(function () {
+								$('#department').change(function () {
+									$('#orig').hide();
+									$('#a').hide();
+									$('#ash').hide();
+									$('#its').hide();
+									$('#nva').hide();
+									$('#pe').hide();
+									$('#ve').hide();
+									$('#va').hide();
+									$('#' + $(this).val()).show();
+								});
+							});
+						</script>
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<select class="custom-select form-group" name="department">
+							<select class="custom-select form-group" name="department" id="department">
 								<option selected disabled>Choose your Department</option>
-								<option value="Administration">Administration</option>
-								<option value="Administration Support / HR">Administration Support / HR</option>
-								<option value="IT Support">IT Support</option>
-								<option value="Non-voice Account">Non-voice Account</option>
-								<option value="Phone ESL">Phone ESL</option>
-								<option value="Video ESL">Video ESL</option>
-								<option value="Voice Account">Voice Account</option>
+								<option value="a">Administration</option>
+								<option value="ash">Administration Support / HR</option>
+								<option value="its">IT Support</option>
+								<option value="nva">Non-voice Account</option>
+								<option value="pe">Phone ESL</option>
+								<option value="ve">Video ESL</option>
+								<option value="va">Voice Account</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="orig">
+							<label for="position">Position</label>
+							<select class="custom-select form-group">
+								<option selected disabled>Choose your Position</option>
+							</select>
+						</div>
+						<div class="form-group col" id="a" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="admin">
+								<option selected disabled>Choose your Position</option>
+								<option value="HR">HR</option>
+								<option value="Company Nurse">Company Nurse</option>
+								<option value="COO">COO</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="ash" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="adminsp">
+								<option selected disabled value="HR Assistant">HR Assistant</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="its" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="itsupport">
+								<option selected disabled value="ICT Support Specialist">ICT Support Specialist</option>
+
+							</select>
+						</div>
+
+						<div class="form-group col" id="nva" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="nonvoice">
+								<option selected disabled value="Online English Tutor">Online English Tutor</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="pe" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="phone">
+								<option selected disabled value="Online English Tutor">Online English Tutor</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="ve" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="video">
+								<option selected disabled value="Online English Tutor">Online English Tutor</option>
+							</select>
+						</div>
+
+						<div class="form-group col" id="va" style='display:none'>
+							<label for="position">Position</label>
+							<select class="custom-select form-group" name="voice">
+								<option selected disabled>Choose your Position</option>
+								<option value="Indesigner">Indesigner</option>
+								<option value="Web Developer">Web Developer</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="row">
 
-						<div class="form-group col">
-							<label for="position">Position</label>
-							<select class="custom-select form-group" name="position">
-								<option selected disabled>Choose your Department</option>
-								<option value="Administration">Administration</option>
-								<option value="Administration Support / HR">Administration Support / HR</option>
-								<option value="IT Support">IT Support</option>
-								<option value="Non-voice Account">Non-voice Account</option>
-								<option value="Phone ESL">Phone ESL</option>
-								<option value="Video ESL">Video ESL</option>
-								<option value="Voice Account">Voice Account</option>
-							</select>
-						</div>
+
+
 
 						<div class="form-group col">
 							<label for="date_hired">Date Hired</label>
@@ -178,7 +244,7 @@
 	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 	<script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
-	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>
 </body>
+</html>
