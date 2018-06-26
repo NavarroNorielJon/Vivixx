@@ -6,7 +6,7 @@ $connect = Connect();
 
 //personal information
 $birth_date = mysqli_real_escape_string($connect, $_POST['birth_date']);
-$birth_place = mysqli_real_escape_string($connect,$_POST['birth_place']);
+$birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place']));
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
 $ft = mysqli_real_escape_string($connect, $_POST['ft']);
@@ -14,18 +14,18 @@ $in = mysqli_real_escape_string($connect, $_POST['in']);
 $height = $ft . "'" . $in;
 $weight = mysqli_real_escape_string($connect, $_POST['weight']);
 $blood_type = mysqli_real_escape_string($connect, $_POST['blood']);
-$residential_address = mysqli_real_escape_string($connect, $_POST['residential_address']);
+$residential_address = ucwords(mysqli_real_escape_string($connect, $_POST['residential_address']));
 $residential_zip = mysqli_real_escape_string($connect, $_POST['residential_zip']);
 $residential_tel_no = mysqli_real_escape_string($connect, $_POST['residential_tel_no']);
-$permanent_address = mysqli_real_escape_string($connect, $_POST['permanent_address']);
+$permanent_address = ucwords(mysqli_real_escape_string($connect, $_POST['permanent_address']));
 $permanent_zip = mysqli_real_escape_string($connect, $_POST['permanent_zip']);
 $permanent_tel_no = mysqli_real_escape_string($connect, $_POST['permanent_tel_no']);
-$citizenship = mysqli_real_escape_string($connect, $_POST['citizenship']);
-$religion = mysqli_real_escape_string($connect, $_POST['religion']);
-$civil_status = mysqli_real_escape_string($connect, $_POST['civil_status']);
+$citizenship = ucwords(mysqli_real_escape_string($connect, $_POST['citizenship']));
+$religion = ucwords(mysqli_real_escape_string($connect, $_POST['religion']));
+$civil_status = ucwords(mysqli_real_escape_string($connect, $_POST['civil_status']));
 
 if ($civil_status === "others") {
-    $civil_status = mysqli_real_escape_string($connect, $_POST['other_civil']);
+    $civil_status = ucwords(mysqli_real_escape_string($connect, $_POST['other_civil']));
 }
 
 $sss_no = mysqli_real_escape_string($connect, $_POST['sss_no']);
@@ -34,60 +34,60 @@ $philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
 $pagibig_id_no = mysqli_real_escape_string($connect, $_POST['pagibig_id_no']);
 
 //family background
-$spouse_first_name = mysqli_real_escape_string($connect, $_POST['spouse_first_name']);
-$spouse_middle_name = mysqli_real_escape_string($connect, $_POST['spouse_middle_name']);
-$spouse_last_name = mysqli_real_escape_string($connect, $_POST['spouse_last_name']);
-$occupation = mysqli_real_escape_string($connect, $_POST['occupation']);
-$employer = mysqli_real_escape_string($connect, $_POST['employer']);
-$business_address = mysqli_real_escape_string($connect, $_POST['business_address']);
+$spouse_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_first_name']));
+$spouse_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_middle_name']));
+$spouse_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_last_name']));
+$occupation = ucwords(mysqli_real_escape_string($connect, $_POST['occupation']));
+$employer = ucwords(mysqli_real_escape_string($connect, $_POST['employer']));
+$business_address = ucwords(mysqli_real_escape_string($connect, $_POST['business_address']));
 $spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
-$father_first_name = mysqli_real_escape_string($connect, $_POST['father_first_name']);
-$father_middle_name = mysqli_real_escape_string($connect, $_POST['father_middle_name']);
-$father_last_name = mysqli_real_escape_string($connect, $_POST['father_last_name']);
-$mother_first_name = mysqli_real_escape_string($connect, $_POST['mother_first_name']);
-$mother_middle_name = mysqli_real_escape_string($connect, $_POST['mother_middle_name']);
-$mother_last_name = mysqli_real_escape_string($connect, $_POST['mother_last_name']);
+$father_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_first_name']));
+$father_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_middle_name']));
+$father_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_last_name']));
+$mother_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['mother_first_name']));
+$mother_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['mother_middle_name']));
+$mother_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['mother_last_name']));
 //child info
 $child_name = $_POST['child_name'];
 $child_birth = $_POST['child_birth'];
 
 
 // //Educational background
-$elem_school_name = mysqli_real_escape_string($connect, $_POST['elem_school_name']);
-$elem_status = mysqli_real_escape_string($connect, $_POST['option1']);
+$elem_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['elem_school_name']));
+$elem_status = ucwords(mysqli_real_escape_string($connect, $_POST['option1']));
 
 if ($elem_status === "g1") {
-    $elem_res = mysqli_real_escape_string($connect, $_POST['elem_yr_grad']);
+    $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_yr_grad']));
 
 } else {
-    $elem_res = mysqli_real_escape_string($connect, $_POST['elem_high_level']);
+    $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_high_level']));
 }
 
-$sec_school_name = mysqli_real_escape_string($connect, $_POST['sec_school_name']);
-$sec_status = mysqli_real_escape_string($connect, $_POST['option2']);
+$sec_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['sec_school_name']));
+$sec_status = ucwords(mysqli_real_escape_string($connect, $_POST['option2']));
 
 if ($sec_status === "g2") {
-    $sec_res = mysqli_real_escape_string($connect, $_POST['sec_yr_grad']);
+    $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
 } else {
-    $sec_res = mysqli_real_escape_string($connect, $_POST['sec_high_level']);
+    $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_high_level']));
 }
 
-$col_school_name = mysqli_real_escape_string($connect, $_POST['col_school_name']);
-$col_status = mysqli_real_escape_string($connect, $_POST['option3']);
+$col_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['col_school_name']));
+$col_status = ucwords(mysqli_real_escape_string($connect, $_POST['option3']));
 
 if ($col_status === "g3") {
-    $col_res = mysqli_real_escape_string($connect, $_POST['col_yr_grad']);
+    $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
 }else {
-    $col_res = mysqli_real_escape_string($connect, $_POST['col_high_level']);
+    $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_high_level']));
 }
 
-$post_school_name = mysqli_real_escape_string($connect, $_POST['post_school_name']);
-$post_status = mysqli_real_escape_string($connect, $_POST['option4']);
+$post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['post_school_name']));
+$post_status = ucwords(mysqli_real_escape_string($connect, $_POST['option4']));
 
 if ($post_status === "g4") {
-    $post_res = mysqli_real_escape_string($connect, $_POST['pos_yr_grad']);
+    $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
 }else {
-    $post_res = mysqli_real_escape_string($connect, $_POST['pos_high_level']);
+    $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_high_level']));
 }
 
 // //Emergency info Sheet
@@ -106,12 +106,12 @@ $r_name = $_POST['rname'];
 $r_relationship = $_POST['rrel'];
 $r_mobile_number =$_POST['rmnumber'];
 
-$secondary_address = mysqli_real_escape_string($connect, $_POST['secondary_add']);
-$provincial_address = mysqli_real_escape_string($connect, $_POST['provincial_add']);
+$secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
+$provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
 
 // //tutor info sheet
-$tutor_name = mysqli_real_escape_string($connect, $_POST['tutor_name']);
-$nickname = mysqli_real_escape_string($connect, $_POST['nickname']);
+$tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']));
+$nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
 $account = mysqli_real_escape_string($connect, $_POST['acc']);
