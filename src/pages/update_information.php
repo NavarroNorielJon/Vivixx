@@ -478,7 +478,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="post_school_name" id="post_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <script>
