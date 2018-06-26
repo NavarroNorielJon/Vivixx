@@ -21,7 +21,7 @@
 
 <body  id="index">
 	<!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
-	
+
 	<div class="containter-fluid">
 		<form action="utilities/login.php" method="post" class="jumbotron" id="login">
 			<img src="../img/Lion.png" class="index-image">
@@ -43,24 +43,24 @@
                     </div>
 				</div>
 			</div>
-					
+
 			<div class="text-center">
 				<button type="submit" class="btn login-button" name="submit">
 					Login
 				</button>
-						
+
 				<p style="display: inline-block;">
-					<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or 
-					<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a> 
+					<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
+					<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a>
 				</p>
 			</div>
 		</form>
-		
+
 		<div class="text-center footer">
 			<p>© Vivixx 2018 . All Rights Reserved.</p>
 		</div>
 	</div>
-	
+
 	<!-- Modal for forgot password -->
     <div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
     	<div class="modal-dialog" role="document">
@@ -114,7 +114,7 @@
 
 				<!-- Body -->
                 <div class="modal-body">
-                	<form  id="signup_form" action="../utilities/registration.php" method="post">
+                	<form  id="signup_form" action="utilities/registration.php" method="post">
 						<!-- Full Name -->
 						<div class="row">
                         	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -152,7 +152,7 @@
                                 	<input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'regpass','validConfirmation')" class="form-control" placeholder="Confirm Password" required="required">
 
                                     <div class="input-group-append">
-                                    	<button  type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
+                                    	<button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
                                         	<i class="material-icons" id="icon1">visibility</i>
 										</button>
 									</div>
