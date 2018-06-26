@@ -50,6 +50,12 @@ ul ul a {
 	color: green;
 }
 
+.footer {
+	color: white;
+	margin-top: 5vh;
+	font-size: 1.5rem;
+}
+
 /*style for the validation for the password*/
 #average{
 	color: #4DB82C;
