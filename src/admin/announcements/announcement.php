@@ -38,8 +38,8 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../index.php">Home</a>
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="accounts_status.php">Accounts</a>
+					<li class="nav-item ">
+						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../user_information/user_information.php">Users</a>
@@ -51,7 +51,7 @@
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
+						<a class="nav-link active" href="announcement.php">Announcement</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link logout" href="../logout.php">Logout</a>
@@ -61,7 +61,7 @@
 		</nav>
 		
 		<div class="accounts-content container-fluid">
-			<h1>Accounts</h1>
+			<h1>Announcements</h1>
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -129,11 +129,14 @@
 		//script for calling datatables library
       	$(document).ready(function(){
 			$('#table').dataTable( {
+
 				"columnDefs": [
-					{ "orderable": false, "targets": 5 }
+					{ "orderable": false, "targets": [2,3,4,5] }
 				]
+
 			});
 			$('#table').DataTable();
+			
 		});
       </script>
 </body>

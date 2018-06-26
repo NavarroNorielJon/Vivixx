@@ -3,7 +3,7 @@
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $req_id = $_GET["req_id"];
-    $leave_request = "SELECT * FROM mis.leave_req natural join user where user_id='$user_id' and leave_req_id='$req_id';";
+    $leave_request = "SELECT * FROM mis.leave_req where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
 ?>
