@@ -1,7 +1,7 @@
 <?php
-    include 'utilities/db.php';
-	
+    include '../utilities/db.php';
 	session_start();
+
 	if (isset($_SESSION['user'])) {
 		echo "<script>window.location = 'pages/';</script>";
     }
@@ -13,62 +13,48 @@
 	<title>Vivixx</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="style/style2.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../style/style2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="body" id="body">
-	<!-- container -->
-	<div class="containter-fluid" id="index">
-		<div class="row no-gutters">
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-9 index-content">
-				<a href="#login-form"><img class="image" id="image" src="img/Lion.png"></a>
+<body  id="index">
+	<!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
+	
+	<div class="containter-fluid">
+		<form action="utilities/login.php" method="post" class="jumbotron" id="login">
+			<img src="../img/Lion.png" class="index-image">
+        	<div class="form-group col-sm-12">
+            	<label for="userOrEmail">Username or Email-Address</label>
+                <input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+                <div id="validUserOrEmail"></div>
 			</div>
 
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 index-form" id="login-form">
-				<div class="text-center">
-					<h3 style="color: white; margin-bottom: 4vh;">
-						Login
-					</h3>
+            <div class="form-group col-sm-12">
+          		<label for="pass">Password</label>
+                <div class="input-group">
+                	<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
+
+                    <div class="input-group-append">
+                     	<button type="button" class="btn eye" onclick="showHide('password','icon')">
+                     		<i class="material-icons" id="icon">visibility</i>
+                     	</button>
+                    </div>
 				</div>
-
-				<form action="utilities/login.php" method="post" class="col s12 " id="login">
-        			<div class="form-group col-sm-12">
-            			<label for="userOrEmail">Username or Email-Address</label>
-                		<input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-                		<div id="validUserOrEmail"></div>
-					</div>
-
-            		<div class="form-group col-sm-12">
-            			<label for="pass">Password</label>
-                		<div class="input-group">
-                			<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
-
-                    		<div class="input-group-append">
-                        		<button type="button" class="btn eye" onclick="showHide('password','icon')">
-                            		<i class="material-icons" id="icon">visibility</i>
-                            	</button>
-                        	</div>
-						</div>
-					</div>
-
-					<div class="text-center">
-						<a href="#!" data-toggle="modal" data-target="#forgot-form" style="display: block; margin: 1rem;" class="forgot">Forgot password?</a>
-            			<button type="submit" class="btn login-button" name="submit">
-							Login
-						</button>
-
-						<br>
-
-						<a href="#!" data-toggle="modal" id="signup-link" data-target="#signup-form">Sign Up</a>
-					</div>
-				</form>
-
-				<button  type="button" class="btn signup-button" href="#!" data-toggle="modal" data-target="#signup-form">Sign Up</button>
 			</div>
-		</div>
+					
+			<div class="text-center">
+				<button type="submit" class="btn login-button" name="submit">
+					Login
+				</button>
+						
+				<p style="display: inline-block;">
+					<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or 
+					<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a> 
+				</p>
+			</div>
+		</form>
 	</div>
 
 	<!-- Modal for forgot password -->
@@ -180,13 +166,13 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="script/alerts.js"></script>
-	<script type="text/javascript" src="script/popper.min.js"></script>
-	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="script/ajax.js"></script>
+	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../script/alerts.js"></script>
+	<script type="text/javascript" src="../script/popper.min.js"></script>
+	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
 	<script>
 		window.onload = function() {
 			var body = document.getElementById('body');

@@ -67,11 +67,9 @@ ul ul a {
 
 #login {
 	border-radius: 0;
-	box-shadow: #404040 6px 7px;
-	margin: 0 auto;
-	width: 30%;
-	padding: 100px 5px 60px 5px; 
-	margin-top: 13vh;
+	margin: 17vh auto auto auto;
+	width: 25%;
+	padding: 100px 25px 60px 25px; 
 }
 
 #login p {
@@ -190,6 +188,8 @@ ul ul a {
 }
 
 #index {
+	margin: 0;
+	padding: 0;
 	background-attachment: fixed;
 	background-image: url(../img/building.jpeg);
 	background-position: center center;
@@ -197,15 +197,10 @@ ul ul a {
 	background-size: cover;
 }
 
-#index .index-content {
-	height:100vh;"
-	text-align: center;
-}
-
-#index .index-content img {
-	display: block;
-	margin: 10vh auto 5vh auto;
-	max-width: 40%;
+#index .index-image {
+	height: auto;
+	max-width: 55%;
+	margin: -30vh 0 0 9.8vh !important;
 }
 
 #index .index-form {
@@ -241,15 +236,14 @@ ul ul a {
 #index .login-button {
 	background-color: #005959;
 	color: #fff;
+	display: block;
 	font-size: 1.3vw;
-	margin-top: 5vh !important;
-	margin-bottom: 5vh !important;
+	margin: 5vh auto 3vh;
 	transition: all 0.4s;
 }
 
 #index .login-button:hover {
 	background-color: #fac213;
-	font-size: 1vw;
 }
 
 #index .index-form .signup-button {
