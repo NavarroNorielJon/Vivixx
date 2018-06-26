@@ -1,6 +1,7 @@
 /*This stylesheet is created mainly for the employee's side*/
 
 /*Style for html elements*/
+
 a, a:hover, a:active {
 	color: #fff;
 	text-decoration: none;
@@ -73,7 +74,7 @@ ul ul a {
 	border-radius: 0;
 	margin: 17vh auto auto auto;
 	width: 25%;
-	padding: 100px 25px 60px 25px; 
+	padding: 100px 25px 60px 25px;
 }
 
 #login p {

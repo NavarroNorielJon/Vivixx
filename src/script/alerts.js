@@ -37,11 +37,12 @@ $('#signup_form').ajaxForm({
             timer: 2500
         });
     },
-    success: function () {
+    success: function (data) {
+        console.log(data);
         swal({
             type: 'success',
             title: 'Successfully Registered',
-            text: "Your username is ",
+            text: "Your username is " + data,
             icon: 'success',
             showConfirmButton: true,
         }).then(function(){
