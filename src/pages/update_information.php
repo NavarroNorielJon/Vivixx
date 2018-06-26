@@ -34,9 +34,10 @@
                 </a>
             </button>
         </div>
+
         <div class="row">
             <div class="container">
-                <form role="form" action="" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -514,6 +515,7 @@
                             <button type="button" class="btn btn-next">Next</button>
                         </div>
                     </fieldset>
+
                     <fieldset>
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
@@ -561,7 +563,7 @@
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -579,7 +581,7 @@
 
                             <div class="form-group col">
                                 <label for="mnumber2">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -598,7 +600,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -616,7 +618,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber2">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="mobile number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -640,7 +642,7 @@
                             </div>
 
                             <div class="form-group col-2">
-                                <label>Mobile number</label>
+                                <label>Mobile Number</label>
                                 <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" onkeypress="numberInput(event)" maxlength="11" class="form-control">
                             </div>
 
@@ -721,7 +723,6 @@
                             <button type="submit" class="btn btn-submit">Submit</button>
                         </div>
                     </fieldset>
-
                 </form>
             </div>
         </div>
@@ -750,37 +751,6 @@
             function invalid() {
                 swal({title: "Error", text: "Please complete all the required information", icon: "error"});
             }
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                var current = 1,
-                    current_step,
-                    next_step,
-                    steps;
-                steps = $("fieldset").length;
-                $(".next").click(function () {
-                    current_step = $(this).parent();
-                    next_step = $(this).parent().next();
-                    next_step.show();
-                    current_step.hide();
-                    setProgressBar(++current);
-                });
-                $(".previous").click(function () {
-                    current_step = $(this).parent();
-                    next_step = $(this).parent().prev();
-                    next_step.show();
-                    current_step.hide();
-                    setProgressBar(--current);
-                });
-                setProgressBar(current);
-                // Change progress bar action
-                function setProgressBar(curStep) {
-                    var percent = parseFloat(100 / steps) * curStep;
-                    percent = percent.toFixed();
-                    $(".progress-bar").css("width", percent + "%").html(percent + "%");
-                }
-            });
         </script>
         <script type="text/javascript">
             function onTop() {
