@@ -27,8 +27,7 @@
 			<img src="../img/Lion.png" class="index-image">
         	<div class="form-group col-sm-12">
             	<label for="userOrEmail">Username or Email-Address</label>
-                <input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-                <div id="validUserOrEmail"></div>
+                <input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
 			</div>
 
             <div class="form-group col-sm-12">
@@ -162,7 +161,7 @@
 						</div>
 
 						<div style="text-align: right;">
-							<button type="submit" class="btn btn-primary" id="button1" onclick="loginSuccess()">Submit</button>
+							<button type="submit" class="btn btn-primary" id="button1">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -177,21 +176,5 @@
 	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script/sweetalert.min.js"></script>
 	<script type="text/javascript" src="script/ajax.js"></script>
-	<script>
-		window.onload = function() {
-			var body = document.getElementById('body');
-			body.style.opacity = "1";
-		}
-
-		$('a[href^="#"]').on('click', function(event) {
-    		var target = $(this.getAttribute('href'));
-    		if( target.length ) {
-        		event.preventDefault();
-        		$('html, body').stop().animate({
-            	scrollTop: target.offset().top
-        		}, 1000);
-    		}
-		});
-	</script>
 </body>
 </html>

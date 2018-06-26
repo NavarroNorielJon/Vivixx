@@ -4,7 +4,11 @@ $connect = Connect();
 
 //user credentials
 $first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
-$middle_name = mysqli_real_escape_string($connect, $_POST['middle_name']);
+if ($_POST['middle_name'] !== null) {
+    $middle_name = mysqli_real_escape_string($connect, $_POST['middle_name']);
+} else {
+    $middle_name = "null";
+}
 $last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
 $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
@@ -16,7 +20,7 @@ $middle_name = ucwords($middle_name);
 $last_name = ucwords($last_name);
 
 
-if (empty($first_name) || empty($middle_name) || empty($last_name) || empty($email) || empty($password) || empty($cpassword)) {
+if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($cpassword)) {
     echo "
          <script>
              alert('You must fill up all neccessary fields.');
