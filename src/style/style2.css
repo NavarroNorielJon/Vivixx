@@ -32,10 +32,8 @@ ul ul a {
 	left: 0;
 	margin-top: 2%;
 	padding: 5px 0px 3px 0px;
-	position: fixed;
 	text-align: center;
 	width: 100%;
-	z-index: 9999 !important;
 }
 
 .invalid {
@@ -48,6 +46,12 @@ ul ul a {
 
 .valid{
 	color: green;
+}
+
+.footer {
+	color: white;
+	margin-top: 5vh;
+	font-size: 1.5rem;
 }
 
 /*style for the validation for the password*/
@@ -97,6 +101,9 @@ ul ul a {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 }
 
@@ -125,16 +132,18 @@ ul ul a {
 	max-height: 70px;
 	min-height: 70px;
 	padding-top: 5px;
+	position: fixed;
+	z-index: 9999 !important;
 	text-align: center;
 	width: 100%;
 }
 
-#update-information .logout {
+#update-information .update-information-header #logout {
 	background-color: #ff1a1a;
 	border-radius: 0;
-	left: 95.4vw;
+	left: 96.5vw;
 	margin: -32px 0 0 0;
-	padding: 5px 10px 5px 10px;
+	padding: 5px 5px 5px 5px;
 	position: absolute;
 }
 
@@ -548,10 +557,11 @@ body {
 /***** Top content *****/
 
 .f1 {
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.7);
+    background: #fff;
     border-radius: 4px;
 	color: black;
+	margin-top: 25vh;
+	padding: 25px;
 }
 
 .f1 h3 {

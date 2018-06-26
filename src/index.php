@@ -55,8 +55,12 @@
 				</p>
 			</div>
 		</form>
+		
+		<div class="text-center footer">
+			<p>© Vivixx 2018 . All Rights Reserved.</p>
+		</div>
 	</div>
-
+	
 	<!-- Modal for forgot password -->
     <div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
     	<div class="modal-dialog" role="document">
