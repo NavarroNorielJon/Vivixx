@@ -23,7 +23,6 @@ ini_set('upload_max_filesize', '64M');
         foreach($_FILES['file']['error'] as $child) {
             $file_err_nos[] = $child;
         }
-        print_r($file_tmp_names);
         //if there is no image
         if(!is_uploaded_file($_FILES['image']['tmp_name'])) {
 
@@ -34,27 +33,37 @@ ini_set('upload_max_filesize', '64M');
             $results = $result->fetch_assoc();
             $announcement_id = $results['id'];
 
-            if(!empty($file_tmp_names)){
                 for($x = 0; $x< count($file_names); $x++){
-                    move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                    $temp_file = base64_encode(file_get_contents($file_tmp_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
-                    $connect->query($add_attachment);
+                    if(!empty($file_tmp_names[$x])){
+                        move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
+                        $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
+                        $add_attachment = "Insert into announcement_attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
+                        $connect->query($add_attachment);
+                        echo "
+                            <script>
+                            alert('Announcement with attachment, successfully sent.');
+                            window.location='announcement.php';
+                            </script>";
+                    }else{
+                        $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
+                        $connect->query($add_attachment);
+                        echo "
+                            <script>
+                            alert('Announcement without attachment, successfully sent.');
+                            window.location='announcement.php';
+                            </script>";
+                    }
+                    
                 }
-            echo "
-                <script>
-                alert('no image');
-                </script>";
-            }else{
-                    $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
-                    $connect->query($add_attachment);
-                    echo "
-                <script>
-                alert('no image and attachment');
-                </script>"; 
-            }
                 
-            //header("location: announcement.php");
+            //}else{
+                //     $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
+                //     $connect->query($add_attachment);
+                //     echo "
+                // <script>
+                // alert('no image and attachment');
+                // </script>"; 
+            //}
 
         }else{
 
@@ -76,6 +85,7 @@ ini_set('upload_max_filesize', '64M');
                 echo "
                     <script>
                     alert('Announcement successfully sent and will be announced on the specified date.');
+                    window.location='announcement.php';
                     </script>";
           }     
     }
