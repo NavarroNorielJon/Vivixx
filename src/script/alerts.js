@@ -24,7 +24,32 @@ $('#update_form').ajaxForm({
     }
 });
 
+$('#signup_form').ajaxForm({
+    url: '../utilities/registration.php',
+    method: 'post',
+    error: function (){
+        swal({
+            type: 'error',
+            title: 'Error!',
+            text: "Invalid input",
+            showConfirmButton: true,
+            icon:'error',
+            timer: 2500
+        });
+    },
+    success: function () {
+        swal({
+            type: 'success',
+            title: 'Successfully Registered',
+            text: "Your username is ",
+            icon: 'success',
+            showConfirmButton: true,
+        }).then(function(){
+            window.location = '/';
+        });
 
+    }
+});
 
 $('#leave_form').ajaxForm({
     url: '../utilities/leave_request.php',

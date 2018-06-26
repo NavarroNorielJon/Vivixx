@@ -119,36 +119,7 @@ if($connect->query($insert_stmt) === true){
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $id = $row['user_id'];
 	$insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`middle_name`,`last_name`) VALUES ('$id','$first_name','$middle_name','$last_name');";
-	if ($connect->query($insert_stmt) === true) {
-        echo "<script>
-        $('#signup_form').ajaxForm({
-            url: '../utilities/registration.php',
-            method: 'post',
-            error: function (){
-                swal({
-                    type: 'error',
-                    title: 'Error!',
-                    text: 'Invalid input',
-                    showConfirmButton: true,
-                    icon:'error',
-                    timer: 2500
-                });
-            },
-            success: function () {
-                swal({
-                    type: 'success',
-                    title: 'Successfully Registered',
-                    text: 'Your username is $username',
-                    icon: 'success',
-                    showConfirmButton: true,
-                }).then(function(){
-                    window.location = '/';
-                });
-
-            }
-        });
-        </script>";
-    }
+	$connect->query($insert_stmt);
 }
 Disconnect($connect);
 ?>
