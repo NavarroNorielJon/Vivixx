@@ -70,8 +70,8 @@
 			</div>
 		</div>
           
-		<div id="border">
-			<textarea name="body" id='text' placeholder="Content" required></textarea>
+		<div id="border" style="padding-top: 25px;">
+			<textarea name="body" id='text' placeholder="Text Content" required></textarea>
 		</div>
 		
 		<div id="result">
