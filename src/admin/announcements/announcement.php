@@ -61,8 +61,15 @@
 		</nav>
 		
 		<div class="accounts-content container-fluid">
-			<a href="create_announcement.php"><button class="btn btn-primary">Add Announcement</button></a>
-			<h1>Announcements</h1>
+			<div class="row">
+				<div class="col-10">
+					<h1>Announcements</h1>
+				</div>
+				
+				<div class="col-2">
+					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">Add Announcement</a>
+				</div>
+			</div>
             <hr>
 				<table class="table" id="table">
 					<thead>
@@ -111,6 +118,77 @@
   				<div id="result1">
 				</div>			
 		</div>
+	</div>
+	
+	<div class="modal fade" id="add-announcement-form" tabindex="-1" role="dialog">
+    	<div class="modal-dialog" role="document">
+        	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
+            	<!-- Header -->
+            	<div class="modal-header add-announcement-header">
+                	<div class="row">
+                    	<div class="col-4">
+                        	<img src="../../img/Lion.png" style="height:auto; width:45%;">
+                    	</div>
+
+                    	<div class="col-8">
+                        	<h1>Add Announcement</h1>
+                    	</div>
+                	</div>
+            	</div>
+
+            	<!-- Body -->
+            	<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
+					<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+            
+						<div class="row form-group">
+							<div class="col">
+								<input name="subject" type="text" class="form-control" placeholder="Title" required>
+							</div>
+
+							<div class="col">
+								<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
+							</div>
+
+							<div class="form-group col">
+								<select class="custom-select form-group" name="department" id="department" required>
+									<option selected disabled>Choose your Department</option>
+									<option value="all">All Departments</option>
+									<option value="admin">Administration</option>
+									<option value="admin supp">Administration Support / HR</option>
+									<option value="it support">IT Support</option>
+                            		<option value="non voice account">Non-voice Account</option>
+                            		<option value="phone esl">Phone ESL</option>
+                            		<option value="video esl">Video ESL</option>
+                            		<option value="virtual assistant">Virtual Assistant</option>
+                        		</select>
+                    		</div>
+            			</div>
+       
+						<div class="d-flex ">
+							<div class="p-2" id="border">
+								<textarea class="form-control" name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
+								Remaining characters: <span id="totalChars">1000</span><br/>
+							</div>
+
+							<div class="p-2">
+								<div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
+									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
+									<div>
+										<span class="btn btn-default btn-file">
+											<span class="fileinput-new">Upload attachment</span>
+											<input type="file" name="file[]" multiple>
+										</span>
+										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
+									</div>
+								</div>
+							</div>
+						</div>
+						<input class="btn btn-primary" id="btn" type="submit" name="submit" value="submit">
+					</form>
+    
+            	</div>
+        	</div>
+    	</div>
 	</div>
 	
 	

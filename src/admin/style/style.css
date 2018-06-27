@@ -71,3 +71,8 @@
 #wrapper .user-content {
 	margin-top: 100px;
 }
+
+#add-announcement-form .add-announcement-header h1 {
+	padding-top: 50px;
+	font-size: 3rem;
+}
