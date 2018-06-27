@@ -11,15 +11,15 @@
 	<link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../style/datatables.css">
-	
+
     <!--scripts-->
 	<script src="../script/jquery.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script src="../script/jquery.form.min.js"></script>
 	<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>  
-	
+	<script type="text/javascript" src="../script/ajax.js"></script>
+
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
@@ -57,21 +57,21 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="index-content container-fluid">
 			<div style="text-align:center;">
 				<h1>Announcements</h1>
-				hgjdskal;f'
-			</div>	
+				
+			</div>
 		</div>
-		
+
 	</div>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".dropdown-toggle").dropdown();
 		});
-		
+
 	</script>
 </body>
 </html>
