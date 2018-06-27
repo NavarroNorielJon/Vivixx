@@ -125,6 +125,8 @@
                                     <option selected="selected" disabled="disabled">Select Here:</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
+									<option value="Rather not say">I'd rather not say</option>
+									<option value="Specify">Specifiy</option>
                                 </select>
                             </div>
 
@@ -382,14 +384,14 @@
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
-                                    <option value="g1">Graduated</option>
+                                    <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
@@ -418,14 +420,14 @@
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
-                                    <option value="g2">Graduated</option>
+                                    <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
