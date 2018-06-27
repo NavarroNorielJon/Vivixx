@@ -209,7 +209,8 @@ ul ul a {
 
 #index .index-image {
 	height: auto;
-	max-width: 55%;
+	width: 55%;
+	position: static;
 	margin: -30vh 0 0 9.8vh !important;
 }
 
@@ -646,6 +647,8 @@ body {
     border-color: #f35b3f;
 }
 
-@media(max-width: 576px){
-	background-image: url(img/bg2-sm.jpg);
+@media(width: 1125px){
+	#index .index-image {
+	display: none;
+	}
 }
