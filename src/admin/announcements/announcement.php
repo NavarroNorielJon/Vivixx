@@ -88,7 +88,7 @@
 							}
 							$button = "
 							<input name='edit' value='edit' style='display: none;'>
-							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."& image=".$row['image']."' class='show btn btn-primary'>Edit</a>";
+							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='show btn btn-primary'>Edit</a>";
 
 						//print data in table
 							echo "

@@ -27,7 +27,7 @@ ini_set('upload_max_filesize', '64M');
         //if there is no image
         if(!is_uploaded_file($_FILES['image']['tmp_name'])) {
 
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`) VALUES ('$subject', '$body', '$date', '$department');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`,) VALUES ('$subject', '$body', '$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
@@ -38,7 +38,7 @@ ini_set('upload_max_filesize', '64M');
                     if(!empty($file_tmp_names[$x])){
                         move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                         $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                        $add_attachment = "Insert into announcement_attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
+                        $add_attachment = "Insert into announcement_attachments (`attachment`,`attachment_name`, `announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
                         $connect->query($add_attachment);
                         echo "
                             <script>
@@ -60,7 +60,8 @@ ini_set('upload_max_filesize', '64M');
         }else{
 
             $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `image`, `date`, `departments`) VALUES ('$subject', '$body', '$image' ,'$date', '$department');";
+            $image_name = $_FILES['image']['name'];
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `image`,`image_name`, `date`, `departments`) VALUES ('$subject', '$body', '$image', '$image_name' ,'$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
@@ -70,7 +71,7 @@ ini_set('upload_max_filesize', '64M');
                 for($x = 0; $x< count($file_names); $x++){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents('file uploads/'.$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment`, `announcement_id`) values ('$temp_file','$announcement_id');";
+                    $add_attachment = "Insert into announcement_attachments (`attachment`, `attachment_name`,`announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
                     $connect->query($add_attachment);
                 }
 
