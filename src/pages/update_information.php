@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -172,7 +172,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="residential_zip">Zip Code</label>
-                                <input type="text" name="residential_zip" class="form-control" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
+                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -189,7 +189,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="permanent_zip">Zip Code</label>
-                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control" required="required">
+                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control zip" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -209,6 +209,13 @@
                                     $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
+                                        if($('#civil_status').val() === "others"){
+                                            $('#oth').attr('required','true');
+                                        }else {
+                                            $('#oth').removeAttr('required');
+                                        }
+
+
                                     });
                                 });
                             </script>
@@ -683,7 +690,7 @@
 
                             <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control telephone">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" maxlength="7" class="form-control telephone">
                             </div>
                         </div>
 
@@ -774,6 +781,9 @@
             });
             $('#philhealth_no').inputmask({
                 mask: 'dd-ddddddddd-d'
+            });
+            $('.zip').inputmask({
+                mask: 'dddd'
             });
             $('#pagibig_id_no').inputmask({
                 mask: 'dddd-dddd-dddd'

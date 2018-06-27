@@ -24,8 +24,8 @@
         $department = "Video ESL";
         $position = mysqli_real_escape_string($connect, $_POST['video']);
     } elseif ($department === "va") {
-        $department = "Voice Account";
-        $position = mysqli_real_escape_string($connect, $_POST['voice']);
+        $department = "Virtual Assistant";
+        $position = mysqli_real_escape_string($connect, $_POST['virtual']);
     }
 
     $date_filed  = mysqli_real_escape_string($connect, $_POST['date_filed']);
