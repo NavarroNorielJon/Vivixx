@@ -457,14 +457,14 @@
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
-                                    <option value="g3">Graduated</option>
+                                    <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
@@ -494,7 +494,7 @@
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
                                     <option selected="selected" disabled="disabled">Select:</option>
-                                    <option value="g4">Graduated</option>
+                                    <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
                             </div>
