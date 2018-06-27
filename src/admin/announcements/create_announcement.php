@@ -73,13 +73,13 @@
 				<select class="custom-select form-group" name="department" id="department" required>
 					<option selected disabled>Choose your Department</option>
 					<option value="all">All Departments</option>
-					<option value="a">Administration</option>
-					<option value="ash">Administration Support / HR</option>
-					<option value="its">IT Support</option>
-					<option value="nva">Non-voice Account</option>
-					<option value="pe">Phone ESL</option>
-					<option value="ve">Video ESL</option>
-					<option value="va">Virtual Assistant</option>
+					<option value="admin">Administration</option>
+					<option value="admin supp">Administration Support / HR</option>
+					<option value="it support">IT Support</option>
+					<option value="non voice account">Non-voice Account</option>
+					<option value="phone esl">Phone ESL</option>
+					<option value="video esl">Video ESL</option>
+					<option value="virtual assistant">Virtual Assistant</option>
 				</select>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 	</form>
         
 
-    <div id="result">
+    <!-- <div id="result">
     </div>
 
     <div class="modal fade" id="announcement" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
@@ -125,7 +125,7 @@
         </div>
     </div>	
 		</div>
-	</div>
+	</div> -->
 </body>
 	
 	

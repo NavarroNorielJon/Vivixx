@@ -7,6 +7,7 @@ ini_set('upload_max_filesize', '64M');
       $subject = $_POST["subject"];
       $date = $_POST["date"];
       $body = $_POST["body"];
+      $department = $_POST["department"];
 
       $file_names = [];
       $file_paths = [];
@@ -26,7 +27,7 @@ ini_set('upload_max_filesize', '64M');
         //if there is no image
         if(!is_uploaded_file($_FILES['image']['tmp_name'])) {
 
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`) VALUES ('$subject', '$body', '$date');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`) VALUES ('$subject', '$body', '$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
@@ -55,20 +56,11 @@ ini_set('upload_max_filesize', '64M');
                     }
                     
                 }
-                
-            //}else{
-                //     $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
-                //     $connect->query($add_attachment);
-                //     echo "
-                // <script>
-                // alert('no image and attachment');
-                // </script>"; 
-            //}
 
         }else{
 
             $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `image`, `date`) VALUES ('$subject', '$body', '$image' ,'$date');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `image`, `date`, `departments`) VALUES ('$subject', '$body', '$image' ,'$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
