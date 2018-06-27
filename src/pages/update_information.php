@@ -625,7 +625,7 @@
                             <script>
                                 $(function () {
                                     $('#quest').change(function () {
-                                        $('#yes').hide();
+                                        $('#Yes').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
@@ -768,6 +768,9 @@
             });
             $('#contact').inputmask({
                 mask: '+639dd ddd dddd'
+            });
+            $('.telephone').inputmask({
+                mask: 'ddd-dddd'
             });
         </script>
         <script>
