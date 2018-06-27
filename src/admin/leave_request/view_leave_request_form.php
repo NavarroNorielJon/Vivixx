@@ -60,17 +60,17 @@
                         
                         <div class="row">
                             <div class="form-group col">
-                                <label for="credit">Credit</label>
+                                <label for="credit">Maximum Leave Credits</label>
                                 <input type="text" class="form-control" id="credit" disabled value="5">
                             </div>
                             
                             <div class="form-group col">
-                                <label for="used">Used</label>
+                                <label for="used">Used Leave Credits</label>
                                 <input type="text" class="form-control" id="used" disabled>
                             </div>
 
                             <div class="form-group col">
-                                <label for="balance">Balance</label>
+                                <label for="balance">Remaining Balance</label>
                                 <input type="text" class="form-control" id="balance" disabled>
                             </div>
                         </div>
@@ -105,8 +105,8 @@
 				    </div>
 
                     <div style="text-align:right">
-                        <input type="submit" class="btn btn-danger" name="reject" value="Reject">
-                        <input type="submit" class="btn btn-success" name="accept" value="Accept">
+                        <input type="submit" class="btn btn-danger" name="reject" value="Disapprove">
+                        <input type="submit" class="btn btn-success" name="accept" value="Approve">
                     </div>
 
                 </div>
