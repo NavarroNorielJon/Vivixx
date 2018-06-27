@@ -169,7 +169,7 @@
 
                             <div class="form-group col-3 ">
                                 <label for="residential_tel_no">Telephone NO.</label>
-                                <input type="tel" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="Telephone number" class="form-control" required="required">
+                                <input type="tel" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="XXX-XXXX" class="form-control" required="required">
                             </div>
                         </div>
 
@@ -186,7 +186,7 @@
 
                             <div class="form-group col-3 ">
                                 <label for="permanent_tel_no">Telephone NO.</label>
-                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="Telephone number" class="form-control" required="required">
+                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="XXX-XXXX" class="form-control" required="required">
                             </div>
                         </div>
 
@@ -227,22 +227,22 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no"  id="sss_no" placeholder="99-9999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no"  id="sss_no" placeholder="XX-XXXXXXX-X" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="tin">TIN</label>
-                                <input type="text" name="tin" id="tin" placeholder="999-999-999-999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="tin" id="tin" placeholder="XXX-XXX-XXX-XXX" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="philhealth_no ">PHILHEALTH NO.</label>
-                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="99-999999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="XX-XXXXXXXXX-X" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="9999-9999-9999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="XXXX-XXXX-XXXX" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -331,7 +331,7 @@
 
                             <div class="form-group col-3">
                                 <label for="spouse_tel_no">Telephone NO.</label>
-                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="Telephone number" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
+                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="XXX-XXXX" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
                             </div>
                         </div>
 
@@ -671,7 +671,7 @@
 
                             <div class="form-group col-2">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="Landline" onkeypress="numberInput(event)" maxlength="7" class="form-control">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control">
                             </div>
                         </div>
 
