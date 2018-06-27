@@ -172,7 +172,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="residential_zip">Zip Code</label>
-                                <input type="text" name="residential_zip" class="form-control" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
+                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -189,7 +189,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="permanent_zip">Zip Code</label>
-                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control" required="required">
+                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control zip" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -781,6 +781,9 @@
             });
             $('#philhealth_no').inputmask({
                 mask: 'dd-ddddddddd-d'
+            });
+            $('.zip').inputmask({
+                mask: 'dddd'
             });
             $('#pagibig_id_no').inputmask({
                 mask: 'dddd-dddd-dddd'
