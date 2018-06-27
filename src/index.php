@@ -22,159 +22,158 @@ if (isset($_SESSION['user'])) {
 <body id="index">
 <!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
 
-<div class="containter-fluid">
-    <form action="utilities/login.php" method="post" class="jumbotron" id="login">
-        <img src="../img/Lion.png" class="index-image">
-        <div class="form-group col-sm-12">
-            <label for="userOrEmail">Username or Email-Address</label>
-            <input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required"
-                   placeholder="Username or Email-Address">
-        </div>
+	<div class="containter-fluid">
+    	<form action="utilities/login.php" method="post" class="jumbotron" id="login">
+        	<img src="../img/Lion.png" class="index-image">
+        	
+			<div class="form-group col-sm-12">
+            	<label for="userOrEmail">Username or Email-Address</label>
+            	<input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+        	</div>
 
-        <div class="form-group col-sm-12">
-            <label for="pass">Password</label>
-            <div class="input-group">
-                <input type="password" placeholder="Password" name="login_password" id="password" class="form-control"
-                       required="required">
+        	<div class="form-group col-sm-12">
+            	<label for="pass">Password</label>
+            	
+				<div class="input-group">
+                <input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required">
 
-                <div class="input-group-append">
-                    <button type="button" class="btn eye" onclick="showHide('password','icon')">
-                        <i class="material-icons" id="icon">visibility</i>
-                    </button>
-                </div>
-            </div>
-        </div>
+                	<div class="input-group-append">
+                    	<button type="button" class="btn eye" onclick="showHide('password','icon')">
+                        	<i class="material-icons" id="icon">visibility</i>
+                    	</button>
+                	</div>
+					
+            	</div>
+        	</div>
 
-        <div class="text-center">
-            <button type="submit" class="btn login-button" name="submit">
-                Login
-            </button>
+			<div class="text-center">
+            	<button type="submit" class="btn login-button" name="submit">
+                	Login
+            	</button>
 
-            <p style="display: inline-block;">
-                <a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
-                <a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a>
-            </p>
-        </div>
-    </form>
+            	<p style="display: inline-block;">
+                	<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
+                	<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a>
+            	</p>
+        	</div>
+    	</form>
 
-    <div class="text-center footer">
-        <p>© Vivixx 2018 . All Rights Reserved.</p>
-    </div>
-</div>
+    	<div class="text-center footer">
+        	<p>© Vivixx 2018 . All Rights Reserved.</p>
+    	</div>
+	</div>
 
-<!-- Modal for forgot password -->
-<div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content forgot-content">
-            <!-- Header -->
-            <div class="modal-header forgot-header">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="img/Lion.png" style="height:auto; width:65%;">
-                    </div>
+	<!-- Modal for forgot password -->
+	<div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
+    	<div class="modal-dialog" role="document">
+        	<div class="modal-content forgot-content">
+            	<!-- Header -->
+            	<div class="modal-header forgot-header">
+                	<div class="row">
+                    	<div class="col-3">
+                        	<img src="img/Lion.png" style="height:auto; width:65%;">
+                    	</div>
 
-                    <div class="col-9">
-                        <h3>Forgot Password</h3>
-                    </div>
-                </div>
-            </div>
+                    	<div class="col-9">
+                        	<h3>Forgot Password</h3>
+                    	</div>
+                	</div>
+            	</div>
 
-            <!-- Body -->
-            <div class="modal-body">
-                <form action="mailing/send_reset.php" method="POST">
-                    <div class="form-group">
-                        <label for="id">E-mail Address</label>
-                        <input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address"
-                               name="email" required>
-                    </div>
+            	<!-- Body -->
+            	<div class="modal-body">
+                	<form action="mailing/send_reset.php" method="POST">
+                    	<div class="form-group">
+                        	<label for="id">E-mail Address</label>
+                        	<input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address" name="email" required>
+                    	</div>
 
-                    <div style="text-align: right;">
-                        <button type="submit" class="btn btn-primary">Send Email</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of forgot password modal -->
+                    	<div style="text-align: right;">
+                        	<button type="submit" class="btn btn-primary">Send Email</button>
+                    	</div>
+                	</form>
+            	</div>
+        	</div>
+    	</div>
+	</div>
+	<!-- End of forgot password modal -->
 
-<!-- Modal for Register -->
-<div class="modal fade" id="signup-form" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content signup-content">
-            <div class="modal-header signup-header">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="img/Lion.png" style="height:auto; width:65%;">
-                    </div>
+	<!-- Modal for Register -->
+	<div class="modal fade" id="signup-form" tabindex="-1" role="dialog">
+    	<div class="modal-dialog" role="document">
+        	<div class="modal-content signup-content">
+            	<div class="modal-header signup-header">
+                	<div class="row">
+                    	<div class="col-3">
+                        	<img src="img/Lion.png" style="height:auto; width:65%;">
+                    	</div>
 
-                    <div class="col-9">
-                        <h3>Registration Form</h3>
-                    </div>
-                </div>
-            </div>
+                    	<div class="col-9">
+                        	<h3>Registration Form</h3>
+                    	</div>
+                	</div>
+            	</div>
 
-            <!-- Body -->
-            <div class="modal-body">
-                <form id="signup_form" action="utilities/registration.php" method="post">
-                    <!-- Full Name -->
-                    <div class="row form-group">
-                        <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="fname">First Name</label>
-                            <input type="text" name="first_name" id="fname" autocomplete="off"
-                                   class="form-control text-transform" placeholder="First Name" required="required">
-                        </div>
+            	<!-- Body -->
+            	<div class="modal-body">
+                	<form id="signup_form" action="utilities/registration.php" method="post">
+                    	<!-- Full Name -->
+                    	<div class="row form-group">
+                        	<div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="fname">First Name</label>
+                            	<input type="text" name="first_name" id="fname" autocomplete="off" class="form-control text-transform" placeholder="First Name" required="required">
+                        	</div>
 
-                        <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="mname">Middle Name</label>
-                            <input type="text" name="middle_name" id="mname" autocomplete="off"
-                                   class="form-control text-transform" placeholder="Middle Name (Optional)">
-                        </div>
+                        	<div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="mname">Middle Name</label>
+                            	<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name (Optional)">
+                        	</div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="lname">Last Name</label>
-                            <input type="text" name="last_name" id="lname" autocomplete="off"
-                                   class="form-control text-transform" placeholder="Last Name" required="required">
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" autocomplete="off" class="form-control"
-                                   placeholder="E-mail Address" required="required">
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="reg_pass">Password</label>
-                            <input type="password" name="password" id="regpass" class="form-control"
-                                   placeholder="Password" required="required">
-                        </div>
+                        	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="lname">Last Name</label>
+                            	<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control text-transform" placeholder="Last Name" required="required">
+                        	</div>
+                        
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="email">Email</label>
+                            	<input type="text" name="email" id="email" autocomplete="off" class="form-control" placeholder="E-mail Address" required="required">
+                        	</div>
+							
+                        	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="reg_pass">Password</label>
+                            	<input type="password" name="password" id="regpass" class="form-control" placeholder="Password" required="required">
+                        	</div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <label for="cpass">Confirm Password</label>
-                            <input type="password" name="confirm_password" id="cpassword"
-                                   class="form-control" placeholder="Confirm Password" required="required">
-<!--                            <div class="input-group-append">-->
-<!--                                <button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">-->
-<!--                                    <i class="material-icons" id="icon1">visibility</i>-->
-<!--                                </button>-->
-<!--                            </div>-->
-                        </div>
-                    </div>
-                    <div style="text-align: right;">
-                        <button type="submit" class="btn btn-primary" id="button1">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+                        	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            	<label for="cpass">Confirm Password</label>
+                            	<input type="password" name="confirm_password" id="cpassword" class="form-control" placeholder="Confirm Password" required="required">
+<!--
+                            <div class="input-group-append">
+                                <button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
+                                    <i class="material-icons" id="icon1">visibility</i>
+                                </button>
+                            </div>
+-->
+                        	</div>
+						</div>
+						
+						<div style="text-align: right;">
+							<button type="submit" class="btn btn-primary" id="button1">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="script/jquery.form.min.js"></script>
-<script type="text/javascript" src="script/jquery.validate.min.js"></script>
-<script type="text/javascript" src="script/additional-methods.min.js"></script>
-<script type="text/javascript" src="script/alerts.js"></script>
-<script type="text/javascript" src="script/popper.min.js"></script>
-<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="script/sweetalert.min.js"></script>
-<script type="text/javascript" src="script/ajax.js"></script>
+	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="script/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="script/additional-methods.min.js"></script>
+	<script type="text/javascript" src="script/alerts.js"></script>
+	<script type="text/javascript" src="script/popper.min.js"></script>
+	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="script/ajax.js"></script>
 </body>
 </html>

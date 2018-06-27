@@ -68,6 +68,7 @@
 		
 		<div class="announcement-content container-fluid">
             <h1> Create Announcement </h1>
+            <hr>
             
             
 			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
@@ -117,33 +118,29 @@
                 -->
 
             <div class="p-2">
+                <h3>Upload Image</h3>
                 <div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
                   <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
                   <div>
                     <span class="btn btn-default btn-file">
-                        <span class="fileinput-new">Upload image</span>
-                        <input type="file" name="attach">
+                        <span class="fileinput-new">Upload attachment</span>
+                        <input type="file" name="file[]" multiple>
                     </span>
-                        <a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a>  
+                        <a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a>   
                   </div>
                 </div>
             </div>
-
+            
             <div class="p-2">
-                <div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
-                  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"></div>
-                  <div>
-                    <span class="btn btn-default btn-file">
-                        <span class="fileinput-new">Upload image</span>
-                        <input type="file" name="img"></span>
-                    <a href="#" class="btn btn-default img-exists" data-dismiss="fileinput">Remove</a>
-                  </div>
-                </div>
+                <h3> Upload attachment(s)</h3>
+                <input type="file" class="form-control-file" id="attachment1">
+                <input type="file" class="form-control-file" id="attachment2">
+                <input type="file" class="form-control-file" id="attachment3">
+                <input type="file" class="form-control-file" id="attachment4">
             </div>
 
         </div>
-            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="Submit" value="submit">
-
+            <input class="w-100 btn btn btn-primary" id="btn" type="submit" name="submit" value="S U B M I T">
 	</form>
     
         </div>
