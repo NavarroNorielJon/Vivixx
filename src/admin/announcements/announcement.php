@@ -61,7 +61,7 @@
 		</nav>
 		
 		<div class="accounts-content container-fluid">
-			<a href="create_announcement.php"><button>Add Announcement</button></a>
+			<a href="create_announcement.php"><button class="btn btn-primary">Add Announcement</button></a>
 			<h1>Announcements</h1>
 				<table class="table" id="table">
 					<thead>

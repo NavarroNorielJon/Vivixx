@@ -25,7 +25,7 @@
 	
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
+			<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>
 			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
@@ -106,26 +106,7 @@
         <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
         <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
 	</form>
-        
 
-    <!-- <div id="result">
-    </div>
-
-    <div class="modal fade" id="announcement" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
-            <div class="modal-content" id="message">
-                <?php
-                    echo "Announcement successfully sent and will be announced on the specified date.";
-                ?>
-                <div id="ok">
-                <br>
-                    <a href="index.php" class="btn btn-primary" style="width:25%;">Ok</a>
-                </div>
-            </div>
-        </div>
-    </div>	
-		</div>
-	</div> -->
 </body>
 	
 	
