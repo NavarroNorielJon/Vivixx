@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -207,6 +207,13 @@
                                     $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
+                                        if($('#civil_status').val() === "others"){
+                                            $('#oth').attr('required','true');
+                                        }else {
+                                            $('#oth').removeAttr('required');
+                                        }
+
+
                                     });
                                 });
                             </script>
@@ -679,7 +686,7 @@
 
                             <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control telephone">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" maxlength="7" class="form-control telephone">
                             </div>
                         </div>
 

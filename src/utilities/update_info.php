@@ -183,7 +183,7 @@ if ($connect->query($update_stmt) === true) {
             foreach ($r_name as $key => $rname) {
                 foreach ($r_relationship as $key => $rrel) {
                     foreach ($r_mobile_number as $key => $rnum) {
-                        $insert_stmt = "INSERT INTO `relative`(`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
+                        $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
                     }
                 }
                 $connect->query($insert_stmt);
@@ -192,7 +192,7 @@ if ($connect->query($update_stmt) === true) {
             foreach ($h_name as $key => $hname) {
                 foreach ($h_relationship as $key => $hrel) {
                     foreach ($h_mobile_number as $key => $hnum) {
-                        $insert_stmt = "INSERT INTO `housemate`(`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
+                        $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
                     }
                 }
                 $connect->query($insert_stmt);
