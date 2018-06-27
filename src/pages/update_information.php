@@ -18,6 +18,7 @@
         <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
         <script src="../script/jquery.backstretch.min.js"></script>
+        <script src="../script/bootstrap/jasny-bootstrap.js"></script>
         <script src="../script/retina-1.1.0.min.js"></script>
         <script src="../script/scripts.js"></script>
     </head>
@@ -102,7 +103,7 @@
                                     name="contact_number"
                                     maxlength="11"
                                     autocomplete="off"
-                                    placeholder="Mobile Number"
+                                    placeholder="+63999 999 9999"
                                     class=" form-control"
                                     id="contact"
                                     onkeypress="numberInput(event)"
@@ -117,8 +118,8 @@
                                 <label for="gender">Gender</label>
                                 <select name="gender" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select Here:</option>
-                                    <option value="m">Male</option>
-                                    <option value="f">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
 
@@ -221,22 +222,22 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no"  id="sss_no" placeholder="99-9999999-9" onkeypress="numberInput(event)" maxlength="10" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no"  id="sss_no" placeholder="99-9999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="tin">TIN</label>
-                                <input type="text" name="tin" id="tin" placeholder="999-999-999-999" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="tin" id="tin" placeholder="999-999-999-999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="philhealth_no ">PHILHEALTH NO.</label>
-                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="99-999999999-9" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="99-999999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="9999-9999-9999" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="9999-9999-9999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -748,10 +749,20 @@
             <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
         <script>
-            $(document).ready(function () {
-                $('#sss_no').keyup(function () {
-                    $('#sss_no').inputmask('99-9999999-9');
-                });
+            $('#sss_no').inputmask({
+                mask: 'dd-ddddddd-d'
+            });
+            $('#tin').inputmask({
+                mask: 'ddd-ddd-ddd-ddd'
+            });
+            $('#philhealth_no').inputmask({
+                mask: 'dd-ddddddddd-d'
+            });
+            $('#pagibig_id_no').inputmask({
+                mask: 'dddd-dddd-dddd'
+            });
+            $('#contact').inputmask({
+                mask: '+639dd ddd dddd'
             });
         </script>
         <script>

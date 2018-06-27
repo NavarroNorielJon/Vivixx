@@ -21,7 +21,7 @@ switch ($type){
 		$contact_number = mysqli_real_escape_string($connect,$_REQUEST["contact_number"]);
 		$stmt = "SELECT * FROM user_info where contact_number = '$contact_number';";
 		$result = mysqli_query($connect,$stmt);
-		if(!preg_match("/^09[0-9]{9}$/",$contact_number)){
+		if(!preg_match("/^\s+639[0-9]{2}\ [0-9]{3}\ [0-9]{4}$/",$contact_number)){
 			echo "<span class='invalid'>Invalid Contact Number</span>";
 		} else if($result->num_rows > 0){
 			echo "<span class='invalid'>Contact Number already exist</span>";
