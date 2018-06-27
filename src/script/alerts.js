@@ -1,5 +1,5 @@
 $('#update_form').ajaxForm({
-    url: '../utilities/update_info',
+    url: '../utilities/update_info.php',
     method: 'post',
     error: function (){
         swal({
@@ -23,7 +23,20 @@ $('#update_form').ajaxForm({
         });
     }
 });
-
+$( "#signup_form" ).validate({
+    rules: {
+        email: {
+            email: true
+        },
+        password: {
+            required: true,
+            minlength: 8,
+        },
+        confirm_password: {
+            equalTo: "#regpass"
+        }
+    }
+});
 $('#signup_form').ajaxForm({
     url: '../utilities/registration.php',
     method: 'post',
@@ -78,6 +91,20 @@ $('#leave_form').ajaxForm({
 
     }
 });
-
-
-
+$('#login').ajaxForm({
+    url: '../utilities/login.php',
+    method: 'post',
+    success: function (data) {
+        if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
+            || data === 'Invalid Username or password'){
+            swal({
+                title: data,
+                icon:'error',
+                timer: 2500
+            });
+        } else {
+            console.log(data);
+            window.location = data;
+        }
+    }
+});

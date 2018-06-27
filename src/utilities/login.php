@@ -33,7 +33,7 @@
                        // header('location:../admin/index.php');
                         echo "admin/index.php";
                     }
-                }elseif (!password_verify($password, $passwordVerify) && $status === "enabled") {
+                }elseif (!password_verify($password, $passwordVerify)) {
                     //http_response_code(500);
                     echo "Invalid Password";
 //                    echo "<script>
@@ -67,4 +67,3 @@
 //                     exit;
         }
     }
-?>

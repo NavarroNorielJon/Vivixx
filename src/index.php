@@ -118,60 +118,46 @@ if (isset($_SESSION['user'])) {
             <div class="modal-body">
                 <form id="signup_form" action="utilities/registration.php" method="post">
                     <!-- Full Name -->
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="row form-group">
+                        <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <label for="fname">First Name</label>
                             <input type="text" name="first_name" id="fname" autocomplete="off"
                                    class="form-control text-transform" placeholder="First Name" required="required">
                         </div>
 
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <label for="mname">Middle Name</label>
                             <input type="text" name="middle_name" id="mname" autocomplete="off"
                                    class="form-control text-transform" placeholder="Middle Name (Optional)">
                         </div>
 
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <label for="lname">Last Name</label>
                             <input type="text" name="last_name" id="lname" autocomplete="off"
                                    class="form-control text-transform" placeholder="Last Name" required="required">
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" autocomplete="off"
-                               onkeyup="helperText('email',this.value,'validEmail')" class="form-control form-control"
-                               placeholder="E-mail Address" required="required">
-                        <div id="validEmail"></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" autocomplete="off" class="form-control"
+                                   placeholder="E-mail Address" required="required">
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <label for="reg_pass">Password</label>
-                            <input type="password" name="password" id="regpass"
-                                   onkeyup="helperText('password',this.value,'validPassword')" class="form-control"
+                            <input type="password" name="password" id="regpass" class="form-control"
                                    placeholder="Password" required="required">
-                            <div id="validPassword"></div>
                         </div>
 
-                        <div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <label for="cpass">Confirm Password</label>
-                            <div class="input-group">
-                                <input type="password" name="confirm_password" id="cpassword"
-                                       onkeyup="confirmPass('confirm_password',this.value,'regpass','validConfirmation')"
-                                       class="form-control" placeholder="Confirm Password" required="required">
-
-                                <div class="input-group-append">
-                                    <button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
-                                        <i class="material-icons" id="icon1">visibility</i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="validConfirmation"></div>
+                            <input type="password" name="confirm_password" id="cpassword"
+                                   class="form-control" placeholder="Confirm Password" required="required">
+<!--                            <div class="input-group-append">-->
+<!--                                <button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">-->
+<!--                                    <i class="material-icons" id="icon1">visibility</i>-->
+<!--                                </button>-->
+<!--                            </div>-->
                         </div>
                     </div>
-
                     <div style="text-align: right;">
                         <button type="submit" class="btn btn-primary" id="button1">Submit</button>
                     </div>
@@ -183,30 +169,12 @@ if (isset($_SESSION['user'])) {
 
 <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="script/jquery.form.min.js"></script>
+<script type="text/javascript" src="script/jquery.validate.min.js"></script>
+<script type="text/javascript" src="script/additional-methods.min.js"></script>
 <script type="text/javascript" src="script/alerts.js"></script>
 <script type="text/javascript" src="script/popper.min.js"></script>
 <script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="script/sweetalert.min.js"></script>
 <script type="text/javascript" src="script/ajax.js"></script>
-<script>
-    $('#login').ajaxForm({
-        url: 'utilities/login.php',
-        method: 'post',
-        success: function (data) {
-            if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
-                || data === 'Invalid Username or password'){
-                swal({
-                    title: 'Error!',
-                    text: data,
-                    icon:'error',
-                    timer: 2500
-                });
-            } else {
-                console.log(data);
-                window.location = data;
-            }
-        }
-    });
-</script>
 </body>
 </html>
