@@ -21,7 +21,6 @@ $permanent_address = ucwords(mysqli_real_escape_string($connect, $_POST['permane
 $permanent_zip = mysqli_real_escape_string($connect, $_POST['permanent_zip']);
 $permanent_tel_no = mysqli_real_escape_string($connect, $_POST['permanent_tel_no']);
 $citizenship = ucwords(mysqli_real_escape_string($connect, $_POST['citizenship']));
-$religion = ucwords(mysqli_real_escape_string($connect, $_POST['religion']));
 $civil_status = ucwords(mysqli_real_escape_string($connect, $_POST['civil_status']));
 
 if ($civil_status === "others") {
@@ -160,7 +159,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type', `residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
  `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship',
- `religion`='$religion', `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
+ `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
 
 if ($connect->query($update_stmt) === true) {

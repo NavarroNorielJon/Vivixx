@@ -1,6 +1,11 @@
 <?php
     include '../utilities/session.php';
 	include '../modules/footer.html';
+    if ($birth_date != null && $birth_place != null && $contact_number != null &&
+	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
+	    && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null) {
+			header("location:/pages/home");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +23,7 @@
         <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
         <script src="../script/jquery.backstretch.min.js"></script>
+        <script src="../script/bootstrap/jasny-bootstrap.js"></script>
         <script src="../script/retina-1.1.0.min.js"></script>
         <script src="../script/scripts.js"></script>
     </head>
@@ -102,7 +108,7 @@
                                     name="contact_number"
                                     maxlength="11"
                                     autocomplete="off"
-                                    placeholder="Mobile Number"
+                                    placeholder="+63999 999 9999"
                                     class=" form-control"
                                     id="contact"
                                     onkeypress="numberInput(event)"
@@ -114,11 +120,11 @@
 
                         <div class="row">
                             <div class=" form-group col">
-                                <label for="gender">Sex</label>
+                                <label for="gender">Gender</label>
                                 <select name="gender" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select Here:</option>
-                                    <option value="m">Male</option>
-                                    <option value="f">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
 
@@ -190,11 +196,6 @@
                                 <input type="text" name="citizenship" id="citizenship" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
                             </div>
 
-                            <div class="form-group col-4">
-                                <label for="religion">Religion</label>
-                                <input type="text" name="religion" id="religion" class="form-control text-transform" autocomplete="off" placeholder="Religion" required="required">
-                            </div>
-
                             <script>
                                 $(function () {
                                     $('#civil_status').change(function () {
@@ -206,7 +207,7 @@
 
                             <div class="form-group col-2">
                                 <label for="civil_status">Civil Status</label>
-                                <select name="civil_status" id="civil_status" class="custom-select form-group" required="required">
+                                <select name="civil_status" id="civil_status" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -226,22 +227,22 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no" id="sss_no" onkeypress="numberInput(event)" maxlength="10" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no"  id="sss_no" placeholder="99-9999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="tin">TIN</label>
-                                <input type="text" name="tin" id="tin" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="tin" id="tin" placeholder="999-999-999-999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="philhealth_no ">PHILHEALTH NO.</label>
-                                <input type="text" name="philhealth_no" id="philhealth_no" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="99-999999999-9" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" onkeypress="numberInput(event)" maxlength="12" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="9999-9999-9999" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -752,7 +753,23 @@
         <div id="footer">
             <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
-
+        <script>
+            $('#sss_no').inputmask({
+                mask: 'dd-ddddddd-d'
+            });
+            $('#tin').inputmask({
+                mask: 'ddd-ddd-ddd-ddd'
+            });
+            $('#philhealth_no').inputmask({
+                mask: 'dd-ddddddddd-d'
+            });
+            $('#pagibig_id_no').inputmask({
+                mask: 'dddd-dddd-dddd'
+            });
+            $('#contact').inputmask({
+                mask: '+639dd ddd dddd'
+            });
+        </script>
         <script>
             function initMap() {
                 var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);

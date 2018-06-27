@@ -30,7 +30,6 @@
         $permanent_zip = $row['permanent_zip'];
         $permanent_tel_no = $row['permanent_tel_no'];
         $citizenship = $row['citizenship'];
-        $religion = $row['religion'];
         $civil_status = $row['civil_status'];
         $sss_no = $row['sss_no'];
         $tin = $row['tin'];
