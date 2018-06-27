@@ -189,24 +189,7 @@ if (isset($_SESSION['user'])) {
 <script type="text/javascript" src="script/sweetalert.min.js"></script>
 <script type="text/javascript" src="script/ajax.js"></script>
 <script>
-    $('#login').ajaxForm({
-        url: 'utilities/login.php',
-        method: 'post',
-        success: function (data) {
-            if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
-                || data === 'Invalid Username or password'){
-                swal({
-                    title: 'Error!',
-                    text: data,
-                    icon:'error',
-                    timer: 2500
-                });
-            } else {
-                console.log(data);
-                window.location = data;
-            }
-        }
-    });
+    
 </script>
 </body>
 </html>
