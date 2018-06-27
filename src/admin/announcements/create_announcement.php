@@ -68,10 +68,24 @@
 			<div class="col">
 				<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
 			</div>
+
+			<div class="form-group col">
+				<select class="custom-select form-group" name="department" id="department" required>
+					<option selected disabled>Choose your Department</option>
+					<option value="all">All Departments</option>
+					<option value="admin">Administration</option>
+					<option value="admin supp">Administration Support / HR</option>
+					<option value="it support">IT Support</option>
+					<option value="non voice account">Non-voice Account</option>
+					<option value="phone esl">Phone ESL</option>
+					<option value="video esl">Video ESL</option>
+					<option value="virtual assistant">Virtual Assistant</option>
+				</select>
+			</div>
 		</div>
           
 		<div id="border">
-			<textarea name="body" id='text' placeholder="Content" required></textarea>
+			<textarea name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
 		</div>
 		
 		<div id="result">
@@ -85,13 +99,16 @@
         </div>
         <div>
         Upload Image
-        <br>	
+        <br>
         <input type="file" name="image">
         </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
+        <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
+        <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
 	</form>
+        
 
-    <div id="result">
+    <!-- <div id="result">
     </div>
 
     <div class="modal fade" id="announcement" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
@@ -108,7 +125,7 @@
         </div>
     </div>	
 		</div>
-	</div>
+	</div> -->
 </body>
 	
 	
