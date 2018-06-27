@@ -85,14 +85,11 @@
         </div>
         <div>
         Upload Image
-        <br>
+        <br>	
         <input type="file" name="image">
         </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
-        <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
-        <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
 	</form>
-        
 
     <div id="result">
     </div>
