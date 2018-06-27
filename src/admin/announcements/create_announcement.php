@@ -25,7 +25,7 @@
 	
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
+			<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>
 			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
@@ -68,10 +68,24 @@
 			<div class="col">
 				<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
 			</div>
+
+			<div class="form-group col">
+				<select class="custom-select form-group" name="department" id="department" required>
+					<option selected disabled>Choose your Department</option>
+					<option value="all">All Departments</option>
+					<option value="admin">Administration</option>
+					<option value="admin supp">Administration Support / HR</option>
+					<option value="it support">IT Support</option>
+					<option value="non voice account">Non-voice Account</option>
+					<option value="phone esl">Phone ESL</option>
+					<option value="video esl">Video ESL</option>
+					<option value="virtual assistant">Virtual Assistant</option>
+				</select>
+			</div>
 		</div>
           
 		<div id="border">
-			<textarea name="body" id='text' placeholder="Content" required></textarea>
+			<textarea name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
 		</div>
 		
 		<div id="result">
@@ -85,30 +99,15 @@
         </div>
         <div>
         Upload Image
-        <br>	
+        <br>
         <input type="file" name="image">
         </div>
 		<input id="btn" class="btn btn-primary" type="submit" name="submit" value="submit">
+        <a href="edit_announcement.php" class="btn btn-primary">Edit</a>
+        <a href="delete_announcement.php" class="btn btn-danger">Delete</a>
 	</form>
-
-    <div id="result">
     </div>
-
-    <div class="modal fade" id="announcement" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
-            <div class="modal-content" id="message">
-                <?php
-                    echo "Announcement successfully sent and will be announced on the specified date.";
-                ?>
-                <div id="ok">
-                <br>
-                    <a href="index.php" class="btn btn-primary" style="width:25%;">Ok</a>
-                </div>
-            </div>
-        </div>
-    </div>	
-		</div>
-	</div>
+    </div>
 </body>
 	
 	

@@ -2,7 +2,14 @@
     include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
     $today = date("Y-m-d");
-    $age = date_diff(date_create($birth_date),date_create($today))->y   ;
+    $age = date_diff(date_create($birth_date),date_create($today))->y;
+
+    if ($prof_image === null) {
+        $image = "No Profile Image";
+    } else {
+        $image = "<img src='data:image/jpg;base64,'. $prof_image. ' style='height:250px;width:250px;'>";
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,8 +84,8 @@
 
                         <div class="col-4">
 
-                                <div style="height:250px;width:250px;">
-                                    <img src="data:image/jpg;base64,<?php echo $prof_image; ?>" style="height:250px;width:250px;">
+                                <div style="height:250px;width:250px;border: 2px solid black;">
+                                    <?php echo $image;?>
                                     <!-- <form action="../utilities/upload.php" method="POST" enctype="multipart/form-data">
                                         <input class="btn-primary" type="file" name="image"><br>
                                         <button class="btn btn-primary" type="submit" name="upload">Upload</button>
