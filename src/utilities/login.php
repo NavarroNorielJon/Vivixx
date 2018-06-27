@@ -23,37 +23,48 @@
                         $_SESSION['user'] = $user;
                         $result = mysqli_query($connect,$test);
                         if ($result->num_rows > 0 ) {
-                            header('location:../pages/update_information');
+                            //header('location:../pages/update_information');
+                            echo 'pages/update_information';
                         } else {
-                            header('location:../pages/home');
+                            //header('location:../pages/home');
+                            echo "pages/home";
                         }
                     } elseif ($type === "admin") {
-                        header('location:../admin/index.php');
+                       // header('location:../admin/index.php');
+                        echo "admin/index.php";
                     }
                 }elseif (!password_verify($password, $passwordVerify) && $status === "enabled") {
-                    echo "<script>
-                            alert('Invalid password');
-                            window.location = '/';
-                             </script>";
+                    //http_response_code(500);
+                    echo "Invalid Password";
+//                    echo "<script>
+//                            alert('Invalid password');
+//                            window.location = '/';
+//                             </script>";
                 }elseif (password_verify($password, $passwordVerify) && $status === "disabled") {
-                    echo "<script>
-                            alert('Your account is disabled');
-                            window.location = '/';
-                             </script>";
+                   // http_response_code(500);
+                    echo "Your account is disabled";
+//                    echo "<script>
+//                            alert('Your account is disabled');
+//                            window.location = '/';
+//                             </script>";
                 }
             } else{
-                echo "<script>
-                        alert('User does not exist');
-                        window.location = '/';
-                         </script>";
-                         exit;
+               // http_response_code(500);
+                echo "User does not exist";
+//                echo "<script>
+//                        alert('User does not exist');
+//                        window.location = '/';
+//                         </script>";
+//                         exit;
             }
         } else {
-            echo "<script>
-                    alert('Invalid username or password.');
-                    window.location = '/';
-                     </script>";
-                     exit;
+            //http_response_code(500);
+            echo "Invalid Username or password";
+//            echo "<script>
+//                    alert('Invalid username or password.');
+//                    window.location = '/';
+//                     </script>";
+//                     exit;
         }
     }
 ?>
