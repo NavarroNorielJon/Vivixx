@@ -13,6 +13,7 @@ function helperText(type, str, elementId){
 		xmlhttp.send();
 	}
 }
+
 function confirmPass(type, str, passElement, elementId){
 	var pass = document.getElementById(passElement).value;
 	if(str.length == 0){

@@ -8,6 +8,7 @@ $connect = Connect();
 $birth_date = mysqli_real_escape_string($connect, $_POST['birth_date']);
 $birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place']));
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
+$facebook = mysqli_real_escape_string($connect, $_POST['facebook']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
 $ft = mysqli_real_escape_string($connect, $_POST['ft']);
 $in = mysqli_real_escape_string($connect, $_POST['in']);
@@ -53,7 +54,7 @@ $child_birth = $_POST['child_birth'];
 
 // //Educational background
 $elem_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['elem_school_name']));
-$elem_status = ucwords(mysqli_real_escape_string($connect, $_POST['option1']));
+$elem_status = mysqli_real_escape_string($connect, $_POST['option1']);
 
 if ($elem_status === "g1") {
     $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_yr_grad']));
@@ -156,7 +157,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $id = $row['user_id'];
 
 $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
- `gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type', `residential_address`='$residential_address',
+ `facebook_link`='$facebook',`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
  `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship',
  `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',

@@ -50,14 +50,5 @@ switch ($type){
 			echo "<span class='valid'>Password matches</span>";
 		}
 		break;
-	case "userOrEmail":
-		$userOrEmail = mysqli_real_escape_string($connect,$_REQUEST["userOrEmail"]);
-		$stmt = "SELECT * FROM user where email = '$userOrEmail' or username='$userOrEmail';";
-		$result = mysqli_query($connect, $stmt);
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-		if($userOrEmail !== $row['username'] && $userOrEmail !== $row['email']){
-			echo "<span class='invalid'>User does not exists</span>";
-		}
-		break;
 }
 ?>
