@@ -1,194 +1,174 @@
-<?php
-    include '../utilities/db.php';
-	session_start();
-
-	if (isset($_SESSION['user'])) {
-		echo "<script>window.location = 'pages/';</script>";
-    }
-?>
-
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Vivixx</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="../style/style2.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Searchbox</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
-<body  id="index">
-	<!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
-	
-	<div class="containter-fluid">
-		<form action="utilities/login.php" method="post" class="jumbotron" id="login">
-			<img src="../img/Lion.png" class="index-image">
-        	<div class="form-group col-sm-12">
-            	<label for="userOrEmail">Username or Email-Address</label>
-                <input class="form-control" type="text" onkeyup="helperText('userOrEmail',this.value,'validUserOrEmail')" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-                <div id="validUserOrEmail"></div>
-			</div>
+      #infowindow-content .title {
+        font-weight: bold;
+      }
 
-            <div class="form-group col-sm-12">
-          		<label for="pass">Password</label>
-                <div class="input-group">
-                	<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required" >
+      #infowindow-content {
+        display: none;
+      }
 
-                    <div class="input-group-append">
-                     	<button type="button" class="btn eye" onclick="showHide('password','icon')">
-                     		<i class="material-icons" id="icon">visibility</i>
-                     	</button>
-                    </div>
-				</div>
-			</div>
-					
-			<div class="text-center">
-				<button type="submit" class="btn login-button" name="submit">
-					Login
-				</button>
-						
-				<p style="display: inline-block;">
-					<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or 
-					<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a> 
-				</p>
-			</div>
-		</form>
-	</div>
+      #map #infowindow-content {
+        display: inline;
+      }
 
-	<!-- Modal for forgot password -->
-    <div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
-    	<div class="modal-dialog" role="document">
-        	<div class="modal-content forgot-content">
-            	<!-- Header -->
-                <div class="modal-header forgot-header">
-					<div class="row">
-            			<div class="col-3">
-							<img src="img/Lion.png" style="height:auto; width:65%;" >
-						</div>
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
 
-						<div class="col-9">
-                    		<h3>Forgot Password</h3>
-						</div>
-					</div>
-				</div>
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
 
-				<!-- Body -->
-                <div class="modal-body">
-                	<form action="mailing/send_reset.php" method="POST">
-                    	<div class="form-group">
-                        	<label for="id">E-mail Address</label>
-                            <input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address" name="email" required>
-						</div>
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
 
-						<div style="text-align: right;">
-                        	<button type="submit" class="btn btn-primary">Send Email</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End of forgot password modal -->
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
 
-	<!-- Modal for Register -->
-    <div class="modal fade" id="signup-form" tabindex="-1" role="dialog">
-    	<div class="modal-dialog" role="document">
-        	<div class="modal-content signup-content">
-            	<div class="modal-header signup-header">
-            		<div class="row">
-            			<div class="col-3">
-							<img src="img/Lion.png" style="height:auto; width:65%;" >
-						</div>
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
 
-						<div class="col-9">
-                    		<h3>Registration Form</h3>
-						</div>
-					</div>
-				</div>
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
-				<!-- Body -->
-                <div class="modal-body">
-                	<form  id="signup_form" action="../utilities/registration.php" method="post">
-						<!-- Full Name -->
-						<div class="row">
-                        	<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            	<label for="fname">First Name</label>
-                                <input type="text" name="first_name" id="fname" autocomplete="off" class="form-control text-transform" placeholder="First Name" required="required">
-							</div>
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
-							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
-								<label for="mname">Middle Name</label>
-								<input type="text" name="middle_name" id="mname" autocomplete="off" class="form-control text-transform" placeholder="Middle Name (Optional)" >
-							</div>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-							<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
-								<label for="lname">Last Name</label>
-								<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control text-transform" placeholder="Last Name" required="required">
-							</div>
-						</div>
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
 
-                        <div class="form-group">
-                        	<label for="email">Email</label>
-                            <input type="text" name="email" id="email" autocomplete="off" onkeyup="helperText('email',this.value,'validEmail')" class="form-control form-control" placeholder="E-mail Address" required="required">
-                            <div id="validEmail"></div>
-						</div>
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-						<div class="row">
-							<div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
-								<label for="reg_pass">Password</label>
-                                <input type="password" name="password" id="regpass" onkeyup="helperText('password',this.value,'validPassword')" class="form-control" placeholder="Password" required="required">
-                                <div id="validPassword"></div>
-							</div>
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
 
-							<div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
-								<label for="cpass">Confirm Password</label>
-								<div class="input-group">
-                                	<input type="password" name="confirm_password" id="cpassword" onkeyup="confirmPass('confirm_password',this.value,'regpass','validConfirmation')" class="form-control" placeholder="Confirm Password" required="required">
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
 
-                                    <div class="input-group-append">
-                                    	<button  type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
-                                        	<i class="material-icons" id="icon1">visibility</i>
-										</button>
-									</div>
-								</div>
-								<div id="validConfirmation"></div>
-							</div>
-						</div>
+          if (places.length == 0) {
+            return;
+          }
 
-						<div style="text-align: right;">
-							<button type="submit" class="btn btn-primary" id="button1" onclick="loginSuccess()">Submit</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
 
-	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="../script/alerts.js"></script>
-	<script type="text/javascript" src="../script/popper.min.js"></script>
-	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>
-	<script>
-		window.onload = function() {
-			var body = document.getElementById('body');
-			body.style.opacity = "1";
-		}
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
 
-		$('a[href^="#"]').on('click', function(event) {
-    		var target = $(this.getAttribute('href'));
-    		if( target.length ) {
-        		event.preventDefault();
-        		$('html, body').stop().animate({
-            	scrollTop: target.offset().top
-        		}, 1000);
-    		}
-		});
-	</script>
-</body>
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
 
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&libraries=places&callback=initAutocomplete"
+         async defer></script>
+  </body>
 </html>
