@@ -131,12 +131,7 @@
             </div>
 
         </div>
-<<<<<<< HEAD
-            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
-=======
             <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="submit" value="submit">
->>>>>>> 92a3340837cf654d29039de0fcf64706f9322db9
-
 	</form>
     
         </div>
