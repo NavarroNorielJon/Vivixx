@@ -88,7 +88,7 @@
 							}
 							$button = "
 							<input name='edit' value='edit' style='display: none;'>
-							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."& image=".$row['image']."' class='show btn btn-primary'>Edit</a>";
+							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
 
 						//print data in table
 							echo "
@@ -98,8 +98,7 @@
 							<td>" . $row['announcement'] . "</td>
 							<td>" . $image . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
-							<td>
-							".$button."</td>
+							<td>" . $button."</td>
 							</tr>";
 						}
 					}
@@ -117,7 +116,7 @@
       <script>
 	  	//script for calling modal
 	  	$(document).ready(function(){
-			$('.show').click(function(e){
+			$('.edit').click(function(e){
 				e.preventDefault();
 				$.ajax({
 					url: $(this).attr('href'),
