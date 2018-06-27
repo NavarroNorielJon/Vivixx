@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -108,13 +108,19 @@
                                     name="contact_number"
                                     maxlength="11"
                                     autocomplete="off"
-                                    placeholder="+63999 999 9999"
-                                    class=" form-control"
+                                    placeholder="+63XXX XXX XXXX"
+                                    class="form-control mobile"
                                     id="contact"
-                                    onkeypress="numberInput(event)"
                                     onkeyup="helperText('contact_number',this.value,'validContact')"
                                     required="required">
-                                <div id="validContact"></div>
+                                    <div id="validContact"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col">
+                                <label for="facebook">Facebook Link</label>
+                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off">
                             </div>
                         </div>
 
@@ -171,7 +177,7 @@
 
                             <div class="form-group col-3 ">
                                 <label for="residential_tel_no">Telephone NO.</label>
-                                <input type="tel" name="residential_tel_no" id="residential_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="XXX-XXXX" class="form-control" required="required">
+                                <input type="tel" name="residential_tel_no" id="residential_tel_no" maxlength="7" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
                             </div>
                         </div>
 
@@ -188,7 +194,7 @@
 
                             <div class="form-group col-3 ">
                                 <label for="permanent_tel_no">Telephone NO.</label>
-                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" onkeypress="numberInput(event)" autocomplete="off" placeholder="XXX-XXXX" class="form-control" required="required">
+                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
                             </div>
                         </div>
 
@@ -229,22 +235,22 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no"  id="sss_no" placeholder="XX-XXXXXXX-X" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no"  id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="tin">TIN</label>
-                                <input type="text" name="tin" id="tin" placeholder="XXX-XXX-XXX-XXX" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="tin" id="tin" placeholder="XXX-XXX-XXX-XXX" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="philhealth_no ">PHILHEALTH NO.</label>
-                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="XX-XXXXXXXXX-X" onkeypress="numberInput(event)" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="philhealth_no" id="philhealth_no" placeholder="XX-XXXXXXXXX-X" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="XXXX-XXXX-XXXX" onkeypress="numberInput(event)"  autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="XXXX-XXXX-XXXX" autocomplete="off" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -333,7 +339,7 @@
 
                             <div class="form-group col-3">
                                 <label for="spouse_tel_no">Telephone NO.</label>
-                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="XXX-XXXX" onkeypress="numberInput(event)" autocomplete="off" class="form-control">
+                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
                             </div>
                         </div>
 
@@ -382,6 +388,7 @@
                             </script>
                             <div class="form-group col">
                                 <label for="option1">Status</label>
+
                                 <select name="option1" id="option1" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="g1">Graduate</option>
@@ -418,6 +425,7 @@
                             </script>
                             <div class="form-group col">
                                 <label for="option2">Status</label>
+
                                 <select name="option2" id="option2" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="g2">Graduate</option>
@@ -563,10 +571,12 @@
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off" required>
+                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off" required>
                             </div>
 
                         </div>
+
+
 
                         <div class="row">
                             <div class="form-group col">
@@ -581,7 +591,7 @@
 
                             <div class="form-group col">
                                 <label for="mnumber2">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
@@ -600,7 +610,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off" required>
+                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off" required>
                             </div>
 
                         </div>
@@ -618,7 +628,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber2">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="Mobile Number" maxlength="11" onkeypress="numberInput(event)" class="form-control" autocomplete="off">
+                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
@@ -627,14 +637,14 @@
                             <script>
                                 $(function () {
                                     $('#quest').change(function () {
-                                        $('#yes').hide();
+                                        $('#Yes').hide();
                                         $('#' + $(this).val()).show();
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="quest">Do you plan on relocating soon? </label>
-                                <select name="yesorno" id="quest" class="form-control">
+                                <select name="yesorno" id="quest" class="form-control" required>
                                     <option selected="selected" disabled="disabled">Select: Yes or No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -643,7 +653,7 @@
 
                             <div class="form-group col" id="Yes" style="display:none">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" class="form-control" autocomplete="off">
+                                <input type="text" name="answer" id="yes" class="form-control" autocomplete="off" >
                             </div>
                         </div>
 
@@ -656,24 +666,24 @@
                     <fieldset>
                         <h2>Step 5: Tutor Info Sheet</h2>
                         <div class="row">
-                            <div class="form-group col">
+                            <div class="form-group col-4">
                                 <label>Tutor's Full Name</label>
                                 <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" class="form-control text-transform">
                             </div>
 
-                            <div class="form-group col">
+                            <div class="form-group col-2">
                                 <label>Nickname</label>
                                 <input type="text" name="nickname" id="nickname" placeholder="nickname" class="form-control text-transform">
                             </div>
 
-                            <div class="form-group col-2">
+                            <div class="form-group col">
                                 <label>Mobile Number</label>
-                                <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" onkeypress="numberInput(event)" maxlength="11" class="form-control">
+                                <input type="tel" name="mobile" id="mobile" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile">
                             </div>
 
-                            <div class="form-group col-2">
+                            <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control telephone">
                             </div>
                         </div>
 
@@ -768,8 +778,11 @@
             $('#pagibig_id_no').inputmask({
                 mask: 'dddd-dddd-dddd'
             });
-            $('#contact').inputmask({
+            $('.mobile').inputmask({
                 mask: '+639dd ddd dddd'
+            });
+            $('.telephone').inputmask({
+                mask: 'ddd-dddd'
             });
         </script>
         <script>

@@ -121,28 +121,16 @@
                   <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
                   <div>
                     <span class="btn btn-default btn-file">
-                        <span class="fileinput-new">Upload image</span>
-                        <input type="file" name="attach">
+                        <span class="fileinput-new">Upload attachment</span>
+                        <input type="file" name="file[]" multiple>
                     </span>
                         <a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a>  
                   </div>
                 </div>
             </div>
 
-            <div class="p-2">
-                <div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
-                  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"></div>
-                  <div>
-                    <span class="btn btn-default btn-file">
-                        <span class="fileinput-new">Upload image</span>
-                        <input type="file" name="img"></span>
-                    <a href="#" class="btn btn-default img-exists" data-dismiss="fileinput">Remove</a>
-                  </div>
-                </div>
-            </div>
-
         </div>
-            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="Submit" value="submit">
+            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="submit" value="submit">
 
 	</form>
     
