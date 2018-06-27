@@ -63,6 +63,7 @@
 		<div class="accounts-content container-fluid">
 			<a href="create_announcement.php"><button class="btn btn-primary">Add Announcement</button></a>
 			<h1>Announcements</h1>
+            <hr>
 				<table class="table" id="table">
 					<thead>
 						<tr>

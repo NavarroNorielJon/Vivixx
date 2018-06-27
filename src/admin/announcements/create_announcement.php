@@ -68,6 +68,7 @@
 		
 		<div class="announcement-content container-fluid">
             <h1> Create Announcement </h1>
+            <hr>
             
             
 			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
@@ -142,7 +143,7 @@
             </div>
 
         </div>
-            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="Submit" value="submit">
+            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 
 	</form>
     
