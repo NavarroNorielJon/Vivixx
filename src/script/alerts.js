@@ -1,5 +1,5 @@
 $('#update_form').ajaxForm({
-    url: '../utilities/update_info',
+    url: '../utilities/update_info.php',
     method: 'post',
     error: function (){
         swal({
@@ -23,7 +23,20 @@ $('#update_form').ajaxForm({
         });
     }
 });
-
+$( "#signup_form" ).validate({
+    rules: {
+        email: {
+            email: true
+        },
+        password: {
+            required: true,
+            minlength: 8,
+        },
+        confirm_password: {
+            equalTo: "#regpass"
+        }
+    }
+});
 $('#signup_form').ajaxForm({
     url: '../utilities/registration.php',
     method: 'post',

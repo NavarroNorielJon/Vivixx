@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffd5ba3f-1569-459b-906e-70a073ee6888" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/script/additional-methods.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/jquery.validate.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/alerts.js" afterDir="false" />
@@ -19,20 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="196" column="57" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="57" />
+            <state relative-caret-position="360">
+              <caret line="153" column="32" selection-start-line="153" selection-start-column="32" selection-end-line="157" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utilities/login.php">
+      <file leaf-file-name="registration.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utilities/registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="61" column="46" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="46" />
+            <state relative-caret-position="-201">
+              <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alerts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/script/alerts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -49,6 +60,7 @@
       <find>error</find>
       <find>address</find>
       <find>login</find>
+      <find>signup</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,9 +75,9 @@
         <option value="$PROJECT_DIR$/script/scripts.js" />
         <option value="$PROJECT_DIR$/pages/update_information.php" />
         <option value="$PROJECT_DIR$/utilities/registration.php" />
-        <option value="$PROJECT_DIR$/script/alerts.js" />
         <option value="$PROJECT_DIR$/utilities/login.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/script/alerts.js" />
       </list>
     </option>
   </component>
@@ -116,6 +128,11 @@
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utilities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -134,6 +151,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Vivixx\src\script" />
       <recent name="C:\xampp\htdocs\Vivixx\src" />
       <recent name="C:\Users\JunJun\Documents\GitHub\Vivixx\src\style" />
       <recent name="C:\Users\JunJun\Documents\GitHub\Vivixx\src\script" />
@@ -154,15 +172,22 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/announcements/announcement.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/index.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/leave_request/accept_or_reject.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/announcements/create_announcement.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/announcements/submit_announcement.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/leave_request/view_leave_request_form.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/database/mis.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/profile.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/prototype.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/update_information.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/script/scripts.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/form-elements.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/script/alerts.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/script/bootstrap/jasny-bootstrap.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/style/style2.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/utilities/check_user_info.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/utilities/login.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/utilities/session.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/utilities/update_info.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/utilities/validator.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -177,34 +202,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/animated.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/bordered-pulled.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/core.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/fixed-width.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/font-awesome.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/icons.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/larger.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/list.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/mixins.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/path.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/rotated-flipped.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/screen-reader.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/stacked.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/less/variables.less</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_animated.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_bordered-pulled.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_core.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_fixed-width.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_icons.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_larger.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_list.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_mixins.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_path.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_rotated-flipped.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_screen-reader.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_stacked.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/_variables.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/style/font-awesome/scss/font-awesome.scss</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -315,7 +312,7 @@
       <workItem from="1529989881537" duration="16000" />
       <workItem from="1529998515461" duration="1010000" />
       <workItem from="1529999687540" duration="3858000" />
-      <workItem from="1530061151722" duration="4970000" />
+      <workItem from="1530061151722" duration="9704000" />
     </task>
     <task id="LOCAL-00001" summary="added the username in alert after registration">
       <created>1530001297946</created>
@@ -324,11 +321,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530001297946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated the alerts in login">
+      <created>1530067743321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530067743321</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22227000" />
+    <option name="totallyTimeSpent" value="26961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -337,13 +341,13 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13388805" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32972136" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32972136" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.26934984" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.26934984" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -353,7 +357,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972136" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32972136" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32972136" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +394,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added the username in alert after registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the username in alert after registration" />
+    <MESSAGE value="updated the alerts in login" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the alerts in login" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -613,31 +618,44 @@
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/alerts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utilities/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="46" />
+        <state relative-caret-position="952">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/ajax.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/aria.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="1527" column="39" selection-start-line="1527" selection-start-column="39" selection-end-line="1527" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/additional-methods.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201">
+          <caret line="82" column="46" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="196" column="57" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="57" />
+        <state relative-caret-position="360">
+          <caret line="153" column="32" selection-start-line="153" selection-start-column="32" selection-end-line="157" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/alerts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
