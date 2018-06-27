@@ -13,89 +13,62 @@
                 <div class="modal-header">
                     <h1>Edit announcement</h1>
                 </div>
-                <input type="hidden" name="req_id" value="<?php echo $req_id?>">
+                <input type="hidden" name="id" value="<?php echo $announcement_id?>">
 
                 <div class="modal-body">
                     <div class="row">
 						<div class="form-group col">
-							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control" id="employee_name" placeholder="Employee Name" name="employeeName" disabled value="<?php echo ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last)?>">
+							<label for="subject">Subject</label>
+							<input type="text" class="form-control" id="subject" name="subject" value="<?php echo $row["subject"]?>">
 						</div>
 
 						<div class="form-group col">
-							<label for="department">Department</label>
-							<input type="text" class="form-control" id="department" placeholder="department" name="dept" disabled value="<?php echo $row['department']?>">
+							<label for="date">Date</label>
+							<input type="date" class="form-control" id="date" name="date" value="<?php echo $row['date']?>">
 						</div>
 					</div>
 
+                    <?php 
+                        if($row["departments"] === "all"){
+                            $dept= "All Departments";
+                        }else if($row["departments"] === "admin"){
+                            $dept= "Administration";
+                        }else if($row["departments"] === "admin supp"){
+                            $dept= "Administration Support / HR";
+                        }else if($row["departments"] === "it support"){
+                            $dept= "IT Support";
+                        }else if($row["departments"] === "non voice account"){
+                            $dept= "Non-voice Account";
+                        }else if($row["departments"] === "phone esl"){
+                            $dept= "Phone ESL";
+                        }else if($row["departments"] === "video esl"){
+                            $dept= "Video ESL";
+                        }else{
+                            $dept= "Virtual Assistant";
+                        }
+                    ?>
                     <div class="row">
                         <div class="form-group col">
-                            <label for="position">Position</label>
-                            <input type="text" class="form-control" id="position" placeholder="Position" name="employeePosition" disabled value="<?php echo $row['position']?>">
+                            <select class="custom-select form-group" name="department" id="department" required>
+                                <option selected disabled><?php echo $dept ?></option>
+                                <option value="all">All Departments</option>
+                                <option value="admin">Administration</option>
+                                <option value="admin supp">Administration Support / HR</option>
+                                <option value="it support">IT Support</option>
+                                <option value="non voice account">Non-voice Account</option>
+                                <option value="phone esl">Phone ESL</option>
+                                <option value="video esl">Video ESL</option>
+                                <option value="virtual assistant">Virtual Assistant</option>
+                            </select>
                         </div>
                         
                         <div class="form-group col">
-                            <label for="date_hired">Date Hired</label>
-                            <input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="dateHired" disabled value="<?php echo $row['date_hired']?>">
-                        </div>
-                        
-                        <div class="form-group col">
-                            <label for="date_filed">Date Filed</label>
-                            <input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="dateFilled" disabled value="<?php echo $row['date_filed']?>">
-                        </div>
-				    </div><hr>
-
-                    <div>
-                        <div class="form-group">
-                            <label for="other_reason">Reason for Leave</label>
-                            <input type="text" class="form-control" id="reason" disabled value="<?php echo $row['reason']?>">
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="credit">Maximum Leave Credits</label>
-                                <input type="text" class="form-control" id="credit" disabled value="5">
-                            </div>
-                            
-                            <div class="form-group col">
-                                <label for="used">Used Leave Credits</label>
-                                <input type="text" class="form-control" id="used" disabled>
-                            </div>
-
-                            <div class="form-group col">
-                                <label for="balance">Remaining Balance</label>
-                                <input type="text" class="form-control" id="balance" disabled>
+                            <label for="content">Content</label>
+                            <div class="float-left" id="border">
+                                <textarea class="form-control" name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
+                                Remaining characters: <span id="totalChars">1000</span><br/>
                             </div>
                         </div>
-					
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="address_leave">Contact Address during leave</label>
-                                <input type="text" class="form-control" id="address_leave" disabled value="<?php echo $row['contact_address']?>">
-                            </div>
-                            
-                            <div class="form-group col">
-                                <label for="number_leave">Contact Number during leave</label>
-                                <input type="text" class="form-control" id="number_leave" disabled value="<?php echo $row['contact_number']?>">
-                            </div>
-                        </div>
-				    </div><hr>
-
-                    <div>
-                        <h1>Inclusive days applied</h1>
-                        
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="start_date">From</label>
-                                <input type="date" class="form-control" disabled value="<?php echo $row['from']?>">
-                            </div>
-                            
-                            <div class="form-group col">
-                                <label for="end_date">To</label>
-                                <input type="date" class="form-control" id="end_date" disabled value="<?php echo $row['to']?>">
-                            </div>
-                        </div>
-				    </div>
 
                     <div style="text-align:right">
                         <input type="submit" class="btn btn-danger" name="reject" value="Disapprove">
@@ -109,6 +82,6 @@
     </form>
     <script>
         $(document).ready(function(){
-            $("#request").modal("show");
+            $("#edit").modal("show");
         });
     </script>
