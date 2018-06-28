@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../style/datatables.css">
+    <link rel="stylesheet" href="../style/datatables.css">
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
