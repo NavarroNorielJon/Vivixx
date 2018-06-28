@@ -6,7 +6,7 @@ ini_set('upload_max_filesize', '64M');
 	
       $subject = $_POST["subject"];
       $date = $_POST["date"];
-      $body = $_POST["body"];
+      $body = mysqli_real_escape_string($connect,$_POST["body"]);
       $department = $_POST["department"];
 
       $file_names = [];
