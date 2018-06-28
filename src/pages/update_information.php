@@ -1,6 +1,5 @@
 <?php
     include '../utilities/session.php';
-	include '../modules/footer.html';
     if ($birth_date != null && $birth_place != null && $contact_number != null &&
 	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
 	    && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null) {
@@ -18,7 +17,6 @@
         <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
         <link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../style/form-elements.css">
-        <link rel="stylesheet" href="../style/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
@@ -132,7 +130,7 @@
                                         if($('#gender').val() == "Other"){
                                             $('#spec').attr('required','true');
                                         }else {
-                                            $('#spec').removeAttr('required');
+                                            $('#spec').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -216,7 +214,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-4">
+                            <div class="form-group col-5">
                                 <label for="citizenship">Citizenship</label>
                                 <input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
                             </div>
@@ -229,7 +227,8 @@
                                         if($('#civil_status').val() === "others"){
                                             $('#oth').attr('required','true');
                                         }else {
-                                            $('#oth').removeAttr('required');
+                                            $('#oth').removeAttr('required').removeClass('input-error');
+
                                         }
                                     });
                                 });
@@ -408,15 +407,15 @@
                                         if ($('#option1').val() === "g1") {
                                             $('#elem_yr_grad').attr('required','true');
                                             $('#elem_school_name').attr('required','true');
-                                            $('#elem_high_level').removeAttr('required');
+                                            $('#elem_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option1').val() === "u1") {
                                             $('#elem_school_name').attr('required','true');
                                             $('#elem_high_level').attr('required','true');
-                                            $('#elem_yr_grad').removeAttr('required');
+                                            $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
-                                            $('#elem_school_name').removeAttr('required');
-                                            $('#elem_high_level').removeAttr('required');
-                                            $('#elem_yr_grad').removeAttr('required');
+                                            $('#elem_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#elem_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -458,15 +457,15 @@
                                         if ($('#option2').val() === "g2") {
                                             $('#sec_yr_grad').attr('required','true');
                                             $('#sec_school_name').attr('required','true');
-                                            $('#sec_high_level').removeAttr('required');
+                                            $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option2').val() === "u2") {
                                             $('#sec_school_name').attr('required','true');
                                             $('#sec_high_level').attr('required','true');
-                                            $('#sec_yr_grad').removeAttr('required');
+                                            $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
-                                            $('#sec_school_name').removeAttr('required');
-                                            $('#sec_yr_grad').removeAttr('required');
-                                            $('#sec_high_level').removeAttr('required');
+                                            $('#sec_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -509,16 +508,16 @@
                                         if ($('#option3').val() === "g3") {
                                             $('#col_yr_grad').attr('required','true');
                                             $('#col_school_name').attr('required','true');
-                                            $('#col_high_level').removeAttr('required');
+                                            $('#col_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option3').val() === "u3") {
                                             $('#col_high_level').attr('required','true');
                                             $('#col_school_name').attr('required','true');
-                                            $('#col_yr_grad').removeAttr('required');
+                                            $('#col_yr_grad').removeAttr('required').removeClass('input-error');
                                         }else {
-                                            $('#col_school_name').removeAttr('required');
-                                            $('#col_yr_grad').removeAttr('required');
-                                            $('#col_high_level').removeAttr('required');
+                                            $('#col_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#col_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#col_high_level').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -561,16 +560,16 @@
                                         if ($('#option4').val() === "g4") {
                                             $('#pos_yr_grad').attr('required','true');
                                             $('#pos_school_name').attr('required','true');
-                                            $('#pos_high_level').removeAttr('required');
+                                            $('#pos_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option4').val() === "u4") {
                                             $('#pos_high_level').attr('required','true');
                                             $('#pos_school_name').attr('required','true');
-                                            $('#pos_yr_grad').removeAttr('required');
+                                            $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
                                         }else {
-                                            $('#pos_school_name').removeAttr('required');
-                                            $('#pos_high_level').removeAttr('required');
-                                            $('#pos_yr_grad').removeAttr('required');
+                                            $('#pos_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#pos_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -720,7 +719,7 @@
                                         if ($('#quest').val() == "Yes") {
                                             $('#answer').attr('required','true');
                                         } else {
-                                            $('#answer').removeAttr('required')
+                                            $('#answer').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -773,7 +772,6 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>Department</label>
-                                <label for="department">Department</label>
     							<select class="custom-select form-group" name="department" id="department" required>
     								<option selected disabled>Choose your Department</option>
     								<option value="Administration">Administration</option>
@@ -919,6 +917,9 @@
                     document.getElementById('lat').value = marker.position.lat();
                     document.getElementById('lng').value = marker.position.lng();
                 });
+                google.maps.event.addListener(marker, "dblclick", function (e) {
+               log("Double Click");
+            });
             }
 
             function invalid() {
