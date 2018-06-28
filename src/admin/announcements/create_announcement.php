@@ -109,19 +109,6 @@
                 Remaining characters: <span id="totalChars">1000</span><br/>
               </div>
 
-                <!--
-                <div>
-                Upload Attachment
-                <br>
-                <input type="file" name="file[]" multiple>
-                </div>
-                <div>
-                Upload Image
-                <br>
-                <input type="file" name="image">
-                </div>
-                -->
-
             <div class="p-2">
                 <h3>Upload Image</h3>
                 <div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
@@ -135,14 +122,14 @@
                   </div>
                 </div>
             </div>
-            
+<!--             
             <div class="p-2">
                 <h3> Upload attachment(s)</h3>
                 <input type="file" class="form-control-file" id="attachment1">
                 <input type="file" class="form-control-file" id="attachment2">
                 <input type="file" class="form-control-file" id="attachment3">
                 <input type="file" class="form-control-file" id="attachment4">
-            </div>
+            </div> -->
 
         </div>
             <input class="w-100 btn btn btn-primary" id="btn" type="submit" name="submit" value="S U B M I T">

@@ -2,8 +2,8 @@
     include '../../utilities/db.php';
     $connect = Connect();
     $announcement_id = $_GET["announcement_id"];
-    $edit_leave = "SELECT * FROM mis.announcement natural join announcement_attachments where announcement_id='$announcement_id'";
-    $result = $connect->query($edit_leave);
+    $edit_announcement = "SELECT * FROM mis.announcement natural join announcement_attachments where announcement_id='$announcement_id'";
+    $result = $connect->query($edit_announcement);
     $row = $result->fetch_assoc();
 ?>
 	<form action="submit_announcement.php" method="POST">

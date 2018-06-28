@@ -25,61 +25,46 @@ ini_set('upload_max_filesize', '64M');
             $file_err_nos[] = $child;
         }
         //if there is no image
-        if(!is_uploaded_file($_FILES['image']['tmp_name'])) {
 
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`,) VALUES ('$subject', '$body', '$date', '$department');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`) VALUES ('$subject', '$body', '$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
             $results = $result->fetch_assoc();
             $announcement_id = $results['id'];
 
-                for($x = 0; $x< count($file_names); $x++){
-                    if(!empty($file_tmp_names[$x])){
-                        move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                        $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                        $add_attachment = "Insert into announcement_attachments (`attachment`,`attachment_name`, `announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
-                        $connect->query($add_attachment);
-                        echo "
-                            <script>
-                            alert('Announcement with attachment, successfully sent.');
-                            window.location='announcement.php';
-                            </script>";
-                    }else{
-                        $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
-                        $connect->query($add_attachment);
-                        echo "
-                            <script>
-                            alert('Announcement without attachment, successfully sent.');
-                            window.location='announcement.php';
-                            </script>";
-                    }
-                    
-                }
-
-        }else{
-
-            $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-            $image_name = $_FILES['image']['name'];
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `image`,`image_name`, `date`, `departments`) VALUES ('$subject', '$body', '$image', '$image_name' ,'$date', '$department');";
-            $connect->query($sql);
-            $get_latest_announcement = "select max(announcement_id) as id from announcement;";
-            $result = $connect->query($get_latest_announcement);
-            $results = $result->fetch_assoc();
-            $announcement_id = $results['id'];
-
-                for($x = 0; $x< count($file_names); $x++){
+            for($x = 0; $x< count($file_names); $x++){
+                if(!empty($file_tmp_names[$x])){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                    $temp_file = base64_encode(file_get_contents('file uploads/'.$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment`, `attachment_name`,`announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
+                    $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
+                    $add_attachment = "Insert into announcement_attachments (`attachment`,`attachment_name`, `announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
                     $connect->query($add_attachment);
+                    echo "
+                        <script>
+                        alert('Announcement with attachment, successfully sent.');
+                        window.location='announcement.php';
+                        </script>";
+                }else{
+                    $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
+                    $connect->query($add_attachment);
+                    echo "
+                        <script>
+                        alert('Announcement without attachment, successfully sent.');
+                        window.location='announcement.php';
+                        </script>";
                 }
+                
+            }
 
                 echo "
                     <script>
                     alert('Announcement successfully sent and will be announced on the specified date.');
                     window.location='announcement.php';
                     </script>";
+<<<<<<< HEAD
+               
+    }
+=======
           }     
     }else {
 		echo " <script>
@@ -87,3 +72,4 @@ ini_set('upload_max_filesize', '64M');
                     window.location='announcement.php';
               </script>";
 	}
+>>>>>>> e00e83ebf0042d1a32c4ead1d7f9b1b66901bae7
