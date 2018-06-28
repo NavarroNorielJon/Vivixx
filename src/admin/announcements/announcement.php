@@ -121,9 +121,9 @@
         	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
             	<!-- Header -->
             	<div class="modal-header add-announcement-header">
-                    	<div class="col">
+   
                         	   <h1>Add Announcement</h1>
-                    	</div>
+
             	</div>
 
             	<!-- Body -->
