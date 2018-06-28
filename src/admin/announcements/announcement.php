@@ -170,18 +170,7 @@
 								Remaining characters: <span id="totalChars">1000</span><br/>
 							</div>
 
-							<div class="p-2">
-								<div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
-									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
-									<div>
-										<span class="btn btn-default btn-file">
-											<span class="fileinput-new">Upload attachment</span>
-								
-										</span>
-										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
-									</div>
-								</div>
-							</div>
+							
                             <div class="p-2">
                                 <h3> Upload attachment(s)</h3>
                                 <input type="file" class="form-control-file" id="attachment1">
