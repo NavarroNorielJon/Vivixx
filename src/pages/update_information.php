@@ -214,7 +214,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-5">
+                            <div class="form-group col-6">
                                 <label for="citizenship">Citizenship</label>
                                 <input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
                             </div>
@@ -234,7 +234,7 @@
                                 });
                             </script>
 
-                            <div class="form-group col-2">
+                            <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
                                 <select name="civil_status" id="civil_status" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
@@ -247,7 +247,7 @@
                                 </select>
                             </div>
 
-                            <div id='others' style='display:none' class="form-group col">
+                            <div id='others' style='display:none' class="form-group col-4">
                                 <label for="other_civil">(Please Specify)</label>
                                 <input id="oth" class="form-control" placeholder="" name="other_civil">
                             </div>
