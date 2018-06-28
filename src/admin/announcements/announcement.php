@@ -125,15 +125,9 @@
         	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
             	<!-- Header -->
             	<div class="modal-header add-announcement-header">
-                	<div class="row">
-                    	<div class="col-4">
-                        	<img src="../../img/Lion.png" style="height:auto; width:45%;">
+                    	<div class="col">
+                        	   <h1>Add Announcement</h1>
                     	</div>
-
-                    	<div class="col-8">
-                        	<h1>Add Announcement</h1>
-                    	</div>
-                	</div>
             	</div>
 
             	<!-- Body -->
