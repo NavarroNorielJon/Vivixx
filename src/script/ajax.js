@@ -122,3 +122,9 @@ function alphabetInput(evt){
 		evt.preventDefault();
 	}
 }
+function numberInput(evt){
+	var number = String.fromCharCode(evt.which);
+	if(!(/[0-9]/.test(number))) {
+		evt.preventDefault();
+	}
+}
