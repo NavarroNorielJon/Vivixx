@@ -89,7 +89,7 @@
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
 							$delete = "
-							<input name='edit' value='edit' style='display: none;'>
+							<input name='delete' value='delete' style='display: none;'>
 							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
 						//print data in table
 							echo "
@@ -209,34 +209,35 @@
 		$(document).ready(function(){
 			$('.delete').click(function(e){
 				e.preventDefault();
-				swal({
-					title: 'Are you sure?',
-					text: "You won't be able to revert this!",
-					type: 'warning',
-					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
-					confirmButtonText: 'Yes, delete it!'
-				})
-					.then((result) => {
-						if (result.value) {
-							$.ajax({
-								url: "delete_announcement.php",
-								method: "post",
-								success:function(){
-									location.href= "delete_announcement.php";
-								} 
-							});
-							swal(
-							'Deleted!',
-							'Your file has been deleted.',
-							'success'
-							)
-						}
-					})
-				
+				$.ajax({
+					url: 'delete_announcement.php';
+				});
 			});
 		});
+
+		// $(document).ready(function(){
+		// 	$('.delete').click(function(e){
+		// 		e.preventDefault();
+		// 		swal({
+		// 			title: 'Are you sure?',
+		// 			text: "You won't be able to revert this!",
+		// 			type: 'warning',
+		// 			showCancelButton: true,
+		// 			confirmButtonColor: '#3085d6',
+		// 			cancelButtonColor: '#d33',
+		// 			confirmButtonText: 'Yes, delete it!'
+		// 			}).then((result) => {
+		// 			if (result.value) {
+		// 				swal(
+		// 				'Deleted!',
+		// 				'Your file has been deleted.',
+		// 				'success'
+		// 				)
+		// 			}
+		// 		})
+				
+		// 	});
+		// });
 		//script for calling datatables library
       	
 
