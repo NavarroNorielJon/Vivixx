@@ -3,7 +3,7 @@
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $req_id = $_GET["req_id"];
-    $leave_request = "SELECT * FROM mis.leave_req where user_id='$user_id' and leave_req_id='$req_id';";
+    $leave_request = "SELECT *, email from leave_req join user using(user_id) where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
 ?>
@@ -17,10 +17,11 @@
                         $user_middle = $_GET["mname"];
                         $user_last = $_GET["lname"];
                         echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) .$req_id." ".$user_id."</h1>";
-                        echo $req_id;
+                        
                     ?>
                 </div>
                 <input type="hidden" name="req_id" value="<?php echo $req_id?>">
+                <input type="hidden" name="email" value="<?php echo $row["email"]?>">
 
                 <div class="modal-body">
                     <div class="row">
@@ -103,7 +104,7 @@
                             </div>
                         </div>
 				    </div>
-
+                    
                     <div style="text-align:right">
                         <input type="submit" class="btn btn-danger" name="reject" value="Disapprove">
                         <input type="submit" class="btn btn-success" name="accept" value="Approve">

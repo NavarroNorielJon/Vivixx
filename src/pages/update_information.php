@@ -132,7 +132,7 @@
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
 									<option value="Rather not say">I'd rather not say</option>
-									<option value="Specify">Specifiy</option>
+									<option value="Specify">Specify</option>
                                 </select>
                             </div>
 
@@ -214,8 +214,6 @@
                                         }else {
                                             $('#oth').removeAttr('required');
                                         }
-
-
                                     });
                                 });
                             </script>
@@ -390,12 +388,19 @@
                                         $('#g1').hide();
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option1').val() === "g1") {
+                                            $('#elem_yr_grad').attr('required','true');
+                                            $('#elem_high_level').removeAttr('required');
+
+                                        } else if ($('#option1').val() === "u1") {
+                                            $('#elem_high_level').attr('required','true');
+                                            $('#elem_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option1">Status</label>
-
                                 <select name="option1" id="option1" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="g1">Graduate</option>
@@ -427,12 +432,19 @@
                                         $('#g2').hide();
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option2').val() === "g2") {
+                                            $('#sec_yr_grad').attr('required','true');
+                                            $('#sec_high_level').removeAttr('required');
+
+                                        } else if ($('#option2').val() === "u2") {
+                                            $('#sec_high_level').attr('required','true');
+                                            $('#sec_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option2">Status</label>
-
                                 <select name="option2" id="option2" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="g2">Graduate</option>
@@ -465,6 +477,14 @@
                                         $('#g3').hide();
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option3').val() === "g3") {
+                                            $('#col_yr_grad').attr('required','true');
+                                            $('#col_high_level').removeAttr('required');
+
+                                        } else if ($('#option3').val() === "u3") {
+                                            $('#col_high_level').attr('required','true');
+                                            $('#col_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
@@ -502,6 +522,14 @@
                                         $('#g4').hide();
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option4').val() === "g4") {
+                                            $('#pos_yr_grad').attr('required','true');
+                                            $('#pos_high_level').removeAttr('required');
+
+                                        } else if ($('#option4').val() === "u4") {
+                                            $('#col_high_level').attr('required','true');
+                                            $('#pos_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
@@ -646,6 +674,11 @@
                                     $('#quest').change(function () {
                                         $('#Yes').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#quest').val() == "yes") {
+                                            $('#yes').attr('required','true');
+                                        } else {
+                                            $('#yes').removeAttr('required')
+                                        }
                                     });
                                 });
                             </script>
