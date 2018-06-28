@@ -59,9 +59,10 @@
 		
 		<div class="accounts-content container" style="background-color:#fff;">
 			<div class="text-center">
-			<h1>Accounts</h1>
+				<h1>Accounts</h1>
 			</div>
-				<div  style="margin: 5vh 2vh;">
+			
+			<div  style="margin: 5vh 2vh;">
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -75,22 +76,23 @@
 					</thead>
   
 					<?php
-					$sql = "select username, email, first_name, last_name,status from user natural join user_info where type='user';";
-					$result = $connect->query($sql);
+						$sql = "select username, email, first_name, last_name,status from user natural join user_info where type='user';";
+						$result = $connect->query($sql);
 
-					if($result-> num_rows > 0){
-						while($row = $result->fetch_assoc()){
-						//enable or disable button
-						if($row["status"] === "enabled"){
-							$button = "
-							<input name='disable' value='Disable' style='display: none;'>
-							<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' class='show btn btn-danger'>Disable</a>";
-						}else{
-							$button = "
-							<input name='enable' value='Enable' style='display: none;'>
-							<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
-						}
-						//print data in table
+						if($result-> num_rows > 0){
+							while($row = $result->fetch_assoc()){
+							//enable or disable button
+							if($row["status"] === "enabled"){
+								$button = "
+								<input name='disable' value='Disable' style='display: none;'>
+								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' class='show btn btn-danger'>Disable</a>";
+							}else{
+								$button = "
+								<input name='enable' value='Enable' style='display: none;'>
+								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
+							}
+							//print data in table
+							
 							echo "
 							<tr>
 							<td>" . ucwords($row['first_name']) . "</td>
@@ -101,22 +103,23 @@
 							<td>
 							".$button."</td>
 							</tr>";
-						}
+							}
 						}
 
-					$connect-> close();
+							$connect-> close();
 					?>
-  				</table>
-				</div>
-  				<div id="result1">
-				</div>			
+				</table>
+			</div>
+			
+			<div id="result1"></div>			
+		
 		</div>
 	</div>
 	
 	
-      <script>
-	  	//script for calling modal
-	  	$(document).ready(function(){
+	<script>
+		//script for calling modal
+		$(document).ready(function(){
 			$('.show').click(function(e){
 				e.preventDefault();
 				$.ajax({
@@ -127,8 +130,9 @@
 				});
 			});
 		});
+		
 		//script for calling datatables library
-      	$(document).ready(function(){
+		$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": 5 }
@@ -137,5 +141,6 @@
 			$('#table').DataTable();
 		});
       </script>
+	
 </body>
 </html>
