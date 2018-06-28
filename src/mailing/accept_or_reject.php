@@ -111,7 +111,7 @@ try {
         echo "
         <script>
         alert('Email sucessfully sent');
-        location.href = '../admin/leave_request/leave_request.php';
+        location.href = '../admin/leave_request/leave_requests.php';
         </script>";
     }
 } catch (Exception $e) {
