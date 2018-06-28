@@ -7,7 +7,7 @@ ini_set('upload_max_filesize', '64M');
       $subject = $_POST["subject"];
       $date = $_POST["date"];
       $body = $_POST["body"];
-      $department = $_POST["dept"];
+      $department = $_POST["department"];
 
       $file_names = [];
       $file_paths = [];
@@ -42,7 +42,7 @@ ini_set('upload_max_filesize', '64M');
                     echo "
                         <script>
                         alert('Announcement with attachment, successfully sent.');
-                        window.location='announcement.php';
+                        
                         </script>";
                 }else{
                     $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
@@ -50,26 +50,10 @@ ini_set('upload_max_filesize', '64M');
                     echo "
                         <script>
                         alert('Announcement without attachment, successfully sent.');
-                        window.location='announcement.php';
+                        
                         </script>";
                 }
                 
             }
-
-                echo "
-                    <script>
-                    alert('Announcement successfully sent and will be announced on the specified date.');
-                    window.location='announcement.php';
-                    </script>";
-<<<<<<< HEAD
                
     }
-=======
-          }     
-    }else {
-		echo " <script>
-                    alert('May mali');
-                    window.location='announcement.php';
-              </script>";
-	}
->>>>>>> e00e83ebf0042d1a32c4ead1d7f9b1b66901bae7

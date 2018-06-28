@@ -34,7 +34,6 @@ if ($result->num_rows > 0) {
 $developmentMode = true;
 $mail = new PHPMailer($developmentMode); // Passing `true` enables exceptions
 try {
-    echo $_POST["status"];
     //Server settings
     $mail->SMTPDebug = 0; // Enable verbose debug output
     $mail->isSMTP(); // Set mailer to use SMTP
@@ -88,7 +87,7 @@ try {
         echo "
         <script>
         alert('Email sucessfully sent.');
-        location.href = '../admin/leave_request/leave_request.php';
+        location.href = '../admin/leave_request/leave_requests.php';
         </script>";
     }else{
         $body = file_get_contents("style.html");

@@ -50,7 +50,7 @@
 							
 							<div class="form-group col">
 								<label for="departments">Department</label>
-                            	<select class="custom-select form-group" id="departments" name="dept" required>
+                            	<select class="custom-select form-group" id="departments" name="department" required>
                                 	<option value="all">All Departments</option>
                                 	<option value="admin">Administration</option>
                                 	<option value="admin supp">Administration Support / HR</option>
@@ -62,7 +62,10 @@
                             	</select>
                         	</div>
 						</div>
-
+						<span class="btn btn-default btn-file">
+								<span class="fileinput-new">File Upload</span>
+								<input type="file" name="file[]" multiple>
+                    		</span>
                     	
                     	
 						<div class="row">
@@ -76,7 +79,7 @@
 						</div>
 						
 						<div style="text-align:right">
-							<input type="submit" class="btn btn-success" name="submit" value="Approve">
+							<input type="submit" class="btn btn-success" name="submit" value="Edit">
 						</div>
 					</div>
 				</div>
@@ -88,4 +91,20 @@
         $(document).ready(function(){
             $("#edit").modal("show");
         });
+		counter = function() {
+			var value = $('#text').val();
+			var negative = 1000;
+			if (value.length == 0) {
+				$('#totalChars').html(1000);
+				return;
+			}
+			var regex = /\s+/gi;
+			var totalChars = value.length;
+			var remainder = negative - totalChars;
+			$('#totalChars').html(remainder);
+		};
+
+		$(document).ready(function() {
+			$('#text').keyup(counter);	
+		});
     </script>
