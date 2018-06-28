@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="../../script/ajax.js"></script>  
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../style/sweetalert2.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
     <script src="../../script/jquery.form.min.js"></script>
 </head>
@@ -27,7 +28,7 @@
 <body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:53vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -58,15 +59,19 @@
 		
 		<div class="accounts-content container-fluid">
 			<div class="row">
-				<div class="col-10">
+				<div class="col-10 text-center">
 					<h1>Announcements</h1>
 				</div>
 				
 				<div class="col-2">
-					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">Add Announcement</a>
+					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
+						Add Announcement
+					</a>
 				</div>
 			</div>
-            <hr>
+            
+			<div  style="margin: 5vh 15vh;">
+				<hr>
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -79,7 +84,7 @@
 					</thead>
   
 					<?php
-					$sql = "SELECT * FROM mis.announcement natural join announcement_attachments;";
+					$sql = "SELECT * FROM mis.announcement_attachments natural join announcement group by 1;";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -87,15 +92,17 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
+							
 							$delete = "
-							<input name='edit' value='edit' style='display: none;'>
+							<input name='delete' value='delete' style='display: none;'>
 							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
-						//print data in table
+							
+							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
 							<td>" . $row['date'] . "</td>
-							<td>" . $row['announcement'] . "</td>
+							<td >" . $row['announcement'] . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
 							<td>" . $edit.$delete."</td>
 							</tr>";
@@ -104,27 +111,23 @@
 
 					$connect-> close();
 					?>
-  				</table>
-
-  			<div id="result1">
-			</div>			
+				</table>
+			</div>
+			<div id="result1"></div>			
 		</div>
 	</div>
 	
 	<div class="modal fade" id="add-announcement-form" tabindex="-1" role="dialog">
-    	<div class="modal-dialog" role="document">
-        	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
-            	<!-- Header -->
-            	<div class="modal-header add-announcement-header">
-   
-                        	   <h1>Add Announcement</h1>
-
-            	</div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="width: 1050px; margin-left: -275px;">
+				<!-- Header -->
+				<div class="modal-header add-announcement-header">
+					<h1>Add Announcement</h1>
+				</div>
 
             	<!-- Body -->
             	<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 					<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
-            
 						<div class="row form-group">
 							<div class="col">
 								<input name="subject" type="text" class="form-control" placeholder="Title" required>
@@ -155,47 +158,42 @@
 								Remaining characters: <span id="totalChars">1000</span><br/>
 							</div>
 
-<<<<<<< HEAD
-							<!-- <div class="p-2">
-								<div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput[]">
-									<div class="fileinput-preview thumbnail" data-trigger="fileinput[]" style="width: 300px; height: 200px;" ></div>
-									<div>
-										<span class="btn btn-default btn-file">
-											<span class="fileinput-new">Upload attachment</span>
-								
-										</span>
-										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
-									</div>
-								</div>
-							</div> -->
 							<span class="btn btn-default btn-file">
-                        <span class="fileinput-new">File Upload</span>
-                        <input type="file" name="file[]" multiple>
-                    </span>
-=======
-							
-                            <div class="p-2">
-                                <h3> Upload attachment(s)</h3>
-                                <input type="file" class="form-control-file" id="attachment1">
-                                <input type="file" class="form-control-file" id="attachment2">
-                                <input type="file" class="form-control-file" id="attachment3">
-                                <input type="file" class="form-control-file" id="attachment4">
-                            </div>
->>>>>>> e00e83ebf0042d1a32c4ead1d7f9b1b66901bae7
-                            
+								<span class="fileinput-new">File Upload</span>
+								<input type="file" name="file[]" multiple>
+                    		</span>                            
 						</div>
+						
 						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
-    
-            	</div>
-        	</div>
-    	</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	
-	
-      <script>
-	  	//script for calling modal
-	  	$(document).ready(function(){
+	<script>
+		$(document).ready(function(){
+			$('#table').dataTable( {
+				"columnDefs": [
+					{ "orderable": false, "targets": [3,4] },
+					{ "width": "400px", "targets": 2 }
+				]
+			});
+			$('#table').DataTable();
+		});
+		
+		$("input[type = 'submit']").click(function(){
+			var $fileUpload = $("input[type='file']");
+			if (parseInt($fileUpload.get(0).files.length) > 4){
+				alert("You are only allowed to upload a maximum of 4 files");
+				return false;
+			}else{
+				$("#container-announcement").submit();
+			}
+		});
+	  	
+		//script for calling modal
+		$(document).ready(function(){
 			$('.edit').click(function(e){
 				e.preventDefault();
 				$.ajax({
@@ -210,45 +208,56 @@
 		$(document).ready(function(){
 			$('.delete').click(function(e){
 				e.preventDefault();
-				swal({
-					title: 'Are you sure?',
-					text: "You won't be able to revert this!",
-					type: 'warning',
-					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
-					confirmButtonText: 'Yes, delete it!'
-				})
-					.then((result) => {
-						if (result.value) {
-							$.ajax({
-								url: "delete_announcement.php",
-								method: "post",
-								success:function(){
-									location.href= "delete_announcement.php";
-								} 
-							});
-							swal(
-							'Deleted!',
-							'Your file has been deleted.',
-							'success'
-							)
-						}
-					})
-				
+				$.ajax({
+					url: 'delete_announcement.php';
+				});
 			});
 		});
-		//script for calling datatables library
-      	$(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": [3,4] }
-				]
 
-			});
-			$('#table').DataTable();
+		// $(document).ready(function(){
+		// 	$('.delete').click(function(e){
+		// 		e.preventDefault();
+		// 		swal({
+		// 			title: 'Are you sure?',
+		// 			text: "You won't be able to revert this!",
+		// 			type: 'warning',
+		// 			showCancelButton: true,
+		// 			confirmButtonColor: '#3085d6',
+		// 			cancelButtonColor: '#d33',
+		// 			confirmButtonText: 'Yes, delete it!'
+		// 			}).then((result) => {
+		// 			if (result.value) {
+		// 				swal(
+		// 				'Deleted!',
+		// 				'Your file has been deleted.',
+		// 				'success'
+		// 				)
+		// 			}
+		// 		})
+				
+		// 	});
+		// });
+		//script for calling datatables library
+      	
+
+		counter = function() {
+			var value = $('#text').val();
+			var negative = 1000;
 			
+			if (value.length == 0) {
+				$('#totalChars').html(1000);
+				return;
+			}
+			
+			var regex = /\s+/gi;
+			var totalChars = value.length;
+			var remainder = negative - totalChars;
+			$('#totalChars').html(remainder);
+		};
+
+		$(document).ready(function() {
+			$('#text').keyup(counter);	
 		});
-      </script>
+	</script>
 </body>
 </html>
