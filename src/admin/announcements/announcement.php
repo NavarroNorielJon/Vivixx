@@ -73,7 +73,6 @@
 							<th>Subject</th>
 							<th>Date</th>
 							<th>Content</th>
-							<th>Image</th>
 							<th>Attachment</th>
 							<th>Action</th>
 						</tr>
@@ -85,24 +84,20 @@
 
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
-							if(isset($row["image"])){
-								$image = "<img src='data:image/jpg;base64,". $row['image'] . "' style='height:100px;width:100px;'>";
-							}else{
-								$image = "No Image";
-							}
-							$button = "
+							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
-
+							$delete = "
+							<input name='edit' value='edit' style='display: none;'>
+							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
 						//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
 							<td>" . $row['date'] . "</td>
 							<td>" . $row['announcement'] . "</td>
-							<td>" . $image . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
-							<td>" . $button."</td>
+							<td>" . $edit.$delete."</td>
 							</tr>";
 						}
 					}
@@ -111,8 +106,8 @@
 					?>
   				</table>
 
-  				<div id="result1">
-				</div>			
+  			<div id="result1">
+			</div>			
 		</div>
 	</div>
 	
@@ -160,6 +155,24 @@
 								Remaining characters: <span id="totalChars">1000</span><br/>
 							</div>
 
+<<<<<<< HEAD
+							<!-- <div class="p-2">
+								<div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput[]">
+									<div class="fileinput-preview thumbnail" data-trigger="fileinput[]" style="width: 300px; height: 200px;" ></div>
+									<div>
+										<span class="btn btn-default btn-file">
+											<span class="fileinput-new">Upload attachment</span>
+								
+										</span>
+										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
+									</div>
+								</div>
+							</div> -->
+							<span class="btn btn-default btn-file">
+                        <span class="fileinput-new">File Upload</span>
+                        <input type="file" name="file[]" multiple>
+                    </span>
+=======
 							
                             <div class="p-2">
                                 <h3> Upload attachment(s)</h3>
@@ -168,6 +181,7 @@
                                 <input type="file" class="form-control-file" id="attachment3">
                                 <input type="file" class="form-control-file" id="attachment4">
                             </div>
+>>>>>>> e00e83ebf0042d1a32c4ead1d7f9b1b66901bae7
                             
 						</div>
 						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
@@ -192,11 +206,43 @@
 				});
 			});
 		});
+
+		$(document).ready(function(){
+			$('.delete').click(function(e){
+				e.preventDefault();
+				swal({
+					title: 'Are you sure?',
+					text: "You won't be able to revert this!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Yes, delete it!'
+				})
+					.then((result) => {
+						if (result.value) {
+							$.ajax({
+								url: "delete_announcement.php",
+								method: "post",
+								success:function(){
+									location.href= "delete_announcement.php";
+								} 
+							});
+							swal(
+							'Deleted!',
+							'Your file has been deleted.',
+							'success'
+							)
+						}
+					})
+				
+			});
+		});
 		//script for calling datatables library
       	$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
-					{ "orderable": false, "targets": [2,3,4,5] }
+					{ "orderable": false, "targets": [3,4] }
 				]
 
 			});
