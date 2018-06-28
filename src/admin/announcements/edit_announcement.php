@@ -49,9 +49,8 @@
                     		?>
 							
 							<div class="form-group col">
-								<label for="department">Department</label>
-                            	<select class="custom-select form-group" name="department" id="department" required>
-                                	<option selected disabled><?php echo $dept ?></option>
+								<label for="departments">Department</label>
+                            	<select class="custom-select form-group" id="departments" name="dept" required>
                                 	<option value="all">All Departments</option>
                                 	<option value="admin">Administration</option>
                                 	<option value="admin supp">Administration Support / HR</option>
@@ -77,8 +76,7 @@
 						</div>
 						
 						<div style="text-align:right">
-							<input type="submit" class="btn btn-danger" name="reject" value="Disapprove">
-							<input type="submit" class="btn btn-success" name="accept" value="Approve">
+							<input type="submit" class="btn btn-success" name="submit" value="Approve">
 						</div>
 					</div>
 				</div>

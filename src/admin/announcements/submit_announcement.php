@@ -3,11 +3,11 @@ ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
-
+	
       $subject = $_POST["subject"];
       $date = $_POST["date"];
       $body = $_POST["body"];
-      $department = $_POST["department"];
+      $department = $_POST["dept"];
 
       $file_names = [];
       $file_paths = [];
@@ -81,4 +81,9 @@ ini_set('upload_max_filesize', '64M');
                     window.location='announcement.php';
                     </script>";
           }     
-    }
+    }else {
+		echo " <script>
+                    alert('May mali');
+                    window.location='announcement.php';
+              </script>";
+	}
