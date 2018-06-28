@@ -17,7 +17,6 @@
         <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
         <link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../style/form-elements.css">
-        <link rel="stylesheet" href="../style/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>

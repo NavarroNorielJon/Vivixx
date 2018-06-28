@@ -24,7 +24,7 @@
     <script src="../../script/jquery.form.min.js"></script>
 </head>
 
-<body style="background-color:white !important;">
+<body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
@@ -57,8 +57,8 @@
 			</div>
 		</nav>
 		
-		<div class="accounts-content container-fluid">
-			<h1>Accounts</h1>
+		<div class="accounts-content container" style="background-color:#fff;">
+			<h1 style="margin-bottom: 40px;">Accounts</h1>
 				<table class="table" id="table">
 					<thead>
 						<tr>
