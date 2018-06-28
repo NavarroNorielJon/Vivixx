@@ -33,7 +33,6 @@
 	<body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>
 			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
@@ -68,6 +67,7 @@
 		
 		<div class="announcement-content container-fluid">
             <h1> Create Announcement </h1>
+            <hr>
             
             
 			<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
@@ -117,6 +117,7 @@
                 -->
 
             <div class="p-2">
+                <h3>Upload Image</h3>
                 <div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
                   <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
                   <div>
@@ -124,14 +125,21 @@
                         <span class="fileinput-new">Upload attachment</span>
                         <input type="file" name="file[]" multiple>
                     </span>
-                        <a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a>  
+                        <a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a>   
                   </div>
                 </div>
             </div>
+            
+            <div class="p-2">
+                <h3> Upload attachment(s)</h3>
+                <input type="file" class="form-control-file" id="attachment1">
+                <input type="file" class="form-control-file" id="attachment2">
+                <input type="file" class="form-control-file" id="attachment3">
+                <input type="file" class="form-control-file" id="attachment4">
+            </div>
 
         </div>
-            <input class="w-75 btn btn btn-primary" id="btn" type="submit" name="submit" value="submit">
-
+            <input class="w-100 btn btn btn-primary" id="btn" type="submit" name="submit" value="S U B M I T">
 	</form>
     
         </div>

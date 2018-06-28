@@ -5,7 +5,7 @@
 	<title>Vivixx Ph</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,7 +24,7 @@
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>

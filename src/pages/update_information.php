@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -131,6 +131,8 @@
                                     <option selected="selected" disabled="disabled">Select Here:</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
+									<option value="Rather not say">I'd rather not say</option>
+									<option value="Specify">Specify</option>
                                 </select>
                             </div>
 
@@ -170,7 +172,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="residential_zip">Zip Code</label>
-                                <input type="text" name="residential_zip" class="form-control" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
+                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -187,7 +189,7 @@
 
                             <div class="form-group col-2 ">
                                 <label for="permanent_zip">Zip Code</label>
-                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control" required="required">
+                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control zip" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
@@ -207,6 +209,11 @@
                                     $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
+                                        if($('#civil_status').val() === "others"){
+                                            $('#oth').attr('required','true');
+                                        }else {
+                                            $('#oth').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
@@ -381,21 +388,29 @@
                                         $('#g1').hide();
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option1').val() === "g1") {
+                                            $('#elem_yr_grad').attr('required','true');
+                                            $('#elem_high_level').removeAttr('required');
+
+                                        } else if ($('#option1').val() === "u1") {
+                                            $('#elem_high_level').attr('required','true');
+                                            $('#elem_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option1">Status</label>
-                                <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="" disabled="disabled">Select:</option>
-                                    <option value="g1">Graduated</option>
+                                <select name="option1" id="option1" class="form-control" required="required">
+                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
@@ -417,21 +432,29 @@
                                         $('#g2').hide();
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option2').val() === "g2") {
+                                            $('#sec_yr_grad').attr('required','true');
+                                            $('#sec_high_level').removeAttr('required');
+
+                                        } else if ($('#option2').val() === "u2") {
+                                            $('#sec_high_level').attr('required','true');
+                                            $('#sec_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option2">Status</label>
-                                <select name="option2" id="option2" class="form-control" >
-                                    <option selected="selected" value="" disabled="disabled">Select:</option>
-                                    <option value="g2">Graduated</option>
+                                <select name="option2" id="option2" class="form-control" required="required">
+                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
@@ -454,21 +477,29 @@
                                         $('#g3').hide();
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option3').val() === "g3") {
+                                            $('#col_yr_grad').attr('required','true');
+                                            $('#col_high_level').removeAttr('required');
+
+                                        } else if ($('#option3').val() === "u3") {
+                                            $('#col_high_level').attr('required','true');
+                                            $('#col_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option3">Status</label>
-                                <select name="option3" id="option3" class="form-control">
-                                    <option selected="selected" value="" disabled="disabled">Select:</option>
-                                    <option value="g3">Graduated</option>
+                                <select name="option3" id="option3" class="form-control" required="required">
+                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
@@ -491,14 +522,22 @@
                                         $('#g4').hide();
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#option4').val() === "g4") {
+                                            $('#pos_yr_grad').attr('required','true');
+                                            $('#pos_high_level').removeAttr('required');
+
+                                        } else if ($('#option4').val() === "u4") {
+                                            $('#col_high_level').attr('required','true');
+                                            $('#pos_yr_grad').removeAttr('required');
+                                        }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" value="" disabled="disabled">Select:</option>
-                                    <option value="g4">Graduated</option>
+                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
                             </div>
@@ -635,6 +674,11 @@
                                     $('#quest').change(function () {
                                         $('#Yes').hide();
                                         $('#' + $(this).val()).show();
+                                        if ($('#quest').val() == "yes") {
+                                            $('#yes').attr('required','true');
+                                        } else {
+                                            $('#yes').removeAttr('required')
+                                        }
                                     });
                                 });
                             </script>
@@ -679,7 +723,7 @@
 
                             <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" onkeypress="numberInput(event)" maxlength="7" class="form-control telephone">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" maxlength="7" class="form-control telephone">
                             </div>
                         </div>
 
@@ -770,6 +814,9 @@
             });
             $('#philhealth_no').inputmask({
                 mask: 'dd-ddddddddd-d'
+            });
+            $('.zip').inputmask({
+                mask: 'dddd'
             });
             $('#pagibig_id_no').inputmask({
                 mask: 'dddd-dddd-dddd'

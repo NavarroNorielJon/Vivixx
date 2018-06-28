@@ -23,6 +23,9 @@ $('#update_form').ajaxForm({
         });
     }
 });
+$.validator.methods.email = function( value, element ) {
+   return this.optional( element ) || /[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,}/.test( value );
+}
 $( "#signup_form" ).validate({
     rules: {
         email: {

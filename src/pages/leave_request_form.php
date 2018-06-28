@@ -96,7 +96,7 @@
 								<option value="nva">Non-voice Account</option>
 								<option value="pe">Phone ESL</option>
 								<option value="ve">Video ESL</option>
-								<option value="va">Voice Account</option>
+								<option value="va">Virtual Assistant</option>
 							</select>
 						</div>
 
@@ -154,7 +154,7 @@
 
 						<div class="form-group col" id="va" style='display:none'>
 							<label for="position">Position</label>
-							<select class="custom-select form-group" name="voice">
+							<select class="custom-select form-group" name="virtual">
 								<option selected disabled>Choose your Position</option>
 								<option value="Indesigner">Indesigner</option>
 								<option value="Web Developer">Web Developer</option>
