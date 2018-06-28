@@ -19,7 +19,7 @@ $('#update_form').ajaxForm({
             text: "Thank you!",
             timer: 2500
         }).then(function(){
-            window.location ='/';
+            window.location ='/home';
         });
     }
 });
