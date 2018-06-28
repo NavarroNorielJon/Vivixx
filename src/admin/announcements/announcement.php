@@ -64,7 +64,9 @@
 				</div>
 				
 				<div class="col-2">
-					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">Add Announcement</a>
+					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
+						Add Announcement
+					</a>
 				</div>
 			</div>
             
@@ -90,10 +92,12 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
+							
 							$delete = "
 							<input name='delete' value='delete' style='display: none;'>
 							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
-						//print data in table
+							
+							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -107,27 +111,23 @@
 
 					$connect-> close();
 					?>
-  				</table>
+				</table>
 			</div>
-  			<div id="result1">
-			</div>			
+			<div id="result1"></div>			
 		</div>
 	</div>
 	
 	<div class="modal fade" id="add-announcement-form" tabindex="-1" role="dialog">
-    	<div class="modal-dialog" role="document">
-        	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
-            	<!-- Header -->
-            	<div class="modal-header add-announcement-header">
-   
-                        	   <h1>Add Announcement</h1>
-
-            	</div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="width: 1050px; margin-left: -275px;">
+				<!-- Header -->
+				<div class="modal-header add-announcement-header">
+					<h1>Add Announcement</h1>
+				</div>
 
             	<!-- Body -->
             	<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 					<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
-            
 						<div class="row form-group">
 							<div class="col">
 								<input name="subject" type="text" class="form-control" placeholder="Title" required>
@@ -161,42 +161,39 @@
 							<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
-                    		</span>
-                            
+                    		</span>                            
 						</div>
+						
 						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
-    
-            	</div>
-        	</div>
-    	</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	
-	
-      <script>
-	  $(document).ready(function(){
+	<script>
+		$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [3,4] },
 					{ "width": "400px", "targets": 2 }
 				]
-
 			});
 			$('#table').DataTable();
-			
 		});
 		
-	  	$("input[type = 'submit']").click(function(){
-        	var $fileUpload = $("input[type='file']");
-        	if (parseInt($fileUpload.get(0).files.length) > 4){
-            	alert("You are only allowed to upload a maximum of 4 files");
+		$("input[type = 'submit']").click(function(){
+			var $fileUpload = $("input[type='file']");
+			if (parseInt($fileUpload.get(0).files.length) > 4){
+				alert("You are only allowed to upload a maximum of 4 files");
 				return false;
-        	}else{
-			$("#container-announcement").submit();
+			}else{
+				$("#container-announcement").submit();
 			}
-   	 	});
-	  	//script for calling modal
-	  	$(document).ready(function(){
+		});
+	  	
+		//script for calling modal
+		$(document).ready(function(){
 			$('.edit').click(function(e){
 				e.preventDefault();
 				$.ajax({
@@ -246,10 +243,12 @@
 		counter = function() {
 			var value = $('#text').val();
 			var negative = 1000;
+			
 			if (value.length == 0) {
 				$('#totalChars').html(1000);
 				return;
 			}
+			
 			var regex = /\s+/gi;
 			var totalChars = value.length;
 			var remainder = negative - totalChars;
@@ -259,6 +258,6 @@
 		$(document).ready(function() {
 			$('#text').keyup(counter);	
 		});
-      </script>
+	</script>
 </body>
 </html>

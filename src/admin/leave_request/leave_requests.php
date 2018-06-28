@@ -58,8 +58,9 @@
 		
 		<div class="leave-request-content container-fluid">
 			<div class="text-center">
-			<h1>Leave Requests</h1>
+				<h1>Leave Requests</h1>
 			</div>
+			
 			<div  style="margin: 5vh 15vh;">
 				<table class="table" id="leave">
 					<thead>
@@ -81,10 +82,11 @@
 							$fname = explode(",",$row["employee"])[0];
 							$mname = explode(",",$row["employee"])[1];
 							$lname = explode(",",$row["employee"])[2];
-						$show = "
-								<input name='show' value='show' style='display: none;'>
-								<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
-						//print data in table
+							$show = "
+							<input name='show' value='show' style='display: none;'>
+							<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
+						
+							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($fname) . "</td>
@@ -94,18 +96,19 @@
 							<td>" . $show ."</td>
 							</tr>";
 						}
-						}
+					}
 
 					$connect-> close();
 					?>
         		</table>
 			</div>
-    	</div>
-    	<div id="result"></div>
+		</div>
+		
+		<div id="result"></div>
 	</div>
 		
-      <script>
-	  	//Script for showing the show more content inside a modal
+	<script>
+		//Script for showing the show more content inside a modal
 	  	$(document).ready(function(){	
 			$('.show').click(function(e){	
 				e.preventDefault();
@@ -120,13 +123,13 @@
 		
 		//script for calling datatables library
 		$(document).ready(function(){
-		$('#leave').dataTable( {
-		"columnDefs": [
-			{ "orderable": false, "targets": 4 }
-		]
+			$('#leave').dataTable( {
+				"columnDefs": [
+					{ "orderable": false, "targets": 4 }
+				]
+			});
+			$('#leave').DataTable();
 		});
-		$('#leave').DataTable();
-		});
-      </script>
+	</script>
 </body>
 </html>
