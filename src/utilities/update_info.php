@@ -10,6 +10,9 @@ $birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place'])
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 $facebook = mysqli_real_escape_string($connect, $_POST['facebook']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
+if ($gender === "Other") {
+    $gender = mysqli_real_escape_string($connect, $_POST['spec']);
+}
 $ft = mysqli_real_escape_string($connect, $_POST['ft']);
 $in = mysqli_real_escape_string($connect, $_POST['in']);
 $height = $ft . "'" . $in;
@@ -93,7 +96,7 @@ if ($post_status === "g4") {
 // //Emergency info Sheet
 $long = mysqli_real_escape_string($connect, $_POST['lng']);
 $lat = mysqli_real_escape_string($connect, $_POST['lat']);
-$coordinates = $lat . "," . $long;
+$coordinates = $lat . "|" . $long;
 $main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
 
 //     //Housemate
@@ -119,7 +122,16 @@ $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']))
 $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
-$account = mysqli_real_escape_string($connect, $_POST['acc']);
+$account = $_POST['acc'];
+$accounts = "";
+for ($i=0; $i < count($account); $i++) {
+    if ($i !== (count($account)-1)) {
+        $accounts .= $account[$i]."|";
+    }else {
+        $accounts .= $account[$i];
+    }
+}
+
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
 $e_pass = mysqli_real_escape_string($connect, $_POST['c_password']);
 $skype = mysqli_real_escape_string($connect, $_POST['skype']);
@@ -203,7 +215,7 @@ if ($connect->query($update_stmt) === true) {
                             '$secondary_address','$provincial_address','$answer','$id','$id');";
             if ($connect->query($insert_stmt) === true) {
                 $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
-                                `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
+                                `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$accounts',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
             }else {
