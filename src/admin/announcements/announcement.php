@@ -166,7 +166,7 @@
        
 						<div class="d-flex ">
 							<div class="p-2" id="border">
-								<textarea class="form-control" name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
+								<textarea class="form-control" name="body" id='text' placeholder="Content" column="5" required maxlength="1000"></textarea>
 								Remaining characters: <span id="totalChars">1000</span><br/>
 							</div>
 
@@ -176,14 +176,22 @@
 									<div>
 										<span class="btn btn-default btn-file">
 											<span class="fileinput-new">Upload attachment</span>
-											<input type="file" name="file[]" multiple>
+								
 										</span>
 										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
 									</div>
 								</div>
 							</div>
+                            <div class="p-2">
+                                <h3> Upload attachment(s)</h3>
+                                <input type="file" class="form-control-file" id="attachment1">
+                                <input type="file" class="form-control-file" id="attachment2">
+                                <input type="file" class="form-control-file" id="attachment3">
+                                <input type="file" class="form-control-file" id="attachment4">
+                            </div>
+                            
 						</div>
-						<input class="btn btn-primary" id="btn" type="submit" name="submit" value="submit">
+						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
     
             	</div>
