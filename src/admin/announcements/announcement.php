@@ -28,7 +28,7 @@
 <body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:53vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -59,7 +59,7 @@
 		
 		<div class="accounts-content container-fluid">
 			<div class="row">
-				<div class="col-10">
+				<div class="col-10 text-center">
 					<h1>Announcements</h1>
 				</div>
 				
@@ -67,7 +67,9 @@
 					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">Add Announcement</a>
 				</div>
 			</div>
-            <hr>
+            
+			<div  style="margin: 5vh 15vh;">
+				<hr>
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -106,7 +108,7 @@
 					$connect-> close();
 					?>
   				</table>
-
+			</div>
   			<div id="result1">
 			</div>			
 		</div>

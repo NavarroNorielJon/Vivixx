@@ -23,7 +23,7 @@
 <body>		
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:53vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -54,7 +54,10 @@
 		
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
-			<h1>User Information</h1>	
+			<div class="text-center">
+			<h1>User Information</h1>
+			</div>
+				<div style="margin: 5vh 15vh;">
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -115,6 +118,7 @@
 						$connect-> close();
 					?>
 				</table>
+				</div>
 		</div>
 		
 	</div>
