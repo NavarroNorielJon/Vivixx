@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../style/datatables.css">
+    <link rel="stylesheet" href="../style/datatables.css">
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
@@ -27,17 +27,13 @@
 <body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="../index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:53vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
 			
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="../index.php">Home</a>
-					</li>
 					<li class="nav-item ">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
@@ -54,7 +50,7 @@
 						<a class="nav-link active" href="announcement.php">Announcement</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link logout" href="../logout.php">Logout</a>
+						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -125,15 +121,9 @@
         	<div class="modal-content" style="width: 1050px; margin-left: -275px;">
             	<!-- Header -->
             	<div class="modal-header add-announcement-header">
-                	<div class="row">
-                    	<div class="col-4">
-                        	<img src="../../img/Lion.png" style="height:auto; width:45%;">
-                    	</div>
+   
+                        	   <h1>Add Announcement</h1>
 
-                    	<div class="col-8">
-                        	<h1>Add Announcement</h1>
-                    	</div>
-                	</div>
             	</div>
 
             	<!-- Body -->
@@ -166,24 +156,21 @@
        
 						<div class="d-flex ">
 							<div class="p-2" id="border">
-								<textarea class="form-control" name="body" id='text' placeholder="Content" required maxlength="1000"></textarea>
+								<textarea class="form-control" name="body" id='text' placeholder="Content" column="5" required maxlength="1000"></textarea>
 								Remaining characters: <span id="totalChars">1000</span><br/>
 							</div>
 
-							<div class="p-2">
-								<div class="fileinput fileinput-new; img-thumbnail" data-provides="fileinput">
-									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;" ></div>
-									<div>
-										<span class="btn btn-default btn-file">
-											<span class="fileinput-new">Upload attachment</span>
-											<input type="file" name="file[]" multiple>
-										</span>
-										<a href="#" class="btn btn-default attach-exists" data-dismiss="fileinput">Remove</a> 
-									</div>
-								</div>
-							</div>
+							
+                            <div class="p-2">
+                                <h3> Upload attachment(s)</h3>
+                                <input type="file" class="form-control-file" id="attachment1">
+                                <input type="file" class="form-control-file" id="attachment2">
+                                <input type="file" class="form-control-file" id="attachment3">
+                                <input type="file" class="form-control-file" id="attachment4">
+                            </div>
+                            
 						</div>
-						<input class="btn btn-primary" id="btn" type="submit" name="submit" value="submit">
+						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
     
             	</div>

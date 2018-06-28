@@ -30,8 +30,8 @@
                             echo "pages/home";
                         }
                     } elseif ($type === "admin") {
-                       // header('location:../admin/index.php');
-                        echo "admin/index.php";
+                       // header('location:../admin/announcements/announcement.php');
+                        echo "admin/accounts/accounts_status";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
                     //http_response_code(500);
