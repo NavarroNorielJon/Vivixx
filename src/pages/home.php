@@ -6,6 +6,8 @@
 		echo "<script>window.location = '../admin/';</script>";
 	}
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN tutor_info WHERE user_id='$user_id';";
+	$res = mysqli_query($connect,$stmt);
+	$row = mysqli_fetch_array($res,MYSQLI_ASSOC);
 	$department = $row['department'];
 
 ?>
@@ -125,7 +127,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				<div class="card cards">
 					<div class="card-body">
 						<h4 class="card-title">Announcements</h4>
@@ -194,7 +196,7 @@
 						</div>
 					</div>
 
-					
+
 				</div>
 			</div>
 
