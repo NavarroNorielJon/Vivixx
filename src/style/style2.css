@@ -578,9 +578,9 @@ body {
 
 .f1 {
     background: #fff;
-    border-radius: 4px;
+    border-radius: 0px;
 	color: black;
-	margin-top: 25vh;
+	margin-top: 15vh;
 	padding: 25px;
 }
 
