@@ -2,7 +2,7 @@
     include '../../utilities/db.php';
     $connect = Connect();
     $announcement_id = $_GET["announcement_id"];
-    $edit_announcement = "SELECT * FROM mis.announcement natural join announcement_attachments where announcement_id='$announcement_id'";
+    $edit_announcement = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) where announcement_id='$announcement_id';";
     $result = $connect->query($edit_announcement);
     $row = $result->fetch_assoc();
 ?>
@@ -12,6 +12,7 @@
             	<div class="modal-content">
                 	<div class="modal-header">
 						<h1>Edit announcement</h1>
+						<?php echo $row['subject']?>
 						<input type="hidden" name="announcement_id" value="<?php echo $row["announcement_id"]?>">
                 	</div>
                 	
@@ -21,12 +22,17 @@
                     	<div class="row">
 							<div class="form-group col">
 								<label for="subject">Subject</label>
-								<input type="text" class="form-control" id="subject" name="subject" value="<?php echo $row["subject"]?>">
+								<input type="text" class="form-control" id="subject" name="subject" value="<?php echo $row['subject']?>">
 							</div>
 
 							<div class="form-group col">
-								<label for="date">Date</label>
-								<input type="date" class="form-control" id="date" name="date" value="<?php echo $row['date']?>">
+								<label for="date">Start Date</label>
+								<input type="date" class="form-control" id="date" name="start_date" value="<?php echo $row['start_date']?>">
+							</div>
+
+							<div class="form-group col">
+								<label for="date">End Date</label>
+								<input type="date" class="form-control" id="date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 							
 							<?php 
