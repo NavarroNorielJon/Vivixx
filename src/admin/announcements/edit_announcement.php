@@ -36,19 +36,19 @@
 							</div>
 							
 							<?php 
-                        	if($row["departments"] === "all"){
+                        	if($row["departments"] === "All"){
                             	$dept= "All Departments";
-                        	}else if($row["departments"] === "admin"){
+                        	}else if($row["departments"] === "Administration"){
                             	$dept= "Administration";
-                        	}else if($row["departments"] === "admin supp"){
+                        	}else if($row["departments"] === "Administration Support / HR"){
                             	$dept= "Administration Support / HR";
-                        	}else if($row["departments"] === "it support"){
+                        	}else if($row["departments"] === "IT Support"){
                             	$dept= "IT Support";
-                        	}else if($row["departments"] === "non voice account"){
+                        	}else if($row["departments"] === "Non-voice Account"){
                             	$dept= "Non-voice Account";
-                        	}else if($row["departments"] === "phone esl"){
+                        	}else if($row["departments"] === "Phone ESL"){
                             	$dept= "Phone ESL";
-                        	}else if($row["departments"] === "video esl"){
+                        	}else if($row["departments"] === "Video ESL"){
                             	$dept= "Video ESL";
                         	}else{
                             	$dept= "Virtual Assistant";
@@ -58,14 +58,15 @@
 							<div class="form-group col">
 								<label for="departments">Department</label>
                             	<select class="custom-select form-group" id="departments" name="department" required>
+									<option value="" disabled><?php echo $dept ?></option>
                                 	<option value="All">All Departments</option>
-                                	<option value="Admin">Administration</option>
-                                	<option value="Admin Supp">Administration Support / HR</option>
-                                	<option value="it support">IT Support</option>
-                                	<option value="non voice account">Non-voice Account</option>
-                                	<option value="phone esl">Phone ESL</option>
-                                	<option value="video esl">Video ESL</option>
-                                	<option value="virtual assistant">Virtual Assistant</option>
+                                	<option value="Administration">Administration</option>
+                                	<option value="Administration Support / HR">Administration Support / HR</option>
+                                	<option value="IT Support">IT Support</option>
+                                	<option value="Non-voice Account">Non-voice Account</option>
+                                	<option value="Phone ESL">Phone ESL</option>
+                                	<option value="Video ESL">Video ESL</option>
+                                	<option value="Virtual Assistant">Virtual Assistant</option>
                             	</select>
                         	</div>
 						</div>
@@ -86,7 +87,7 @@
 						<div style="text-align:right">
 							
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" name="submit" value="Edit">
+							<input type="submit" class="btn btn-primary" name="edit" value="Edit">
 						</div>
 					</div>
 				</div>

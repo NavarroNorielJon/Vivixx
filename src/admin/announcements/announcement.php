@@ -211,7 +211,7 @@
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [4,5] },
-					{ "width": "400px", "targets": 2 }
+					{ "width": "400px", "targets": 3 }
 				]
 			});
 			$('#table').DataTable();
