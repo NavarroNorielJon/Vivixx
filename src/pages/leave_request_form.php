@@ -63,10 +63,10 @@
 		</nav>
 
 		<div id="leave">
-			<form id="leave_form" action="../utilities/leave_request" method="POST">
+			<form id="leave-form" action="../utilities/leave_request" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
 					<div class="row">
-						<div class="form-group col">
+						<div class="form-group col-4">
 							<label for="employee_name">Employee</label>
 							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
 						</div>
@@ -86,7 +86,7 @@
 								});
 							});
 						</script>
-						<div class="form-group col">
+						<div class="form-group col-4">
 							<label for="department">Department</label>
 							<select class="custom-select form-group" name="department" id="department">
 								<option selected disabled>Choose your Department</option>
@@ -100,7 +100,7 @@
 							</select>
 						</div>
 
-						<div class="form-group col" id="orig">
+						<div class="form-group col-4" id="orig">
 							<label for="position">Position</label>
 							<select class="custom-select form-group">
 								<option selected disabled>Choose your Position</option>

@@ -11,7 +11,7 @@
 <html>
 
 <head>
-	<title>Vivixx</title>
+	<title>Vivixx Ph | Home</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -123,8 +123,8 @@
 			</div>
 
 			<div class="card cards">
-				<h4 class="card-title">Upcoming Events</h4>				
 				<div class="card-body">
+					<h4 class="card-title">Announcements / Events</h4>				
 					<p class="card-text">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
