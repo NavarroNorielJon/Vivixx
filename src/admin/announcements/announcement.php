@@ -78,7 +78,8 @@
 					<thead>
 						<tr>
 							<th>Subject</th>
-							<th>Date</th>
+							<th>Start Date</th>
+							<th>End Date</th>
 							<th>Content</th>
 							<th>Attachment</th>
 							<th>Action</th>
@@ -102,7 +103,8 @@
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
-							<td>" . $row['date'] . "</td>
+							<td>" . $row['start_date'] . "</td>
+							<td>" . $row['end_date'] . "</td>
 							<td >" . $row['announcement'] . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
 							<td>" . $edit.$delete."</td>
@@ -135,7 +137,10 @@
 							</div>
 
 							<div class="col">
-								<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
+								<input name="start_date" type="date" class="form-control date" id="date" required min="2018-01-02">
+							</div>
+							<div class="col">
+								<input name="end_date" type="date" class="form-control date" id="date" required min="2018-01-02">
 							</div>
 
 							<div class="form-group col">
@@ -205,7 +210,7 @@
 	  $(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
-					{ "orderable": false, "targets": [3,4] },
+					{ "orderable": false, "targets": [4,5] },
 					{ "width": "400px", "targets": 2 }
 				]
 			});
