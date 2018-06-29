@@ -94,15 +94,11 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
-<<<<<<< HEAD
 
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
 							
 							//print data in table
-=======
-							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
-						//print data in table
->>>>>>> 23e4b445092740b3e2ebbfec22f1f137d4847f6b
+
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
