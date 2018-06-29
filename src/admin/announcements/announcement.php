@@ -180,7 +180,7 @@
 						</div>
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" name="submit" value="Edit">
+							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 						</div>
 					</form>
 				</div>
