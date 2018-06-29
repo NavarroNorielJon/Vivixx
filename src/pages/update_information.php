@@ -77,7 +77,7 @@
 
                     <fieldset>
                         <h2>Step 1: Personal Information</h2>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="form-group col-4">
                                 <label for="prof_image">Profile Image</label>
                                 <input type="file" name="prof_image"/>
@@ -87,7 +87,7 @@
                                 <label for="prof_image">Signature</label>
                                 <input type="file"/>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -414,8 +414,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option value="" selected disabled>Select:</option>
-                                    <option value="none">None</option>
+                                    <option selected value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -464,8 +463,7 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option value=""selected disabled>Select:</option>
-                                    <option value="none">None</option>
+                                    <option selected value="none">None</option>
                                     <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
@@ -516,8 +514,7 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option value="" selected disabled>Select:</option>
-                                    <option value="none">None</option>
+                                    <option selected value="none">None</option>
                                     <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
@@ -568,8 +565,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option value="" selected disabled>Select:</option>
-                                    <option value="none">None</option>
+                                    <option selected value="none">None</option>
                                     <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
@@ -872,8 +868,9 @@
                                 <div class="input-group">
                                     <select type="text" name="acc[]" id="second_acc" class="form-control">
                                         <option selected disabled>Choose your Secondary Account</option>
+                                        <option value="">None</option>
                                         <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL/option>
+                                        <option value="CL/IL">CL/IL<option>
                                         <option value="Drag and drop">Drag and drop</option>
                                         <option value="ELANSO">ELANSO(E2Say)</option>
                                         <option value="E-Say">E-Say</option>
