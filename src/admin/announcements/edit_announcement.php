@@ -6,7 +6,7 @@
     $result = $connect->query($edit_announcement);
     $row = $result->fetch_assoc();
 ?>
-	<form action="submit_edit_announcement.php" method="POST">
+	<form action="submit_edit_announcement.php" method="POST" enctype="multipart/form-data">
     	<div class="modal fade" id="edit" tabindex="-1" role="dialog" >
         	<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             	<div class="modal-content">
@@ -78,7 +78,7 @@
 						</div>
 						
 						<div style="text-align:right">
-							<input type="submit" class="btn btn-success" name="submit" value="Edit">
+							<input type="submit" class="btn btn-success" name="edit" value="Edit">
 						</div>
 					</div>
 				</div>

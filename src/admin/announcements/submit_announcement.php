@@ -8,25 +8,24 @@ ini_set('upload_max_filesize', '64M');
       $date = $_POST["date"];
       $body = mysqli_real_escape_string($connect,$_POST["body"]);
       $department = $_POST["department"];
-
+if(count($_FILES['file']) > 1){
       $file_names = [];
       $file_paths = [];
       $file_tmp_names = [];
       $file_err_nos = [];
     if(isset($_POST["submit"])){
-            foreach($_FILES['file']['name'] as $child) {
-                $file_names[] = $child;
-                $file_paths[] = 'file uploads/'.$child;
-            }
-            foreach($_FILES['file']['tmp_name'] as $child) {
-                $file_tmp_names[] = $child;
-            }
-            foreach($_FILES['file']['error'] as $child) {
-                $file_err_nos[] = $child;
-            }
-        
-        
+        foreach($_FILES['file']['name'] as $child) {
+            $file_names[] = $child;
+            $file_paths[] = 'file uploads/'.$child;
+        }
+        foreach($_FILES['file']['tmp_name'] as $child) {
+            $file_tmp_names[] = $child;
+        }
+        foreach($_FILES['file']['error'] as $child) {
+            $file_err_nos[] = $child;
+        }
         //if there is no image
+
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`) VALUES ('$subject', '$body', '$date', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
@@ -40,6 +39,7 @@ ini_set('upload_max_filesize', '64M');
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
                     $add_attachment = "Insert into announcement_attachments (`attachment`,`attachment_name`, `announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
                     $connect->query($add_attachment);
+                    echo $add_attachment;
                     echo "
                         <script>
                         alert('Announcement with attachment, successfully sent.');
@@ -58,3 +58,4 @@ ini_set('upload_max_filesize', '64M');
             }
                
     }
+}

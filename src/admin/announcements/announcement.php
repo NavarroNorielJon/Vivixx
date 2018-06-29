@@ -86,7 +86,7 @@
 					</thead>
   
 					<?php
-					$sql = "SELECT * FROM mis.announcement_attachments natural join announcement group by 1;";
+					$sql = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) group by 1;";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -139,7 +139,7 @@
 							</div>
 
 							<div class="form-group col">
-								<select class="custom-select form-group" name="department" id="department" required>
+								<select class="custom-select form-group" name="department"  id="department" required>
 									<option selected disabled>Choose your Department</option>
 									<option value="all">All Departments</option>
 									<option value="admin">Administration</option>
