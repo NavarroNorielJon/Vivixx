@@ -14,6 +14,7 @@ ini_set('upload_max_filesize', '64M');
       $file_tmp_names = [];
       $file_err_nos = [];
     if(isset($_POST["submit"])){
+        if(isset($_FILES['file'])){
             foreach($_FILES['file']['name'] as $child) {
                 $file_names[] = $child;
                 $file_paths[] = 'file uploads/'.$child;
@@ -24,12 +25,12 @@ ini_set('upload_max_filesize', '64M');
             foreach($_FILES['file']['error'] as $child) {
                 $file_err_nos[] = $child;
             }
-        
+        }
         
         //if there is no image
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `date`, `departments`) VALUES ('$subject', '$body', '$date', '$department');";
+            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `date`='$date', `departments`='$department';";
             $connect->query($sql);
-            $get_latest_announcement = "select max(announcement_id) as id from announcement;";
+            $get_announcement = "select announcement_id as id from announcement;";
             $result = $connect->query($get_latest_announcement);
             $results = $result->fetch_assoc();
             $announcement_id = $results['id'];
@@ -38,7 +39,7 @@ ini_set('upload_max_filesize', '64M');
                 if(!empty($file_tmp_names[$x])){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment`,`attachment_name`, `announcement_id`) values ('$temp_file','$file_names[$x]','$announcement_id');";
+                    $add_attachment = "UPDATE announcement_attachments SET `attachment`='$temp_file',`attachment_name`='$file_names[$x]', `announcement_id`='$announcement_id';";
                     $connect->query($add_attachment);
                     echo "
                         <script>
@@ -46,7 +47,7 @@ ini_set('upload_max_filesize', '64M');
                         
                         </script>";
                 }else{
-                    $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
+                    $add_attachment = "UPDATE announcement_attachments `announcement_id`='$announcement_id';";
                     $connect->query($add_attachment);
                     echo "
                         <script>

@@ -1,6 +1,6 @@
 /*This stylesheet is created mainly for the employee's side*/
 
-/*Style for html elements*/
+/*Style used for some html elements*/
 
 a, a:hover, a:active {
 	color: #fff;
@@ -74,7 +74,7 @@ ul ul a {
 	border-radius: 0;
 	margin: 17vh auto auto auto;
 	width: 25%;
-	padding: 100px 25px 60px 25px;
+	padding: 90px 25px 40px 25px;
 }
 
 #login p {
@@ -162,7 +162,7 @@ ul ul a {
 /*Style for home*/
 #content {
 	margin-left: 19%;
-	padding: 10px 5px 10px 3px;
+	padding: 10px 5px 10px 3px; 
 }
 
 #content .cards {
@@ -186,8 +186,10 @@ ul ul a {
 }
 
 #leave {
-	margin-left: 28%;
-	padding: 10px 5px 10px 3px;
+	margin-left: 30%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	padding: 10px 15px 10px 3px;
 }
 /*end*/
 /*--------------------------------------------------------------*/
@@ -211,7 +213,7 @@ ul ul a {
 	height: auto;
 	width: 55%;
 	position: static;
-	margin: -30vh 0 0 9.8vh !important;
+	margin: -35vh 0 0 9.8vh !important;
 }
 
 #index .index-form {
@@ -284,8 +286,7 @@ ul ul a {
 
 /*Style for leave form*/
 #leave_form {
-	margin: 10% 2% 10% 0;
-	width: 130%;
+	width: 120%;
 
 }
 /*end*/
@@ -321,7 +322,7 @@ ul ul a {
 }
 
 #sidebar .sidebar-header img {
-	margin-left: 27px;
+	margin-left: 30px;
 	height: auto;
 	width: 70%;
 }
@@ -329,6 +330,11 @@ ul ul a {
 #sidebar .sidebar-logo-sm {
 	text-align: center;
 	visibility: hidden;
+}
+	
+#sidebar .logout:hover {
+	background-color: red !important;
+	color: white;
 }
 
 #sidebar ul.components {
@@ -408,7 +414,6 @@ ul ul a {
 #profile {
 	background-color: #e6e6e6;
 	height: 100vh;
-	position: fixed;
 }
 
 #profile .profile-header {
@@ -507,7 +512,7 @@ ul ul a {
 }
 
 
-@media(max-width: 980px) {
+@media(max-width: 1250px) {
 	#index .index-form button {
 	font-size: 2vw;
 	}
@@ -523,6 +528,19 @@ ul ul a {
 	#index .index-form #signup-link {
 		visibility: visible;
 	}
+	
+	#leave {
+		margin-left: 10%;
+	}
+	
+	#profile .profile-content {
+		margin-left: 10%;
+	}
+	
+	#content {
+		margin-left: 6%;
+	}
+
 
 	#sidebar {
 		max-width: 60px;
@@ -541,7 +559,7 @@ ul ul a {
 	}
 
 	#sidebar .sidebar-header img {
-		margin: 0 0 0 3vh;
+		margin: 0 0 0 2.4vh;
 	}
 
 	#sidebar .sidebar-item {
@@ -647,8 +665,41 @@ body {
     border-color: #f35b3f;
 }
 
-@media(width: 1125px){
+@media(max-width: 1260px) {
+	#login {
+		max-width: 65vh;
+		min-width: 65vh;
+	}
+	
 	#index .index-image {
-	display: none;
+		padding: auto auto 3vh auto;
+		height: auto;
+		width: 55%;
+		position: sticky ;
+		margin: -10vh auto 5vh 5vw !important;
+	}
+}
+
+@media(max-width: 400px) {
+	body {
+		margin: 0;
+	}
+	#login {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto auto auto;
+		padding: 5vh;
+	}
+	
+	.footer {
+		display: none;
+	}
+	
+	#index .index-image {
+		padding: 3vh auto 3vh auto;
+		height: auto;
+		width: 55%;
+		position: static;
+		margin: 0 0 0 13vh !important;
 	}
 }

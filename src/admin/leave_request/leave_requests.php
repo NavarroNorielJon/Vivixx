@@ -26,8 +26,7 @@
 	
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -56,12 +55,12 @@
 			</div>
 		</nav>
 		
-		<div class="leave-request-content container-fluid">
+		<div class="leave-request-content container">
 			<div class="text-center">
 				<h1>Leave Requests</h1>
 			</div>
 			
-			<div  style="margin: 5vh 15vh;">
+			<div  style="margin: 5vh;">
 				<table class="table" id="leave">
 					<thead>
 						<tr>

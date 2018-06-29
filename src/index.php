@@ -147,13 +147,6 @@ if (isset($_SESSION['user'])) {
                         	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             	<label for="cpass">Confirm Password</label>
                             	<input type="password" name="confirm_password" id="cpassword" class="form-control" placeholder="Confirm Password" required="required">
-<!--
-                            <div class="input-group-append">
-                                <button type="button" class="btn" onclick="showPas('cpassword','regpass','icon1')">
-                                    <i class="material-icons" id="icon1">visibility</i>
-                                </button>
-                            </div>
--->
                         	</div>
 						</div>
 						
