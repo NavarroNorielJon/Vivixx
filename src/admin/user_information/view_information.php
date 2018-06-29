@@ -3,7 +3,7 @@
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=bg_id) where type='user' and user_id='$user_id';";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id';";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
 ?>
@@ -128,7 +128,7 @@
 			</div>
 		</nav>
 		
-		<div class="container" style="margin-top: -70px;">
+		<div class="container" style="margin-top: -40px;">
 	<form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
 		<div class="f1-steps">
 			<div class="f1-progress">

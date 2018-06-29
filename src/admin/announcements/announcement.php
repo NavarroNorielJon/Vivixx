@@ -130,20 +130,24 @@
 
             	<!-- Body -->
             	<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
-					<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+					<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
 						<div class="row form-group">
 							<div class="col">
-								<input name="subject" type="text" class="form-control" placeholder="Title" required>
+								<label for="title">Title</label>
+								<input name="subject" type="text" class="form-control" placeholder="Title" id="title" required>
 							</div>
 
 							<div class="col">
-								<input name="start_date" type="date" class="form-control date" id="date" required min="2018-01-02">
+								<label for="start_date">Start Date</label>
+								<input name="start_date" type="date" class="form-control date" id="start_date" required min="2018-01-02">
 							</div>
 							<div class="col">
-								<input name="end_date" type="date" class="form-control date" id="date" required min="2018-01-02">
+								<label for="end_date">End Date</label>
+								<input name="end_date" type="date" class="form-control date" id="end_date" required min="2018-01-02">
 							</div>
 
 							<div class="form-group col">
+								<label for="department">Department</label>
 								<select class="custom-select form-group" name="department"  id="department" required>
 									<option selected disabled>Choose your Department</option>
 									<option value="all">All Departments</option>
@@ -157,20 +161,27 @@
                         		</select>
                     		</div>
             			</div>
-
+						
+						<label for="text">Content:</label>
 						<div class="d-flex ">
 							<div class="p-2" id="border">
 								<p contenteditable="true" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
-									Remaining characters: <span id="totalChars">1500</span><br/>
+									<div class="text-center">
+										Remaining characters: <span id="totalChars">1500</span><br/>
+									</div>
 							</div>
 						</div>
-						<span class="btn btn-default btn-file">
+						<div class="text-center">
+							<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
                     		</span>
-
-						<input class="w-100 btn btn-primary" type="submit" name="submit" value="Submit">
+						</div>
+						<div style="text-align:right">
+							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+						</div>
 					</form>
 				</div>
 			</div>
