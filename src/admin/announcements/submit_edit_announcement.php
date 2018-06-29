@@ -28,7 +28,7 @@ ini_set('upload_max_filesize', '64M');
                 $file_err_nos[] = $child;
             }
 
-            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='end_date', `departments`='$department' where announcement_id='$announcement_id';";
+            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$department' where announcement_id='$announcement_id';";
             $connect->query($sql);
 
             for($x = 0; $x< count($file_names); $x++){
