@@ -27,7 +27,7 @@ ini_set('upload_max_filesize', '64M');
         }
         //if there is no image
 
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date` `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$department');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$department');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
