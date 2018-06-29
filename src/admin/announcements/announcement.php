@@ -102,7 +102,7 @@
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
-							<td>" . $row['date'] . "</td>
+							<td>" . $row['start_date'] . "</td>
 							<td >" . $row['announcement'] . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
 							<td>" . $edit.$delete."</td>
