@@ -94,8 +94,11 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
+
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
-						//print data in table
+							
+							//print data in table
+
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -169,7 +172,6 @@
 		</div>
 	</div>
 	
-	
       <script>
 	  let del_announcement = function(id){
 				swal({
@@ -198,6 +200,7 @@
 						}
 				});
 	  };
+
 	  //script for calling datatables library
 	  $(document).ready(function(){
 			$('#table').dataTable( {
@@ -278,8 +281,6 @@
 
 			});	
 		});
-
-		
       </script>
 </body>
 </html>
