@@ -92,6 +92,16 @@
 
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
+							echo"
+								<script>
+									console.log(".$row['attachment'].");
+								</script>
+							";
+							if(isset($row['attachment'])){
+								$attachment = "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>";
+							}else{
+								$attachment = "No attachment";
+							}
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
@@ -106,7 +116,7 @@
 							<td>" . $row['start_date'] . "</td>
 							<td>" . $row['end_date'] . "</td>
 							<td >" . $row['announcement'] . "</td>
-							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
+							<td>" . $attachment . "</td>
 							<td>" . $edit.$delete."</td>
 							</tr>";
 						}
@@ -217,17 +227,6 @@
 				});
 	  };
 
-	  //script for calling datatables library
-	  $(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": [4,5] },
-					{ "width": "400px", "targets": 3 }
-				]
-			});
-			$('#table').DataTable();
-		});
-
 		$("input[type = 'submit']").click(function(){
 			var $fileUpload = $("input[type='file']");
 			if (parseInt($fileUpload.get(0).files.length) > 4){
@@ -296,6 +295,17 @@
 				counter();
 
 			});
+		});
+
+		//script for calling datatables library
+		$(document).ready(function(){
+			$('#table').dataTable( {
+				"columnDefs": [
+					{ "orderable": false, "targets": [4,5] },
+					{ "width": "400px", "targets": 3 }
+				]
+			});
+			$('#table').DataTable();
 		});
       </script>
 </body>
