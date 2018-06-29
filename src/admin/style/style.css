@@ -84,6 +84,19 @@ table{
   width: 100%;
   clear: both;
   border-collapse: collapse;
-  table-layout: fixed; // ***********add this
-  word-wrap:break-word; // ***********and this
+  table-layout: fixed;
+  word-wrap:break-word; 
+}
+#editable{
+	min-height:300px;
+	width:900px;
+	word-wrap: break-word;
+	overflow: auto;
+	border:1px solid black; 
+	text-align:left;
+	
+}
+#border{
+	margin: auto !important;
+	display: block;
 }

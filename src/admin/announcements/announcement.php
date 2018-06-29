@@ -22,6 +22,9 @@
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
     <script src="../../script/jquery.form.min.js"></script>
+	<script src="https://unpkg.com/maxlength-contenteditable@1.0.0/dist/maxlength-contenteditable.js">
+	maxlengthContentEditableModule.maxlengthContentEditable();
+	</script>
 </head>
 
 <body style="background-color:white !important;">
@@ -91,17 +94,8 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
-<<<<<<< HEAD
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
 						//print data in table
-=======
-							
-							$delete = "
-							<input name='delete' value='delete' style='display: none;'>
-							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
-							
-							//print data in table
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -158,15 +152,15 @@
        
 						<div class="d-flex ">
 							<div class="p-2" id="border">
-								<textarea class="form-control" name="body" id='text' placeholder="Content" column="5" required maxlength="1000"></textarea>
-								Remaining characters: <span id="totalChars">1000</span><br/>
-							</div>
-
-							<span class="btn btn-default btn-file">
+								<p contenteditable="true" id="editable"></p>
+									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
+									Remaining characters: <span id="totalChars">1500</span><br/>
+							</div>                           
+						</div>
+						<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
-                    		</span>                            
-						</div>
+                    		</span> 
 						
 						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
@@ -175,7 +169,6 @@
 		</div>
 	</div>
 	
-<<<<<<< HEAD
 	
       <script>
 	  let del_announcement = function(id){
@@ -205,11 +198,8 @@
 						}
 				});
 	  };
+	  //script for calling datatables library
 	  $(document).ready(function(){
-=======
-	<script>
-		$(document).ready(function(){
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [3,4] },
@@ -241,36 +231,55 @@
 				});
 			});
 		});
-		//script for calling datatables library
+		//script for content counter
 		var counter = function() {
-			var value = $('#text').val();
-			var negative = 1000;
+			var value = $('#editable').text();
+			var negative = 1500;
 			
 			if (value.length == 0) {
-				$('#totalChars').html(1000);
+				$('#totalChars').text(1500);
 				return;
-			}
-			
-			var regex = /\s+/gi;
+			}else if(value.length >= 1500){
+				$('#totalChars').text(0);
+				return;
+			}else{
+				var regex = /\s+/gi;
 			var totalChars = value.length;
 			var remainder = negative - totalChars;
-			$('#totalChars').html(remainder);
+			$('#totalChars').text(remainder);
+			}
+			
+			
 		};
 
 		$(document).ready(function() {
-			$('#text').keyup(counter);	
-			$(".input1").on('keyup', function (e) {
-				if (e.keyCode == 13) {
-					
+			var content_id = 'editable';  
+
+			max = 1499;
+
+			//binding keyup/down events on the contenteditable div
+			$('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
+			$('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
+
+			function check_charcount(content_id, max, e)
+			{   
+				if(e.which != 8 && $('#'+content_id).text().length > max)
+				{
+				// $('#'+content_id).text($('#'+content_id).text().substring(0, max));
+				e.preventDefault();
 				}
-			});
+			}
+			$('#text').keyup(counter);
+			$('#editable').keyup(function(){
+				
+					var text = $('#editable').html();
+				$('#text').html(text);
+				counter();
+
+			});	
 		});
-<<<<<<< HEAD
 
 		
       </script>
-=======
-	</script>
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 </body>
 </html>
