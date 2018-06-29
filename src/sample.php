@@ -28,21 +28,7 @@
         <div id="mapid" style="width: 100%; height: 500px;"></div>
         <input id="lat">
         <input id="lng">
-        <form method="post" action="s.php">
-            <div class="form-group col-6">
-                <label for="second_acc">Secondary Account</label>
-                <div class="input-group">
-                    <select type="text" name="acc[]" id="second_acc"  class="form-control">
-                        <option></option>
-                    </select>
-                    <div class="input-group-append">
-                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                            <i class="small material-icons">add</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
+        
         <script>
             var mymap = L.map('mapid').setView([16.4134367, 120.5858916], 18);
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
