@@ -78,7 +78,8 @@
 					<thead>
 						<tr>
 							<th>Subject</th>
-							<th>Date</th>
+							<th>Start Date</th>
+							<th>End Date</th>
 							<th>Content</th>
 							<th>Attachment</th>
 							<th>Action</th>
@@ -86,7 +87,7 @@
 					</thead>
 
 					<?php
-					$sql = "SELECT * FROM mis.announcement_attachments natural join announcement group by 1;";
+					$sql = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) group by 1;";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -102,7 +103,8 @@
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
-							<td>" . $row['date'] . "</td>
+							<td>" . $row['start_date'] . "</td>
+							<td>" . $row['end_date'] . "</td>
 							<td >" . $row['announcement'] . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
 							<td>" . $edit.$delete."</td>
@@ -128,18 +130,25 @@
 
             	<!-- Body -->
             	<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
-					<form action="submit_announcement.php" class="text-center" id="container-announcement" method="POST" enctype="multipart/form-data">
+					<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
 						<div class="row form-group">
 							<div class="col">
-								<input name="subject" type="text" class="form-control" placeholder="Title" required>
+								<label for="title">Title</label>
+								<input name="subject" type="text" class="form-control" placeholder="Title" id="title" required>
 							</div>
 
 							<div class="col">
-								<input name="date" type="date" class="form-control date" id="date" required min="2018-01-02">
+								<label for="start_date">Start Date</label>
+								<input name="start_date" type="date" class="form-control date" id="start_date" required min="2018-01-02">
+							</div>
+							<div class="col">
+								<label for="end_date">End Date</label>
+								<input name="end_date" type="date" class="form-control date" id="end_date" required min="2018-01-02">
 							</div>
 
 							<div class="form-group col">
-								<select class="custom-select form-group" name="department" id="department" required>
+								<label for="department">Department</label>
+								<select class="custom-select form-group" name="department"  id="department" require="required">
 									<option selected disabled>Choose your Department</option>
 									<option value="all">All Departments</option>
 									<option value="admin">Administration</option>
@@ -152,20 +161,27 @@
                         		</select>
                     		</div>
             			</div>
-
+						
+						<label for="text">Content:</label>
 						<div class="d-flex ">
 							<div class="p-2" id="border">
 								<p contenteditable="true" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
-									Remaining characters: <span id="totalChars">1500</span><br/>
+									<div class="text-center">
+										Remaining characters: <span id="totalChars">1500</span><br/>
+									</div>
 							</div>
 						</div>
-						<span class="btn btn-default btn-file">
+						<div class="text-center">
+							<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
                     		</span>
-
-						<input class="w-100 btn btn-primary" type="submit" name="submit" value="Submit">
+						</div>
+						<div style="text-align:right">
+							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+						</div>
 					</form>
 				</div>
 			</div>
@@ -205,8 +221,8 @@
 	  $(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
-					{ "orderable": false, "targets": [3,4] },
-					{ "width": "400px", "targets": 2 }
+					{ "orderable": false, "targets": [4,5] },
+					{ "width": "400px", "targets": 3 }
 				]
 			});
 			$('#table').DataTable();
