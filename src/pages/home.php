@@ -54,6 +54,16 @@
 							<i class="material-icons">home</i>
 						</a>
 					</li>
+					
+					<li>
+						<a href="#" class="sidebar-item">
+							<i class="material-icons">mail</i>Notifications
+						</a>
+
+						<a class="icon" href="#" data-toggle="tooltip" data-placement="right" title="Home">
+							<i class="material-icons">mail</i>
+						</a>
+					</li>
 
 					<li>
 						<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false">
@@ -87,12 +97,12 @@
 
 					<li>
 						<a href="#" class="sidebar-item">
-							<i class="material-icons">info_outline</i>
+							<i class="material-icons">info</i>
 							About
 						</a>
 
 						<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
-							<i class="material-icons">info_outline</i>
+							<i class="material-icons">info</i>
 						</a>
 					</li>
 
