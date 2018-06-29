@@ -11,7 +11,7 @@
 <html>
 
 <head>
-	<title>Vivixx Ph | Home</title>
+	<title>Vivixx Ph | Notifications</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -39,7 +39,7 @@
 					</a>
 				</li>				
 
-				<li class="active">
+				<li>
 					<a href="home" class="sidebar-item">
 						<i class="material-icons">home</i>Home
 					</a>
@@ -49,7 +49,7 @@
 					</a>
 				</li>
 				
-				<li>
+				<li class="active">
 					<a href="notification.php" class="sidebar-item">
 					<i class="material-icons">mail</i>Notifications</a>
 					<a class="icon" href="notification.php"><i class="material-icons">mail</i></a>
@@ -108,45 +108,7 @@
 		</nav>
 
 		<div id="content">
-			<div class="card cards">
-				<div class="card-body">
-					<h4 class="card-title">Notifications</h4>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 	veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<div style="text-align: right">
-						<a>
-							<button class="btn btn-primary" onclick="sample();">
-								See more
-							</button>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="card cards">
-				<div class="card-body">
-					<h4 class="card-title">Announcements / Events</h4>				
-					<p class="card-text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-
-					<div style="text-align: right">
-						<a>
-							<button type="button" class="btn btn-primary">See more</button>
-						</a>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 	
@@ -154,11 +116,5 @@
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/ajax.js"></script>
-	<script type="text/javascript">
-		$(function(){
-  			$('[data-toggle="tooltip"]').tooltip();
-		});
-	</script>
-
 </body>
 </html>

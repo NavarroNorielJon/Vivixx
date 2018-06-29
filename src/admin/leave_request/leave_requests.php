@@ -56,12 +56,12 @@
 			</div>
 		</nav>
 		
-		<div class="leave-request-content container-fluid">
+		<div class="leave-request-content container">
 			<div class="text-center">
 				<h1>Leave Requests</h1>
 			</div>
 			
-			<div  style="margin: 5vh 15vh;">
+			<div  style="margin: 5vh;">
 				<table class="table" id="leave">
 					<thead>
 						<tr>
