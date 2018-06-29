@@ -51,7 +51,7 @@ ini_set('upload_max_filesize', '64M');
                     echo "
                         <script>
                         alert('Announcement without attachment, successfully sent.');
-                        
+                        window.location='announcement.php';
                         </script>";
                 }
                 
