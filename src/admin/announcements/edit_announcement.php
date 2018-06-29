@@ -6,12 +6,13 @@
     $result = $connect->query($edit_announcement);
     $row = $result->fetch_assoc();
 ?>
-	<form action="submit_announcement.php" method="POST">
+	<form action="submit_edit_announcement.php" method="POST">
     	<div class="modal fade" id="edit" tabindex="-1" role="dialog" >
         	<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             	<div class="modal-content">
                 	<div class="modal-header">
-                    	<h1>Edit announcement</h1>
+						<h1>Edit announcement</h1>
+						<input type="hidden" name="announcement_id" value="<?php echo $row["announcement_id"]?>">
                 	</div>
                 	
 					<input type="hidden" name="id" value="<?php echo $announcement_id?>">
@@ -62,7 +63,7 @@
                             	</select>
                         	</div>
 						</div>
-						<div style="text-align:center">
+						<div style="text-align:left">
 						<div class="d-flex ">
 							<div class="p-2" id="border">
 								<p contenteditable="true" id="editable"><?php echo $row["announcement"]?></p>
