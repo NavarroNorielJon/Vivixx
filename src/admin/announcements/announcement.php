@@ -114,7 +114,7 @@
 			<div id="result1"></div>			
 		</div>
 	</div>
-	
+	<!-- create announcement -->
 	<div class="modal fade" id="add-announcement-form" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content" style="width: 1050px; margin-left: -275px;">
@@ -162,7 +162,7 @@
 								<input type="file" name="file[]" multiple>
                     		</span> 
 						
-						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
+						<input class="w-100 btn btn-primary" type="submit" name="submit" value="Submit">
 					</form>
 				</div>
 			</div>

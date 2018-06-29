@@ -89,14 +89,18 @@ table{
 }
 #editable{
 	min-height:300px;
-	width:900px;
+	width:100%;
 	word-wrap: break-word;
 	overflow: auto;
 	border:1px solid black; 
 	text-align:left;
+	margin: auto !important;
+	display: block;
 	
 }
 #border{
+	min-height:300px;
+	width:100%;
 	margin: auto !important;
 	display: block;
 }
