@@ -17,7 +17,7 @@
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
-	<script type="text/javascript" src="../../script/ajax.js"></script>  
+	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item ">
@@ -55,20 +55,20 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="accounts-content container-fluid">
 			<div class="row">
 				<div class="col-10 text-center">
 					<h1>Announcements</h1>
 				</div>
-				
+
 				<div class="col-2">
 					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
 						Add Announcement
 					</a>
 				</div>
 			</div>
-            
+
 			<div  style="margin: 5vh 15vh;">
 				<hr>
 				<table class="table" id="table">
@@ -81,7 +81,7 @@
 							<th>Action</th>
 						</tr>
 					</thead>
-  
+
 					<?php
 					$sql = "SELECT * FROM mis.announcement_attachments natural join announcement group by 1;";
 					$result = $connect->query($sql);
@@ -91,17 +91,8 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
-<<<<<<< HEAD
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
 						//print data in table
-=======
-							
-							$delete = "
-							<input name='delete' value='delete' style='display: none;'>
-							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
-							
-							//print data in table
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -117,10 +108,10 @@
 					?>
 				</table>
 			</div>
-			<div id="result1"></div>			
+			<div id="result1"></div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="add-announcement-form" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content" style="width: 1050px; margin-left: -275px;">
@@ -155,7 +146,7 @@
                         		</select>
                     		</div>
             			</div>
-       
+
 						<div class="d-flex ">
 							<div class="p-2" id="border">
 								<textarea class="form-control" name="body" id='text' placeholder="Content" column="5" required maxlength="1000"></textarea>
@@ -165,18 +156,16 @@
 							<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
-                    		</span>                            
+                    		</span>
 						</div>
-						
+
 						<input class="w-100 btn btn-primary" id="btn" type="submit" name="submit" value="Submit">
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-<<<<<<< HEAD
-	
+
       <script>
 	  let del_announcement = function(id){
 				swal({
@@ -206,10 +195,6 @@
 				});
 	  };
 	  $(document).ready(function(){
-=======
-	<script>
-		$(document).ready(function(){
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [3,4] },
@@ -218,7 +203,7 @@
 			});
 			$('#table').DataTable();
 		});
-		
+
 		$("input[type = 'submit']").click(function(){
 			var $fileUpload = $("input[type='file']");
 			if (parseInt($fileUpload.get(0).files.length) > 4){
@@ -228,7 +213,7 @@
 				$("#container-announcement").submit();
 			}
 		});
-	  	
+
 		//script for calling modal
 		$(document).ready(function(){
 			$('.edit').click(function(e){
@@ -245,12 +230,12 @@
 		var counter = function() {
 			var value = $('#text').val();
 			var negative = 1000;
-			
+
 			if (value.length == 0) {
 				$('#totalChars').html(1000);
 				return;
 			}
-			
+
 			var regex = /\s+/gi;
 			var totalChars = value.length;
 			var remainder = negative - totalChars;
@@ -258,19 +243,16 @@
 		};
 
 		$(document).ready(function() {
-			$('#text').keyup(counter);	
+			$('#text').keyup(counter);
 			$(".input1").on('keyup', function (e) {
 				if (e.keyCode == 13) {
-					
+
 				}
 			});
 		});
-<<<<<<< HEAD
 
-		
+
       </script>
-=======
-	</script>
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
+
 </body>
 </html>

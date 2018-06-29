@@ -164,9 +164,6 @@
 
 					<div class="row">
 
-
-
-
 						<div class="form-group col">
 							<label for="date_hired">Date Hired</label>
 							<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">

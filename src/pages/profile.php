@@ -7,7 +7,7 @@
     if ($prof_image === null) {
         $image = "No Profile Image";
     } else {
-        $image = "<img src='data:image/jpg;base64,'. $prof_image. ' style='height:250px;width:250px;'>";
+        $image = "<img src='data:image/jpg;base64,". $prof_image . "' style='height:250px;width:250px;'>";
     }
 
 ?>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="form-group col-4">
                             <label for="birth_date">Birth Date</label>
-                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo "$birth_date";?>" disabled>
+                            <input type="text" id="first" class="form-control-plaintext" value="<?php echo date('F d, Y',strtotime($birth_date));?>" disabled>
                         </div>
                         <div class="form-group col-4">
                             <label for="age">Age</label>
