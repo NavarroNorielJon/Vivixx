@@ -4,7 +4,7 @@
     $connect = Connect();
     if(isset($_SESSION['user'])){
         $current_user = $_SESSION['user'];
-        $stmt = "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN tutor_info WHERE username='$current_user' or email='$current_user';";
+        $stmt = "SELECT * FROM user natural join user_info WHERE username='$current_user' or email='$current_user';";
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $username = $row['username'];
@@ -35,10 +35,10 @@
         $tin = $row['tin'];
         $philhealth_no = $row['philhealth_no'];
         $pagibig_id_no = $row['pagibig_id_no'];
-        $department = $row['department'];
     }
 
 	if(!isset($_SESSION['user'])){
         header('location:/');
     }
+    
 ?>
