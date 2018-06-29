@@ -91,17 +91,10 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
-<<<<<<< HEAD
+
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
-						//print data in table
-=======
-							
-							$delete = "
-							<input name='delete' value='delete' style='display: none;'>
-							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
 							
 							//print data in table
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -175,8 +168,6 @@
 		</div>
 	</div>
 	
-<<<<<<< HEAD
-	
       <script>
 	  let del_announcement = function(id){
 				swal({
@@ -205,11 +196,8 @@
 						}
 				});
 	  };
-	  $(document).ready(function(){
-=======
-	<script>
+
 		$(document).ready(function(){
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [3,4] },
@@ -265,12 +253,7 @@
 				}
 			});
 		});
-<<<<<<< HEAD
-
-		
+	
       </script>
-=======
-	</script>
->>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 </body>
 </html>
