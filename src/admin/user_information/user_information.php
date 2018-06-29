@@ -131,18 +131,6 @@
 	<!--script for calling data table library-->
 	<script>
 		$(document).ready(function(){
-			$('.show').click(function(e){
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href'),
-					success: function(res){
-						$('#result').html(res);
-					}
-				});
-			});
-		});
-			
-		$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [5,6] }

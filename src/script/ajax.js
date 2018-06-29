@@ -90,7 +90,7 @@ function addAccount(){
 	var newDataField = document.createElement("div");
 	newDataField.setAttribute("class", "form-group removeclass"+increment);
 	var removeDiv = 'removeclass' + increment;
-	newDataField.innerHTML = '<div class="row"><div class="form-group col-6"><label for="second_acc">Additional Account</label><div class="input-group"><input type="text" name="acc[]" id="second_acc" class="form-control text-transform" placeholder="Accounts" onkeypress="alphabetInput(event)"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
+	newDataField.innerHTML = '<div class="row"><div class="form-group col-6"><label for="second_acc">Additional Account</label><div class="input-group"><select name="acc[]" id="second_acc" class="form-control"></select><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="small material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
 

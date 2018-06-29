@@ -38,7 +38,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1" enctype="multipart/form-data">
 					<div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -108,9 +108,7 @@
                                     placeholder="+639XX XXX XXXX"
                                     class="form-control mobile"
                                     id="contact"
-                                    onkeyup="helperText('contact_number',this.value,'validContact')"
                                     required>
-                                    <div id="validContact"></div>
                             </div>
                         </div>
 
@@ -606,8 +604,8 @@
                         <h5>Main City Address</h5>
                         <div>
                             <div id="maps"></div>
-                            <input type="text" id="lat" name="lat" class="d-none">
-                            <input type="text" id="lng" name="lng" class="d-none">
+                            <input type="text" id="lat" name="lat" class="d-none" required >
+                            <input type="text" id="lng" name="lng" class="d-none" required>
                             <br>
                             <div>
                                 <label>
@@ -770,33 +768,103 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-6">
-                                <label>Department</label>
-    							<select class="custom-select form-group" name="department" id="department" required>
+                            <script>
+    							$(function () {
+    								$('#department').change(function () {
+    									$('#orig').hide();
+    									$('#ash').hide();
+    									$('#its').hide();
+    									$('#nva').hide();
+    									$('#pe').hide();
+    									$('#ve').hide();
+    									$('#va').hide();
+    									$('#' + $(this).val()).show();
+    								});
+    							});
+    						</script>
+    						<div class="form-group col">
+    							<label for="department">Department</label>
+    							<select class="custom-select form-group" name="department" id="department">
     								<option selected disabled>Choose your Department</option>
-    								<option value="Administration">Administration</option>
-    								<option value="Administration Support / HR">Administration Support / HR</option>
-    								<option value="IT Support">IT Support</option>
-    								<option value="Non-voice Account">Non-voice Account</option>
-    								<option value="Phone ESL">Phone ESL</option>
-    								<option value="Video ESL">Video ESL</option>
-    								<option value="Virtual Assistant">Virtual Assistant</option>
+    								<option value="ash">Administration Support / HR</option>
+    								<option value="its">IT Support</option>
+    								<option value="nva">Non-voice Account</option>
+    								<option value="pe">Phone ESL</option>
+    								<option value="ve">Video ESL</option>
+    								<option value="va">Virtual Assistant</option>
     							</select>
-                            </div>
-                            <div class="form-group col-6">
-                                <label>Main Account</label>
-                                <input type="text" name="acc[]" id="acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform" required>
-                            </div>
+    						</div>
+
+    						<div class="form-group col" id="orig">
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group">
+    								<option selected disabled>Choose your Main Account</option>
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="ash" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="adminsp">
+                                    <option selected disabled value="HR Assistant">HR Assistant</option>
+    								<option selected disabled value="Job Getter">Job Getter</option>
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="its" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="itsupport">
+    								<option selected disabled value="IT">IT</option>
+
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="nva" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="nonvoice">
+                                    <option selected disabled value="April Writing">April Writing</option>
+                                    <option selected disabled value="CL/IL<">CL/IL</option>
+                                    <option selected disabled value="EVANSO">EVANSO</option>
+                                    <option selected disabled value="First Future">First Future</option>
+                                    <option selected disabled value="IDP">IDP</option>
+                                    <option selected disabled value="Job Getter">Job Getter</option>
+                                    <option selected disabled value="Key English">Key English</option>
+                                    <option selected disabled value="Phone ESL">Phone ESL</option>
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="pe" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="phone">
+    								<option selected disabled value="Online English Tutor">Online English Tutor</option>
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="ve" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="video">
+    								<option selected disabled value="Online English Tutor">Online English Tutor</option>
+    							</select>
+    						</div>
+
+    						<div class="form-group col" id="va" style='display:none'>
+    							<label for="position">Main Account</label>
+    							<select class="custom-select form-group" name="virtual">
+    								<option selected disabled>Choose your Main Account</option>
+    								<option value="Drag and drop">Drag and drop</option>
+    							</select>
+    						</div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="second_acc">Secondary Account</label>
                                 <div class="input-group">
-                                    <input type="text" name="acc[]" id="second_acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                    <select type="text" name="acc[]" id="second_acc"  class="form-control">
+                                        <option></option>
+                                    </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="large material-icons">add</i>
+                                            <i class="small material-icons">add</i>
                                         </button>
                                     </div>
                                 </div>
@@ -908,6 +976,7 @@
                 var myOptions = {
                     zoom: 18,
                     center: myLatlng,
+                    disableDoubleClickZoom: true,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(document.getElementById("maps"), myOptions);
@@ -917,13 +986,16 @@
                     document.getElementById('lat').value = marker.position.lat();
                     document.getElementById('lng').value = marker.position.lng();
                 });
-                google.maps.event.addListener(marker, "dblclick", function (e) {
-               log("Double Click");
-            });
+                google.maps.event.addListener(map, 'dblclick', function(e) {
+                    var positionDoubleclick = e.latLng;
+                    marker.setPosition(positionDoubleclick);
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
             }
 
             function invalid() {
-                swal({title: "Error", text: "Please complete all the required information", icon: "error"});
+                swal({title: "Error", text: "Please locate your house", icon: "error"});
             }
         </script>
         <script type="text/javascript">

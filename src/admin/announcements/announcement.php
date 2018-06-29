@@ -17,7 +17,7 @@
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
-	<script type="text/javascript" src="../../script/ajax.js"></script>  
+	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item ">
@@ -58,20 +58,20 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="accounts-content container-fluid">
 			<div class="row">
 				<div class="col-10 text-center">
 					<h1>Announcements</h1>
 				</div>
-				
+
 				<div class="col-2">
 					<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
 						Add Announcement
 					</a>
 				</div>
 			</div>
-            
+
 			<div  style="margin: 5vh 15vh;">
 				<hr>
 				<table class="table" id="table">
@@ -84,7 +84,7 @@
 							<th>Action</th>
 						</tr>
 					</thead>
-  
+
 					<?php
 					$sql = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) group by 1;";
 					$result = $connect->query($sql);
@@ -96,7 +96,7 @@
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
 
 							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
-							
+
 							//print data in table
 
 							echo "
@@ -114,7 +114,7 @@
 					?>
 				</table>
 			</div>
-			<div id="result1"></div>			
+			<div id="result1"></div>
 		</div>
 	</div>
 	<!-- create announcement -->
@@ -152,26 +152,26 @@
                         		</select>
                     		</div>
             			</div>
-       
+
 						<div class="d-flex ">
 							<div class="p-2" id="border">
 								<p contenteditable="true" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
 									Remaining characters: <span id="totalChars">1500</span><br/>
-							</div>                           
+							</div>
 						</div>
 						<span class="btn btn-default btn-file">
 								<span class="fileinput-new">File Upload</span>
 								<input type="file" name="file[]" multiple>
-                    		</span> 
-						
+                    		</span>
+
 						<input class="w-100 btn btn-primary" type="submit" name="submit" value="Submit">
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
       <script>
 	  let del_announcement = function(id){
 				swal({
@@ -211,7 +211,7 @@
 			});
 			$('#table').DataTable();
 		});
-		
+
 		$("input[type = 'submit']").click(function(){
 			var $fileUpload = $("input[type='file']");
 			if (parseInt($fileUpload.get(0).files.length) > 4){
@@ -221,7 +221,7 @@
 				$("#container-announcement").submit();
 			}
 		});
-	  	
+
 		//script for calling modal
 		$(document).ready(function(){
 			$('.edit').click(function(e){
@@ -238,7 +238,7 @@
 		var counter = function() {
 			var value = $('#editable').text();
 			var negative = 1500;
-			
+
 			if (value.length == 0) {
 				$('#totalChars').text(1500);
 				return;
@@ -251,12 +251,12 @@
 			var remainder = negative - totalChars;
 			$('#totalChars').text(remainder);
 			}
-			
-			
+
+
 		};
 
 		$(document).ready(function() {
-			var content_id = 'editable';  
+			var content_id = 'editable';
 
 			max = 1499;
 
@@ -265,7 +265,7 @@
 			$('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
 
 			function check_charcount(content_id, max, e)
-			{   
+			{
 				if(e.which != 8 && $('#'+content_id).text().length > max)
 				{
 				// $('#'+content_id).text($('#'+content_id).text().substring(0, max));
@@ -274,12 +274,12 @@
 			}
 			$('#text').keyup(counter);
 			$('#editable').keyup(function(){
-				
+
 					var text = $('#editable').html();
 				$('#text').html(text);
 				counter();
 
-			});	
+			});
 		});
       </script>
 </body>

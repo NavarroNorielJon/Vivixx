@@ -122,6 +122,7 @@ $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']))
 $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
+$department = mysqli_real_escape_string($connect, $_POST['department']);
 $account = $_POST['acc'];
 $accounts = "";
 for ($i=0; $i < count($account); $i++) {
@@ -176,7 +177,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
 
 if ($connect->query($update_stmt) === true) {
-    $insert_stmt = "INSERT INTO `user_background`(`bg_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
+    $insert_stmt = "INSERT INTO `user_background`(`user_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
     `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
@@ -214,8 +215,8 @@ if ($connect->query($update_stmt) === true) {
                             `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
                             '$secondary_address','$provincial_address','$answer','$id','$id');";
             if ($connect->query($insert_stmt) === true) {
-                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
-                                `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$accounts',
+                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`department`,`accounts`,`comp_email`,
+                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$department','$accounts',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
             }else {
