@@ -5,6 +5,8 @@
 	if($type == "admin") {
 		echo "<script>window.location = '../admin/';</script>";
 	}
+	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN tutor_info WHERE user_id='$user_id';";
+	$department = $row['department'];
 
 ?>
 
@@ -129,9 +131,9 @@
 									$start_dates[] = $row['start_date'];
 									$end_dates[] = $row['end_date'];
 										if ($row['attachment'] != null) {
-											$attachments[] =  'data:image/jpg;base64,'. $row['attachment'];
+											$attachments[] = 'data:image/jpg;base64,'. $row['attachment'];
 										}else {
-											$attachments[] =  "../img/announcement.jpg";
+											$attachments[] = "../img/announcement.jpg";
 										}
 								}
 							?>
@@ -150,7 +152,7 @@
 										echo "<div class=\"carousel-item\">
 											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='height:500px;width:500px' alt=\"Second slide\">
 											<div>
-												<h5>$subjects[$i] $departments[$i]</h5>
+												<h5>$subjects[$i]</h5>
 											</div>
 										</div>";
 									}?>

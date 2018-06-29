@@ -30,8 +30,8 @@
         <div class="update-information-header">
             <h1>Update Information Form</h1>
             <a href="../utilities/logout" class="btn" id="logout">
-            	<i class="material-icons">
-                	power_settings_new
+                <i class="material-icons">
+                    power_settings_new
                 </i>
             </a>
         </div>
@@ -39,7 +39,7 @@
         <div class="row">
             <div class="container">
                 <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1" enctype="multipart/form-data">
-					<div class="f1-steps">
+                    <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
                         </div>
@@ -101,21 +101,14 @@
 
                             <div class="form-group col">
                                 <label for="contact">Mobile Number</label>
-                                <input
-                                    type="tel"
-                                    name="contact_number"
-                                    autocomplete="off"
-                                    placeholder="+639XX XXX XXXX"
-                                    class="form-control mobile"
-                                    id="contact"
-                                    required>
+                                <input type="tel" name="contact_number" autocomplete="off" placeholder="+639XX XXX XXXX" class="form-control mobile" id="contact" required="required">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label for="facebook">Facebook Link</label>
-                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
                         </div>
 
@@ -125,9 +118,9 @@
                                     $('#gender').change(function () {
                                         $('#Other').hide();
                                         $('#' + $(this).val()).show();
-                                        if($('#gender').val() == "Other"){
-                                            $('#spec').attr('required','true');
-                                        }else {
+                                        if ($('#gender').val() == "Other") {
+                                            $('#spec').attr('required', 'true');
+                                        } else {
                                             $('#spec').removeAttr('required').removeClass('input-error');
                                         }
                                     });
@@ -136,11 +129,11 @@
                             <div class=" form-group col">
                                 <label for="gender">Gender</label>
                                 <select name="gender" id="gender" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select Here:</option>
+                                    <option selected disabled>Select Here:</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-									<option value="Rather not say">I'd rather not say</option>
-									<option value="Other">Others</option>
+                                    <option value="Rather not say">I'd rather not say</option>
+                                    <option value="Other">Others</option>
                                 </select>
                             </div>
 
@@ -168,7 +161,7 @@
                             <div class="form-group col">
                                 <label for="blood">Blood Type</label>
                                 <select name="blood" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select Blood Type:</option>
+                                    <option selected disabled>Select Blood Type:</option>
                                     <option value="o">O</option>
                                     <option value="a">A</option>
                                     <option value="b">B</option>
@@ -222,9 +215,9 @@
                                     $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
-                                        if($('#civil_status').val() === "others"){
-                                            $('#oth').attr('required','true');
-                                        }else {
+                                        if ($('#civil_status').val() === "others") {
+                                            $('#oth').attr('required', 'true');
+                                        } else {
                                             $('#oth').removeAttr('required').removeClass('input-error');
 
                                         }
@@ -235,7 +228,7 @@
                             <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
                                 <select name="civil_status" id="civil_status" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option selected disabled>Select:</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="widowed">Widowed</option>
@@ -254,7 +247,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no"  id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no" id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
@@ -403,12 +396,12 @@
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option1').val() === "g1") {
-                                            $('#elem_yr_grad').attr('required','true');
-                                            $('#elem_school_name').attr('required','true');
+                                            $('#elem_yr_grad').attr('required', 'true');
+                                            $('#elem_school_name').attr('required', 'true');
                                             $('#elem_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option1').val() === "u1") {
-                                            $('#elem_school_name').attr('required','true');
-                                            $('#elem_high_level').attr('required','true');
+                                            $('#elem_school_name').attr('required', 'true');
+                                            $('#elem_high_level').attr('required', 'true');
                                             $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
                                             $('#elem_school_name').removeAttr('required').removeClass('input-error');
@@ -421,7 +414,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
+                                    <option value="" selected disabled>Select:</option>
                                     <option value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
@@ -453,12 +446,12 @@
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option2').val() === "g2") {
-                                            $('#sec_yr_grad').attr('required','true');
-                                            $('#sec_school_name').attr('required','true');
+                                            $('#sec_yr_grad').attr('required', 'true');
+                                            $('#sec_school_name').attr('required', 'true');
                                             $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option2').val() === "u2") {
-                                            $('#sec_school_name').attr('required','true');
-                                            $('#sec_high_level').attr('required','true');
+                                            $('#sec_school_name').attr('required', 'true');
+                                            $('#sec_high_level').attr('required', 'true');
                                             $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
                                             $('#sec_school_name').removeAttr('required').removeClass('input-error');
@@ -471,7 +464,7 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
+                                    <option value=""selected disabled>Select:</option>
                                     <option value="none">None</option>
                                     <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
@@ -504,15 +497,15 @@
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option3').val() === "g3") {
-                                            $('#col_yr_grad').attr('required','true');
-                                            $('#col_school_name').attr('required','true');
+                                            $('#col_yr_grad').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
                                             $('#col_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option3').val() === "u3") {
-                                            $('#col_high_level').attr('required','true');
-                                            $('#col_school_name').attr('required','true');
+                                            $('#col_high_level').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
                                             $('#col_yr_grad').removeAttr('required').removeClass('input-error');
-                                        }else {
+                                        } else {
                                             $('#col_school_name').removeAttr('required').removeClass('input-error');
                                             $('#col_yr_grad').removeAttr('required').removeClass('input-error');
                                             $('#col_high_level').removeAttr('required').removeClass('input-error');
@@ -523,7 +516,7 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
+                                    <option value="" selected disabled>Select:</option>
                                     <option value="none">None</option>
                                     <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
@@ -556,15 +549,15 @@
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option4').val() === "g4") {
-                                            $('#pos_yr_grad').attr('required','true');
-                                            $('#pos_school_name').attr('required','true');
+                                            $('#pos_yr_grad').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
                                             $('#pos_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option4').val() === "u4") {
-                                            $('#pos_high_level').attr('required','true');
-                                            $('#pos_school_name').attr('required','true');
+                                            $('#pos_high_level').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
                                             $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
-                                        }else {
+                                        } else {
                                             $('#pos_school_name').removeAttr('required').removeClass('input-error');
                                             $('#pos_high_level').removeAttr('required').removeClass('input-error');
                                             $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
@@ -575,7 +568,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
+                                    <option value="" selected disabled>Select:</option>
                                     <option value="none">None</option>
                                     <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
@@ -604,14 +597,14 @@
                         <h5>Main City Address</h5>
                         <div>
                             <div id="maps"></div>
-                            <input type="text" id="lat" name="lat" class="d-none" required >
-                            <input type="text" id="lng" name="lng" class="d-none" required>
+                            <input type="text" id="lat" name="lat" class="d-none" required="required">
+                            <input type="text" id="lng" name="lng" class="d-none" required="required">
                             <br>
                             <div>
                                 <label>
                                     <h6>Main address</h6>
                                 </label>
-                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required>
+                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required="required">
                             </div>
                             <br>
                             <super>(Your alternate address when you are not at Main City Address)</super>
@@ -627,7 +620,7 @@
                                     <label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required>
+                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
                                 </div>
                             </div>
                         </div>
@@ -636,22 +629,20 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required>
+                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
-
-
 
                         <div class="row">
                             <div class="form-group col">
@@ -675,17 +666,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required>
+                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
@@ -715,7 +706,7 @@
                                         $('#Yes').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#quest').val() == "Yes") {
-                                            $('#answer').attr('required','true');
+                                            $('#answer').attr('required', 'true');
                                         } else {
                                             $('#answer').removeAttr('required').removeClass('input-error');
                                         }
@@ -723,9 +714,10 @@
                                 });
                             </script>
                             <div class="form-group col-4">
-                                <label for="quest">Do you plan on relocating soon? </label>
-                                <select name="yesorno" id="quest" class="form-control" required>
-                                    <option selected="selected" disabled="disabled">Select: Yes or No</option>
+                                <label for="quest">Do you plan on relocating soon?
+                                </label>
+                                <select name="yesorno" id="quest" class="form-control" required="required">
+                                    <option selected disabled>Select: Yes or No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -733,7 +725,7 @@
 
                             <div class="form-group col" id="Yes" style="display:none">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off" >
+                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off">
                             </div>
                         </div>
 
@@ -769,98 +761,127 @@
 
                         <div class="row">
                             <script>
-    							$(function () {
-    								$('#department').change(function () {
-    									$('#orig').hide();
-    									$('#ash').hide();
-    									$('#its').hide();
-    									$('#nva').hide();
-    									$('#pe').hide();
-    									$('#ve').hide();
-    									$('#va').hide();
-    									$('#' + $(this).val()).show();
-    								});
-    							});
-    						</script>
-    						<div class="form-group col">
-    							<label for="department">Department</label>
-    							<select class="custom-select form-group" name="department" id="department">
-    								<option selected disabled>Choose your Department</option>
-    								<option value="ash">Administration Support / HR</option>
-    								<option value="its">IT Support</option>
-    								<option value="nva">Non-voice Account</option>
-    								<option value="pe">Phone ESL</option>
-    								<option value="ve">Video ESL</option>
-    								<option value="va">Virtual Assistant</option>
-    							</select>
-    						</div>
+                                $(function () {
+                                    $('#department').change(function () {
+                                        $('#orig').hide();
+                                        $('#ash').hide();
+                                        $('#its').hide();
+                                        $('#nva').hide();
+                                        $('#pe').hide();
+                                        $('#ve').hide();
+                                        $('#va').hide();
+                                        $('#' + $(this).val()).show();
+                                    });
+                                });
+                            </script>
+                            <div class="form-group col">
+                                <label for="department">Department</label>
+                                <select class="custom-select form-group" name="department" id="department">
+                                    <option selected disabled>Choose your Department</option>
+                                    <option value="ash">Administration Support / HR</option>
+                                    <option value="its">IT Support</option>
+                                    <option value="nva">Non-voice Account</option>
+                                    <option value="pe">Phone ESL</option>
+                                    <option value="ve">Video ESL</option>
+                                    <option value="va">Virtual Assistant</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="orig">
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group">
-    								<option selected disabled>Choose your Main Account</option>
-    							</select>
-    						</div>
+                            <div class="form-group col" id="orig">
+                                <label for="position">Main Account First</label>
+                                <select class="custom-select form-group">
+                                    <option selected disabled>Choose your Main Account</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="ash" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="adminsp">
-                                    <option selected disabled value="HR Assistant">HR Assistant</option>
-    								<option selected disabled value="Job Getter">Job Getter</option>
-    							</select>
-    						</div>
+                            <div class="form-group col" id="ash" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="adminsp">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="HR Assistant">HR Assistant</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="its" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="itsupport">
-    								<option selected disabled value="IT">IT</option>
+                            <div class="form-group col" id="its" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="itsupport">
+                                    <option value="IT">IT</option>
+                                </select>
+                            </div>
 
-    							</select>
-    						</div>
+                            <div class="form-group col" id="nva" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="nonvoice">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="nva" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="nonvoice">
-                                    <option selected disabled value="April Writing">April Writing</option>
-                                    <option selected disabled value="CL/IL<">CL/IL</option>
-                                    <option selected disabled value="EVANSO">EVANSO</option>
-                                    <option selected disabled value="First Future">First Future</option>
-                                    <option selected disabled value="IDP">IDP</option>
-                                    <option selected disabled value="Job Getter">Job Getter</option>
-                                    <option selected disabled value="Key English">Key English</option>
-                                    <option selected disabled value="Phone ESL">Phone ESL</option>
-    							</select>
-    						</div>
+                            <div class="form-group col" id="pe" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="phone">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="pe" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="phone">
-    								<option selected disabled value="Online English Tutor">Online English Tutor</option>
-    							</select>
-    						</div>
+                            <div class="form-group col" id="ve" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="video">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
 
-    						<div class="form-group col" id="ve" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="video">
-    								<option selected disabled value="Online English Tutor">Online English Tutor</option>
-    							</select>
-    						</div>
-
-    						<div class="form-group col" id="va" style='display:none'>
-    							<label for="position">Main Account</label>
-    							<select class="custom-select form-group" name="virtual">
-    								<option selected disabled>Choose your Main Account</option>
-    								<option value="Drag and drop">Drag and drop</option>
-    							</select>
-    						</div>
+                            <div class="form-group col" id="va" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="virtual">
+                                    <option selected disabled value="Drag and drop">Drag and drop</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="second_acc">Secondary Account</label>
                                 <div class="input-group">
-                                    <select type="text" name="acc[]" id="second_acc"  class="form-control">
-                                        <option></option>
+                                    <select type="text" name="acc[]" id="second_acc" class="form-control">
+                                        <option selected disabled>Choose your Secondary Account</option>
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL/option>
+                                        <option value="Drag and drop">Drag and drop</option>
+                                        <option value="ELANSO">ELANSO(E2Say)</option>
+                                        <option value="E-Say">E-Say</option>
+                                        <option value="First Future">First Future</option>
+                                        <option value="HR Assistant">HR Assistant</option>
+                                        <option value="IDP">IDP</option>
+                                        <option value="Key English">Key English</option>
+                                        <option value="Phone ESL">Phone ESL</option>
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
@@ -871,7 +892,6 @@
                             </div>
                         </div>
                         <div id="new_acc"></div>
-
 
                         <div class="row">
                             <div class="form-group col">
@@ -945,30 +965,14 @@
             <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
         <script>
-            $('#sss_no').inputmask({
-                mask: 'dd-ddddddd-d'
-            });
-            $('#tin').inputmask({
-                mask: 'ddd-ddd-ddd-ddd'
-            });
-            $('#philhealth_no').inputmask({
-                mask: 'dd-ddddddddd-d'
-            });
-            $('.zip').inputmask({
-                mask: 'dddd'
-            });
-            $('#pagibig_id_no').inputmask({
-                mask: 'dddd-dddd-dddd'
-            });
-            $('.mobile').inputmask({
-                mask: '+639dd ddd dddd'
-            });
-            $('.telephone').inputmask({
-                mask: 'ddd-dddd'
-            });
-            $('.height').inputmask({
-                mask: 'dd'
-            });
+            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+            $('.zip').inputmask({mask: 'dddd'});
+            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+            $('.telephone').inputmask({mask: 'ddd-dddd'});
+            $('.height').inputmask({mask: 'dd'});
         </script>
         <script>
             function initMap() {
@@ -986,7 +990,7 @@
                     document.getElementById('lat').value = marker.position.lat();
                     document.getElementById('lng').value = marker.position.lng();
                 });
-                google.maps.event.addListener(map, 'dblclick', function(e) {
+                google.maps.event.addListener(map, 'dblclick', function (e) {
                     var positionDoubleclick = e.latLng;
                     marker.setPosition(positionDoubleclick);
                     document.getElementById('lat').value = marker.position.lat();
@@ -1007,7 +1011,7 @@
         <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-    	<script type="text/javascript" src="../script/additional-methods.min.js"></script>
+        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
         <script type="text/javascript" src="../script/alerts.js"></script>
         <script type="text/javascript" src="../script/popper.min.js"></script>
         <script type="text/javascript" src="../script/sweetalert.min.js"></script>

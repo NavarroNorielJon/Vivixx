@@ -90,7 +90,7 @@ function addAccount(){
 	var newDataField = document.createElement("div");
 	newDataField.setAttribute("class", "form-group removeclass"+increment);
 	var removeDiv = 'removeclass' + increment;
-	newDataField.innerHTML = '<div class="row"><div class="form-group col-6"><label for="second_acc">Additional Account</label><div class="input-group"><select name="acc[]" id="second_acc" class="form-control"></select><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="small material-icons">remove</i></button></div></div></div></div>';
+	newDataField.innerHTML = '<div class="row"><div class="form-group col-6"><label for="second_acc">Additional Account</label><div class="input-group"><select type="text" name="acc[]" id="second_acc" class="form-control"><option selected disabled>Choose your Account</option><option value="April Writing">April Writing</option><option value="CL/IL<">CL/IL</option><option value="Drag and drop">Drag and drop</option><option value="ELANSO">ELANSO(E2Say)</option><option value="E-Say">E-Say</option><option value="First Future">First Future</option><option value="HR Assistant">HR Assistant</option><option value="IDP">IDP</option><option value="Key English">Key English</option><option value="Phone ESL">Phone ESL</option></select><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="small material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
 

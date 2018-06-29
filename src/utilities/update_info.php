@@ -67,7 +67,7 @@ if ($elem_status === "g1") {
 }
 
 $sec_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['sec_school_name']));
-$sec_status = ucwords(mysqli_real_escape_string($connect, $_POST['option2']));
+$sec_status = mysqli_real_escape_string($connect, $_POST['option2']);
 
 if ($sec_status === "g2") {
     $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
@@ -76,7 +76,7 @@ if ($sec_status === "g2") {
 }
 
 $col_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['col_school_name']));
-$col_status = ucwords(mysqli_real_escape_string($connect, $_POST['option3']));
+$col_status = mysqli_real_escape_string($connect, $_POST['option3']);
 
 if ($col_status === "g3") {
     $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
@@ -85,7 +85,7 @@ if ($col_status === "g3") {
 }
 
 $post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['pos_school_name']));
-$post_status = ucwords(mysqli_real_escape_string($connect, $_POST['option4']));
+$post_status = mysqli_real_escape_string($connect, $_POST['option4']);
 
 if ($post_status === "g4") {
     $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
@@ -123,14 +123,28 @@ $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
 $department = mysqli_real_escape_string($connect, $_POST['department']);
+if ($department === "ash") {
+    $department = "Administration Support / HR";
+    $accounts = mysqli_real_escape_string($connect, $_POST['adminsp']);
+} elseif ($department === "its") {
+    $department = "IT Support";
+    $accounts = mysqli_real_escape_string($connect, $_POST['itsupport']);
+} elseif ($department === "nva") {
+    $department = "Non-Voice Account";
+    $accounts = mysqli_real_escape_string($connect, $_POST['nonvoice']);
+} elseif ($department === "pe") {
+    $department = "Phone ESL";
+    $accounts = mysqli_real_escape_string($connect, $_POST['phone']);
+} elseif ($department === "ve") {
+    $department = "Video ESL";
+    $accounts = mysqli_real_escape_string($connect, $_POST['video']);
+} elseif ($department === "va") {
+    $department = "Virtual Assistant";
+    $accounts = mysqli_real_escape_string($connect, $_POST['virtual']);
+}
 $account = $_POST['acc'];
-$accounts = "";
 for ($i=0; $i < count($account); $i++) {
-    if ($i !== (count($account)-1)) {
-        $accounts .= $account[$i]."|";
-    }else {
-        $accounts .= $account[$i];
-    }
+        $accounts .= "|".$account[$i];
 }
 
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
@@ -140,22 +154,6 @@ $s_pass = mysqli_real_escape_string($connect, $_POST['s_password']);
 $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
 $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
-$sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
-$result = $connect->query($sql);
-
-// /**
-//  *Checks if the contact is already being used and will return
-//  *to registration.
-//  */
-if($result->num_rows > 0){
-    echo "
-        <script>
-            alert('The Contact you have entered is already in use.');
-            window.history.back();
-        </script>
-    ";
-    exit;
-}
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 
