@@ -106,9 +106,8 @@
 				</li>
 			</ul>
 		</nav>
-
-		<div id="content">
-			
+		
+		<div id="content" style="margin-left: 20%;">
 		</div>
 	</div>
 	
