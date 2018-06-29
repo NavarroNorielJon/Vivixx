@@ -42,6 +42,11 @@
 					<a href="home" class="sidebar-item"><i class="material-icons">home</i> Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
+				<li>
+					<a href="home.php" class="sidebar-item">
+					<i class="material-icons">mail</i>Notifications</a>
+					<a class="icon" href="home.php"><i class="material-icons">mail</i></a>
+				</li>
                 <li>
                     <a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
@@ -53,8 +58,8 @@
                     </ul>
                 </li>
                 <li>
-					<a href="#" class="sidebar-item"><i class="material-icons">info_outline</i> About</a>
-					<a class="icon" href="#"><i class="material-icons">info_outline</i></a>
+					<a href="#" class="sidebar-item"><i class="material-icons">info</i> About</a>
+					<a class="icon" href="#"><i class="material-icons">info</i></a>
 				</li><hr>
                 <li><a href="../utilities/logout" class="sidebar-item logout">
                         <i class="material-icons">power_settings_new</i> Logout</a>
