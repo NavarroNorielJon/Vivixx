@@ -78,14 +78,8 @@
 						</div>
 						
 						<div style="text-align:right">
-<<<<<<< HEAD
-							<input type="submit" class="btn btn-success" name="edit" value="Edit">
-=======
-							
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-
 							<input type="submit" class="btn btn-primary" name="submit" value="Edit">
->>>>>>> 302c58b097d462ddc04170805e0bf6a8e6125702
 						</div>
 					</div>
 				</div>
