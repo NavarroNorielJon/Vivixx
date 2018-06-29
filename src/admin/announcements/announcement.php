@@ -104,10 +104,7 @@
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
 							<td>" . $row['start_date'] . "</td>
-<<<<<<< HEAD
 							<td>" . $row['end_date'] . "</td>
-=======
->>>>>>> 4163ffbf04b35442cbe9e0783888b798700d9293
 							<td >" . $row['announcement'] . "</td>
 							<td>" . "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>" . "</td>
 							<td>" . $edit.$delete."</td>

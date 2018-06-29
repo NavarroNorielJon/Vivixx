@@ -5,7 +5,8 @@ ini_set('upload_max_filesize', '64M');
     $connect = Connect();
 	
     $subject = $_POST["subject"];
-    $date = $_POST["date"];
+    $startdate = $_POST["start_date"];
+    $enddate = $_POST["end_date"];
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $department = $_POST["department"];
     $announcement_id=$_POST["announcement_id"];
@@ -31,7 +32,7 @@ ini_set('upload_max_filesize', '64M');
                 echo $child;
             }
 
-            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$date', `departments`='$department' where announcement_id='$announcement_id';";
+            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='end_date' `departments`='$department' where announcement_id='$announcement_id';";
             $connect->query($sql);
 
             for($x = 0; $x< count($file_names); $x++){
@@ -40,7 +41,7 @@ ini_set('upload_max_filesize', '64M');
                 $temp_file = base64_encode(file_get_contents($file_names[$x]));
                 $add_attachment = "UPDATE announcement_attachments SET `attachment`='$temp_file',`attachment_name`='$file_names[$x]', `announcement_id`='$announcement_id';";
                 $connect->query($add_attachment);
-                $msg = "
+                echo "
                     <script>
                     alert('Announcement with attachment, successfully sent.');
                     window.location='announcement.php';
@@ -51,7 +52,7 @@ ini_set('upload_max_filesize', '64M');
         //if there is no image
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `date`='$date', `departments`='$department' where announcement_id='$announcement_id';";
             $connect->query($sql);
-                $msg =  "
+                echo "
                     <script>
                     alert('Announcement without attachment, successfully sent.');
                     window.location='announcement.php';
@@ -59,5 +60,3 @@ ini_set('upload_max_filesize', '64M');
         }
                
     }
-
-    echo $msg;

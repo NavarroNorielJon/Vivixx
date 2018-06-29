@@ -9,7 +9,7 @@ ini_set('upload_max_filesize', '64M');
       $enddate = $_POST["end_date"];
       $body = mysqli_real_escape_string($connect,$_POST["body"]);
       $department = $_POST["department"];
-if(count($_FILES['file']) > 1){
+
       $file_names = [];
       $file_paths = [];
       $file_tmp_names = [];
@@ -40,11 +40,10 @@ if(count($_FILES['file']) > 1){
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
                     $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_names[$x]','$temp_file','$announcement_id');";
                     $connect->query($add_attachment);
-                    echo $add_attachment;
                     echo "
                         <script>
                         alert('Announcement with attachment, successfully sent.');
-                        
+                        window.location='announcement.php';
                         </script>";
                 }else{
                     $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
@@ -59,4 +58,3 @@ if(count($_FILES['file']) > 1){
             }
                
     }
-}
