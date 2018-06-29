@@ -51,9 +51,9 @@
 							<div class="form-group col">
 								<label for="departments">Department</label>
                             	<select class="custom-select form-group" id="departments" name="department" required>
-                                	<option value="all">All Departments</option>
-                                	<option value="admin">Administration</option>
-                                	<option value="admin supp">Administration Support / HR</option>
+                                	<option value="All">All Departments</option>
+                                	<option value="Admin">Administration</option>
+                                	<option value="Admin Supp">Administration Support / HR</option>
                                 	<option value="it support">IT Support</option>
                                 	<option value="non voice account">Non-voice Account</option>
                                 	<option value="phone esl">Phone ESL</option>
@@ -62,20 +62,18 @@
                             	</select>
                         	</div>
 						</div>
+						<div style="text-align:center">
+						<div class="d-flex ">
+							<div class="p-2" id="border">
+								<p contenteditable="true" id="editable"><?php echo $row["announcement"]?></p>
+									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
+									Remaining characters: <span id="totalChars">1500</span><br/>
+							</div>                           
+						</div>
 						<span class="btn btn-default btn-file">
-								<span class="fileinput-new">File Upload</span>
-								<input type="file" name="file[]" multiple>
-                    		</span>
-                    	
-                    	
-						<div class="row">
-                        	<div class="form-group col text-center">
-                            	<label for="content">Content</label>
-                            	<div id="border">
-                                	<textarea class="form-control" name="body" id='text' style="margin: auto;" required 	maxlength="1000"></textarea>
-                                	Remaining characters: <span id="totalChars">1000</span><br/>
-                            	</div>
-                        	</div>
+							<span class="fileinput-new">File Upload</span>
+							<input type="file" name="file[]" multiple>
+						</span>
 						</div>
 						
 						<div style="text-align:right">
@@ -91,20 +89,45 @@
         $(document).ready(function(){
             $("#edit").modal("show");
         });
-		counter = function() {
-			var value = $('#text').val();
-			var negative = 1000;
+
+		//script for content counter
+		var counter = function() {
+			var value = $('#editable').text();
+			var negative = 1500;
+			
 			if (value.length == 0) {
-				$('#totalChars').html(1000);
+				$('#totalChars').text(1500);
 				return;
-			}
-			var regex = /\s+/gi;
+			}else if(value.length >= 1500){
+				$('#totalChars').text(0);
+				return;
+			}else{
+				var regex = /\s+/gi;
 			var totalChars = value.length;
 			var remainder = negative - totalChars;
-			$('#totalChars').html(remainder);
+			$('#totalChars').text(remainder);
+			}
 		};
 
 		$(document).ready(function() {
-			$('#text').keyup(counter);	
+			var content_id = 'editable';  
+			max = 1499;
+			//binding keyup/down events on the contenteditable div
+			$('#'+content_id).keyup(function(e){ check_charcount(content_id, max, e); });
+			$('#'+content_id).keydown(function(e){ check_charcount(content_id, max, e); });
+
+			function check_charcount(content_id, max, e){   
+				if(e.which != 8 && $('#'+content_id).text().length > max){
+					e.preventDefault();
+				}
+			}
+			$('#text').keyup(counter);
+			$('#editable').keyup(function(){
+				
+				var text = $('#editable').html();
+				$('#text').html(text);
+				counter();
+
+			});	
 		});
     </script>
