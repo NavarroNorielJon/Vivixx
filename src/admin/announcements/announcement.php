@@ -20,7 +20,6 @@
 	<script type="text/javascript" src="../../script/ajax.js"></script>  
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../style/sweetalert2.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
     <script src="../../script/jquery.form.min.js"></script>
 </head>
@@ -92,12 +91,17 @@
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
+<<<<<<< HEAD
+							$delete = "<button onclick='del_announcement(".$row['announcement_id'].")' class='delete btn btn-danger'>Delete</button>";
+						//print data in table
+=======
 							
 							$delete = "
 							<input name='delete' value='delete' style='display: none;'>
 							<a href='delete_announcement.php?announcement_id=".$row['announcement_id']."' class='delete btn btn-danger'>Delete</a>";
 							
 							//print data in table
+>>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 							echo "
 							<tr>
 							<td>" . ucwords($row['subject']) . "</td>
@@ -171,8 +175,41 @@
 		</div>
 	</div>
 	
+<<<<<<< HEAD
+	
+      <script>
+	  let del_announcement = function(id){
+				swal({
+					title: 'Are you sure?',
+					text: "You won't be able to revert this!",
+					type: 'warning',
+					buttons: true,
+					})
+					.then((result) => {
+						console.log(result);
+						if (result) {
+							$.get('delete_announcement.php?announcement_id=' + id);
+							swal(
+							'Deleted!',
+							'Your file has been deleted.',
+							'success'
+							).then(function(){
+								location.reload();
+							});
+						}else{
+							swal(
+							'Not Deleted!',
+							'Your file is safe.',
+							'success'
+							);
+						}
+				});
+	  };
+	  $(document).ready(function(){
+=======
 	<script>
 		$(document).ready(function(){
+>>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 			$('#table').dataTable( {
 				"columnDefs": [
 					{ "orderable": false, "targets": [3,4] },
@@ -204,43 +241,8 @@
 				});
 			});
 		});
-
-		$(document).ready(function(){
-			$('.delete').click(function(e){
-				e.preventDefault();
-				$.ajax({
-					url: 'delete_announcement.php';
-				});
-			});
-		});
-
-		// $(document).ready(function(){
-		// 	$('.delete').click(function(e){
-		// 		e.preventDefault();
-		// 		swal({
-		// 			title: 'Are you sure?',
-		// 			text: "You won't be able to revert this!",
-		// 			type: 'warning',
-		// 			showCancelButton: true,
-		// 			confirmButtonColor: '#3085d6',
-		// 			cancelButtonColor: '#d33',
-		// 			confirmButtonText: 'Yes, delete it!'
-		// 			}).then((result) => {
-		// 			if (result.value) {
-		// 				swal(
-		// 				'Deleted!',
-		// 				'Your file has been deleted.',
-		// 				'success'
-		// 				)
-		// 			}
-		// 		})
-				
-		// 	});
-		// });
 		//script for calling datatables library
-      	
-
-		counter = function() {
+		var counter = function() {
 			var value = $('#text').val();
 			var negative = 1000;
 			
@@ -257,7 +259,18 @@
 
 		$(document).ready(function() {
 			$('#text').keyup(counter);	
+			$(".input1").on('keyup', function (e) {
+				if (e.keyCode == 13) {
+					
+				}
+			});
 		});
+<<<<<<< HEAD
+
+		
+      </script>
+=======
 	</script>
+>>>>>>> 337e916713bdcf81393add1735567a1b2bda9c9d
 </body>
 </html>
