@@ -12,7 +12,6 @@
             	<div class="modal-content">
                 	<div class="modal-header">
 						<h1>Edit announcement</h1>
-						<?php echo $row['subject']?>
 						<input type="hidden" name="announcement_id" value="<?php echo $row["announcement_id"]?>">
                 	</div>
                 	

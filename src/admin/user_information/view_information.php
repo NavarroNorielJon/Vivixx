@@ -229,7 +229,7 @@
 			<div class="row">
 				<div class="form-group col">
 					<label for="facebook">Facebook Link</label>
-					<input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off">
+					<input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" value="<?php echo $row['facebook_link'];?>">
 				</div>
 			</div>
 
@@ -442,39 +442,39 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sfname">First Name</label>
-                                <input type="text" name="spouse_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="sfname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="sfname" class="form-control text-transform" autocomplete="off" value="<?php echo $row['spouse_first_name'];?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="smname">Middle Name</label>
-                                <input type="text" name="spouse_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="smname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="smname" class="form-control text-transform" autocomplete="off" value="<?php echo $row['spouse_middle_name'];?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="slname">Last Name</label>
-                                <input type="text" name="spouse_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="slname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="slname" class="form-control text-transform" autocomplete="off" value="<?php echo $row['spouse_last_name'];?>">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-2">
                                 <label for="occupation">Occupation</label>
-                                <input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $row['occupation'];?>">
                             </div>
 
                             <div class="form-group col-2">
                                 <label for="employer">Employer</label>
-                                <input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off" value="<?php echo $row['employer'];?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="business_address">Business Address</label>
-                                <input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off" value="<?php echo $row['business_address'];?>">
                             </div>
 
                             <div class="form-group col-3">
                                 <label for="spouse_tel_no">Telephone NO.</label>
-                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
+                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone" value="<?php echo $row['spouse_tel_no'];?>">
                             </div>
                         </div>
 
@@ -727,7 +727,7 @@
                                 <label>
                                     <h6>Main address</h6>
                                 </label>
-                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" >
+                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" value="<?php echo $row['main_address'];?>">
                             </div>
                             <br>
                             <super>(Your alternate address when you are not at Main City Address)</super>
@@ -736,14 +736,14 @@
                                     <label for="secondary_add">
                                         <h6>Secondary City Address</h6>
                                     </label>
-                                    <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address">
+                                    <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address" value="<?php echo $row['secondary_address'];?>">
                                 </div>
 
                                 <div class="form-group col">
                                     <label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" >
+                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" value="<?php echo $row['provincial_address'];?>">
                                 </div>
                             </div>
                         </div>

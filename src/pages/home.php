@@ -6,6 +6,8 @@
 		echo "<script>window.location = '../admin/';</script>";
 	}
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN tutor_info WHERE user_id='$user_id';";
+	$res = mysqli_query($connect,$stmt);
+	$row = mysqli_fetch_array($res,MYSQLI_ASSOC);
 	$department = $row['department'];
 
 ?>
@@ -52,6 +54,16 @@
 							<i class="material-icons">home</i>
 						</a>
 					</li>
+					
+					<li>
+						<a href="#" class="sidebar-item">
+							<i class="material-icons">mail</i>Notifications
+						</a>
+
+						<a class="icon" href="#" data-toggle="tooltip" data-placement="right" title="Home">
+							<i class="material-icons">mail</i>
+						</a>
+					</li>
 
 					<li>
 						<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false">
@@ -85,12 +97,12 @@
 
 					<li>
 						<a href="#" class="sidebar-item">
-							<i class="material-icons">info_outline</i>
+							<i class="material-icons">info</i>
 							About
 						</a>
 
 						<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
-							<i class="material-icons">info_outline</i>
+							<i class="material-icons">info</i>
 						</a>
 					</li>
 
@@ -111,8 +123,8 @@
 
 			<div id="content">
 				<div class="card cards">
-						<h4 class="card-title">Upcoming Events</h4>
 						<div class="card-body">
+							<h4 class="card-title">Notification</h4>
 							<p class="card-text">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
 								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -125,7 +137,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				<div class="card cards">
 					<div class="card-body">
 						<h4 class="card-title">Announcements</h4>
@@ -194,7 +206,7 @@
 						</div>
 					</div>
 
-					
+
 				</div>
 			</div>
 
