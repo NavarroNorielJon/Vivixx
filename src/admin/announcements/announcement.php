@@ -148,7 +148,7 @@
 
 							<div class="form-group col">
 								<label for="department">Department</label>
-								<select class="custom-select form-group" name="department"  id="department" required>
+								<select class="custom-select form-group" name="department"  id="department" require="required">
 									<option selected disabled>Choose your Department</option>
 									<option value="all">All Departments</option>
 									<option value="admin">Administration</option>
