@@ -9,7 +9,7 @@
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res,MYSQLI_ASSOC);
 	$department = $row['department'];
-
+	echo $department;
 ?>
 
 <!DOCTYPE html>
@@ -135,15 +135,9 @@
 							<div id="announce" class="carousel slide carousel-fade" data-ride="carousel">
 
 							<?php
-								$announcement = mysqli_query($connect,"SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date group by 1;");
-								$datenow = date('Y-m-d');
-								$start_dates = [];
-								$end_dates = [];
-								$announcements = [];
-								$attachments = [];
-								$subjects = [];
+								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
+								$announcement = mysqli_query($connect,$query);
 								while ($row = mysqli_fetch_array($announcement)) {
-									$departments[] = $row['departments'];
 									$announcements[] = $row['announcement'];
 									$subjects[] = $row['subject'];
 									$start_dates[] = $row['start_date'];
