@@ -27,7 +27,6 @@ ini_set('upload_max_filesize', '64M');
             foreach($_FILES['file']['error'] as $child) {
                 $file_err_nos[] = $child;
             }
-
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$department' where announcement_id='$announcement_id';";
             $connect->query($sql);
 
@@ -35,7 +34,8 @@ ini_set('upload_max_filesize', '64M');
                 if(!empty($file_tmp_names[$x])){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_names[$x]','$temp_file','$announcement_id');";
+                    echo $temp_file;
+                    $add_attachment = "UPDATE announcement_attachments SET `attachment_name`='$file_names[$x]', `attachment`='$temp_file' where `announcement_id`='$announcement_id' ;";
                     $connect->query($add_attachment);
                     echo "
                         <script>
@@ -43,8 +43,6 @@ ini_set('upload_max_filesize', '64M');
                         window.location='announcement.php';
                         </script>";
                 }else{
-                    $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
-                    $connect->query($add_attachment);
                     echo "
                         <script>
                         alert('Announcement without attachment, successfully sent.');
