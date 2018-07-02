@@ -811,7 +811,7 @@
                                 <select class="custom-select form-group" name="nonvoice">
                                     <option selected disabled>Choose your Main Account</option>
                                     <option value="April Writing">April Writing</option>
-                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="CL/IL">CL/IL</option>
                                     <option value="ELANSO">ELANSO(E2Say)</option>
                                     <option value="E-Say">E-Say</option>
                                     <option value="First Future">First Future</option>
@@ -870,7 +870,7 @@
                                         <option selected disabled>Choose your Secondary Account</option>
                                         <option value="">None</option>
                                         <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL<option>
+                                        <option value="CL/IL">CL/IL</option>
                                         <option value="Drag and drop">Drag and drop</option>
                                         <option value="ELANSO">ELANSO(E2Say)</option>
                                         <option value="E-Say">E-Say</option>
