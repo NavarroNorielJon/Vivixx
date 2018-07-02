@@ -3,11 +3,15 @@
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id';";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id';";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
-    $height = explode("'",$row[height]);
-    $elem = explode("|",$row[elementary]);
+    $height = explode("'",$row['height']);
+    $elem = explode("|",$row['elementary']);
+    $sec = explode("|",$row['secondary']);
+    $col = explode("|",$row['college']);
+    $pos = explode("|",$row['post_grad']);
+    $coordinates = explode("|",$row['coordinates']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,13 +36,7 @@
         <script src="../../script/scripts.js"></script>
 
     <!--scripts-->
-    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-        <script type="text/javascript" src="../../script/jquery.form.min.js"></script>
-        <script type="text/javascript" src="../../script/jquery.validate.min.js"></script>
-    	<script type="text/javascript" src="../../script/additional-methods.min.js"></script>
-        <script type="text/javascript" src="../../script/popper.min.js"></script>
-        <script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-        <script type="text/javascript" src="../../script/ajax.js"></script>
+
 
 	<script>
             $('#sss_no').inputmask({
@@ -66,30 +64,7 @@
                 mask: 'dd'
             });
         </script>
-        <script>
-            function initMap() {
-                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-                var myOptions = {
-                    zoom: 18,
-                    center: myLatlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-                google.maps.event.addListener(marker, 'drag', function () {
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-                google.maps.event.addListener(marker, "dblclick", function (e) {
-               log("Double Click");
-            });
-            }
-
-            function invalid() {
-                swal({title: "Error", text: "Please complete all the required information", icon: "error"});
-            }
-        </script>
         <script type="text/javascript">
             function onTop() {
                 document.body.scrollTop = 0;
@@ -178,177 +153,177 @@
 			</div>
 		</div>
 
-		<fieldset>
-			<h2>Step 1: Personal Information</h2>
-			<div class="row">
-				<div class="form-group col-4">
-					<label for="prof_image">Profile Image</label>
-					<input type="file" name="prof_image"/>
-				</div>
+            		<fieldset>
+            			<h2>Step 1: Personal Information</h2>
+            			<div class="row">
+            				<div class="form-group col-4">
+            					<label for="prof_image">Profile Image</label>
+            					<input type="file" name="prof_image"/>
+            				</div>
 
-				<div class="form-group col-4">
-					<label for="prof_image">Signature</label>
-					<input type="file"/>
-				</div>
-			</div>
+            				<div class="form-group col-4">
+            					<label for="prof_image">Signature</label>
+            					<input type="file"/>
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col">
-					<label>First Name</label>
-					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php echo $row['first_name'];?>">
-				</div>
+            			<div class="row">
+            				<div class="form-group col">
+            					<label>First Name</label>
+            					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php echo $row['first_name'];?>" placeholder="First Name">
+            				</div>
 
-				<div class="form-group col">
-					<label>Middle Name</label>
-					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php echo $row['middle_name'];?>">
-				</div>
+            				<div class="form-group col">
+            					<label>Middle Name</label>
+            					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php if($row['middle_name'] !== null){ echo $row['middle_name'];}?>" placeholder="Middle Name">
+            				</div>
 
-				<div class="form-group col-4">
-					<label>Last Name</label>
-					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value="<?php echo $row['last_name'];?>">
-				</div>
-			</div>
+            				<div class="form-group col-4">
+            					<label>Last Name</label>
+            					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value="<?php echo $row['last_name'];?>"  placeholder="Last Name">
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col">
-					<label>Birthdate</label>
-					<input type="date" name="birth_date" id="bdate" class="form-control" value="<?php echo $row['birth_date'];?> ">
-				</div>
+            			<div class="row">
+            				<div class="form-group col">
+            					<label>Birthdate</label>
+            					<input type="date" name="birth_date" id="bdate" class="form-control" value="<?php echo $row['birth_date'];?> ">
+            				</div>
 
-				<div class="form-group col">
-					<label>Place of Birth</label>
-					<input type="text" name="birth_place" autocomplete="off" placeholder="address" id="pbirth" class="form-control text-transform"  value="<?php echo $row['birth_place'];?>">
-				</div>
+            				<div class="form-group col">
+            					<label>Place of Birth</label>
+            					<input type="text" name="birth_place" autocomplete="off" placeholder="address" id="pbirth" class="form-control text-transform"  value="<?php echo $row['birth_place'];?>">
+            				</div>
 
-				<div class="form-group col">
-					<label for="contact">Mobile Number</label>
-					<input type="tel" name="contact_number" autocomplete="off" placeholder="+639XX XXX XXXX" class="form-control mobile" id="contact" value="<?php echo $row['contact_number'];?>">
+            				<div class="form-group col">
+            					<label for="contact">Mobile Number</label>
+            					<input type="tel" name="contact_number" autocomplete="off" placeholder="+639XX XXX XXXX" class="form-control mobile" id="contact" value="<?php echo $row['contact_number'];?>">
 
-					<div id="validContact"></div>
-				</div>
-			</div>
+            					<div id="validContact"></div>
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col">
-					<label for="facebook">Facebook Link</label>
-					<input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" value="<?php echo $row['facebook_link'];?>">
-				</div>
-			</div>
+            			<div class="row">
+            				<div class="form-group col">
+            					<label for="facebook">Facebook Link</label>
+            					<input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" value="<?php echo $row['facebook_link'];?>">
+            				</div>
+            			</div>
 
-			<div class="row">
-				<script>
-					$(function () {
-						$('#gender').change(function () {
-							$('#Other').hide();
-							$('#' + $(this).val()).show();
-							if($('#gender').val() == "Other"){
-								$('#spec').attr('required','true');
-							}else {
-								$('#spec').removeAttr('required').removeClass('input-error');
-							}
-						});
-					});
-				</script>
+            			<div class="row">
+            				<script>
+            					$(function () {
+            						$('#gender').change(function () {
+            							$('#Other').hide();
+            							$('#' + $(this).val()).show();
+            							if($('#gender').val() == "Other"){
+            								$('#spec').attr('required','true');
+            							}else {
+            								$('#spec').removeAttr('required').removeClass('input-error');
+            							}
+            						});
+            					});
+            				</script>
 
-				<div class=" form-group col">
-					<label for="gender">Gender</label>
-					<select name="gender" id="gender" class="form-control">
-						<option selected="selected" disabled="disabled">Select Here:</option>
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-						<option value="Rather not say">I'd rather not say</option>
-						<option value="Other">Others</option>
-					</select>
-				</div>
+            				<div class=" form-group col">
+            					<label for="gender">Gender</label>
+            					<select name="gender" id="gender" class="form-control">
+            						<option selected="selected" disabled="disabled">Select Here:</option>
+            						<option value="Male">Male</option>
+            						<option value="Female">Female</option>
+            						<option value="Rather not say">I'd rather not say</option>
+            						<option value="Other">Others</option>
+            					</select>
+            				</div>
 
-				<div class="form-group col" style="display:none" id="Other">
-					<label for="spec">Specify</label>
-					<input type="text" name="spec" id="spec" class="form-control" autocomplete="off">
-				</div>
+            				<div class="form-group col" style="display:none" id="Other">
+            					<label for="spec">Specify</label>
+            					<input type="text" name="spec" id="spec" class="form-control" autocomplete="off">
+            				</div>
 
-				<div class="form-group col">
-					<label for="height">Height</label>
-					<div class="row no-gutters ">
-						<div class="form-group col">
-							<input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" value="<?php echo $height[0]; ?>">
-						</div>
+            				<div class="form-group col">
+            					<label for="height">Height</label>
+            					<div class="row no-gutters ">
+            						<div class="form-group col">
+            							<input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" value="<?php echo $height[0]; ?>">
+            						</div>
 
-						<div class="form-group col">
-							<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" value="<?php echo $height[1]; ?>">
-						</div>
-					</div>
-				</div>
+            						<div class="form-group col">
+            							<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" value="<?php echo $height[1]; ?>">
+            						</div>
+            					</div>
+            				</div>
 
-				<div class="form-group col">
-					<label for="weight">Weight</label>
-					<input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" value="<?php echo $row['weight'];?>">
-				</div>
+            				<div class="form-group col">
+            					<label for="weight">Weight</label>
+            					<input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" value="<?php echo $row['weight'];?>">
+            				</div>
 
-				<div class="form-group col">
-					<label for="blood">Blood Type</label>
-					<select name="blood" class="form-control" >
-						<option selected="selected" disabled="disabled">Select Blood Type:</option>
-						<option value="o">O</option>
-						<option value="a">A</option>
-						<option value="b">B</option>
-						<option value="ab">AB</option>
-					</select>
-				</div>
-			</div>
+            				<div class="form-group col">
+            					<label for="blood">Blood Type</label>
+            					<select name="blood" class="form-control" >
+            						<option selected="selected" disabled="disabled">Select Blood Type:</option>
+            						<option value="o">O</option>
+            						<option value="a">A</option>
+            						<option value="b">B</option>
+            						<option value="ab">AB</option>
+            					</select>
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col-7">
-					<label for="residential_address">Residential Address</label>
-					<input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" value="<?php echo $row['residential_address'];?>">
-				</div>
+            			<div class="row">
+            				<div class="form-group col-7">
+            					<label for="residential_address">Residential Address</label>
+            					<input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" value="<?php echo $row['residential_address'];?>">
+            				</div>
 
-				<div class="form-group col-2 ">
-					<label for="residential_zip">Zip Code</label>
-					<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" value="<?php echo $row['residential_zip'];?>">
-				</div>
+            				<div class="form-group col-2 ">
+            					<label for="residential_zip">Zip Code</label>
+            					<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" value="<?php echo $row['residential_zip'];?>">
+            				</div>
 
-				<div class="form-group col-3 ">
-					<label for="residential_tel_no">Telephone NO.</label>
-					<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" 	placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row['residential_tel_no'];?>">
-				</div>
-			</div>
+            				<div class="form-group col-3 ">
+            					<label for="residential_tel_no">Telephone NO.</label>
+            					<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" 	placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row['residential_tel_no'];?>">
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col-7">
-					<label for="permanent_address">Permanent Address</label>
-					<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" value="<?php echo $row['permanent_address'];?>">
-				</div>
+            			<div class="row">
+            				<div class="form-group col-7">
+            					<label for="permanent_address">Permanent Address</label>
+            					<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" value="<?php echo $row['permanent_address'];?>">
+            				</div>
 
-				<div class="form-group col-2 ">
-					<label for="permanent_zip">Zip Code</label>
-					<input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" value="<?php echo $row['permanent_zip'];?>">
-				</div>
+            				<div class="form-group col-2 ">
+            					<label for="permanent_zip">Zip Code</label>
+            					<input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" value="<?php echo $row['permanent_zip'];?>">
+            				</div>
 
-				<div class="form-group col-3 ">
-					<label for="permanent_tel_no">Telephone NO.</label>
-					<input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row['permanent_tel_no'];?>">
-				</div>
-			</div>
+            				<div class="form-group col-3 ">
+            					<label for="permanent_tel_no">Telephone NO.</label>
+            					<input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row['permanent_tel_no'];?>">
+            				</div>
+            			</div>
 
-			<div class="row">
-				<div class="form-group col-6">
-					<label for="citizenship">Citizenship</label>
-					<input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" value="<?php echo $row['citizenship'];?>">
-				</div>
+            			<div class="row">
+            				<div class="form-group col-6">
+            					<label for="citizenship">Citizenship</label>
+            					<input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" value="<?php echo $row['citizenship'];?>">
+            				</div>
 
-				<script>
-					$(function () {
-						$('#civil_status').change(function () {
-							$('#others').hide();
-							$('#' + $(this).val()).show();
-							if($('#civil_status').val() === "others"){
-								$('#oth').attr('required','true');
-							}else {
-								$('#oth').removeAttr('required').removeClass('input-error');
-							}
-						});
-					});
-				</script>
+            				<script>
+            					$(function () {
+            						$('#civil_status').change(function () {
+            							$('#others').hide();
+            							$('#' + $(this).val()).show();
+            							if($('#civil_status').val() === "others"){
+            								$('#oth').attr('required','true');
+            							}else {
+            								$('#oth').removeAttr('required').removeClass('input-error');
+            							}
+            						});
+            					});
+            				</script>
 
                             <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
@@ -411,7 +386,7 @@
 
                             <div class="form-group col">
                                 <label for="flname">Last Name</label>
-                                <input type="text" name="father_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="flname" class="form-control text-transform" autocomplete="off" >
+                                <input type="text" name="father_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="flname" class="form-control text-transform" autocomplete="off" value="<?php echo $row['father_last_name'];?>">
                             </div>
                         </div>
 
@@ -481,6 +456,22 @@
                         </div>
 
                         <h5>Child/Children's Information</h5>
+                        <?php
+                            while ($row['child_name']) {
+                                echo "<div class='row'>
+                                    <div class='form-group col-6'>
+                                        <label for='child_name'>Name</label>
+                                        <input type='text' placeholder='First name M.I. Last name' onkeypress='alphabetInput(event)' name='child_name[]' class='form-control text-transform' autocomplete='off' value='".$row['child_name']."'>
+                                    </div>
+
+                                    <div class='form-group col-6'>
+                                        <label for='child_birth'>Date of Birth</label>
+                                        <input type='date' name='child_birth[]' class='form-control' autocomplete='off' value='".$row['child_birth']."'>
+                                    </div>
+                                </div>";
+                            }
+                        ?>
+
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="child_name">Name</label>
@@ -512,7 +503,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['elementary']==="|"){echo "";}else{echo $elem[0];} ?>">
                             </div>
                             <script>
                                 $(function () {
@@ -539,8 +530,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
-                                    <option value="none">None</option>
+                                    <option selected="selected" value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -562,7 +552,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['secondary']==="|"){echo "";}else{echo $sec[0];} ?>">
                             </div>
                             <script>
                                 $(function () {
@@ -589,10 +579,9 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
-                                    <option value="none">None</option>
-                                    <option value="g2">Graduate</option>
-                                    <option value="u2">Undergraduate</option>
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="g1">Graduate</option>
+                                    <option value="u1">Undergraduate</option>
                                 </select>
                             </div>
 
@@ -612,7 +601,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['college']==="|"){echo "";}else{echo $col[0];} ?>">
                             </div>
 
                             <script>
@@ -641,10 +630,9 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
-                                    <option value="none">None</option>
-                                    <option value="g3">Graduate</option>
-                                    <option value="u3">Undergraduate</option>
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="g1">Graduate</option>
+                                    <option value="u1">Undergraduate</option>
                                 </select>
                             </div>
 
@@ -664,7 +652,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['post_grad']==="|"){echo "";}else{echo $pos[0];} ?>">
                             </div>
 
                             <script>
@@ -693,10 +681,9 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" value="none" disabled="disabled">Select:</option>
-                                    <option value="none">None</option>
-                                    <option value="g4">Graduate</option>
-                                    <option value="u4">Undergraduate</option>
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="g1">Graduate</option>
+                                    <option value="u1">Undergraduate</option>
                                 </select>
                             </div>
 
@@ -751,6 +738,7 @@
                         </div>
                         <hr>
                         <h6>Your Housemates</h6>
+
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of Housemate</label>
@@ -766,7 +754,6 @@
                                 <label for="mnumber1">Mobile Number</label>
                                 <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" >
                             </div>
-
                         </div>
 
 
@@ -909,10 +896,23 @@
                             <div class="form-group col-6">
                                 <label for="second_acc">Secondary Account</label>
                                 <div class="input-group">
-                                    <input type="text" name="acc[]" id="second_acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                    <select type="text" name="acc[]" id="second_acc" class="form-control">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
+                                        <option value="">None</option>
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL</option>
+                                        <option value="Drag and drop">Drag and drop</option>
+                                        <option value="ELANSO">ELANSO(E2Say)</option>
+                                        <option value="E-Say">E-Say</option>
+                                        <option value="First Future">First Future</option>
+                                        <option value="HR Assistant">HR Assistant</option>
+                                        <option value="IDP">IDP</option>
+                                        <option value="Key English">Key English</option>
+                                        <option value="Phone ESL">Phone ESL</option>
+                                    </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="large material-icons">add</i>
+                                            <i class="small material-icons">add</i>
                                         </button>
                                     </div>
                                 </div>
@@ -929,15 +929,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" >
-
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
-                                            <i class="material-icons" id="icon1">visibility</i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" >
                             </div>
                         </div>
 
@@ -949,15 +941,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" >
-
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
-                                            <i class="material-icons" id="icon2">visibility</i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" >
                             </div>
                         </div>
 
@@ -969,15 +953,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" >
-
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
-                                            <i class="material-icons" id="icon3">visibility</i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" >
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -991,12 +967,50 @@
     <?php
     include 'edit_information.php';
     ?>
-    <script>
-    function nextForm(currId,nextId){
-      document.getElementById(currId).classList.add("d-none");
-      document.getElementById(nextId).classList.remove("d-none");
-    }
-    </script>
+
+            <script>
+                function initMap() {
+                    var myLatlng = new google.maps.LatLng(<?php echo $coordinates[0];?>,<?php echo $coordinates[1];?>);
+                    var myOptions = {
+                        zoom: 18,
+                        center: myLatlng,
+                        disableDoubleClickZoom: true,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+
+                    var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+                    google.maps.event.addListener(marker, 'drag', function () {
+                        document.getElementById('lat').value = marker.position.lat();
+                        document.getElementById('lng').value = marker.position.lng();
+                    });
+                    google.maps.event.addListener(map, 'dblclick', function (e) {
+                        var positionDoubleclick = e.latLng;
+                        marker.setPosition(positionDoubleclick);
+                        document.getElementById('lat').value = marker.position.lat();
+                        document.getElementById('lng').value = marker.position.lng();
+                    });
+                }
+
+                function invalid() {
+                    swal({title: "Error", text: "Please locate your house", icon: "error"});
+                }
+            </script>
+            <script type="text/javascript">
+                function onTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+            <script type="text/javascript" src="../../script/jquery.form.min.js"></script>
+            <script type="text/javascript" src="../../script/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="../../script/additional-methods.min.js"></script>
+            <script type="text/javascript" src="../../script/alerts.js"></script>
+            <script type="text/javascript" src="../../script/popper.min.js"></script>
+            <script type="text/javascript" src="../../script/sweetalert.min.js"></script>
+            <script type="text/javascript" src="../../script/ajax.js"></script>
+
 
 </body>
 
