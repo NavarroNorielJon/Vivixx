@@ -35,8 +35,8 @@
                     power_settings_new
                 </i>
             </a>
-            <div style="text-align:left;margin-top:-3%;">
-                <button type="button" class="btn  btn-secondary" data-toggle="modal" data-target="#exampleModalLong">
+            <div>
+                <button type="button" class="btn  btn-secondary" data-toggle="modal" data-target="#exampleModalLong" id="help">
                     <i class="material-icons">
                         help
                     </i>

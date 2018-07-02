@@ -142,7 +142,16 @@ ul ul a {
 #update-information .update-information-header #logout {
 	background-color: #ff1a1a;
 	border-radius: 0;
-	left: 96.5vw;
+	left: 94.5vw;
+	margin: -32px 0 0 0;
+	padding: 5px 5px 5px 5px;
+	position: absolute;
+}
+
+#update-information .update-information-header #help {
+	background-color: gray;
+	border-radius: 0;
+	left: 91.5vw;
 	margin: -32px 0 0 0;
 	padding: 5px 5px 5px 5px;
 	position: absolute;
@@ -151,6 +160,7 @@ ul ul a {
 .container {
 	margin-bottom: 5%;
 }
+
 #update_form fieldset:not(:first-of-type) {
     display: none;
 }
