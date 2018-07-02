@@ -152,7 +152,8 @@ ul ul a {
 	background-color: gray;
 	border-radius: 0;
 	left: 91.5vw;
-	margin: -32px 0 0 0;
+	margin: 8.5px 0 0 0;
+	color: white;
 	padding: 5px 5px 5px 5px;
 	position: absolute;
 }
