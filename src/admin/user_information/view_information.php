@@ -6,10 +6,12 @@
     $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id';";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
+    $height = explode("'",$row[height]);
+    $elem = explode("|",$row[elementary]);
 ?>
 <!DOCTYPE html>
 <html>
-	
+
 <head>
 	<title>Vivixx Ph</title>
     <meta charset="utf-8">
@@ -37,7 +39,7 @@
         <script type="text/javascript" src="../../script/popper.min.js"></script>
         <script type="text/javascript" src="../../script/sweetalert.min.js"></script>
         <script type="text/javascript" src="../../script/ajax.js"></script>
-	
+
 	<script>
             $('#sss_no').inputmask({
                 mask: 'dd-ddddddd-d'
@@ -95,7 +97,7 @@
             }
         </script>
 </head>
-	
+
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
@@ -103,7 +105,7 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item">
@@ -127,51 +129,51 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="container" style="margin-top: -40px;">
 	<form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
 		<div class="f1-steps">
 			<div class="f1-progress">
 				<div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
 			</div>
-			
+
 			<div class="f1-step active">
 				<div class="f1-step-icon">
 					<i class="fa fa-user"></i>
 				</div>
-				
+
 				<p>Personal Information</p>
 			</div>
-			
+
 			<div class="f1-step">
 				<div class="f1-step-icon">
 					<i class="fa fa-user"></i>
 				</div>
-				
+
 				<p>Family Background</p>
 			</div>
-			
+
 			<div class="f1-step">
 				<div class="f1-step-icon">
 					<i class="fa fa-user"></i>
 				</div>
-				
+
 				<p>Educational Background</p>
 			</div>
-			
+
 			<div class="f1-step">
 				<div class="f1-step-icon">
 					<i class="fa fa-user"></i>
 				</div>
-				
+
 				<p>Emergency Information</p>
 			</div>
-                      
+
 			<div class="f1-step">
 				<div class="f1-step-icon">
 					<i class="fa fa-user"></i>
 				</div>
-				
+
 				<p>Tutor Information</p>
 			</div>
 		</div>
@@ -189,7 +191,7 @@
 					<input type="file"/>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="form-group col">
 					<label>First Name</label>
@@ -200,13 +202,13 @@
 					<label>Middle Name</label>
 					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php echo $row['middle_name'];?>">
 				</div>
-				
+
 				<div class="form-group col-4">
 					<label>Last Name</label>
 					<input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value="<?php echo $row['last_name'];?>">
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="form-group col">
 					<label>Birthdate</label>
@@ -221,7 +223,7 @@
 				<div class="form-group col">
 					<label for="contact">Mobile Number</label>
 					<input type="tel" name="contact_number" autocomplete="off" placeholder="+639XX XXX XXXX" class="form-control mobile" id="contact" value="<?php echo $row['contact_number'];?>">
-                                    
+
 					<div id="validContact"></div>
 				</div>
 			</div>
@@ -247,7 +249,7 @@
 						});
 					});
 				</script>
-				
+
 				<div class=" form-group col">
 					<label for="gender">Gender</label>
 					<select name="gender" id="gender" class="form-control">
@@ -268,11 +270,11 @@
 					<label for="height">Height</label>
 					<div class="row no-gutters ">
 						<div class="form-group col">
-							<input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" value="<?php echo $row['height'];?>">
+							<input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" value="<?php echo $height[0]; ?>">
 						</div>
-						
+
 						<div class="form-group col">
-							<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)">
+							<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" value="<?php echo $height[1]; ?>">
 						</div>
 					</div>
 				</div>
@@ -281,7 +283,7 @@
 					<label for="weight">Weight</label>
 					<input type="text" name="weight" id="weight" class="form-control" onkeypress="numberInput(event)" autocomplete="off" maxlength="3" placeholder="(kg.)" value="<?php echo $row['weight'];?>">
 				</div>
-				
+
 				<div class="form-group col">
 					<label for="blood">Blood Type</label>
 					<select name="blood" class="form-control" >
@@ -986,7 +988,7 @@
                 </form>
 		</div>
 	</div>
-    <?php 
+    <?php
     include 'edit_information.php';
     ?>
     <script>
@@ -995,7 +997,7 @@
       document.getElementById(nextId).classList.remove("d-none");
     }
     </script>
-   
+
 </body>
 
 </html>
