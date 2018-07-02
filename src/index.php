@@ -21,7 +21,8 @@ if (isset($_SESSION['user'])) {
 
 <body id="index">
 <!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
-
+	
+	<!--The login form consists of two fields, the first field is for the username or email, and the second field is for the password. The login form also has error handling, it checks if the user input username, email exists in the database, if the username or email exists it will check if the password matched the password in the database if not it will prompt a message saying "invalid username or password, we also ensured that the form will not accept any SQL injections, and lastly the form has links if you the user have forgotten the password or the user want to register."-->
 	<div class="containter-fluid">
     	<form action="utilities/login.php" method="post" class="jumbotron" id="login">
         	<img src="../img/Lion.png" class="index-image">
