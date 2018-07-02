@@ -36,7 +36,7 @@
                 </i>
             </a>
             <div style="text-align:left;margin-top:-3%;">
-                <button type="button" class="btn" data-toggle="modal" data-target="#hints">
+                <button type="button" class="btn" data-toggle="modal" data-target="#hints" id="help">
                     <i class="material-icons">
                         help
                     </i>

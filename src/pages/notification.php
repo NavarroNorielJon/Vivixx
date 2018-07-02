@@ -66,7 +66,7 @@
 					
 					<ul class="collapse list-unstyled" id="requests">
 						<li class="active">
-							<a href="#" class="sidebar-item">Salary Request</a>
+							<a href="salary_request.php" class="sidebar-item">Salary Request</a>
 						</li>
 						
 						<li class="active">
@@ -74,7 +74,7 @@
 						</li>
 						
 						<li class="active">
-							<a href="#requests" class="icon" data-toggle="tooltip" data-placement="right" title="Salary 	Request">SR</a>
+							<a href="salary_request.php" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
 						</li>
 						
 						<li class="active">
@@ -84,11 +84,11 @@
 				</li>            	
 
 				<li>
-					<a href="#" class="sidebar-item">
+					<a href="about.php" class="sidebar-item">
 						<i class="material-icons">info</i> About
 					</a>
 					
-					<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
+					<a class="icon" href="about.php" data-toggle="tooltip" data-placement="right" title="About">
 						<i class="material-icons">info</i>
 					</a>
 				</li>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vivixx-209003",
+  "private_key_id": "72bc5c0ebdb27c0291c5b17e90d6de7c999aec58",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDiYhg2pxvtd9Ih\nK+IUl/h1hXpNcdiG5wzJo069sYVUbhLACoFMoMJurskqLKHrgbhnTJlzKQKhGANJ\ngA/Nt3aaJTj4Wgnz9/ssUUxqxGoWMXBXJ4ANWDvs5FmhrsMv7vKLIqMjd3KliIWb\n+sQsM56NQ87eDw2VlVjUwY17NiyHIJAkuXHamgYnGNtACmsf0kSkT8BaUCf/fCjl\nnUpj5oCyvyXBljrCD0t5k091eKTXDpnC1Q5vRqC/YvH02rj2A+nFLP9bweg+Agzd\n1/CAnxvNbI72MvTQezXQsAz6BQWn9hswt4588XVaKUAxLgTcSxRzb0/hRA+AMUqN\nhys2DDGDAgMBAAECggEAC8vexSJKE0K2IWJfAoG0wbL134k6JjVt9ifbV4kjkHW3\n5mfluu95kjjrZJY0zcfRqxhTuqt9ZpWQvki9ChQwSvH7mP1gHWVjojiOSdX4TTXA\nS9pUEt3xKXPws7sekqXZ36QrahK0V6nYhHs5s6/w6B2LbwjLxWql2VhIng4Bnfzc\nRvEzcqPpAHM5zDB/K2TKQyXwFsqH4tIDChtSnXQUaOgw6ftAsm4rDY8yS+JUkhRT\na/ImSPsgS5GC/mATRCzZvB7doHOA1BBjCQHSXO6Ly6r4R6WaXQPts13b4MA+r4jz\ncp04VMcnWWd3DQCI+DdylrOSJ08JFEsI0KeoTvQnmQKBgQD9RMhXvbJqB8pDM7qS\naIwFY/C2eHe7f3iL5oxVu9ZTDo89e0OHyZv2IOJ1ysz1j1EPN2U7Yw/VesL/y7t9\nOT2hhBVzin+Zv6UFF6vHk0hnsbKVALYDs8iZh4v8S1QdUzGBxMbZuW1EkO5Ht1rx\nqgA8h7v9mvX6p0g3vGiE+/NrTQKBgQDk0xZUXxIQ42TqGhVF8h+qrbpThD6fhhgD\niZJJ1OoIPFFauxqAK0kq8AXxzIHSLrXbfBn5WB8Cifr7/UNkf6utTp2GUkLip1os\noGbUFkaIKemB0kOYFY3mU9GWS+FNGTMFjSyH7475y8sEIpkhYhZ1aFpGluBhgp56\nEJQLdOiIDwKBgQDToeUzBC2Q0j+eVhxh+QCABJoBL7sFLygg5x5/CX23W6QwAM9W\nKQ6s5Z+2RCduTjqy11w8+rMhdPp62tgpdGpei8uNB79GT1DqZ3RASX8oPuF2BukR\nQOqv+AbuZFe+RWVKBY8QIhT/RYgG310cMS0PZ3CcIx/GOoBrKoHAFfS6xQKBgGm/\nf69ILGIvpIBnw3MKvUW0ecqE8Cfq4Ygo+Lk0M1/Q+Ev08f9PgcXdHPIs78YBnjur\ns5k+9z3GJH52AcIdGmrCTRw5Qf3bF1pOWpcjID9nFynO0TwkoepSzCYoNRvbTHAB\nWRYNSMb6Pn1Pu/LokLZ7nlTG/zUxFyoUJUbSJXBTAoGBALoKHiGPzN7xmEKiwzyy\nYSf3qvj8fk0dQh2/D+d5cLXloRMcEo4E+q4JucWsYou+SUbBC43pl/ZlWPX6TNsK\nBruX/KxaDza5RLrggiRR5zwfwE6GK0TpOlxiPoC1U9GPDUOZVewIPGXPuoW4B8Ys\nF+5dfjSPjQcpZ0yCKXWHvOzb\n-----END PRIVATE KEY-----\n",
+  "client_email": "vivixx@vivixx-209003.iam.gserviceaccount.com",
+  "client_id": "102934399159043369951",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vivixx%40vivixx-209003.iam.gserviceaccount.com"
+}

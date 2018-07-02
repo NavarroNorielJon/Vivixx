@@ -15,13 +15,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../style/datatables.css">
 
-    <!--scripts-->
-    <script type="text/javascript" src="../../script/datatables.min.js"></script>
+	<!--scripts-->
+	<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../script/datatables.min.js"></script>
 	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
-    <script src="../../script/jquery.form.min.js"></script>
+	<script src="../../script/jquery.form.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 	<script src="https://unpkg.com/maxlength-contenteditable@1.0.0/dist/maxlength-contenteditable.js">
 	maxlengthContentEditableModule.maxlengthContentEditable();
 	</script>
@@ -92,11 +97,6 @@
 
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
-							echo"
-								<script>
-									console.log(".$row['attachment'].");
-								</script>
-							";
 							if(isset($row['attachment'])){
 								$attachment = "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>";
 							}else{
@@ -190,7 +190,7 @@
 						</div>
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+							<input type="submit" class="btn btn-primary" onclick="jon();" name="submit" value="Submit">
 						</div>
 					</form>
 				</div>
@@ -296,7 +296,15 @@
 
 			});
 		});
+		$('#start_date').calendar({
+			type: 'date',
+			endCalendar: $('#end_date')
+		});
 
+		$('#end_date').calendar({
+			type: 'date',
+			startCalendar: $('#start_date')
+		});
 		//script for calling datatables library
 		$(document).ready(function(){
 			$('#table').dataTable( {
