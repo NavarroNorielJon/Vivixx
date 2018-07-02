@@ -36,18 +36,18 @@
                 </i>
             </a>
             <div style="text-align:left;margin-top:-3%;">
-                <button type="button" class="btn  btn-secondary" data-toggle="modal" data-target="#exampleModalLong">
+                <button type="button" class="btn" data-toggle="modal" data-target="#hints">
                     <i class="material-icons">
                         help
                     </i>
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal fade" id="hints" tabindex="-1" role="dialog" aria-labelledby="titlehint" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <h5 class="modal-title" id="titlehint">Modal title</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -69,7 +69,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1" enctype="multipart/form-data">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
