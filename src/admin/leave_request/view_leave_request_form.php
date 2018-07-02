@@ -6,19 +6,16 @@
     $leave_request = "SELECT *, email from leave_req join user using(user_id) where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
+	$user = $_GET["fname"];
+	$user_middle = $_GET["mname"];
+	$user_last = $_GET["lname"];
 ?>
     <form action="accept_or_reject.php" method="POST">
     <div class="modal fade" id="request" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <?php
-                        $user = $_GET["fname"];
-                        $user_middle = $_GET["mname"];
-                        $user_last = $_GET["lname"];
-                        echo "<h1>" ."Request form of ". ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last) .$req_id." ".$user_id."</h1>";
-                        
-                    ?>
+					<h1>Leave Request Form</h1>
                 </div>
                 <input type="hidden" name="req_id" value="<?php echo $req_id?>">
                 <input type="hidden" name="email" value="<?php echo $row["email"]?>">
