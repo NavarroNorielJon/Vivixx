@@ -49,7 +49,7 @@
 					</a>
 				</li>
 				
-				<li class="active">
+				<li>
 					<a href="notification.php" class="sidebar-item">
 					<i class="material-icons">mail</i>Notifications</a>
 					<a class="icon" href="notification.php"><i class="material-icons">mail</i></a>
@@ -74,7 +74,7 @@
 						</li>
 						
 						<li class="active">
-							<a href="salary_request.php" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
+							<a href="#requests" class="icon" data-toggle="tooltip" data-placement="right" title="Salary 	Request">SR</a>
 						</li>
 						
 						<li class="active">

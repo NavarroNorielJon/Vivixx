@@ -9,7 +9,6 @@
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res,MYSQLI_ASSOC);
 	$department = $row['department'];
-	echo $department;
 ?>
 
 <!DOCTYPE html>
@@ -56,11 +55,11 @@
 					</li>
 					
 					<li>
-						<a href="#" class="sidebar-item">
+						<a href="notification.php" class="sidebar-item">
 							<i class="material-icons">mail</i>Notifications
 						</a>
 
-						<a class="icon" href="#" data-toggle="tooltip" data-placement="right" title="Home">
+						<a class="icon" href="notification.php" data-toggle="tooltip" data-placement="right" title="Notifications">
 							<i class="material-icons">mail</i>
 						</a>
 					</li>
@@ -77,7 +76,7 @@
 
 						<ul class="collapse list-unstyled" id="requests">
 							<li class="active">
-								<a href="#" class="sidebar-item">
+								<a href="salary_request.php" class="sidebar-item">
 									Salary Request</a>
 							</li>
 
@@ -86,7 +85,7 @@
 							</li>
 
 							<li class="active">
-								<a href="#requests" class="icon" data-toggle="tooltip" data-placement="right" title="Salary 	Request">SR</a>
+								<a href="salary_request.php" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
 							</li>
 
 							<li class="active">
@@ -96,12 +95,12 @@
 					</li>
 
 					<li>
-						<a href="#" class="sidebar-item">
+						<a href="about.php" class="sidebar-item">
 							<i class="material-icons">info</i>
 							About
 						</a>
 
-						<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
+						<a class="icon" href="about.php" data-toggle="tooltip" data-placement="right" title="About">
 							<i class="material-icons">info</i>
 						</a>
 					</li>
@@ -163,7 +162,7 @@
 								<div id="announce" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner">
 										<div class="carousel-item active">
-											<img class="d-block w-100" src="<?php echo $attachments[0]?>" style="height:500px;width:500px" alt="First slide">
+											<img class="d-block w-100" src="<?php echo $attachments[0]?>" style="min-height:450px; max-height:450px;width:500px;" alt="First slide">
 											<div>
 												<h5><?php echo ucwords($subjects[0])?></h5>
 											</div>
@@ -172,13 +171,14 @@
 									<?php for($i = 1; $i<count($announcements); $i++){
 										$subjects[$i] = ucwords($subjects[$i]);
 										echo "<div class=\"carousel-item\">
-											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='height:500px;width:500px' alt=\"Second slide\">
+											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='min-height:450px;max-height:450px;width:500px;' alt=\"Second slide\">
 											<div>
 												<h5>$subjects[$i]</h5>
 											</div>
 										</div>";
 									}?>
-								</div>
+								
+									</div>
 									<a class="carousel-control-prev" href="#announce" role="button" data-slide="prev">
 										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 										<span class="sr-only">Previous</span>

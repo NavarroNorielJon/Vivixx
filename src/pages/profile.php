@@ -43,23 +43,23 @@
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
 				<li>
-					<a href="home.php" class="sidebar-item">
+					<a href="notification.php" class="sidebar-item">
 					<i class="material-icons">mail</i>Notifications</a>
-					<a class="icon" href="home.php"><i class="material-icons">mail</i></a>
+					<a class="icon" href="notification.php"><i class="material-icons">mail</i></a>
 				</li>
                 <li>
                     <a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 					<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
                     <ul class="collapse list-unstyled" id="requests">
-                        <li class="active"><a href="#" class="sidebar-item">Salary Request</a></li>
+                        <li class="active"><a href="salary_request.php" class="sidebar-item">Salary Request</a></li>
                         <li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
-						<li class="active"><a href="#requests" class="icon">SR</a></li>
+						<li class="active"><a href="salary_request.php" class="icon">SR</a></li>
 						<li class="active"><a href="leave_request_form.php" class="icon">LR</a>
                     </ul>
                 </li>
                 <li>
-					<a href="#" class="sidebar-item"><i class="material-icons">info</i> About</a>
-					<a class="icon" href="#"><i class="material-icons">info</i></a>
+					<a href="about.php" class="sidebar-item"><i class="material-icons">info</i> About</a>
+					<a class="icon" href="about.php"><i class="material-icons">info</i></a>
 				</li><hr>
                 <li><a href="../utilities/logout" class="sidebar-item logout">
                         <i class="material-icons">power_settings_new</i> Logout</a>

@@ -49,7 +49,7 @@
 					</a>
 				</li>
 				
-				<li class="active">
+				<li>
 					<a href="notification.php" class="sidebar-item">
 					<i class="material-icons">mail</i>Notifications</a>
 					<a class="icon" href="notification.php"><i class="material-icons">mail</i></a>
@@ -83,12 +83,12 @@
 					</ul>
 				</li>            	
 
-				<li>
+				<li class="active">
 					<a href="about.php" class="sidebar-item">
 						<i class="material-icons">info</i> About
 					</a>
 					
-					<a class="icon" href="about.php" data-toggle="tooltip" data-placement="right" title="About">
+					<a class="icon" data-toggle="tooltip" data-placement="right" title="About">
 						<i class="material-icons">info</i>
 					</a>
 				</li>
