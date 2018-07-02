@@ -40,21 +40,19 @@ ini_set('upload_max_filesize', '64M');
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
                     $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_names[$x]','$temp_file','$announcement_id');";
                     $connect->query($add_attachment);
-                    echo "
-                        <script>
-                        alert('Announcement with attachment, successfully sent.');
-                        window.location='announcement.php';
-                        </script>";
+
                 }else{
                     $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
                     $connect->query($add_attachment);
-                    echo "
-                        <script>
-                        alert('Announcement without attachment, successfully sent.');
-                        window.location='announcement.php';
-                        </script>";
+
                 }
                 
             }
                
     }
+
+    echo "
+    <script>
+        alert('Announcement has been successful.');
+    </script>
+    ";
