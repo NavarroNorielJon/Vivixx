@@ -24,39 +24,36 @@ if (isset($_SESSION['user'])) {
 	
 	<!--The login form consists of two fields, the first field is for the username or email, and the second field is for the password. The login form also has error handling, it checks if the user input username, email exists in the database, if the username or email exists it will check if the password matched the password in the database if not it will prompt a message saying "invalid username or password, we also ensured that the form will not accept any SQL injections, and lastly the form has links if you the user have forgotten the password or the user want to register."-->
 	<div class="containter-fluid">
-    	<form action="utilities/login.php" method="post" class="jumbotron" id="login">
-        	<img src="../img/Lion.png" class="index-image">
-        	
+		<form action="utilities/login.php" method="post" class="jumbotron" id="login">
+			<img src="../img/Lion.png" class="index-image">
+        
 			<div class="form-group col-sm-12">
-            	<label for="userOrEmail">Username or Email-Address</label>
-            	<input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
-        	</div>
+				<label for="userOrEmail">Username or Email-Address</label>
+				<input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
+			</div>
 
-        	<div class="form-group col-sm-12">
-            	<label for="pass">Password</label>
-            	
+			<div class="form-group col-sm-12">
+				<label for="pass">Password</label>
 				<div class="input-group">
-                <input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required">
-
-                	<div class="input-group-append">
-                    	<button type="button" class="btn eye" onclick="showHide('password','icon')">
-                        	<i class="material-icons" id="icon">visibility</i>
-                    	</button>
-                	</div>
-					
+					<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required">
+					<div class="input-group-append">
+						<button type="button" class="btn eye" onclick="showHide('password','icon')">
+							<i class="material-icons" id="icon">visibility</i>
+						</button>
+					</div>					
             	</div>
         	</div>
 
 			<div class="text-center">
-            	<button type="submit" class="btn login-button" name="submit">
-                	Login
-            	</button>
+				<button type="submit" class="btn login-button" name="submit">
+					Login
+				</button>
 
             	<p style="display: inline-block;">
-                	<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
-                	<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a>
-            	</p>
-        	</div>
+					<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
+					<a href="#!" data-toggle="modal" data-target="#signup-form" id="signup-link">Sign Up</a>
+				</p>
+			</div>
     	</form>
 
     	<div class="text-center footer">
