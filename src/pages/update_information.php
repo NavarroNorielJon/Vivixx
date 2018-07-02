@@ -108,7 +108,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="facebook">Facebook Link</label>
-                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Link" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
                         </div>
 
@@ -893,7 +893,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>Company Email address</label>
-                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                                <input type="text" name="com_email" id="com_email" placeholder="Company Email address" class="form-control">
                             </div>
 
                             <div class="form-group col">
