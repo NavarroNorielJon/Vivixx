@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../style/datatables.css">
+    <link rel="stylesheet" href="../style/datatables.css">
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
@@ -26,17 +26,13 @@
 	
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-			<a href="../index" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
 			
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="../index.php">Home</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
@@ -53,14 +49,18 @@
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link logout" href="../logout.php">Logout</a>
+						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 		
-		<div class="leave-request-content container-fluid">
-			<h1>Leave Requests</h1>
+		<div class="leave-request-content container">
+			<div class="text-center">
+				<h1>Leave Requests</h1>
+			</div>
+			
+			<div  style="margin: 5vh;">
 				<table class="table" id="leave">
 					<thead>
 						<tr>
@@ -81,10 +81,11 @@
 							$fname = explode(",",$row["employee"])[0];
 							$mname = explode(",",$row["employee"])[1];
 							$lname = explode(",",$row["employee"])[2];
-						$show = "
-								<input name='show' value='show' style='display: none;'>
-								<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
-						//print data in table
+							$show = "
+							<input name='show' value='show' style='display: none;'>
+							<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
+						
+							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($fname) . "</td>
@@ -94,17 +95,19 @@
 							<td>" . $show ."</td>
 							</tr>";
 						}
-						}
+					}
 
 					$connect-> close();
 					?>
         		</table>
-    	</div>
-    	<div id="result"></div>
+			</div>
+		</div>
+		
+		<div id="result"></div>
 	</div>
 		
-      <script>
-	  	//Script for showing the show more content inside a modal
+	<script>
+		//Script for showing the show more content inside a modal
 	  	$(document).ready(function(){	
 			$('.show').click(function(e){	
 				e.preventDefault();
@@ -119,13 +122,13 @@
 		
 		//script for calling datatables library
 		$(document).ready(function(){
-		$('#leave').dataTable( {
-		"columnDefs": [
-			{ "orderable": false, "targets": 4 }
-		]
+			$('#leave').dataTable( {
+				"columnDefs": [
+					{ "orderable": false, "targets": 4 }
+				]
+			});
+			$('#leave').DataTable();
 		});
-		$('#leave').DataTable();
-		});
-      </script>
+	</script>
 </body>
 </html>

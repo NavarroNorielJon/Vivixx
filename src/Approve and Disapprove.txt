@@ -1,0 +1,6 @@
+Hello "Full name", regarding your leave request, we have read and approved it.
+Note: If you received this message and have not requested for a leave, ignore this message.
+
+
+Hello "Full name", regarding your leave request, we would like to inform you that we have disapproved your request, 
+for further information, please head to the COO's office regarding about the issue.

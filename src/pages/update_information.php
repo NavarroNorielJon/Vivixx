@@ -1,6 +1,5 @@
 <?php
     include '../utilities/session.php';
-	include '../modules/footer.html';
     if ($birth_date != null && $birth_place != null && $contact_number != null &&
 	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
 	    && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null) {
@@ -18,7 +17,6 @@
         <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
         <link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../style/form-elements.css">
-        <link rel="stylesheet" href="../style/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
@@ -32,15 +30,15 @@
         <div class="update-information-header">
             <h1>Update Information Form</h1>
             <a href="../utilities/logout" class="btn" id="logout">
-            	<i class="material-icons">
-                	power_settings_new
+                <i class="material-icons">
+                    power_settings_new
                 </i>
             </a>
         </div>
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
+                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1" enctype="multipart/form-data">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -79,7 +77,7 @@
 
                     <fieldset>
                         <h2>Step 1: Personal Information</h2>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="form-group col-4">
                                 <label for="prof_image">Profile Image</label>
                                 <input type="file" name="prof_image"/>
@@ -89,7 +87,7 @@
                                 <label for="prof_image">Signature</label>
                                 <input type="file"/>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -103,47 +101,55 @@
 
                             <div class="form-group col">
                                 <label for="contact">Mobile Number</label>
-                                <input
-                                    type="tel"
-                                    name="contact_number"
-                                    maxlength="11"
-                                    autocomplete="off"
-                                    placeholder="+63XXX XXX XXXX"
-                                    class="form-control mobile"
-                                    id="contact"
-                                    onkeyup="helperText('contact_number',this.value,'validContact')"
-                                    required="required">
-                                    <div id="validContact"></div>
+                                <input type="tel" name="contact_number" autocomplete="off" placeholder="+639XX XXX XXXX" class="form-control mobile" id="contact" required="required">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label for="facebook">Facebook Link</label>
-                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="facebook" id="facebook" placeholder="Facebook Name" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
                         </div>
 
                         <div class="row">
+                            <script>
+                                $(function () {
+                                    $('#gender').change(function () {
+                                        $('#Other').hide();
+                                        $('#' + $(this).val()).show();
+                                        if ($('#gender').val() == "Other") {
+                                            $('#spec').attr('required', 'true');
+                                        } else {
+                                            $('#spec').removeAttr('required').removeClass('input-error');
+                                        }
+                                    });
+                                });
+                            </script>
                             <div class=" form-group col">
                                 <label for="gender">Gender</label>
-                                <select name="gender" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select Here:</option>
+                                <select name="gender" id="gender" class="form-control" required="required">
+                                    <option selected disabled>Select Here:</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-									<option value="Rather not say">I'd rather not say</option>
-									<option value="Specify">Specify</option>
+                                    <option value="Rather not say">I'd rather not say</option>
+                                    <option value="Other">Others</option>
                                 </select>
+                            </div>
+
+                            <div class="form-group col" style="display:none" id="Other">
+                                <label for="spec">Specify</label>
+                                <input type="text" name="spec" id="spec" class="form-control" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="height">Height</label>
                                 <div class="row no-gutters ">
                                     <div class="form-group col">
-                                        <input type="text" name="ft" id="ft" class="form-control" autocomplete="off" placeholder="(ft.)" maxlength="2" onkeypress="numberInput(event)" required="required">
+                                        <input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" required="required">
                                     </div>
                                     <div class="form-group col">
-                                        <input type="text" name="in" id="in" class="form-control" autocomplete="off" placeholder="(in.)" maxlength="2" onkeypress="numberInput(event)" required="required">
+                                        <input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" required="required">
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +161,7 @@
                             <div class="form-group col">
                                 <label for="blood">Blood Type</label>
                                 <select name="blood" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select Blood Type:</option>
+                                    <option selected disabled>Select Blood Type:</option>
                                     <option value="o">O</option>
                                     <option value="a">A</option>
                                     <option value="b">B</option>
@@ -172,12 +178,12 @@
 
                             <div class="form-group col-2 ">
                                 <label for="residential_zip">Zip Code</label>
-                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="Zip Code" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" required="required">
+                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
                                 <label for="residential_tel_no">Telephone NO.</label>
-                                <input type="tel" name="residential_tel_no" id="residential_tel_no" maxlength="7" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
+                                <input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
                             </div>
                         </div>
 
@@ -189,19 +195,19 @@
 
                             <div class="form-group col-2 ">
                                 <label for="permanent_zip">Zip Code</label>
-                                <input type="text" name="permanent_zip" id="permanent_zip" onkeypress="numberInput(event)" maxlength="4" autocomplete="off" placeholder="Zip Code" class="form-control zip" required="required">
+                                <input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" required="required">
                             </div>
 
                             <div class="form-group col-3 ">
                                 <label for="permanent_tel_no">Telephone NO.</label>
-                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" maxlength="7" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
+                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-4">
+                            <div class="form-group col-6">
                                 <label for="citizenship">Citizenship</label>
-                                <input type="text" name="citizenship" id="citizenship" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
+                                <input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
                             </div>
 
                             <script>
@@ -209,19 +215,20 @@
                                     $('#civil_status').change(function () {
                                         $('#others').hide();
                                         $('#' + $(this).val()).show();
-                                        if($('#civil_status').val() === "others"){
-                                            $('#oth').attr('required','true');
-                                        }else {
-                                            $('#oth').removeAttr('required');
+                                        if ($('#civil_status').val() === "others") {
+                                            $('#oth').attr('required', 'true');
+                                        } else {
+                                            $('#oth').removeAttr('required').removeClass('input-error');
+
                                         }
                                     });
                                 });
                             </script>
 
-                            <div class="form-group col-2">
+                            <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
                                 <select name="civil_status" id="civil_status" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option selected disabled>Select:</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="widowed">Widowed</option>
@@ -231,7 +238,7 @@
                                 </select>
                             </div>
 
-                            <div id='others' style='display:none' class="form-group col">
+                            <div id='others' style='display:none' class="form-group col-4">
                                 <label for="other_civil">(Please Specify)</label>
                                 <input id="oth" class="form-control" placeholder="" name="other_civil">
                             </div>
@@ -240,7 +247,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sss_no">SSS NO.</label>
-                                <input type="text" name="sss_no"  id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
+                                <input type="text" name="sss_no" id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
                             </div>
 
                             <div class="form-group col">
@@ -269,17 +276,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="ffname">First Name</label>
-                                <input type="text" name="father_first_name" placeholder="first name" id="ffname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="father_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="ffname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="fmname">Middle Name</label>
-                                <input type="text" name="father_middle_name" placeholder="middle name" id="fmname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="father_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="fmname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="flname">Last Name</label>
-                                <input type="text" name="father_last_name" placeholder="last name" id="flname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="father_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="flname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
                         </div>
 
@@ -287,17 +294,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="mfname">First Name</label>
-                                <input type="text" name="mother_first_name" placeholder="first name" id="mfname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="mother_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="mfname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="mmname">Middle Name</label>
-                                <input type="text" name="mother_middle_name" placeholder="middle name" id="mmname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="mother_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="mmname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="mlname">Last Name</label>
-                                <input type="text" name="mother_last_name" placeholder="last name" id="mlname" class="form-control text-transform" autocomplete="off" required="required">
+                                <input type="text" name="mother_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="mlname" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
                         </div>
                         <hr>
@@ -312,29 +319,29 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="sfname">First Name</label>
-                                <input type="text" name="spouse_first_name" placeholder="first name" id="sfname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="sfname" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="smname">Middle Name</label>
-                                <input type="text" name="spouse_middle_name" placeholder="middle name" id="smname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="smname" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="slname">Last Name</label>
-                                <input type="text" name="spouse_last_name" placeholder="last name" id="slname" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="spouse_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="slname" class="form-control text-transform" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-2">
                                 <label for="occupation">Occupation</label>
-                                <input type="text" name="occupation" id="occupation" placeholder="occupation" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col-2">
                                 <label for="employer">Employer</label>
-                                <input type="text" name="employer" id="employer" placeholder=" employer" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
@@ -344,7 +351,7 @@
 
                             <div class="form-group col-3">
                                 <label for="spouse_tel_no">Telephone NO.</label>
-                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" maxlength="7" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
+                                <input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
                             </div>
                         </div>
 
@@ -352,7 +359,7 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="child_name">Name</label>
-                                <input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
+                                <input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col-6">
@@ -360,7 +367,7 @@
                                 <div class="input-group">
                                     <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
                                     <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="add()">
+                                        <button class="btn btn-success" type="button" onclick="addchild()">
                                             <i class="large material-icons">add</i>
                                         </button>
                                     </div>
@@ -380,7 +387,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
                             <script>
                                 $(function () {
@@ -389,20 +396,25 @@
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option1').val() === "g1") {
-                                            $('#elem_yr_grad').attr('required','true');
-                                            $('#elem_high_level').removeAttr('required');
-
+                                            $('#elem_yr_grad').attr('required', 'true');
+                                            $('#elem_school_name').attr('required', 'true');
+                                            $('#elem_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option1').val() === "u1") {
-                                            $('#elem_high_level').attr('required','true');
-                                            $('#elem_yr_grad').removeAttr('required');
+                                            $('#elem_school_name').attr('required', 'true');
+                                            $('#elem_high_level').attr('required', 'true');
+                                            $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
+                                        } else {
+                                            $('#elem_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#elem_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option1">Status</label>
-                                <select name="option1" id="option1" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                <select name="option1" id="option1" class="form-control">
+                                    <option selected value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -424,7 +436,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
                             <script>
                                 $(function () {
@@ -433,20 +445,25 @@
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option2').val() === "g2") {
-                                            $('#sec_yr_grad').attr('required','true');
-                                            $('#sec_high_level').removeAttr('required');
-
+                                            $('#sec_yr_grad').attr('required', 'true');
+                                            $('#sec_school_name').attr('required', 'true');
+                                            $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option2').val() === "u2") {
-                                            $('#sec_high_level').attr('required','true');
-                                            $('#sec_yr_grad').removeAttr('required');
+                                            $('#sec_school_name').attr('required', 'true');
+                                            $('#sec_high_level').attr('required', 'true');
+                                            $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
+                                        } else {
+                                            $('#sec_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option2">Status</label>
-                                <select name="option2" id="option2" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                <select name="option2" id="option2" class="form-control">
+                                    <option selected value="none">None</option>
                                     <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
@@ -468,7 +485,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <script>
@@ -478,20 +495,26 @@
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option3').val() === "g3") {
-                                            $('#col_yr_grad').attr('required','true');
-                                            $('#col_high_level').removeAttr('required');
+                                            $('#col_yr_grad').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
+                                            $('#col_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option3').val() === "u3") {
-                                            $('#col_high_level').attr('required','true');
-                                            $('#col_yr_grad').removeAttr('required');
+                                            $('#col_high_level').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
+                                            $('#col_yr_grad').removeAttr('required').removeClass('input-error');
+                                        } else {
+                                            $('#col_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#col_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#col_high_level').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="option3">Status</label>
-                                <select name="option3" id="option3" class="form-control" required="required">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                <select name="option3" id="option3" class="form-control">
+                                    <option selected value="none">None</option>
                                     <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
@@ -513,7 +536,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <script>
@@ -523,12 +546,18 @@
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option4').val() === "g4") {
-                                            $('#pos_yr_grad').attr('required','true');
-                                            $('#pos_high_level').removeAttr('required');
+                                            $('#pos_yr_grad').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
+                                            $('#pos_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option4').val() === "u4") {
-                                            $('#col_high_level').attr('required','true');
-                                            $('#pos_yr_grad').removeAttr('required');
+                                            $('#pos_high_level').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
+                                            $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
+                                        } else {
+                                            $('#pos_school_name').removeAttr('required').removeClass('input-error');
+                                            $('#pos_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
@@ -536,7 +565,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option selected value="none">None</option>
                                     <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
@@ -564,14 +593,14 @@
                         <h5>Main City Address</h5>
                         <div>
                             <div id="maps"></div>
-                            <input type="text" id="lat" name="lat" class="d-none" oninvalid="invalid()">
-                            <input type="text" id="lng" name="lng" class="d-none">
+                            <input type="text" id="lat" name="lat" class="d-none" required="required">
+                            <input type="text" id="lng" name="lng" class="d-none" required="required">
                             <br>
                             <div>
                                 <label>
                                     <h6>Main address</h6>
                                 </label>
-                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required>
+                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required="required">
                             </div>
                             <br>
                             <super>(Your alternate address when you are not at Main City Address)</super>
@@ -587,7 +616,7 @@
                                     <label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required>
+                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
                                 </div>
                             </div>
                         </div>
@@ -596,37 +625,35 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off" required>
+                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
 
-
-
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="hname[]" id="hname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="mnumber2">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off">
+                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
@@ -635,17 +662,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" class="form-control text-transform" autocomplete="off" required>
+                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off" required>
+                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
@@ -653,7 +680,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname2" placeholder="name of housemate" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="rname[]" id="rname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
@@ -663,7 +690,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber2">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile" autocomplete="off">
+                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
@@ -674,18 +701,19 @@
                                     $('#quest').change(function () {
                                         $('#Yes').hide();
                                         $('#' + $(this).val()).show();
-                                        if ($('#quest').val() == "yes") {
-                                            $('#yes').attr('required','true');
+                                        if ($('#quest').val() == "Yes") {
+                                            $('#answer').attr('required', 'true');
                                         } else {
-                                            $('#yes').removeAttr('required')
+                                            $('#answer').removeAttr('required').removeClass('input-error');
                                         }
                                     });
                                 });
                             </script>
-                            <div class="form-group col">
-                                <label for="quest">Do you plan on relocating soon? </label>
-                                <select name="yesorno" id="quest" class="form-control" required>
-                                    <option selected="selected" disabled="disabled">Select: Yes or No</option>
+                            <div class="form-group col-4">
+                                <label for="quest">Do you plan on relocating soon?
+                                </label>
+                                <select name="yesorno" id="quest" class="form-control" required="required">
+                                    <option selected disabled>Select: Yes or No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -693,7 +721,7 @@
 
                             <div class="form-group col" id="Yes" style="display:none">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="yes" class="form-control" autocomplete="off" >
+                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off">
                             </div>
                         </div>
 
@@ -708,31 +736,159 @@
                         <div class="row">
                             <div class="form-group col-4">
                                 <label>Tutor's Full Name</label>
-                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" class="form-control text-transform">
+                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform">
                             </div>
 
                             <div class="form-group col-2">
                                 <label>Nickname</label>
-                                <input type="text" name="nickname" id="nickname" placeholder="nickname" class="form-control text-transform">
+                                <input type="text" name="nickname" id="nickname" placeholder="nickname" onkeypress="alphabetInput(event)" class="form-control text-transform">
                             </div>
 
                             <div class="form-group col">
                                 <label>Mobile Number</label>
-                                <input type="tel" name="mobile" id="mobile" placeholder="+63XXX XXX XXXX" maxlength="11" class="form-control mobile">
+                                <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile">
                             </div>
 
                             <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" maxlength="7" class="form-control telephone">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone">
                             </div>
                         </div>
 
                         <div class="row">
+                            <script>
+                                $(function () {
+                                    $('#department').change(function () {
+                                        $('#orig').hide();
+                                        $('#ash').hide();
+                                        $('#its').hide();
+                                        $('#nva').hide();
+                                        $('#pe').hide();
+                                        $('#ve').hide();
+                                        $('#va').hide();
+                                        $('#' + $(this).val()).show();
+                                    });
+                                });
+                            </script>
                             <div class="form-group col">
-                                <label>Accounts</label>
-                                <input type="text" name="acc" id="acc" placeholder="Accounts" class="form-control">
+                                <label for="department">Department</label>
+                                <select class="custom-select form-group" name="department" id="department">
+                                    <option selected disabled>Choose your Department</option>
+                                    <option value="ash">Administration Support / HR</option>
+                                    <option value="its">IT Support</option>
+                                    <option value="nva">Non-voice Account</option>
+                                    <option value="pe">Phone ESL</option>
+                                    <option value="ve">Video ESL</option>
+                                    <option value="va">Virtual Assistant</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="orig">
+                                <label for="position">Main Account First</label>
+                                <select class="custom-select form-group">
+                                    <option selected disabled>Choose your Main Account</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="ash" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="adminsp">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="HR Assistant">HR Assistant</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="its" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="itsupport">
+                                    <option value="IT">IT</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="nva" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="nonvoice">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="pe" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="phone">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="ve" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="video">
+                                    <option selected disabled>Choose your Main Account</option>
+                                    <option value="April Writing">April Writing</option>
+                                    <option value="CL/IL">CL/IL/option>
+                                    <option value="ELANSO">ELANSO(E2Say)</option>
+                                    <option value="E-Say">E-Say</option>
+                                    <option value="First Future">First Future</option>
+                                    <option value="IDP">IDP</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="Key English">Key English</option>
+                                    <option value="Phone ESL">Phone ESL</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="va" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="virtual">
+                                    <option selected disabled value="Drag and drop">Drag and drop</option>
+                                </select>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="second_acc">Secondary Account</label>
+                                <div class="input-group">
+                                    <select type="text" name="acc[]" id="second_acc" class="form-control">
+                                        <option selected disabled>Choose your Secondary Account</option>
+                                        <option value="">None</option>
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL<option>
+                                        <option value="Drag and drop">Drag and drop</option>
+                                        <option value="ELANSO">ELANSO(E2Say)</option>
+                                        <option value="E-Say">E-Say</option>
+                                        <option value="First Future">First Future</option>
+                                        <option value="HR Assistant">HR Assistant</option>
+                                        <option value="IDP">IDP</option>
+                                        <option value="Key English">Key English</option>
+                                        <option value="Phone ESL">Phone ESL</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="new_acc"></div>
 
                         <div class="row">
                             <div class="form-group col">
@@ -806,27 +962,14 @@
             <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
         <script>
-            $('#sss_no').inputmask({
-                mask: 'dd-ddddddd-d'
-            });
-            $('#tin').inputmask({
-                mask: 'ddd-ddd-ddd-ddd'
-            });
-            $('#philhealth_no').inputmask({
-                mask: 'dd-ddddddddd-d'
-            });
-            $('.zip').inputmask({
-                mask: 'dddd'
-            });
-            $('#pagibig_id_no').inputmask({
-                mask: 'dddd-dddd-dddd'
-            });
-            $('.mobile').inputmask({
-                mask: '+639dd ddd dddd'
-            });
-            $('.telephone').inputmask({
-                mask: 'ddd-dddd'
-            });
+            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+            $('.zip').inputmask({mask: 'dddd'});
+            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+            $('.telephone').inputmask({mask: 'ddd-dddd'});
+            $('.height').inputmask({mask: 'dd'});
         </script>
         <script>
             function initMap() {
@@ -834,6 +977,7 @@
                 var myOptions = {
                     zoom: 18,
                     center: myLatlng,
+                    disableDoubleClickZoom: true,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(document.getElementById("maps"), myOptions);
@@ -843,10 +987,16 @@
                     document.getElementById('lat').value = marker.position.lat();
                     document.getElementById('lng').value = marker.position.lng();
                 });
+                google.maps.event.addListener(map, 'dblclick', function (e) {
+                    var positionDoubleclick = e.latLng;
+                    marker.setPosition(positionDoubleclick);
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
             }
 
             function invalid() {
-                swal({title: "Error", text: "Please complete all the required information", icon: "error"});
+                swal({title: "Error", text: "Please locate your house", icon: "error"});
             }
         </script>
         <script type="text/javascript">
@@ -857,6 +1007,8 @@
         </script>
         <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
         <script type="text/javascript" src="../script/alerts.js"></script>
         <script type="text/javascript" src="../script/popper.min.js"></script>
         <script type="text/javascript" src="../script/sweetalert.min.js"></script>

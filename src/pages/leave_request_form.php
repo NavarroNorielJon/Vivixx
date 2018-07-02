@@ -35,6 +35,12 @@
 					<i class="material-icons">home</i>Home</a>
 					<a class="icon" href="home.php"><i class="material-icons">home</i></a>
 				</li>
+				
+				<li>
+					<a href="home.php" class="sidebar-item">
+					<i class="material-icons">mail</i>Notifications</a>
+					<a class="icon" href="home.php"><i class="material-icons">mail</i></a>
+				</li>
 
 				<li class="active">
 					<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false"><i class="material-icons">work</i> Requests</a>
@@ -49,9 +55,9 @@
 				</li>
             	<li>
 					<a href="#" class="sidebar-item">
-						<i class="material-icons">info_outline</i> About
+						<i class="material-icons">info</i> About
 					</a>
-					<a class="icon"><i class="material-icons">info_outline</i></a>
+					<a class="icon"><i class="material-icons">info</i></a>
 				</li><hr>
             	<li>
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
@@ -63,10 +69,10 @@
 		</nav>
 
 		<div id="leave">
-			<form id="leave_form" action="../utilities/leave_request" method="POST">
+			<form id="leave-form" action="../utilities/leave_request" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1><hr>
 					<div class="row">
-						<div class="form-group col">
+						<div class="form-group col-4">
 							<label for="employee_name">Employee</label>
 							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled>
 						</div>
@@ -86,7 +92,7 @@
 								});
 							});
 						</script>
-						<div class="form-group col">
+						<div class="form-group col-4">
 							<label for="department">Department</label>
 							<select class="custom-select form-group" name="department" id="department">
 								<option selected disabled>Choose your Department</option>
@@ -100,7 +106,7 @@
 							</select>
 						</div>
 
-						<div class="form-group col" id="orig">
+						<div class="form-group col-4" id="orig">
 							<label for="position">Position</label>
 							<select class="custom-select form-group">
 								<option selected disabled>Choose your Position</option>
@@ -163,9 +169,6 @@
 					</div>
 
 					<div class="row">
-
-
-
 
 						<div class="form-group col">
 							<label for="date_hired">Date Hired</label>

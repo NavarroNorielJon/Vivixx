@@ -10,6 +10,9 @@ $birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place'])
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 $facebook = mysqli_real_escape_string($connect, $_POST['facebook']);
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
+if ($gender === "Other") {
+    $gender = mysqli_real_escape_string($connect, $_POST['spec']);
+}
 $ft = mysqli_real_escape_string($connect, $_POST['ft']);
 $in = mysqli_real_escape_string($connect, $_POST['in']);
 $height = $ft . "'" . $in;
@@ -64,7 +67,7 @@ if ($elem_status === "g1") {
 }
 
 $sec_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['sec_school_name']));
-$sec_status = ucwords(mysqli_real_escape_string($connect, $_POST['option2']));
+$sec_status = mysqli_real_escape_string($connect, $_POST['option2']);
 
 if ($sec_status === "g2") {
     $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
@@ -73,7 +76,7 @@ if ($sec_status === "g2") {
 }
 
 $col_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['col_school_name']));
-$col_status = ucwords(mysqli_real_escape_string($connect, $_POST['option3']));
+$col_status = mysqli_real_escape_string($connect, $_POST['option3']);
 
 if ($col_status === "g3") {
     $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
@@ -82,7 +85,7 @@ if ($col_status === "g3") {
 }
 
 $post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['pos_school_name']));
-$post_status = ucwords(mysqli_real_escape_string($connect, $_POST['option4']));
+$post_status = mysqli_real_escape_string($connect, $_POST['option4']);
 
 if ($post_status === "g4") {
     $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
@@ -93,7 +96,7 @@ if ($post_status === "g4") {
 // //Emergency info Sheet
 $long = mysqli_real_escape_string($connect, $_POST['lng']);
 $lat = mysqli_real_escape_string($connect, $_POST['lat']);
-$coordinates = $lat . "," . $long;
+$coordinates = $lat . "|" . $long;
 $main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
 
 //     //Housemate
@@ -119,7 +122,31 @@ $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']))
 $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
-$account = mysqli_real_escape_string($connect, $_POST['acc']);
+$department = mysqli_real_escape_string($connect, $_POST['department']);
+if ($department === "ash") {
+    $department = "Administration Support / HR";
+    $accounts = mysqli_real_escape_string($connect, $_POST['adminsp']);
+} elseif ($department === "its") {
+    $department = "IT Support";
+    $accounts = mysqli_real_escape_string($connect, $_POST['itsupport']);
+} elseif ($department === "nva") {
+    $department = "Non-Voice Account";
+    $accounts = mysqli_real_escape_string($connect, $_POST['nonvoice']);
+} elseif ($department === "pe") {
+    $department = "Phone ESL";
+    $accounts = mysqli_real_escape_string($connect, $_POST['phone']);
+} elseif ($department === "ve") {
+    $department = "Video ESL";
+    $accounts = mysqli_real_escape_string($connect, $_POST['video']);
+} elseif ($department === "va") {
+    $department = "Virtual Assistant";
+    $accounts = mysqli_real_escape_string($connect, $_POST['virtual']);
+}
+$account = $_POST['acc'];
+for ($i=0; $i < count($account); $i++) {
+        $accounts .= "|".$account[$i];
+}
+
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
 $e_pass = mysqli_real_escape_string($connect, $_POST['c_password']);
 $skype = mysqli_real_escape_string($connect, $_POST['skype']);
@@ -127,22 +154,6 @@ $s_pass = mysqli_real_escape_string($connect, $_POST['s_password']);
 $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
 $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
-$sql = "SELECT * FROM user_info where contact_number = '$contact_number'";
-$result = $connect->query($sql);
-
-// /**
-//  *Checks if the contact is already being used and will return
-//  *to registration.
-//  */
-if($result->num_rows > 0){
-    echo "
-        <script>
-            alert('The Contact you have entered is already in use.');
-            window.history.back();
-        </script>
-    ";
-    exit;
-}
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 
@@ -164,7 +175,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
 
 if ($connect->query($update_stmt) === true) {
-    $insert_stmt = "INSERT INTO `user_background`(`bg_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
+    $insert_stmt = "INSERT INTO `user_background`(`user_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
     `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
@@ -202,8 +213,8 @@ if ($connect->query($update_stmt) === true) {
                             `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
                             '$secondary_address','$provincial_address','$answer','$id','$id');";
             if ($connect->query($insert_stmt) === true) {
-                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`accounts`,`email`,
-                                `email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$account',
+                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`department`,`accounts`,`comp_email`,
+                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$department','$accounts',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
             }else {

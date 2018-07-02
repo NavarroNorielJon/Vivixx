@@ -71,17 +71,27 @@ function nextButton(){
 }
 
 var increment = 1;
-function add(){
+function addchild(){
 	increment++;
 	var dataFields = document.getElementById('child');
 	var newDataField = document.createElement("div");
 	newDataField.setAttribute("class", "form-group removeclass"+increment);
 	var removeDiv = 'removeclass' + increment;
-	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off" required="required"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
+	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off" required><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
 function remove(cid){
 	$('.removeclass'+cid).remove();
+}
+
+function addAccount(){
+	increment++;
+	var dataFields = document.getElementById('new_acc');
+	var newDataField = document.createElement("div");
+	newDataField.setAttribute("class", "form-group removeclass"+increment);
+	var removeDiv = 'removeclass' + increment;
+	newDataField.innerHTML = '<div class="row"><div class="form-group col-6"><label for="second_acc">Additional Account</label><div class="input-group"><select type="text" name="acc[]" id="second_acc" class="form-control"><option selected disabled>Choose your Account</option><option value="April Writing">April Writing</option><option value="CL/IL<">CL/IL</option><option value="Drag and drop">Drag and drop</option><option value="ELANSO">ELANSO(E2Say)</option><option value="E-Say">E-Say</option><option value="First Future">First Future</option><option value="HR Assistant">HR Assistant</option><option value="IDP">IDP</option><option value="Key English">Key English</option><option value="Phone ESL">Phone ESL</option></select><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="small material-icons">remove</i></button></div></div></div></div>';
+	dataFields.appendChild(newDataField);
 }
 
 function verifyLogin() {
@@ -106,9 +116,15 @@ function nextForm(currId,nextId){
   document.getElementById(nextId).classList.remove("d-none");
 }
 
+function alphabetInput(evt){
+	var alphabet = String.fromCharCode(evt.which);
+	if(!(/[A-Za-z\ ]/.test(alphabet))) {
+		evt.preventDefault();
+	}
+}
 function numberInput(evt){
-	var num = String.fromCharCode(evt.which);
-	if(!(/[0-9]/.test(num))) {
+	var number = String.fromCharCode(evt.which);
+	if(!(/[0-9]/.test(number))) {
 		evt.preventDefault();
 	}
 }
