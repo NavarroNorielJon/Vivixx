@@ -27,6 +27,7 @@
     </head>
 
     <body id="update-information">
+
         <div class="update-information-header">
             <h1>Update Information Form</h1>
             <a href="../utilities/logout" class="btn" id="logout">
@@ -34,6 +35,36 @@
                     power_settings_new
                 </i>
             </a>
+            <div style="text-align:left;margin-top:-3%;">
+                <button type="button" class="btn  btn-secondary" data-toggle="modal" data-target="#exampleModalLong">
+                    <i class="material-icons">
+                        help
+                    </i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="color:black">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -77,16 +108,7 @@
 
                     <fieldset>
                         <h2>Step 1: Personal Information</h2>
-                        <!-- <div class="row">
-                            <div class="form-group col-4">
-                                <label for="prof_image">Profile Image</label>
-                                <input type="file" name="prof_image"/>
-                            </div>
-
-                            <div class="form-group col-4">
-                                <label for="prof_image">Signature</label>
-                                <input type="file"/>
-                            </div>
+                        <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
                             <div class="form-group col">
@@ -129,7 +151,7 @@
                             <div class=" form-group col">
                                 <label for="gender">Gender</label>
                                 <select name="gender" id="gender" class="form-control" required="required">
-                                    <option selected disabled>Select Here:</option>
+                                    <option selected="selected" disabled="disabled">Select Here:</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Rather not say">I'd rather not say</option>
@@ -161,7 +183,7 @@
                             <div class="form-group col">
                                 <label for="blood">Blood Type</label>
                                 <select name="blood" class="form-control" required="required">
-                                    <option selected disabled>Select Blood Type:</option>
+                                    <option selected="selected" disabled="disabled">Select Blood Type:</option>
                                     <option value="o">O</option>
                                     <option value="a">A</option>
                                     <option value="b">B</option>
@@ -228,7 +250,7 @@
                             <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
                                 <select name="civil_status" id="civil_status" class="form-control" required="required">
-                                    <option selected disabled>Select:</option>
+                                    <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="widowed">Widowed</option>
@@ -414,7 +436,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected value="none">None</option>
+                                    <option selected="selected" value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -463,7 +485,7 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected value="none">None</option>
+                                    <option selected="selected" value="none">None</option>
                                     <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
@@ -514,7 +536,7 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option selected value="none">None</option>
+                                    <option selected="selected" value="none">None</option>
                                     <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
@@ -565,7 +587,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected value="none">None</option>
+                                    <option selected="selected" value="none">None</option>
                                     <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
@@ -713,7 +735,7 @@
                                 <label for="quest">Do you plan on relocating soon?
                                 </label>
                                 <select name="yesorno" id="quest" class="form-control" required="required">
-                                    <option selected disabled>Select: Yes or No</option>
+                                    <option selected="selected" disabled="disabled">Select: Yes or No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -773,7 +795,7 @@
                             <div class="form-group col">
                                 <label for="department">Department</label>
                                 <select class="custom-select form-group" name="department" id="department">
-                                    <option selected disabled>Choose your Department</option>
+                                    <option selected="selected" disabled="disabled">Choose your Department</option>
                                     <option value="ash">Administration Support / HR</option>
                                     <option value="its">IT Support</option>
                                     <option value="nva">Non-voice Account</option>
@@ -786,14 +808,14 @@
                             <div class="form-group col" id="orig">
                                 <label for="position">Main Account First</label>
                                 <select class="custom-select form-group">
-                                    <option selected disabled>Choose your Main Account</option>
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="ash" style='display:none'>
                                 <label for="position">Main Account</label>
                                 <select class="custom-select form-group" name="adminsp">
-                                    <option selected disabled>Choose your Main Account</option>
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="HR Assistant">HR Assistant</option>
                                     <option value="Job Getter">Job Getter</option>
                                 </select>
@@ -809,7 +831,7 @@
                             <div class="form-group col" id="nva" style='display:none'>
                                 <label for="position">Main Account</label>
                                 <select class="custom-select form-group" name="nonvoice">
-                                    <option selected disabled>Choose your Main Account</option>
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="April Writing">April Writing</option>
                                     <option value="CL/IL">CL/IL</option>
                                     <option value="ELANSO">ELANSO(E2Say)</option>
@@ -825,194 +847,195 @@
                             <div class="form-group col" id="pe" style='display:none'>
                                 <label for="position">Main Account</label>
                                 <select class="custom-select form-group" name="phone">
-                                    <option selected disabled>Choose your Main Account</option>
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="April Writing">April Writing</option>
                                     <option value="CL/IL">CL/IL/option>
-                                    <option value="ELANSO">ELANSO(E2Say)</option>
-                                    <option value="E-Say">E-Say</option>
-                                    <option value="First Future">First Future</option>
-                                    <option value="IDP">IDP</option>
-                                    <option value="Job Getter">Job Getter</option>
-                                    <option value="Key English">Key English</option>
-                                    <option value="Phone ESL">Phone ESL</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col" id="ve" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="video">
-                                    <option selected disabled>Choose your Main Account</option>
-                                    <option value="April Writing">April Writing</option>
-                                    <option value="CL/IL">CL/IL/option>
-                                    <option value="ELANSO">ELANSO(E2Say)</option>
-                                    <option value="E-Say">E-Say</option>
-                                    <option value="First Future">First Future</option>
-                                    <option value="IDP">IDP</option>
-                                    <option value="Job Getter">Job Getter</option>
-                                    <option value="Key English">Key English</option>
-                                    <option value="Phone ESL">Phone ESL</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col" id="va" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="virtual">
-                                    <option selected disabled value="Drag and drop">Drag and drop</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="second_acc">Secondary Account</label>
-                                <div class="input-group">
-                                    <select type="text" name="acc[]" id="second_acc" class="form-control">
-                                        <option selected disabled>Choose your Secondary Account</option>
-                                        <option value="">None</option>
-                                        <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL</option>
-                                        <option value="Drag and drop">Drag and drop</option>
                                         <option value="ELANSO">ELANSO(E2Say)</option>
                                         <option value="E-Say">E-Say</option>
                                         <option value="First Future">First Future</option>
-                                        <option value="HR Assistant">HR Assistant</option>
                                         <option value="IDP">IDP</option>
+                                        <option value="Job Getter">Job Getter</option>
                                         <option value="Key English">Key English</option>
                                         <option value="Phone ESL">Phone ESL</option>
                                     </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
+                            </div>
+
+
+                                <div class="form-group col" id="ve" style='display:none'>
+                                    <label for="position">Main Account</label>
+                                    <select class="custom-select form-group" name="video">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL</option>
+                                            <option value="ELANSO">ELANSO(E2Say)</option>
+                                            <option value="E-Say">E-Say</option>
+                                            <option value="First Future">First Future</option>
+                                            <option value="IDP">IDP</option>
+                                            <option value="Job Getter">Job Getter</option>
+                                            <option value="Key English">Key English</option>
+                                            <option value="Phone ESL">Phone ESL</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col" id="va" style='display:none'>
+                                        <label for="position">Main Account</label>
+                                        <select class="custom-select form-group" name="virtual">
+                                            <option selected="selected" disabled="disabled" value="Drag and drop">Drag and drop</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div id="new_acc"></div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Company Email address</label>
-                                <input type="text" name="com_email" id="com_email" placeholder="Company Email address" class="form-control">
-                            </div>
-
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
-
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
-                                            <i class="material-icons" id="icon1">visibility</i>
-                                        </button>
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="second_acc">Secondary Account</label>
+                                        <div class="input-group">
+                                            <select type="text" name="acc[]" id="second_acc" class="form-control">
+                                                <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
+                                                <option value="">None</option>
+                                                <option value="April Writing">April Writing</option>
+                                                <option value="CL/IL">CL/IL</option>
+                                                <option value="Drag and drop">Drag and drop</option>
+                                                <option value="ELANSO">ELANSO(E2Say)</option>
+                                                <option value="E-Say">E-Say</option>
+                                                <option value="First Future">First Future</option>
+                                                <option value="HR Assistant">HR Assistant</option>
+                                                <option value="IDP">IDP</option>
+                                                <option value="Key English">Key English</option>
+                                                <option value="Phone ESL">Phone ESL</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-success" type="button" onclick="addAccount()">
+                                                    <i class="small material-icons">add</i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div id="new_acc"></div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Skype Account</label>
-                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-                            </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label>Company Email address</label>
+                                        <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                                    </div>
 
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+                                    <div class="form-group col">
+                                        <label>Password</label>
+                                        <div class="input-group">
+                                            <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
 
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
-                                            <i class="material-icons" id="icon2">visibility</i>
-                                        </button>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn eye" onclick="showHide('c_password','icon1')">
+                                                    <i class="material-icons" id="icon1">visibility</i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>QQ Number</label>
-                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
-                            </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label>Skype Account</label>
+                                        <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+                                    </div>
 
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+                                    <div class="form-group col">
+                                        <label>Password</label>
+                                        <div class="input-group">
+                                            <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
 
-                                    <div class="input-group-append">
-                                        <button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
-                                            <i class="material-icons" id="icon3">visibility</i>
-                                        </button>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn eye" onclick="showHide('s_password','icon2')">
+                                                    <i class="material-icons" id="icon2">visibility</i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="submit" class="btn pages btn-submit">Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
 
-        <div id="footer">
-            <p>© Vivixx 2018 . All Rights Reserved.</p>
-        </div>
-        <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
-        </script>
-        <script>
-            function initMap() {
-                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-                var myOptions = {
-                    zoom: 18,
-                    center: myLatlng,
-                    disableDoubleClickZoom: true,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label>QQ Number</label>
+                                        <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                                    </div>
 
-                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-                google.maps.event.addListener(marker, 'drag', function () {
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-                google.maps.event.addListener(map, 'dblclick', function (e) {
-                    var positionDoubleclick = e.latLng;
-                    marker.setPosition(positionDoubleclick);
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-            }
+                                    <div class="form-group col">
+                                        <label>Password</label>
+                                        <div class="input-group">
+                                            <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
 
-            function invalid() {
-                swal({title: "Error", text: "Please locate your house", icon: "error"});
-            }
-        </script>
-        <script type="text/javascript">
-            function onTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
-        <script type="text/javascript" src="../script/alerts.js"></script>
-        <script type="text/javascript" src="../script/popper.min.js"></script>
-        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
-        <script type="text/javascript" src="../script/ajax.js"></script>
-    </body>
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn eye" onclick="showHide('qq_password','icon3')">
+                                                    <i class="material-icons" id="icon3">visibility</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn pages btn-previous">Previous</button>
+                                    <button type="submit" class="btn pages btn-submit">Submit</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
 
-</html>
+                <div id="footer">
+                    <p>© Vivixx 2018 . All Rights Reserved.</p>
+                </div>
+                <script>
+                    $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+                    $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+                    $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+                    $('.zip').inputmask({mask: 'dddd'});
+                    $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+                    $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+                    $('.telephone').inputmask({mask: 'ddd-dddd'});
+                    $('.height').inputmask({mask: 'dd'});
+                </script>
+                <script>
+                    function initMap() {
+                        var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+                        var myOptions = {
+                            zoom: 18,
+                            center: myLatlng,
+                            disableDoubleClickZoom: true,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                        var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+
+                        var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+                        google.maps.event.addListener(marker, 'drag', function () {
+                            document.getElementById('lat').value = marker.position.lat();
+                            document.getElementById('lng').value = marker.position.lng();
+                        });
+                        google.maps.event.addListener(map, 'dblclick', function (e) {
+                            var positionDoubleclick = e.latLng;
+                            marker.setPosition(positionDoubleclick);
+                            document.getElementById('lat').value = marker.position.lat();
+                            document.getElementById('lng').value = marker.position.lng();
+                        });
+                    }
+
+                    function invalid() {
+                        swal({title: "Error", text: "Please locate your house", icon: "error"});
+                    }
+                </script>
+                <script type="text/javascript">
+                    function onTop() {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                    }
+                </script>
+                <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+                <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+                <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+                <script type="text/javascript" src="../script/additional-methods.min.js"></script>
+                <script type="text/javascript" src="../script/alerts.js"></script>
+                <script type="text/javascript" src="../script/popper.min.js"></script>
+                <script type="text/javascript" src="../script/sweetalert.min.js"></script>
+                <script type="text/javascript" src="../script/ajax.js"></script>
+            </body>
+
+        </html>
