@@ -37,9 +37,9 @@
 				</li>
 				
 				<li>
-					<a href="home.php" class="sidebar-item">
+					<a href="notification.php" class="sidebar-item">
 					<i class="material-icons">mail</i>Notifications</a>
-					<a class="icon" href="home.php"><i class="material-icons">mail</i></a>
+					<a class="icon" href="notification.php"><i class="material-icons">mail</i></a>
 				</li>
 
 				<li class="active">
@@ -54,10 +54,10 @@
 					</ul>
 				</li>
             	<li>
-					<a href="#" class="sidebar-item">
+					<a href="about.php" class="sidebar-item">
 						<i class="material-icons">info</i> About
 					</a>
-					<a class="icon"><i class="material-icons">info</i></a>
+					<a class="icon" href="about.php"><i class="material-icons">info</i></a>
 				</li><hr>
             	<li>
 					<a href="../utilities/logout.php"  class="sidebar-item" id="logout">
