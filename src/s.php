@@ -4,33 +4,72 @@ $connect = Connect();
 $department = $_POST['department'];
 $departments = "";
 $account = "";
-
 for ($i=0; $i < count($department); $i++) {
 
 	if ($department[$i] === "ash") {
 	    $department[$i] = "Administration/HR Support";
-	    $account .= mysqli_real_escape_string($connect, $_POST['adminsp'])."|";
+
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['adminsp'][$i];
+		}else{
+			$account .= $_POST['adminsp'][$i]."|";
+		}
+
 	} elseif ($department[$i] === "its") {
 	    $department[$i] = "IT Support";
-	    $account .=  mysqli_real_escape_string($connect, $_POST['itsupport']). "|";
+		if ($i == (count($department)-1)) {
+			$account .=  $_POST['itsupport'][$i];
+		}else{
+			$account .=  $_POST['itsupport'][$i] . "|";
+		}
+
 	} elseif ($department[$i] === "main") {
 		 $department[$i] = "Maintenance";
-		 $account .=  mysqli_real_escape_string($connect, $_POST['main']). "|";
+		 if ($i == (count($department)-1)) {
+			 $account .= $_POST['main'][$i];
+		 }else{
+			 $account .= $_POST['main'][$i]. "|";
+		 }
+
 	} elseif ($department[$i] === "nva") {
 	    $department[$i] = "Non-Voice Account";
-	    $account .= mysqli_real_escape_string($connect, $_POST['nonvoice']). "|";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['nonvoice'][$i];
+		}else{
+			$account .= $_POST['nonvoice'][$i]. "|";
+		}
+
 	} elseif ($department[$i] === "voa") {
 	    $department[$i] = "Voice Account";
-	   	$account .= mysqli_real_escape_string($connect, $_POST['voice']). "|";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['voice'][$i];
+		}else{
+			$account .= $_POST['voice'][$i]. "|";
+		}
+
 	} elseif ($department[$i] === "ve") {
 	    $department[$i] = "Video ESL";
-	   	$account .= mysqli_real_escape_string($connect, $_POST['video']). "|";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['video'][$i];
+		}else{
+			$account .= $_POST['video'][$i]. "|";
+		}
+
 	} elseif ($department[$i] === "va") {
 	    $department[$i] = "Virtual Assistant";
-	    $account .= mysqli_real_escape_string($connect, $_POST['virtual']). "|";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['virtual'][$i];
+		}else{
+			$account .= $_POST['virtual'][$i]. "|";
+		}
 	} elseif ($department[$i] === "sec") {
 		$department[$i] = "Security";
-	   	$account .= mysqli_real_escape_string($connect, $_POST['sec']). "|";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['sec'][$i];
+		}else{
+			$account .= $_POST['sec'][$i]. "|";
+		}
+
 	}
 
 	if ($i !== (count($department)-1)) {

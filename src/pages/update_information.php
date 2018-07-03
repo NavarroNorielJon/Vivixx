@@ -578,7 +578,6 @@
                                     <option value="5th Year">5th Year</option>
                                     <option value="6th Year">6th Year</option>
                                 </select>
-                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
@@ -831,7 +830,7 @@
                                 <label for="department">Main Department</label>
                                 <select class="custom-select form-group" name="department[]" id="department">
                                     <option selected="selected" disabled="disabled">Choose your Department</option>
-                                    <option value="ash">Administration/HR Support</option>
+                                    <option value="ash">Administration Support / HR</option>
                                     <option value="its">IT Support</option>
                                     <option value="main">Maintenance</option>
                                     <option value="nva">Non-voice Account</option>
@@ -851,7 +850,7 @@
 
                             <div class="form-group col" id="ash" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="adminsp">
+                                <select class="custom-select form-group" name="adminsp[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="HR Assistant">HR Support</option>
                                     <option value="IDP Staff">IDP Staff</option>
@@ -862,14 +861,14 @@
 
                             <div class="form-group col" id="its" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="itsupport">
-                                    <option value="ICT Specialist">ICT Specialist</option>
+                                <select class="custom-select form-group" name="itsupport[]">
+                                    <option value="ICT Specialist" selected="selected">ICT Specialist</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="nva" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="nonvoice">
+                                <select class="custom-select form-group" name="nonvoice[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="April Writing">April Writing</option>
                                     <option value="CL/IL">CL/IL</option>
@@ -878,7 +877,7 @@
 
                             <div class="form-group col" id="voa" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="phone">
+                                <select class="custom-select form-group" name="voice[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="ELANSO">ELANSO</option>
                                     <option value="Phone ESL">Phone ESL</option>
@@ -887,7 +886,7 @@
 
                             <div class="form-group col" id="ve" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="video">
+                                <select class="custom-select form-group" name="video[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="First Future">First Future</option>
                                     <option value="Key English">Key English</option>
@@ -896,7 +895,7 @@
 
                             <div class="form-group col" id="va" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="virtual">
+                                <select class="custom-select form-group" name="virtual[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="Drag and drop">Drag and drop</option>
                                     <option value="Job Getter">Job Getter</option>
@@ -905,14 +904,14 @@
 
                             <div class="form-group col" id="sec" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="virtual">
-                                    <option value="Security" selected="selected" disabled="disabled">Security</option>
+                                <select class="custom-select form-group" name="sec[]">
+                                    <option value="Security" selected="selected">Security</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="main" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="virtual">
+                                <select class="custom-select form-group" name="main[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="Housekeeping">Housekeeping</option>
                                     <option value="Utility">Utility</option>
@@ -923,23 +922,24 @@
                         <div class="row">
                             <script>
                                 $(function () {
-                                    $('#department').change(function () {
-                                        $('#orig').hide();
-                                        $('#ash').hide();
-                                        $('#its').hide();
-                                        $('#nva').hide();
-                                        $('#main').hide();
-                                        $('#sec').hide();
-                                        $('#voa').hide();
-                                        $('#ve').hide();
-                                        $('#va').hide();
-                                        $('#' + $(this).val()).show();
+                                    var i = 1;
+                                    $('#department1').change(function () {
+                                        $('#orig1').hide();
+                                        $('#ash1').hide();
+                                        $('#its1').hide();
+                                        $('#nva1').hide();
+                                        $('#main1').hide();
+                                        $('#sec1').hide();
+                                        $('#voa1').hide();
+                                        $('#ve1').hide();
+                                        $('#va1').hide();
+                                        $('#' + $(this).val() + i).show();
                                     });
                                 });
                             </script>
                             <div class="form-group col">
                                 <label for="department">Secondary Department</label>
-                                <select class="custom-select form-group" name="department[]" id="department">
+                                <select class="custom-select form-group" name="department[]" id="department1">
                                     <option selected="selected" disabled="disabled">Choose your Department</option>
                                     <option value="ash">Administration Support / HR</option>
                                     <option value="its">IT Support</option>
@@ -952,11 +952,11 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col" id="orig">
+                            <div class="form-group col" id="orig1">
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
                                     <select class="custom-select form-group">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
@@ -966,11 +966,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="ash" style='display:none'>
+                            <div class="form-group col" id="ash1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="adminsp">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="adminsp[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="HR Assistant">HR Support</option>
                                         <option value="IDP Staff">IDP Staff</option>
                                         <option value="Operations Support">Operations Support</option>
@@ -984,11 +984,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="its" style='display:none'>
+                            <div class="form-group col" id="its1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="itsupport">
-                                        <option value="ICT Specialist">ICT Specialist</option>
+                                    <select class="custom-select form-group" name="itsupport[]">
+                                        <option value="ICT Specialist" selected="selected">ICT Specialist</option>
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
@@ -998,11 +998,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="nva" style='display:none'>
+                            <div class="form-group col" id="nva1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="nonvoice">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="nonvoice[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="April Writing">April Writing</option>
                                         <option value="CL/IL">CL/IL</option>
                                     </select>
@@ -1014,11 +1014,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="voa" style='display:none'>
+                            <div class="form-group col" id="voa1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="phone">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="voice[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="ELANSO">ELANSO</option>
                                         <option value="Phone ESL">Phone ESL</option>
                                     </select>
@@ -1030,11 +1030,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="ve" style='display:none'>
+                            <div class="form-group col" id="ve1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="video">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="video[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="First Future">First Future</option>
                                         <option value="Key English">Key English</option>
                                     </select>
@@ -1046,11 +1046,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="va" style='display:none'>
+                            <div class="form-group col" id="va1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="virtual">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="virtual[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="Drag and drop">Drag and drop</option>
                                         <option value="Job Getter">Job Getter</option>
                                     </select>
@@ -1062,11 +1062,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="sec" style='display:none'>
+                            <div class="form-group col" id="sec1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="virtual">
-                                        <option value="Security" selected="selected" disabled="disabled">Security</option>
+                                    <select class="custom-select form-group" name="sec[]">
+                                        <option value="Security" selected="selected">Security</option>
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
@@ -1076,11 +1076,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col" id="main" style='display:none'>
+                            <div class="form-group col" id="main1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="virtual">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <select class="custom-select form-group" name="main[]">
+                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
                                         <option value="Housekeeping">Housekeeping</option>
                                         <option value="Utility">Utility</option>
                                     </select>
@@ -1092,7 +1092,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div id="new_acc"></div>
 
                         <div class="row">
@@ -1130,12 +1129,12 @@
                                 <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
                             </div>
                         </div>
+                        <div class="f1-buttons">
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="submit" class="btn pages btn-submit">Submit</button>
+                        </div>
                     </div>
-                    <div class="f1-buttons">
-                        <button type="button" class="btn pages btn-previous">Previous</button>
-                        <button type="submit" class="btn pages btn-submit">Submit</button>
-                    </div>
-                </fieldset>
+
             </form>
         </div>
     </div>
