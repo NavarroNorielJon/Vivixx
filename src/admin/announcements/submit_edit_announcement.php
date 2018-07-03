@@ -33,7 +33,7 @@ ini_set('upload_max_filesize', '64M');
         }
         $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat' where announcement_id='$announcement_id';";
         $connect->query($sql);
-		echo $sql;
+		
 
         for($x = 0; $x< count($file_names); $x++){
             if(!empty($file_names)){
@@ -47,4 +47,6 @@ ini_set('upload_max_filesize', '64M');
             
         }       
     }
+		   header("location: test.php");
+
 
