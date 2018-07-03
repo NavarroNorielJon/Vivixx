@@ -169,7 +169,7 @@
 
 							<div class="form-group col">
 								<label for="department">Department</label>
-								<select class="custom-select form-group" name="department"  id="department" require="required" multiple="multiple">
+								<select class="custom-select form-group" name="department"  id="department" require="required">
 									<option selected disabled>Choose your Department</option>
 									<option value="all">All Departments</option>
 									<option value="admin">Administration</option>
@@ -209,11 +209,6 @@
 	</div>
 
     <script>
-		$('#department').multiselect({
-			templates: {
-				li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
-			}
-		});
 	  	let del_announcement = function(id){
 				swal({
 					title: 'Are you sure?',
