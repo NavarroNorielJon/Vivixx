@@ -578,7 +578,6 @@
                                     <option value="5th Year">5th Year</option>
                                     <option value="6th Year">6th Year</option>
                                 </select>
-                                <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
                         </div>
