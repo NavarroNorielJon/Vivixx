@@ -98,7 +98,7 @@ CREATE TABLE `emergency_info_sheet` (
   KEY `relative_id_idx` (`relative_id`),
   KEY `hmate_id` (`hmate_id`),
   CONSTRAINT `info_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `housemates` (
   PRIMARY KEY (`housemate_id`),
   KEY `h_id_idx` (`h_id`),
   CONSTRAINT `h-emer` FOREIGN KEY (`h_id`) REFERENCES `emergency_info_sheet` (`hmate_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `leave_req` (
   UNIQUE KEY `leave_req_id_UNIQUE` (`leave_req_id`),
   KEY `leave-user_idx` (`user_id`),
   CONSTRAINT `leave-user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,7 +217,7 @@ CREATE TABLE `relatives` (
   PRIMARY KEY (`relative_id`),
   KEY `r_id_idx` (`r_id`),
   CONSTRAINT `r-emer` FOREIGN KEY (`r_id`) REFERENCES `emergency_info_sheet` (`relative_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,8 +243,8 @@ CREATE TABLE `tutor_info` (
   `nickname` varchar(45) DEFAULT NULL,
   `mobile_number` varchar(45) DEFAULT NULL,
   `landline` varchar(45) DEFAULT NULL,
-  `department` varchar(45) DEFAULT NULL,
-  `accounts` varchar(45) DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `account` varchar(45) DEFAULT NULL,
   `comp_email` varchar(45) DEFAULT NULL,
   `comp_email_password` varchar(45) DEFAULT NULL,
   `skype` varchar(45) DEFAULT NULL,
@@ -255,7 +255,7 @@ CREATE TABLE `tutor_info` (
   UNIQUE KEY `tutor_info_id_UNIQUE` (`tutor_info_id`),
   KEY `tutor_idx` (`user_id`),
   CONSTRAINT `tutor` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -285,7 +285,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`username`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,7 +294,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('1',1,'1','1','2018-06-15','enabled','user'),('ULG',4,'gregorio1@gmail.com','$2y$10$M5eSNizo3JT87/Kk9x8OkO4DzCT9UnQbQ1B0Xje4YHppnv8Y3NJNK','2018-06-15','enabled','admin');
+INSERT INTO `user` VALUES ('1',1,'1','1','2018-06-15','enabled','user'),('AA',5,'a@gmail.com','$2y$10$LV4jKu5h98w8/uB7hhWm2Of6eEMxduzf8b.5xupvoQSnvv0MUH8zi','2018-07-03','enabled','user'),('ULG',4,'gregorio1@gmail.com','$2y$10$M5eSNizo3JT87/Kk9x8OkO4DzCT9UnQbQ1B0Xje4YHppnv8Y3NJNK','2018-06-15','enabled','admin');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,7 +354,7 @@ CREATE TABLE `user_educ` (
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   KEY `userid_idx` (`user_id`),
   CONSTRAINT `userid1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -412,6 +412,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
+INSERT INTO `user_info` VALUES (5,NULL,NULL,'A',NULL,'A',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,7 +432,7 @@ CREATE TABLE `user_offspring` (
   UNIQUE KEY `user_id_UNIQUE` (`off_id`),
   KEY `userid_idx` (`user_id`),
   CONSTRAINT `userid` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -452,4 +453,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-02 17:36:54
+-- Dump completed on 2018-07-03 15:17:21

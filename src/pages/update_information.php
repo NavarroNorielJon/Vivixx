@@ -449,7 +449,15 @@
 
                             <div class="form-group col" id="u1" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                <select name="elem_high_level" id="elem_high_level" class="form-control">
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="Grade 1">Grade 1</option>
+                                    <option value="Grade 2">Grade 2</option>
+                                    <option value="Grade 3">Grade 3</option>
+                                    <option value="Grade 4">Grade 4</option>
+                                    <option value="Grade 5">Grade 5</option>
+                                    <option value="Grade 6">Grade 6</option>
+                                </select>
                             </div>
 
                         </div>
@@ -498,7 +506,19 @@
 
                             <div class="form-group col" id="u2" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                <select name="sec_high_level" id="sec_high_level" class="form-control">
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                    <option value="Grade 7">Grade 7</option>
+                                    <option value="Grade 8">Grade 8</option>
+                                    <option value="Grade 9">Grade 9</option>
+                                    <option value="Grade 10">Grade 10</option>
+                                    <option value="Grade 11">Grade 11</option>
+                                    <option value="Grade 12">Grade 12</option>
+                                </select>
                             </div>
 
                         </div>
@@ -549,6 +569,15 @@
 
                             <div class="form-group col" id="u3" style="display:none">
                                 <label for="high_level">Highest Level</label>
+                                <select name="col_high_level" id="col_high_level" class="form-control">
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                    <option value="5th Year">5th Year</option>
+                                    <option value="6th Year">6th Year</option>
+                                </select>
                                 <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
                             </div>
 
@@ -600,7 +629,11 @@
 
                             <div class="form-group col" id="u4" style="display:none">
                                 <label for="high_level">Highest Level</label>
-                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                <select name="pos_high_level" id="pos_high_level" class="form-control">
+                                    <option selected="selected" value="none">None</option>
+                                    <option value="g4">Graduate</option>
+                                    <option value="u4">Undergraduate</option>
+                                </select>
                             </div>
 
                         </div>
