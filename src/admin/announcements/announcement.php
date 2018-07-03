@@ -15,6 +15,7 @@
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../style/datatables.css">
+	<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
 
 	<!--scripts-->
 	<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -26,6 +27,7 @@
 	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 	<script src="../../script/jquery.form.min.js"></script>
+	<script src="../style/bootstrap-multiselect.js"></script>
 	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
@@ -171,6 +173,7 @@
 								<label for="department">Department</label>
 								<select class="custom-select form-group" name="department"  id="department" require="required">
 									<option selected disabled>Choose your Department</option>
+
 									<option value="all">All Departments</option>
 									<option value="admin">Administration</option>
 									<option value="admin supp">Administration Support / HR</option>
