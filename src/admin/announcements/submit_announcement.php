@@ -9,7 +9,10 @@ ini_set('upload_max_filesize', '64M');
       $enddate = $_POST["end_date"];
       $body = mysqli_real_escape_string($connect,$_POST["body"]);
       $department = $_POST["department"];
-
+      $concat = "";
+        foreach($department as $dept ){
+            $concat .= $dept . ",";
+        }
       $file_names = [];
       $file_paths = [];
       $file_tmp_names = [];
@@ -27,7 +30,7 @@ ini_set('upload_max_filesize', '64M');
         }
         //if there is no image
 
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$department');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
@@ -50,4 +53,4 @@ ini_set('upload_max_filesize', '64M');
             }
                
     }
-    header("location: test.php");
+    //header("location: test.php");
