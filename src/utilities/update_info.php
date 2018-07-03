@@ -122,29 +122,83 @@ $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']))
 $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
-$department = mysqli_real_escape_string($connect, $_POST['department']);
-if ($department === "ash") {
-    $department = "Administration Support / HR";
-    $accounts = mysqli_real_escape_string($connect, $_POST['adminsp']);
-} elseif ($department === "its") {
-    $department = "IT Support";
-    $accounts = mysqli_real_escape_string($connect, $_POST['itsupport']);
-} elseif ($department === "nva") {
-    $department = "Non-Voice Account";
-    $accounts = mysqli_real_escape_string($connect, $_POST['nonvoice']);
-} elseif ($department === "pe") {
-    $department = "Phone ESL";
-    $accounts = mysqli_real_escape_string($connect, $_POST['phone']);
-} elseif ($department === "ve") {
-    $department = "Video ESL";
-    $accounts = mysqli_real_escape_string($connect, $_POST['video']);
-} elseif ($department === "va") {
-    $department = "Virtual Assistant";
-    $accounts = mysqli_real_escape_string($connect, $_POST['virtual']);
-}
-$account = $_POST['acc'];
-for ($i=0; $i < count($account); $i++) {
-        $accounts .= "|".$account[$i];
+$department = $_POST['department'];
+$departments = "";
+$account = "";
+for ($i=0; $i < count($department); $i++) {
+
+	if ($department[$i] === "ash") {
+	    $department[$i] = "Administration/HR Support";
+
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['adminsp'][$i];
+		}else{
+			$account .= $_POST['adminsp'][$i]."|";
+		}
+
+	} elseif ($department[$i] === "its") {
+	    $department[$i] = "IT Support";
+		if ($i == (count($department)-1)) {
+			$account .=  $_POST['itsupport'][$i];
+		}else{
+			$account .=  $_POST['itsupport'][$i] . "|";
+		}
+
+	} elseif ($department[$i] === "main") {
+		 $department[$i] = "Maintenance";
+		 if ($i == (count($department)-1)) {
+			 $account .= $_POST['main'][$i];
+		 }else{
+			 $account .= $_POST['main'][$i]. "|";
+		 }
+
+	} elseif ($department[$i] === "nva") {
+	    $department[$i] = "Non-Voice Account";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['nonvoice'][$i];
+		}else{
+			$account .= $_POST['nonvoice'][$i]. "|";
+		}
+
+	} elseif ($department[$i] === "voa") {
+	    $department[$i] = "Voice Account";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['voice'][$i];
+		}else{
+			$account .= $_POST['voice'][$i]. "|";
+		}
+
+	} elseif ($department[$i] === "ve") {
+	    $department[$i] = "Video ESL";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['video'][$i];
+		}else{
+			$account .= $_POST['video'][$i]. "|";
+		}
+
+	} elseif ($department[$i] === "va") {
+	    $department[$i] = "Virtual Assistant";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['virtual'][$i];
+		}else{
+			$account .= $_POST['virtual'][$i]. "|";
+		}
+	} elseif ($department[$i] === "sec") {
+		$department[$i] = "Security";
+		if ($i == (count($department)-1)) {
+			$account .= $_POST['sec'][$i];
+		}else{
+			$account .= $_POST['sec'][$i]. "|";
+		}
+
+	}
+
+	if ($i !== (count($department)-1)) {
+		$departments .= $department[$i]."|";
+
+	}else {
+		$departments .= $department[$i];
+	}
 }
 
 $com_email = mysqli_real_escape_string($connect, $_POST['com_email']);
@@ -181,40 +235,41 @@ if ($connect->query($update_stmt) === true) {
     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
     if ($connect->query($insert_stmt) === true) {
-        foreach ($child_name as $name) {
-            foreach ($child_birth as $birth) {
-                $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`)
-                    VALUES ('$name','$birth','$id');";
-            }
-            $connect->query($insert_stmt);
-        }
-        $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
-            VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
+        $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
+                        `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
+                        '$secondary_address','$provincial_address','$answer','$id','$id');";
         if ($connect->query($insert_stmt) === true) {
-            foreach ($r_name as $key => $rname) {
-                foreach ($r_relationship as $key => $rrel) {
-                    foreach ($r_mobile_number as $key => $rnum) {
-                        $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
-                    }
+            foreach ($child_name as $name) {
+                foreach ($child_birth as $birth) {
+                    $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`)
+                        VALUES ('$name','$birth','$id');";
                 }
                 $connect->query($insert_stmt);
             }
-
-            foreach ($h_name as $key => $hname) {
-                foreach ($h_relationship as $key => $hrel) {
-                    foreach ($h_mobile_number as $key => $hnum) {
-                        $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
-                    }
-                }
-                $connect->query($insert_stmt);
-            }
-
-            $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                            `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
-                            '$secondary_address','$provincial_address','$answer','$id','$id');";
+            $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
+                VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
             if ($connect->query($insert_stmt) === true) {
-                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`department`,`accounts`,`comp_email`,
-                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$department','$accounts',
+                foreach ($r_name as $key => $rname) {
+                    foreach ($r_relationship as $key => $rrel) {
+                        foreach ($r_mobile_number as $key => $rnum) {
+                            $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
+                        }
+                    }
+                    $connect->query($insert_stmt);
+                }
+
+                foreach ($h_name as $key => $hname) {
+                    foreach ($h_relationship as $key => $hrel) {
+                        foreach ($h_mobile_number as $key => $hnum) {
+                            $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
+                        }
+                    }
+                    $connect->query($insert_stmt);
+                }
+            }
+            if ($connect->query($insert_stmt) === true) {
+                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`department`,`account`,`comp_email`,
+                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$departments','$account',
                                 '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
             }else {
