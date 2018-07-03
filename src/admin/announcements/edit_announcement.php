@@ -26,12 +26,12 @@
 
 							<div class="form-group col">
 								<label for="date">Start Date</label>
-								<input type="date" class="form-control" id="date" name="start_date" value="<?php echo $row['start_date']?>">
+								<input type="date" class="form-control" id="s_date" name="start_date" value="<?php echo $row['start_date']?>">
 							</div>
 
 							<div class="form-group col">
 								<label for="date">End Date</label>
-								<input type="date" class="form-control" id="date" name="end_date" value="<?php echo $row['end_date']?>">
+								<input type="date" class="form-control" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 							
 							<?php 
@@ -88,15 +88,37 @@
 						
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" name="edit" value="Edit">
+							<input type="submit" class="btn btn-primary" name="edit" id="but" value="Edit" disabled="disabled">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
-    
+    <script>
+		var old_sub = document.getElementById('subject').value;
+		var old_sdate = document.getElementById('s_date').value;
+		var old_edate = document.getElementById('e_date').value;
+		var old_department = document.getElementById('departments').value;
+		var old_text = document.getElementById('text').value;
+		
+		$(document).keyup(function (){
+			if(old_sub != $('#subject').val() || old_text != $('#text').val()){
+				$('#but').attr("disabled",false);
+			} else {
+				$('#but').attr("disabled",true);
+			}
+		});
+		$(document).change(function (){
+			if(old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#departments').val()){
+				$('#but').attr("disabled",false);
+			} else {
+				$('#but').attr("disabled",true);
+			}
+		});
+	</script>
 	<script>
+		
         $(document).ready(function(){
             $("#edit").modal("show");
         });
