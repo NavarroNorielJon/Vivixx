@@ -1,4 +1,5 @@
 <?php
+	ini_set('max_execution_time', 300);
 	include '../../utilities/db.php';
 	include '../../utilities/session.php';
 	$connect = Connect();
@@ -22,11 +23,12 @@
 	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 	<script src="../../script/jquery.form.min.js"></script>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 	<script src="https://unpkg.com/maxlength-contenteditable@1.0.0/dist/maxlength-contenteditable.js">
 	maxlengthContentEditableModule.maxlengthContentEditable();
 	</script>
@@ -35,7 +37,7 @@
 <body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -46,7 +48,7 @@
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../user_information/user_information.php">Users</a>
+						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
@@ -147,13 +149,18 @@
 								<input name="subject" type="text" class="form-control" placeholder="Title" id="title" required>
 							</div>
 
-							<div class="col">
-								<label for="start_date">Start Date</label>
-								<input name="start_date" type="date" class="form-control date" id="start_date" required min="2018-01-02">
+							<div class="col ui calendar" id="start_date">
+								<div class="ui input left icon">
+									<label for="start_date">Start Date</label>
+									<input type="text" name="start_date"  class="form-control date">
+								</div>
 							</div>
-							<div class="col">
-								<label for="end_date">End Date</label>
-								<input name="end_date" type="date" class="form-control date" id="end_date" required min="2018-01-02">
+
+							<div class="col ui calendar" id="end_date">
+								<div class="ui input left icon">
+									<label for="end_date">End Date</label>
+									<input type="text" name="end_date" class="form-control date">
+								</div>
 							</div>
 
 							<div class="form-group col">
@@ -190,7 +197,7 @@
 						</div>
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" onclick="jon();" name="submit" value="Submit">
+							<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 						</div>
 					</form>
 				</div>
@@ -198,8 +205,8 @@
 		</div>
 	</div>
 
-      <script>
-	  let del_announcement = function(id){
+    <script>
+	  	let del_announcement = function(id){
 				swal({
 					title: 'Are you sure?',
 					text: "You won't be able to revert this!",
@@ -207,7 +214,6 @@
 					buttons: true,
 					})
 					.then((result) => {
-						console.log(result);
 						if (result) {
 							$.get('delete_announcement.php?announcement_id=' + id);
 							swal(
@@ -296,15 +302,47 @@
 
 			});
 		});
+
 		$('#start_date').calendar({
 			type: 'date',
-			endCalendar: $('#end_date')
+			endCalendar: $('#end_date'),
+			formatter: {
+				date: function (date) {
+					if (!date) return '';
+					let day = date.getDate() + '';
+					if (day.length < 2) {
+						day = '0' + day;
+					}
+					let month = (date.getMonth() + 1) + '';
+					if (month.length < 2) {
+						month = '0' + month;
+					}
+					let year = date.getFullYear();
+					return year + '-' + month + '-' + day;
+				}
+			}
 		});
 
 		$('#end_date').calendar({
 			type: 'date',
-			startCalendar: $('#start_date')
+			startCalendar: $('#start_date'),
+			formatter: {
+				date: function (date) {
+					if (!date) return '';
+					let day = date.getDate() + '';
+					if (day.length < 2) {
+						day = '0' + day;
+					}
+					let month = (date.getMonth() + 1) + '';
+					if (month.length < 2) {
+						month = '0' + month;
+					}
+					let year = date.getFullYear();
+					return year + '-' + month + '-' + day;
+				}
+    		}
 		});
+
 		//script for calling datatables library
 		$(document).ready(function(){
 			$('#table').dataTable( {
@@ -315,6 +353,6 @@
 			});
 			$('#table').DataTable();
 		});
-      </script>
+    </script>
 </body>
 </html>
