@@ -48,4 +48,5 @@
 		VALUES ('$user_id', '$employee', '$department', '$position', '$date_hired', '$date_filed', '$reason', '$contact_address',
 		'$contact_number', '$from', '$to') ;";
     $connect->query($insert_stmt);
+	
 ?>

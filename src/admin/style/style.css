@@ -71,7 +71,8 @@ textarea {
 }
 
 #wrapper .announcement-content .announcement-table {
-	margin: 5vh 30vh;
+	margin: 5vh 10vh;
+	width: 90%;
 }
 
 #wrapper .index-content {
@@ -118,12 +119,12 @@ table {
 
 .edit {
 	margin: 3px;
-	width: 150px;
+	width: 100px;
 }
 
 .delete {
 	margin: 3px;
-	width: 150px;
+	width: 100px;
 }
 
 #border {
