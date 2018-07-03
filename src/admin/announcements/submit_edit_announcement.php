@@ -9,7 +9,7 @@ ini_set('upload_max_filesize', '64M');
     $enddate = $_POST["end_date"];
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $department = $_POST["department"];
-    $announcement_id=$_POST["announcement_id"];
+    $announcement_id=$_POST["id"];
       
     $file_names = [];
     $file_paths = [];
@@ -39,4 +39,4 @@ ini_set('upload_max_filesize', '64M');
             $connect->query($add_attachment);
         }       
     }
-    header("location: test.php");
+ header("location: test.php");
