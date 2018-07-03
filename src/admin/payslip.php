@@ -194,7 +194,7 @@
                             </div>
                             <div class="row border-bottom">
                                 <div class="col-2 text-right">PLUS</div>
-                                <div class="col-6 bg-dark text-white">HOLODAY PAY</div>
+                                <div class="col-6 bg-dark text-white">HOLIDAY PAY</div>
                             </div>
                             <div class="row border-bottom">
                                 <div class="col-2"></div>
