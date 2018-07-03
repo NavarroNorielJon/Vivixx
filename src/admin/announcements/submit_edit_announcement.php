@@ -36,17 +36,14 @@ ini_set('upload_max_filesize', '64M');
 		
 
         for($x = 0; $x< count($file_names); $x++){
-            if(!empty($file_names)){
+
                 move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                 $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
                 $add_attachment = "UPDATE announcement_attachments SET `attachment_name`='$file_names[$x]', `attachment`='$temp_file' where `announcement_id`='$announcement_id' ;";
                 $connect->query($add_attachment);
-            }else{
-                header("location: test.php");
-            }
             
         }       
     }
-		   header("location: test.php");
+header("location: test.php");
 
 

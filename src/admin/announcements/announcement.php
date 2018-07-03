@@ -212,6 +212,17 @@
 	</div>
 
     <script>
+		//script for calling datatables library
+		$(document).ready(function(){
+			$('#table').dataTable( {
+				"columnDefs": [
+					{ "orderable": false, "targets": [4,5] },
+					{ "width": "400px", "targets": 3 }
+				]
+			});
+			$('#table').DataTable();
+		});
+		
 	  	let del_announcement = function(id){
 				swal({
 					title: 'Are you sure?',
@@ -349,16 +360,7 @@
     		}
 		});
 
-		//script for calling datatables library
-		$(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": [4,5] },
-					{ "width": "400px", "targets": 3 }
-				]
-			});
-			$('#table').DataTable();
-		});
+		
     </script>
 </body>
 </html>
