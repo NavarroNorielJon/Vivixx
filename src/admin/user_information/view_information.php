@@ -503,7 +503,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['elementary']==="|"){echo "";}else{echo $elem[0];} ?>">
+                                <input type="text" name="elem_school_name" id="elem_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $elem[0]?>">
                             </div>
                             <script>
                                 $(function () {
@@ -512,12 +512,12 @@
                                         $('#u1').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option1').val() === "g1") {
-                                            $('#elem_yr_grad').attr('required','true');
-                                            $('#elem_school_name').attr('required','true');
+                                            $('#elem_yr_grad').attr('required', 'true');
+                                            $('#elem_school_name').attr('required', 'true');
                                             $('#elem_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option1').val() === "u1") {
-                                            $('#elem_school_name').attr('required','true');
-                                            $('#elem_high_level').attr('required','true');
+                                            $('#elem_school_name').attr('required', 'true');
+                                            $('#elem_high_level').attr('required', 'true');
                                             $('#elem_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
                                             $('#elem_school_name').removeAttr('required').removeClass('input-error');
@@ -538,7 +538,7 @@
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
@@ -552,7 +552,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['secondary']==="|"){echo "";}else{echo $sec[0];} ?>">
+                                <input type="text" name="sec_school_name" id="sec_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $sec[0]?>">
                             </div>
                             <script>
                                 $(function () {
@@ -561,12 +561,12 @@
                                         $('#u2').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option2').val() === "g2") {
-                                            $('#sec_yr_grad').attr('required','true');
-                                            $('#sec_school_name').attr('required','true');
+                                            $('#sec_yr_grad').attr('required', 'true');
+                                            $('#sec_school_name').attr('required', 'true');
                                             $('#sec_high_level').removeAttr('required').removeClass('input-error');
                                         } else if ($('#option2').val() === "u2") {
-                                            $('#sec_school_name').attr('required','true');
-                                            $('#sec_high_level').attr('required','true');
+                                            $('#sec_school_name').attr('required', 'true');
+                                            $('#sec_high_level').attr('required', 'true');
                                             $('#sec_yr_grad').removeAttr('required').removeClass('input-error');
                                         } else {
                                             $('#sec_school_name').removeAttr('required').removeClass('input-error');
@@ -579,15 +579,15 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $sec[1];?></option>
-                                    <option value="g1">Graduate</option>
-                                    <option value="u1">Undergraduate</option>
+                                    <option selected="selected" value="none"><?php echo $sec[1]?></option>
+                                    <option value="g2">Graduate</option>
+                                    <option value="u2">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
@@ -601,7 +601,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['college']==="|"){echo "";}else{echo $col[0];} ?>">
+                                <input type="text" name="col_school_name" id="col_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $col[0]?>">
                             </div>
 
                             <script>
@@ -611,15 +611,15 @@
                                         $('#u3').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option3').val() === "g3") {
-                                            $('#col_yr_grad').attr('required','true');
-                                            $('#col_school_name').attr('required','true');
+                                            $('#col_yr_grad').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
                                             $('#col_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option3').val() === "u3") {
-                                            $('#col_high_level').attr('required','true');
-                                            $('#col_school_name').attr('required','true');
+                                            $('#col_high_level').attr('required', 'true');
+                                            $('#col_school_name').attr('required', 'true');
                                             $('#col_yr_grad').removeAttr('required').removeClass('input-error');
-                                        }else {
+                                        } else {
                                             $('#col_school_name').removeAttr('required').removeClass('input-error');
                                             $('#col_yr_grad').removeAttr('required').removeClass('input-error');
                                             $('#col_high_level').removeAttr('required').removeClass('input-error');
@@ -631,14 +631,14 @@
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
                                     <option selected="selected" value="none"><?php echo $col[1]?></option>
-                                    <option value="g1">Graduate</option>
-                                    <option value="u1">Undergraduate</option>
+                                    <option value="g3">Graduate</option>
+                                    <option value="u3">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
@@ -652,7 +652,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if($row['post_grad']==="|"){echo "";}else{echo $pos[0];} ?>">
+                                <input type="text" name="pos_school_name" id="pos_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $pos[0]?>">
                             </div>
 
                             <script>
@@ -662,15 +662,15 @@
                                         $('#u4').hide();
                                         $('#' + $(this).val()).show();
                                         if ($('#option4').val() === "g4") {
-                                            $('#pos_yr_grad').attr('required','true');
-                                            $('#pos_school_name').attr('required','true');
+                                            $('#pos_yr_grad').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
                                             $('#pos_high_level').removeAttr('required').removeClass('input-error');
 
                                         } else if ($('#option4').val() === "u4") {
-                                            $('#pos_high_level').attr('required','true');
-                                            $('#pos_school_name').attr('required','true');
+                                            $('#pos_high_level').attr('required', 'true');
+                                            $('#pos_school_name').attr('required', 'true');
                                             $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
-                                        }else {
+                                        } else {
                                             $('#pos_school_name').removeAttr('required').removeClass('input-error');
                                             $('#pos_high_level').removeAttr('required').removeClass('input-error');
                                             $('#pos_yr_grad').removeAttr('required').removeClass('input-error');
@@ -682,14 +682,14 @@
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
                                     <option selected="selected" value="none"><?php echo $pos[1]?></option>
-                                    <option value="g1">Graduate</option>
-                                    <option value="u1">Undergraduate</option>
+                                    <option value="g4">Graduate</option>
+                                    <option value="u4">Undergraduate</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="g4" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u4" style="display:none">
@@ -830,7 +830,7 @@
                             <div class="form-group col-4">
                                 <label for="quest">Do you plan on relocating soon? </label>
                                 <select name="yesorno" id="quest" class="form-control">
-                                    <option selected="selected" disabled="disabled">Select: Yes or No</option>
+                                    <option selected="selected" disabled="disabled"><?php echo $row["answer"]?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -876,7 +876,7 @@
                             <div class="form-group col-6">
                                 <label>Department</label>
     							<select class="custom-select form-group" name="department" id="department" required>
-    								<option selected disabled>Choose your Department</option>
+    								<option selected disabled><?php echo $row[""]?></option>
     								<option value="Administration / HR Support">Administration / HR Support</option>
     								<option value="IT Support">IT Support</option>
                                     <option value="Maintenance">Maintenance</option>
