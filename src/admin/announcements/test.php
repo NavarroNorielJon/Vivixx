@@ -21,10 +21,11 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
-					<h1 class="text-center">Success</h1>
+					<h1 class="text-center" style="font-size:5rem">Success!</h1>
+					<div class="text-center"><p>Admin have successfully added an announcement</p></div>
           <form action="../google-api-php-client/send_attachments.php" method="post">
             <div class="text-right">
-              <button class="btn btn-danger" type="submit" name="submit">Done</button>
+              <button class="btn btn-primary" type="submit" name="submit">Done</button>
             </div>
           </form>	
 				</div>
