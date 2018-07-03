@@ -34,7 +34,6 @@ ini_set('upload_max_filesize', '64M');
 
             move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
             $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-            echo $temp_file;
             $add_attachment = "UPDATE announcement_attachments SET `attachment_name`='$file_names[$x]', `attachment`='$temp_file' where `announcement_id`='$announcement_id' ;";
             $connect->query($add_attachment);
         }       
