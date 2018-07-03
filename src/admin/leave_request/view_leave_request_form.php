@@ -13,7 +13,7 @@
     <form action="accept_or_reject.php" method="POST">
     <div class="modal fade" id="request" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
-            <div class="modal-content">
+            <div class="modal-content"  style="border-radius: 0;">
                 <div class="modal-header">
 					<h1>Leave Request Form</h1>
                 </div>

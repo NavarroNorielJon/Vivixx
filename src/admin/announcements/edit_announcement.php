@@ -60,7 +60,7 @@
 
 							<div class="form-group col">
 								<label for="departments">Department</label>
-								<select class="custom-select form-group" id="departments" name="department" required>
+								<select class="custom-select form-group" id="department" name="department[]" required multiple="multiple">
 									<option value="" disabled><?php echo $dept ?></option>
                                 	<option value="All">All Departments</option>
                                 	<option value="Administration">Administration</option>
@@ -108,6 +108,11 @@
 	</div>
 
 	<script>
+		$('#department').multiselect({
+			templates: {
+				li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
+			}
+		});
 		function edit_status() {
 			swal({
 					title: "Caution!",
@@ -132,7 +137,7 @@
 		var old_sub = document.getElementById('subject').value;
 		var old_sdate = document.getElementById('s_date').value;
 		var old_edate = document.getElementById('e_date').value;
-		var old_department = document.getElementById('departments').value;
+		var old_department = document.getElementById('department').value;
 		var old_text = document.getElementById('text').value;
 
 		$(document).keyup(function() {
@@ -143,7 +148,7 @@
 			}
 		});
 		$(document).change(function() {
-			if (old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#departments').val()) {
+			if (old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val()) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);
