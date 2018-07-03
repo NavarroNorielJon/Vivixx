@@ -68,7 +68,7 @@ $('#signup_form').ajaxForm({
     }
 });
 
-$('#leave_form').ajaxForm({
+$('#leave-form').ajaxForm({
     url: '../utilities/leave_request.php',
     method: 'post',
     error: function (){
