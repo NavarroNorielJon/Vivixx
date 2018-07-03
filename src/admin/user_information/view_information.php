@@ -3,7 +3,7 @@
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id';";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id' and birth_date is not null group by user.user_id;";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
     $height = explode("'",$row['height']);
@@ -228,7 +228,7 @@
             				<div class=" form-group col">
             					<label for="gender">Gender</label>
             					<select name="gender" id="gender" class="form-control">
-            						<option selected="selected" disabled="disabled">Select Here:</option>
+            						<option selected="selected" disabled="disabled"><?php echo $row["gender"]?></option>
             						<option value="Male">Male</option>
             						<option value="Female">Female</option>
             						<option value="Rather not say">I'd rather not say</option>
@@ -262,7 +262,7 @@
             				<div class="form-group col">
             					<label for="blood">Blood Type</label>
             					<select name="blood" class="form-control" >
-            						<option selected="selected" disabled="disabled">Select Blood Type:</option>
+            						<option selected="selected" disabled="disabled"><?php echo $row["blood_type"]?></option>
             						<option value="o">O</option>
             						<option value="a">A</option>
             						<option value="b">B</option>
@@ -328,7 +328,7 @@
                             <div class="form-group col">
                                 <label for="civil_status">Civil Status</label>
                                 <select name="civil_status" id="civil_status" class="form-control" >
-                                    <option selected="selected" disabled="disabled">Select:</option>
+                                    <option selected="selected" disabled="disabled"><?php echo $row["civil_status"]?></option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                     <option value="widowed">Widowed</option>
@@ -530,7 +530,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="none">None</option>
+                                    <option selected="selected" value="none"><?php echo $elem[1]?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -579,7 +579,7 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected="selected" value="none">None</option>
+                                    <option selected="selected" value="none"><?php echo $sec[1];?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -630,7 +630,7 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option selected="selected" value="none">None</option>
+                                    <option selected="selected" value="none"><?php echo $col[1]?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -681,7 +681,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" value="none">None</option>
+                                    <option selected="selected" value="none"><?php echo $pos[1]?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -958,7 +958,7 @@
                         </div>
                         <div class="f1-buttons">
                             <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="submit" class="btn pages btn-submit">Submit</button>
+                            <button type="submit" class="btn pages btn-submit" id="submit_btn">Submit</button>
                         </div>
                     </fieldset>
                 </form>
@@ -969,6 +969,7 @@
     ?>
 
             <script>
+                $("#submit_btn").attr("disabled","true");
                 function initMap() {
                     var myLatlng = new google.maps.LatLng(<?php echo $coordinates[0];?>,<?php echo $coordinates[1];?>);
                     var myOptions = {

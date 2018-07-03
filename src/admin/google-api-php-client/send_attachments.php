@@ -46,5 +46,3 @@ if (!empty($_POST)) {
     finfo_close($finfo);
     header('location:../announcements/announcement.php');exit;
 }
-
-
