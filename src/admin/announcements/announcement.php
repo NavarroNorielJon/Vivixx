@@ -26,20 +26,20 @@
 	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 	<script src="../../script/jquery.form.min.js"></script>
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 	<script src="https://unpkg.com/maxlength-contenteditable@1.0.0/dist/maxlength-contenteditable.js">
 	maxlengthContentEditableModule.maxlengthContentEditable();
-	</script>
+	</script> -->
 </head>
 
-<body style="background-color:white !important;">
+<body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbar-content">
@@ -47,18 +47,23 @@
 					<li class="nav-item ">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link active" href="announcement.php">Announcement</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
@@ -66,7 +71,7 @@
 			</div>
 		</nav>
 
-		<div class="accounts-content container-fluid">
+		<div class="announcement-content container-fluid">
 			<div class="row">
 				<div class="col-10 text-center">
 					<h1>Announcements</h1>
@@ -79,8 +84,7 @@
 				</div>
 			</div>
 
-			<div  style="margin: 5vh 15vh;">
-				<hr>
+			<div class="announcement-table">
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -152,14 +156,14 @@
 							<div class="col ui calendar" id="start_date">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" name="start_date"  class="form-control date">
+									<input type="date" name="start_date"  class="form-control date">
 								</div>
 							</div>
 
 							<div class="col ui calendar" id="end_date">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" name="end_date" class="form-control date">
+									<input type="date" name="end_date" class="form-control date">
 								</div>
 							</div>
 
@@ -189,12 +193,11 @@
 									</div>
 							</div>
 						</div>
-						<div class="text-center">
-							<span class="btn btn-default btn-file">
-								<span class="fileinput-new">File Upload</span>
-								<input type="file" name="file[]" multiple>
-                    		</span>
-						</div>
+						
+						<span class="btn btn-default btn-file">
+							<input type="file" name="file[]" multiple>
+						</span>
+						
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
 							<input type="submit" class="btn btn-primary" name="submit" value="Submit">

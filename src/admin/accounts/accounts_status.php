@@ -25,7 +25,7 @@
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand" id="navbar-title">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
