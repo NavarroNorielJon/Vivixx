@@ -8,14 +8,18 @@ ini_set('upload_max_filesize', '64M');
     $startdate = $_POST["start_date"];
     $enddate = $_POST["end_date"];
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
-    $department = $_POST["department"];
     $announcement_id=$_POST["id"];
+    $department = $_POST["department"];
       
     $file_names = [];
     $file_paths = [];
     $file_tmp_names = [];
     $file_err_nos = [];
-    echo $_POST['edit'];
+    $concat = "";
+
+    foreach($department as $dept ){
+        $concat .= $dept . ",";
+    }
     if(isset($_POST["edit"])){
         foreach($_FILES['file']['name'] as $child) {
             $file_names[] = $child;
@@ -27,7 +31,7 @@ ini_set('upload_max_filesize', '64M');
         foreach($_FILES['file']['error'] as $child) {
             $file_err_nos[] = $child;
         }
-        $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$department' where announcement_id='$announcement_id';";
+        $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat' where announcement_id='$announcement_id';";
         $connect->query($sql);
 		echo $sql;
 

@@ -137,7 +137,7 @@
 		var old_sub = document.getElementById('subject').value;
 		var old_sdate = document.getElementById('s_date').value;
 		var old_edate = document.getElementById('e_date').value;
-		var old_department = document.getElementById('departments').value;
+		var old_department = document.getElementById('department').value;
 		var old_text = document.getElementById('text').value;
 
 		$(document).keyup(function() {
@@ -148,7 +148,7 @@
 			}
 		});
 		$(document).change(function() {
-			if (old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#departments').val()) {
+			if (old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val()) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);

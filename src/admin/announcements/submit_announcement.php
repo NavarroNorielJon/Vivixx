@@ -4,19 +4,21 @@ ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
 	
-      $subject = $_POST["subject"];
-      $startdate = $_POST["start_date"];
-      $enddate = $_POST["end_date"];
-      $body = mysqli_real_escape_string($connect,$_POST["body"]);
-      $department = $_POST["department"];
-      $concat = "";
-        foreach($department as $dept ){
-            $concat .= $dept . ",";
-        }
-      $file_names = [];
-      $file_paths = [];
-      $file_tmp_names = [];
-      $file_err_nos = [];
+    $subject = $_POST["subject"];
+    $startdate = $_POST["start_date"];
+    $enddate = $_POST["end_date"];
+    $body = mysqli_real_escape_string($connect,$_POST["body"]);
+    $department = $_POST["department"];
+      
+    $file_names = [];
+    $file_paths = [];
+    $file_tmp_names = [];
+    $file_err_nos = [];
+    $concat = "";
+
+    foreach($department as $dept ){
+        $concat .= $dept . ",";
+    }
     if(isset($_POST["submit"])){
         foreach($_FILES['file']['name'] as $child) {
             $file_names[] = $child;
