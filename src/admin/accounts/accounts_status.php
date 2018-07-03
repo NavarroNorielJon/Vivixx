@@ -130,7 +130,7 @@
 					 $.get('update_status.php');
 					swal("Success","Account successfully enabled or disabled.","success").then(function(){location.reload();});
 			}else {
-				swal("No changes are made.");
+				swal("Canceled","", "error");
 			}
 				  })
 		}

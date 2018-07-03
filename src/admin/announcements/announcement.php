@@ -35,7 +35,7 @@
 <body style="background-color:white !important;">
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../index" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+			<a href="../index" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -46,7 +46,7 @@
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../user_information/user_information.php">Users</a>
+						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
