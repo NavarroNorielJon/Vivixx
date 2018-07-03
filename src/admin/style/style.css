@@ -17,7 +17,7 @@
 }
 
 #navigation-bar .navbar-brand {
-	font-size: 2rem;
+	font-size: 2rem !important;
 	font-family: rockwell;
 	height: auto;
 	margin: 3px 5px 5px 15px;

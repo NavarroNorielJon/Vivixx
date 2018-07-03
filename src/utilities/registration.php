@@ -4,11 +4,11 @@ $connect = Connect();
 
 //user credentials
 $first_name = ucwords(mysqli_real_escape_string($connect, $_POST['first_name']));
-if ($_POST['middle_name'] !== null) {
+if (!empty($_POST['middle_name'])) {
     $middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['middle_name']));
 
 } else {
-    $middle_name = "null";
+    $middle_name = null;
 }
 $last_name = ucwords(mysqli_real_escape_string($connect, $_POST['last_name']));
 $email = mysqli_real_escape_string($connect, $_POST['email']);
@@ -115,7 +115,11 @@ if ($connect->query($insert_stmt) === true) {
     $result = $connect->query($sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $id = $row['user_id'];
-    $insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`middle_name`,`last_name`) VALUES ('$id','$first_name','$middle_name','$last_name');";
+    if (!empty($_POST['middle_name'])) {
+        $insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`middle_name`,`last_name`) VALUES ('$id','$first_name','$middle_name','$last_name');";
+    }else {
+        $insert_stmt = "INSERT INTO `user_info` (`user_id`,`first_name`,`last_name`) VALUES ('$id','$first_name','$last_name');";
+    }
     $connect->query($insert_stmt);
 }
 Disconnect($connect);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	
+
 <head>
 	<title>Vivixx Ph</title>
     <meta charset="utf-8">
@@ -13,28 +13,28 @@
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
-	<script type="text/javascript" src="../../script/ajax.js"></script>  
+	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
     <script src="../../script/jquery.form.min.js"></script>
 </head>
-    
-<body>		
+
+<body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="../user_information/user_information.php">Users</a>
+						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
@@ -51,13 +51,13 @@
 				</ul>
 			</div>
 		</nav>
-		
+
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
 			<div class="text-center">
 				<h1>User Information</h1>
 			</div>
-			
+
 			<div style="margin: 5vh 15vh;">
 				<table class="table" id="table">
 					<thead>
@@ -71,12 +71,17 @@
 							<th>Edit or View data</th>
 						</tr>
 					</thead>
-		
+
 					<?php
 					include '../../utilities/session.php';
-					$sql = "select * from user_info natural join user where type='user';";
+					$sql = "SELECT * FROM user_info NATURAL JOIN user WHERE type='user' and
+						(birth_place is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
+						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
+						residential_tel_no is not null and permanent_address is not null and permanent_zip is not null and permanent_tel_no is not null
+						and citizenship is not null and civil_status is not null and sss_no is not null and tin is not null and philhealth_no and
+						pagibig_id_no is not null)";
 					$result = $connect->query($sql);
-					
+
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							if($row["gender"] === "m"){
@@ -86,13 +91,13 @@
 							}else{
 								$gender = "Not set";
 							}
-							
+
 							if(!isset($row["residential_address"])){
 								$address = "Not set";
 							}else{
 								$address = $row["residential_address"];
 							}
-							
+
 							if(!isset($row["contact_number"])){
 								$contact = "Not set";
 							}else{
@@ -103,7 +108,7 @@
 							<input name='show' value='show' style='display: none;'>
 							<a href='view_information.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";						
+								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 							//print data in table
 							echo "
 							<tr>
@@ -118,16 +123,16 @@
 						}
 
 					}
-					
+
 					$connect-> close();
 					?>
 				</table>
 			</div>
-		</div>	
+		</div>
 	</div>
 
 	<div id="result"></div>
-         
+
 	<!--script for calling data table library-->
 	<script>
 		$(document).ready(function(){

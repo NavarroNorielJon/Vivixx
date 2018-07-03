@@ -27,7 +27,7 @@
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -38,7 +38,7 @@
 						<a class="nav-link" href="accounts_status.php">Accounts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../user_information/user_information.php">Users</a>
+						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
@@ -84,11 +84,11 @@
 							if($row["status"] === "enabled"){
 								$button = "
 								<input name='disable' value='Disable' style='display: none;'>
-								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."'	class='show btn btn-danger'>Disable</a>";
+								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
 							}else{
 								$button = "
 								<input name='enable' value='Enable' style='display: none;'>
-								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
+								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
 							}
 							
 							//print data in table
@@ -112,6 +112,30 @@
 			<div id="result1"></div>					
 		</div>
 	</div>
+	<button onclick="jon();">Hi</button>
+	<script>
+		function update_status() {
+			swal({
+				title: "Caution!",
+				text: "Are you sure you want to enable or disable this account?",
+				icon: "warning",
+				buttons: {
+					cancel: "Cancel",
+					confirm: true
+				},
+				dangerMode: true, 
+			})
+			.then((result) =>{
+				  if(result) {
+					 $.get('update_status.php');
+					swal("Success","Account successfully enabled or disabled.","success").then(function(){location.reload();});
+			}else {
+				swal("Canceled","", "error");
+			}
+				  })
+		}
+		
+	</script>
 	
 	
 	<script>
