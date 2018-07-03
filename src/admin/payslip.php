@@ -40,7 +40,7 @@
                     <a class="nav-link" href="accounts/accounts_status.php">Accounts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="user_information/user_information.php">Users</a>
+                    <a class="nav-link" href="user_information/user_information.php">Employees</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="leave_request/leave_requests.php">Leave Request</a>

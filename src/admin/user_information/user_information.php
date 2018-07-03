@@ -40,7 +40,7 @@
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Summary of Pay</a>
+						<a class="nav-link" href="../payslip.php">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>

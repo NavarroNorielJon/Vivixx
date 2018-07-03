@@ -3,7 +3,7 @@
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id' and birth_date is not null group by user.user_id;";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet natural left join tutor_info inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id' and birth_date is not null group by user.user_id;";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
     $height = explode("'",$row['height']);
@@ -853,22 +853,22 @@
                         <div class="row">
                             <div class="form-group col-4">
                                 <label>Tutor's Full Name</label>
-                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform">
+                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row["full_name"]?>">
                             </div>
 
                             <div class="form-group col-2">
                                 <label>Nickname</label>
-                                <input type="text" name="nickname" id="nickname" placeholder="nickname" onkeypress="alphabetInput(event)" class="form-control text-transform">
+                                <input type="text" name="nickname" id="nickname" placeholder="nickname" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row["nickname"]?>">
                             </div>
 
                             <div class="form-group col">
                                 <label>Mobile Number</label>
-                                <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile">
+                                <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile" value="<?php echo $row["mobile_number"]?>">
                             </div>
 
                             <div class="form-group col">
                                 <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone">
+                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row["landline"]?>">
                             </div>
                         </div>
 
@@ -876,7 +876,7 @@
                             <div class="form-group col-6">
                                 <label>Department</label>
     							<select class="custom-select form-group" name="department" id="department" required>
-    								<option selected disabled><?php echo $row[""]?></option>
+    								<option selected disabled><?php echo $row["department"]?></option>
     								<option value="Administration / HR Support">Administration / HR Support</option>
     								<option value="IT Support">IT Support</option>
                                     <option value="Maintenance">Maintenance</option>
@@ -889,7 +889,7 @@
                             </div>
                             <div class="form-group col-6">
                                 <label>Main Account</label>
-                                <input type="text" name="acc[]" id="acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform">
+                                <input type="text" name="acc[]" id="acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row["account"]?>">
                             </div>
                         </div>
 
@@ -925,36 +925,36 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>Company Email address</label>
-                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control" value="<?php echo $row["comp_email"]?>">
                             </div>
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" >
+                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" value="<?php echo $row["comp_email_password"]?>">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label>Skype Account</label>
-                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control" value="<?php echo $row["skype"]?>">
                             </div>
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" >
+                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" value="<?php echo $row["skype_password"]?>">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label>QQ Number</label>
-                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control" value="<?php echo $row["qq_number"]?>">
                             </div>
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" >
+                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" value="<?php echo $row["qq_password"]?>">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -970,7 +970,6 @@
     ?>
 
             <script>
-                $("#submit_btn").attr("disabled","true");
                 function initMap() {
                     var myLatlng = new google.maps.LatLng(<?php echo $coordinates[0];?>,<?php echo $coordinates[1];?>);
                     var myOptions = {
