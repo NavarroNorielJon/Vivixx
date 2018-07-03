@@ -129,13 +129,11 @@ for ($i=0; $i < count($department); $i++) {
 
 	if ($department[$i] === "ash") {
 	    $department[$i] = "Administration/HR Support";
-
 		if ($i == (count($department)-1)) {
 			$account .= $_POST['adminsp'][$i];
 		}else{
 			$account .= $_POST['adminsp'][$i]."|";
 		}
-
 	} elseif ($department[$i] === "its") {
 	    $department[$i] = "IT Support";
 		if ($i == (count($department)-1)) {
@@ -143,7 +141,6 @@ for ($i=0; $i < count($department); $i++) {
 		}else{
 			$account .=  $_POST['itsupport'][$i] . "|";
 		}
-
 	} elseif ($department[$i] === "main") {
 		 $department[$i] = "Maintenance";
 		 if ($i == (count($department)-1)) {
