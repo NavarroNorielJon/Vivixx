@@ -69,22 +69,24 @@
                             	</select>
                         	</div>
 						</div>
+						
 						<div style="text-align:left">
-						<div class="d-flex ">
-							<div class="p-2" id="border">
-								<p contenteditable="true" id="editable"><?php echo $row["announcement"]?></p>
+							<div class="d-flex ">
+								<div class="p-2" id="border">
+									<p contenteditable="true" id="editable"><?php echo $row["announcement"]?></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
-									Remaining characters: <span id="totalChars">1500</span><br/>
-							</div>                           
-						</div>
-						<span class="btn btn-default btn-file">
-							<span class="fileinput-new">File Upload</span>
-							<input type="file" name="file[]" multiple>
-						</span>
+									<div class="text-center">
+										Remaining characters: <span id="totalChars">1500</span><br/>
+									</div>
+								</div>                           
+							</div>
+							
+							<span class="btn btn-default btn-file">
+								<input type="file" name="file[]" multiple>
+							</span>
 						</div>
 						
 						<div style="text-align:right">
-
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
 							<input type="submit" class="btn btn-primary" name="edit" value="Edit">
 						</div>
