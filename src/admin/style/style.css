@@ -1,10 +1,13 @@
 /*This stylesheet is created mainly for the styling of the admin's side*/
+
 textarea {
 	display: none !important;
 }
+
 .admin {
 	background-image: url(../../img/Lion.png);
 }
+
 #navigation-bar {
 	background-color: #005959;
 	max-height: 70px;
@@ -44,17 +47,17 @@ textarea {
 }
 
 #second {
-    overflow-y:scroll;
+	overflow-y: scroll;
 }
 
 #text {
-	height:300px;
-    resize: none;
-    width:500px;
- }
+	height: 300px;
+	resize: none;
+	width: 500px;
+}
 
 #wrapper .accounts-content {
-	background-color:#fff;
+	background-color: #fff;
 	margin: 100px auto 100px auto;
 }
 
@@ -92,24 +95,25 @@ textarea {
 	font-size: 3rem;
 }
 
-table{
-  margin: 0 auto;
-  width: 100%;
-  clear: both;
-  border-collapse: collapse;
-  table-layout: fixed;
-  word-wrap:break-word; 
+table {
+	margin: 0 auto;
+	width: 100%;
+	clear: both;
+	border-collapse: collapse;
+	table-layout: fixed;
+	word-wrap: break-word;
 }
-#editable{
-	min-height:400px;
-	width:100%;
+
+#editable {
+	min-height: 400px;
+	width: 100%;
 	word-wrap: break-word;
 	overflow: auto;
-	border:1px solid black; 
-	text-align:left;
+	border: 1px solid black;
+	text-align: left;
 	margin: auto !important;
 	display: block;
-	
+
 }
 
 .edit {
@@ -122,9 +126,9 @@ table{
 	width: 150px;
 }
 
-#border{
-	min-height:300px;
-	width:100%;
+#border {
+	min-height: 300px;
+	width: 100%;
 	opacity: 0.9%;
 	margin: auto !important;
 	display: block;

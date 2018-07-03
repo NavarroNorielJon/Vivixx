@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--scripts-->
+	<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
 	<script type="text/javascript" src="../../script/ajax.js"></script>  
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
