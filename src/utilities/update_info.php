@@ -102,12 +102,12 @@ $main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
 //     //Housemate
 $h_name = $_POST['hname'];
 $h_relationship = $_POST['hrel'];
-$h_mobile_number = $_POST['mnumber'];
+$h_mobile_number = $_POST['hnumber'];
 
 //     //Relatives
 $r_name = $_POST['rname'];
 $r_relationship = $_POST['rrel'];
-$r_mobile_number =$_POST['rmnumber'];
+$r_mobile_number =$_POST['rnumber'];
 
 $secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
 $provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
@@ -249,21 +249,12 @@ if ($connect->query($update_stmt) === true) {
             $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`)
                 VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
             if ($connect->query($insert_stmt) === true) {
-                foreach ($r_name as $key => $rname) {
-                    foreach ($r_relationship as $key => $rrel) {
-                        foreach ($r_mobile_number as $key => $rnum) {
-                            $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$rname','$rnum','$rrel');";
-                        }
-                    }
+                for ($i=0; $i <count($r_name) ; $i++) {
+                    $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]');";
                     $connect->query($insert_stmt);
                 }
-
-                foreach ($h_name as $key => $hname) {
-                    foreach ($h_relationship as $key => $hrel) {
-                        foreach ($h_mobile_number as $key => $hnum) {
-                            $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$hname','$hnum','$hrel');";
-                        }
-                    }
+                for ($i=0; $i <count($h_name) ; $i++) {
+                    $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]');";
                     $connect->query($insert_stmt);
                 }
             }
