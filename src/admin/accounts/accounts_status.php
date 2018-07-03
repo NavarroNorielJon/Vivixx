@@ -1,8 +1,8 @@
 <?php
-	include '../../utilities/db.php';
 	include '../../utilities/session.php';
 	$connect = Connect();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +17,6 @@
 
     <!--scripts-->
     <script type="text/javascript" src="../../script/datatables.min.js"></script>
-	<script type="text/javascript" src="../../script/ajax.js"></script>  
-	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
     <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
     <script src="../../script/jquery.form.min.js"></script>
@@ -27,28 +25,34 @@
 <body>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:46vw;">Vivixx</a>
+			<a href="../accounts/accounts_status.php" class="navbar-brand" id="navbar-title">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
 			
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
+					
 					<li class="nav-item active">
 						<a class="nav-link" href="accounts_status.php">Accounts</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="#">Summary of Pay</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
@@ -56,12 +60,13 @@
 			</div>
 		</nav>
 		
-		<div class="accounts-content container" style="background-color:#fff;">
+		<div class="accounts-content container">
+			
 			<div class="text-center">
 				<h1>Accounts</h1>
 			</div>
 			
-			<div  style="margin: 5vh 2vh;">
+			<div class="accounts-table">
 				<table class="table" id="table">
 					<thead>
 						<tr>
@@ -110,33 +115,36 @@
 			</div>			
 			
 			<div id="result1"></div>					
+			
 		</div>
 	</div>
-	<button onclick="jon();">Hi</button>
+	
 	<script>
 		function update_status() {
 			swal({
 				title: "Caution!",
 				text: "Are you sure you want to enable or disable this account?",
 				icon: "warning",
+				dangerMode: true, 
 				buttons: {
 					cancel: "Cancel",
-					confirm: true
+					confirm: true,
 				},
-				dangerMode: true, 
 			})
-			.then((result) =>{
-				  if(result) {
-					 $.get('update_status.php');
-					swal("Success","Account successfully enabled or disabled.","success").then(function(){location.reload();});
-			}else {
-				swal("Canceled","", "error");
-			}
-				  })
-		}
-		
+				.then((result) => {
+				if(result) {
+					$.get('update_status.php');
+					swal("Success","Account successfully enabled or disabled.","success")
+						.then(
+						function(){
+							location.reload();
+						});
+				}else {
+					swal("Canceled","", "error");
+				}
+			})
+		}	
 	</script>
-	
 	
 	<script>
 		//script for calling modal
@@ -161,7 +169,6 @@
 			});
 			$('#table').DataTable();
 		});
-      </script>
-	
+	</script>	
 </body>
 </html>
