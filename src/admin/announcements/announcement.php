@@ -305,12 +305,42 @@
 
 		$('#start_date').calendar({
 			type: 'date',
-			endCalendar: $('#end_date')
+			endCalendar: $('#end_date'),
+			formatter: {
+				date: function (date) {
+					if (!date) return '';
+					let day = date.getDate() + '';
+					if (day.length < 2) {
+						day = '0' + day;
+					}
+					let month = (date.getMonth() + 1) + '';
+					if (month.length < 2) {
+						month = '0' + month;
+					}
+					let year = date.getFullYear();
+					return year + '-' + month + '-' + day;
+				}
+			}
 		});
 
 		$('#end_date').calendar({
 			type: 'date',
-			startCalendar: $('#start_date')
+			startCalendar: $('#start_date'),
+			formatter: {
+				date: function (date) {
+					if (!date) return '';
+					let day = date.getDate() + '';
+					if (day.length < 2) {
+						day = '0' + day;
+					}
+					let month = (date.getMonth() + 1) + '';
+					if (month.length < 2) {
+						month = '0' + month;
+					}
+					let year = date.getFullYear();
+					return year + '-' + month + '-' + day;
+				}
+    		}
 		});
 
 		//script for calling datatables library
