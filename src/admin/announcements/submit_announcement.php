@@ -50,9 +50,4 @@ ini_set('upload_max_filesize', '64M');
             }
                
     }
-
-    echo "
-    <script>
-        alert('Announcement has been successful.');
-    </script>
-    ";
+    header("location: test.php");
