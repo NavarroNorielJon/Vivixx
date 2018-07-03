@@ -84,11 +84,11 @@
 							if($row["status"] === "enabled"){
 								$button = "
 								<input name='disable' value='Disable' style='display: none;'>
-								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."'	class='show btn btn-danger'>Disable</a>";
+								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
 							}else{
 								$button = "
 								<input name='enable' value='Enable' style='display: none;'>
-								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' class='show btn btn-success'>Enable</a>";
+								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
 							}
 							
 							//print data in table
@@ -112,6 +112,30 @@
 			<div id="result1"></div>					
 		</div>
 	</div>
+	<button onclick="jon();">Hi</button>
+	<script>
+		function update_status() {
+			swal({
+				title: "Caution!",
+				text: "Are you sure you want to enable or disable this account?",
+				icon: "warning",
+				buttons: {
+					cancel: "Cancel",
+					confirm: true
+				},
+				dangerMode: true, 
+			})
+			.then((result) =>{
+				  if(result) {
+					 $.get('update_status.php');
+					swal("Success","Account successfully enabled or disabled.","success").then(function(){location.reload();});
+			}else {
+				swal("No changes are made.");
+			}
+				  })
+		}
+		
+	</script>
 	
 	
 	<script>

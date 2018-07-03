@@ -207,7 +207,6 @@
 					buttons: true,
 					})
 					.then((result) => {
-						console.log(result);
 						if (result) {
 							$.get('delete_announcement.php?announcement_id=' + id);
 							swal(

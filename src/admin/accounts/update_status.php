@@ -11,4 +11,3 @@
     	}
 	
 	$result = $connect->query($update);
-header("location:success_accounts.php");
