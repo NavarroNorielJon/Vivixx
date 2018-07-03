@@ -60,7 +60,7 @@
 
 							<div class="form-group col">
 								<label for="departments">Department</label>
-								<select class="custom-select form-group" id="departments" name="department" required>
+								<select class="custom-select form-group" id="department" name="department[]" required multiple="multiple">
 									<option value="" disabled><?php echo $dept ?></option>
                                 	<option value="All">All Departments</option>
                                 	<option value="Administration">Administration</option>
@@ -108,6 +108,11 @@
 	</div>
 
 	<script>
+		$('#department').multiselect({
+			templates: {
+				li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
+			}
+		});
 		function edit_status() {
 			swal({
 					title: "Caution!",

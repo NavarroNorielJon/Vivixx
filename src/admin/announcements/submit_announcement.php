@@ -53,4 +53,4 @@ ini_set('upload_max_filesize', '64M');
             }
                
     }
-    //header("location: test.php");
+header("location: test.php");
