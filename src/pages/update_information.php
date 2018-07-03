@@ -332,10 +332,6 @@
                         <hr>
 
                         <h5>Spouse's Name(Optional)</h5>
-                        <sub>
-                            <strong>Note:</strong>
-                            If you dont have a spouse, it's unneccessary to fill up the form below
-                        </sub>
                         <br>
 
                         <div class="row">
@@ -689,7 +685,7 @@
 
                             <div class="form-group col">
                                 <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
+                                <input type="tel" name="hnumber[]" id="hnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
@@ -707,7 +703,7 @@
 
                             <div class="form-group col">
                                 <label for="mnumber2">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
+                                <input type="tel" name="hnumber[]" id="hnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
@@ -726,7 +722,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
+                                <input type="tel" name="rnumber[]" id="rnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
                             </div>
 
                         </div>
@@ -744,7 +740,7 @@
 
                             <div class="form-group col">
                                 <label for="rmnumber2">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
+                                <input type="tel" name="rnumber[]" id="rnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
                             </div>
 
                         </div>
