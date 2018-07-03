@@ -127,7 +127,7 @@
 					<div class="form-group col" id="ash" style='display:none'>
 						<label for="position">Position</label>
 						<select class="custom-select form-group" name="adminsp">
-								<option selected disabled value="HR Assistant">HR Assistant</option>
+								<option selected value="HR Assistant">HR Assistant</option>
 							</select>
 					</div>
 
