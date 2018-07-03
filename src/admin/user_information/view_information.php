@@ -877,13 +877,14 @@
                                 <label>Department</label>
     							<select class="custom-select form-group" name="department" id="department" required>
     								<option selected disabled>Choose your Department</option>
-    								<option value="Administration">Administration</option>
-    								<option value="Administration Support / HR">Administration Support / HR</option>
+    								<option value="Administration / HR Support">Administration / HR Support</option>
     								<option value="IT Support">IT Support</option>
-    								<option value="Non-voice Account">Non-voice Account</option>
+                                    <option value="Maintenance">Maintenance</option>
+    								<option value="Non-Voice Account">Non-Voice Account</option>
     								<option value="Phone ESL">Phone ESL</option>
+                                    <option value="Security">Security</option>
     								<option value="Video ESL">Video ESL</option>
-    								<option value="Virtual Assistant">Virtual Assistant</option>
+                                    <option value="Virtual Assistant">Virtual Assistant</option>
     							</select>
                             </div>
                             <div class="form-group col-6">

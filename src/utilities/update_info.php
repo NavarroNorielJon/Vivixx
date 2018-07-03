@@ -122,7 +122,7 @@ $tutor_name = ucwords(mysqli_real_escape_string($connect, $_POST['tutor_name']))
 $nickname = ucwords(mysqli_real_escape_string($connect, $_POST['nickname']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['landline']);
-$department = mysqli_real_escape_string($connect, $_POST['department']);
+$department = $_POST['department'];
 if ($department === "ash") {
     $department = "Administration Support / HR";
     $accounts = mysqli_real_escape_string($connect, $_POST['adminsp']);
@@ -213,9 +213,9 @@ if ($connect->query($update_stmt) === true) {
                             `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
                             '$secondary_address','$provincial_address','$answer','$id','$id');";
             if ($connect->query($insert_stmt) === true) {
-                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`department`,`accounts`,`comp_email`,
-                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline','$department','$accounts',
-                                '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
+                $insert_stmt = "INSERT INTO `tutor_info` (`user_id`,`full_name`,`nickname`,`mobile_number`,`landline`,`comp_email`,
+                                `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$tutor_name','$nickname','$mobile','$landline',
+                                    '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
                 $connect->query($insert_stmt);
             }else {
                 print_r($connect->error);

@@ -1,4 +1,7 @@
 /*This stylesheet is created mainly for the styling of the admin's side*/
+textarea {
+	display: none !important;
+}
 .admin {
 	background-image: url(../../img/Lion.png);
 }
@@ -64,6 +67,10 @@
 	margin-top: 100px;
 }
 
+#wrapper .announcement-content .announcement-table {
+	margin: 5vh 30vh;
+}
+
 #wrapper .index-content {
 	margin-top: 90px;
 }
@@ -94,7 +101,7 @@ table{
   word-wrap:break-word; 
 }
 #editable{
-	min-height:300px;
+	min-height:400px;
 	width:100%;
 	word-wrap: break-word;
 	overflow: auto;
@@ -104,9 +111,21 @@ table{
 	display: block;
 	
 }
+
+.edit {
+	margin: 3px;
+	width: 150px;
+}
+
+.delete {
+	margin: 3px;
+	width: 150px;
+}
+
 #border{
 	min-height:300px;
 	width:100%;
+	opacity: 0.9%;
 	margin: auto !important;
 	display: block;
 }

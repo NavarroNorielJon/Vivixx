@@ -444,7 +444,7 @@
 
                             <div class="form-group col" id="g1" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="elem_yr_grad" id="elem_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u1" style="display:none">
@@ -493,7 +493,7 @@
 
                             <div class="form-group col" id="g2" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="sec_yr_grad" id="sec_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u2" style="display:none">
@@ -544,7 +544,7 @@
 
                             <div class="form-group col" id="g3" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="(If Graduate)" class="form-control" autocomplete="off">
+                                <input type="text" name="col_yr_grad" id="col_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u3" style="display:none">
@@ -595,7 +595,7 @@
 
                             <div class="form-group col" id="g4" style="display:none">
                                 <label for="yr_grad">Year Graduated</label>
-                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="(If Graduated)" class="form-control" autocomplete="off">
+                                <input type="text" name="pos_yr_grad" id="pos_yr_grad" placeholder="Ex. 1995-96" class="form-control gradyear" autocomplete="off">
                             </div>
 
                             <div class="form-group col" id="u4" style="display:none">
@@ -785,7 +785,9 @@
                                         $('#ash').hide();
                                         $('#its').hide();
                                         $('#nva').hide();
-                                        $('#pe').hide();
+                                        $('#main').hide();
+                                        $('#sec').hide();
+                                        $('#voa').hide();
                                         $('#ve').hide();
                                         $('#va').hide();
                                         $('#' + $(this).val()).show();
@@ -793,20 +795,22 @@
                                 });
                             </script>
                             <div class="form-group col">
-                                <label for="department">Department</label>
-                                <select class="custom-select form-group" name="department" id="department">
+                                <label for="department">Main Department</label>
+                                <select class="custom-select form-group" name="department[]" id="department">
                                     <option selected="selected" disabled="disabled">Choose your Department</option>
-                                    <option value="ash">Administration Support / HR</option>
+                                    <option value="ash">Administration/HR Support</option>
                                     <option value="its">IT Support</option>
+                                    <option value="main">Maintenance</option>
                                     <option value="nva">Non-voice Account</option>
-                                    <option value="pe">Phone ESL</option>
+                                    <option value="sec">Security</option>
                                     <option value="ve">Video ESL</option>
                                     <option value="va">Virtual Assistant</option>
+                                    <option value="voa">Voice Account</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="orig">
-                                <label for="position">Main Account First</label>
+                                <label for="position">Main Account</label>
                                 <select class="custom-select form-group">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                 </select>
@@ -816,15 +820,17 @@
                                 <label for="position">Main Account</label>
                                 <select class="custom-select form-group" name="adminsp">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="HR Assistant">HR Assistant</option>
-                                    <option value="Job Getter">Job Getter</option>
+                                    <option value="HR Assistant">HR Support</option>
+                                    <option value="IDP Staff">IDP Staff</option>
+                                    <option value="Operations Support">Operations Support</option>
+                                    <option value="Springboard Staff">Springboard Staff</option>
                                 </select>
                             </div>
 
                             <div class="form-group col" id="its" style='display:none'>
                                 <label for="position">Main Account</label>
                                 <select class="custom-select form-group" name="itsupport">
-                                    <option value="IT">IT</option>
+                                    <option value="ICT Specialist">ICT Specialist</option>
                                 </select>
                             </div>
 
@@ -834,184 +840,329 @@
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="April Writing">April Writing</option>
                                     <option value="CL/IL">CL/IL</option>
-                                    <option value="ELANSO">ELANSO(E2Say)</option>
-                                    <option value="E-Say">E-Say</option>
-                                    <option value="First Future">First Future</option>
-                                    <option value="IDP">IDP</option>
-                                    <option value="Job Getter">Job Getter</option>
-                                    <option value="Key English">Key English</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="voa" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="phone">
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <option value="ELANSO">ELANSO</option>
                                     <option value="Phone ESL">Phone ESL</option>
                                 </select>
                             </div>
 
-                            <div class="form-group col" id="pe" style='display:none'>
+                            <div class="form-group col" id="ve" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="phone">
+                                <select class="custom-select form-group" name="video">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="April Writing">April Writing</option>
-                                    <option value="CL/IL">CL/IL/option>
-                                        <option value="ELANSO">ELANSO(E2Say)</option>
-                                        <option value="E-Say">E-Say</option>
-                                        <option value="First Future">First Future</option>
-                                        <option value="IDP">IDP</option>
-                                        <option value="Job Getter">Job Getter</option>
-                                        <option value="Key English">Key English</option>
-                                        <option value="Phone ESL">Phone ESL</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col" id="ve" style='display:none'>
-                                    <label for="position">Main Account</label>
-                                    <select class="custom-select form-group" name="video">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                        <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL</option>
-                                        <option value="ELANSO">ELANSO(E2Say)</option>
-                                        <option value="E-Say">E-Say</option>
-                                        <option value="First Future">First Future</option>
-                                        <option value="IDP">IDP</option>
-                                        <option value="Job Getter">Job Getter</option>
-                                        <option value="Key English">Key English</option>
-                                        <option value="Phone ESL">Phone ESL</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col" id="va" style='display:none'>
-                                    <label for="position">Main Account</label>
-                                    <select class="custom-select form-group" name="virtual">
-                                        <option selected="selected" disabled="disabled" value="Drag and drop">Drag and drop</option>
-                                    </select>
-                                </div>
+                                    <option value="First Future">First Future</option>
+                                    <option value="Key English">Key English</option>
+                                </select>
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label for="second_acc">Secondary Account</label>
-                                    <div class="input-group">
-                                        <select type="text" name="acc[]" id="second_acc" class="form-control">
-                                            <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                            <option value="">None</option>
-                                            <option value="April Writing">April Writing</option>
-                                            <option value="CL/IL">CL/IL</option>
-                                            <option value="Drag and drop">Drag and drop</option>
-                                            <option value="ELANSO">ELANSO(E2Say)</option>
-                                            <option value="E-Say">E-Say</option>
-                                            <option value="First Future">First Future</option>
-                                            <option value="HR Assistant">HR Assistant</option>
-                                            <option value="IDP">IDP</option>
-                                            <option value="Key English">Key English</option>
-                                            <option value="Phone ESL">Phone ESL</option>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-success" type="button" onclick="addAccount()">
-                                                <i class="small material-icons">add</i>
-                                            </button>
-                                        </div>
+                            <div class="form-group col" id="va" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="virtual">
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <option value="Drag and drop">Drag and drop</option>
+                                    <option value="Job Getter">Job Getter</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="sec" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="virtual">
+                                    <option value="Security" selected="selected" disabled="disabled">Security</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="main" style='display:none'>
+                                <label for="position">Main Account</label>
+                                <select class="custom-select form-group" name="virtual">
+                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    <option value="Housekeeping">Housekeeping</option>
+                                    <option value="Utility">Utility</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <script>
+                                $(function () {
+                                    $('#department').change(function () {
+                                        $('#orig').hide();
+                                        $('#ash').hide();
+                                        $('#its').hide();
+                                        $('#nva').hide();
+                                        $('#main').hide();
+                                        $('#sec').hide();
+                                        $('#voa').hide();
+                                        $('#ve').hide();
+                                        $('#va').hide();
+                                        $('#' + $(this).val()).show();
+                                    });
+                                });
+                            </script>
+                            <div class="form-group col">
+                                <label for="department">Secondary Department</label>
+                                <select class="custom-select form-group" name="department[]" id="department">
+                                    <option selected="selected" disabled="disabled">Choose your Department</option>
+                                    <option value="ash">Administration Support / HR</option>
+                                    <option value="its">IT Support</option>
+                                    <option value="main">Maintenance</option>
+                                    <option value="nva">Non-voice Account</option>
+                                    <option value="sec">Security</option>
+                                    <option value="ve">Video ESL</option>
+                                    <option value="va">Virtual Assistant</option>
+                                    <option value="voa">Voice Account</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col" id="orig">
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="new_acc"></div>
 
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label>Company Email address</label>
-                                    <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
-                                </div>
-
-                                <div class="form-group col">
-                                    <label>Password</label>
-                                    <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label>Skype Account</label>
-                                    <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-                                </div>
-
-                                <div class="form-group col">
-                                    <label>Password</label>
-                                    <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+                            <div class="form-group col" id="ash" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="adminsp">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="HR Assistant">HR Support</option>
+                                        <option value="IDP Staff">IDP Staff</option>
+                                        <option value="Operations Support">Operations Support</option>
+                                        <option value="Springboard Staff">Springboard Staff</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label>QQ Number</label>
-                                    <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                            <div class="form-group col" id="its" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="itsupport">
+                                        <option value="ICT Specialist">ICT Specialist</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group col">
-                                    <label>Password</label>
-                                    <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+                            <div class="form-group col" id="nva" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="nonvoice">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="voa" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="phone">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="ELANSO">ELANSO</option>
+                                        <option value="Phone ESL">Phone ESL</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="ve" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="video">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="First Future">First Future</option>
+                                        <option value="Key English">Key English</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="va" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="virtual">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="Drag and drop">Drag and drop</option>
+                                        <option value="Job Getter">Job Getter</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="sec" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="virtual">
+                                        <option value="Security" selected="selected" disabled="disabled">Security</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="main" style='display:none'>
+                                <label for="position">Secondary Account</label>
+                                <div class="input-group">
+                                    <select class="custom-select form-group" name="virtual">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                        <option value="Housekeeping">Housekeeping</option>
+                                        <option value="Utility">Utility</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" onclick="addAccount()">
+                                            <i class="small material-icons">add</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="submit" class="btn pages btn-submit">Submit</button>
+
+                        <div id="new_acc"></div>
+
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>Company Email address</label>
+                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                            </div>
+
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+                            </div>
                         </div>
-                    </fieldset>
-                </form>
-            </div>
+
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>Skype Account</label>
+                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+                            </div>
+
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>QQ Number</label>
+                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                            </div>
+
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f1-buttons">
+                        <button type="button" class="btn pages btn-previous">Previous</button>
+                        <button type="submit" class="btn pages btn-submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
+    </div>
 
-        <div id="footer">
-            <p>© Vivixx 2018 . All Rights Reserved.</p>
-        </div>
-        <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
-        </script>
-        <script>
-            function initMap() {
-                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-                var myOptions = {
-                    zoom: 18,
-                    center: myLatlng,
-                    disableDoubleClickZoom: true,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+    <div id="footer">
+        <p>© Vivixx 2018 . All Rights Reserved.</p>
+    </div>
+    <script>
+        $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+        $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+        $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+        $('.zip').inputmask({mask: 'dddd'});
+        $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+        $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+        $('.telephone').inputmask({mask: 'ddd-dddd'});
+        $('.height').inputmask({mask: 'dd'});
+        $('.gradyear').inputmask({mask: 'dddd-dd'});
+    </script>
+    <script>
+        function initMap() {
+            var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+            var myOptions = {
+                zoom: 18,
+                center: myLatlng,
+                disableDoubleClickZoom: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-                google.maps.event.addListener(marker, 'drag', function () {
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-                google.maps.event.addListener(map, 'dblclick', function (e) {
-                    var positionDoubleclick = e.latLng;
-                    marker.setPosition(positionDoubleclick);
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-            }
+            var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+            google.maps.event.addListener(marker, 'drag', function () {
+                document.getElementById('lat').value = marker.position.lat();
+                document.getElementById('lng').value = marker.position.lng();
+            });
+            google.maps.event.addListener(map, 'dblclick', function (e) {
+                var positionDoubleclick = e.latLng;
+                marker.setPosition(positionDoubleclick);
+                document.getElementById('lat').value = marker.position.lat();
+                document.getElementById('lng').value = marker.position.lng();
+            });
+        }
 
-            function invalid() {
-                swal({title: "Error", text: "Please locate your house", icon: "error"});
-            }
-        </script>
-        <script type="text/javascript">
-            function onTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
-        <script type="text/javascript" src="../script/alerts.js"></script>
-        <script type="text/javascript" src="../script/popper.min.js"></script>
-        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
-        <script type="text/javascript" src="../script/ajax.js"></script>
-    </body>
+        function invalid() {
+            swal({title: "Error", text: "Please locate your house", icon: "error"});
+        }
+    </script>
+    <script type="text/javascript">
+        function onTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../script/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../script/alerts.js"></script>
+    <script type="text/javascript" src="../script/popper.min.js"></script>
+    <script type="text/javascript" src="../script/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../script/ajax.js"></script>
+</body>
 
 </html>
