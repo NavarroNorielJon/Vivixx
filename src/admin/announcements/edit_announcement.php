@@ -6,18 +6,22 @@
     $result = $connect->query($edit_announcement);
     $row = $result->fetch_assoc();
 ?>
-	<form action="submit_edit_announcement.php" method="POST" enctype="multipart/form-data">
-    	<div class="modal fade" id="edit" tabindex="-1" role="dialog" >
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" >
+	
         	<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
+				
+    	
             	<div class="modal-content">
                 	<div class="modal-header">
+						
 						<h1>Edit announcement</h1>
-						<input type="hidden" name="announcement_id" value="<?php echo $row["announcement_id"]?>">
+						
                 	</div>
-                	
-					<input type="hidden" name="id" value="<?php echo $announcement_id?>">
 
                 	<div class="modal-body">
+					<form action="submit_edit_announcement.php" id="submit_edit" method="POST" enctype="multipart/form-data">
+                	<input type="hidden" name="announcement_id" value="<?php echo $row["announcement_id"]?>">
+					<input type="hidden" name="id" value="<?php echo $announcement_id?>">
                     	<div class="row">
 							<div class="form-group col">
 								<label for="subject">Subject</label>
@@ -85,16 +89,42 @@
 								<input type="file" name="file[]" multiple>
 							</span>
 						</div>
-						
+						<input type="hidden" name="edit" value="edit">
+						</form>
 						<div style="text-align:right">
 							<button type="button"  class="btn btn-danger" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" name="edit" value="Edit">
+							<button onclick="edit_status();" class="btn btn-primary">Edit</button>
 						</div>
 					</div>
+					
+				</div>	
+	
+				
 				</div>
-			</div>
-		</div>
-	</form>
+	
+</div>
+
+	<script>
+		function edit_status() {
+			swal({
+				title: "Caution!",
+				text: "Are you sure you want to enable or disable this account?",
+				icon: "warning",
+				dangerMode: true, 
+				buttons: {
+					cancel: "Cancel",
+					confirm: true,
+				},
+			})
+				.then((result) => {
+				if(result) {
+					$('#submit_edit').submit();
+				}else {
+					swal("Canceled","", "error");
+				}
+			})
+		}	
+	</script>
     
 	<script>
         $(document).ready(function(){
