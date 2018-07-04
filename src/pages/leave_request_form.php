@@ -218,7 +218,7 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="address_leave">Contact Address during leave</label>
-							<input type="text" class="form-control" name="contact_address" id="address_leave">
+							<input type="text" placeholder="Address" class="form-control" name="contact_address" id="address_leave">
 						</div>
 
 						<div class="form-group col">

@@ -69,7 +69,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info"  method="post" class="f1">
+                <form role="form" action="../utilities/update_info" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -679,7 +679,13 @@
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
+                                <select class="custom-select form-group" name="hrel[]" id="hrel1" required="required">
+                                    <option selected="selected" disabled="disabled">Choose here:</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Acquaintances">Acquaintances</option>
+                                    <option value="Romantic Relationship">Romantic Relationship</option>
+                                </select>
                             </div>
 
                             <div class="form-group col">
@@ -697,7 +703,13 @@
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <select class="custom-select form-group" name="hrel[]" id="hrel2">
+                                    <option selected="selected" disabled="disabled">Choose here:</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Acquaintances">Acquaintances</option>
+                                    <option value="Romantic Relationship">Romantic Relationship</option>
+                                </select>
                             </div>
 
                             <div class="form-group col">
@@ -710,13 +722,19 @@
                         <h6>Your Closest Living Relatives</h6>
                         <div class="row">
                             <div class="form-group col">
-                                <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
+                                <label for="hname">Name of Relative</label>
+                                <input type="text" name="rname[]" id="rname1" placeholder="name of relative" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
+                                <select class="custom-select form-group" name="rrel[]" id="rrel1" required="required">
+                                    <option selected="selected" disabled="disabled">Choose here:</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Acquaintances">Acquaintances</option>
+                                    <option value="Romantic Relationship">Romantic Relationship</option>
+                                </select>
                             </div>
 
                             <div class="form-group col">
@@ -729,12 +747,18 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+                                <input type="text" name="rname[]" id="rname2" placeholder="name of relative" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
                             </div>
 
                             <div class="form-group col">
                                 <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
+                                <select class="custom-select form-group" name="rrel[]" id="rrel2">
+                                    <option selected="selected" disabled="disabled">Choose here:</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Acquaintances">Acquaintances</option>
+                                    <option value="Romantic Relationship">Romantic Relationship</option>
+                                </select>
                             </div>
 
                             <div class="form-group col">
@@ -770,7 +794,7 @@
 
                             <div class="form-group col" id="Yes" style="display:none">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off">
+                                <input type="text" name="answer" id="answer" class="form-control text-transform" autocomplete="off">
                             </div>
                         </div>
 
@@ -781,16 +805,11 @@
                     </fieldset>
 
                     <fieldset>
-                        <h2>Step 5: Tutor Info Sheet</h2>
+                        <h2>Step 5: Employee Info Sheet</h2>
                         <div class="row">
-                            <div class="form-group col-4">
-                                <label>Tutor's Full Name</label>
-                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform">
-                            </div>
-
-                            <div class="form-group col-2">
-                                <label>Nickname</label>
-                                <input type="text" name="nickname" id="nickname" placeholder="nickname" onkeypress="alphabetInput(event)" class="form-control text-transform">
+                            <div class="form-group col">
+                                <label>Persona</label>
+                                <input type="text" name="persona" id="persona" placeholder="persona" onkeypress="alphabetInput(event)" class="form-control text-transform">
                             </div>
 
                             <div class="form-group col">
@@ -845,7 +864,7 @@
 
                             <div class="form-group col" id="ash" style='display:none'>
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="adminsp[]">
+                                <select class="custom-select form-group" name="ash[]">
                                     <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                     <option value="HR Assistant">HR Support</option>
                                     <option value="IDP Staff">IDP Staff</option>
@@ -964,9 +983,9 @@
                             <div class="form-group col" id="ash1" style='display:none'>
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group" name="adminsp[]">
+                                    <select class="custom-select form-group" name="ash[]">
                                         <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="HR Assistant">HR Support</option>
+                                        <option value="HR Assistant">HR Assistant</option>
                                         <option value="IDP Staff">IDP Staff</option>
                                         <option value="Operations Support">Operations Support</option>
                                         <option value="Springboard Staff">Springboard Staff</option>
@@ -1097,7 +1116,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="password" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
                             </div>
                         </div>
 
@@ -1109,7 +1128,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="password" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
                             </div>
                         </div>
 
@@ -1121,7 +1140,7 @@
 
                             <div class="form-group col">
                                 <label>Password</label>
-                                <input type="password" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
                             </div>
                         </div>
                         <div class="f1-buttons">
@@ -1130,66 +1149,66 @@
                         </div>
                     </div>
 
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div id="footer">
-        <p>© Vivixx 2018 . All Rights Reserved.</p>
-    </div>
-    <script>
-        $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-        $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-        $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-        $('.zip').inputmask({mask: 'dddd'});
-        $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-        $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-        $('.telephone').inputmask({mask: 'ddd-dddd'});
-        $('.height').inputmask({mask: 'dd'});
-        $('.gradyear').inputmask({mask: 'dddd-dd'});
-    </script>
-    <script>
-        function initMap() {
-            var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-            var myOptions = {
-                zoom: 18,
-                center: myLatlng,
-                disableDoubleClickZoom: true,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+        <div id="footer">
+            <p>© Vivixx 2018 . All Rights Reserved.</p>
+        </div>
+        <script>
+            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+            $('.zip').inputmask({mask: 'dddd'});
+            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+            $('.telephone').inputmask({mask: 'ddd-dddd'});
+            $('.height').inputmask({mask: 'dd'});
+            $('.gradyear').inputmask({mask: 'dddd-dd'});
+        </script>
+        <script>
+            function initMap() {
+                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+                var myOptions = {
+                    zoom: 18,
+                    center: myLatlng,
+                    disableDoubleClickZoom: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+
+                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+                google.maps.event.addListener(marker, 'drag', function () {
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
+                google.maps.event.addListener(map, 'dblclick', function (e) {
+                    var positionDoubleclick = e.latLng;
+                    marker.setPosition(positionDoubleclick);
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
             }
-            var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-            var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-            google.maps.event.addListener(marker, 'drag', function () {
-                document.getElementById('lat').value = marker.position.lat();
-                document.getElementById('lng').value = marker.position.lng();
-            });
-            google.maps.event.addListener(map, 'dblclick', function (e) {
-                var positionDoubleclick = e.latLng;
-                marker.setPosition(positionDoubleclick);
-                document.getElementById('lat').value = marker.position.lat();
-                document.getElementById('lng').value = marker.position.lng();
-            });
-        }
-
-        function invalid() {
-            swal({title: "Error", text: "Please locate your house", icon: "error"});
-        }
-    </script>
-    <script type="text/javascript">
-        function onTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-    <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-    <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="../script/additional-methods.min.js"></script>
-    <script type="text/javascript" src="../script/alerts.js"></script>
-    <script type="text/javascript" src="../script/popper.min.js"></script>
-    <script type="text/javascript" src="../script/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../script/ajax.js"></script>
-</body>
+            function invalid() {
+                swal({title: "Error", text: "Please locate your house", icon: "error"});
+            }
+        </script>
+        <script type="text/javascript">
+            function onTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
+        <script type="text/javascript" src="../script/alerts.js"></script>
+        <script type="text/javascript" src="../script/popper.min.js"></script>
+        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../script/ajax.js"></script>
+    </body>
 
 </html>

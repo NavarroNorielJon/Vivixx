@@ -10,9 +10,9 @@ for ($i=0; $i < count($department); $i++) {
 	    $department[$i] = "Administration/HR Support";
 
 		if ($i == (count($department)-1)) {
-			$account .= $_POST['adminsp'][$i];
+			$account .= $_POST['ash'][$i];
 		}else{
-			$account .= $_POST['adminsp'][$i]."|";
+			$account .= $_POST['ash'][$i]."|";
 		}
 
 	} elseif ($department[$i] === "its") {
@@ -50,6 +50,9 @@ for ($i=0; $i < count($department); $i++) {
 	} elseif ($department[$i] === "ve") {
 	    $department[$i] = "Video ESL";
 		if ($i == (count($department)-1)) {
+			echo $i;
+			print_r($department);
+			print_r($_POST['video']);
 			$account .= $_POST['video'][$i];
 		}else{
 			$account .= $_POST['video'][$i]. "|";
