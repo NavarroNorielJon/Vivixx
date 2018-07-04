@@ -2,32 +2,10 @@
     include 'session.php';
     include 'check_session.php';
     $connect = Connect();
-
+    $sql = "SELECT department FROM employee_info where user_id = '$user_id'";
+    $result = $connect->query($sql);
+    $department = $result->fetch_assoc()['department'];
     $employee = $first_name . "," . $middle_name . "," . $last_name;
-    $department = mysqli_real_escape_string($connect, $_POST['department']);
-    if ($department === "a") {
-        $department = "Administration";
-        $position = mysqli_real_escape_string($connect, $_POST['admin']);
-    } elseif ($department === "ash") {
-        $department = "Administration Support / HR";
-        $position = mysqli_real_escape_string($connect, $_POST['adminsp']);
-    } elseif ($department === "its") {
-        $department = "IT Support";
-        $position = mysqli_real_escape_string($connect, $_POST['itsupport']);
-    } elseif ($department === "nva") {
-        $department = "Non-Voice Account";
-        $position = mysqli_real_escape_string($connect, $_POST['nonvoice']);
-    } elseif ($department === "pe") {
-        $department = "Phone ESL";
-        $position = mysqli_real_escape_string($connect, $_POST['phone']);
-    } elseif ($department === "ve") {
-        $department = "Video ESL";
-        $position = mysqli_real_escape_string($connect, $_POST['video']);
-    } elseif ($department === "va") {
-        $department = "Virtual Assistant";
-        $position = mysqli_real_escape_string($connect, $_POST['virtual']);
-    }
-
     $date_filed  = mysqli_real_escape_string($connect, $_POST['date_filed']);
     $date_hired  = mysqli_real_escape_string($connect, $_POST['date_hired']);
     $reason = mysqli_real_escape_string($connect, $_POST['reason']);
@@ -44,9 +22,9 @@
     $date_hired = date('Y-m-d', strtotime($date_hired));
 
     $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`,
-		`position`, `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
-		VALUES ('$user_id', '$employee', '$department', '$position', '$date_hired', '$date_filed', '$reason', '$contact_address',
+		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
+		VALUES ('$user_id', '$employee', '$department', '$date_hired', '$date_filed', '$reason', '$contact_address',
 		'$contact_number', '$from', '$to') ;";
     $connect->query($insert_stmt);
-	
+
 ?>

@@ -1,4 +1,9 @@
-<?php include '../utilities/session.php'; ?>
+<?php
+
+	include '../utilities/session.php';
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -75,7 +80,7 @@
 		</nav>
 
 		<div id="leave">
-			<form id="leave-form" action="../utilities/leave_request" method="POST">
+			<form id="leave_form" action="../utilities/leave_request" method="POST">
 				<h1 class="text-center">LEAVE APPLICATION FORM</h1>
 				<hr>
 				<div class="row">
@@ -140,7 +145,6 @@
 						<label for="position">Position</label>
 						<select class="custom-select form-group" name="itsupport">
 								<option selected disabled value="ICT Support Specialist">ICT Support Specialist</option>
-
 							</select>
 					</div>
 
@@ -253,9 +257,11 @@
 		</div>
 	</div>
 	<script>
-	$('.mobile').inputmask({mask: '+639dd ddd dddd'});
+		$('.mobile').inputmask({mask: '+639dd ddd dddd'});
 	</script>
 	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../script/additional-methods.min.js"></script>
 	<script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>

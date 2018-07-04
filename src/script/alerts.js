@@ -68,7 +68,7 @@ $('#signup_form').ajaxForm({
     }
 });
 
-$('#leave-form').ajaxForm({
+$('#leave_form').ajaxForm({
     url: '../utilities/leave_request.php',
     method: 'post',
     error: function (){
@@ -91,7 +91,6 @@ $('#leave-form').ajaxForm({
         }).then(function(){
             window.location = '/pages/leave_request_form';
         });
-
     }
 });
 $('#login').ajaxForm({

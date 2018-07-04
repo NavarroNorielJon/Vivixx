@@ -69,7 +69,7 @@
 
         <div class="row">
             <div class="container">
-                <form role="form" action="../utilities/update_info" method="post" class="f1">
+                <form role="form" id="update_form" action="../utilities/update_info" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -855,88 +855,58 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col" id="orig">
+                            <div class="form-group col">
                                 <label for="position">Main Account</label>
-                                <select class="custom-select form-group">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                </select>
-                            </div>
+                                <select class="custom-select form-group" name="account[]">
+                                    <optgroup id="orig">
+                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="ash" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="ash[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="HR Assistant">HR Support</option>
-                                    <option value="IDP Staff">IDP Staff</option>
-                                    <option value="Operations Support">Operations Support</option>
-                                    <option value="Springboard Staff">Springboard Staff</option>
-                                </select>
-                            </div>
+                                    <optgroup id="ash" style="display:none">
+                                        <option value="HR Assistant">HR Assistant</option>
+                                        <option value="IDP Staff">IDP Staff</option>
+                                        <option value="Operations Support">Operations Support</option>
+                                        <option value="Springboard Staff">Springboard Staff</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="its" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="itsupport[]">
-                                    <option value="ICT Specialist" selected="selected">ICT Specialist</option>
-                                </select>
-                            </div>
+                                    <optgroup id="its" style="display:none">
+                                        <option value="ICT Specialist">ICT Specialist</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="nva" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="nonvoice[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="April Writing">April Writing</option>
-                                    <option value="CL/IL">CL/IL</option>
-                                </select>
-                            </div>
+                                    <optgroup id="nva" style="display:none">
+                                        <option value="April Writing">April Writing</option>
+                                        <option value="CL/IL">CL/IL</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="voa" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="voice[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="ELANSO">ELANSO</option>
-                                    <option value="Phone ESL">Phone ESL</option>
-                                </select>
-                            </div>
+                                    <optgroup id="voa" style="display:none">
+                                        <option value="ELANSO">ELANSO</option>
+                                        <option value="Phone ESL">Phone ESL</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="ve" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="video[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="First Future">First Future</option>
-                                    <option value="Key English">Key English</option>
-                                </select>
-                            </div>
+                                    <optgroup id="ve" style="display:none">
+                                        <option value="First Future">First Future</option>
+                                        <option value="Key English">Key English</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="va" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="virtual[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="Drag and drop">Drag and drop</option>
-                                    <option value="Job Getter">Job Getter</option>
-                                </select>
-                            </div>
+                                    <optgroup id="va" style="display:none">
+                                        <option value="Drag and drop">Drag and drop</option>
+                                        <option value="Job Getter">Job Getter</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="sec" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="sec[]">
-                                    <option value="Security" selected="selected">Security</option>
-                                </select>
-                            </div>
+                                    <optgroup id="sec" style="display:none">
+                                        <option value="Security">Security</option>
+                                    </optgroup>
 
-                            <div class="form-group col" id="main" style='display:none'>
-                                <label for="position">Main Account</label>
-                                <select class="custom-select form-group" name="main[]">
-                                    <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    <option value="Housekeeping">Housekeeping</option>
-                                    <option value="Utility">Utility</option>
+                                    <optgroup id="main" style="display:none">
+                                        <option value="Housekeeping">Housekeeping</option>
+                                        <option value="Utility">Utility</option>
+                                    </optgroup>
                                 </select>
                             </div>
                         </div>
-
                         <div class="row">
                             <script>
                                 $(function () {
-                                    var i = 1;
                                     $('#department1').change(function () {
                                         $('#orig1').hide();
                                         $('#ash1').hide();
@@ -947,7 +917,7 @@
                                         $('#voa1').hide();
                                         $('#ve1').hide();
                                         $('#va1').hide();
-                                        $('#' + $(this).val() + i).show();
+                                        $('#' + $(this).val() + 1).show();
                                     });
                                 });
                             </script>
@@ -966,121 +936,53 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col" id="orig1">
+                            <div class="form-group col">
                                 <label for="position">Secondary Account</label>
                                 <div class="input-group">
-                                    <select class="custom-select form-group">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                    <select class="custom-select form-group" name="account[]">
+                                        <optgroup id="orig1">
+                                            <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="ash1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="ash[]">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="HR Assistant">HR Assistant</option>
-                                        <option value="IDP Staff">IDP Staff</option>
-                                        <option value="Operations Support">Operations Support</option>
-                                        <option value="Springboard Staff">Springboard Staff</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="ash1" style="display:none">
+                                            <option value="HR Assistant">HR Assistant</option>
+                                            <option value="IDP Staff">IDP Staff</option>
+                                            <option value="Operations Support">Operations Support</option>
+                                            <option value="Springboard Staff">Springboard Staff</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="its1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="itsupport[]">
-                                        <option value="ICT Specialist" selected="selected">ICT Specialist</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="its1" style="display:none">
+                                            <option value="ICT Specialist">ICT Specialist</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="nva1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="nonvoice[]">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="nva1" style="display:none">
+                                            <option value="April Writing">April Writing</option>
+                                            <option value="CL/IL">CL/IL</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="voa1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="voice[]">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="ELANSO">ELANSO</option>
-                                        <option value="Phone ESL">Phone ESL</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="voa1" style="display:none">
+                                            <option value="ELANSO">ELANSO</option>
+                                            <option value="Phone ESL">Phone ESL</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="ve1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="video[]">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="First Future">First Future</option>
-                                        <option value="Key English">Key English</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="ve1" style="display:none">
+                                            <option value="First Future">First Future</option>
+                                            <option value="Key English">Key English</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="va1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="virtual[]">
-                                        <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                                        <option value="Drag and drop">Drag and drop</option>
-                                        <option value="Job Getter">Job Getter</option>
-                                    </select>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button" onclick="addAccount()">
-                                            <i class="small material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <optgroup id="va1" style="display:none">
+                                            <option value="Drag and drop">Drag and drop</option>
+                                            <option value="Job Getter">Job Getter</option>
+                                        </optgroup>
 
-                            <div class="form-group col" id="sec1" style='display:none'>
-                                <label for="position">Secondary Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="sec[]">
-                                        <option value="Security" selected="selected">Security</option>
+                                        <optgroup id="sec1" style="display:none">
+                                            <option value="Security">Security</option>
+                                        </optgroup>
+
+                                        <optgroup id="main1" style="display:none">
+                                            <option value="Housekeeping">Housekeeping</option>
+                                            <option value="Utility">Utility</option>
+                                        </optgroup>
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-success" type="button" onclick="addAccount()">
