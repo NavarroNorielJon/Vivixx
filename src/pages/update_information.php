@@ -1049,8 +1049,7 @@
                             <button type="button" class="btn pages btn-previous">Previous</button>
                             <button type="submit" class="btn pages btn-submit">Submit</button>
                         </div>
-                    </div>
-
+                    </fieldset>
                 </form>
             </div>
         </div>
