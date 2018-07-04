@@ -5,14 +5,19 @@
 
 <head>
 	<title>Vivixx</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="../style/style2.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
+	<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
+	<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../style/form-elements.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="../script/jquery.backstretch.min.js"></script>
+	<script src="../script/bootstrap/jasny-bootstrap.js"></script>
+	<script src="../script/retina-1.1.0.min.js"></script>
+	<script src="../script/scripts.js"></script>
 </head>
 
 <body style="background-color: #e6e6e6;">
@@ -218,7 +223,7 @@
 
 						<div class="form-group col">
 							<label for="number_leave">Contact Number during leave</label>
-							<input type="text" class="form-control" name="contact_number" onkeypress="numberInput(event)" maxlength="11" id="number_leave">
+							<input type="text" class="form-control mobile" name="contact_number" placeholder="+639XX XXX XXXX" id="number_leave">
 						</div>
 					</div>
 				</div>
@@ -247,7 +252,9 @@
 			</form>
 		</div>
 	</div>
-
+	<script>
+	$('.mobile').inputmask({mask: '+639dd ddd dddd'});
+	</script>
 	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 	<script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
