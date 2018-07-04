@@ -45,6 +45,7 @@ ul ul a {
 	text-transform: capitalize;
 }
 
+
 .valid{
 	color: green;
 }
@@ -173,7 +174,7 @@ ul ul a {
 /*Style for home*/
 #content {
 	margin-left: 19%;
-	padding: 10px 5px 10px 3px; 
+	padding: 10px 5px 10px 3px;
 }
 
 #content .cards {
@@ -342,7 +343,7 @@ ul ul a {
 	text-align: center;
 	visibility: hidden;
 }
-	
+
 #sidebar .logout:hover {
 	background-color: red !important;
 	color: white;
@@ -539,15 +540,15 @@ ul ul a {
 	#index .index-form #signup-link {
 		visibility: visible;
 	}
-	
+
 	#leave {
 		margin-left: 10%;
 	}
-	
+
 	#profile .profile-content {
 		margin-left: 10%;
 	}
-	
+
 	#content {
 		margin-left: 6%;
 	}
@@ -681,7 +682,7 @@ body {
 		max-width: 65vh;
 		min-width: 65vh;
 	}
-	
+
 	#index .index-image {
 		padding: auto auto 3vh auto;
 		height: auto;
@@ -701,11 +702,11 @@ body {
 		margin: 0 auto auto auto;
 		padding: 5vh;
 	}
-	
+
 	.footer {
 		display: none;
 	}
-	
+
 	#index .index-image {
 		padding: 3vh auto 3vh auto;
 		height: auto;

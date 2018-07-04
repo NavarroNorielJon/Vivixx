@@ -1058,17 +1058,6 @@
             <p>© Vivixx 2018 . All Rights Reserved.</p>
         </div>
         <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
-            $('.gradyear').inputmask({mask: 'dddd-dd'});
-        </script>
-        <script>
             function initMap() {
                 var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
                 var myOptions = {

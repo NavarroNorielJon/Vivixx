@@ -111,8 +111,9 @@ $r_mobile_number =$_POST['rnumber'];
 $secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
 $provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
 $answer = mysqli_real_escape_string($connect, $_POST['yesorno']);
-if ($answer === "yes") {
-    $answer = mysqli_real_escape_string($connect, $_POST['answer']);
+
+if ($answer === "Yes") {
+    $answer .= "|". ucwords(mysqli_real_escape_string($connect, $_POST['answer']));
 }
 
 
@@ -206,46 +207,54 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
      '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
      '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
      if ($connect->query($insert_stmt) === true) {
-         for ($i=0; $i < count($child_name) ; $i++) {
-             $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`) VALUES ('$child_name[$i]','$child_birth[$i]','$id');";
-             if ($connect->query($insert_stmt) === true) {
-                 $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
-                                 `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
-                                 '$secondary_address','$provincial_address','$answer','$id','$id');";
-                if ($connect->query($insert_stmt) === true) {
-                    for ($i=0; $i < count($r_name); $i++) {
-                        $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]');";
-                        if ($connect->query($insert_stmt) === true) {
-                        } else {
-                            print_r($connect->error);
-                        }
-                    }
-                    for ($i=0; $i < count($r_name); $i++) {
-                        $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]');";
-                        if ($connect->query($insert_stmt) === true) {
-                        } else {
-                            print_r($connect->error);
-                        }
-                    }
-                    $insert_stmt = "INSERT INTO `employee_info` (`user_id`,`persona`,`mobile_number`,`landline`,`department`,`account`,`comp_email`,
-                                    `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$persona','$mobile','$landline','$departments','$account',
-                                    '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
-                    if ($connect->query($insert_stmt) === true) {
-                    } else {
-                        print_r($connect->error);
-                    }
-                } else {
-                    print_r($connect->error);
-                }
-             } else {
-                 print_r($connect->error);
-             }
-         }
          $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`) VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
          if ($connect->query($insert_stmt) === true) {
          } else {
              print_r($connect->error);
          }
+         for ($i=0; $i < count($child_name) ; $i++) {
+             if ($child_name[$i] === "" && $child_birth[$i] === "") {
+                 $insert_stmt = "INSERT INTO `user_offspring` (`user_id`) VALUES ('$id');";
+                 if ($connect->query($insert_stmt) === true) {
+                 } else {
+                     print_r($connect->error);
+                 }
+             } else{
+                 $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`) VALUES ('$child_name[$i]','$child_birth[$i]','$id');";
+                 if ($connect->query($insert_stmt) === true) {
+                 } else {
+                     print_r($connect->error);
+                 }
+             }
+         }
+         $insert_stmt = "INSERT INTO `emergency_info_sheet`(`user_id`,`coordinates`,`main_address`,`secondary_address`,
+                         `provincial_address`,`answer`,`hmate_id`,`relative_id`) VALUES ('$id','$coordinates','$main_address',
+                         '$secondary_address','$provincial_address','$answer','$id','$id');";
+         if ($connect->query($insert_stmt) === true) {
+            for ($i=0; $i < count($r_name); $i++) {
+                $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]');";
+                if ($connect->query($insert_stmt) === true) {
+                } else {
+                    print_r($connect->error);
+                }
+            }
+            for ($i=0; $i < count($r_name); $i++) {
+                $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]');";
+                if ($connect->query($insert_stmt) === true) {
+                } else {
+                    print_r($connect->error);
+                }
+            }
+            $insert_stmt = "INSERT INTO `employee_info` (`user_id`,`persona`,`mobile_number`,`landline`,`department`,`account`,`comp_email`,
+                            `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`) VALUES ('$id','$persona','$mobile','$landline','$departments','$account',
+                            '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass') ;";
+            if ($connect->query($insert_stmt) === true) {
+            } else {
+                print_r($connect->error);
+            }
+        } else {
+            print_r($connect->error);
+        }
      } else {
          print_r($connect->error);
      }
