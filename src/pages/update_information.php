@@ -179,26 +179,36 @@
                                 <label>Area Code</label>
                                 <select name="res_area_code" class="form-control" id="res_area_code" required="required">
                                     <optgroup label="Luzon">
-                                        <option value="">Abra (74)</option>
-                                        <option value="">Albay (52)</option>
-                                        <option value="">Aurora (42)</option>
-                                        <option value="">Bataan (47)</option>
-                                        <option value="">Batanes (78)</option>
-                                        <option value="">Batangas (43)</option>
-                                        <option value="">Benguet (74)</option>
-                                        <option value="">Bulacan (44)</option>
-                                        <option value="">Cagayan Valley (78)</option>
-                                        <option value="">Camarines Norte/Sur (54)</option>
-                                        <option value="">Catanduanes (52)</option>
-                                        <option value="">Cavite Province (46)</option>
-                                        <option value="">Ifugao Province (74)</option>
-                                        <option value="">Ilocos Norte/Sur (77)</option>
-                                        <option value="">Isabela Province(78)</option>
-                                        <option value="">Kalinga-Apayao (74)</option>
-                                        <option value="">Laguna (49)</option>
-                                        <option value="">La Union (72)</option>
-                                        <option value="">Marinduque (42)</option>
-                                        <option value=""> ()</option>
+                                        <option value="74">Abra (74)</option>
+                                        <option value="52">Albay (52)</option>
+                                        <option value="42">Aurora (42)</option>
+                                        <option value="47">Bataan (47)</option>
+                                        <option value="78">Batanes (78)</option>
+                                        <option value="43">Batangas (43)</option>
+                                        <option value="44">Bulacan (44)</option>
+                                        <option value="78">Cagayan Valley (78)</option>
+                                        <option value="54">Camarines Norte/Sur (54)</option>
+                                        <option value="52">Catanduanes (52)</option>
+                                        <option value="46">Cavite Province (46)</option>
+                                        <option value="74">Ifugao Province (74)</option>
+                                        <option value="77">Ilocos Norte/Sur (77)</option>
+                                        <option value="78">Isabela Province(78)</option>
+                                        <option value="74">Kalinga-Apayao (74)</option>
+                                        <option value="49">Laguna (49)</option>
+                                        <option value="72">La Union (72)</option>
+                                        <option value="42">Marinduque (42)</option>
+                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                        <option value="74">Mountain Province (74)</option>
+                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                        <option value="48">Palawan (48)</option>
+                                        <option value="45">Pampanga (45)</option>
+                                        <option value="75">Pangasinan (75)</option>
+                                        <option value="42">Quezon Province (42)</option>
+                                        <option value="78">Quirino Province (78)</option>
+                                        <option value="2">Rizal Province (2)</option>
+                                        <option value="56">Sorsogon Province (56)</option>
+                                        <option value="45">Tarlac (45)</option>
+                                        <option value="47">Zambales (47)</option>
                                     </optgroup>
 
                                     <optgroup label="Visayas">
