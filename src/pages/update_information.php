@@ -170,14 +170,15 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-6">
+                            <div class="form-group col-5">
                                 <label for="residential_address">Residential Address</label>
                                 <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
                             </div>
 
-                            <div class="form-group col-2 ">
+                            <div class="form-group col-3">
                                 <label>Area Code</label>
                                 <select name="res_area_code" class="form-control" id="res_area_code" required="required">
+                                    <option selected disabled>Choose Area Code:</option>
                                     <optgroup label="Luzon">
                                         <option value="74">Abra (74)</option>
                                         <option value="52">Albay (52)</option>
@@ -212,9 +213,16 @@
                                     </optgroup>
 
                                     <optgroup label="Visayas">
+                                        <option value=""> ()</option>
+
                                     </optgroup>
 
                                     <optgroup label="Mindanao">
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+
                                     </optgroup>
                                 </select>
                             </div>
@@ -1019,12 +1027,6 @@
 
             function invalid() {
                 swal({title: "Error", text: "Please locate your house", icon: "error"});
-            }
-        </script>
-        <script type="text/javascript">
-            function onTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
             }
         </script>
         <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
