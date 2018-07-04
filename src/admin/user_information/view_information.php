@@ -3,7 +3,7 @@
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
-    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet natural left join tutor_info inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id' and birth_date is not null group by user.user_id;";
+    $personal_info = "SELECT * FROM user natural join user_info natural left join user_educ natural join user_offspring natural join emergency_info_sheet natural left join employee_info inner join user_background on ($user_id=user.user_id) where type='user' and user.user_id='$user_id' and birth_date is not null group by user.user_id;";
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
     $height = explode("'",$row['height']);

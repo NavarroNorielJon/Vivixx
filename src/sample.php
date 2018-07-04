@@ -49,7 +49,7 @@
                 <div class="form-group col">
                     <label for="department">Main Department</label>
                     <select class="custom-select form-group" name="department[]" id="department">
-                        <option selected="selected" disabled="disabled">Choose your Department</option>
+                        <option selected="selected" disabled="disabled">Choose your Main Department</option>
                         <option value="ash">Administration Support / HR</option>
                         <option value="its">IT Support</option>
                         <option value="main">Maintenance</option>
@@ -130,7 +130,7 @@
                 <div class="form-group col">
                     <label for="department">Secondary Department</label>
                     <select class="custom-select form-group" name="department[]" id="department1">
-                        <option selected="selected" disabled="disabled">Choose your Department</option>
+                        <option selected="selected" disabled="disabled">Choose your Secondary Department</option>
                         <option value="ash">Administration Support / HR</option>
                         <option value="its">IT Support</option>
                         <option value="main">Maintenance</option>
@@ -147,7 +147,7 @@
                     <div class="input-group">
                         <select class="custom-select form-group" name="account[]">
                             <optgroup id="orig1">
-                                <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
+                                <option selected="selected" value="null" disabled="disabled">Choose your Secondary Account</option>
                             </optgroup>
 
                             <optgroup id="ash1" style="display:none">
@@ -189,23 +189,6 @@
                                 <option value="Housekeeping">Housekeeping</option>
                                 <option value="Utility">Utility</option>
                             </optgroup>
-                        </select>
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" onclick="addAccount()">
-                                <i class="small material-icons">add</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group col" id="main1" style='display:none'>
-                    <label for="position">Secondary Account</label>
-                    <div class="input-group">
-                        <select class="custom-select form-group" name="main[]">
-                            <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
-                            <option value="Housekeeping">Housekeeping</option>
-                            <option value="Utility">Utility</option>
                         </select>
                         <div class="input-group-append">
                             <button class="btn btn-success" type="button" onclick="addAccount()">
