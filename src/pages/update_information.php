@@ -982,130 +982,115 @@
                                             <i class="small material-icons">add</i>
                                         </button>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div id="new_acc"></div>
 
-						<div class="row">
-							<div class="form-group col">
-								<label>Company Email address</label>
-								<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
-							</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="new_acc"></div>
 
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
-							</div>
-						</div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>Company Email address</label>
+                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+                            </div>
 
-						<div class="row">
-							<div class="form-group col">
-								<label>Skype Account</label>
-								<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-							</div>
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+                            </div>
+                        </div>
 
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
-							</div>
-						</div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>Skype Account</label>
+                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+                            </div>
 
-						<div class="row">
-							<div class="form-group col">
-								<label>QQ Number</label>
-								<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
-							</div>
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+                            </div>
+                        </div>
 
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
-							</div>
-						</div>
-						<div class="f1-buttons">
-							<button type="button" class="btn pages btn-previous">Previous</button>
-							<button type="submit" class="btn pages btn-submit">Submit</button>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
-		
-		<!-- Modal -->
-				<div class="modal fade" id="hints" tabindex="-1" role="dialog" aria-labelledby="titlehint" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="titlehint">Modal title</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-							</div>
-							<div class="modal-body">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								</p>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label>QQ Number</label>
+                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+                            </div>
 
-		<div id="footer">
-			<p>© Vivixx 2018 . All Rights Reserved.</p>
-		</div>
-		<script>
-			function initMap() {
-				var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-				var myOptions = {
-					zoom: 18,
-					center: myLatlng,
-					disableDoubleClickZoom: true,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				}
-				var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="f1-buttons">
+                            <button type="button" class="btn pages btn-previous">Previous</button>
+                            <button type="submit" class="btn pages btn-submit">Submit</button>
+                        </div>
+                    </fieldset>
 
-				var marker = new google.maps.Marker({
-					position: myLatlng,
-					map: map,
-					draggable: true
-				});
-				google.maps.event.addListener(marker, 'drag', function() {
-					document.getElementById('lat').value = marker.position.lat();
-					document.getElementById('lng').value = marker.position.lng();
-				});
-				google.maps.event.addListener(map, 'dblclick', function(e) {
-					var positionDoubleclick = e.latLng;
-					marker.setPosition(positionDoubleclick);
-					document.getElementById('lat').value = marker.position.lat();
-					document.getElementById('lng').value = marker.position.lng();
-				});
-			}
+                </form>
+            </div>
+        </div>
 
-			function invalid() {
-				swal({
-					title: "Error",
-					text: "Please locate your house",
-					icon: "error"
-				});
-			}
-		</script>
-		<script type="text/javascript">
-			function onTop() {
-				document.body.scrollTop = 0;
-				document.documentElement.scrollTop = 0;
-			}
-		</script>
-		<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
-		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="../script/additional-methods.min.js"></script>
-		<script type="text/javascript" src="../script/alerts.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
-	</body>
+        <div id="footer">
+            <p>© Vivixx 2018 . All Rights Reserved.</p>
+        </div>
+        <script>
+            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
+            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
+            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
+            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
+            $('.zip').inputmask({mask: 'dddd'});
+            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
+            $('.telephone').inputmask({mask: 'ddd-dddd'});
+            $('.height').inputmask({mask: 'dd'});
+            $('.gradyear').inputmask({mask: 'dddd-dd'});
+        </script>
+        <script>
+            function initMap() {
+                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+                var myOptions = {
+                    zoom: 18,
+                    center: myLatlng,
+                    disableDoubleClickZoom: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-	</html>
+                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
+                google.maps.event.addListener(marker, 'drag', function () {
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
+                google.maps.event.addListener(map, 'dblclick', function (e) {
+                    var positionDoubleclick = e.latLng;
+                    marker.setPosition(positionDoubleclick);
+                    document.getElementById('lat').value = marker.position.lat();
+                    document.getElementById('lng').value = marker.position.lng();
+                });
+            }
+
+            function invalid() {
+                swal({title: "Error", text: "Please locate your house", icon: "error"});
+            }
+        </script>
+        <script type="text/javascript">
+            function onTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
+        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
+        <script type="text/javascript" src="../script/alerts.js"></script>
+        <script type="text/javascript" src="../script/popper.min.js"></script>
+        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../script/ajax.js"></script>
+    </body>
+
+</html>
+>>>>>>> 22686d9f1b453e49b01edaca24918189be9ed48d
