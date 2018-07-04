@@ -177,10 +177,28 @@
 
                             <div class="form-group col-2 ">
                                 <label>Area Code</label>
-                                <select>
-
+                                <select name="res_area_code" class="form-control" id="res_area_code" required="required">
                                     <optgroup label="Luzon">
-
+                                        <option value="">Abra (74)</option>
+                                        <option value="">Albay (52)</option>
+                                        <option value="">Aurora (42)</option>
+                                        <option value="">Bataan (47)</option>
+                                        <option value="">Batanes (78)</option>
+                                        <option value="">Batangas (43)</option>
+                                        <option value="">Benguet (74)</option>
+                                        <option value="">Bulacan (44)</option>
+                                        <option value="">Cagayan Valley (78)</option>
+                                        <option value="">Camarines Norte/Sur (54)</option>
+                                        <option value="">Catanduanes (52)</option>
+                                        <option value="">Cavite Province (46)</option>
+                                        <option value="">Ifugao Province (74)</option>
+                                        <option value="">Ilocos Norte/Sur (77)</option>
+                                        <option value="">Isabela Province(78)</option>
+                                        <option value="">Kalinga-Apayao (74)</option>
+                                        <option value="">Laguna (49)</option>
+                                        <option value="">La Union (72)</option>
+                                        <option value="">Marinduque (42)</option>
+                                        <option value=""> ()</option>
                                     </optgroup>
 
                                     <optgroup label="Visayas">
