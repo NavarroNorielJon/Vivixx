@@ -981,7 +981,6 @@
 										<button class="btn btn-success" type="button" onclick="addAccount()">
                                             <i class="small material-icons">add</i>
                                         </button>
-									</div>
 
                                     </div>
                                 </div>
