@@ -133,12 +133,3 @@ function numberInput(evt){
 		evt.preventDefault();
 	}
 }
-$('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-$('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-$('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-$('.zip').inputmask({mask: 'dddd'});
-$('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-$('.mobile').inputmask({mask: '+639dd ddd dddd'});
-$('.telephone').inputmask({mask: 'ddd-dddd'});
-$('.height').inputmask({mask: 'dd'});
-$('.gradyear').inputmask({mask: 'dddd-dd'});
