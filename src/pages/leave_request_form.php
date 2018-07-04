@@ -196,13 +196,24 @@
 					$(function() {
 						$('#reason1').change(function() {
 							$('#others').hide();
+							$('#Emergency').hide();
 							$('#' + $(this).val()).show();
+							if ($('#reason1').val() === "Emergency") {
+								$('#emerge').attr('required','true');
+								$('#other_reason').removeAttr('required');
+							} else if ($('#reason1').val() == "others") {
+								$('#other_reason').attr('required','true');
+								$('#emerge').removeAttr('required');
+							}else {
+								$('#emerge').removeAttr('required');
+								$('#other_reason').removeAttr('required');
+							}
 						});
 					});
 				</script>
 				<div>
 					<div>
-						<label>Reason</label>
+						<label>Leave Type</label>
 						<select class="custom-select form-group" name="reason" id="reason1">
 							<option selected disabled>Reason for leave:</option>
 							<option value="Vacation">Vacation</option>
@@ -215,9 +226,14 @@
 						</select>
 					</div>
 					<div id="others" class="form-group" style='display:none'>
-						<label for="other_reason">(Please Specify)</label>
-						<input type="text" class="form-control" name="others" id="other_reason">
+						<label for="other_reason">Reason</label>
+						<input type="text" class="form-control" placeholder="Reason" name="others" id="other_reason">
 					</div>
+					<div id="Emergency" class="form-group" style='display:none'>
+						<label>Reason</label>
+						<input type="text" class="form-control" placeholder="Reason" name="emer" id="emerge">
+					</div>
+
 
 					<div class="row">
 						<div class="form-group col">
@@ -256,9 +272,6 @@
 			</form>
 		</div>
 	</div>
-	<script>
-		$('.mobile').inputmask({mask: '+639dd ddd dddd'});
-	</script>
 	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 	<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../script/additional-methods.min.js"></script>
