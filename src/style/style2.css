@@ -107,10 +107,9 @@ ul ul a {
 	margin: 0 ;
 	padding: 0;
 }
-}
 
-#update-information{
-	display: none;
+#update-information .row .container #update_form {
+	margin: 20vh 2vw 0 3.5vw !important;
 }
 
 #update-information .container a{
@@ -592,7 +591,6 @@ body {
     background: #fff;
     border-radius: 0px;
 	color: black;
-	margin-top: 15vh;
 	padding: 25px;
 }
 
