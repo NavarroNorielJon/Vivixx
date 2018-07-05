@@ -25,7 +25,7 @@
 <div id="wrapper">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
         <!--<a href="#!"><img src="../img/Lion.png" id="nav-logo"></a>-->
-        <a href="index.php" class="navbar-brand" style="margin-right:40vw;">Vivixx</a>
+        <a href="index.php" class="navbar-brand">Vivixx</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
                 aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,9 +33,6 @@
 
         <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="accounts/accounts_status.php">Accounts</a>
                 </li>

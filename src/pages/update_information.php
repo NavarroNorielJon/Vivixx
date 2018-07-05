@@ -173,18 +173,18 @@
                                     <option value="b">B</option>
                                     <option value="ab">AB</option>
                                 </select>
-                            </div>
-                        </div>
+							</div>
+						</div>
 
-                        <div class="row">
-                            <div class="form-group col-5">
-                                <label for="residential_address">Residential Address</label>
-                                <input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
-                            </div>
+						<div class="row">
+							<div class="form-group col-5">
+								<label for="residential_address">Residential Address</label>
+								<input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
+							</div>
 
-                            <div class="form-group col-3">
-                                <label>Area Code</label>
-                                <select name="res_area_code" class="form-control" id="res_area_code" required="required">
+							<div class="form-group col-3">
+								<label>Area Code</label>
+								<select name="res_area_code" class="form-control" id="res_area_code" required="required">
                                     <option selected disabled>Choose Area Code:</option>
                                     <optgroup label="Luzon">
                                         <option value="74">Abra (74)</option>
@@ -220,72 +220,101 @@
                                     </optgroup>
 
                                     <optgroup label="Visayas">
-                                        <option value=""> ()</option>
+                                        <option value="36">Aklan (36)</option>
+										<option value="36">Antique (36)</option>
+										<option value="53">Biliran (53)</option>
+										<option value="38">Bohol (38)</option>
+										<option value="36">Capiz (36)</option>
+										<option value="32">Cebu Province (32)</option>
+										<option value="33">Guimaras (33)</option>
+										<option value="33">Iloilo Province (33)</option>
+										<option value="53">Leyte (53)</option>
+										<option value="56">Masbate Province (56)</option>
+										<option value="88">Misamis Occidental and Oriental (88)</option>
+										<option value="34">Negros Occidental Occidental (34)</option>
+										<option value="35">Negros Occidental Oriental (35)</option>
+										<option value="42">Romblon (42)</option>
+										<option value="55">Eastern Samar (55)</option>
+										<option value="55">Northern Samar(55)</option>
+										<option value="55">Western Samar (55)</option>
+										<option value="35">Siquijor (35)</option>
 
                                     </optgroup>
 
                                     <optgroup label="Mindanao">
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-
+										<option value="85">Agusan (85)</option>
+                                        <option value="62">Basilan (62)</option>
+                                        <option value="88">Bukidnon (88)</option>
+                                        <option value="88">Camiguin (88)</option>
+										<option value="84">Davao del Norte (84)</option>
+										<option value="82">Davao del Sur (82)</option>
+										<option value="87">Davao Oriental (87)</option>
+										<option value="63">Lanao del Norte (63)</option>
+										<option value="64">Maguindanao (64)</option>
+                                        <option value="64">North Cotobato (64)</option>
+										<option value="65">North Cotobato (65)</option>
+										<option value="83">Sarangani (83)</option>
+										<option value="83">South Cotobato (83)</option>
+										<option value="64">Sultan Kudarat (64)</option>
+										<option value="86">Surigao (86)</option>
+										<option value="68">Tawi Tawi (68)</option>
+										<option value="65">Zamboanga (65)</option>
                                     </optgroup>
                                 </select>
-                            </div>
+							</div>
 
-                            <div class="form-group col-2 ">
-                                <label for="residential_zip">Zip Code</label>
-                                <input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
-                            </div>
+							<div class="form-group col-2 ">
+								<label for="residential_zip">Zip Code</label>
+								<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
+							</div>
 
-                            <div class="form-group col-2 ">
-                                <label for="residential_tel_no">Telephone NO.</label>
-                                <input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
-                            </div>
-                        </div>
+							<div class="form-group col-2 ">
+								<label for="residential_tel_no">Telephone NO.</label>
+								<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
+							</div>
+						</div>
 
-                        <div class="row">
-                            <div class="form-group col-7">
-                                <label for="permanent_address">Permanent Address</label>
-                                <input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
-                            </div>
+						<div class="row">
+							<div class="form-group col-7">
+								<label for="permanent_address">Permanent Address</label>
+								<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
+							</div>
 
-                            <div class="form-group col-2 ">
-                                <label for="permanent_zip">Zip Code</label>
-                                <input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" required="required">
-                            </div>
+							<div class="form-group col-2 ">
+								<label for="permanent_zip">Zip Code</label>
+								<input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" required="required">
+							</div>
 
-                            <div class="form-group col-3 ">
-                                <label for="permanent_tel_no">Telephone NO.</label>
-                                <input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
-                            </div>
-                        </div>
+							<div class="form-group col-3 ">
+								<label for="permanent_tel_no">Telephone NO.</label>
+								<input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
+							</div>
+						</div>
 
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="citizenship">Citizenship</label>
-                                <input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
-                            </div>
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="citizenship">Citizenship</label>
+								<input type="text" name="citizenship" id="citizenship" onkeypress="alphabetInput(event)" autocomplete="off" placeholder="Citizenship" class="form-control text-transform" required="required">
+							</div>
 
-                            <script>
-                                $(function () {
-                                    $('#civil_status').change(function () {
-                                        $('#others').hide();
-                                        $('#' + $(this).val()).show();
-                                        if ($('#civil_status').val() === "others") {
-                                            $('#oth').attr('required', 'true');
-                                        } else {
-                                            $('#oth').removeAttr('required').removeClass('input-error');
+							<script>
+								$(function() {
+									$('#civil_status').change(function() {
+										$('#others').hide();
+										$('#' + $(this).val()).show();
+										if ($('#civil_status').val() === "others") {
+											$('#oth').attr('required', 'true');
+										} else {
+											$('#oth').removeAttr('required').removeClass('input-error');
 
-                                        }
-                                    });
-                                });
-                            </script>
+										}
+									});
+								});
+							</script>
 
-                            <div class="form-group col">
-                                <label for="civil_status">Civil Status</label>
-                                <select name="civil_status" id="civil_status" class="form-control" required="required">
+							<div class="form-group col">
+								<label for="civil_status">Civil Status</label>
+								<select name="civil_status" id="civil_status" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -826,59 +855,59 @@
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
-                            </div>
+							</div>
 
-                            <div class="form-group col" id="Yes" style="display:none">
-                                <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" class="form-control text-transform" autocomplete="off">
-                            </div>
-                        </div>
+							<div class="form-group col" id="Yes" style="display:none">
+								<label for="answer">If yes, where will be your new address?</label>
+								<input type="text" name="answer" id="answer" class="form-control text-transform" autocomplete="off">
+							</div>
+						</div>
 
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="button" class="btn pages btn-next">Next</button>
-                        </div>
-                    </fieldset>
+						<div class="f1-buttons">
+							<button type="button" class="btn pages btn-previous">Previous</button>
+							<button type="button" class="btn pages btn-next">Next</button>
+						</div>
+					</fieldset>
 
-                    <fieldset>
-                        <h2>Step 5: Employee Info Sheet</h2>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Persona</label>
-                                <input type="text" name="persona" id="persona" placeholder="persona" onkeypress="alphabetInput(event)" class="form-control text-transform">
-                            </div>
+					<fieldset>
+						<h2>Step 5: Employee Info Sheet</h2>
+						<div class="row">
+							<div class="form-group col">
+								<label>Persona</label>
+								<input type="text" name="persona" id="persona" placeholder="persona" onkeypress="alphabetInput(event)" class="form-control text-transform">
+							</div>
 
-                            <div class="form-group col">
-                                <label>Mobile Number</label>
-                                <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile">
-                            </div>
+							<div class="form-group col">
+								<label>Mobile Number</label>
+								<input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile">
+							</div>
 
-                            <div class="form-group col">
-                                <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone">
-                            </div>
-                        </div>
+							<div class="form-group col">
+								<label>Landline Number</label>
+								<input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone">
+							</div>
+						</div>
 
-                        <div class="row">
-                            <script>
-                                $(function () {
-                                    $('#department').change(function () {
-                                        $('#orig').hide();
-                                        $('#ash').hide();
-                                        $('#its').hide();
-                                        $('#nva').hide();
-                                        $('#main').hide();
-                                        $('#sec').hide();
-                                        $('#voa').hide();
-                                        $('#ve').hide();
-                                        $('#va').hide();
-                                        $('#' + $(this).val()).show();
-                                    });
-                                });
-                            </script>
-                            <div class="form-group col">
-                                <label for="department">Main Department</label>
-                                <select class="custom-select form-group" name="department[]" id="department">
+						<div class="row">
+							<script>
+								$(function() {
+									$('#department').change(function() {
+										$('#orig').hide();
+										$('#ash').hide();
+										$('#its').hide();
+										$('#nva').hide();
+										$('#main').hide();
+										$('#sec').hide();
+										$('#voa').hide();
+										$('#ve').hide();
+										$('#va').hide();
+										$('#' + $(this).val()).show();
+									});
+								});
+							</script>
+							<div class="form-group col">
+								<label for="department">Main Department</label>
+								<select class="custom-select form-group" name="department[]" id="department">
                                     <option selected="selected" disabled="disabled">Choose your Main Department</option>
                                     <option value="ash">Administration/HR Support</option>
                                     <option value="its">IT Support</option>
@@ -891,10 +920,10 @@
                                 </select>
 							</div>
 
-                            <div class="form-group col">
-                                <label for="position">Main Account</label>
-                                <div class="input-group">
-                                    <select class="custom-select form-group" name="account[]">
+							<div class="form-group col">
+								<label for="position">Main Account</label>
+								<div class="input-group">
+									<select class="custom-select form-group" name="account[]">
                                         <optgroup id="orig">
                                             <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                         </optgroup>
