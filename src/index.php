@@ -1,14 +1,5 @@
-<?php
-include 'utilities/db.php';
-session_start();
-
-if (isset($_SESSION['user'])) {
-    echo "<script>window.location = 'pages/';</script>";
-}
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Vivixx</title>
     <meta charset="utf-8">
@@ -20,27 +11,24 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body id="index">
-<!-- This pages consists of the login, register, and forgot password form, but the login form will be the only form that will be visible because the register/sign up, and the forgot password form are in a modal which will be triggered by a link which will be seen below the login button -->
-	
-	<!--The login form consists of two fields, the first field is for the username or email, and the second field is for the password. The login form also has error handling, it checks if the user input username, email exists in the database, if the username or email exists it will check if the password matched the password in the database if not it will prompt a message saying "invalid username or password, we also ensured that the form will not accept any SQL injections, and lastly the form has links if you the user have forgotten the password or the user want to register."-->
 	<div class="containter-fluid">
 		<form action="utilities/login.php" method="post" class="jumbotron" id="login">
-			<img src="../img/Lion.png" class="index-image">
-        
+			<img src="../img/Lion.png" alt="logo" class="index-image">
+
 			<div class="form-group col-sm-12">
-				<label for="userOrEmail">Username or Email-Address</label>
+				<label for="userEmail">Username or Email-Address</label>
 				<input class="form-control" type="text" name="userOrEmail" id="userEmail" required="required" placeholder="Username or Email-Address">
 			</div>
 
 			<div class="form-group col-sm-12">
-				<label for="pass">Password</label>
+				<label for="password">Password</label>
 				<div class="input-group">
 					<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required">
 					<div class="input-group-append">
 						<button type="button" class="btn eye" onclick="showHide('password','icon')">
 							<i class="material-icons" id="icon">visibility</i>
 						</button>
-					</div>					
+					</div>
             	</div>
         	</div>
 
@@ -69,7 +57,7 @@ if (isset($_SESSION['user'])) {
             	<div class="modal-header forgot-header">
                 	<div class="row">
                     	<div class="col-3">
-                        	<img src="img/Lion.png" style="height:auto; width:65%;">
+                        	<img src="img/Lion.png" alt="-forgot-password-logo" style="height:auto; width:65%;">
                     	</div>
 
                     	<div class="col-9">
@@ -82,7 +70,7 @@ if (isset($_SESSION['user'])) {
             	<div class="modal-body">
                 	<form action="mailing/send_reset.php" method="POST">
                     	<div class="form-group">
-                        	<label for="id">E-mail Address</label>
+                        	<label for="forgot_email">E-mail Address</label>
                         	<input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address" name="email" required>
                     	</div>
 
@@ -103,7 +91,7 @@ if (isset($_SESSION['user'])) {
             	<div class="modal-header signup-header">
                 	<div class="row">
                     	<div class="col-3">
-                        	<img src="img/Lion.png" style="height:auto; width:65%;">
+                        	<img src="img/Lion.png" alt="register-logo" style="height:auto; width:65%;">
                     	</div>
 
                     	<div class="col-9">
@@ -131,23 +119,23 @@ if (isset($_SESSION['user'])) {
                             	<label for="lname">Last Name</label>
                             	<input type="text" name="last_name" id="lname" autocomplete="off" class="form-control text-transform" placeholder="Last Name" required="required">
                         	</div>
-                        
+
 							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             	<label for="email">Email</label>
                             	<input type="text" name="email" id="email" autocomplete="off" class="form-control" placeholder="E-mail Address" required="required">
                         	</div>
-							
+
                         	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            	<label for="reg_pass">Password</label>
+                            	<label for="regpass">Password</label>
                             	<input type="password" name="password" id="regpass" class="form-control" placeholder="Password" required="required">
                         	</div>
 
                         	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            	<label for="cpass">Confirm Password</label>
+                            	<label for="cpassword">Confirm Password</label>
                             	<input type="password" name="confirm_password" id="cpassword" class="form-control" placeholder="Confirm Password" required="required">
                         	</div>
 						</div>
-						
+
 						<div style="text-align: right;">
 							<button type="submit" class="btn btn-primary" id="button1">Submit</button>
 						</div>
@@ -157,14 +145,23 @@ if (isset($_SESSION['user'])) {
 		</div>
 	</div>
 
-	<script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="script/jquery.form.min.js"></script>
-	<script type="text/javascript" src="script/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="script/additional-methods.min.js"></script>
-	<script type="text/javascript" src="script/alerts.js"></script>
-	<script type="text/javascript" src="script/popper.min.js"></script>
-	<script type="text/javascript" src="script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="script/ajax.js"></script>
+	<script src="script/jquery-3.2.1.min.js"></script>
+	<script src="script/jquery.form.min.js"></script>
+	<script src="script/jquery.validate.min.js"></script>
+	<script src="script/additional-methods.min.js"></script>
+	<script src="script/alerts.js"></script>
+	<script src="script/popper.min.js"></script>
+	<script src="script/bootstrap/bootstrap.min.js"></script>
+	<script src="script/sweetalert.min.js"></script>
+	<script src="script/ajax.js"></script>
 </body>
 </html>
+
+<?php
+include 'utilities/db.php';
+session_start();
+
+if (isset($_SESSION['user'])) {
+    echo "<script>window.location = 'pages/';</script>";
+}
+?>
