@@ -24,7 +24,6 @@
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-		<script src="../script/retina-1.1.0.min.js"></script>
 		<script src="../script/scripts.js"></script>
         <script src="../leaflet/leaflet.js"></script>
         <script src="../leaflet/leaflet-search.min.js"></script>
@@ -1308,17 +1307,14 @@
             });
             var markersLayer = new L.LayerGroup();
             map.addLayer(markersLayer);
-            var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+            var search = L.esri.Geocoding.geosearch().addTo(map);
 
             // create an empty layer group to store the results and add it to the map
-            var results = L.LayerGroup().addTo(map);
+            var results = L.layerGroup().addTo(map);
 
             // listen for the results event and add every result to the map
-            searchControl.on("results", function (data) {
+            search.on("results", function (data) {
                 results.clearLayers();
-                for (var i = data.results.length - 1; i >= 0; i--) {
-                    results.addLayer(L.marker(data.results[i].latlng));
-                }
             });
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
