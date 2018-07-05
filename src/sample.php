@@ -60,17 +60,10 @@
                 document.getElementById('lat').value = marker.getLatLng().lat;
                 document.getElementById('lng').value = marker.getLatLng().lng;
             });
-            var markersLayer = new L.LayerGroup();
-            map.addLayer(markersLayer);
+
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
 
-            // create an empty layer group to store the results and add it to the map
-            var results = L.layerGroup().addTo(map);
-
-            // listen for the results event and add every result to the map
-            searchControl.on("results", function (data) {
-                results.clearLayers();
-            });
+            // create an empty layer group to store the results and add it to the map listen for the results event and add every result to the map
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
