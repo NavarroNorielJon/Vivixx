@@ -106,7 +106,7 @@
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							if(isset($row['attachment'])){
-								$attachment = "<img src='data:image/jpg;base64,". $row['attachment'] . "' style='height:100px;width:100px;'>";
+								$attachment = $row['attachment_name'];
 							}else{
 								$attachment = "No attachment";
 							}
@@ -171,15 +171,15 @@
 
 							<div class="form-group col">
 								<label for="department">Department</label>
-								<select class="custom-select form-group" name="department"  id="department" require="required" multiple="multiple">
-									<option value="all">All Departments</option>
-									<option value="admin">Administration</option>
-									<option value="admin supp">Administration Support / HR</option>
-									<option value="it support">IT Support</option>
-                            		<option value="non voice account">Non-voice Account</option>
-                            		<option value="phone esl">Phone ESL</option>
-                            		<option value="video esl">Video ESL</option>
-                            		<option value="virtual assistant">Virtual Assistant</option>
+								<select class="custom-select form-group" name="department[]"  id="department" require="required" multiple="multiple">
+									<option value="All Departments">All Departments</option>
+                                	<option value="Administration">Administration</option>
+                                	<option value="Administration Support / HR">Administration Support / HR</option>
+                                	<option value="IT Support">IT Support</option>
+                                	<option value="Non-voice Account">Non-voice Account</option>
+                                	<option value="Phone ESL">Phone ESL</option>
+                                	<option value="Video ESL">Video ESL</option>
+                                	<option value="Virtual Assistant">Virtual Assistant</option>
                         		</select>
                     		</div>
             			</div>

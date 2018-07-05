@@ -38,30 +38,10 @@
 								<input type="date" class="form-control" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 
-							<?php 
-                        	if($row["departments"] === "All"){
-                            	$dept= "All Departments";
-                        	}else if($row["departments"] === "Administration"){
-                            	$dept= "Administration";
-                        	}else if($row["departments"] === "Administration Support / HR"){
-                            	$dept= "Administration Support / HR";
-                        	}else if($row["departments"] === "IT Support"){
-                            	$dept= "IT Support";
-                        	}else if($row["departments"] === "Non-voice Account"){
-                            	$dept= "Non-voice Account";
-                        	}else if($row["departments"] === "Phone ESL"){
-                            	$dept= "Phone ESL";
-                        	}else if($row["departments"] === "Video ESL"){
-                            	$dept= "Video ESL";
-                        	}else{
-                            	$dept= "Virtual Assistant";
-                        	}
-                    		?>
-
 							<div class="form-group col">
 								<label for="departments">Department</label>
 								<select class="custom-select form-group" id="department" name="department[]" required multiple="multiple">
-									<option value="" disabled><?php echo $dept ?></option>
+									<option selected value="none"><?php echo $row['departments'] ?></option>
                                 	<option value="All">All Departments</option>
                                 	<option value="Administration">Administration</option>
                                 	<option value="Administration Support / HR">Administration Support / HR</option>
@@ -78,7 +58,7 @@
 							<div class="d-flex ">
 								<div class="p-2" id="border">
 									<p contenteditable="true" id="editable">
-										<?php echo $row["announcement"]?>
+									<?php echo $row["announcement"]?>
 									</p>
 									<textarea style="display:none;" class="form-control" name="body" id='text' placeholder="Content" column="5" required><?php echo $row["announcement"]?></textarea>
 									<div class="text-center">
@@ -89,6 +69,7 @@
 
 							<span class="btn btn-default btn-file">
 								<input type="file" name="file[]" multiple>
+								<input type="hidden" name="attachment" value="<?php echo $row['attachment_name']?>">
 							</span>
 						</div>
 						<input type="hidden" name="edit" value="edit">

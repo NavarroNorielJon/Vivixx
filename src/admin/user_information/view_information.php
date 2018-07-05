@@ -1,4 +1,3 @@
-
 <?php
     include '../../utilities/session.php';
     $connect = Connect();
@@ -7,10 +6,7 @@
     $result = $connect->query($personal_info);
     $row = $result->fetch_assoc();
     $height = explode("'",$row['height']);
-    $elem = explode("|",$row['elementary']);
-    $sec = explode("|",$row['secondary']);
-    $col = explode("|",$row['college']);
-    $pos = explode("|",$row['post_grad']);
+    
     $coordinates = explode("|",$row['coordinates']);
 ?>
 <!DOCTYPE html>
@@ -498,12 +494,38 @@
                     </fieldset>
 
                     <fieldset>
+                        <?php
+                            if($row['elementary'] == "None"){
+                                $elem =  "None";
+                            }else{
+                                $elemname = explode("|",$row['elementary'][0]);
+                                $elemyear = explode("|",$row['elementary'][1]);
+                            }
+                            if($row['secondary'] == "None"){
+                                $sec = "None";
+                            }else{
+                                $secname = explode("|",$row['secondary'][0]);
+                                $secyear = explode("|",$row['secondary'][1]);
+                            }
+                            if($row['college'] == "None"){
+                                $col = "None";
+                            }else{
+                                $colname = explode("|",$row['college'][0]);
+                                $colyear = explode("|",$row['college'][1]);
+                            }
+                            if($row['post_grad'] == "None"){
+                                $pos = "None";
+                            }else{
+                                $posname = explode("|",$row['post_grad'][0]);
+                                $posyear = explode("|",$row['post_grad'][1]);
+                            }
+                        ?>
                         <h2>Step 3: Educational Background</h2>
                         <h5>Elementary</h5>
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="elem_school_name" id="elem_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $elem[0]?>">
+                                <input type="text" name="elem_school_name" id="elem_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $elemname; ?>">
                             </div>
                             <script>
                                 $(function () {
@@ -530,7 +552,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $elem[1]?></option>
+                                    <option selected="selected" value="none"><?php echo $elemyear?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
