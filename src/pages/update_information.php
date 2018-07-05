@@ -24,6 +24,13 @@
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
 		<script src="../script/retina-1.1.0.min.js"></script>
 		<script src="../script/scripts.js"></script>
+        <script src="../leaflet/leaflet.js"></script>
+        <script src="../leaflet/leaflet-search.min.js"></script>
+        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
+        <script src="../leaflet/leaflet-src.js"></script>
+        <script src="../leaflet/esri-leaflet-debug.js"></script>
+        <link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
+        <script src="../leaflet/esri-leaflet-geocoder-debug.js"></script>
 	</head>
 
 	<body id="update-information">
@@ -1002,34 +1009,45 @@
             $('.gradyear').inputmask({mask: 'dddd-dd'});
         </script>
         <script>
-            function initMap() {
-                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-                var myOptions = {
-                    zoom: 18,
-                    center: myLatlng,
-                    disableDoubleClickZoom: true,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+            var map = L.map('maps').setView([
+                16.4134367, 120.5858916
+            ], 4);
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                maxZoom: 20,
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                id: 'mapbox.streets'
+            }).addTo(map);
+            map.doubleClickZoom.disable();
+            var marker = new L.Marker([
+                16.4134367, 120.5858916
+            ], {draggable: true}).addTo(map);
+            document.getElementById('lat').value = marker.getLatLng().lat;
+            document.getElementById('lng').value = marker.getLatLng().lng;
+            marker.on('drag', function () {
+                document.getElementById('lat').value = marker.getLatLng().lat;
+                document.getElementById('lng').value = marker.getLatLng().lng;
+            });
+            map.on('dblclick', function (event) {
+                marker.setLatLng(event.latlng);
+                marker.addTo(map);
+                document.getElementById('lat').value = marker.getLatLng().lat;
+                document.getElementById('lng').value = marker.getLatLng().lng;
+            });
+            var markersLayer = new L.LayerGroup();
+            map.addLayer(markersLayer);
+            var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+
+            // create an empty layer group to store the results and add it to the map
+            var results = L.LayerGroup().addTo(map);
+
+            // listen for the results event and add every result to the map
+            searchControl.on("results", function (data) {
+                results.clearLayers();
+                for (var i = data.results.length - 1; i >= 0; i--) {
+                    results.addLayer(L.marker(data.results[i].latlng));
                 }
-                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
-
-                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-                google.maps.event.addListener(marker, 'drag', function () {
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-                google.maps.event.addListener(map, 'dblclick', function (e) {
-                    var positionDoubleclick = e.latLng;
-                    marker.setPosition(positionDoubleclick);
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-            }
-
-            function invalid() {
-                swal({title: "Error", text: "Please locate your house", icon: "error"});
-            }
+            });
         </script>
-        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../script/additional-methods.min.js"></script>
