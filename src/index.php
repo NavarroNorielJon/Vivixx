@@ -1,3 +1,11 @@
+<?php
+include 'utilities/db.php';
+session_start();
+
+if (isset($_SESSION['user'])) {
+    echo "<script>window.location = 'pages/';</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,12 +164,3 @@
 	<script src="script/ajax.js"></script>
 </body>
 </html>
-
-<?php
-include 'utilities/db.php';
-session_start();
-
-if (isset($_SESSION['user'])) {
-    echo "<script>window.location = 'pages/';</script>";
-}
-?>

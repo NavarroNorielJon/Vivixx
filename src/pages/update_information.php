@@ -17,19 +17,18 @@
 		<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
+        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
+        <link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-		<script src="../script/retina-1.1.0.min.js"></script>
 		<script src="../script/scripts.js"></script>
         <script src="../leaflet/leaflet.js"></script>
         <script src="../leaflet/leaflet-search.min.js"></script>
-        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
         <script src="../leaflet/leaflet-src.js"></script>
         <script src="../leaflet/esri-leaflet-debug.js"></script>
-        <link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
         <script src="../leaflet/esri-leaflet-geocoder-debug.js"></script>
 	</head>
 
@@ -182,7 +181,13 @@
 								<input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
 							</div>
 
-							<div class="form-group col-3">
+
+							<div class="form-group col-2 ">
+								<label for="residential_zip">Zip Code</label>
+								<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
+							</div>
+
+                            <div class="form-group col-3">
 								<label>Area Code</label>
 								<select name="res_area_code" class="form-control" id="res_area_code" required="required">
                                     <option selected disabled>Choose Area Code:</option>
@@ -193,6 +198,105 @@
                                         <option value="47">Bataan (47)</option>
                                         <option value="78">Batanes (78)</option>
                                         <option value="43">Batangas (43)</option>
+                                        <option value="74">Benguet (74)</option>
+                                        <option value="44">Bulacan (44)</option>
+                                        <option value="78">Cagayan Valley (78)</option>
+                                        <option value="54">Camarines Norte/Sur (54)</option>
+                                        <option value="52">Catanduanes (52)</option>
+                                        <option value="46">Cavite Province (46)</option>
+                                        <option value="74">Ifugao Province (74)</option>
+                                        <option value="77">Ilocos Norte/Sur (77)</option>
+                                        <option value="78">Isabela Province(78)</option>
+                                        <option value="74">Kalinga-Apayao (74)</option>
+                                        <option value="49">Laguna (49)</option>
+                                        <option value="72">La Union (72)</option>
+                                        <option value="42">Marinduque (42)</option>
+                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                        <option value="74">Mountain Province (74)</option>
+                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                        <option value="48">Palawan (48)</option>
+                                        <option value="45">Pampanga (45)</option>
+                                        <option value="75">Pangasinan (75)</option>
+                                        <option value="42">Quezon Province (42)</option>
+                                        <option value="78">Quirino Province (78)</option>
+                                        <option value="2">Rizal Province (2)</option>
+                                        <option value="56">Sorsogon Province (56)</option>
+                                        <option value="45">Tarlac (45)</option>
+                                        <option value="47">Zambales (47)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Visayas">
+                                        <option value="36">Aklan (36)</option>
+										<option value="36">Antique (36)</option>
+										<option value="53">Biliran (53)</option>
+										<option value="38">Bohol (38)</option>
+										<option value="36">Capiz (36)</option>
+										<option value="32">Cebu Province (32)</option>
+										<option value="33">Guimaras (33)</option>
+										<option value="33">Iloilo Province (33)</option>
+										<option value="53">Leyte (53)</option>
+										<option value="56">Masbate Province (56)</option>
+										<option value="88">Misamis Occidental and Oriental (88)</option>
+										<option value="34">Negros Occidental Occidental (34)</option>
+										<option value="35">Negros Occidental Oriental (35)</option>
+										<option value="42">Romblon (42)</option>
+										<option value="55">Eastern Samar (55)</option>
+										<option value="55">Northern Samar(55)</option>
+										<option value="55">Western Samar (55)</option>
+										<option value="35">Siquijor (35)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Mindanao">
+										<option value="85">Agusan (85)</option>
+                                        <option value="62">Basilan (62)</option>
+                                        <option value="88">Bukidnon (88)</option>
+                                        <option value="88">Camiguin (88)</option>
+										<option value="84">Davao del Norte (84)</option>
+										<option value="82">Davao del Sur (82)</option>
+										<option value="87">Davao Oriental (87)</option>
+										<option value="63">Lanao del Norte (63)</option>
+										<option value="64">Maguindanao (64)</option>
+                                        <option value="64">North Cotobato (64)</option>
+										<option value="65">North Cotobato (65)</option>
+										<option value="83">Sarangani (83)</option>
+										<option value="83">South Cotobato (83)</option>
+										<option value="64">Sultan Kudarat (64)</option>
+										<option value="86">Surigao (86)</option>
+										<option value="68">Tawi Tawi (68)</option>
+										<option value="65">Zamboanga (65)</option>
+                                    </optgroup>
+                                </select>
+							</div>
+
+							<div class="form-group col-2 ">
+								<label for="residential_tel_no">Telephone NO.</label>
+								<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-5">
+								<label for="permanent_address">Permanent Address</label>
+								<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
+							</div>
+
+							<div class="form-group col-2">
+								<label for="permanent_zip">Zip Code</label>
+								<input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" required="required">
+							</div>
+
+                            <div class="form-group col-3">
+								<label>Area Code</label>
+								<select name="per_area_code" class="form-control" id="per_area_code" required="required">
+                                    <option selected disabled>Choose Area Code:</option>
+                                    <optgroup label="Luzon">
+                                        <option value="74">Abra (74)</option>
+                                        <option value="52">Albay (52)</option>
+                                        <option value="42">Aurora (42)</option>
+                                        <option value="47">Bataan (47)</option>
+                                        <option value="78">Batanes (78)</option>
+                                        <option value="43">Batangas (43)</option>
+                                        <option value="74">Benguet (74)</option>
                                         <option value="44">Bulacan (44)</option>
                                         <option value="78">Cagayan Valley (78)</option>
                                         <option value="54">Camarines Norte/Sur (54)</option>
@@ -263,29 +367,7 @@
                                 </select>
 							</div>
 
-							<div class="form-group col-2 ">
-								<label for="residential_zip">Zip Code</label>
-								<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
-							</div>
-
-							<div class="form-group col-2 ">
-								<label for="residential_tel_no">Telephone NO.</label>
-								<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-7">
-								<label for="permanent_address">Permanent Address</label>
-								<input type="text" name="permanent_address" id="permanent_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
-							</div>
-
-							<div class="form-group col-2 ">
-								<label for="permanent_zip">Zip Code</label>
-								<input type="text" name="permanent_zip" id="permanent_zip" autocomplete="off" placeholder="XXXX" class="form-control zip" required="required">
-							</div>
-
-							<div class="form-group col-3 ">
+							<div class="form-group col-2">
 								<label for="permanent_tel_no">Telephone NO.</label>
 								<input type="tel" name="permanent_tel_no" id="permanent_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
 							</div>
@@ -432,7 +514,88 @@
 								<input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off">
 							</div>
 
-							<div class="form-group col-3">
+                            <div class="form-group col-2">
+								<label>Area Code</label>
+								<select name="sp_area_code" class="form-control" id="sp_area_code">
+                                    <option selected disabled>Choose Area Code:</option>
+                                    <optgroup label="Luzon">
+                                        <option value="74">Abra (74)</option>
+                                        <option value="52">Albay (52)</option>
+                                        <option value="42">Aurora (42)</option>
+                                        <option value="47">Bataan (47)</option>
+                                        <option value="78">Batanes (78)</option>
+                                        <option value="43">Batangas (43)</option>
+                                        <option value="74">Benguet (74)</option>
+                                        <option value="44">Bulacan (44)</option>
+                                        <option value="78">Cagayan Valley (78)</option>
+                                        <option value="54">Camarines Norte/Sur (54)</option>
+                                        <option value="52">Catanduanes (52)</option>
+                                        <option value="46">Cavite Province (46)</option>
+                                        <option value="74">Ifugao Province (74)</option>
+                                        <option value="77">Ilocos Norte/Sur (77)</option>
+                                        <option value="78">Isabela Province(78)</option>
+                                        <option value="74">Kalinga-Apayao (74)</option>
+                                        <option value="49">Laguna (49)</option>
+                                        <option value="72">La Union (72)</option>
+                                        <option value="42">Marinduque (42)</option>
+                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                        <option value="74">Mountain Province (74)</option>
+                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                        <option value="48">Palawan (48)</option>
+                                        <option value="45">Pampanga (45)</option>
+                                        <option value="75">Pangasinan (75)</option>
+                                        <option value="42">Quezon Province (42)</option>
+                                        <option value="78">Quirino Province (78)</option>
+                                        <option value="2">Rizal Province (2)</option>
+                                        <option value="56">Sorsogon Province (56)</option>
+                                        <option value="45">Tarlac (45)</option>
+                                        <option value="47">Zambales (47)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Visayas">
+                                        <option value="36">Aklan (36)</option>
+										<option value="36">Antique (36)</option>
+										<option value="53">Biliran (53)</option>
+										<option value="38">Bohol (38)</option>
+										<option value="36">Capiz (36)</option>
+										<option value="32">Cebu Province (32)</option>
+										<option value="33">Guimaras (33)</option>
+										<option value="33">Iloilo Province (33)</option>
+										<option value="53">Leyte (53)</option>
+										<option value="56">Masbate Province (56)</option>
+										<option value="88">Misamis Occidental and Oriental (88)</option>
+										<option value="34">Negros Occidental Occidental (34)</option>
+										<option value="35">Negros Occidental Oriental (35)</option>
+										<option value="42">Romblon (42)</option>
+										<option value="55">Eastern Samar (55)</option>
+										<option value="55">Northern Samar(55)</option>
+										<option value="55">Western Samar (55)</option>
+										<option value="35">Siquijor (35)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Mindanao">
+										<option value="85">Agusan (85)</option>
+                                        <option value="62">Basilan (62)</option>
+                                        <option value="88">Bukidnon (88)</option>
+                                        <option value="88">Camiguin (88)</option>
+										<option value="84">Davao del Norte (84)</option>
+										<option value="82">Davao del Sur (82)</option>
+										<option value="87">Davao Oriental (87)</option>
+										<option value="63">Lanao del Norte (63)</option>
+										<option value="64">Maguindanao (64)</option>
+                                        <option value="64">North Cotobato (64)</option>
+										<option value="65">North Cotobato (65)</option>
+										<option value="83">Sarangani (83)</option>
+										<option value="83">South Cotobato (83)</option>
+										<option value="64">Sultan Kudarat (64)</option>
+										<option value="86">Surigao (86)</option>
+										<option value="68">Tawi Tawi (68)</option>
+										<option value="65">Zamboanga (65)</option>
+                                    </optgroup>
+                                </select>
+							</div>
+
+							<div class="form-group col-2">
 								<label for="spouse_tel_no">Telephone NO.</label>
 								<input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
 							</div>
@@ -882,6 +1045,86 @@
 								<input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile">
 							</div>
 
+                            <div class="form-group col">
+								<label>Area Code</label>
+								<select name="l_area_code" class="form-control" id="l_area_code" required="required">
+                                    <option selected disabled>Choose Area Code:</option>
+                                    <optgroup label="Luzon">
+                                        <option value="74">Abra (74)</option>
+                                        <option value="52">Albay (52)</option>
+                                        <option value="42">Aurora (42)</option>
+                                        <option value="47">Bataan (47)</option>
+                                        <option value="78">Batanes (78)</option>
+                                        <option value="43">Batangas (43)</option>
+                                        <option value="74">Benguet (74)</option>
+                                        <option value="44">Bulacan (44)</option>
+                                        <option value="78">Cagayan Valley (78)</option>
+                                        <option value="54">Camarines Norte/Sur (54)</option>
+                                        <option value="52">Catanduanes (52)</option>
+                                        <option value="46">Cavite Province (46)</option>
+                                        <option value="74">Ifugao Province (74)</option>
+                                        <option value="77">Ilocos Norte/Sur (77)</option>
+                                        <option value="78">Isabela Province(78)</option>
+                                        <option value="74">Kalinga-Apayao (74)</option>
+                                        <option value="49">Laguna (49)</option>
+                                        <option value="72">La Union (72)</option>
+                                        <option value="42">Marinduque (42)</option>
+                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                        <option value="74">Mountain Province (74)</option>
+                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                        <option value="48">Palawan (48)</option>
+                                        <option value="45">Pampanga (45)</option>
+                                        <option value="75">Pangasinan (75)</option>
+                                        <option value="42">Quezon Province (42)</option>
+                                        <option value="78">Quirino Province (78)</option>
+                                        <option value="2">Rizal Province (2)</option>
+                                        <option value="56">Sorsogon Province (56)</option>
+                                        <option value="45">Tarlac (45)</option>
+                                        <option value="47">Zambales (47)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Visayas">
+                                        <option value="36">Aklan (36)</option>
+										<option value="36">Antique (36)</option>
+										<option value="53">Biliran (53)</option>
+										<option value="38">Bohol (38)</option>
+										<option value="36">Capiz (36)</option>
+										<option value="32">Cebu Province (32)</option>
+										<option value="33">Guimaras (33)</option>
+										<option value="33">Iloilo Province (33)</option>
+										<option value="53">Leyte (53)</option>
+										<option value="56">Masbate Province (56)</option>
+										<option value="88">Misamis Occidental and Oriental (88)</option>
+										<option value="34">Negros Occidental Occidental (34)</option>
+										<option value="35">Negros Occidental Oriental (35)</option>
+										<option value="42">Romblon (42)</option>
+										<option value="55">Eastern Samar (55)</option>
+										<option value="55">Northern Samar(55)</option>
+										<option value="55">Western Samar (55)</option>
+										<option value="35">Siquijor (35)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Mindanao">
+										<option value="85">Agusan (85)</option>
+                                        <option value="62">Basilan (62)</option>
+                                        <option value="88">Bukidnon (88)</option>
+                                        <option value="88">Camiguin (88)</option>
+										<option value="84">Davao del Norte (84)</option>
+										<option value="82">Davao del Sur (82)</option>
+										<option value="87">Davao Oriental (87)</option>
+										<option value="63">Lanao del Norte (63)</option>
+										<option value="64">Maguindanao (64)</option>
+                                        <option value="64">North Cotobato (64)</option>
+										<option value="65">North Cotobato (65)</option>
+										<option value="83">Sarangani (83)</option>
+										<option value="83">South Cotobato (83)</option>
+										<option value="64">Sultan Kudarat (64)</option>
+										<option value="86">Surigao (86)</option>
+										<option value="68">Tawi Tawi (68)</option>
+										<option value="65">Zamboanga (65)</option>
+                                    </optgroup>
+                                </select>
+							</div>
 							<div class="form-group col">
 								<label>Landline Number</label>
 								<input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone">
@@ -1064,17 +1307,14 @@
             });
             var markersLayer = new L.LayerGroup();
             map.addLayer(markersLayer);
-            var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+            var search = L.esri.Geocoding.geosearch().addTo(map);
 
             // create an empty layer group to store the results and add it to the map
-            var results = L.LayerGroup().addTo(map);
+            var results = L.layerGroup().addTo(map);
 
             // listen for the results event and add every result to the map
-            searchControl.on("results", function (data) {
+            search.on("results", function (data) {
                 results.clearLayers();
-                for (var i = data.results.length - 1; i >= 0; i--) {
-                    results.addLayer(L.marker(data.results[i].latlng));
-                }
             });
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
