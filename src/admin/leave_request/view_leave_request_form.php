@@ -8,7 +8,7 @@
     $row = $result->fetch_assoc();
 	$user = $_GET["fname"];
 	$user_middle = $_GET["mname"];
-	$user_last = $_GET["lname"];
+    $user_last = $_GET["lname"];
 ?>
     <form action="accept_or_reject.php" method="POST">
     <div class="modal fade" id="request" tabindex="-1" role="dialog" >
@@ -19,6 +19,8 @@
                 </div>
                 <input type="hidden" name="req_id" value="<?php echo $req_id?>">
                 <input type="hidden" name="email" value="<?php echo $row["email"]?>">
+                <input type="hidden" name="used" value="<?php echo $row["used"]?>">
+                <input type="hidden" name="remaining" value="<?php echo $row["remaining"]?>">
 
                 <div class="modal-body">
                     <div class="row">
@@ -64,12 +66,12 @@
                             
                             <div class="form-group col">
                                 <label for="used">Used Leave Credits</label>
-                                <input type="text" class="form-control" id="used" disabled>
+                                <input type="text" class="form-control" id="used" disabled value="<?php echo $row['used']?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="balance">Remaining Balance</label>
-                                <input type="text" class="form-control" id="balance" disabled>
+                                <input type="text" class="form-control" id="balance" disabled value="<?php echo $row['remaining']?>">
                             </div>
                         </div>
 					
