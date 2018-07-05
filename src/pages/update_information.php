@@ -170,9 +170,78 @@
 						</div>
 
 						<div class="row">
-							<div class="form-group col-7">
+							<div class="form-group col-5">
 								<label for="residential_address">Residential Address</label>
 								<input type="text" name="residential_address" id="residential_address" autocomplete="off" placeholder="address" class="form-control text-transform" required="required">
+							</div>
+
+							<div class="form-group col-3">
+								<label>Area Code</label>
+								<select name="res_area_code" class="form-control" id="res_area_code" required="required">
+                                    <option selected disabled>Choose Area Code:</option>
+                                    <optgroup label="Luzon">
+                                        <option value="74">Abra (74)</option>
+                                        <option value="52">Albay (52)</option>
+                                        <option value="42">Aurora (42)</option>
+                                        <option value="47">Bataan (47)</option>
+                                        <option value="78">Batanes (78)</option>
+                                        <option value="43">Batangas (43)</option>
+                                        <option value="44">Bulacan (44)</option>
+                                        <option value="78">Cagayan Valley (78)</option>
+                                        <option value="54">Camarines Norte/Sur (54)</option>
+                                        <option value="52">Catanduanes (52)</option>
+                                        <option value="46">Cavite Province (46)</option>
+                                        <option value="74">Ifugao Province (74)</option>
+                                        <option value="77">Ilocos Norte/Sur (77)</option>
+                                        <option value="78">Isabela Province(78)</option>
+                                        <option value="74">Kalinga-Apayao (74)</option>
+                                        <option value="49">Laguna (49)</option>
+                                        <option value="72">La Union (72)</option>
+                                        <option value="42">Marinduque (42)</option>
+                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                        <option value="74">Mountain Province (74)</option>
+                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                        <option value="48">Palawan (48)</option>
+                                        <option value="45">Pampanga (45)</option>
+                                        <option value="75">Pangasinan (75)</option>
+                                        <option value="42">Quezon Province (42)</option>
+                                        <option value="78">Quirino Province (78)</option>
+                                        <option value="2">Rizal Province (2)</option>
+                                        <option value="56">Sorsogon Province (56)</option>
+                                        <option value="45">Tarlac (45)</option>
+                                        <option value="47">Zambales (47)</option>
+                                    </optgroup>
+
+                                    <optgroup label="Visayas">
+                                        <option value="36">Aklan (36)</option>
+										<option value="36">Antique (36)</option>
+										<option value="53">Biliran (53)</option>
+										<option value="38">Bohol (38)</option>
+										<option value="36">Capiz (36)</option>
+										<option value="32">Cebu Province (32)</option>
+										<option value="33">Guimaras (33)</option>
+										<option value="33">Iloilo Province (33)</option>
+										<option value="53">Leyte (53)</option>
+										<option value="56">Masbate Province (56)</option>
+										<option value="88">Misamis Occidental and Oriental (88)</option>
+										<option value="34">Negros Occidental Occidental (34)</option>
+										<option value="35">Negros Occidental Oriental (35)</option>
+										<option value="42">Romblon (42)</option>
+										<option value="55">Eastern Samar (55)</option>
+										<option value="55">Northern Samar(55)</option>
+										<option value="55">Western Samar (55)</option>
+										<option value="35">Siquijor (35)</option>
+
+                                    </optgroup>
+
+                                    <optgroup label="Mindanao">
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+                                        <option value=""> ()</option>
+
+                                    </optgroup>
+                                </select>
 							</div>
 
 							<div class="form-group col-2 ">
@@ -180,7 +249,7 @@
 								<input type="text" name="residential_zip" class="form-control zip" id="residential_zip" placeholder="XXXX" autocomplete="off" required="required">
 							</div>
 
-							<div class="form-group col-3 ">
+							<div class="form-group col-2 ">
 								<label for="residential_tel_no">Telephone NO.</label>
 								<input type="tel" name="residential_tel_no" id="residential_tel_no" autocomplete="off" placeholder="XXX-XXXX" class="form-control telephone" required="required">
 							</div>
@@ -820,8 +889,8 @@
 							<div class="form-group col">
 								<label for="department">Main Department</label>
 								<select class="custom-select form-group" name="department[]" id="department">
-                                    <option selected="selected" disabled="disabled">Choose your Department</option>
-                                    <option value="ash">Administration Support / HR</option>
+                                    <option selected="selected" disabled="disabled">Choose your Main Department</option>
+                                    <option value="ash">Administration/HR Support</option>
                                     <option value="its">IT Support</option>
                                     <option value="main">Maintenance</option>
                                     <option value="nva">Non-voice Account</option>
@@ -834,129 +903,48 @@
 
 							<div class="form-group col">
 								<label for="position">Main Account</label>
-								<select class="custom-select form-group" name="account[]">
-                                    <optgroup id="orig">
-                                        <option selected="selected" disabled="disabled">Choose your Main Account</option>
-                                    </optgroup>
-
-                                    <optgroup id="ash" style="display:none">
-                                        <option value="HR Assistant">HR Assistant</option>
-                                        <option value="IDP Staff">IDP Staff</option>
-                                        <option value="Operations Support">Operations Support</option>
-                                        <option value="Springboard Staff">Springboard Staff</option>
-                                    </optgroup>
-
-                                    <optgroup id="its" style="display:none">
-                                        <option value="ICT Specialist">ICT Specialist</option>
-                                    </optgroup>
-
-                                    <optgroup id="nva" style="display:none">
-                                        <option value="April Writing">April Writing</option>
-                                        <option value="CL/IL">CL/IL</option>
-                                    </optgroup>
-
-                                    <optgroup id="voa" style="display:none">
-                                        <option value="ELANSO">ELANSO</option>
-                                        <option value="Phone ESL">Phone ESL</option>
-                                    </optgroup>
-
-                                    <optgroup id="ve" style="display:none">
-                                        <option value="First Future">First Future</option>
-                                        <option value="Key English">Key English</option>
-                                    </optgroup>
-
-                                    <optgroup id="va" style="display:none">
-                                        <option value="Drag and drop">Drag and drop</option>
-                                        <option value="Job Getter">Job Getter</option>
-                                    </optgroup>
-
-                                    <optgroup id="sec" style="display:none">
-                                        <option value="Security">Security</option>
-                                    </optgroup>
-
-                                    <optgroup id="main" style="display:none">
-                                        <option value="Housekeeping">Housekeeping</option>
-                                        <option value="Utility">Utility</option>
-                                    </optgroup>
-                                </select>
-							</div>
-						</div>
-						<div class="row">
-							<script>
-								$(function() {
-									$('#department1').change(function() {
-										$('#orig1').hide();
-										$('#ash1').hide();
-										$('#its1').hide();
-										$('#nva1').hide();
-										$('#main1').hide();
-										$('#sec1').hide();
-										$('#voa1').hide();
-										$('#ve1').hide();
-										$('#va1').hide();
-										$('#' + $(this).val() + 1).show();
-									});
-								});
-							</script>
-							<div class="form-group col">
-								<label for="department">Secondary Department</label>
-								<select class="custom-select form-group" name="department[]" id="department1">
-                                    <option selected="selected" disabled="disabled">Choose your Department</option>
-                                    <option value="ash">Administration Support / HR</option>
-                                    <option value="its">IT Support</option>
-                                    <option value="main">Maintenance</option>
-                                    <option value="nva">Non-voice Account</option>
-                                    <option value="sec">Security</option>
-                                    <option value="ve">Video ESL</option>
-                                    <option value="va">Virtual Assistant</option>
-                                    <option value="voa">Voice Account</option>
-                                </select>
-							</div>
-
-							<div class="form-group col">
-								<label for="position">Secondary Account</label>
 								<div class="input-group">
 									<select class="custom-select form-group" name="account[]">
-                                        <optgroup id="orig1">
-                                            <option selected="selected" disabled="disabled">Choose your Secondary Account</option>
+                                        <optgroup id="orig">
+                                            <option selected="selected" disabled="disabled">Choose your Main Account</option>
                                         </optgroup>
 
-                                        <optgroup id="ash1" style="display:none">
+                                        <optgroup label="Administration/HR Support" id="ash" style="display:none">
                                             <option value="HR Assistant">HR Assistant</option>
                                             <option value="IDP Staff">IDP Staff</option>
                                             <option value="Operations Support">Operations Support</option>
                                             <option value="Springboard Staff">Springboard Staff</option>
                                         </optgroup>
 
-                                        <optgroup id="its1" style="display:none">
+                                        <optgroup label="IT Support" id="its" style="display:none">
                                             <option value="ICT Specialist">ICT Specialist</option>
                                         </optgroup>
 
-                                        <optgroup id="nva1" style="display:none">
+                                        <optgroup label="Non-voice Account" id="nva" style="display:none">
                                             <option value="April Writing">April Writing</option>
                                             <option value="CL/IL">CL/IL</option>
                                         </optgroup>
 
-                                        <optgroup id="voa1" style="display:none">
+                                        <optgroup label="Voice Account" id="voa" style="display:none">
                                             <option value="ELANSO">ELANSO</option>
                                             <option value="Phone ESL">Phone ESL</option>
                                         </optgroup>
 
-                                        <optgroup id="ve1" style="display:none">
+                                        <optgroup label="Video ESL" id="ve" style="display:none">
                                             <option value="First Future">First Future</option>
                                             <option value="Key English">Key English</option>
                                         </optgroup>
 
-                                        <optgroup id="va1" style="display:none">
+                                        <optgroup label="Virtual Assistant" id="va" style="display:none">
                                             <option value="Drag and drop">Drag and drop</option>
                                             <option value="Job Getter">Job Getter</option>
                                         </optgroup>
 
-                                        <optgroup id="sec1" style="display:none">
+                                        <optgroup label="Security" id="sec" style="display:none">
                                             <option value="Security">Security</option>
                                         </optgroup>
 
-                                        <optgroup id="main1" style="display:none">
+                                        <optgroup label="Maintenance" id="main" style="display:none">
                                             <option value="Housekeeping">Housekeeping</option>
                                             <option value="Utility">Utility</option>
                                         </optgroup>
@@ -981,115 +969,133 @@
 										<button class="btn btn-success" type="button" onclick="addAccount()">
                                             <i class="small material-icons">add</i>
                                         </button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="new_acc"></div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="new_acc"></div>
+						<div class="row">
+							<div class="form-group col">
+								<label>Company Email address</label>
+								<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+							</div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Company Email address</label>
-                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
-                            </div>
+							<div class="form-group col">
+								<label>Password</label>
+								<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+							</div>
+						</div>
 
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
-                            </div>
-                        </div>
+						<div class="row">
+							<div class="form-group col">
+								<label>Skype Account</label>
+								<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+							</div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Skype Account</label>
-                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-                            </div>
+							<div class="form-group col">
+								<label>Password</label>
+								<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+							</div>
+						</div>
 
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
-                            </div>
-                        </div>
+						<div class="row">
+							<div class="form-group col">
+								<label>QQ Number</label>
+								<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+							</div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>QQ Number</label>
-                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
-                            </div>
+							<div class="form-group col">
+								<label>Password</label>
+								<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+							</div>
+						</div>
+						<div class="f1-buttons">
+							<button type="button" class="btn pages btn-previous">Previous</button>
+							<button type="submit" class="btn pages btn-submit">Submit</button>
+						</div>
+					</fieldset>
 
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
-                            </div>
-                        </div>
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="submit" class="btn pages btn-submit">Submit</button>
-                        </div>
-                    </fieldset>
+				</form>
+			</div>
+		</div>
 
-                </form>
-            </div>
-        </div>
+		<div id="footer">
+			<p>© Vivixx 2018 . All Rights Reserved.</p>
+		</div>
+		<script>
+			$('#sss_no').inputmask({
+				mask: 'dd-ddddddd-d'
+			});
+			$('#tin').inputmask({
+				mask: 'ddd-ddd-ddd-ddd'
+			});
+			$('#philhealth_no').inputmask({
+				mask: 'dd-ddddddddd-d'
+			});
+			$('#pagibig_id_no').inputmask({
+				mask: 'dddd-dddd-dddd'
+			});
+			$('.zip').inputmask({
+				mask: 'dddd'
+			});
+			$('.mobile').inputmask({
+				mask: '+639dd ddd dddd'
+			});
+			$('.telephone').inputmask({
+				mask: 'ddd-dddd'
+			});
+			$('.height').inputmask({
+				mask: 'dd'
+			});
+			$('.gradyear').inputmask({
+				mask: 'dddd-dd'
+			});
+		</script>
+		<script>
+			function initMap() {
+				var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
+				var myOptions = {
+					zoom: 18,
+					center: myLatlng,
+					disableDoubleClickZoom: true,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(document.getElementById("maps"), myOptions);
 
-        <div id="footer">
-            <p>© Vivixx 2018 . All Rights Reserved.</p>
-        </div>
-        <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
-            $('.gradyear').inputmask({mask: 'dddd-dd'});
-        </script>
-        <script>
-            function initMap() {
-                var myLatlng = new google.maps.LatLng(16.4134367, 120.5858916);
-                var myOptions = {
-                    zoom: 18,
-                    center: myLatlng,
-                    disableDoubleClickZoom: true,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                var map = new google.maps.Map(document.getElementById("maps"), myOptions);
+				var marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					draggable: true
+				});
+				google.maps.event.addListener(marker, 'drag', function() {
+					document.getElementById('lat').value = marker.position.lat();
+					document.getElementById('lng').value = marker.position.lng();
+				});
+				google.maps.event.addListener(map, 'dblclick', function(e) {
+					var positionDoubleclick = e.latLng;
+					marker.setPosition(positionDoubleclick);
+					document.getElementById('lat').value = marker.position.lat();
+					document.getElementById('lng').value = marker.position.lng();
+				});
+			}
 
-                var marker = new google.maps.Marker({position: myLatlng, map: map, draggable: true});
-                google.maps.event.addListener(marker, 'drag', function () {
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-                google.maps.event.addListener(map, 'dblclick', function (e) {
-                    var positionDoubleclick = e.latLng;
-                    marker.setPosition(positionDoubleclick);
-                    document.getElementById('lat').value = marker.position.lat();
-                    document.getElementById('lng').value = marker.position.lng();
-                });
-            }
+			function invalid() {
+				swal({
+					title: "Error",
+					text: "Please locate your house",
+					icon: "error"
+				});
+			}
+		</script>
+		<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
+		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="../script/additional-methods.min.js"></script>
+		<script type="text/javascript" src="../script/alerts.js"></script>
+		<script type="text/javascript" src="../script/popper.min.js"></script>
+		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
+	</body>
 
-            function invalid() {
-                swal({title: "Error", text: "Please locate your house", icon: "error"});
-            }
-        </script>
-        <script type="text/javascript">
-            function onTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>
-        <script type="text/javascript" src="../script/jquery.form.min.js"></script>
-        <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="../script/additional-methods.min.js"></script>
-        <script type="text/javascript" src="../script/alerts.js"></script>
-        <script type="text/javascript" src="../script/popper.min.js"></script>
-        <script type="text/javascript" src="../script/sweetalert.min.js"></script>
-        <script type="text/javascript" src="../script/ajax.js"></script>
-    </body>
-
-</html>
->>>>>>> 22686d9f1b453e49b01edaca24918189be9ed48d
+	</html>
