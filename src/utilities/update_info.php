@@ -20,10 +20,10 @@ $weight = mysqli_real_escape_string($connect, $_POST['weight']);
 $blood_type = mysqli_real_escape_string($connect, $_POST['blood']);
 $residential_address = ucwords(mysqli_real_escape_string($connect, $_POST['residential_address']));
 $residential_zip = mysqli_real_escape_string($connect, $_POST['residential_zip']);
-$residential_tel_no = mysqli_real_escape_string($connect, $_POST['residential_tel_no']);
+$residential_tel_no = mysqli_real_escape_string($connect, $_POST['res_area_code']). "-" . mysqli_real_escape_string($connect, $_POST['residential_tel_no']);
 $permanent_address = ucwords(mysqli_real_escape_string($connect, $_POST['permanent_address']));
 $permanent_zip = mysqli_real_escape_string($connect, $_POST['permanent_zip']);
-$permanent_tel_no = mysqli_real_escape_string($connect, $_POST['permanent_tel_no']);
+$permanent_tel_no = mysqli_real_escape_string($connect, $_POST['per_area_code']). "-" . mysqli_real_escape_string($connect, $_POST['permanent_tel_no']);
 $citizenship = ucwords(mysqli_real_escape_string($connect, $_POST['citizenship']));
 $civil_status = ucwords(mysqli_real_escape_string($connect, $_POST['civil_status']));
 
@@ -43,7 +43,7 @@ $spouse_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_l
 $occupation = ucwords(mysqli_real_escape_string($connect, $_POST['occupation']));
 $employer = ucwords(mysqli_real_escape_string($connect, $_POST['employer']));
 $business_address = ucwords(mysqli_real_escape_string($connect, $_POST['business_address']));
-$spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
+$spouse_tel_no = mysqli_real_escape_string($connect, $_POST['sp_area_code']). "-" . mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
 $father_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_first_name']));
 $father_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_middle_name']));
 $father_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_last_name']));
@@ -120,7 +120,7 @@ if ($answer === "Yes") {
 // //tutor info sheet
 $persona = ucwords(mysqli_real_escape_string($connect, $_POST['persona']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
-$landline = mysqli_real_escape_string($connect, $_POST['landline']);
+$landline = mysqli_real_escape_string($connect, $_POST['l_area_code']) . "-" . mysqli_real_escape_string($connect, $_POST['landline']);
 $department = $_POST['department'];
 $account = $_POST['account'];
 $departments = "";
@@ -195,11 +195,17 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
  if ($connect->query($update_stmt) === true) {
-     $insert_stmt = "INSERT INTO `user_background`(`user_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
-     `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
-     `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
-     '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
-     '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
+    if ($spouse_tel_no === "" && $spouse_first_name === "" && $spouse_middle_name === "" && $spouse_last_name === "" && $occupation === "" && $employer === "" && $business_address === "") {
+        $insert_stmt = "INSERT INTO `user_background`(`user_id`,`father_first_name`,`father_middle_name`,`father_last_name`,
+        `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$father_first_name','$father_middle_name',
+        '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
+    } else {
+        $insert_stmt = "INSERT INTO `user_background`(`user_id`,`spouse_first_name`,`spouse_middle_name`,`spouse_last_name`,
+        `occupation`,`employer`,`business_address`,`spouse_tel_no`,`father_first_name`,`father_middle_name`,`father_last_name`,
+        `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$spouse_first_name','$spouse_middle_name',
+        '$spouse_last_name','$occupation','$employer','$business_address','$spouse_tel_no','$father_first_name','$father_middle_name',
+        '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
+    }
      if ($connect->query($insert_stmt) === true) {
          $insert_stmt = "INSERT INTO `user_educ` (`user_id`,`elementary`,`secondary`,`college`,`post_grad`) VALUES ('$id','$elementary','$secondary','$college','$post_grad');";
          if ($connect->query($insert_stmt) === true) {

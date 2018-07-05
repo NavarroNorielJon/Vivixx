@@ -21,15 +21,13 @@
         <link type="text/css" rel="stylesheet" href="/style/style2.css" media="screen, projection"/>
         <script src="/leaflet/leaflet.js"></script>
         <script src="/leaflet/leaflet-search.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
-        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet-src.js"></script>
-
-        <!-- Load Esri Leaflet from CDN -->
-        <script src="https://unpkg.com/esri-leaflet@2.1.4"></script>
-
-        <!-- Esri Leaflet Geocoder -->
-        <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.12/dist/esri-leaflet-geocoder.css">
-        <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
+        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
+        <script src="/leaflet/leaflet-src.js"></script>
+        <script src="/leaflet/esri-leaflet-debug.js"></script>
+        <link rel="stylesheet" href="/leaflet/esri-leaflet-geocoder.css">
+        <script src="/leaflet/esri-leaflet-geocoder-debug.js"></script>
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/> <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet-src.js"></script> <script src="https://unpkg.com/esri-leaflet@2.1.4"></script> <link rel="stylesheet"
+        href="https://unpkg.com/esri-leaflet-geocoder@2.2.12/dist/esri-leaflet-geocoder.css"> <script src="https://unpkg.com/esri-leaflet-geocoder"></script> -->
     </head>
 
     <body>
