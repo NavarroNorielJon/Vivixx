@@ -20,15 +20,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style2.css">
+		<link type="text/css" rel="stylesheet" href="../style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
 	<body>
 		<div class="wrapper">
-			<nav id="sidebar">
+			<nav class="sidebar">
 				<div class="sidebar-header">
-					<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
+					<a class="sidebar-logo" href="home"><img src="../img/Lion.png" alt="sidebar-logo"></a>
 				</div>
 
 				<!-- Sidebar Links -->
