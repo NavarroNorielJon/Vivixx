@@ -20,15 +20,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style2.css">
+		<link type="text/css" rel="stylesheet" href="../style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
 	<body>
 		<div class="wrapper">
-			<nav id="sidebar">
+			<nav class="sidebar">
 				<div class="sidebar-header">
-					<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
+					<a class="sidebar-logo" href="home"><img src="../img/Lion.png" alt="sidebar-logo"></a>
 				</div>
 
 				<!-- Sidebar Links -->
@@ -108,7 +108,7 @@
 					<hr>
 
 					<li>
-						<a href="../utilities/logout.php" class="sidebar-item" id="logout">
+						<a href="../utilities/logout.php" class="sidebar-item logout">
 							<i class="material-icons">power_settings_new</i>
 							Logout
 						</a>
@@ -120,23 +120,7 @@
 				</ul>
 			</nav>
 
-			<div id="content">
-				<div class="card cards">
-						<div class="card-body">
-							<h4 class="card-title">Notification</h4>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-
-							<div style="text-align: right">
-								<a>
-									<button type="button" class="btn btn-primary">See more</button>
-								</a>
-							</div>
-						</div>
-					</div>
-
+			<div class="content">
 				<div class="card cards">
 					<div class="card-body">
 						<h4 class="card-title">Announcements</h4>

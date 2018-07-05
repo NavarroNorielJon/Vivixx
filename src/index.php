@@ -21,7 +21,7 @@ if (isset($_SESSION['user'])) {
 
 	<body class=" index">
 		<div class="containter">
-			<form action="utilities/login.php" method="post" class="jumbotron login">
+			<form action="utilities/login.php" method="post" class="jumbotron login" id="login">
 				<img src="../img/Lion.png" alt="logo" class="index-image">
 
 				<div class="form-group col-sm-12">
