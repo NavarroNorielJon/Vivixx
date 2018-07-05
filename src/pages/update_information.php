@@ -235,11 +235,23 @@
                                     </optgroup>
 
                                     <optgroup label="Mindanao">
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-                                        <option value=""> ()</option>
-
+										<option value="85">Agusan (85)</option>
+                                        <option value="62">Basilan (62)</option>
+                                        <option value="88">Bukidnon (88)</option>
+                                        <option value="88">Camiguin (88)</option>
+										<option value="84">Davao del Norte (84)</option>
+										<option value="82">Davao del Sur (82)</option>
+										<option value="87">Davao Oriental (87)</option>
+										<option value="63">Lanao del Norte (63)</option>
+										<option value="64">Maguindanao (64)</option>
+                                        <option value="64">North Cotobato (64)</option>
+										<option value="65">North Cotobato (65)</option>
+										<option value="83">Sarangani (83)</option>
+										<option value="83">South Cotobato (83)</option>
+										<option value="64">Sultan Kudarat (64)</option>
+										<option value="86">Surigao (86)</option>
+										<option value="68">Tawi Tawi (68)</option>
+										<option value="65">Zamboanga (65)</option>
                                     </optgroup>
                                 </select>
 							</div>
