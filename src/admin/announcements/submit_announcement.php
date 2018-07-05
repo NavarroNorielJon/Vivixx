@@ -15,6 +15,7 @@ ini_set('upload_max_filesize', '64M');
     $file_tmp_names = [];
     $file_err_nos = [];
     $concat = "";
+    $files = "";
 
     foreach($department as $dept ){
         $concat .= $dept . ",";
@@ -50,12 +51,10 @@ ini_set('upload_max_filesize', '64M');
                     $connect->query($add_attachment);
 
                 }else{
-                    $add_attachment = "Insert into announcement_attachments (`announcement_id`) values ('$announcement_id');";
-                    $connect->query($add_attachment);
-
+                    header("location: announcement.php");
                 }
                 
             }
                
     }
-header("location: test.php");
+    header("location: announcement.php");
