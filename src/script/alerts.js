@@ -25,11 +25,27 @@ $('#update_form').ajaxForm({
 });
 $.validator.methods.email = function( value, element ) {
    return this.optional( element ) || /[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,}/.test( value );
-}
+};
+jQuery.validator.addMethod("existing_email", function(value, element) {
+    let status;
+    $.ajax({
+        url: '../utilities/validator.php?email=' + value,
+        success: function (data) {
+            if (data ==='0') {
+                status = true;
+            }else {
+                status = false;
+            }
+        },
+        async: false
+    });
+    return status;
+}, "Email already exists, Please use another email.");
 $( "#signup_form" ).validate({
     rules: {
         email: {
-            email: true
+            email: true,
+            existing_email: true,
         },
         password: {
             required: true,
