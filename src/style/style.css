@@ -1,51 +1,60 @@
-#index {
-	margin: 0;
-	padding: 0;
-	background-attachment: fixed;
+/* CSS for the index page */
+.index {
+  background-attachment: fixed;
 	background-image: url(../img/building.jpeg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+  height: 100vh;
+	margin: 0;
+	padding: 5px;
 }
 
-#index .index-image {
+.index label {
+	color: black;
+}
+
+.index .index-image {
+  display: block;
 	height: auto;
-	width: 55%;
-	position: static;
-	margin: -35vh 0 0 9.8vh !important;
+  margin: 10px auto 30px auto;
+  padding: 0;
+	width: 50%;
 }
 
-#index .index-form {
-	background-color: rgba(128, 128, 128, 0.8);
+.index .index-form {
+	background-color: rgb(128, 128, 128);
 	height:100vh;
-	padding-top: 50px;
 }
 
-#index .index-form > a {
-	background-color: rgba(128, 128, 128, 0.8);
-	height:100vh;"
-	padding: 100px;
+.index .index-form > a {
+	background-color: rgb(128, 128, 128);
+	height:100vh;
 	text-align: center;
 }
 
-#index .index-form button:hover {
+.index .index-form button:hover {
 	background-color: #e6ffff;
 	color: inherit;
 }
 
-#index .index-form .forgot:focus {
+/* .index .index-form .forgot:focus {
 	outline: none;
-}
+} */
 
-#index .index-form .forgot:hover {
+.index .index-form .forgot:hover {
 	text-decoration: underline;
 }
 
-#index label {
-	color: black;
+.index .login {
+  border-radius: 0;
+  height: 570px;
+  margin:20px auto 20px auto;
+  padding: 20px 15px 30px 15px;
+  width: 400px;
 }
 
-#index .login-button {
+.index .login-button {
 	background-color: #005959;
 	color: #fff;
 	display: block;
@@ -54,11 +63,11 @@
 	transition: all 0.4s;
 }
 
-#index .login-button:hover {
+.index .login-button:hover {
 	background-color: #fac213;
 }
 
-#index .index-form .signup-button {
+.index .index-form .signup-button {
 	background-color: #005959;
 	border-radius: 0;
 	bottom: 0;
@@ -69,14 +78,97 @@
 	width: 100%;
 }
 
-#index .index-form #signup-link {
+.index .index-form .signup-link {
 	visibility: hidden;
 }
 
-#index .index-form #signup-link:focus {
+/* .index .index-form #signup-link:focus {
 	outline: none;
+} */
+
+.index .index-form .signup-link:hover {
+	text-decoration: underline;
 }
 
-#index .index-form #signup-link:hover {
-	text-decoration: underline;
+.index .footer {
+	color: white;
+  font-size: 1.3rem;
+	text-align: center;
+	width: 100%;
+}
+/* end */
+
+/* CSS for the sidebar */
+/*sidebar*/
+#sidebar {
+	background-color: #008080;
+	height: 100%;
+	left: 0;
+	max-width: 250px;
+	min-width: 250px;
+	position: fixed;
+	overflow: hidden;
+	transition: all 0.7s;
+	top: 0;
+	z-index: 1;
+}
+
+.sidebar i {
+	margin-right: 10px;
+}
+
+.sidebar .icon {
+	color: white;
+	display: none;
+}
+
+.sidebar .sidebar-header {
+	background-color: #004d4d;
+	color: white;
+	padding: 20px;
+}
+
+.sidebar .sidebar-header img {
+	margin-left: 30px;
+	height: auto;
+	width: 70%;
+}
+
+.sidebar .sidebar-logo-sm {
+	text-align: center;
+	visibility: hidden;
+}
+
+.sidebar .logout:hover {
+	background-color: red !important;
+	color: white;
+}
+
+.sidebar ul.components {
+	padding: 20px 0;
+}
+
+.sidebar ul li a {
+	display: block;
+	font-size: 1.1vw;
+	padding: 10px;
+}
+
+.sidebar ul li a:hover {
+	background-color: #ffffff;
+	color: #005959;
+}
+
+.sidebar ul li.active > a, a[aria-expanded="true"] {
+	background-color: #009999;
+	color: #fff;
+}
+
+.sidebar ul li ul a:hover {
+	background-color: #fff;
+	color: #005959;
+}
+
+.wrapper {
+	display: flex;
 }
