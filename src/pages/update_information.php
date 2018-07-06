@@ -95,6 +95,10 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
+<<<<<<< HEAD
+                            <!-- <div id="mapid"></div> -->
+=======
+>>>>>>> 7a558bca98e402e8e8e3e38e38e3d50a6036a100
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -1318,4 +1322,4 @@
         <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 
-</html>
+</html> 
