@@ -95,7 +95,6 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
-                            <div id="mapid"></div>
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -1304,6 +1303,9 @@
             });
 
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+            setTimeout(function () {
+                map.invalidateSize()
+            }, 400);
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
