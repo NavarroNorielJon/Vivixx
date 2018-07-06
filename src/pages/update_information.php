@@ -1287,21 +1287,6 @@
             var map = L.map('mapid').setView([
                 16.4134367, 120.5858916
             ], 2);
-<<<<<<< HEAD
-            
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {     maxZoom: 20,     attribution: 'Map data &copy; <a
-            href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',     id: 'mapbox.streets' }).addTo(map);
-            map.doubleClickZoom.disable(); var marker = new L.Marker([
-            16.4134367, 120.5858916 ], {draggable: true}).addTo(map); document.getElementById('lat').value = marker.getLatLng().lat; document.getElementById('lng').value = marker.getLatLng().lng; marker.on('drag', function () {
-            document.getElementById('lat').value = marker.getLatLng().lat;     document.getElementById('lng').value = marker.getLatLng().lng; }); map.on('dblclick', function (event) {     marker.setLatLng(event.latlng);     marker.addTo(map);
-            document.getElementById('lat').value = marker.getLatLng().lat;     
-            document.getElementById('lng').value = marker.getLatLng().lng; }); 
-            var markersLayer = new L.LayerGroup(); map.addLayer(markersLayer); 
-            var search =  L.esri.Geocoding.geosearch().addTo(map);
-            
-             var results = L.layerGroup().addTo(map);
-             search.on("results", function (data) {     results.clearLayers(); });
-=======
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
             map.doubleClickZoom.disable();
             var marker = new L.Marker([
@@ -1321,7 +1306,6 @@
             });
 
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
->>>>>>> 531c27dc61ce90427b6ddf3a7c443e8776456218
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
