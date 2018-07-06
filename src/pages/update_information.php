@@ -7,7 +7,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
         <title>Update Information</title>
@@ -858,7 +858,6 @@
                                     <option value="u4">Undergraduate</option>
                                 </select>
                             </div>
-
                         </div>
                         <div class="f1-buttons">
                             <button type="button" class="btn pages btn-previous">Previous</button>

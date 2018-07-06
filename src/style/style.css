@@ -1,113 +1,167 @@
 /* index */
+
 .index {
-  background-attachment: fixed;
+	background-attachment: fixed;
 	background-image: url(../img/building.jpeg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-  height: 100vh;
 	margin: 0;
+	max-height: 100vh;
+	min-height: 100vh;
 	padding: 5px;
 }
 
-.index label {
-	color: black;
-}
-
 .index .index-image {
-  display: block;
+	display: block;
 	height: auto;
-  margin: 10px auto 30px auto;
-  padding: 0;
+	margin: 10px auto 30px auto;
+	padding: 0;
 	width: 50%;
 }
 
 .index .index-form {
 	background-color: rgb(128, 128, 128);
-	height:100vh;
+	height: 100vh;
 }
 
 .index .index-form > a {
 	background-color: rgb(128, 128, 128);
-	height:100vh;
+	height: 100vh;
 	text-align: center;
 }
 
-.index .index-form button:hover {
-	background-color: #e6ffff;
-	color: inherit;
-}
-
-/* .index .index-form .forgot:focus {
-	outline: none;
-} */
-
-.index .index-form .forgot:hover {
+.index .forgot-link:hover {
 	text-decoration: underline;
 }
 
+.index .forgot-link:focus {
+	outline: none;
+}
+
 .index .login {
-  border-radius: 0;
-  height: 570px;
-  margin:20px auto 20px auto;
-  padding: 20px 15px 30px 15px;
-  width: 400px;
+	border-radius: 0;
+	margin: 750px auto 20px auto;
+	max-height: 570px;
+	max-width: 400px;
+	min-height: 570px;
+	min-width: 400px;
+	padding: 20px 15px 30px 15px;
 }
 
 .index .login-button {
 	background-color: #005959;
 	color: #fff;
 	display: block;
-	font-size: 1.3vw;
-	margin: 5vh auto 3vh;
+	font-size: 1rem;
+	margin: 20px auto 15px auto;
 	transition: all 0.4s;
 }
 
 .index .login-button:hover {
 	background-color: #fac213;
+
 }
 
-.index .index-form .signup-button {
-	background-color: #005959;
-	border-radius: 0;
-	bottom: 0;
-	color: #fff;
-	font-size: 2vw;
-	padding: 25px;
-	position: absolute;
-	width: 100%;
-}
-
-.index .index-form .signup-link {
-	visibility: hidden;
-}
-
-/* .index .index-form #signup-link:focus {
+.index .signup-link:focus {
 	outline: none;
-} */
+}
 
-.index .index-form .signup-link:hover {
+.index .signup-link:hover {
 	text-decoration: underline;
 }
 
 .index .footer {
 	color: white;
-  font-size: 1.3rem;
+	font-size: 1.3rem;
 	text-align: center;
 	width: 100%;
 }
-/* end */
+
+
+/*forgot password module*/
+
+.forgot-password-modal .forgot-password-content {
+	border-radius: 0;
+	max-height: 270px;
+	min-height: 270px;
+	width: 450px;
+}
+
+.forgot-password-modal .forgot-password-content .forgot-password-header {
+	background-color: #e6e6e6;
+}
+
+.forgot-password-modal .forgot-password-content .forgot-password-body {
+	padding: 30px 30px 30px 30px;
+}
+
+.forgot-password-modal .forgot-password-content .forgot-password-body input[type=email] {
+	margin-bottom: 20px;
+}
+
+
+.forgot-password-modal .forgot-header {
+	background-color: #e6e6e6;
+}
+
+/*end of forgot password modal*/
+
+/*sign up form*/
+
+.signup-modal .signup-content {
+	border-radius: 0;
+	box-shadow: 3px 3px;
+}
+
+.signup-form .signup-header {
+	background-color: #e6e6e6;
+}
+
+/* end of index */
+
+/* home */
+
+.content {
+	margin-left: 19%;
+	padding: 10px 5px 10px 3px;
+}
+
+.content .cards {
+	background-color: #f2f2f2;
+	margin: 2% 3% 2% 3%;
+}
+
+.content .events {
+	background-color: #f2f2f2;
+	font-size: 1.2vw;
+	height: 53vh;
+	margin: 0 3% 2% 3%;
+}
+
+.content .events .event-body button[type=button] {
+	margin-top: 13vh;
+}
+
+.content .events .event-header {
+	padding: 15px 0 2px 15px;
+}
+
+/*end*/
+
+/* modules */
 
 /*sidebar*/
+
 .sidebar {
 	background-color: #008080;
 	height: 100%;
 	left: 0;
 	max-width: 250px;
 	min-width: 250px;
-  overflow: hidden;
+	overflow: hidden;
 	position: fixed;
-  top: 0;
+	top: 0;
 	transition: all 0.7s;
 	z-index: 1;
 }
@@ -128,7 +182,7 @@
 }
 
 .sidebar .sidebar-header img {
-  height: auto;
+	height: auto;
 	margin-left: 30px;
 	width: 70%;
 }
@@ -148,7 +202,7 @@
 }
 
 .sidebar ul li a {
-  color: white;
+	color: white;
 	display: block;
 	font-size: 1.1rem;
 	padding: 10px;
@@ -157,10 +211,11 @@
 .sidebar ul li a:hover {
 	background-color: #ffffff;
 	color: #005959;
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.sidebar ul .active > a, a[aria-expanded="true"] {
+.sidebar ul .active > a,
+a[aria-expanded="true"] {
 	background-color: #009999;
 	color: #fff;
 }
@@ -174,30 +229,10 @@
 	display: flex;
 }
 
-/* home */
-/*Style for home*/
-.content {
-	margin-left: 19%;
-	padding: 10px 5px 10px 3px;
-}
+/* end */
 
-.content .cards {
-	background-color:  #f2f2f2;
-	margin: 2% 3% 2% 3%;
-}
+/* utilities */
 
-.content .events {
-	background-color:  #f2f2f2;
-	font-size: 1.2vw;
-	height: 53vh;
-	margin: 0 3% 2% 3%;
+.text-transform {
+	text-transform: capitalize;
 }
-
-.content .events .event-body button[type=button] {
-	margin-top: 13vh;
-}
-
-.content .events .event-header {
-	padding: 15px 0 2px 15px;
-}
-/*end*/
