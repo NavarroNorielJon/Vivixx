@@ -73,7 +73,7 @@
 }
 
 
-/*forgot password module*/
+/*forgot password modal*/
 
 .forgot-password-modal .forgot-password-content {
 	border-radius: 0;
@@ -84,6 +84,16 @@
 
 .forgot-password-modal .forgot-password-content .forgot-password-header {
 	background-color: #e6e6e6;
+}
+
+.forgot-password-modal .forgot-password-logo {
+	height: 100%;
+	width: 120%
+}
+
+.forgot-password-modal .forgot-password-content .forgot-password-header h1 {
+	color: #262626;
+	font-family: arial;
 }
 
 .forgot-password-modal .forgot-password-content .forgot-password-body {
@@ -106,19 +116,23 @@
 	border-radius: 0;
 }
 
+.signup-modal .signup-body {
+	padding: 3% 5% 3% 5%;
+}
+
 .signup-modal .signup-content {
 	border-radius: 0;
 }
 
 .signup-modal .signup-header {
 	background-color: #e6e6e6;
+	font-family: arial;
 }
 
-.signup-modal .signup-body {
-	padding: 3% 8% 3% 8%;
+.signup-modal .signup-logo {
+	height: 100%;
+	width: 120%;
 }
-
-
 
 /* end of index */
 
