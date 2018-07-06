@@ -870,6 +870,7 @@
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
                         <div>
+                            <div id="mapid"></div>
                             <input type="text" id="lat" name="lat" class="d-none" required="required">
                             <input type="text" id="lng" name="lng" class="d-none" required="required">
                             <br>
@@ -1284,6 +1285,7 @@
             var map = L.map('mapid').setView([
                 16.4134367, 120.5858916
             ], 2);
+
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
             map.doubleClickZoom.disable();
             var marker = new L.Marker([
