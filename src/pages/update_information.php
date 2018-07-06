@@ -942,11 +942,13 @@
                             <input type="text" id="lat" name="lat" class="d-none" required="required">
                             <input type="text" id="lng" name="lng" class="d-none" required="required">
                             <br>
-                            <div>
-                                <label>
-                                    <h6>Main address</h6>
-                                </label>
-                                <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required="required">
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>
+                                        <h6>Main address</h6>
+                                    </label>
+                                    <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" required="required">
+                                </div>
                             </div>
                             <br>
                             <super>(Your alternate address when you are not at Main City Address)</super>
