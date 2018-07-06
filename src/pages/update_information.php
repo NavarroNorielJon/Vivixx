@@ -95,7 +95,7 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
-                            <div id="mapid"></div>
+                            <!-- <div id="mapid"></div> -->
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -1314,4 +1314,4 @@
         <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 
-</html>
+</html> 
