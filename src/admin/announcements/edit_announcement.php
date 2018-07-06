@@ -42,7 +42,7 @@
 								<label for="departments">Department</label>
 								<select class="custom-select form-group" id="department" name="department[]" required multiple="multiple">
 									<option selected value="none"><?php echo $row['departments'] ?></option>
-                                	<option value="All">All Departments</option>
+                                	<option value="All Departments">All Departments</option>
                                 	<option value="Administration">Administration</option>
                                 	<option value="Administration Support / HR">Administration Support / HR</option>
                                 	<option value="IT Support">IT Support</option>
@@ -68,7 +68,7 @@
 							</div>
 
 							<span class="btn btn-default btn-file">
-								<input type="file" name="file[]" multiple>
+								<input type="file" name="file[]" id="file" multiple>
 								<input type="hidden" name="attachment" value="<?php echo $row['attachment_name']?>">
 							</span>
 						</div>
@@ -115,6 +115,7 @@
 	</script>
 
 	<script>
+		//script for editing of announcement
 		var old_sub = document.getElementById('subject').value;
 		var old_sdate = document.getElementById('s_date').value;
 		var old_edate = document.getElementById('e_date').value;
@@ -129,7 +130,7 @@
 			}
 		});
 		$(document).change(function() {
-			if (old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val()) {
+			if (old_sub != $('#subject').val() || old_text != $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() || $('#file').val()) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);
