@@ -16,10 +16,8 @@
         <script src="../script/bootstrap/jasny-bootstrap.js"></script>
         <script src="../script/scripts.js"></script>
         <link type="text/css" rel="stylesheet" href="/leaflet/leaflet.css">
-        <link type="text/css" rel="stylesheet" href="/leaflet/leaflet-search.min.css">
         <link type="text/css" rel="stylesheet" href="/style/style2.css" media="screen, projection"/>
         <script src="/leaflet/leaflet.js"></script>
-        <script src="/leaflet/leaflet-search.min.js"></script>
         <link rel="stylesheet" href="../leaflet/leaflet.css"/>
         <script src="/leaflet/leaflet-src.js"></script>
         <script src="/leaflet/esri-leaflet-debug.js"></script>
