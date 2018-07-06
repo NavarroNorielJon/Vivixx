@@ -97,12 +97,12 @@ if (isset($_SESSION['user'])) {
 				<div class="modal-content signup-content">
 					<div class="modal-header signup-header">
 						<div class="row">
-							<div class="col-3">
-								<img src="img/Lion.png" alt="register-logo" style="height:auto; width:65%;">
+							<div class="col-2">
+								<img src="img/Lion.png" alt="register-logo" style="height:auto; width:120%;">
 							</div>
 
-							<div class="col-9">
-								<h3>Registration Form</h3>
+							<div class="col-10">
+								<h1>Registration Form</h1>
 							</div>
 						</div>
 					</div>
