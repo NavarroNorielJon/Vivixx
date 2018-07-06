@@ -152,20 +152,20 @@
 						<div class="row form-group">
 							<div class="col">
 								<label for="title">Title</label>
-								<input name="subject" type="text" class="form-control" placeholder="Title" id="title" required>
+								<input name="subject" type="text" class="form-control" placeholder="Title" id="subject" required>
 							</div>
 
 							<div class="col ui calendar" id="start_date">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="date" name="start_date"  class="form-control date">
+									<input type="date" id="s_date" name="start_date"  class="form-control date">
 								</div>
 							</div>
 
 							<div class="col ui calendar" id="end_date">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="date" name="end_date" class="form-control date">
+									<input type="date" id="e_date" name="end_date" class="form-control date">
 								</div>
 							</div>
 

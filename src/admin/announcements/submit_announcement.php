@@ -15,10 +15,16 @@ ini_set('upload_max_filesize', '64M');
     $file_tmp_names = [];
     $file_err_nos = [];
     $concat = "";
-    $files = "";
-
+    $file_name = "";
+    $counter = 0;
+    
     foreach($department as $dept ){
-        $concat .= $dept . ",";
+        $counter++;
+        if($counter == count($department)){
+            $concat .= $dept;
+        }else{
+            $concat .= $dept . ",";
+        }     
     }
     if(isset($_POST["submit"])){
         foreach($_FILES['file']['name'] as $child) {
@@ -31,8 +37,13 @@ ini_set('upload_max_filesize', '64M');
         foreach($_FILES['file']['error'] as $child) {
             $file_err_nos[] = $child;
         }
-        foreach($_FILES['file']['name'] as $file){
-            $files .= $file .",";
+        foreach($_FILES['file']['name'] as $name){
+            $counter++;
+            if($counter == count($_FILES['file']['name'])){   
+                $file_name .= $name;
+            }else{
+                $file_name .= $name .",";
+            }
         }
         //if there is no image
 
@@ -47,7 +58,7 @@ ini_set('upload_max_filesize', '64M');
                 if(!empty($file_tmp_names[$x])){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$files','$temp_file','$announcement_id');";
+                    $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
                     $connect->query($add_attachment);
 
                 }else{
@@ -57,4 +68,4 @@ ini_set('upload_max_filesize', '64M');
             }
                
     }
-    header("location: announcement.php");
+header("location: announcement.php");
