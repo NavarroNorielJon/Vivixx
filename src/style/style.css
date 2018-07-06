@@ -1,4 +1,4 @@
-/* CSS for the index page */
+/* index */
 .index {
   background-attachment: fixed;
 	background-image: url(../img/building.jpeg);
@@ -98,18 +98,17 @@
 }
 /* end */
 
-/* CSS for the sidebar */
 /*sidebar*/
-#sidebar {
+.sidebar {
 	background-color: #008080;
 	height: 100%;
 	left: 0;
 	max-width: 250px;
 	min-width: 250px;
+  overflow: hidden;
 	position: fixed;
-	overflow: hidden;
+  top: 0;
 	transition: all 0.7s;
-	top: 0;
 	z-index: 1;
 }
 
@@ -129,8 +128,8 @@
 }
 
 .sidebar .sidebar-header img {
+  height: auto;
 	margin-left: 30px;
-	height: auto;
 	width: 70%;
 }
 
@@ -140,26 +139,28 @@
 }
 
 .sidebar .logout:hover {
-	background-color: red !important;
+	background-color: red;
 	color: white;
 }
 
-.sidebar ul.components {
+.sidebar .components {
 	padding: 20px 0;
 }
 
 .sidebar ul li a {
+  color: white;
 	display: block;
-	font-size: 1.1vw;
+	font-size: 1.1rem;
 	padding: 10px;
 }
 
 .sidebar ul li a:hover {
 	background-color: #ffffff;
 	color: #005959;
+  text-decoration: none;
 }
 
-.sidebar ul li.active > a, a[aria-expanded="true"] {
+.sidebar ul .active > a, a[aria-expanded="true"] {
 	background-color: #009999;
 	color: #fff;
 }
@@ -172,3 +173,31 @@
 .wrapper {
 	display: flex;
 }
+
+/* home */
+/*Style for home*/
+.content {
+	margin-left: 19%;
+	padding: 10px 5px 10px 3px;
+}
+
+.content .cards {
+	background-color:  #f2f2f2;
+	margin: 2% 3% 2% 3%;
+}
+
+.content .events {
+	background-color:  #f2f2f2;
+	font-size: 1.2vw;
+	height: 53vh;
+	margin: 0 3% 2% 3%;
+}
+
+.content .events .event-body button[type=button] {
+	margin-top: 13vh;
+}
+
+.content .events .event-header {
+	padding: 15px 0 2px 15px;
+}
+/*end*/

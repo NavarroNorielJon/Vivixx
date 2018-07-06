@@ -24,16 +24,13 @@
         <script src="../script/bootstrap/jasny-bootstrap.js"></script>
         <script src="../script/scripts.js"></script>
         <link type="text/css" rel="stylesheet" href="../leaflet/leaflet.css">
-        <link type="text/css" rel="stylesheet" href="../leaflet/leaflet-search.min.css">
-        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
-        <link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
         <link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection"/>
         <script src="../leaflet/leaflet.js"></script>
-        <script src="../leaflet/leaflet-search.min.js"></script>
+        <link rel="stylesheet" href="../leaflet/leaflet.css"/>
         <script src="../leaflet/leaflet-src.js"></script>
         <script src="../leaflet/esri-leaflet-debug.js"></script>
+        <link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
         <script src="../leaflet/esri-leaflet-geocoder-debug.js"></script>
-        <script src="../leaflet/esri-leaflet-geocoder.js"></script>
     </head>
 
     <body id="update-information">
@@ -98,6 +95,8 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
+                            <div id="mapid"></div>
+
                             <div class="form-group col">
                                 <label>Birthdate</label>
                                 <input type="date" name="birth_date" id="bdate" class="form-control" required="required">
@@ -872,7 +871,6 @@
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
                         <div>
-                            <div id="mapid"></div>
                             <input type="text" id="lat" name="lat" class="d-none" required="required">
                             <input type="text" id="lng" name="lng" class="d-none" required="required">
                             <br>
