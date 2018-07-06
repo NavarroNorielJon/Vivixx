@@ -95,10 +95,6 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
-<<<<<<< HEAD
-                            <!-- <div id="mapid"></div> -->
-=======
->>>>>>> 23243187f6dfbf91f66a7ad1e65490a299512245
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
