@@ -181,7 +181,7 @@
 }
 
 .update-information .row .container #update_form {
-	margin: 20vh 2vw 0 3.5vw;
+	margin: 6% 0 0 0;
 }
 
 .update-information .update-information-header {
@@ -223,8 +223,8 @@
 	background: #fff;
 	border-radius: 0px;
 	color: black;
-	margin-top: 70px;
-	padding: 25px;
+	margin-top: 2%;
+	padding: 5%;
 }
 
 .f1 h2 {

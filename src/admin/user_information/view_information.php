@@ -40,24 +40,6 @@
         <script src="../../leaflet/esri-leaflet-geocoder-debug.js"></script>
 
         <!--scripts-->
-
-        <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
-        </script>
-
-        <script type="text/javascript">
-            function onTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
     </head>
 
     <body>
@@ -979,9 +961,6 @@
                 </form>
             </div>
         </div>
-        <?php
-    include 'edit_information.php';
-    ?>
     <script>
         $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
         $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});

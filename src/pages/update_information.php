@@ -43,10 +43,10 @@
             </a>
 
 			<a class="btn help" data-toggle="modal" data-target="#hints">
-               	<i class="material-icons">
+				<i class="material-icons">
 					help
             	</i>
-            </a>
+			</a>
 		</div>
 
 		<div class="row">
@@ -406,6 +406,7 @@
                                     <option value="separated">Separated</option>
                                     <option value="others">Others</option>
                                 </select>
+
 							</div>
 
 							<div id='others' style='display:none' class="form-group col-4">
@@ -477,151 +478,223 @@
 								<input type="text" name="mother_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="mlname" class="form-control text-transform" autocomplete="off" required="required">
 							</div>
 						</div>
-						<hr>
+						<script>
+							$(function() {
+								$('#s_status').change(function() {
+									$('#spouse').hide();
+									$('#' + $(this).val()).show();
+									if ($('#s_status').val() === "spouse") {
+										$('#sfname').attr('required', 'true');
+										$('#smname').attr('required', 'true');
+										$('#slname').attr('required', 'true');
+										$('#occupation').attr('required', 'true');
+										$('#employer').attr('required', 'true');
+										$('#business_address').attr('required', 'true');
+										$('#employer').attr('required', 'true');
+										$('#spouse_tel_no').attr('required', 'true');
+										$('#sp_area_code').attr('required', 'true');
 
-						<h5>Spouse's Name(Optional)</h5>
-						<br>
+									} else {
+										$('#sfname').removeAttr('required').removeClass('input-error');
+										$('#smname').removeAttr('required').removeClass('input-error');
+										$('#slname').removeAttr('required').removeClass('input-error');
+										$('#employer').removeAttr('required').removeClass('input-error');
+										$('#business_address').removeAttr('required').removeClass('input-error');
+										$('#employer').removeAttr('required').removeClass('input-error');
+										$('#spouse_tel_no').removeAttr('required').removeClass('input-error');
+										$('#sp_area_code').removeAttr('required').removeClass('input-error');
+										$('#occupation').removeAttr('required').removeClass('input-error');
+									}
+								});
+							});
+
+						</script>
+						<script>
+							$(function() {
+								$('#c_status').change(function() {
+									$('#child').hide();
+									$('#' + $(this).val()).show();
+									if ($('#c_status').val() === "child") {
+										$('#child_name').attr('required', 'true');
+										$('#child_birth').attr('required', 'true');
+									} else {
+										$('#child_name').removeAttr('required').removeClass('input-error');
+										$('#child_birth').removeAttr('required').removeClass('input-error');
+									}
+								});
+							});
+
+						</script>
 
 						<div class="row">
-							<div class="form-group col">
-								<label for="sfname">First Name</label>
-								<input type="text" name="spouse_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="sfname" class="form-control text-transform" autocomplete="off">
-							</div>
-
-							<div class="form-group col">
-								<label for="smname">Middle Name</label>
-								<input type="text" name="spouse_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="smname" class="form-control text-transform" autocomplete="off">
-							</div>
-
-							<div class="form-group col">
-								<label for="slname">Last Name</label>
-								<input type="text" name="spouse_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="slname" class="form-control text-transform" autocomplete="off">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-2">
-								<label for="occupation">Occupation</label>
-								<input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-							</div>
-
-							<div class="form-group col-2">
-								<label for="employer">Employer</label>
-								<input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off">
-							</div>
-
-							<div class="form-group col">
-								<label for="business_address">Business Address</label>
-								<input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off">
-							</div>
-
-							<div class="form-group col-2">
-								<label>Area Code</label>
-								<select name="sp_area_code" class="form-control" id="sp_area_code">
-                                    <option selected="selected" disabled="disabled">Choose Area Code:</option>
-                                    <optgroup label="Luzon">
-                                        <option value="74">Abra (74)</option>
-                                        <option value="52">Albay (52)</option>
-                                        <option value="42">Aurora (42)</option>
-                                        <option value="47">Bataan (47)</option>
-                                        <option value="78">Batanes (78)</option>
-                                        <option value="43">Batangas (43)</option>
-                                        <option value="74">Benguet (74)</option>
-                                        <option value="44">Bulacan (44)</option>
-                                        <option value="78">Cagayan Valley (78)</option>
-                                        <option value="54">Camarines Norte/Sur (54)</option>
-                                        <option value="52">Catanduanes (52)</option>
-                                        <option value="46">Cavite Province (46)</option>
-                                        <option value="74">Ifugao Province (74)</option>
-                                        <option value="77">Ilocos Norte/Sur (77)</option>
-                                        <option value="78">Isabela Province(78)</option>
-                                        <option value="74">Kalinga-Apayao (74)</option>
-                                        <option value="49">Laguna (49)</option>
-                                        <option value="72">La Union (72)</option>
-                                        <option value="42">Marinduque (42)</option>
-                                        <option value="43">Mindoro Occidental/Oriental (43)</option>
-                                        <option value="74">Mountain Province (74)</option>
-                                        <option value="44">Nueva Ecija/Viscaya (44)</option>
-                                        <option value="48">Palawan (48)</option>
-                                        <option value="45">Pampanga (45)</option>
-                                        <option value="75">Pangasinan (75)</option>
-                                        <option value="42">Quezon Province (42)</option>
-                                        <option value="78">Quirino Province (78)</option>
-                                        <option value="2">Rizal Province (2)</option>
-                                        <option value="56">Sorsogon Province (56)</option>
-                                        <option value="45">Tarlac (45)</option>
-                                        <option value="47">Zambales (47)</option>
-                                    </optgroup>
-
-                                    <optgroup label="Visayas">
-                                        <option value="36">Aklan (36)</option>
-                                        <option value="36">Antique (36)</option>
-                                        <option value="53">Biliran (53)</option>
-                                        <option value="38">Bohol (38)</option>
-                                        <option value="36">Capiz (36)</option>
-                                        <option value="32">Cebu Province (32)</option>
-                                        <option value="33">Guimaras (33)</option>
-                                        <option value="33">Iloilo Province (33)</option>
-                                        <option value="53">Leyte (53)</option>
-                                        <option value="56">Masbate Province (56)</option>
-                                        <option value="88">Misamis Occidental and Oriental (88)</option>
-                                        <option value="34">Negros Occidental Occidental (34)</option>
-                                        <option value="35">Negros Occidental Oriental (35)</option>
-                                        <option value="42">Romblon (42)</option>
-                                        <option value="55">Eastern Samar (55)</option>
-                                        <option value="55">Northern Samar(55)</option>
-                                        <option value="55">Western Samar (55)</option>
-                                        <option value="35">Siquijor (35)</option>
-                                    </optgroup>
-
-                                    <optgroup label="Mindanao">
-                                        <option value="85">Agusan (85)</option>
-                                        <option value="62">Basilan (62)</option>
-                                        <option value="88">Bukidnon (88)</option>
-                                        <option value="88">Camiguin (88)</option>
-                                        <option value="84">Davao del Norte (84)</option>
-                                        <option value="82">Davao del Sur (82)</option>
-                                        <option value="87">Davao Oriental (87)</option>
-                                        <option value="63">Lanao del Norte (63)</option>
-                                        <option value="64">Maguindanao (64)</option>
-                                        <option value="64">North Cotobato (64)</option>
-                                        <option value="65">North Cotobato (65)</option>
-                                        <option value="83">Sarangani (83)</option>
-                                        <option value="83">South Cotobato (83)</option>
-                                        <option value="64">Sultan Kudarat (64)</option>
-                                        <option value="86">Surigao (86)</option>
-                                        <option value="68">Tawi Tawi (68)</option>
-                                        <option value="65">Zamboanga (65)</option>
-                                    </optgroup>
+							<div class="form-group col-3">
+								<label>Do you have Spouse?</label>
+								<select id="s_status" class="custom-select form-control">
+                                    <option selected="selected">No</option>
+                                    <option value="spouse">Yes</option>
                                 </select>
 							</div>
-
-							<div class="form-group col-2">
-								<label for="spouse_tel_no">Telephone NO.</label>
-								<input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
+							<div class="form-group col-3">
+								<label>Do you have Child/Children?</label>
+								<select required="required" id="c_status" class="custom-select form-control">
+                                    <option selected="selected">No</option>
+                                    <option value="child">Yes</option>
+                                </select>
 							</div>
 						</div>
 
-						<h5>Child/Children's Information</h5>
-						<div class="row">
-							<div class="form-group col-6">
-								<label for="child_name">Name</label>
-								<input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
+						<div style="display:none;" id="spouse">
+							<hr>
+
+							<h5>Spouse's Name</h5>
+
+							<div class="row">
+								<div class="form-group col">
+									<label for="sfname">First Name</label>
+									<input type="text" name="spouse_first_name" placeholder="first name" onkeypress="alphabetInput(event)" id="sfname" class="form-control text-transform" autocomplete="off">
+								</div>
+
+								<div class="form-group col">
+									<label for="smname">Middle Name</label>
+									<input type="text" name="spouse_middle_name" placeholder="middle name" onkeypress="alphabetInput(event)" id="smname" class="form-control text-transform" autocomplete="off">
+								</div>
+
+								<div class="form-group col">
+									<label for="slname">Last Name</label>
+									<input type="text" name="spouse_last_name" placeholder="last name" onkeypress="alphabetInput(event)" id="slname" class="form-control text-transform" autocomplete="off">
+								</div>
 							</div>
 
-							<div class="form-group col-6">
-								<label for="child_birth">Date of Birth</label>
-								<div class="input-group">
-									<input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
-									<div class="input-group-append">
-										<button class="btn btn-success" type="button" onclick="addchild()">
-                                            <i class="large material-icons">add</i>
-                                        </button>
+							<div class="row">
+								<div class="form-group col-5">
+									<label for="occupation">Occupation</label>
+									<input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								</div>
+
+								<div class="form-group col-5">
+									<label for="employer">Employer</label>
+									<input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off">
+								</div>
+
+
+							</div>
+							<div class="row">
+								<div class="form-group col">
+									<label for="business_address">Business Address</label>
+									<input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off">
+								</div>
+
+								<div class="form-group col-3">
+									<label>Area Code</label>
+									<select name="sp_area_code" class="form-control" id="sp_area_code">
+                                        <option selected="selected" disabled="disabled">Choose Area Code:</option>
+                                        <optgroup label="Luzon">
+                                            <option value="74">Abra (74)</option>
+                                            <option value="52">Albay (52)</option>
+                                            <option value="42">Aurora (42)</option>
+                                            <option value="47">Bataan (47)</option>
+                                            <option value="78">Batanes (78)</option>
+                                            <option value="43">Batangas (43)</option>
+                                            <option value="74">Benguet (74)</option>
+                                            <option value="44">Bulacan (44)</option>
+                                            <option value="78">Cagayan Valley (78)</option>
+                                            <option value="54">Camarines Norte/Sur (54)</option>
+                                            <option value="52">Catanduanes (52)</option>
+                                            <option value="46">Cavite Province (46)</option>
+                                            <option value="74">Ifugao Province (74)</option>
+                                            <option value="77">Ilocos Norte/Sur (77)</option>
+                                            <option value="78">Isabela Province(78)</option>
+                                            <option value="74">Kalinga-Apayao (74)</option>
+                                            <option value="49">Laguna (49)</option>
+                                            <option value="72">La Union (72)</option>
+                                            <option value="42">Marinduque (42)</option>
+                                            <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                            <option value="74">Mountain Province (74)</option>
+                                            <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                            <option value="48">Palawan (48)</option>
+                                            <option value="45">Pampanga (45)</option>
+                                            <option value="75">Pangasinan (75)</option>
+                                            <option value="42">Quezon Province (42)</option>
+                                            <option value="78">Quirino Province (78)</option>
+                                            <option value="2">Rizal Province (2)</option>
+                                            <option value="56">Sorsogon Province (56)</option>
+                                            <option value="45">Tarlac (45)</option>
+                                            <option value="47">Zambales (47)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Visayas">
+                                            <option value="36">Aklan (36)</option>
+                                            <option value="36">Antique (36)</option>
+                                            <option value="53">Biliran (53)</option>
+                                            <option value="38">Bohol (38)</option>
+                                            <option value="36">Capiz (36)</option>
+                                            <option value="32">Cebu Province (32)</option>
+                                            <option value="33">Guimaras (33)</option>
+                                            <option value="33">Iloilo Province (33)</option>
+                                            <option value="53">Leyte (53)</option>
+                                            <option value="56">Masbate Province (56)</option>
+                                            <option value="88">Misamis Occidental and Oriental (88)</option>
+                                            <option value="34">Negros Occidental Occidental (34)</option>
+                                            <option value="35">Negros Occidental Oriental (35)</option>
+                                            <option value="42">Romblon (42)</option>
+                                            <option value="55">Eastern Samar (55)</option>
+                                            <option value="55">Northern Samar(55)</option>
+                                            <option value="55">Western Samar (55)</option>
+                                            <option value="35">Siquijor (35)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Mindanao">
+                                            <option value="85">Agusan (85)</option>
+                                            <option value="62">Basilan (62)</option>
+                                            <option value="88">Bukidnon (88)</option>
+                                            <option value="88">Camiguin (88)</option>
+                                            <option value="84">Davao del Norte (84)</option>
+                                            <option value="82">Davao del Sur (82)</option>
+                                            <option value="87">Davao Oriental (87)</option>
+                                            <option value="63">Lanao del Norte (63)</option>
+                                            <option value="64">Maguindanao (64)</option>
+                                            <option value="64">North Cotobato (64)</option>
+                                            <option value="65">North Cotobato (65)</option>
+                                            <option value="83">Sarangani (83)</option>
+                                            <option value="83">South Cotobato (83)</option>
+                                            <option value="64">Sultan Kudarat (64)</option>
+                                            <option value="86">Surigao (86)</option>
+                                            <option value="68">Tawi Tawi (68)</option>
+                                            <option value="65">Zamboanga (65)</option>
+                                        </optgroup>
+                                    </select>
+								</div>
+
+								<div class="form-group col-3">
+									<label for="spouse_tel_no">Telephone NO.</label>
+									<input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone">
+								</div>
+							</div>
+
+						</div>
+						<div id="child" style="display:none">
+							<hr>
+							<h5>Child/Children's Information</h5>
+							<div class="row">
+								<div class="form-group col-6">
+									<label for="child_name">Name</label>
+									<input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
+								</div>
+
+								<div class="form-group col-6">
+									<label for="child_birth">Date of Birth</label>
+									<div class="input-group">
+										<input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
+										<div class="input-group-append">
+											<button class="btn btn-success" type="button" onclick="addchild()">
+                                                <i class="large material-icons">add</i>
+                                            </button>
+										</div>
 									</div>
 								</div>
 							</div>
+							<div id="child"></div>
 						</div>
-						<div id="child"></div>
 						<div class="f1-buttons">
 							<button type="button" class="btn pages btn-previous">Previous</button>
 							<button type="button" class="btn pages btn-next">Next</button>

@@ -123,13 +123,13 @@ function nextForm(currId,nextId){
 
 function alphabetInput(evt){
 	var alphabet = String.fromCharCode(evt.which);
-	if(!(/[A-Za-z\ ]/.test(alphabet))) {
+	if(!(/[A-Za-z\ \b]/.test(alphabet))) {
 		evt.preventDefault();
 	}
 }
 function numberInput(evt){
 	var number = String.fromCharCode(evt.which);
-	if(!(/[0-9]/.test(number))) {
+	if(!(/[0-9 \b]/.test(number))) {
 		evt.preventDefault();
 	}
 }
