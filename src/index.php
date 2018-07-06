@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
-	<body class=" index">
+	<body class="index">
 		<div class="containter">
 			<form action="utilities/login.php" method="post" class="jumbotron login" id="login">
 				<img src="../img/Lion.png" alt="logo" class="index-image">
@@ -68,7 +68,7 @@ if (isset($_SESSION['user'])) {
 							</div>
 
 							<div class="col-10">
-								<h1>Forgot Password</h1>
+								<h1 class="header">Forgot Password</h1>
 							</div>
 						</div>
 					</div>

@@ -28,10 +28,6 @@
 	text-decoration: underline;
 }
 
-.index .forgot-link:focus {
-	outline: none;
-}
-
 .index .login {
 	border-radius: 0;
 	margin: 5% auto 1% auto;
@@ -54,10 +50,6 @@
 .index .login-button:hover {
 	background-color: #fac213;
 
-}
-
-.index .signup-link:focus {
-	outline: none;
 }
 
 .index .signup-link:hover {
@@ -91,7 +83,7 @@
 	width: 120%
 }
 
-.forgot-password-modal .forgot-password-content .forgot-password-header h1 {
+.forgot-password-modal .forgot-password-content .forgot-password-header .header {
 	color: #262626;
 	font-family: arial;
 }
@@ -165,7 +157,178 @@
 
 /*end*/
 
+/*update form*/
+
+#mapid {
+	border: solid 2px black;
+	height: 500px;
+	width: 100%;
+
+}
+
+.update-information {
+	background-image: url(../img/building.jpeg);
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: 100vh;
+	max-width: 100vw;
+	min-height: 100vh;
+	min-width: 100vw;
+	overflow-x: hidden;
+
+}
+
+.update-information .row .container #update_form {
+	margin: 6% 0 0 0;
+}
+
+.update-information .update-information-header {
+	background-color: #008080;
+	color: #fff;
+	max-height: 60px;
+	min-height: 60px;
+	padding-top: 5px;
+	position: sticky;
+	text-align: center;
+	width: 100%;
+	z-index: 9999;
+}
+
+.update-information .update-information-header .logout {
+	background-color: #ff1a1a;
+	border-radius: 0;
+	left: 94%;
+	margin: -79px 0 0 0;
+	padding: 5px 5px 5px 5px;
+	position: sticky;
+}
+
+.update-information .update-information-header .help {
+	background-color: #ccccff;
+	border-radius: 0;
+	color: white;
+	left: 91%;
+	margin: -79px 0 0 0;
+	padding: 5px 5px 5px 5px;
+	position: sticky;
+}
+
+#update_form fieldset:not(:first-of-type) {
+	display: none;
+}
+
+.f1 {
+	background: #fff;
+	border-radius: 0px;
+	color: black;
+	margin-top: 2%;
+	padding: 5%;
+}
+
+.f1 h2 {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.f1-steps {
+	overflow: hidden;
+	position: relative;
+	margin-top: 20px;
+}
+
+.f1-progress {
+	position: absolute;
+	top: 24px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #ddd;
+}
+
+.f1-progress-line {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1px;
+	background: #005959;
+}
+
+.f1-step {
+	position: relative;
+	float: left;
+	width: 20%;
+	padding: 0 5px;
+}
+
+.f1-step-icon {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin-top: 4px;
+	background: #ddd;
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.f1-step.activated .f1-step-icon {
+	background: #fff;
+	border: 1px solid #005959;
+	color: #005959;
+	line-height: 38px;
+}
+
+.f1-step.active .f1-step-icon {
+	width: 48px;
+	height: 48px;
+	margin-top: 0;
+	background: #005959;
+	font-size: 22px;
+	line-height: 48px;
+}
+
+.f1 fieldset {
+	display: none;
+	text-align: left;
+}
+
+.f1-buttons {
+	text-align: right;
+}
+
+.f1 .input-error {
+	border-color: #f35b3f;
+}
+
+.input-error {
+	border-color: #f35b3f;
+}
+
+/*end*/
+
 /* modules */
+
+/*footer*/
+
+.footer {
+	background-color: #008080;
+	bottom: 0;
+	color: white;
+	font-family: serif;
+	left: 0;
+	padding: 5px 0 3px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.footer p {
+	margin-bottom: 10px;
+}
 
 /*sidebar*/
 
