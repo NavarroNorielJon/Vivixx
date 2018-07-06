@@ -64,11 +64,11 @@ if (isset($_SESSION['user'])) {
 					<div class="modal-header forgot-password-header">
 						<div class="row">
 							<div class="col-2">
-								<img src="img/Lion.png" alt="-forgot-password-logo" style="height:auto; width:120%;">
+								<img src="img/Lion.png" alt="-forgot-password-logo" class="forgot-password-logo">
 							</div>
 
 							<div class="col-10">
-								<h1 style="color:#262626; font-family: arial;">Forgot Password</h1>
+								<h1>Forgot Password</h1>
 							</div>
 						</div>
 					</div>
@@ -98,7 +98,7 @@ if (isset($_SESSION['user'])) {
 					<div class="modal-header signup-header">
 						<div class="row">
 							<div class="col-2">
-								<img src="img/Lion.png" alt="register-logo" style="height:auto; width:120%;">
+								<img src="img/Lion.png" alt="register-logo" class="signup-logo">
 							</div>
 
 							<div class="col-10">
