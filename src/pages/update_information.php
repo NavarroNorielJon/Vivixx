@@ -864,7 +864,6 @@
                                     <option value="u4">Undergraduate</option>
                                 </select>
 							</div>
-
 						</div>
 						<div class="f1-buttons">
 							<button type="button" class="btn pages btn-previous">Previous</button>
@@ -876,6 +875,7 @@
 						<h2>Step 4: Emergency Information Sheet</h2>
 						<h5>Main City Address</h5>
 						<div>
+							<div id="mapid"></div>
 							<input type="text" id="lat" name="lat" class="d-none" required="required">
 							<input type="text" id="lng" name="lng" class="d-none" required="required">
 							<br>
@@ -1223,129 +1223,258 @@
 										<button class="btn btn-success" type="button" onclick="addAccount()">
                                             <i class="small material-icons">add</i>
                                         </button>
+										<<<<<<< HEAD </div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div id="new_acc"></div>
+							<div id="new_acc"></div>
 
-						<div class="row">
-							<div class="form-group col">
-								<label>Company Email address</label>
-								<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+							<div class="row">
+								<div class="form-group col">
+									<label>Company Email address</label>
+									<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+								</div>
+
+								<div class="form-group col">
+									<label>Password</label>
+									<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+								</div>
 							</div>
 
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
-							</div>
-						</div>
+							<div class="row">
+								<div class="form-group col">
+									<label>Skype Account</label>
+									<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+								</div>
 
-						<div class="row">
-							<div class="form-group col">
-								<label>Skype Account</label>
-								<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
-							</div>
-
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col">
-								<label>QQ Number</label>
-								<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+								<div class="form-group col">
+									<label>Password</label>
+									<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+								</div>
 							</div>
 
-							<div class="form-group col">
-								<label>Password</label>
-								<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+							<div class="row">
+								<div class="form-group col">
+									<label>QQ Number</label>
+									<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+								</div>
+
+								<div class="form-group col">
+									<label>Password</label>
+									<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+								</div>
 							</div>
-						</div>
-						<div class="f1-buttons">
-							<button type="button" class="btn pages btn-previous">Previous</button>
-							<button type="submit" class="btn pages btn-submit">Submit</button>
-						</div>
+							<div class="f1-buttons">
+								<button type="button" class="btn pages btn-previous">Previous</button>
+								<button type="submit" class="btn pages btn-submit">Submit</button>
+							</div>
 					</fieldset>
 
 				</form>
+				</div>
 			</div>
-		</div>
 
-		<div id="footer">
-			<p>© Vivixx 2018 . All Rights Reserved.</p>
-		</div>
-		<script>
-			$('#sss_no').inputmask({
-				mask: 'dd-ddddddd-d'
-			});
-			$('#tin').inputmask({
-				mask: 'ddd-ddd-ddd-ddd'
-			});
-			$('#philhealth_no').inputmask({
-				mask: 'dd-ddddddddd-d'
-			});
-			$('#pagibig_id_no').inputmask({
-				mask: 'dddd-dddd-dddd'
-			});
-			$('.zip').inputmask({
-				mask: 'dddd'
-			});
-			$('.mobile').inputmask({
-				mask: '+639dd ddd dddd'
-			});
-			$('.telephone').inputmask({
-				mask: 'ddd-dddd'
-			});
-			$('.height').inputmask({
-				mask: 'dd'
-			});
-			$('.gradyear').inputmask({
-				mask: 'dddd-dd'
-			});
+			<div id="footer">
+				<p>© Vivixx 2018 . All Rights Reserved.</p>
+			</div>
+			<script>
+				$('#sss_no').inputmask({
+					mask: 'dd-ddddddd-d'
+				});
+				$('#tin').inputmask({
+					mask: 'ddd-ddd-ddd-ddd'
+				});
+				$('#philhealth_no').inputmask({
+					mask: 'dd-ddddddddd-d'
+				});
+				$('#pagibig_id_no').inputmask({
+					mask: 'dddd-dddd-dddd'
+				});
+				$('.zip').inputmask({
+					mask: 'dddd'
+				});
+				$('.mobile').inputmask({
+					mask: '+639dd ddd dddd'
+				});
+				$('.telephone').inputmask({
+					mask: 'ddd-dddd'
+				});
+				$('.height').inputmask({
+					mask: 'dd'
+				});
+				$('.gradyear').inputmask({
+					mask: 'dddd-dd'
+				});
 
-		</script>
-		<script>
-			var map = L.map('mapid').setView([
-				16.4134367, 120.5858916
-			], 2);
-			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-			}).addTo(map);
-			map.doubleClickZoom.disable();
-			var marker = new L.Marker([
-				16.4134367, 120.5858916
-			], {
-				draggable: true
-			}).addTo(map);
-			document.getElementById('lat').value = marker.getLatLng().lat;
-			document.getElementById('lng').value = marker.getLatLng().lng;
-			marker.on('drag', function() {
+			</script>
+			<script>
+				var map = L.map('mapid').setView([
+					16.4134367, 120.5858916
+				], 2);
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(map);
+				map.doubleClickZoom.disable();
+				var marker = new L.Marker([
+					16.4134367, 120.5858916
+				], {
+					draggable: true
+				}).addTo(map);
 				document.getElementById('lat').value = marker.getLatLng().lat;
 				document.getElementById('lng').value = marker.getLatLng().lng;
-			});
-			map.on('dblclick', function(event) {
-				marker.setLatLng(event.latlng);
-				marker.addTo(map);
-				document.getElementById('lat').value = marker.getLatLng().lat;
-				document.getElementById('lng').value = marker.getLatLng().lng;
-			});
+				marker.on('drag', function() {
+					document.getElementById('lat').value = marker.getLatLng().lat;
+					document.getElementById('lng').value = marker.getLatLng().lng;
+				});
+				map.on('dblclick', function(event) {
+					marker.setLatLng(event.latlng);
+					marker.addTo(map);
+					document.getElementById('lat').value = marker.getLatLng().lat;
+					document.getElementById('lng').value = marker.getLatLng().lng;
+				});
 
-			var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-			setTimeout(function() {
-				map.invalidateSize()
-			}, 400);
+				var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+				setTimeout(function() {
+					map.invalidateSize()
+				}, 400);
 
-		</script>
-		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
-		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="../script/additional-methods.min.js"></script>
-		<script type="text/javascript" src="../script/alerts.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
+			</script>
+			<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+			<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+			<script type="text/javascript" src="../script/additional-methods.min.js"></script>
+			<script type="text/javascript" src="../script/alerts.js"></script>
+			<script type="text/javascript" src="../script/popper.min.js"></script>
+			<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+			<script type="text/javascript" src="../script/ajax.js"></script>
 	</body>
 
 	</html>
+	=======
+	</div>
+	</div>
+	</div>
+	</div>
+	<div id="new_acc"></div>
+
+	<div class="row">
+		<div class="form-group col">
+			<label>Company Email address</label>
+			<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+		</div>
+
+		<div class="form-group col">
+			<label>Password</label>
+			<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" required="required">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col">
+			<label>Skype Account</label>
+			<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control">
+		</div>
+
+		<div class="form-group col">
+			<label>Password</label>
+			<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" required="required">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col">
+			<label>QQ Number</label>
+			<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control">
+		</div>
+
+		<div class="form-group col">
+			<label>Password</label>
+			<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" required="required">
+		</div>
+	</div>
+	<div class="f1-buttons">
+		<button type="button" class="btn pages btn-previous">Previous</button>
+		<button type="submit" class="btn pages btn-submit">Submit</button>
+	</div>
+	</fieldset>
+
+	</form>
+	</div>
+	</div>
+
+	<div id="footer">
+		<p>© Vivixx 2018 . All Rights Reserved.</p>
+	</div>
+	<script>
+		$('#sss_no').inputmask({
+			mask: 'dd-ddddddd-d'
+		});
+		$('#tin').inputmask({
+			mask: 'ddd-ddd-ddd-ddd'
+		});
+		$('#philhealth_no').inputmask({
+			mask: 'dd-ddddddddd-d'
+		});
+		$('#pagibig_id_no').inputmask({
+			mask: 'dddd-dddd-dddd'
+		});
+		$('.zip').inputmask({
+			mask: 'dddd'
+		});
+		$('.mobile').inputmask({
+			mask: '+639dd ddd dddd'
+		});
+		$('.telephone').inputmask({
+			mask: 'ddd-dddd'
+		});
+		$('.height').inputmask({
+			mask: 'dd'
+		});
+		$('.gradyear').inputmask({
+			mask: 'dddd-dd'
+		});
+
+	</script>
+	<script>
+		var map = L.map('mapid').setView([
+			16.4134367, 120.5858916
+		], 2);
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		map.doubleClickZoom.disable();
+		var marker = new L.Marker([
+			16.4134367, 120.5858916
+		], {
+			draggable: true
+		}).addTo(map);
+		document.getElementById('lat').value = marker.getLatLng().lat;
+		document.getElementById('lng').value = marker.getLatLng().lng;
+		marker.on('drag', function() {
+			document.getElementById('lat').value = marker.getLatLng().lat;
+			document.getElementById('lng').value = marker.getLatLng().lng;
+		});
+		map.on('dblclick', function(event) {
+			marker.setLatLng(event.latlng);
+			marker.addTo(map);
+			document.getElementById('lat').value = marker.getLatLng().lat;
+			document.getElementById('lng').value = marker.getLatLng().lng;
+		});
+
+		var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+		setTimeout(function() {
+			map.invalidateSize()
+		}, 400);
+
+	</script>
+	<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../script/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../script/alerts.js"></script>
+	<script type="text/javascript" src="../script/popper.min.js"></script>
+	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../script/ajax.js"></script>
+	</body>
+
+	</html>
+	>>>>>>> 76745504edeec78acf8f16a48d60a646279139ef
