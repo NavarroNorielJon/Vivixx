@@ -95,10 +95,6 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
-<<<<<<< HEAD
-                            <!-- <div id="mapid"></div> -->
-=======
->>>>>>> 7a558bca98e402e8e8e3e38e38e3d50a6036a100
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -1298,10 +1294,16 @@
             document.getElementById('lat').value = marker.getLatLng().lat;
             document.getElementById('lng').value = marker.getLatLng().lng;
             marker.on('drag', function () {
+                setTimeout(function () {
+                    map.invalidateSize();
+                }, 400);
                 document.getElementById('lat').value = marker.getLatLng().lat;
                 document.getElementById('lng').value = marker.getLatLng().lng;
             });
             map.on('dblclick', function (event) {
+                setTimeout(function () {
+                    map.invalidateSize();
+                }, 400);
                 marker.setLatLng(event.latlng);
                 marker.addTo(map);
                 document.getElementById('lat').value = marker.getLatLng().lat;
@@ -1309,10 +1311,13 @@
             });
 
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-            setTimeout(function () {
-                map.invalidateSize()
-            }, 400);
+            map.on('click', function () {
+                setTimeout(function () {
+                    map.invalidateSize();
+                }, 400);
+            });
         </script>
+
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../script/additional-methods.min.js"></script>
@@ -1322,4 +1327,4 @@
         <script type="text/javascript" src="../script/ajax.js"></script>
     </body>
 
-</html> 
+</html>
