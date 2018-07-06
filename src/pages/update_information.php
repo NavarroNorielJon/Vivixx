@@ -95,7 +95,10 @@
                         <!-- <div class="row"> <div class="form-group col-4"> <label for="prof_image">Profile Image</label> <input type="file" name="prof_image"/> </div> <div class="form-group col-4"> <label for="prof_image">Signature</label> <input type="file"/> </div>
                         </div> -->
                         <div class="row">
+<<<<<<< HEAD
                             <!-- <div id="mapid"></div> -->
+=======
+>>>>>>> 7a558bca98e402e8e8e3e38e38e3d50a6036a100
 
                             <div class="form-group col">
                                 <label>Birthdate</label>
@@ -1304,6 +1307,9 @@
             });
 
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+            setTimeout(function () {
+                map.invalidateSize()
+            }, 400);
         </script>
         <script type="text/javascript" src="../script/jquery.form.min.js"></script>
         <script type="text/javascript" src="../script/jquery.validate.min.js"></script>
