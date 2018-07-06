@@ -1283,7 +1283,12 @@
         <script>
             var map = L.map('mapid').setView([
                 16.4134367, 120.5858916
-            ], 2);
+            ], 5);
+            map.on('dragging', function () {
+                setTimeout(function () {
+                    map.invalidateSize();
+                }, 400);
+            });
 
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
             map.doubleClickZoom.disable();
@@ -1308,7 +1313,7 @@
                 document.getElementById('lat').value = marker.getLatLng().lat;
                 document.getElementById('lng').value = marker.getLatLng().lng;
             });
-
+            marker.bindPopup("Click the map to reload.").openPopup();
             var searchControl = L.esri.Geocoding.geosearch().addTo(map);
             map.on('click', function () {
                 setTimeout(function () {
