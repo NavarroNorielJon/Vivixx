@@ -7,7 +7,7 @@ if (isset($_SESSION['user'])) {
 }
 ?>
 	<!DOCTYPE html>
-  <html lang="en">
+	<html lang="en">
 
 	<head>
 		<title>Vivixx</title>
@@ -42,12 +42,10 @@ if (isset($_SESSION['user'])) {
 				</div>
 
 				<div class="text-center">
-					<button type="submit" class="btn login-button" name="submit">
-					Login
-				</button>
+					<button type="submit" class="btn login-button" name="submit">Login</button>
 
 					<p style="display: inline-block;">
-						<a href="#!" data-toggle="modal" data-target="#forgot-form" class="forgot">Forgot password?</a> or
+						<a href="#!" data-toggle="modal" data-target="#forgot-password-form" class="forgot-link">Forgot password?</a> or
 						<a href="#!" data-toggle="modal" data-target="#signup-form" class="signup-link">Sign Up</a>
 					</p>
 				</div>
@@ -59,24 +57,24 @@ if (isset($_SESSION['user'])) {
 		</div>
 
 		<!-- Modal for forgot password -->
-		<div class="modal fade col-sm-12" id="forgot-form" tabindex="-1" role="dialog">
+		<div class="modal fade col-sm-12 forgot-password-modal" id="forgot-password-form" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
-				<div class="modal-content forgot-content">
+				<div class="modal-content forgot-password-content">
 					<!-- Header -->
-					<div class="modal-header forgot-header">
+					<div class="modal-header forgot-password-header">
 						<div class="row">
-							<div class="col-3">
-								<img src="img/Lion.png" alt="-forgot-password-logo" style="height:auto; width:65%;">
+							<div class="col-2">
+								<img src="img/Lion.png" alt="-forgot-password-logo" style="height:auto; width:120%;">
 							</div>
 
-							<div class="col-9">
-								<h3>Forgot Password</h3>
+							<div class="col-10">
+								<h1 style="color:#262626; font-family: arial;">Forgot Password</h1>
 							</div>
 						</div>
 					</div>
 
 					<!-- Body -->
-					<div class="modal-body">
+					<div class="modal-body forgot-password-body">
 						<form action="mailing/send_reset.php" method="POST">
 							<div class="form-group">
 								<label for="forgot_email">E-mail Address</label>
@@ -93,8 +91,8 @@ if (isset($_SESSION['user'])) {
 		</div>
 		<!-- End of forgot password modal -->
 
-		<!-- Modal for Register -->
-		<div class="modal fade" id="signup-form" tabindex="-1" role="dialog">
+		<!-- Modal for Sign Up -->
+		<div class="modal fade signup-modal" id="signup-form" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content signup-content">
 					<div class="modal-header signup-header">
@@ -110,7 +108,7 @@ if (isset($_SESSION['user'])) {
 					</div>
 
 					<!-- Body -->
-					<div class="modal-body">
+					<div class="modal-body signup-body">
 						<form id="signup_form" action="utilities/registration.php" method="post">
 							<!-- Full Name -->
 							<div class="row form-group">
