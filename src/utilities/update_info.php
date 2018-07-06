@@ -45,13 +45,9 @@ $employer = ucwords(mysqli_real_escape_string($connect, $_POST['employer']));
 $business_address = ucwords(mysqli_real_escape_string($connect, $_POST['business_address']));
 if (isset($_POST['sp_area_code']) === "") {
     $spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
-    echo $_POST['sp_area_code'];
-
 } else {
     $area = mysqli_real_escape_string($connect, isset($_POST['sp_area_code']));
     $spouse_tel_no = $area . "-" . mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
-    echo isset($_POST['sp_area_code']);
-
 }
 $father_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_first_name']));
 $father_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_middle_name']));
@@ -126,7 +122,7 @@ if ($answer === "Yes") {
 }
 
 
-// //tutor info sheet
+// //employee info sheet
 $persona = ucwords(mysqli_real_escape_string($connect, $_POST['persona']));
 $mobile = mysqli_real_escape_string($connect, $_POST['mobile']);
 $landline = mysqli_real_escape_string($connect, $_POST['l_area_code']) . "-" . mysqli_real_escape_string($connect, $_POST['landline']);
