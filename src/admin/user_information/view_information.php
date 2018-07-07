@@ -4,30 +4,28 @@
     $user_id = $_GET["user_id"];
     $personal_info = "SELECT * FROM user_info where user_id=$user_id;";
     $background = "SELECT * FROM user_background where user_id=$user_id;";
-    $child = "SELECT * FROM user_offspring where user_id=$user_id;";
+    $child = "SELECT * FROM user_offspring where user_id=$user_id ;";
     $education ="SELECT * FROM user_educ where user_id=$user_id;";
     $emergency = "SELECT * FROM emergency_info_sheet where user_id=$user_id;";
     $relatives = "SELECT * FROM relatives where r_id=$user_id;";
     $housemates = "SELECT * FROM housemates where h_id=$user_id;";
     $employee_info = "SELECT * FROM employee_info where user_id=$user_id;";
 
-    $result1 = $connect->query($personal_info);
-    $result2 = $connect->query($background);
-    $result3 = $connect->query($child);
-    $result4 = $connect->query($education);
-    $result5 = $connect->query($emergency);
-    $result6 = $connect->query($relatives);
-    $result7 = $connect->query($housemates);
-    $result8 = $connect->query($employee_info);
+    $result1 = mysqli_query($connect,$personal_info);
+    $result2 = mysqli_query($connect,$background);
+    $result3 = mysqli_query($connect,$child);
+    $result4 = mysqli_query($connect,$education);
+    $result5 = mysqli_query($connect,$emergency);
+    $result6 = mysqli_query($connect,$housemates);
+    $result7 = mysqli_query($connect,$relatives);
+    $result8 = mysqli_query($connect,$employee_info);
 
     $row1 = $result1->fetch_assoc();
     $row2 = $result2->fetch_assoc();
-    $row3 = $result3->fetch_assoc();
     $row4 = $result4->fetch_assoc();
     $row5 = $result5->fetch_assoc();
-    $row6 = $result6->fetch_assoc();
-    $row7 = $result7->fetch_assoc();
     $row8 = $result8->fetch_assoc();
+
     $height = explode("'",$row1['height']);
     $coordinates = explode("|",$row5['coordinates']);
 ?>
@@ -161,12 +159,12 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>First Name</label>
-                                <input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php echo $row1['first_name'];?>" placeholder="First Name">
+                                <input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value="<?php echo $row1['first_name'];?>" placeholder="First Name">
                             </div>
 
                             <div class="form-group col">
                                 <label>Middle Name</label>
-                                <input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value=" <?php if($row1['middle_name'] !== null ){ echo $row1['middle_name'];}?>" placeholder="Middle Name">
+                                <input type="text" name="birth_date" id="bdate" class="form-control-plaintext" value="<?php echo $row1['middle_name'];?>" placeholder="Middle Name">
                             </div>
 
                             <div class="form-group col-4">
@@ -178,7 +176,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>Birthdate</label>
-                                <input type="date" name="birth_date" id="bdate" class="form-control" placeholder="<?php echo date('d-m-Y',strtotime($row1['birth_date']));?> ">
+                                <input type="date" name="birth_date" id="bdate" class="form-control" value="<?php echo $row1['birth_date'];?>">
                             </div>
 
                             <div class="form-group col">
@@ -444,22 +442,17 @@
 
                         <h5>Child/Children's Information</h5>
                         <?php
-                            if ($result3->num_rows > 0) {
-
-                                for ($i=0; $i < $result3->num_rows; $i++) {
-                                    $row3 = $result3->fetch_array();
-
-                                    echo '<div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="child_name">Name</label>
-                                            <input type="text" value="'. $row3['child_name'] .'" class="form-control text-transform" autocomplete="off" disabled>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="child_birth">Date of Birth</label>
-                                            <input type="text" value="'. $row3['child_birth_date'] .'" class="form-control" autocomplete="off" disabled>
-                                        </div>
-                                    </div>';
-                                }
+                            while ($row3 = mysqli_fetch_array($result3)) {
+                                echo '<div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="child_name">Name</label>
+                                        <input type="text" value="'. $row3['child_name'] .'" class="form-control text-transform" autocomplete="off" disabled>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="child_birth">Date of Birth</label>
+                                        <input type="text" value="'. $row3['child_birth_date'] .'" class="form-control" autocomplete="off" disabled>
+                                    </div>
+                                </div>';
                             }
                         ?>
                         <div class="row">
@@ -753,85 +746,92 @@
                         </div>
                         <hr>
                         <h6>Your Housemates</h6>
+                        <?php
+                            while ($row6 = mysqli_fetch_array($result6)) {
+                                echo "<div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of Housemate</label>
+                                        <input type='text' name='hname[]' id='hname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
+                                        <input type='text' name='hrel[]' id='hrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='mnumber1'>Mobile Number</label>
+                                        <input type='tel' name='mnumber[]' id='mnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
+                                </div>
 
-                            <div class="form-group col">
-                                <label for="mnumber1">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
-                            </div>
-                        </div>
+                                <div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of Housemate</label>
+                                        <input type='text' name='hname[]' id='hname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="hname">Name of Housemate</label>
-                                <input type="text" name="hname[]" id="hname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
+                                        <input type='text' name='hrel[]' id='hrel2' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rel">Relationship</label>
-                                <input type="text" name="hrel[]" id="hrel2" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='mnumber2'>Mobile Number</label>
+                                        <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
+                                </div>";
+                            }
+                         ?>
 
-                            <div class="form-group col">
-                                <label for="mnumber2">Mobile Number</label>
-                                <input type="tel" name="mnumber[]" id="mnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
-                            </div>
-
-                        </div>
                         <hr>
                         <h6>Your Closest Living Relatives</h6>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                        <?php
+                            while ($row7 = mysqli_fetch_array($result7)) {
+                                echo "<div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of relative</label>
+                                        <input type='text' name='rname[]' id='rname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel1" placeholder="Relationship" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
+                                        <input type='text' name='rrel[]' id='rrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rmnumber1">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rmnumber1'>Mobile Number</label>
+                                        <input type='tel' name='rmnumber[]' id='rmnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
 
-                        </div>
+                                </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="hname">Name of relative</label>
-                                <input type="text" name="rname[]" id="rname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                <div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of relative</label>
+                                        <input type='text' name='rname[]' id='rname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rel">Relationship</label>
-                                <input type="text" name="rrel[]" id="rrel2" placeholder="Relationship" class="form-control text-transform" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
+                                        <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                            <div class="form-group col">
-                                <label for="rmnumber2">Mobile Number</label>
-                                <input type="tel" name="rmnumber[]" id="rmnumber2" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off">
-                            </div>
+                                    <div class='form-group col'>
+                                        <label for='rmnumber2'>Mobile Number</label>
+                                        <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
 
-                        </div>
-                            <?php
-                            if ($row5['answer'] === "No") {
-                                $answer = $row5['answer'];
-                            } else {
-                                $answer = explode("|",$row5['answer']);
+                                </div>";
                             }
-                            ?>
+                         ?>
+                        <?php
+                        if ($row5['answer'] === "No") {
+                            $answer = $row5['answer'];
+                        } else {
+                            $answer = explode("|",$row5['answer']);
+                        }
+                        ?>
                         <div class="row">
                             <div class="form-group col-4">
                                 <label for="quest">Do you plan on relocating soon?

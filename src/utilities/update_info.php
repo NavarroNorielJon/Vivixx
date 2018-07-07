@@ -43,10 +43,8 @@ $spouse_last_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_l
 $occupation = ucwords(mysqli_real_escape_string($connect, $_POST['occupation']));
 $employer = ucwords(mysqli_real_escape_string($connect, $_POST['employer']));
 $business_address = ucwords(mysqli_real_escape_string($connect, $_POST['business_address']));
-if (isset($_POST['sp_area_code']) === "") {
-    $spouse_tel_no = mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
-} else {
-    $area = mysqli_real_escape_string($connect, isset($_POST['sp_area_code']));
+if (isset($_POST['sp_area_code']) != "") {
+    $area = mysqli_real_escape_string($connect, $_POST['sp_area_code']);
     $spouse_tel_no = $area . "-" . mysqli_real_escape_string($connect, $_POST['spouse_tel_no']);
 }
 $father_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['father_first_name']));
@@ -193,6 +191,19 @@ $result = $connect->query($sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $id = $row['user_id'];
 
+
+echo "<br>";
+echo $spouse_last_name;
+echo "<br>";
+echo $spouse_middle_name;
+echo "<br>";
+echo $spouse_first_name;
+echo "<br>";
+echo $occupation;
+echo "<br>";
+echo $employer;
+echo "<br>";
+echo $business_address;
 $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
  `facebook_link`='$facebook',`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
@@ -200,7 +211,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
  `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
  `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
  if ($connect->query($update_stmt) === true) {
-    if ($spouse_tel_no === "-" && $spouse_first_name === "" && $spouse_middle_name === "" && $spouse_last_name === "" && $occupation === "" && $employer === "" && $business_address === "") {
+    if ($spouse_first_name === "" && $spouse_middle_name === "" && $spouse_last_name === "" && $occupation === "" && $employer === "" && $business_address === "") {
         $insert_stmt = "INSERT INTO `user_background`(`user_id`,`father_first_name`,`father_middle_name`,`father_last_name`,
         `mother_first_name`,`mother_middle_name`,`mother_last_name`) VALUES ('$id','$father_first_name','$father_middle_name',
         '$father_last_name','$mother_first_name','$mother_middle_name','$mother_last_name');";
