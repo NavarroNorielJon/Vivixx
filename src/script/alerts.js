@@ -126,3 +126,54 @@ $('#login').ajaxForm({
         }
     }
 });
+$('#reset_form').ajaxForm({
+    url: '../mailing/send_reset.php',
+    method: 'post',
+    success: function (data){
+        if (data === 'That email is not being used by any account.') {
+            swal({
+                title: data,
+                icon: 'error',
+            });
+        } else if (data === 'Email sucessfully sent, please check your email.') {
+            swal({
+                title: data,
+                icon: 'success'
+            }).then(function () {
+                window.location = '/';
+            });
+        }
+    }
+});
+$( "#reset_pass" ).validate({
+    rules: {
+        password: {
+            required: true,
+            minlength: 8,
+        },
+        confirm_password: {
+            equalTo: "#new_pass"
+        }
+    }
+});
+$('#reset_pass').ajaxForm({
+    url: '../utilities/validate_reset_password.php',
+    method: 'post',
+    success: function (data){
+        if (data === 'You have successfully changed your password.') {
+            swal({
+                title: data,
+                icon: 'success'
+            }).then(function () {
+                window.location = '/';
+            });
+        } else if (data === 'Error in resetting your password, this link might be already expired.') {
+            swal({
+                title: data,
+                icon: 'error'
+            }).then(function () {
+                window.location = '/';
+            });
+        }
+    }
+});

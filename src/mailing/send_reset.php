@@ -23,13 +23,8 @@ if ($result->num_rows > 0) {
         $username = $row['username'];
     }
 } else {
-    echo "
-            <script>
-                alert('That email is not being used by any account.');
-                window.history.back();
-            </script>
-        ";
-        exit();
+    echo "That email is not being used by any account.";
+    exit();
 }
 
 $developmentMode = true;
@@ -85,11 +80,7 @@ try {
     $mail->send();
     $mail->ClearAllRecipients();
 
-    echo "
-    <script>
-    alert('Email sucessfully sent, please check your email.');
-    location.href = '/';
-    </script>";
+    echo "Email sucessfully sent, please check your email.";
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }

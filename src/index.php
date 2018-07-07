@@ -73,7 +73,7 @@ if (isset($_SESSION['user'])) {
 
 					<!-- Body -->
 					<div class="modal-body forgot-password-body">
-						<form action="mailing/send_reset.php" method="POST">
+						<form action="mailing/send_reset.php" id="reset_form" method="POST">
 							<div class="form-group">
 								<label for="forgot_email">E-mail Address</label>
 								<input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address" name="email" required>

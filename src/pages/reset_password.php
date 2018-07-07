@@ -15,13 +15,13 @@
 <body id="reset-form">
 	<div class="container-fluid resetPassword" id="resetPassword">
 		<h3>Reset Password</h3><hr><br>
-		<form action="../utilities/validate_reset_password.php" method="POST">
+		<form action="../utilities/validate_reset_password.php" id="reset_pass" method="POST">
 			<input type="text" name="account" style="display:none; "value="<?php echo $_GET['account'];?>">
 
 			<div class="form-group">
 				<label for="new_password">New Password</label>
                 <div class="input-group">
-                    <input type="password" class="form-control" name="new_pass" id="new_pass" placeholder="Enter New Password" id="new_password">
+                    <input type="password" class="form-control" name="password" id="new_pass" placeholder="Enter New Password" id="new_password" required>
                     <div class="input-group-append">
                         <button type="button" class="btn eye" onclick="showHide('new_pass','icon1')">
                             <i class="material-icons" id="icon1">visibility</i>
@@ -33,7 +33,7 @@
 			<div class="form-group">
 				<label for="confirm_password">Re-enter Password</label>
                 <div class="input-group">
-                    <input type="password" class="form-control" name="confirm_pass" id="r_password" placeholder="Re-enter Password">
+                    <input type="password" class="form-control" name="confirm_password" id="conf_pass" placeholder="Re-enter Password" required>
                     <div class="input-group-append">
                         <button type="button" class="btn eye" onclick="showHide('r_password','icon2')">
                             <i class="material-icons" id="icon2">visibility</i>
@@ -49,10 +49,13 @@
 	</div>
 
 	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+    <script src="../script/jquery.form.min.js"></script>
+    <script src="../script/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../script/popper.min.js"></script>
 	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>
+    <script type="text/javascript" src="../script/ajax.js"></script>
+	<script type="text/javascript" src="../script/alerts.js"></script>
 	<script type="text/javascript">
 		window.onload = function() {
 			var reset_password = document.getElementById('resetPassword');

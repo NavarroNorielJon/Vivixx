@@ -191,19 +191,6 @@ $result = $connect->query($sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $id = $row['user_id'];
 
-
-echo "<br>";
-echo $spouse_last_name;
-echo "<br>";
-echo $spouse_middle_name;
-echo "<br>";
-echo $spouse_first_name;
-echo "<br>";
-echo $occupation;
-echo "<br>";
-echo $employer;
-echo "<br>";
-echo $business_address;
 $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
  `facebook_link`='$facebook',`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
