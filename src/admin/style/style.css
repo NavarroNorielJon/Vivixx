@@ -138,7 +138,7 @@ table {
 	display: block;
 	border: 0;
 	background-color: transparent;
-	padding: 10px;
+	padding: 8px;
 }
 
 .dropbtn:hover,
@@ -171,4 +171,27 @@ table {
 
 .showbtn {
 	display: block;
+}
+
+.summary {
+	margin: 10% 5% 2% 16%;
+	width: 70%;
+}
+
+.summary tr,
+.value {
+	border: 0.5px solid black;
+	padding-left: 20px;
+}
+
+.summary .value {
+	text-align: right;
+	padding-right: 20px;
+}
+
+.summary .header {
+	padding: 2%;
+	font-size: 1rem;
+	background-color: #005959;
+	color: white;
 }
