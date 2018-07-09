@@ -33,7 +33,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
@@ -44,7 +44,10 @@
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../payslip.php">Summary of Pay</a>
+						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../payslip.php">Payslip</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
@@ -59,7 +62,7 @@
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
 			<div class="text-center">
-				<h1>New Registered Users</h1>
+				<h1>New Registered Employee</h1>
 			</div>
 
 			<div style="margin: 5vh 15vh;">
