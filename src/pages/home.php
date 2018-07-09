@@ -160,6 +160,7 @@
 
 								<div class='modal-body'>
 									<p id="am"></p>
+									<div id="dl"> </div>
 								</div>
 
 								<div class='modal-footer'>
@@ -187,7 +188,7 @@
 			<script type="text/javascript">
 				$('#mixedSlider').multislider({
 				    duration: 1000,
-				    interval: 7500
+				    interval: 3500
 				});
 			</script>
 
