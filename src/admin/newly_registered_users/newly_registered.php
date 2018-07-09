@@ -71,7 +71,7 @@
 
 					<?php
 					include '../../utilities/session.php';
-					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and birth_date is null";
+					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -107,7 +107,7 @@
 		$(document).ready(function(){
 			$('#table').dataTable( {
 				"columnDefs": [
-					{ "orderable": false, "targets": [5,6] }
+					{ "orderable": false, "targets": [3] }
 				]
 			});
 			$('#table').DataTable();

@@ -95,7 +95,7 @@
             </nav>
 
             <div class="container" style="margin-top: -40px;">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
+                <form role="form" action="update_info.php" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -841,10 +841,8 @@
                         <?php
                         if ($row5['answer'] === "No") {
                             $answer = $row5['answer'];
-                            $reason = " ";
                         } else {
-                            $answer = explode("|",$row5['answer'])[0];
-                            $reason = explode("|",$row5['answer'])[1];
+                            $answer = explode("|",$row5['answer']);
                         }
                         ?>
                         <div class="row">
@@ -852,7 +850,7 @@
                                 <label for="quest">Do you plan on relocating soon?
                                 </label>
                                 <select name="yesorno" id="quest" class="form-control">
-                                    <option selected="selected" disabled="disabled"><?php echo $answer?></option>
+                                    <option selected="selected" disabled="disabled"></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -860,7 +858,7 @@
 
                             <div class="form-group col">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off" value="<?php echo $reason?>">
+                                <input type="text" name="answer" id="answer" value="" class="form-control" autocomplete="off">
                             </div>
                         </div>
 
@@ -891,7 +889,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>Employee Status</label>
-                                <select class="custom-select form-control" name="employee_status">
+                                <select class="custom-select form-control">
                                     <option selected disabled required="require">Choose Here:</option>
                                     <option value="Freelance">Freelance</option>
                                     <option value="Project Based">Project Based</option>
@@ -901,14 +899,13 @@
                             </div>
                             <div class="form-group col">
                                 <label>Position</label>
-                                <select class="custom-select form-control" name="position">
+                                <select class="custom-select form-control">
                                     <option selected disabled>Choose Here:</option>
-                                    <option value="head">head</option>
-                                    <option value="assistant">assistant</option>
-                                    <option value="secret">secret</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
                                 </select>
                             </div>
-
                             <div class="form-group col">
                                 <label>Date Hired</label>
                                 <input type="date" name="date_hired">

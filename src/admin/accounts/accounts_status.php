@@ -33,12 +33,16 @@
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					
-					<li class="nav-item active">
+					<li class="nav-item active dropdown">
 						<a class="nav-link" href="accounts_status.php">Accounts</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
+					<button onclick="myFunction()" class="dropbtn">Employees</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="../user_information/user_information.php">Employees</a>
+							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
+						</div>
 					</li>
 					
 					<li class="nav-item">
@@ -147,6 +151,27 @@
 	</script>
 	
 	<script>
+
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("showbtn");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+		if (!event.target.matches('.dropbtn')) {
+
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('showbtn')) {
+				openDropdown.classList.remove('showbtn');
+			}
+			}
+		}
+		}
 		//script for calling modal
 		$(document).ready(function(){
 			$('.show').click(function(e){
