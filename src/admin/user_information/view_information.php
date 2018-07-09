@@ -726,7 +726,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset>
+                    <!-- <fieldset>
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
                         <div>
@@ -868,7 +868,7 @@
                             <button type="button" class="btn pages btn-previous">Previous</button>
                             <button type="button" class="btn pages btn-next">Next</button>
                         </div>
-                    </fieldset>
+                    </fieldset> -->
 
                     <fieldset>
                         <h2>Step 5: Employee Info Sheet</h2>
