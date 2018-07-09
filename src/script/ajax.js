@@ -1,20 +1,20 @@
-function announcement(type, str, elementId){
+function announcement(id){
 	if(str.length == 0){
-		document.getElementById(elementId).innerHTML = "";
+		document.getElementById('announcement').innerHTML = "";
 		return;
 	} else {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200){
-				document.getElementById(elementId).innerHTML = this.responseText;
+				document.getElementById('announcement').innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "../utilities/announcements.php?", true);
+		xmlhttp.open("GET", "../utilities/announcements.php?id=" + id, true);
 		xmlhttp.send();
 	}
 }
 
-}
+
 
 function showHide(password,ic) {
     var pass = document.getElementById(password);
