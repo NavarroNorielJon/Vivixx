@@ -2,5 +2,5 @@
 
 ?>
 <html>
-    <a href= "admin/announcements/file uploads/2161880.png" download>downloads</a>
+    <a href= "admin/announcements/files/dota_english.txt" download>downloads</a>
 </html>

@@ -11,8 +11,8 @@
 	$department = $row['department'];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
 	<head>
 		<title>Vivixx</title>
@@ -121,82 +121,116 @@
 			</nav>
 
 			<div class="content">
-				<div class="card cards">
-					<div class="card-body">
-						<h4 class="card-title">Announcements</h4>
-						<p class="card-text">
-							<div id="announce" class="carousel slide carousel-fade" data-ride="carousel">
-
-							<?php
-								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
-								$announcement = mysqli_query($connect,$query);
-								while ($row = mysqli_fetch_array($announcement)) {
-									$announcements[] = $row['announcement'];
-									$subjects[] = $row['subject'];
-									$start_dates[] = $row['start_date'];
-									$end_dates[] = $row['end_date'];
-										if ($row['attachment'] != null) {
-											$attachments[] = 'data:image/jpg;base64,'. $row['attachment'];
-										}else {
-											$attachments[] = "../img/announcement.jpg";
-										}
+				<div class="announcements">
+					<h1 class="announcement-title">Announcements:</h1>
+					<div id="announce" class="carousel slide carousel-fade announcement-body" data-ride="carousel">
+						<?php
+						$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
+							$announcement = mysqli_query($connect,$query);
+						
+							while ($row = mysqli_fetch_array($announcement)) {
+								$announcements[] = $row['announcement'];
+								$subjects[] = $row['subject'];
+								$start_dates[] = $row['start_date'];
+								$end_dates[] = $row['end_date'];
+								$attachmentname[] = $row['attachment_name'];
+								
+								if ($row['attachment'] != null) {
+									$attachments[] = 'data:image/jpg;base64,'. $row['attachment'];
+								}else {
+									$attachments[] = "../img/announcement.jpg";
 								}
-							?>
+							}
+						?>
 
-								<div id="announce" class="carousel slide" data-ride="carousel">
-									<div class="carousel-inner">
-										<div class="carousel-item active">
-											<img class="d-block w-100" src="<?php echo $attachments[0]?>" style="min-height:450px; max-height:450px;width:500px;" alt="First slide">
-											<div>
-												<h5><?php echo ucwords($subjects[0])?></h5>
+							<div>
+								<div class="modal fade" id="announcement" role="dialog">
+									<div class="modal-dialog">
+										<!-- Modal content-->
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">Modal Header</h4>
+											</div>
+
+											<div class="modal-body">
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+												</p>
+											</div>
+
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal">
+												Close
+											</button>
 											</div>
 										</div>
-
-									<?php for($i = 1; $i<count($announcements); $i++){
-										$subjects[$i] = ucwords($subjects[$i]);
-										echo "<div class=\"carousel-item\">
-											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='min-height:450px;max-height:450px;width:500px;' alt=\"Second slide\">
-											<div>
-												<h5>$subjects[$i]</h5>
-											</div>
-										</div>";
-									}?>
-
 									</div>
-									<a class="carousel-control-prev" href="#announce" role="button" data-slide="prev">
-										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-										<span class="sr-only">Previous</span>
-									</a>
-									<a class="carousel-control-next" href="#announce" role="button" data-slide="next">
-										<span class="carousel-control-next-icon" aria-hidden="true"></span>
-										<span class="sr-only">Next</span>
-									</a>
 								</div>
-							</p>
+							</div>
 
-							<div style="text-align: right">
-								<a>
-									<button class="btn btn-primary" onclick="sample();">
-										See more
-									</button>
+							<div id="announce" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img class="images" src="<?php echo $attachments[0]?>" alt="First slide">
+										<div>
+											<h2 class="subject">
+												<?php echo ucwords($subjects[0])?>
+											</h2>
+
+										</div>
+									</div>
+
+									<?php 
+								for($i = 1; $i<count($announcements); $i++){
+								$subjects[$i] = ucwords($subjects[$i]);
+								echo "
+								<div class=\"carousel-item\">
+									<img class=\"images\" src=\"$attachments[$i]\" alt=\"Second slide\">
+									<div>								
+										<h5>$subjects[$i]</h5>
+									</div>
+								</div>";
+								}
+								?>
+
+								</div>
+
+								<a class="carousel-control-prev" href="#announce" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+
+								<a class="carousel-control-next" href="#announce" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
 								</a>
 							</div>
-						</div>
+
+							<?php 
+						echo '
+							<div class="text-right" data-toggle="modal" data-target="#announcement">
+								<button class="btn btn-primary" onclick="sample();">
+									See more
+								</button>
+							</div>
+						'; 
+						?>
 					</div>
-
-
 				</div>
 			</div>
+		</div>
 
-			<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-			<script type="text/javascript" src="../script/popper.min.js"></script>
-			<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-			<script type="text/javascript" src="../script/ajax.js"></script>
-			<script type="text/javascript">
-				$(function () {
-					$('[data-toggle="tooltip"]').tooltip();
-				});
-			</script>
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/popper.min.js"></script>
+		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+			});
 
-		</body>
+		</script>
+
+	</body>
+
 	</html>

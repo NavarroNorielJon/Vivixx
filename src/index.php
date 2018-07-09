@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
-	<body class="index">
+	<body class="index background">
 		<div class="containter">
 			<form action="utilities/login.php" method="post" class="jumbotron login" id="login">
 				<img src="../img/Lion.png" alt="logo" class="index-image">
@@ -43,15 +43,12 @@ if (isset($_SESSION['user'])) {
 
 				<div class="text-center">
 					<button type="submit" class="btn login-button" name="submit">Login</button>
-
 					<p style="display: inline-block;">
 						<a href="#!" data-toggle="modal" data-target="#forgot-password-form" class="forgot-link">Forgot password?</a> or
 						<a href="#!" data-toggle="modal" data-target="#signup-form" class="signup-link">Sign Up</a>
 					</p>
 				</div>
 			</form>
-
-
 		</div>
 
 		<!-- Modal for forgot password -->
@@ -100,7 +97,7 @@ if (isset($_SESSION['user'])) {
 							</div>
 
 							<div class="col-10">
-								<h1>Registration Form</h1>
+								<h1 class="signup-h1">Registration Form</h1>
 							</div>
 						</div>
 					</div>

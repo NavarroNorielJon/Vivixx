@@ -2,15 +2,15 @@
 	include '../utilities/session.php';
 ?>
 
-<!DOCTYPE html>
-<html>
+	<!DOCTYPE html>
+	<html>
 
 	<head>
 		<title>Vivixx</title>
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 
 	<body style="background-color: #e6e6e6;">
 		<div class="wrapper">
-			<nav id="sidebar">
+			<nav class="sidebar">
 				<div class="sidebar-header">
 					<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
 				</div>
@@ -89,7 +89,7 @@
 					</li>
 					<hr>
 					<li>
-						<a href="../utilities/logout.php" class="sidebar-item" id="logout">
+						<a href="../utilities/logout.php" class="sidebar-item logout">
 							<i class="material-icons">power_settings_new</i>
 							Logout
 						</a>
@@ -100,12 +100,12 @@
 				</ul>
 			</nav>
 
-			<div id="leave">
+			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST">
-					<h1 class="text-center">LEAVE APPLICATION FORM</h1>
+					<h1 class="text-center leave-header">LEAVE APPLICATION FORM</h1>
 					<script>
-						$(function () {
-							$('#reason1').change(function () {
+						$(function() {
+							$('#reason1').change(function() {
 								$('#others').hide();
 								$('#Emergency').hide();
 								$('#' + $(this).val()).show();
@@ -121,6 +121,7 @@
 								}
 							});
 						});
+
 					</script>
 					<div>
 						<div>
@@ -182,8 +183,12 @@
 				</form>
 			</div>
 		</div>
+
 		<script>
-			$('.mobile').inputmask({mask: '+639dd ddd dddd'});
+			$('.mobile').inputmask({
+				mask: '+639dd ddd dddd'
+			});
+
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
@@ -194,4 +199,4 @@
 		<script type="text/javascript" src="../script/ajax.js"></script>
 	</body>
 
-</html>
+	</html>
