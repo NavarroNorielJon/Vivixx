@@ -55,7 +55,7 @@
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
 			<div class="text-center">
-				<h1>User Information</h1>
+				<h1>New Registered Users</h1>
 			</div>
 
 			<div style="margin: 5vh 15vh;">
@@ -64,9 +64,6 @@
 						<tr>
 							<th>First Name</th>
 							<th>Last Name</th>
-							<th>Gender</th>
-							<th>Address</th>
-							<th>Contact Number</th>
 							<th>Email</th>
 							<th>Edit or View data</th>
 						</tr>
@@ -74,47 +71,21 @@
 
 					<?php
 					include '../../utilities/session.php';
-					$sql = "SELECT * FROM user_info NATURAL JOIN user WHERE type='user' and
-						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
-						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
-						residential_tel_no is not null and permanent_address is not null and permanent_zip is not null and permanent_tel_no is not null
-						and citizenship is not null and civil_status is not null and sss_no is not null and tin is not null and philhealth_no and
-						pagibig_id_no is not null)";
+					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and birth_date is null";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
-							if($row["gender"] === null){
-								$gender = "Not set";
-							}else{
-								$gender = $row["gender"];
-							}
-
-							if(!isset($row["residential_address"])){
-								$address = "Not set";
-							}else{
-								$address = $row["residential_address"];
-							}
-
-							if(!isset($row["contact_number"])){
-								$contact = "Not set";
-							}else{
-								$contact = $row["contact_number"];
-							}
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
 							<a href='view_information.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+								"& fname=".$row['first_name'] . "& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['first_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
-							<td>" . $gender . "</td>
-							<td>" . $address . "</td>
-							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
 							</tr>";
