@@ -1,17 +1,14 @@
 function announcement(id){
-	if(str.length == 0){
-		document.getElementById('announcement').innerHTML = "";
-		return;
-	} else {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200){
-				document.getElementById('announcement').innerHTML = this.responseText;
-			}
-		};
-		xmlhttp.open("GET", "../utilities/announcements.php?id=" + id, true);
-		xmlhttp.send();
-	}
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200){
+			let responseJSON = JSON.parse(this.responseText);
+			document.getElementById('am').innerHTML = responseJSON.announcement;
+			document.getElementById('title').innerHTML = responseJSON.title;
+		}
+	};
+	xmlhttp.open("GET", "../utilities/announcements.php?id=" + id, true);
+	xmlhttp.send();
 }
 
 
