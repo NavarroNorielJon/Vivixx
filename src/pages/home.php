@@ -135,6 +135,7 @@
 									$subjects[] = $row['subject'];
 									$start_dates[] = $row['start_date'];
 									$end_dates[] = $row['end_date'];
+									$attachmentname[] = $row['attachment_name'];
 										if ($row['attachment'] != null) {
 											$attachments[] = 'data:image/jpg;base64,'. $row['attachment'];
 										}else {
@@ -142,7 +143,27 @@
 										}
 								}
 							?>
+								<div>
+									<div class="modal fade" id="announcement" role="dialog">
+										<div class="modal-dialog">
 
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Modal Header</h4>
+												</div>
+												<div class="modal-body">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
 								<div id="announce" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner">
 										<div class="carousel-item active">
@@ -152,12 +173,13 @@
 											</div>
 										</div>
 
-									<?php for($i = 1; $i<count($announcements); $i++){
+										<?php for($i = 1; $i<count($announcements); $i++){
 										$subjects[$i] = ucwords($subjects[$i]);
 										echo "<div class=\"carousel-item\">
 											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='min-height:450px;max-height:450px;width:500px;' alt=\"Second slide\">
 											<div>
 												<h5>$subjects[$i]</h5>
+												<a href= '../admin/announcements/files/".$attachmentname[$i]."' download>".$attachmentname[$i]."</a>
 											</div>
 										</div>";
 									}?>
@@ -176,14 +198,15 @@
 
 							<div style="text-align: right">
 								<a>
-									<button class="btn btn-primary" onclick="sample();">
+									<button class="btn btn-primary" data-toggle="modal" data-target="#announcement">
 										See more
 									</button>
 								</a>
 							</div>
+
+
 						</div>
 					</div>
-
 
 				</div>
 			</div>
