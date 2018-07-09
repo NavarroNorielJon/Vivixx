@@ -779,7 +779,6 @@
 							<div class="form-group col">
 								<label for="option1">Status</label>
 								<select name="option1" id="option1" class="form-control">
->>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
                                     <option selected="selected" value="none">None</option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
