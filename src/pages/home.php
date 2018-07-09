@@ -178,12 +178,8 @@
 										echo "<div class=\"carousel-item\">
 											<img class=\"images\" src=\"$attachments[$i]\" alt=\"Second slide\">
 											<div>
-<<<<<<< HEAD
-												<h5>$subjects[$i]</h5>
+												<h5 class='subject'>$subjects[$i]</h5>
 												<a href= '../admin/announcements/files/".$attachmentname[$i]."' download>".$attachmentname[$i]."</a>
-=======
-												<h2 class='subject'>$subjects[$i]</h2>
->>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
 											</div>
 										</div>";
 									}?>
@@ -198,33 +194,14 @@
 										<span class="sr-only">Next</span>
 									</a>
 								</div>
-<<<<<<< HEAD
-							</p>
-
-							<div style="text-align: right">
-								<a>
-									<button class="btn btn-primary" data-toggle="modal" data-target="#announcement">
-										See more
-									</button>
-								</a>
-							</div>
-
-
-						</div>
-					</div>
-
-=======
 					</p>
 
-					<div class="text-right">
-						<a>
-								<button class="btn btn-primary" onclick="sample();">
-									See more
-								</button>
-							</a>
+					<div class="text-right" data-toggle="modal" data-target="#announcement">
+						<button class="btn btn-primary" onclick="sample();">
+						See more
+						</button>
 					</div>
 					</div>
->>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
 				</div>
 			</div>
 
