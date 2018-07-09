@@ -11,8 +11,8 @@
 	$department = $row['department'];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
 	<head>
 		<title>Vivixx</title>
@@ -142,7 +142,7 @@
 								}
 							?>
 						</div>
-						<div class="MS-controls">
+						<div class="">
 							<button class="MS-left">
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 							</button>
@@ -186,11 +186,12 @@
 			<script type="text/javascript" src="../script/ajax.js"></script>
 			<script type="text/javascript">
 				$('#mixedSlider').multislider({
-				    duration: 1000,
-				    interval: 7500
+					duration: 1000,
+					interval: 3000
 				});
+
 			</script>
 
-		</body>
+	</body>
 
 	</html>
