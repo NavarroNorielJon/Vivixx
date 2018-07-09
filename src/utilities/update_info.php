@@ -166,22 +166,22 @@ $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 if ($elem_status == "none") {
-    $elementary = "None";
+    $elementary = "None|None";
 } else {
     $elementary = $elem_school_name . "|" . $elem_res;
 }
 if ($sec_status == "none") {
-    $secondary = "None";
+    $secondary = "None|None";
 } else {
     $secondary = $sec_school_name . "|" . $sec_res;
 }
 if ($col_status == "none") {
-    $college = "None";
+    $college = "None|None";
 } else {
     $college = $col_school_name . "|" . $col_res;
 }
 if ($post_status == "none") {
-    $post_grad = "None";
+    $post_grad = "None|None";
 } else {
     $post_grad = $post_school_name . "|" . $post_res;
 }
