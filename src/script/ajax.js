@@ -123,7 +123,7 @@ function nextForm(currId,nextId){
 
 function alphabetInput(evt){
 	var alphabet = String.fromCharCode(evt.which);
-	if(!(/[A-Za-z\ \b]/.test(alphabet))) {
+	if(!(/[A-Za-z\ \b\-\.\,\ñ\Ñ]/.test(alphabet))) {
 		evt.preventDefault();
 	}
 }
