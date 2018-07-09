@@ -132,9 +132,9 @@
 
 .content .announcements {
 	margin: 0 2% 1% 2%;
-	min-height: 400px;
 	max-height: 400px;
 	max-width: 90%;
+	min-height: 400px;
 	min-width: 90%;
 }
 
@@ -151,9 +151,9 @@
 }
 
 .images {
-	min-height: 400px;
 	max-height: 400px;
 	max-width: 1050px;
+	min-height: 400px;
 	min-width: 1050px;
 }
 
@@ -162,8 +162,10 @@
 /* profile*/
 
 .profile {
+	background-attachment: fixed;
 	background-color: #e6e6e6;
-	height: 100vh;
+	background-repeat: no-repeat;
+	height: 100%;
 }
 
 .profile .profile-header {
@@ -200,7 +202,7 @@
 	width: 600px;
 }
 
-.profile .profile-content #name {
+.profile .profile-content .name {
 	font-size: 1.5vw;
 	width: 350px;
 }
@@ -224,11 +226,12 @@
 /*leave request*/
 
 .leave {
+	margin-bottom: 3%;
 	margin-left: 25%;
 	margin-top: 2%;
-	margin-bottom: 3%;
+	max-width: 70%;
+	min-width: 70%;
 	padding: 3% 5% 3% 5%;
-	width: 70%;
 }
 
 .leave .leave-header {
@@ -500,4 +503,49 @@ a[aria-expanded="true"] {
 
 .text-transform {
 	text-transform: capitalize;
+}
+
+
+
+@media(max-width: 900px) {
+	.leave {
+		margin-left: 10%;
+		width: 90%;
+	}
+
+	.profile .profile-content {
+		margin-left: 10%;
+	}
+
+	.content {
+		margin-left: 6%;
+	}
+
+
+	.sidebar {
+		max-width: 60px;
+		min-width: 60px;
+	}
+
+	.sidebar .icon {
+		display: block;
+		font-size: 1.3rem;
+		padding-left: 15px;
+	}
+
+	.sidebar .sidebar-header {
+		padding-left: 0;
+	}
+
+	.sidebar .sidebar-header img {
+		margin: 0 0 0 2.4vh;
+	}
+
+	.sidebar .sidebar-item {
+		display: none;
+	}
+
+	.signup-form .signup-header .signup-h1 {
+		font-size: 3vw
+	}
 }
