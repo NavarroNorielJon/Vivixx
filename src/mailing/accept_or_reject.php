@@ -71,13 +71,13 @@ try {
         $body = file_get_contents("style.html");
         $body .= "<div id='main_content'>";
         $body .= "
-        <h1>Leave Request</h1>
+        <h1>Leave Request Accepted</h1>
         <p>You have requested for a leave request and it was accepted</p>";
         $body .= "<p>If you didn't request for the leave, ignore this message</p>";
         $body .= "</div>";
 
         $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave request';
+        $mail->Subject = 'Leave Request';
         $mail->Body = $body;
         $mail->AltBody = 'You have requested for a leave request';
 
@@ -93,14 +93,14 @@ try {
         $body = file_get_contents("style.html");
         $body .= "<div id='main_content'>";
         $body .= "
-        <h1>Leave Request</h1>
+        <h1>Leave Request Rejected</h1>
         <p>You have requested for a leave request and it was rejected</p>
         ";
         $body .= "<p>If you didn't request for the leave, ignore this message</p>";
         $body .= "</div>";
 
         $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave request';
+        $mail->Subject = 'Leave Request';
         $mail->Body = $body;
         $mail->AltBody = 'You have requested for a leave request';
 

@@ -11,8 +11,8 @@
 	$department = $row['department'];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
 	<head>
 		<title>Vivixx</title>
@@ -121,12 +121,10 @@
 			</nav>
 
 			<div class="content">
-				<div class="card cards">
-					<div class="card-body">
-						<h4 class="card-title">Announcements</h4>
-						<p class="card-text">
-							<div id="announce" class="carousel slide carousel-fade" data-ride="carousel">
-
+				<div class="announcements">
+					<h1 class="announcement-title">Announcements:</h1>
+					<p>
+						<div id="announce" class="carousel slide carousel-fade announcement-body" data-ride="carousel">
 							<?php
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
 								$announcement = mysqli_query($connect,$query);
@@ -167,19 +165,25 @@
 								<div id="announce" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner">
 										<div class="carousel-item active">
-											<img class="d-block w-100" src="<?php echo $attachments[0]?>" style="min-height:450px; max-height:450px;width:500px;" alt="First slide">
+											<img class="images" src="<?php echo $attachments[0]?>" alt="First slide">
 											<div>
-												<h5><?php echo ucwords($subjects[0])?></h5>
+												<h2 class="subject">
+													<?php echo ucwords($subjects[0])?>
+												</h2>
 											</div>
 										</div>
 
 										<?php for($i = 1; $i<count($announcements); $i++){
 										$subjects[$i] = ucwords($subjects[$i]);
 										echo "<div class=\"carousel-item\">
-											<img class=\"d-block w-100\" src=\"$attachments[$i]\" style='min-height:450px;max-height:450px;width:500px;' alt=\"Second slide\">
+											<img class=\"images\" src=\"$attachments[$i]\" alt=\"Second slide\">
 											<div>
+<<<<<<< HEAD
 												<h5>$subjects[$i]</h5>
 												<a href= '../admin/announcements/files/".$attachmentname[$i]."' download>".$attachmentname[$i]."</a>
+=======
+												<h2 class='subject'>$subjects[$i]</h2>
+>>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
 											</div>
 										</div>";
 									}?>
@@ -194,6 +198,7 @@
 										<span class="sr-only">Next</span>
 									</a>
 								</div>
+<<<<<<< HEAD
 							</p>
 
 							<div style="text-align: right">
@@ -208,6 +213,18 @@
 						</div>
 					</div>
 
+=======
+					</p>
+
+					<div class="text-right">
+						<a>
+								<button class="btn btn-primary" onclick="sample();">
+									See more
+								</button>
+							</a>
+					</div>
+					</div>
+>>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
 				</div>
 			</div>
 
@@ -216,10 +233,12 @@
 			<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 			<script type="text/javascript" src="../script/ajax.js"></script>
 			<script type="text/javascript">
-				$(function () {
+				$(function() {
 					$('[data-toggle="tooltip"]').tooltip();
 				});
+
 			</script>
 
-		</body>
+	</body>
+
 	</html>
