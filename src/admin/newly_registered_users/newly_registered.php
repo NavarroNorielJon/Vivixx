@@ -86,8 +86,8 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-							<a href='view_information.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name'] . "& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+							<a href='set_registered.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 							//print data in table
 							echo "
 							<tr>
@@ -105,11 +105,23 @@
 				</table>
 			</div>
 		</div>
+		<div id="result"></div>
 	</div>
 
-	<div id="result"></div>
-
 	<script>
+		
+		$(document).ready(function() {
+			$('.show').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res) {
+						$('#result').html(res);
+					}
+				});
+			});
+		});
+
 		/* When the user clicks on the button, 
 								toggle between hiding and showing the dropdown content */
 		function myFunction() {
@@ -130,11 +142,7 @@
 				}
 			}
 		}
-
-	</script>
-
-	<!--script for calling data table library-->
-	<script>
+		//script for calling data table library
 		$(document).ready(function() {
 			$('#table').dataTable({
 				"columnDefs": [{
@@ -144,8 +152,6 @@
 			});
 			$('#table').DataTable();
 		});
-
 	</script>
 </body>
-
 </html>
