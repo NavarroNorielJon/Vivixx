@@ -65,107 +65,116 @@
 
 				<tr>
 					<td>
-						<?php echo date("Y-m")?> <br>SRF</td>
+						<?php echo date("Y-m")?> SRF</td>
 					<td class="value">15,000.00</td>
 				</tr>
-				<tr>
-					<td>BASIC PAY</td>
-					<td class="value">6,600.00</td>
-				</tr>
-				<td>NIGHT DIFF</td>
-				<td class="value">-</td>
-				<tr>
-					<td>OTHER PAY</td>
-					<td class="value">8,400.00</td>
-				</tr>
-				<tr>
-					<td>ALWNC</td>
-					<td class="value">3,000.00</td>
-				</tr>
-				<tr>
-					<td>TAX REFUND</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>HLDY</td>
-					<td class="value">600.00</td>
-				</tr>
-				<tr>
-					<td>GROSS PAY</td>
-					<td class="value">27,850.00</td>
-				</tr>
-				<tr>
-					<td>SSS</td>
-					<td class="value">254.30</td>
-				</tr>
-				<tr>
-					<td>PHIC</td>
-					<td class="value">137.50</td>
-				</tr>
-				<tr>
-					<td>HDMF</td>
-					<td class="value">100.00</td>
-				</tr>
-				<tr>
-					<td>SSS-L</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>HMDF-L</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>CO-LOAN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>S-LOAN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>S-LOAN2</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>REGULAR LOAN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>DDCTN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>TESOL LOAN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>P-LOAN</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>CASH ADV</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>TAX</td>
-					<td class="value">-</td>
-				</tr>
-				<tr>
-					<td>TOTAL DDCTN</td>
-					<td class="value">491.80</td>
-				</tr>
-				<tr>
-					<td>NET PAY</td>
-					<td class="value">27,358.20</td>
-				</tr>
-				<tr>
-					<td>15th PAY OUT</td>
-					<td class="value">7,200</td>
-				</tr>
-				<tr>
-					<td>30th PAY OUT</td>
-					<td class="value">20,158.20</td>
-				</tr>
+
+                <div id="gross_pay" style="background-color:pink;">
+                    <tr>
+                        <td>BASIC PAY</td>
+                        <td class="value">6,600.00</td>
+                    </tr>
+                    <td>NIGHT DIFF</td>
+                    <td class="value">-</td>
+                    <tr>
+                        <td>OTHER PAY</td>
+                        <td class="value">8,400.00</td>
+                    </tr>
+                    <tr>
+                        <td>ALWNC</td>
+                        <td class="value">3,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>TAX REFUND</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>HLDY</td>
+                        <td class="value">600.00</td>
+                    </tr>
+                    <tr>
+                        <td>GROSS PAY</td>
+                        <td class="value">27,850.00</td>
+                    </tr>
+                </div>
+
+                <div id="deduction">
+                    <tr>
+                        <td>SSS</td>
+                        <td class="value">254.30</td>
+                    </tr>
+                    <tr>
+                        <td>PHIC</td>
+                        <td class="value">137.50</td>
+                    </tr>
+                    <tr>
+                        <td>HDMF</td>
+                        <td class="value">100.00</td>
+                    </tr>
+                    <tr>
+                        <td>SSS-L</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>HMDF-L</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>CO-LOAN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>S-LOAN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>S-LOAN2</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>REGULAR LOAN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>DDCTN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>TESOL LOAN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>P-LOAN</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>CASH ADV</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>TAX</td>
+                        <td class="value">-</td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL DDCTN</td>
+                        <td class="value">491.80</td>
+                    </tr>
+                </div>
+
+                <div id="net_pay">
+                    <tr>
+                        <td>NET PAY</td>
+                        <td class="value">27,358.20</td>
+                    </tr>
+                    <tr>
+                        <td>15th PAY OUT</td>
+                        <td class="value">7,200</td>
+                    </tr>
+                    <tr>
+                        <td>30th PAY OUT</td>
+                        <td class="value">20,158.20</td>
+                    </tr>
+                </div>
 			</table>
 		</div>
 	</body>
