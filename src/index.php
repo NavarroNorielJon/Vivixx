@@ -97,7 +97,7 @@ if (isset($_SESSION['user'])) {
 							</div>
 
 							<div class="col-10">
-								<h1>Registration Form</h1>
+								<h1 class="signup-h1">Registration Form</h1>
 							</div>
 						</div>
 					</div>

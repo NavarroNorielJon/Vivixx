@@ -24,7 +24,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
-	<body>
+	<body class="profile">
 		<div class="wrapper">
 			<nav class="sidebar">
 				<div class="sidebar-header">
@@ -69,7 +69,7 @@
 				</ul>
 			</nav>
 
-			<div class="container-fluid profile">
+			<div class="container-fluid">
 				<div class="profile-header">
 					<h1> PERSONAL INFORMATION </h1>
 					<hr>
@@ -78,7 +78,7 @@
 					<div class="row">
 						<div class="form-group col-4">
 							<label for="name">Full Name</label>
-							<input type="text" id="name" class="form-control-plaintext" value="<?php echo " $full_name ";?>" disabled>
+							<input type="text" id="name" class="form-control-plaintext name" value="<?php echo " $full_name ";?>" disabled>
 						</div>
 						<div class="form-group col-4 number">
 							<label for="contact_number">Contact Number</label>
