@@ -124,7 +124,7 @@
 
 				<h1 style="text-align:center">Announcements and Events</h1>
 				<div id="mixedSlider">
-					<div style="background-color:black">
+					<div>
 						<div class="MS-content">
 							<?php
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
@@ -136,8 +136,9 @@
 											<h2 class='blogTitle'>".$row['subject']."</h2>
 											<img class='images' src='data:image;base64," . $row['attachment'] . "'>
 										</div>
-										<a href='' onclick='announcement(".$row['announcement_id']."); return false' >Read More</a>
-									</div>";
+										<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
+									</div>
+									";
 								}
 							?>
 						</div>
@@ -150,31 +151,30 @@
 							</button>
 						</div>
 					</div>
-				</div>
-
-				<div>
-					<div class="modal fade" id="announcement" role="dialog">
-						<div class="modal-dialog">
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title">Modal Header</h4>
+					<div class='modal fade' id='announcement' role='dialog'>
+						<div class='modal-dialog'>
+							<div class='modal-content'>
+								<div class='modal-header'>
+									<h4 class='modal-title' id="title"></h4>
 								</div>
 
-								<div class="modal-body">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									</p>
+								<div class='modal-body'>
+									<p id="am"></p>
 								</div>
 
-								<div class="modal-footer">
-									<button type="button" class="btn btn-danger" data-dismiss="modal">
+								<div class='modal-footer'>
+									<button type='button' class='btn btn-danger' data-dismiss='modal'>
 									Close
 								</button>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div>
+
+
 				</div>
 
 			</div>
