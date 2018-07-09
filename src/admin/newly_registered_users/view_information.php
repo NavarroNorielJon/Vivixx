@@ -94,7 +94,7 @@
                 </div>
             </nav>
 
-            <div class="container" style="margin-top: -40px;">
+            <div class="container" style="margin-top: 40px;">
                 <form role="form" action="update_info.php" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
