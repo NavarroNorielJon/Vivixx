@@ -195,3 +195,25 @@ table {
 	background-color: #005959;
 	color: white;
 }
+
+.srf{
+	background-color: #ffbf00;
+}
+.gross_pay{
+	background-color: lightblue;
+}
+.gross_total{
+	background-color: #0073e6;
+}
+.deduction{
+	background-color: pink;
+}
+.total_deduction{
+	background-color:  palevioletred;
+}
+.pay{
+	background-color: burlywood;
+}
+.net_pay{
+	background-color: #cc9900;
+}
