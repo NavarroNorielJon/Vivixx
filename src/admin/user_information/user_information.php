@@ -3,21 +3,21 @@
 
 <head>
 	<title>Vivixx Ph</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../style/datatables.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../style/datatables.css">
 
-    <!--scripts-->
-    <script type="text/javascript" src="../../script/datatables.min.js"></script>
+	<!--scripts-->
+	<script type="text/javascript" src="../../script/datatables.min.js"></script>
 	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
-    <script src="../../script/jquery.form.min.js"></script>
+	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+	<script src="../../script/jquery.form.min.js"></script>
 </head>
 
 <body>
@@ -33,8 +33,12 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="../user_information/user_information.php">Employees</a>
+					<li class="nav-item">
+						<button onclick="myFunction()" class="dropbtn">Employees</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="../user_information/user_information.php">Employees</a>
+							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
+						</div>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
@@ -131,16 +135,44 @@
 
 	<div id="result"></div>
 
+	<script>
+		/* When the user clicks on the button, 
+						toggle between hiding and showing the dropdown content */
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("showbtn");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('showbtn')) {
+						openDropdown.classList.remove('showbtn');
+					}
+				}
+			}
+		}
+
+	</script>
+
 	<!--script for calling data table library-->
 	<script>
-		$(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": [5,6] }
-				]
+		$(document).ready(function() {
+			$('#table').dataTable({
+				"columnDefs": [{
+					"orderable": false,
+					"targets": [5, 6]
+				}]
 			});
 			$('#table').DataTable();
 		});
+
 	</script>
+
 </body>
+
 </html>
