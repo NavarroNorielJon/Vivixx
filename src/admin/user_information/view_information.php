@@ -481,38 +481,51 @@
                     </fieldset>
 
                     <fieldset>
-                        <?php
-                                if($row4['elementary'] == "None"){
-                                    $elem =  "None";
-                                }else{
-                                    $elemname = explode("|",$row4['elementary']);
-                                    $elemyear = explode("|",$row4['elementary']);
-                                }
-                                if($row4['secondary'] == "None"){
-                                    $sec = "None";
-                                }else{
-                                    $secname = explode("|",$row4['secondary'][0]);
-                                    $secyear = explode("|",$row4['secondary'][1]);
-                                }
-                                if($row4['college'] == "None"){
-                                    $col = "None";
-                                }else{
-                                    $colname = explode("|",$row4['college'][0]);
-                                    $colyear = explode("|",$row4['college'][1]);
-                                }
-                                if($row4['post_grad'] == "None"){
-                                    $pos = "None";
-                                }else{
-                                    $posname = explode("|",$row4['post_grad'][0]);
-                                    $posyear = explode("|",$row4['post_grad'][1]);
-                                }
-                            ?>
+                    <?php
+                        $elemname = explode("|",$row4["elementary"])[0];
+                        $elemyear = explode("|",$row4["elementary"])[1];
+                        $secondname = explode("|",$row4["secondary"])[0];
+                        $secondyear = explode("|",$row4["secondary"])[1];
+                        $collegename = explode("|",$row4["college"])[0];
+                        $collegeyear = explode("|",$row4["college"])[1];
+                        $postname = explode("|",$row4["post_grad"])[0];
+                        $postyear = explode("|",$row4["post_grad"])[1];
+
+                        if($elemname === "None" && $elemyear === "None"){
+                            $ename = "None";
+                            $eyear = "None";
+                        }else{
+                            $ename = $elemname;
+                            $eyear = $elemyear;
+                        }
+                        if($secondname === "None" && $secondyear === "None"){
+                            $sname = "None";
+                            $syear = "None";
+                        }else{
+                            $sname = $secondname;
+                            $syear = $secondyear;
+                        }
+                        if($collegename === "None" && $collegeyear === "None"){
+                            $cname = "None";
+                            $cyear = "None";
+                        }else{
+                            $cname = $collegename;
+                            $cyear = $collegeyear;
+                        }
+                        if($postname === "None" && $postyear === "None"){
+                            $pname = "None";
+                            $pyear = "None";
+                        }else{
+                            $pname = $postname;
+                            $pyear = $postyear;
+                        }
+                    ?>
                         <h2>Step 3: Educational Background</h2>
                         <h5>Elementary</h5>
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="elem_school_name" id="elem_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php if ($row4['elementary'] != "None"){ echo $elemname; }else {} ?>">
+                                <input type="text" name="elem_school_name" id="elem_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $ename?>">
                             </div>
                             <script>
                                 $(function () {
@@ -539,7 +552,7 @@
                             <div class="form-group col">
                                 <label for="option1">Status</label>
                                 <select name="option1" id="option1" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $elemyear?></option>
+                                    <option selected="selected" value="none"><?php echo $eyear?></option>
                                     <option value="g1">Graduate</option>
                                     <option value="u1">Undergraduate</option>
                                 </select>
@@ -561,7 +574,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="sec_school_name" id="sec_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $sec[0]?>">
+                                <input type="text" name="sec_school_name" id="sec_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $sname?>">
                             </div>
                             <script>
                                 $(function () {
@@ -588,7 +601,7 @@
                             <div class="form-group col">
                                 <label for="option2">Status</label>
                                 <select name="option2" id="option2" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $sec[1]?></option>
+                                    <option selected="selected" value="none"><?php echo $syear?></option>
                                     <option value="g2">Graduate</option>
                                     <option value="u2">Undergraduate</option>
                                 </select>
@@ -610,7 +623,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="col_school_name" id="col_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $col[0]?>">
+                                <input type="text" name="col_school_name" id="col_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $cname?>">
                             </div>
 
                             <script>
@@ -639,7 +652,7 @@
                             <div class="form-group col">
                                 <label for="option3">Status</label>
                                 <select name="option3" id="option3" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $col[1]?></option>
+                                    <option selected="selected" value="none"><?php echo $cyear?></option>
                                     <option value="g3">Graduate</option>
                                     <option value="u3">Undergraduate</option>
                                 </select>
@@ -661,7 +674,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="school_name">Name of School</label>
-                                <input type="text" name="pos_school_name" id="pos_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $pos[0]?>">
+                                <input type="text" name="pos_school_name" id="pos_school_name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $pname?>">
                             </div>
 
                             <script>
@@ -690,7 +703,7 @@
                             <div class="form-group col">
                                 <label for="option4">Status</label>
                                 <select name="option4" id="option4" class="form-control">
-                                    <option selected="selected" value="none"><?php echo $pos[1]?></option>
+                                    <option selected="selected" value="none"><?php echo $pyear?></option>
                                     <option value="g4">Graduate</option>
                                     <option value="u4">Undergraduate</option>
                                 </select>
@@ -877,7 +890,7 @@
                             <div class="form-group col">
                                 <label>Employee Status</label>
                                 <select class="custom-select form-control">
-                                    <option selected disabled>Choose Here:</option>
+                                    <option selected disabled required="require">Choose Here:</option>
                                     <option value="Freelance">Freelance</option>
                                     <option value="Project Based">Project Based</option>
                                     <option value="Probationary">Probationary</option>
@@ -897,7 +910,7 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>Department</label>
-                                <select class="custom-select form-group" name="department" id="department" required="required">
+                                <select class="custom-select form-group" name="department" id="department">
                                     <option selected="selected" disabled="disabled"><?php echo $row8["department"]?></option>
                                     <option value="Administration / HR Support">Administration / HR Support</option>
                                     <option value="IT Support">IT Support</option>

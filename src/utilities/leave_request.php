@@ -2,17 +2,22 @@
     include 'session.php';
     include 'check_session.php';
     $connect = Connect();
-    $sql = "SELECT department FROM employee_info where user_id = '$user_id'";
+    $sql = "SELECT department, date_hired, employee_status, position FROM employee_info where user_id = '$user_id'";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($result);
-    $department = $row['department'];
     $employee = $first_name . "," . $middle_name . "," . $last_name;
-    $date_hired  = mysqli_real_escape_string($connect, $_POST['date_hired']);
-    $reason = mysqli_real_escape_string($connect, $_POST['reason']);
+    $department = $row['department'];
+    $date_hired = $row['date_hired'];
+    $employee_status = $row['employee_status'];
+    $position = $row['position'];
+    $employee = $first_name . "," . $middle_name . "," . $last_name;
+    $reason = mysqli_real_escape_string($connect, $_POST['type']);
     if ($reason === "others") {
         $reason = mysqli_real_escape_string($connect, $_POST['others']);
     } elseif ($reason === "Emergency") {
         $reason = mysqli_real_escape_string($connect, $_POST['emer']);
+    } elseif ($reason === ""){
+        exit();
     }
 	$contact_address = ucwords(mysqli_real_escape_string($connect, $_POST['contact_address']));
     $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);

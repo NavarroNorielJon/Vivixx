@@ -126,13 +126,24 @@
 /* home */
 
 .content {
-	margin-left: 19%;
-	padding: 10px 5px 10px 3px;
+	margin-left: 21%;
+	padding: 3% 2% 3% 2%;
 }
 
-.content .cards {
-	background-color: #f2f2f2;
-	margin: 2% 3% 2% 3%;
+.content .announcements {
+	margin: 0 2% 1% 2%;
+	min-height: 400px;
+	max-height: 400px;
+	max-width: 90%;
+	min-width: 90%;
+}
+
+.content .announcement-title {
+	margin-bottom: 3%;
+}
+
+.content .card .subject {
+	margin-top: 3%;
 }
 
 .content .events {
@@ -140,19 +151,28 @@
 	font-size: 1.2vw;
 	height: 53vh;
 	margin: 0 3% 2% 3%;
+
 }
 
-.content .events .event-body button[type=button] {
-	margin-top: 13vh;
+.content .announcement-body button {
+	margin-top: -10%;
+
 }
 
 .content .events .event-header {
 	padding: 15px 0 2px 15px;
 }
 
+.images {
+	min-height: 400px;
+	max-height: 400px;
+	max-width: 1050px;
+	min-width: 1050px;
+}
+
 /*end*/
 
-/* Style for the profile page*/
+/* profile*/
 
 .profile {
 	background-color: #e6e6e6;
@@ -213,6 +233,20 @@
 }
 
 /*end*/
+
+/*leave request*/
+
+.leave {
+	margin-left: 25%;
+	margin-top: 2%;
+	margin-bottom: 3%;
+	padding: 3% 5% 3% 5%;
+	width: 70%;
+}
+
+.leave .leave-header {
+	margin-bottom: 5%;
+}
 
 /*update form*/
 

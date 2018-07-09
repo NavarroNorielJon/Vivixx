@@ -1,19 +1,16 @@
 <?php
-
 	include '../utilities/session.php';
-
-
 ?>
 
-<!DOCTYPE html>
-<html>
+	<!DOCTYPE html>
+	<html>
 
 	<head>
 		<title>Vivixx</title>
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +18,12 @@
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-		<script src="../script/retina-1.1.0.min.js"></script>
 		<script src="../script/scripts.js"></script>
 	</head>
 
 	<body style="background-color: #e6e6e6;">
 		<div class="wrapper">
-			<nav id="sidebar">
+			<nav class="sidebar">
 				<div class="sidebar-header">
 					<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
 				</div>
@@ -93,7 +89,7 @@
 					</li>
 					<hr>
 					<li>
-						<a href="../utilities/logout.php" class="sidebar-item" id="logout">
+						<a href="../utilities/logout.php" class="sidebar-item logout">
 							<i class="material-icons">power_settings_new</i>
 							Logout
 						</a>
@@ -104,47 +100,12 @@
 				</ul>
 			</nav>
 
-			<div id="leave">
+			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST">
-					<h1 class="text-center">LEAVE APPLICATION FORM</h1>
-					<hr>
-					<div class="row">
-						<div class="form-group col-4">
-							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control-plaintext" id="employee_name" placeholder="<?php echo $full_name?>" name="employeeName" value="<?php echo $full_name?>" disabled="disabled">
-						</div>
-
-						<!-- <script> $(function () { $('#department').change(function () { $('#orig').hide(); $('#a').hide(); $('#ash').hide(); $('#its').hide(); $('#nva').hide(); $('#pe').hide(); $('#ve').hide(); $('#va').hide(); $('#' + $(this).val()).show(); }); });
-						</script> <div class="form-group col-4"> <label for="department">Department</label> <select class="custom-select form-group" name="department" id="department"> <option selected="selected" disabled="disabled">Choose your Department</option> <option
-						value="a">Administration</option> <option value="ash">Administration Support / HR</option> <option value="its">IT Support</option> <option value="nva">Non-voice Account</option> <option value="pe">Phone ESL</option> <option value="ve">Video
-						ESL</option> <option value="va">Virtual Assistant</option> </select> </div> <div class="form-group col-4" id="orig"> <label for="position">Position</label> <select class="custom-select form-group"> <option selected="selected"
-						disabled="disabled">Choose your Position</option> </select> </div> <div class="form-group col" id="a" style='display:none'> <label for="position">Position</label> <select class="custom-select form-group" name="admin"> <option selected="selected"
-						disabled="disabled">Choose your Position</option> <option value="HR">HR</option> <option value="Company Nurse">Company Nurse</option> <option value="COO">COO</option> </select> </div> <div class="form-group col" id="ash" style='display:none'> <label
-						for="position">Position</label> <select class="custom-select form-group" name="adminsp"> <option selected="selected" value="HR Assistant">HR Assistant</option> </select> </div> <div class="form-group col" id="its" style='display:none'> <label
-						for="position">Position</label> <select class="custom-select form-group" name="itsupport"> <option selected="selected" disabled="disabled" value="ICT Support Specialist">ICT Support Specialist</option> </select> </div> <div class="form-group col"
-						id="nva" style='display:none'> <label for="position">Position</label> <select class="custom-select form-group" name="nonvoice"> <option selected="selected" disabled="disabled" value="Online English Tutor">Online English Tutor</option> </select>
-						</div> <div class="form-group col" id="pe" style='display:none'> <label for="position">Position</label> <select class="custom-select form-group" name="phone"> <option selected="selected" disabled="disabled" value="Online English Tutor">Online English
-						Tutor</option> </select> </div> <div class="form-group col" id="ve" style='display:none'> <label for="position">Position</label> <select class="custom-select form-group" name="video"> <option selected="selected" disabled="disabled" value="Online
-						English Tutor">Online English Tutor</option> </select> </div> <div class="form-group col" id="va" style='display:none'> <label for="position">Position</label> <select class="custom-select form-group" name="virtual"> <option selected="selected"
-						disabled="disabled">Choose your Position</option> <option value="Indesigner">Indesigner</option> <option value="Web Developer">Web Developer</option> </select> </div> -->
-					</div>
-
-					<div class="row">
-
-						<div class="form-group col">
-							<label for="date_hired">Date Hired</label>
-							<input type="date" class="form-control" id="date_hired" placeholder="Date Hired" name="date_hired">
-						</div>
-
-						<div class="form-group col">
-							<label for="date_filed">Date Filed</label>
-							<input type="date" class="form-control" id="date_filed" placeholder="date_filed" name="date_filed">
-						</div>
-					</div>
-					<hr>
+					<h1 class="text-center leave-header">LEAVE APPLICATION FORM</h1>
 					<script>
-						$(function () {
-							$('#reason1').change(function () {
+						$(function() {
+							$('#reason1').change(function() {
 								$('#others').hide();
 								$('#Emergency').hide();
 								$('#' + $(this).val()).show();
@@ -160,12 +121,13 @@
 								}
 							});
 						});
+
 					</script>
 					<div>
 						<div>
 							<label>Leave Type</label>
-							<select class="custom-select form-group" name="reason" id="reason1">
-								<option selected="selected" disabled="disabled">Reason for leave:</option>
+							<select class="custom-select form-group" name="type" id="reason1" required>
+								<option selected="selected" disabled="disabled">Choose Here:</option>
 								<option value="Vacation">Vacation</option>
 								<option value="Emergency">Emergency Leave</option>
 								<option value="Maternal Leave">Maternity Leave</option>
@@ -187,12 +149,12 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="address_leave">Contact Address during leave</label>
-								<input type="text" placeholder="Address" class="form-control text-transform" name="contact_address" id="address_leave">
+								<input type="text" placeholder="Address" class="form-control text-transform" name="contact_address" id="address_leave" required>
 							</div>
 
 							<div class="form-group col">
 								<label for="number_leave">Contact Number during leave</label>
-								<input type="text" class="form-control mobile" name="contact_number" placeholder="+639XX XXX XXXX" id="number_leave">
+								<input type="text" class="form-control mobile" name="contact_number" placeholder="+639XX XXX XXXX" id="number_leave" required>
 							</div>
 						</div>
 					</div>
@@ -204,12 +166,12 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="start_date">From</label>
-								<input type="date" class="form-control" name="from">
+								<input type="date" class="form-control" name="from" required>
 							</div>
 
 							<div class="form-group col">
 								<label for="end_date">To</label>
-								<input type="date" class="form-control" name="to" id="end_date">
+								<input type="date" class="form-control" name="to" id="end_date" required>
 							</div>
 						</div>
 
@@ -221,8 +183,12 @@
 				</form>
 			</div>
 		</div>
+
 		<script>
-			$('.mobile').inputmask({mask: '+639dd ddd dddd'});
+			$('.mobile').inputmask({
+				mask: '+639dd ddd dddd'
+			});
+
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
@@ -233,4 +199,4 @@
 		<script type="text/javascript" src="../script/ajax.js"></script>
 	</body>
 
-</html>
+	</html>
