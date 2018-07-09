@@ -183,13 +183,7 @@
 													<h5>$subjects[$i]</h5>
 												</div>
 											</div>
-											<div style=\"text-align: right; z-index:2;\">
-												<a>
-													<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#announcement\" onclick=\"\">
-														See more
-													</button>
-												</a>
-											</div>
+											
 											";
 									}?>
 									</div>
@@ -202,12 +196,14 @@
 										<span class="sr-only">Next</span>
 									</a>
 								</div>
-							</p>
 
+					</p>
+					<?php echo '<div class="text-right" data-toggle="modal" data-target="#announcement">
+						<button class="btn btn-primary" onclick="sample();">
+						See more
+						</button>
+					</div>'; ?>
 
-
-
-						</div>
 					</div>
 
 				</div>
