@@ -153,6 +153,8 @@
 												</div>
 												<div class="modal-body">
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+													<a href= '../admin/announcements/files/".$attachmentname[$i]."' download>".$attachmentname[$i]."</a>
+
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -167,27 +169,29 @@
 										<div class="carousel-item active">
 											<img class="images" src="<?php echo $attachments[0]?>" alt="First slide">
 											<div>
-												<h2 class="subject">
+												<h5 class="subject">
 													<?php echo ucwords($subjects[0])?>
-												</h2>
+												</h5>
 											</div>
 										</div>
 
 										<?php for($i = 1; $i<count($announcements); $i++){
 										$subjects[$i] = ucwords($subjects[$i]);
 										echo "<div class=\"carousel-item\">
-											<img class=\"images\" src=\"$attachments[$i]\" alt=\"Second slide\">
-											<div>
-<<<<<<< HEAD
-												<h5>$subjects[$i]</h5>
-												<a href= '../admin/announcements/files/".$attachmentname[$i]."' download>".$attachmentname[$i]."</a>
-=======
-												<h2 class='subject'>$subjects[$i]</h2>
->>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
+												<img class=\"images\" src=\"$attachments[$i]\" alt=\"Second slide\">
+												<div>
+													<h5>$subjects[$i]</h5>
+												</div>
 											</div>
-										</div>";
+											<div style=\"text-align: right; z-index:2;\">
+												<a>
+													<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#announcement\" onclick=\"\">
+														See more
+													</button>
+												</a>
+											</div>
+											";
 									}?>
-
 									</div>
 									<a class="carousel-control-prev" href="#announce" role="button" data-slide="prev">
 										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -198,33 +202,14 @@
 										<span class="sr-only">Next</span>
 									</a>
 								</div>
-<<<<<<< HEAD
 							</p>
 
-							<div style="text-align: right">
-								<a>
-									<button class="btn btn-primary" data-toggle="modal" data-target="#announcement">
-										See more
-									</button>
-								</a>
-							</div>
+
 
 
 						</div>
 					</div>
 
-=======
-					</p>
-
-					<div class="text-right">
-						<a>
-								<button class="btn btn-primary" onclick="sample();">
-									See more
-								</button>
-							</a>
-					</div>
-					</div>
->>>>>>> 7075f8acdb0e5133664a3aa6dd3b710c9c7db3d6
 				</div>
 			</div>
 

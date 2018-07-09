@@ -1,4 +1,4 @@
-function helperText(type, str, elementId){
+function announcement(type, str, elementId){
 	if(str.length == 0){
 		document.getElementById(elementId).innerHTML = "";
 		return;
@@ -9,26 +9,11 @@ function helperText(type, str, elementId){
 				document.getElementById(elementId).innerHTML = this.responseText;
 			}
 		};
-		xmlhttp.open("GET", "../utilities/validator.php?type=" + type + "&" + type + "=" + str, true);
+		xmlhttp.open("GET", "../utilities/announcements.php?", true);
 		xmlhttp.send();
 	}
 }
 
-function confirmPass(type, str, passElement, elementId){
-	var pass = document.getElementById(passElement).value;
-	if(str.length == 0){
-		document.getElementById(elementId).innerHTML = "";
-		return;
-	} else {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200){
-				document.getElementById(elementId).innerHTML = this.responseText;
-			}
-		};
-		xmlhttp.open("GET", "utilities/validator.php?type=" + type + "&" + type + "=" + str + "&password=" + pass, true);
-		xmlhttp.send();
-	}
 }
 
 function showHide(password,ic) {
@@ -58,17 +43,6 @@ function showPas(password,pass2,ic) {
 
     }
 }
-function nextButton(){
-	if(getElementsByClassName('form-control')) {
-		if(password === confirm_password &&  password != "" && confirm_password != ""){
-			$("#next").attr("disabled",false);
-		} else {
-			$("#next").attr("disabled",true);
-		}
-	} else {
-		$("#next").attr("disabled",true);
-	}
-}
 
 var increment = 1;
 function addchild(){
@@ -94,9 +68,6 @@ function addAccount(){
 	dataFields.appendChild(newDataField);
 	eval($('.add-acc').text());
 }
-
-
-
 
 
 function verifyLogin() {
