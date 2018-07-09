@@ -142,7 +142,7 @@
 								}
 							?>
 						</div>
-						<div class="">
+						<div class="text-center">
 							<button class="MS-left">
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 							</button>
