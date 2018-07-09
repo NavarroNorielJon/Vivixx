@@ -94,7 +94,7 @@
                 </div>
             </nav>
 
-            <div class="container" style="margin-top: -40px;">
+            <div class="container" style="margin-top: 40px;">
                 <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
@@ -726,7 +726,7 @@
                         </div>
                     </fieldset>
 
-                    <!-- <fieldset>
+                    <fieldset>
                         <h2>Step 4: Emergency Information Sheet</h2>
                         <h5>Main City Address</h5>
                         <div>
@@ -764,36 +764,50 @@
                                 echo "<div class='row'>
                                     <div class='form-group col'>
                                         <label for='hname'>Name of Housemate</label>
-                                        <input type='text' name='hname[]' id='hname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <input type='text' name='hname[]' id='hname1' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rel'>Relationship</label>
-                                        <input type='text' name='hrel[]' id='hrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <select class='custom-select form-group' name='hrel[]' id='hrel1'>
+                                            <option selected='selected' value='".$row6['h_relationship']."' disabled='disabled'>".$row6['h_relationship']."</option>
+                                            <option value='Family'>Family</option>
+                                            <option value='Friend'>Friend</option>
+                                            <option value='Acquaintances'>Acquaintances</option>
+                                            <option value='Romantic Relationship'>Romantic Relationship</option>
+                                        </select>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='mnumber1'>Mobile Number</label>
-                                        <input type='tel' name='mnumber[]' id='mnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                    </div>
-                                </div>
-
-                                <div class='row'>
-                                    <div class='form-group col'>
-                                        <label for='hname'>Name of Housemate</label>
-                                        <input type='text' name='hname[]' id='hname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='rel'>Relationship</label>
-                                        <input type='text' name='hrel[]' id='hrel2' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='mnumber2'>Mobile Number</label>
-                                        <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        <input type='tel' name='mnumber[]' id='mnumber1' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
                                     </div>
                                 </div>";
+                                if ($result6->num_rows == 1) {
+                                    echo "
+                                                                    <div class='row'>
+                                                                        <div class='form-group col'>
+                                                                            <label for='hname'>Name of Housemate</label>
+                                                                            <input type='text' name='hname[]' id='hname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                                                        </div>
+
+                                                                        <div class='form-group col'>
+                                                                            <label for='rel'>Relationship</label>
+                                                                            <select class='custom-select form-group' name='hrel[]' id='hrel2'>
+                                                                                <option selected='selected' disabled='disabled'>Choose here:</option>
+                                                                                <option value='Family'>Family</option>
+                                                                                <option value='Friend'>Friend</option>
+                                                                                <option value='Acquaintances'>Acquaintances</option>
+                                                                                <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class='form-group col'>
+                                                                            <label for='mnumber2'>Mobile Number</label>
+                                                                            <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                                                        </div>
+                                                                    </div>";
+                                }
                             }
                          ?>
 
@@ -804,38 +818,53 @@
                                 echo "<div class='row'>
                                     <div class='form-group col'>
                                         <label for='hname'>Name of relative</label>
-                                        <input type='text' name='rname[]' id='rname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <input type='text' name='rname[]' id='rname1' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rel'>Relationship</label>
-                                        <input type='text' name='rrel[]' id='rrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <select class='custom-select form-group' name='rrel[]' id='rrel1'>
+                                            <option selected='selected' value='".$row7['r_relationship']."' disabled='disabled'>".$row7['r_relationship']."</option>
+                                            <option value='Family'>Family</option>
+                                            <option value='Friend'>Friend</option>
+                                            <option value='Acquaintances'>Acquaintances</option>
+                                            <option value='Romantic Relationship'>Romantic Relationship</option>
+                                        </select>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rmnumber1'>Mobile Number</label>
-                                        <input type='tel' name='rmnumber[]' id='rmnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        <input type='tel' name='rmnumber[]' id='rmnumber1' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
                                     </div>
-
                                 </div>
 
-                                <div class='row'>
-                                    <div class='form-group col'>
-                                        <label for='hname'>Name of relative</label>
-                                        <input type='text' name='rname[]' id='rname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                    </div>
+                                ";
+                                if ($result7->num_rows <2) {
+                                    echo "<div class='row'>
+                                        <div class='form-group col'>
+                                            <label for='hname'>Name of relative</label>
+                                            <input type='text' name='rname[]' id='rname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        </div>
 
-                                    <div class='form-group col'>
-                                        <label for='rel'>Relationship</label>
+                                        <div class='form-group col'>
                                         <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
-                                    </div>
+                                            <label for='rel'>Relationship</label>
+                                            <select class='custom-select form-group' name='rrel[]' id='rrel2'>
+                                                <option selected='selected' disabled='disabled'>Choose here:</option>
+                                                <option value='Family'>Family</option>
+                                                <option value='Friend'>Friend</option>
+                                                <option value='Acquaintances'>Acquaintances</option>
+                                                <option value='Romantic Relationship'>Romantic Relationship</option>
+                                            </select>
+                                        </div>
 
-                                    <div class='form-group col'>
-                                        <label for='rmnumber2'>Mobile Number</label>
-                                        <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                    </div>
+                                        <div class='form-group col'>
+                                            <label for='rmnumber2'>Mobile Number</label>
+                                            <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        </div>
 
-                                </div>";
+                                    </div>";
+                                }
                             }
                          ?>
                         <?php
@@ -868,7 +897,7 @@
                             <button type="button" class="btn pages btn-previous">Previous</button>
                             <button type="button" class="btn pages btn-next">Next</button>
                         </div>
-                    </fieldset> -->
+                    </fieldset>
 
                     <fieldset>
                         <h2>Step 5: Employee Info Sheet</h2>
@@ -911,7 +940,7 @@
 
                             <div class="form-group col">
                                 <label>Date Hired</label>
-                                <input type="date" name="date_hired">
+                                <input type="date" name="date_hired" class="form-control">
                             </div>
                         </div>
                         <div class="row">
