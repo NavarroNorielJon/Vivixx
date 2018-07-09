@@ -693,7 +693,7 @@
                             <button type="button" class="btn pages btn-next">Next</button>
                         </div>
                     </fieldset>
-
+                    
                     <fieldset>
                         <h2>Step 3: Educational Background</h2>
                         <h5>Elementary</h5>
