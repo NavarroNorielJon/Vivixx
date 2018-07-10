@@ -1,6 +1,6 @@
 <?php
-include 'db.php';
-include 'session.php';
+include '../../utilities/db.php';
+include '../../utilities/session.php';
 $connect = Connect();
 
 
@@ -253,7 +253,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
             }
             $update_info = "UPDATE `employee_info` SET (`user_id`,`persona`,`mobile_number`,`landline`,`department`,`account`,`comp_email`,
                             `comp_email_password`,`skype`,`skype_password`,`qq_number`,`qq_password`, `date_hired`, `employee_status`, `position`) VALUES ('$id','$persona','$mobile','$landline','$departments','$accounts',
-                            '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass', '$date_hired', '$employee_status', '$position') ;";
+                            '$com_email','$e_pass','$skype','$s_pass','$qq_num','$qq_pass', '$date_hired', '$employee_status', '$position');";
             if ($connect->query($update_info) === true) {
             } else {
                 print_r($connect->error);

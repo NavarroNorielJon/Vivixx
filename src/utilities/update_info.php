@@ -63,8 +63,10 @@ $elem_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['elem_sch
 $elem_status = mysqli_real_escape_string($connect, $_POST['option1']);
 
 if ($elem_status === "g1") {
+    $elem_status = "Graduate";
     $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_yr_grad']));
 } else {
+    $elem_status = "Undergraduate";
     $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_high_level']));
 }
 
@@ -72,8 +74,10 @@ $sec_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['sec_schoo
 $sec_status = mysqli_real_escape_string($connect, $_POST['option2']);
 
 if ($sec_status === "g2") {
+    $sec_status = "Graduate";
     $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
 } else {
+    $sec_status = "Undergraduate";
     $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_high_level']));
 }
 
@@ -81,8 +85,10 @@ $col_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['col_schoo
 $col_status = mysqli_real_escape_string($connect, $_POST['option3']);
 
 if ($col_status === "g3") {
+    $col_status = "Graduate";
     $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
 }else {
+    $col_status = "Undergraduate";
     $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_high_level']));
 }
 
@@ -90,8 +96,10 @@ $post_school_name = ucwords(mysqli_real_escape_string($connect, $_POST['pos_scho
 $post_status = mysqli_real_escape_string($connect, $_POST['option4']);
 
 if ($post_status === "g4") {
+    $post_status = "Graduate";
     $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
 }else {
+    $post_status = "Undergraduate";
     $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_high_level']));
 }
 
@@ -166,24 +174,24 @@ $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
 if ($elem_status == "none") {
-    $elementary = "None|None";
+    $elementary = "None|None|None";
 } else {
-    $elementary = $elem_school_name . "|" . $elem_res;
+    $elementary = $elem_school_name . "|" . $elem_status . "|". $elem_res;
 }
 if ($sec_status == "none") {
-    $secondary = "None|None";
+    $secondary = "None|None|None";
 } else {
-    $secondary = $sec_school_name . "|" . $sec_res;
+    $secondary = $sec_school_name . "|". $sec_status . "|" . $sec_res;
 }
 if ($col_status == "none") {
-    $college = "None|None";
+    $college = "None|None|None";
 } else {
-    $college = $col_school_name . "|" . $col_res;
+    $college = $col_school_name . "|" . $col_status . "|" . $col_res;
 }
 if ($post_status == "none") {
-    $post_grad = "None|None";
+    $post_grad = "None|None|None";
 } else {
-    $post_grad = $post_school_name . "|" . $post_res;
+    $post_grad = $post_school_name . "|" . $post_status . "|" . $post_res;
 }
 
 $sql = "SELECT user_id FROM user where username='$username'";
