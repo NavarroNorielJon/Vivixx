@@ -5,12 +5,12 @@
     $first_name = $_GET["fname"];
     $middle_name = $_GET["mname"];
     $last_name = $_GET["lname"];
-    $sql = "SELECT user_id, first_name, middle_name, last_name, department, position, employee_status FROM user_info NATURAL JOIN user natural join employee_info WHERE user_id='$user_id';";
+    $sql = "SELECT user_id, first_name, middle_name, last_name, department, position, date_hired FROM user_info NATURAL JOIN user natural join employee_info WHERE user_id='$user_id';";
     $result = $connect->query($sql);
     $row = $result->fetch_assoc();
 ?>
 	<div class="modal fade" id="payslip" tabindex="-1" role="dialog" >
-        <div class="modal-dialog" role="document" style="min-width: 150vh; max-width: 150vh;">
+        <div class="modal-dialog" role="document" style="min-width: 160vh; max-width: 160vh;">
             <div class="modal-content"  style="border-radius: 0;">
                 <div class="modal-body">
 						<div class="row">
@@ -34,14 +34,14 @@
 												</div>
 											</div>
 											<div class="row text-center">
-												<div class="col-6"><?php echo ucwords($row["first_name"] . " " . $row["middle_name"] . " ". $row["last_name"] . " ")?></div>
-												<div class="col-3">Site Supervisor</div>
-												<div class="col-3">01/07/2017</div>
+												<div class="col-4"><?php echo ucwords($row["first_name"] . " " . $row["middle_name"] . " ". $row["last_name"] . " ")?></div>
+												<div class="col-4"><?php echo ucwords($row["position"])?></div>
+												<div class="col-4"><?php echo $row["date_hired"]?></div>
 											</div>
 											<div class="row text-center border-bottom">
-												<div class="col-6">EMPLOYEE NAME</div>
-												<div class="col-3">POSITION</div>
-												<div class="col-3">BOC</div>
+												<div class="col-4">EMPLOYEE NAME</div>
+												<div class="col-4">POSITION</div>
+												<div class="col-4">BOC</div>
 											</div>
 											<div class="row border-bottom">
 												<label for="daily-rate" class="col-2 p-0">Basic Salary</label>

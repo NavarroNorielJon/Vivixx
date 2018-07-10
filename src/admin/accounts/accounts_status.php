@@ -1,6 +1,5 @@
 <?php
 	include '../../utilities/session.php';
-	include '../../utilities/check_user.php';
 	$connect = Connect();
 ?>
 
@@ -26,6 +25,8 @@
 
 	<body>
 		<div id="wrapper">
+			<?php include '../utilities/check_user.php';?>
+
 			<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,7 +158,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-																							toggle between hiding and showing the dropdown content */
+																																						toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

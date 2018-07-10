@@ -1,7 +1,6 @@
 <?php
 	ini_set('max_execution_time', 300);
 	include '../../utilities/session.php';
-	include '../../utilities/check_user.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -38,6 +37,8 @@
 	</head>
 
 	<body>
+		<?php include '../utilities/check_user.php'; ?>
+
 		<div id="wrapper">
 			<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -219,7 +220,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-																		toggle between hiding and showing the dropdown content */
+																											toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}
