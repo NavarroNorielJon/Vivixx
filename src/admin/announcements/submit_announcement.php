@@ -23,7 +23,7 @@ ini_set('upload_max_filesize', '64M');
         if($counter == count($department)){
             $concat .= $dept;
         }else{
-            $concat .= $dept . ",";
+            $concat .= $dept . ", ";
         }
     }
     if(isset($_POST["submit"])){
@@ -42,10 +42,9 @@ ini_set('upload_max_filesize', '64M');
             if($counter == count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
-                $file_name .= $name .",";
+                $file_name .= $name .", ";
             }
         }
-        //if there is no image
 
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";
             $connect->query($sql);
@@ -58,7 +57,7 @@ ini_set('upload_max_filesize', '64M');
                 if(!empty($file_tmp_names[$x])){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                     $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
-                    $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
+                    $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES ('$file_name','$temp_file','$announcement_id');";
                     $connect->query($add_attachment);
 
                 }else{

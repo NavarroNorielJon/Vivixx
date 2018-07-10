@@ -1,16 +1,7 @@
 $('#update_form').ajaxForm({
     url: '../utilities/update_info.php',
     method: 'post',
-    error: function (){
-        swal({
-            type: 'error',
-            icon: 'warning',
-            title: 'Error!',
-            text: "Something is wrong",
-            showConfirmButton: true,
-            timer: 2500
-        });
-    },
+
     success: function () {
         swal({
             type: 'success',
