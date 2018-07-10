@@ -15,6 +15,7 @@
                 <div class="modal-content"  style="border-radius: 0;">
                     <div class="modal-header">
                         <h1><?php echo $first_name . " " . $middle_name . " " . $last_name?></h1>
+                        <input type="hidden" name="user_id" value="<?php echo $user_id?>">
                     </div>
                     <div class="modal-body">
                         <label>Department</label>
@@ -41,6 +42,10 @@
                         
                         <label>Date hired</label><br>
                         <input type="date" name="date">
+                        <div style="text-align:right">
+                            <input type="submit" class="btn btn-danger" name="reject" value="Cancel">
+                            <input type="submit" class="btn btn-success" name="accept" value="Approve">
+                        </div>
                     </div> 
                 </div>
             </div>
