@@ -1,7 +1,7 @@
 <?php
 	ini_set('max_execution_time', 300);
-	include '../../utilities/db.php';
 	include '../../utilities/session.php';
+	include '../../utilities/check_user.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -162,14 +162,14 @@
 									<input name="subject" type="text" class="form-control" placeholder="Title" id="subject" required>
 								</div>
 
-								<div class="col ui calendar" id="start_date" >
+								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
 										<input type="date" id="s_date" name="start_date" class="form-control date" required>
 									</div>
 								</div>
 
-								<div class="col ui calendar" id="end_date" >
+								<div class="col ui calendar" id="end_date">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
 										<input type="date" id="e_date" name="end_date" class="form-control date" required>
@@ -219,7 +219,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-												toggle between hiding and showing the dropdown content */
+																		toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

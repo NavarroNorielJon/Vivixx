@@ -36,7 +36,7 @@
 					</li>
 
 					<li class="nav-item">
-					<button onclick="myFunction()" class="dropbtn">Employees</button>
+						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
 							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
@@ -86,6 +86,8 @@
 
 					<?php
 					include '../../utilities/session.php';
+					include '../../utilities/check_user.php';
+					$connect = Connect();
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
 						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
@@ -145,7 +147,7 @@
 
 	<script>
 		/* When the user clicks on the button,
-						toggle between hiding and showing the dropdown content */
+								toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}
