@@ -109,7 +109,6 @@
 	</div>
 
 	<script>
-<<<<<<< HEAD
 		
 		$(document).ready(function() {
 			$('.show').click(function(e) {
@@ -124,9 +123,6 @@
 		});
 
 		/* When the user clicks on the button, 
-=======
-		/* When the user clicks on the button,
->>>>>>> 1a0bba5a0b2263bf69b7cfe776631b709f468937
 								toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
