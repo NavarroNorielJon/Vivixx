@@ -152,7 +152,7 @@
 								<label for="height">Height</label>
 								<div class="row no-gutters ">
 									<div class="form-group col">
-										<input type="text" name="ft" id="ft" class="form-control height" autocomplete="off" placeholder="(ft.)" required="required">
+										<input type="text" name="ft" id="ft" class="form-control" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" required="required">
 									</div>
 									<div class="form-group col">
 										<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" required="required">
@@ -168,10 +168,10 @@
 								<label for="blood">Blood Type</label>
 								<select name="blood" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select Blood Type:</option>
-                                    <option value="o">O</option>
-                                    <option value="a">A</option>
-                                    <option value="b">B</option>
-                                    <option value="ab">AB</option>
+                                    <option value="O">O</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
                                 </select>
 							</div>
 						</div>
@@ -399,12 +399,12 @@
 								<label for="civil_status">Civil Status</label>
 								<select name="civil_status" id="civil_status" class="form-control" required="required">
                                     <option selected="selected" disabled="disabled">Select:</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="widowed">Widowed</option>
-                                    <option value="annulled">Annulled</option>
-                                    <option value="separated">Separated</option>
-                                    <option value="others">Others</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Widowed">Widowed</option>
+                                    <option value="Annulled">Annulled</option>
+                                    <option value="Separated">Separated</option>
+                                    <option value="Others">Others</option>
                                 </select>
 
 							</div>
