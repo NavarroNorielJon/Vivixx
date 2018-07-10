@@ -24,9 +24,10 @@ ini_set('upload_max_filesize', '64M');
         if($counter == count($department)){
             $concat .= $dept;
         }else{
-            $concat .= $dept . ",";
+            $concat .= $dept . ", ";
         }
     }
+    $counter = 0;
     if(isset($_POST["edit"])){
         foreach($_FILES['file']['name'] as $child) {
             $file_names[] = $child;
@@ -40,13 +41,13 @@ ini_set('upload_max_filesize', '64M');
         }
         foreach($_FILES['file']['name'] as $name){
             $counter++;
-            if($counter == count($_FILES['file']['name'])){
+            if($counter === count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
-                $file_name .= $name .",";
+                $file_name .= $name .", ";
             }
         }
-
+        $counter = 0;
         if($_POST["department"][0] == "none"){
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate' where announcement_id='$announcement_id';";
             $connect->query($sql);
@@ -54,7 +55,6 @@ ini_set('upload_max_filesize', '64M');
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat' where announcement_id='$announcement_id';";
             $connect->query($sql);
         }
-        print_r($file_name);
         for($x = 0; $x< count($file_names); $x++){
 
             if($_POST["attachment"] != "" && $file_name[$x] != ""){
@@ -65,7 +65,7 @@ ini_set('upload_max_filesize', '64M');
             }else if($file_name[$x] != "" && $_POST["attachment"] == ""){
                 move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
                 $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
-                $add_attachment = "Insert into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
+                $add_attachment = "INSERT into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
                 $connect->query($add_attachment);
             }else{
                 header("location: announcement.php");

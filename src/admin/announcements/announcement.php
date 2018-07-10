@@ -162,31 +162,32 @@
 									<input name="subject" type="text" class="form-control" placeholder="Title" id="subject" required>
 								</div>
 
-								<div class="col ui calendar" id="start_date">
+								<div class="col ui calendar" id="start_date" >
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
-										<input type="date" id="s_date" name="start_date" class="form-control date">
+										<input type="date" id="s_date" name="start_date" class="form-control date" required>
 									</div>
 								</div>
 
-								<div class="col ui calendar" id="end_date">
+								<div class="col ui calendar" id="end_date" >
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
-										<input type="date" id="e_date" name="end_date" class="form-control date">
+										<input type="date" id="e_date" name="end_date" class="form-control date" required>
 									</div>
 								</div>
 
 								<div class="form-group col">
 									<label for="department">Department</label>
-									<select class="custom-select form-group" name="department[]" id="department" require="required" multiple="multiple">
+									<select class="custom-select form-group" name="department[]" id="department" required multiple="multiple">
 									<option value="All Departments">All Departments</option>
                                 	<option value="Administration">Administration</option>
-                                	<option value="Administration Support / HR">Administration Support / HR</option>
+                                	<option value="Administration/HR Support">Administration/HR Support</option>
                                 	<option value="IT Support">IT Support</option>
                                 	<option value="Non-voice Account">Non-voice Account</option>
                                 	<option value="Phone ESL">Phone ESL</option>
                                 	<option value="Video ESL">Video ESL</option>
                                 	<option value="Virtual Assistant">Virtual Assistant</option>
+									<option value="Maintenance">Maintenance</option>
                         		</select>
 								</div>
 							</div>

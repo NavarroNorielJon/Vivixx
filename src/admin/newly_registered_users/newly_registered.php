@@ -70,6 +70,7 @@
 					<thead>
 						<tr>
 							<th>First Name</th>
+							<th>Middle Name</th>
 							<th>Last Name</th>
 							<th>Email</th>
 							<th>Edit or View data</th>
@@ -78,7 +79,7 @@
 
 					<?php
 					include '../../utilities/session.php';
-					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
+					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -86,12 +87,13 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-							<a href='view_information.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name'] . "& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+							<a href='set_registered.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['first_name']) . "</td>
+							<td>" . ucwords($row['middle_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
@@ -105,12 +107,24 @@
 				</table>
 			</div>
 		</div>
+		<div id="result"></div>
 	</div>
 
-	<div id="result"></div>
-
 	<script>
-		/* When the user clicks on the button,
+		
+		$(document).ready(function() {
+			$('.show').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res) {
+						$('#result').html(res);
+					}
+				});
+			});
+		});
+
+		/* When the user clicks on the button, 
 								toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
@@ -130,11 +144,7 @@
 				}
 			}
 		}
-
-	</script>
-
-	<!--script for calling data table library-->
-	<script>
+		//script for calling data table library
 		$(document).ready(function() {
 			$('#table').dataTable({
 				"columnDefs": [{
@@ -144,8 +154,6 @@
 			});
 			$('#table').DataTable();
 		});
-
 	</script>
 </body>
-
 </html>
