@@ -86,7 +86,7 @@
 
 					<?php
 					include '../../utilities/session.php';
-					include '../../utilities/check_user.php';
+					include '../utilities/check_user.php';
 					$connect = Connect();
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
@@ -147,7 +147,7 @@
 
 	<script>
 		/* When the user clicks on the button,
-								toggle between hiding and showing the dropdown content */
+										toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}
