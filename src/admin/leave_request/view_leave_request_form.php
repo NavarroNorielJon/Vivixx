@@ -40,12 +40,12 @@
                             <label for="position">Position</label>
                             <input type="text" class="form-control" id="position" name="employeePosition"  value="<?php echo $row['position']?>">
                         </div>
-                        
+
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
                             <input type="date" class="form-control" id="date_hired" name="dateHired"  value="<?php echo $row['date_hired']?>">
                         </div>
-                        
+
                         <div class="form-group col">
                             <label for="date_filed">Date Filed</label>
                             <input type="date" class="form-control" id="date_filed" name="dateFilled" disabled value="<?php echo $row['date_filed']?>">
@@ -57,13 +57,13 @@
                             <label for="other_reason">Reason for Leave</label>
                             <input type="text" class="form-control" id="reason" disabled value="<?php echo $row['reason']?>">
                         </div>
-                        
+
                         <div class="row">
                             <div class="form-group col">
                                 <label for="credit">Maximum Leave Credits</label>
                                 <input type="text" class="form-control" id="credit" disabled value="5">
                             </div>
-                            
+
                             <div class="form-group col">
                                 <label for="used">Used Leave Credits</label>
                                 <input type="text" class="form-control" id="used" disabled value="<?php echo $row['used']?>">
@@ -74,13 +74,13 @@
                                 <input type="text" class="form-control" id="balance" disabled value="<?php echo $row['remaining']?>">
                             </div>
                         </div>
-					
+
                         <div class="row">
                             <div class="form-group col">
                                 <label for="address_leave">Contact Address during leave</label>
                                 <input type="text" class="form-control" id="address_leave" disabled value="<?php echo $row['contact_address']?>">
                             </div>
-                            
+
                             <div class="form-group col">
                                 <label for="number_leave">Contact Number during leave</label>
                                 <input type="text" class="form-control" id="number_leave" disabled value="<?php echo $row['contact_number']?>">
@@ -90,20 +90,20 @@
 
                     <div>
                         <h1>Inclusive days applied</h1>
-                        
+
                         <div class="row">
                             <div class="form-group col">
                                 <label for="start_date">From</label>
                                 <input type="date" class="form-control" disabled value="<?php echo $row['from']?>">
                             </div>
-                            
+
                             <div class="form-group col">
                                 <label for="end_date">To</label>
                                 <input type="date" class="form-control" id="end_date" disabled value="<?php echo $row['to']?>">
                             </div>
                         </div>
 				    </div>
-                    
+
                     <div style="text-align:right">
                         <input type="submit" class="btn btn-danger" name="reject" value="Disapprove">
                         <input type="submit" class="btn btn-success" name="accept" value="Approve">

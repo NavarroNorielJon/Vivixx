@@ -44,7 +44,7 @@
 									<option selected value="none"><?php echo $row['departments'] ?></option>
                                 	<option value="All Departments">All Departments</option>
                                 	<option value="Administration">Administration</option>
-                                	<option value="Administration Support / HR">Administration Support / HR</option>
+                                	<option value="Administration/HR Support">Administration/HR Support</option>
                                 	<option value="IT Support">IT Support</option>
                                 	<option value="Non-voice Account">Non-voice Account</option>
                                 	<option value="Phone ESL">Phone ESL</option>

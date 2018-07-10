@@ -181,12 +181,13 @@
 									<select class="custom-select form-group" name="department[]" id="department" require="required" multiple="multiple">
 									<option value="All Departments">All Departments</option>
                                 	<option value="Administration">Administration</option>
-                                	<option value="Administration Support / HR">Administration Support / HR</option>
+                                	<option value="Administration/HR Support">Administration/HR Support</option>
                                 	<option value="IT Support">IT Support</option>
                                 	<option value="Non-voice Account">Non-voice Account</option>
                                 	<option value="Phone ESL">Phone ESL</option>
                                 	<option value="Video ESL">Video ESL</option>
                                 	<option value="Virtual Assistant">Virtual Assistant</option>
+									<option value="Maintenance">Maintenance</option>
                         		</select>
 								</div>
 							</div>
