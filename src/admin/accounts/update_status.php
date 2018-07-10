@@ -1,7 +1,7 @@
 <?php
 	include '../../utilities/session.php';
 	$connect = Connect();
-	$username = $_GET["username"];
+	$username = mysqli_real_escape_string($connect,$_GET["username"]);
 
 	if(isset($_GET["enable"])){
     		$update = "UPDATE user SET status='enabled' WHERE username='$username'";

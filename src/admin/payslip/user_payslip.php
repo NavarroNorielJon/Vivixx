@@ -25,38 +25,33 @@
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+    			<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
-
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
-
-					<li class="nav-item active" >
+					<li class="nav-item">
 						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
 							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
 						</div>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
+					<li class="nav-item active">
+						<a class="nav-link" href="payslip.php">Payslip</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
@@ -67,7 +62,7 @@
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
 			<div class="text-center">
-				<h1>Employee Information</h1>
+				<h1>User Payslip</h1>
 			</div>
 
 			<div style="margin: 5vh 15vh;">
@@ -75,60 +70,33 @@
 					<thead>
 						<tr>
 							<th>First Name</th>
+							<th>Middle Name</th>
 							<th>Last Name</th>
-							<th>Gender</th>
-							<th>Address</th>
-							<th>Contact Number</th>
 							<th>Email</th>
-							<th>Edit or View data</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
 					<?php
 					include '../../utilities/session.php';
 					include '../../utilities/check_user.php';
-					$connect = Connect();
-					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
-						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
-						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
-						residential_tel_no is not null and permanent_address is not null and permanent_zip is not null and permanent_tel_no is not null
-						and citizenship is not null and civil_status is not null and sss_no is not null and tin is not null and philhealth_no and
-						pagibig_id_no is not null) and (date_hired is not null and employee_status is not null and position is not null);";
+					$connect = Connect();	
+					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
-							if($row["gender"] === null){
-								$gender = "Not set";
-							}else{
-								$gender = $row["gender"];
-							}
-
-							if(!isset($row["residential_address"])){
-								$address = "Not set";
-							}else{
-								$address = $row["residential_address"];
-							}
-
-							if(!isset($row["contact_number"])){
-								$contact = "Not set";
-							}else{
-								$contact = $row["contact_number"];
-							}
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-							<a href='view_information.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+							<a href='view_payslip.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>View Payslip</a>";
 							//print data in table
 							echo "
 							<tr>
 							<td>" . ucwords($row['first_name']) . "</td>
+							<td>" . ucwords($row['middle_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
-							<td>" . $gender . "</td>
-							<td>" . $address . "</td>
-							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
 							</tr>";
@@ -141,12 +109,23 @@
 				</table>
 			</div>
 		</div>
+		<div id="result"></div>
 	</div>
 
-	<div id="result"></div>
-
 	<script>
-		/* When the user clicks on the button,
+		$(document).ready(function() {
+			$('.show').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res) {
+						$('#result').html(res);
+					}
+				});
+			});
+		});
+
+		/* When the user clicks on the button, 
 								toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
@@ -166,23 +145,18 @@
 				}
 			}
 		}
-
-	</script>
-
-	<!--script for calling data table library-->
-	<script>
+		//script for calling data table library
 		$(document).ready(function() {
 			$('#table').dataTable({
 				"columnDefs": [{
 					"orderable": false,
-					"targets": [5, 6]
+					"targets": [3,4]
 				}]
 			});
 			$('#table').DataTable();
 		});
 
 	</script>
-
 </body>
 
 </html>

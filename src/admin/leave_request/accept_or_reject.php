@@ -2,12 +2,12 @@
 <?php
     include '../../utilities/session.php';
     $connect = Connect();
-    $req_id = $_POST["req_id"];
-    $email = $_POST["email"];
-    $used = $_POST["used"];
-    $remaining = $_POST["remaining"];
-    $position = $_POST["position"];
-    $date_hired = $_POST["dateHired"];
+    $req_id = mysqli_real_escape_string($connect,$_POST["req_id"]);
+    $email = mysqli_real_escape_string($connect,$_POST["email"]);
+    $used = mysqli_real_escape_string($connect,$_POST["used"]);
+    $remaining = mysqli_real_escape_string($connect,$_POST["remaining"]);
+    $position = mysqli_real_escape_string($connect,$_POST["position"]);
+    $date_hired = mysqli_real_escape_string($connect,$_POST["dateHired"]);
     $update = "";
 
     if(isset($_POST["accept"])){
