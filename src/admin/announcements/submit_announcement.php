@@ -1,8 +1,8 @@
 <?php
 ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
-    include '../../utilities/db.php';
-    $connect = Connect();
+include '../../utilities/db.php';
+$connect = Connect();
 
     $subject = $_POST["subject"];
     $startdate = $_POST["start_date"];
@@ -45,7 +45,6 @@ ini_set('upload_max_filesize', '64M');
                 $file_name .= $name .", ";
             }
         }
-
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";

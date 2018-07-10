@@ -1,8 +1,8 @@
 <?php
 ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
-    include '../../utilities/db.php';
-    $connect = Connect();
+include '../../utilities/db.php';
+$connect = Connect();
 
     $subject = $_POST["subject"];
     $startdate = $_POST["start_date"];
@@ -48,6 +48,7 @@ ini_set('upload_max_filesize', '64M');
             }
         }
         $counter = 0;
+        
         if($_POST["department"][0] == "none"){
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate' where announcement_id='$announcement_id';";
             $connect->query($sql);
