@@ -70,6 +70,7 @@
 					<thead>
 						<tr>
 							<th>First Name</th>
+							<th>Middle Name</th>
 							<th>Last Name</th>
 							<th>Email</th>
 							<th>Edit or View data</th>
@@ -78,7 +79,7 @@
 
 					<?php
 					include '../../utilities/session.php';
-					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
+					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -92,6 +93,7 @@
 							echo "
 							<tr>
 							<td>" . ucwords($row['first_name']) . "</td>
+							<td>" . ucwords($row['middle_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
