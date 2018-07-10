@@ -24,7 +24,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
-	<body>
+	<body class="home">
 		<div class="wrapper">
 			<nav class="sidebar">
 				<div class="sidebar-header">
@@ -121,9 +121,8 @@
 			</nav>
 
 			<div class="content">
-
 				<h1 style="text-align:center">Announcements and Events</h1>
-				<div id="mixedSlider">
+				<div class="mixedSlider" id="mixedSlider">
 					<div>
 						<div class="MS-content">
 							<?php
@@ -172,26 +171,26 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div>
 
-				<div>
-
-
-				</div>
 
 			</div>
 
-			<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-			<script type="text/javascript" src="../script/multislider.min.js"></script>
-			<script type="text/javascript" src="../script/popper.min.js"></script>
-			<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-			<script type="text/javascript" src="../script/ajax.js"></script>
-			<script type="text/javascript">
-				$('#mixedSlider').multislider({
-				    duration: 1000,
-				    interval: 3500
-				});
+		</div>
 
-			</script>
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/multislider.min.js"></script>
+		<script type="text/javascript" src="../script/popper.min.js"></script>
+		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript">
+			$('#mixedSlider').multislider({
+				duration: 1000,
+				interval: 3500
+			});
+
+		</script>
 
 	</body>
 
