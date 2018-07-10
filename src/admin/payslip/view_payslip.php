@@ -13,8 +13,8 @@
         <div class="modal-dialog" role="document" style="min-width: 160vh; max-width: 160vh;">
             <div class="modal-content"  style="border-radius: 0;">
                 <div class="modal-body">
-						<div class="row">
-							<div class="col-lg-2"></div>
+					<div class="row">
+						<div class="col-lg-2"></div>
 							<div class="col-lg-8">
 								<div class="card rounded-0">
 									<div class="container-fluid">
@@ -374,8 +374,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-2"></div>
-						</div>
+						<div class="col-lg-2"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

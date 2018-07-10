@@ -43,11 +43,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
-					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="payslip.php">Payslip</a>
+						<a class="nav-link" href="user_summary.php">Summary of Pay</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
@@ -62,7 +62,7 @@
 		<!-- table for viewing user information -->
 		<div class="user-content container-fluid">
 			<div class="text-center">
-				<h1>Users Payslip</h1>
+				<h1>Users Summary of Pay</h1>
 			</div>
 
 			<div style="margin: 5vh 15vh;">
@@ -89,8 +89,8 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-							<a href='view_payslip.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>View Payslip</a>";
+							<a href='view_summary.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>View</a>";
 							//print data in table
 							echo "
 							<tr>

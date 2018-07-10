@@ -48,7 +48,7 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
+						<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
