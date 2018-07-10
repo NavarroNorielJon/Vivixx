@@ -177,3 +177,41 @@ $('#reset_pass').ajaxForm({
         }
     }
 });
+$('#status').ajaxForm({
+    url: '../admin/leave_request/accept_or_reject.php',
+    method: 'post',
+    success: function (data){
+        if (data === 'User has no more remaining leave credits') {
+            swal({
+                title: data,
+                icon: 'error',
+            });
+        } else if (data === 'Error in updating status') {
+            swal({
+                title: data,
+                icon: 'error'
+            }).then(function () {
+                window.location = '/';
+            });
+        }
+    }
+});
+$('#accept_reject').ajaxForm({
+    url: '../mailing/accept_or_reject.php',
+    method: 'post',
+    success: function (data){
+        if (data === 'Email sucessfully sent.') {
+            swal({
+                title: data,
+                icon: 'success',
+            });
+        } else if (data === 'That email is not being used by any account.') {
+            swal({
+                title: data,
+                icon: 'success'
+            }).then(function () {
+                window.location = '/';
+            });
+        }
+    }
+});

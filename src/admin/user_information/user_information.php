@@ -25,24 +25,28 @@
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
+
+					<li class="nav-item active dropdown">
+						<a class="nav-link" href="accounts_status.php">Accounts</a>
 					</li>
-					<li class="nav-item active">
-						<button onclick="myFunction()" class="dropbtn">Employees</button>
+
+					<li class="nav-item">
+					<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
 							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
 						</div>
 					</li>
+
 					<li class="nav-item">
 						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
 					</li>
+
 					<li class="nav-item">
 						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
 					</li>
@@ -52,6 +56,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
 					</li>
+
 					<li class="nav-item">
 						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
 					</li>
@@ -81,12 +86,12 @@
 
 					<?php
 					include '../../utilities/session.php';
-					$sql = "SELECT * FROM user_info NATURAL JOIN user WHERE type='user' and
+					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
 						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
 						residential_tel_no is not null and permanent_address is not null and permanent_zip is not null and permanent_tel_no is not null
 						and citizenship is not null and civil_status is not null and sss_no is not null and tin is not null and philhealth_no and
-						pagibig_id_no is not null)";
+						pagibig_id_no is not null) and (date_hired is not null and employee_status is not null and position is not null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){
@@ -139,7 +144,7 @@
 	<div id="result"></div>
 
 	<script>
-		/* When the user clicks on the button, 
+		/* When the user clicks on the button,
 						toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");

@@ -142,7 +142,7 @@
 								}
 							?>
 						</div>
-						<div class="">
+						<div class="text-center">
 							<button class="MS-left">
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 							</button>
@@ -160,6 +160,7 @@
 
 								<div class='modal-body'>
 									<p id="am"></p>
+									<div id="dl"> </div>
 								</div>
 
 								<div class='modal-footer'>
@@ -186,8 +187,8 @@
 			<script type="text/javascript" src="../script/ajax.js"></script>
 			<script type="text/javascript">
 				$('#mixedSlider').multislider({
-					duration: 1000,
-					interval: 3000
+				    duration: 1000,
+				    interval: 3500
 				});
 
 			</script>

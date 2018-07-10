@@ -65,44 +65,37 @@
     <body>
         <div id="wrapper">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-    			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
-    			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-        			<span class="navbar-toggler-icon"></span>
-    			</button>
+                <a href="../accounts/accounts_status.php" class="navbar-brand" style="margin-right:48vw;">Vivixx</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    			<div class="collapse navbar-collapse" id="navbar-content">
-    				<ul class="navbar-nav">
-    					<li class="nav-item">
-    						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
-    					</li>
-    					<li class="nav-item active">
-    						<button onclick="myFunction()" class="dropbtn">Employees</button>
-    						<div id="myDropdown" class="dropdown-content">
-    							<a href="../user_information/user_information.php">Employees</a>
-    							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
-    						</div>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../payslip.php">Payslip</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
-    					</li>
-    				</ul>
-    			</div>
-    		</nav>
+                <div class="collapse navbar-collapse" id="navbar-content">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../user_information/user_information.php">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Summary of Pay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../announcements/announcement.php">Announcement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logout" href="../utilities/logout.php">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="container" style="margin-top: 40px;">
-                <form role="form" action="../utilities/update_info" id="update_form" method="post" class="f1">
+                <form role="form" action="update_info.php" id="update_form" method="post" class="f1">
                     <div class="f1-steps">
                         <div class="f1-progress">
                             <div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -771,50 +764,36 @@
                                 echo "<div class='row'>
                                     <div class='form-group col'>
                                         <label for='hname'>Name of Housemate</label>
-                                        <input type='text' name='hname[]' id='hname1' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <input type='text' name='hname[]' id='hname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rel'>Relationship</label>
-                                        <select class='custom-select form-group' name='hrel[]' id='hrel1'>
-                                            <option selected='selected' value='".$row6['h_relationship']."' disabled='disabled'>".$row6['h_relationship']."</option>
-                                            <option value='Family'>Family</option>
-                                            <option value='Friend'>Friend</option>
-                                            <option value='Acquaintances'>Acquaintances</option>
-                                            <option value='Romantic Relationship'>Romantic Relationship</option>
-                                        </select>
+                                        <input type='text' name='hrel[]' id='hrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='mnumber1'>Mobile Number</label>
-                                        <input type='tel' name='mnumber[]' id='mnumber1' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        <input type='tel' name='mnumber[]' id='mnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of Housemate</label>
+                                        <input type='text' name='hname[]' id='hname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
+
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
+                                        <input type='text' name='hrel[]' id='hrel2' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
+
+                                    <div class='form-group col'>
+                                        <label for='mnumber2'>Mobile Number</label>
+                                        <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
                                     </div>
                                 </div>";
-                                if ($result6->num_rows == 1) {
-                                    echo "
-                                                                    <div class='row'>
-                                                                        <div class='form-group col'>
-                                                                            <label for='hname'>Name of Housemate</label>
-                                                                            <input type='text' name='hname[]' id='hname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                                                        </div>
-
-                                                                        <div class='form-group col'>
-                                                                            <label for='rel'>Relationship</label>
-                                                                            <select class='custom-select form-group' name='hrel[]' id='hrel2'>
-                                                                                <option selected='selected' disabled='disabled'>Choose here:</option>
-                                                                                <option value='Family'>Family</option>
-                                                                                <option value='Friend'>Friend</option>
-                                                                                <option value='Acquaintances'>Acquaintances</option>
-                                                                                <option value='Romantic Relationship'>Romantic Relationship</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class='form-group col'>
-                                                                            <label for='mnumber2'>Mobile Number</label>
-                                                                            <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                                                        </div>
-                                                                    </div>";
-                                }
                             }
                          ?>
 
@@ -825,62 +804,45 @@
                                 echo "<div class='row'>
                                     <div class='form-group col'>
                                         <label for='hname'>Name of relative</label>
-                                        <input type='text' name='rname[]' id='rname1' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                        <input type='text' name='rname[]' id='rname1' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rel'>Relationship</label>
-                                        <select class='custom-select form-group' name='rrel[]' id='rrel1'>
-                                            <option selected='selected' value='".$row7['r_relationship']."' disabled='disabled'>".$row7['r_relationship']."</option>
-                                            <option value='Family'>Family</option>
-                                            <option value='Friend'>Friend</option>
-                                            <option value='Acquaintances'>Acquaintances</option>
-                                            <option value='Romantic Relationship'>Romantic Relationship</option>
-                                        </select>
+                                        <input type='text' name='rrel[]' id='rrel1' placeholder='Relationship' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                     </div>
 
                                     <div class='form-group col'>
                                         <label for='rmnumber1'>Mobile Number</label>
-                                        <input type='tel' name='rmnumber[]' id='rmnumber1' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        <input type='tel' name='rmnumber[]' id='rmnumber1' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
                                     </div>
+
                                 </div>
 
-                                ";
-                                if ($result7->num_rows <2) {
-                                    echo "<div class='row'>
-                                        <div class='form-group col'>
-                                            <label for='hname'>Name of relative</label>
-                                            <input type='text' name='rname[]' id='rname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                        </div>
+                                <div class='row'>
+                                    <div class='form-group col'>
+                                        <label for='hname'>Name of relative</label>
+                                        <input type='text' name='rname[]' id='rname2' placeholder='name of housemate' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                    </div>
 
-                                        <div class='form-group col'>
+                                    <div class='form-group col'>
+                                        <label for='rel'>Relationship</label>
                                         <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
-                                            <label for='rel'>Relationship</label>
-                                            <select class='custom-select form-group' name='rrel[]' id='rrel2'>
-                                                <option selected='selected' disabled='disabled'>Choose here:</option>
-                                                <option value='Family'>Family</option>
-                                                <option value='Friend'>Friend</option>
-                                                <option value='Acquaintances'>Acquaintances</option>
-                                                <option value='Romantic Relationship'>Romantic Relationship</option>
-                                            </select>
-                                        </div>
+                                    </div>
 
-                                        <div class='form-group col'>
-                                            <label for='rmnumber2'>Mobile Number</label>
-                                            <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                        </div>
+                                    <div class='form-group col'>
+                                        <label for='rmnumber2'>Mobile Number</label>
+                                        <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                    </div>
 
-                                    </div>";
-                                }
+                                </div>";
                             }
                          ?>
                         <?php
                         if ($row5['answer'] === "No") {
                             $answer = $row5['answer'];
-                            $reason = " ";
                         } else {
-                            $answer = explode("|",$row5['answer'])[0];
-                            $reason = explode("|",$row5['answer'])[1];
+                            $answer = explode("|",$row5['answer']);
                         }
                         ?>
                         <div class="row">
@@ -888,7 +850,7 @@
                                 <label for="quest">Do you plan on relocating soon?
                                 </label>
                                 <select name="yesorno" id="quest" class="form-control">
-                                    <option selected="selected" disabled="disabled"><?php echo $answer?></option>
+                                    <option selected="selected" disabled="disabled"></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -896,7 +858,7 @@
 
                             <div class="form-group col">
                                 <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" class="form-control" autocomplete="off" value="<?php echo $reason?>">
+                                <input type="text" name="answer" id="answer" value="" class="form-control" autocomplete="off">
                             </div>
                         </div>
 
@@ -927,7 +889,7 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label>Employee Status</label>
-                                <select class="custom-select form-control" name="employee_status">
+                                <select class="custom-select form-control">
                                     <option selected disabled required="require">Choose Here:</option>
                                     <option value="Freelance">Freelance</option>
                                     <option value="Project Based">Project Based</option>
@@ -937,17 +899,16 @@
                             </div>
                             <div class="form-group col">
                                 <label>Position</label>
-                                <select class="custom-select form-control" name="position">
+                                <select class="custom-select form-control">
                                     <option selected disabled>Choose Here:</option>
-                                    <option value="head">head</option>
-                                    <option value="assistant">assistant</option>
-                                    <option value="secret">secret</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
                                 </select>
                             </div>
-
                             <div class="form-group col">
                                 <label>Date Hired</label>
-                                <input type="date" name="date_hired" class="form-control">
+                                <input type="date" name="date_hired">
                             </div>
                         </div>
                         <div class="row">
@@ -1057,11 +1018,6 @@
                     map.invalidateSize();
                 }, 400);
             });
-        </script>
-        <script>
-        function myFunction() {
-			document.getElementById("myDropdown").classList.toggle("showbtn");
-		}
         </script>
 
         <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1K5x8GSc3ReR4YSYxjK3Jq6Zn9Mmiwgo&callback=initMap"></script>

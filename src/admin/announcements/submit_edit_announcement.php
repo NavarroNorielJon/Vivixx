@@ -3,14 +3,14 @@ ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
     include '../../utilities/db.php';
     $connect = Connect();
-	
+
     $subject = $_POST["subject"];
     $startdate = $_POST["start_date"];
     $enddate = $_POST["end_date"];
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $announcement_id=$_POST["id"];
     $department = $_POST["department"];
-      
+
     $file_names = [];
     $file_paths = [];
     $file_tmp_names = [];
@@ -25,7 +25,7 @@ ini_set('upload_max_filesize', '64M');
             $concat .= $dept;
         }else{
             $concat .= $dept . ",";
-        }     
+        }
     }
     if(isset($_POST["edit"])){
         foreach($_FILES['file']['name'] as $child) {
@@ -40,7 +40,7 @@ ini_set('upload_max_filesize', '64M');
         }
         foreach($_FILES['file']['name'] as $name){
             $counter++;
-            if($counter == count($_FILES['file']['name'])){   
+            if($counter == count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
                 $file_name .= $name .",";
@@ -56,10 +56,10 @@ ini_set('upload_max_filesize', '64M');
         }
         print_r($file_name);
         for($x = 0; $x< count($file_names); $x++){
-            
+
             if($_POST["attachment"] != "" && $file_name[$x] != ""){
                 move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
+                $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
                 $add_attachment = "UPDATE announcement_attachments SET `attachment_name`= '$file_name', `attachment` = '$temp_file', `announcement_id` = '$announcement_id';";
                 $connect->query($add_attachment);
             }else if($file_name[$x] != "" && $_POST["attachment"] == ""){
@@ -70,9 +70,7 @@ ini_set('upload_max_filesize', '64M');
             }else{
                 header("location: announcement.php");
             }
-            
-        }       
+
+        }
     }
 header("location: announcement.php");
-
-
