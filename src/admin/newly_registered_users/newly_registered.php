@@ -79,6 +79,8 @@
 
 					<?php
 					include '../../utilities/session.php';
+					include '../../utilities/check_user.php';
+					$connect = Connect();	
 					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
@@ -111,7 +113,6 @@
 	</div>
 
 	<script>
-		
 		$(document).ready(function() {
 			$('.show').click(function(e) {
 				e.preventDefault();
@@ -154,6 +155,8 @@
 			});
 			$('#table').DataTable();
 		});
+
 	</script>
 </body>
+
 </html>

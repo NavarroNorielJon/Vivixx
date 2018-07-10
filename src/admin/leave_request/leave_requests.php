@@ -1,5 +1,7 @@
 <?php 
 	include '../../utilities/session.php';
+	include '../../utilities/check_user.php';
+	$connect = Connect();
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
-					<li class="nav-item" >
+					<li class="nav-item">
 						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
@@ -116,7 +118,7 @@
 
 	<script>
 		/* When the user clicks on the button, 
-												toggle between hiding and showing the dropdown content */
+														toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}

@@ -1,91 +1,93 @@
 <?php
 	include '../../utilities/session.php';
+	include '../../utilities/check_user.php';
 	$connect = Connect();
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Vivixx Ph</title>
-  	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../style/datatables.css">
+	<!DOCTYPE html>
+	<html>
 
-    <!--scripts-->
-    <script type="text/javascript" src="../../script/datatables.min.js"></script>
-	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-    <script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
-    <script src="../../script/jquery.form.min.js"></script>
-</head>
+	<head>
+		<title>Vivixx Ph</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="../style/datatables.css">
 
-<body>
-	<div id="wrapper">
-		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+		<!--scripts-->
+		<script type="text/javascript" src="../../script/datatables.min.js"></script>
+		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+		<script src="../../script/jquery.form.min.js"></script>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
+				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			
-			<div class="collapse navbar-collapse" id="navbar-content">
-				<ul class="navbar-nav">
-					
-					<li class="nav-item active dropdown">
-						<a class="nav-link" href="accounts_status.php">Accounts</a>
-					</li>
-					
-					<li class="nav-item">
-					<button onclick="myFunction()" class="dropbtn">Employees</button>
-						<div id="myDropdown" class="dropdown-content">
-							<a href="../user_information/user_information.php">Employees</a>
-							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
-						</div>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../payslip.php">Payslip</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		
-		<div class="accounts-content container">
-			
-			<div class="text-center">
-				<h1>Accounts</h1>
-			</div>
-			
-			<div class="accounts-table">
-				<table class="table" id="table">
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
-							<th>Email</th>
-							<th>Status</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-  
-					<?php
+
+				<div class="collapse navbar-collapse" id="navbar-content">
+					<ul class="navbar-nav">
+
+						<li class="nav-item active dropdown">
+							<a class="nav-link" href="accounts_status.php">Accounts</a>
+						</li>
+
+						<li class="nav-item">
+							<button onclick="myFunction()" class="dropbtn">Employees</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="../user_information/user_information.php">Employees</a>
+								<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../payslip.php">Payslip</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="accounts-content container">
+
+				<div class="text-center">
+					<h1>Accounts</h1>
+				</div>
+
+				<div class="accounts-table">
+					<table class="table" id="table">
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+								<th>Email</th>
+								<th>Status</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+
+						<?php
 					$sql = "select username, email, first_name, last_name,status from user natural join user_info where type='user';";
 					$result = $connect->query($sql);
 
@@ -117,85 +119,88 @@
 
 					$connect-> close();
 					?>
-				</table>
-			</div>			
-			
-			<div id="result1"></div>					
-			
+					</table>
+				</div>
+
+				<div id="result1"></div>
+
+			</div>
 		</div>
-	</div>
-	
-	<script>
-		function update_status() {
-			swal({
-				title: "Caution!",
-				text: "Are you sure you want to enable or disable this account?",
-				icon: "warning",
-				dangerMode: true, 
-				buttons: {
-					cancel: "Cancel",
-					confirm: true,
-				},
-			})
-				.then((result) => {
-				if(result) {
-					$.get('update_status.php');
-					swal("Success","Account successfully enabled or disabled.","success")
-						.then(
-						function(){
-							location.reload();
-						});
-				}else {
-					swal("Canceled","", "error");
-				}
-			})
-		}	
-	</script>
-	
-	<script>
 
-		/* When the user clicks on the button, 
-		toggle between hiding and showing the dropdown content */
-		function myFunction() {
-			document.getElementById("myDropdown").classList.toggle("showbtn");
-		}
-
-		// Close the dropdown if the user clicks outside of it
-		window.onclick = function(event) {
-		if (!event.target.matches('.dropbtn')) {
-
-			var dropdowns = document.getElementsByClassName("dropdown-content");
-			var i;
-			for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('showbtn')) {
-				openDropdown.classList.remove('showbtn');
+		<script>
+			function update_status() {
+				swal({
+						title: "Caution!",
+						text: "Are you sure you want to enable or disable this account?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
+					})
+					.then((result) => {
+						if (result) {
+							$.get('update_status.php');
+							swal("Success", "Account successfully enabled or disabled.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
+						} else {
+							swal("Canceled", "", "error");
+						}
+					})
 			}
+
+		</script>
+
+		<script>
+			/* When the user clicks on the button, 
+																							toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}
-		}
-		}
-		//script for calling modal
-		$(document).ready(function(){
-			$('.show').click(function(e){
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href'),
-					success: function(res){
-						$('#result1').html(res);
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+				if (!event.target.matches('.dropbtn')) {
+
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('showbtn')) {
+							openDropdown.classList.remove('showbtn');
+						}
 					}
+				}
+			}
+			//script for calling modal
+			$(document).ready(function() {
+				$('.show').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#result1').html(res);
+						}
+					});
 				});
 			});
-		});
-		
-		//script for calling datatables library
-		$(document).ready(function(){
-			$('#table').dataTable( {
-				"columnDefs": [
-					{ "orderable": false, "targets": 5 }
-				]
+
+			//script for calling datatables library
+			$(document).ready(function() {
+				$('#table').dataTable({
+					"columnDefs": [{
+						"orderable": false,
+						"targets": 5
+					}]
+				});
+				$('#table').DataTable();
 			});
-			$('#table').DataTable();
-		});
-	</script>	
-</body>
-</html>
+
+		</script>
+	</body>
+
+	</html>
