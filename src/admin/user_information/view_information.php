@@ -22,7 +22,6 @@
 
     $row1 = $result1->fetch_assoc();
     $row2 = $result2->fetch_assoc();
-    $row3 = $result3->fetch_assoc();
     $row4 = $result4->fetch_assoc();
     $row5 = $result5->fetch_assoc();
     $row6 = $result6->fetch_assoc();
@@ -152,7 +151,7 @@
                     </div>
 
 
-                    <fieldset>
+                    <!-- <fieldset>
                         <form id="personal" action="update_personal" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="userid1" value="<?php echo $user_id ?>"/>
                             <h2>Step 1: Personal Information</h2>
@@ -546,7 +545,7 @@
                                 <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset>
+                    </fieldset> -->
 
                     <fieldset>
                         <form id="family" action="update_family" method="post">
@@ -717,41 +716,65 @@
 
                             <h5>Child/Children's Information</h5>
                             <?php
-                                for ($i=0; $i<$result3->num_rows;$i++) {
+                                while ($row3 = mysqli_fetch_array($result3)) {
                                     echo '<div class="row">
                                         <div class="form-group col-6">
                                             <label for="child_name">Name</label>
-                                            <input type="text" value="bobo" class="form-control text-transform" autocomplete="off">
+                                            <input type="text" name="child_name[]" value="'.$row3['child_name'].'" class="form-control text-transform" autocomplete="off">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="child_birth">Date of Birth</label>
-                                            <input type="text" value="bobo2" class="form-control" autocomplete="off">
+                                            <input type="date" name="child_birth[]" value="'.$row3['child_birth_date'].'" class="form-control" autocomplete="off">
                                         </div>
                                     </div>';
                                 }
                             ?>
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label for="child_name">Name</label>
-                                    <input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
-                                </div>
-
-                                <div class="form-group col-6">
-                                    <label for="child_birth">Date of Birth</label>
-                                    <div class="input-group">
-                                        <input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-success" type="button" onclick="addchild()">
-                                                <i class="large material-icons">add</i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="child"></div>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adding">
+                              Add Child
+                            </button>
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
                                 <button type="submit" class="btn pages btn-next">Next</button>
+                            </div>
+                        </form>
+                        <form id="family2" action="add_child" method="post">
+                            <input type="hidden" name="userid2_5" value="<?php echo $user_id ?>"/>
+                            <div class="modal fade" id="adding" tabindex="-1" role="dialog" aria-labelledby="addingLabel" aria-hidden="true">
+                                <div class="modal-dialog-centered" role="document" style="min-width: 130vh; max-width: 130vh;margin-left:20%">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="addingLabel">Add Child</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="form-group col-6">
+                                                    <label for="child_name">Name</label>
+                                                    <input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="add_child_name[]" id="child_name" class="form-control text-transform" autocomplete="off">
+                                                </div>
+
+                                                <div class="form-group col-6">
+                                                    <label for="child_birth">Date of Birth</label>
+                                                    <div class="input-group">
+                                                        <input type="date" name="add_child_birth[]" id="child_birth" class="form-control" autocomplete="off">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-success" type="button" onclick="addchild2()">
+                                                                <i class="large material-icons">add</i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="child2"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </fieldset>
@@ -1150,7 +1173,7 @@
                         </form>
                     </fieldset>
 
-                    <!-- <fieldset>
+                    <fieldset>
                         <form id="emergency" action="update_emergency" method="post">
                             <input type="hidden" name="userid4" value="<?php echo $user_id ?>"/>
                             <h2>Step 4: Emergency Information Sheet</h2>
@@ -1340,7 +1363,7 @@
                                 <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset> -->
+                    </fieldset>
 
                     <fieldset>
                         <form id="employee" action="update_employee" method="post">
@@ -1490,6 +1513,12 @@
                                             <option value="Housekeeping">Housekeeping</option>
                                             <option value="Utilities">Utilities</option>
                                             </select>';
+                                        } elseif ($main === "Security") {
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                            <option value="Security">Security</option>
+                                            </select>';
                                         }
                                     ?>
                                 </div>
@@ -1597,10 +1626,6 @@
                                 ";
                                 for ($i=1; $i <count($department) ; $i++) {
                                     echo "
-
-
-
-
                                     <div class='row'>
                                         <script>
                                             $(function () {
@@ -1620,7 +1645,7 @@
                                                 });
                                             });
                                         </script>
-                                        <div class='form-group col'>
+                                        <div class='form-group col rem".$i."'>
                                             <label for='department'>Additional Department</label>
                                             <select class='custom-select form-group' name='department[]' id='department".$i."'>
                                                 <option selected='selected' value='".$department[$i]."'>".$department[$i]."</option>
@@ -1634,7 +1659,7 @@
                                                 <option value='voa'>Voice Account</option>
                                             </select>
                                         </div>
-                                        <div class='form-group col'>
+                                        <div class='form-group col rem".$i."'>
                                             <label >Additional Account</label>
                                             <div class='input-group'>
                                                 <select class='custom-select form-group' name='account[]'>
@@ -1675,7 +1700,7 @@
                                                     </optgroup>
                                                 </select>
                                                 <div class='input-group-append'>
-                                                    <button class='btn btn-danger' type='button' onclick='remove(".$i.");'>
+                                                    <button class='btn btn-danger' type='button' onclick='removeAcc(".$i.");'>
                                                         <i class='small material-icons'>remove</i>
                                                     </button>
                                                 </div>
@@ -1827,13 +1852,25 @@
             url: 'update_family.php',
             method: 'post'
         });
+        $('#family2').ajaxForm({
+            url: 'add_child.php',
+            method: 'post'
+        });
         $('#educational').ajaxForm({
             url: 'update_educ.php',
             method: 'post'
         });
         $('#employee').ajaxForm({
             url: 'update_employee.php',
-            method: 'post'
+            method: 'post',
+            success: function () {
+                swal({
+                    type: 'success',
+                    title: 'Done',
+                    icon: 'success',
+                    showConfirmButton: false
+                });
+            }
         });
         </script>
     </body>

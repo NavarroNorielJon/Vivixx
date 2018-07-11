@@ -6,7 +6,6 @@
     $sql = "SELECT * FROM user_background where user_id='$user_id';";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
     if (!empty($_POST['spouse_first_name'])) {
         $spouse_first_name = "'".ucwords(mysqli_real_escape_string($connect, $_POST['spouse_first_name']))."'";
     } else {
@@ -70,8 +69,9 @@
     for ($i=0; $i < count($child_name) ; $i++) {
         if ($child_name[$i] === "" && $child_birth[$i] === "") {
             continue;
-        } else{
-            $update_stmt = "UPDATE `user_offspring` SET `child_name`='$child_name[$i]',`child_birth_date`='$child_birth[$i]' WHERE user_id='$user_id';";
+        } else {
+            $c = $i+1;
+            $update_stmt = "UPDATE `user_offspring` SET `child_name`='$child_name[$i]',`child_birth_date`='$child_birth[$i]' WHERE n_id='$c';";
             if (mysqli_query($connect, $update_stmt) === true) {
                 echo $update_stmt;
                 echo "<br>";
