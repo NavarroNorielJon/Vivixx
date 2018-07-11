@@ -240,8 +240,16 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
                          '$secondary_address','$provincial_address','$answer','$id','$id');";
          if ($connect->query($insert_stmt) === true) {
             for ($i=0; $i < count($r_name); $i++) {
+                $c = $i + 1;
                 if ($r_name[$i] !== "" ) {
-                    $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]');";
+                    $r_name[$i] = ucwords($r_name[$i]);
+                    $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`,`n_id`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]','$c');";
+                    if ($connect->query($insert_stmt) === true) {
+                    } else {
+                        print_r($connect->error);
+                    }
+                } else {
+                    $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`,`n_id`) VALUES ('$id',NULL,NULL,NULL,'$c');";
                     if ($connect->query($insert_stmt) === true) {
                     } else {
                         print_r($connect->error);
@@ -249,8 +257,16 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
                 }
             }
             for ($i=0; $i < count($h_name); $i++) {
+                $c = $i + 1;
                 if ($h_name[$i] !== "" ) {
-                    $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]');";
+                    $h_name[$i] = ucwords($h_name[$i]);
+                    $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`,`n_id`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]','$c');";
+                    if ($connect->query($insert_stmt) === true) {
+                    } else {
+                        print_r($connect->error);
+                    }
+                } else {
+                    $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`,`n_id`) VALUES ('$id',NULL,NULL,NULL,'$c');";
                     if ($connect->query($insert_stmt) === true) {
                     } else {
                         print_r($connect->error);
