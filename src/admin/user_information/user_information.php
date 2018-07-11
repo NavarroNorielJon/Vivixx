@@ -121,6 +121,12 @@
 							<a href='view_information.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+
+							$message = "
+							<input name='message' value='message' style='display: none;'>
+							<a href='personal_message.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
+								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
 							//print data in table
 							echo "
 							<tr>
@@ -131,6 +137,7 @@
 							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
+							<td>" . $message . "</td>
 							</tr>";
 						}
 
@@ -144,8 +151,21 @@
 	</div>
 
 	<div id="result"></div>
+	<div id="res"></div>
 
 	<script>
+		$(document).ready(function() {
+			$('.message').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res) {
+						$('#res').html(res);
+					}
+				});
+			});
+		});
+
 		/* When the user clicks on the button,
 										toggle between hiding and showing the dropdown content */
 		function myFunction() {
@@ -175,7 +195,7 @@
 			$('#table').dataTable({
 				"columnDefs": [{
 					"orderable": false,
-					"targets": [5, 6]
+					"targets": [6, 7]
 				}]
 			});
 			$('#table').DataTable();
