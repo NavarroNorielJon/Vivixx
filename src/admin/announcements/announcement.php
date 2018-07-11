@@ -154,7 +154,7 @@
 							<div class="row form-group">
 								<div class="col">
 									<label for="title">Title</label>
-									<input name="subject" type="text" class="form-control" placeholder="Title" id="subject" required>
+									<input name="subject" type="text" class="form-control text-transform" placeholder="Title" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">
@@ -190,7 +190,7 @@
 							<label for="text">Content:</label>
 							<div class="d-flex ">
 								<div class="p-2" id="border">
-									<p contenteditable="true" id="editable"></p>
+									<p contenteditable="true" class="form-control" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
 									<div class="text-center">
 										Remaining characters: <span id="totalChars">1500</span><br/>

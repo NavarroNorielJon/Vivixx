@@ -21,9 +21,9 @@
 </head>
 
 <body>
-	<?php 
+	<?php
 	include '../../utilities/session.php';
-	include '../utilities/check_user.php'; 
+	include '../utilities/check_user.php';
 	$connect = Connect();
 	?>
 	<div id="wrapper">
@@ -90,7 +90,7 @@
 					</thead>
 
 					<?php
-					
+
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
 						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
@@ -121,6 +121,7 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
+<<<<<<< HEAD
 							<a href='view_information.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
@@ -130,6 +131,9 @@
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
+=======
+							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
+>>>>>>> ac5eb93d566468d5c7fb7fb24e432aac9cda0f3b
 							//print data in table
 							echo "
 							<tr>
