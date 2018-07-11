@@ -27,6 +27,54 @@
                             </div>
                             <br>
 
+<<<<<<< HEAD
+                            <label>Position</label>
+                            <?php
+                                if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position">
+                                        <option selected value="Online English Tutor">Online English Tutor</option>
+                                    </select>';
+                                }else if($row['department'] === "Administration/HR Support"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position" >
+                                    <option selected value="HR Assistant">HR Assistant</option>
+                                    </select>';
+                                }else if($row['department'] === "IT Support"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position" >
+                                    <option selected value="ICT Support Specialist">ICT Support Specialist</option>
+                                    </select>';
+                                }else if($row['department'] === "Virtual Assistant"){
+                                    echo '
+                                    <select class="custom-select form-control pos" name="position" id="pos" onchange="change();">
+                                    <option selected disabled>Choose Here:</option>
+                                    <option value="Indesigner">Indesigner</option>
+                                    <option value="Web Developer">We Developer</option>
+                                    </select>';
+                                }else{
+                                    echo '
+                                    <select class="custom-select form-control position pos" name="position" id="pos1" onchange="change();"> 
+                                    <option selected disabled>Choose Here:</option>
+                                    <option value="Indesigner">secret</option>
+                                    <option value="Web Developer">something </option>
+                                    </select>';
+                                }
+                            ?>
+                           
+
+                            <label>Employee Status</label>
+                            <select class="custom-select form-control" name="employee_status" id="status">
+                                <option selected disabled>Choose Here:</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Project Based">Project Based</option>
+                                <option value="Probationary">Probationary</option>
+                                <option value="Regular">Regular</option>
+                            </select>
+                            
+                            <label>Date hired</label><br>
+                            <input type="date" id="date" name="date" class="form-control date">
+=======
                             <div class="form-group">
                                 <label>Position</label>
                                 <?php
@@ -86,10 +134,11 @@
                                 <label>Date hired</label><br>
                                 <input type="date" class="form-control" name="date">
                             </div>
+>>>>>>> 956814f744c2039110ef510345bb0d67a4bacdb2
                         </form>
                         <div style="text-align:right">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button onclick='set_user();' class="btn btn-success">Update</button>
+                            <button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
                         </div>
                     </div>
                 </div>
@@ -97,6 +146,29 @@
         </div>
     </div>
 <script>
+
+    var old_status = document.getElementById('status').value;
+    var old_date = document.getElementById('date').value;
+
+    $(document).change(function() {
+        if(old_status != $('#status').val() && old_date != $('#date').val()){
+            $('#update').attr("disabled", false);
+        }else{
+            $('#update').attr("disabled", true);
+
+        }
+    });
+
+    function change() {
+        var old_position = document.getElementById('pos').value;
+        var old_position1 = document.getElementById('pos1').value;
+        if(old_position != $('#pos').val() || old_position1 != $('#pos').val()){
+            $('#update').attr("disabled", false);
+        }else{
+            $('#update').attr("disabled", true);
+
+        }
+    }
     function set_user() {
 		swal({
 			title: "Caution!",
