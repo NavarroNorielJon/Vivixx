@@ -73,72 +73,9 @@
                             
                             <label>Date hired</label><br>
                             <input type="date" id="date" name="date" class="form-control date">
-<<<<<<< HEAD
-=======
-=======
-                            <div class="form-group">
-                                <label>Position</label>
-                                <?php
-                                    $main = explode("|",$row['department'])[0];
-                                    if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                            <option selected required="require" value="Online English Tutor">Online English Tutor</option>
-                                        </select>';
-                                    }else if($main === "Administration/HR Support"){
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                        <option selected required="require" value="HR Assistant">HR Assistant</option>
-                                        </select>';
-                                    }else if($main === "IT Support"){
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                        <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
-                                        </select>';
-                                    }else if($main === "Virtual Assistant"){
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                        <option selected required="require" disabled>Choose Here:</option>
-                                        <option value="Indesigner">Indesigner</option>
-                                        <option value="Web Developer">Web Developer</option>
-                                        </select>';
-                                    }else if ($main === "Security") {
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                        <option selected required="require" disabled>Choose Here:</option>
-                                        <option value="Security">Security</option>
-                                        </select>';
-                                    }else {
-                                        echo '
-                                        <select class="custom-select form-control" name="position">
-                                        <option selected required="require" disabled>Choose Here:</option>
-                                        <option value="Housekeeping">Housekeeping</option>
-                                        <option value="Utilities">Utilities</option>
-                                        </select>';
-                                    }
-                                ?>
-                            </div>
 
-
-                            <div class="form-group">
-                                <label>Employee Status</label>
-                                <select class="custom-select form-control" name="employee_status">
-                                    <option selected disabled required="require">Choose Here:</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Project Based">Project Based</option>
-                                    <option value="Probationary">Probationary</option>
-                                    <option value="Regular">Regular</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Date hired</label><br>
-                                <input type="date" class="form-control" name="date">
-                            </div>
->>>>>>> 956814f744c2039110ef510345bb0d67a4bacdb2
->>>>>>> ca17631cd5f4b8b0d413a4794b377b8fee7cce1b
                         </form>
-                        <div style="text-align:right">
+                         <div style="text-align:right">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
                         </div>
