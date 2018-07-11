@@ -111,7 +111,7 @@
     function set_user() {
 		swal({
 			title: "Caution!",
-			text: "Are you sure you want to edit the announcement",
+			text: "Are you sure you want to update the information of this user?",
 			icon: "warning",
 			buttons: {
 				cancel: "Cancel",
