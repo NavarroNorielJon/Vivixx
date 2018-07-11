@@ -23,41 +23,48 @@
 
                             <div class="form-group">
                                 <label>Department</label>
-                                <input type="text" name="department" class="form-control" disabled="disabled" value="<?php echo $row['department']?>">
+                                <input type="text" name="department" class="form-control" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
                             </div>
                             <br>
 
                             <div class="form-group">
                                 <label>Position</label>
                                 <?php
-                                    if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
+                                    $main = explode("|",$row['department'])[0];
+                                    if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
                                         echo '
                                         <select class="custom-select form-control" name="position">
                                             <option selected required="require" value="Online English Tutor">Online English Tutor</option>
                                         </select>';
-                                    }else if($row['department'] === "Administration/HR Support"){
+                                    }else if($main === "Administration/HR Support"){
                                         echo '
                                         <select class="custom-select form-control" name="position">
                                         <option selected required="require" value="HR Assistant">HR Assistant</option>
                                         </select>';
-                                    }else if($row['department'] === "IT Support"){
+                                    }else if($main === "IT Support"){
                                         echo '
                                         <select class="custom-select form-control" name="position">
                                         <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
                                         </select>';
-                                    }else if($row['department'] === "Virtual Assistant"){
+                                    }else if($main === "Virtual Assistant"){
                                         echo '
                                         <select class="custom-select form-control" name="position">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Indesigner">Indesigner</option>
                                         <option value="Web Developer">Web Developer</option>
                                         </select>';
-                                    }else{
+                                    }else if ($main === "Security") {
                                         echo '
                                         <select class="custom-select form-control" name="position">
                                         <option selected required="require" disabled>Choose Here:</option>
-                                        <option value="Indesigner">secret</option>
-                                        <option value="Web Developer">something </option>
+                                        <option value="Security">Security</option>
+                                        </select>';
+                                    }else {
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option value="Housekeeping">Housekeeping</option>
+                                        <option value="Utilities">Utilities</option>
                                         </select>';
                                     }
                                 ?>

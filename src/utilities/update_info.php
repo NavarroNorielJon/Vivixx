@@ -227,7 +227,8 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
              if ($child_name[$i] === "" && $child_birth[$i] === "") {
                  continue;
              } else{
-                 $insert_stmt = "INSERT INTO `user_offspring` (`child_name`,`child_birth_date`,`user_id`) VALUES ('$child_name[$i]','$child_birth[$i]','$id');";
+                 $c = $i+1;
+                 $insert_stmt = "INSERT INTO `user_offspring` (`n_id`,`child_name`,`child_birth_date`,`user_id`) VALUES ('$c','$child_name[$i]','$child_birth[$i]','$id');";
                  if ($connect->query($insert_stmt) === true) {
                  } else {
                      print_r($connect->error);
