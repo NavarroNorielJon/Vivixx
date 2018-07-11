@@ -113,6 +113,18 @@ table {
 
 }
 
+#message-editable {
+	height: 200px;
+	width: 100%;
+	word-wrap: break-word;
+	overflow: auto;
+	border: 1px solid black;
+	text-align: left;
+	margin: auto !important;
+	display: block;
+
+}
+
 .edit {
 	margin: 3px;
 	width: 100px;
@@ -130,6 +142,20 @@ table {
 	margin: auto !important;
 	display: block;
 }
+
+#message-border {
+	height: 250px;
+	width: 100%;
+	opacity: 0.9%;
+	margin: auto !important;
+	display: block;
+}
+
+.message {
+	margin-top: 50px;
+	margin-left: -100px;
+}
+
 
 /*drop down menu for employees*/
 
@@ -173,6 +199,10 @@ table {
 	display: block;
 }
 
+.show {
+	display: block;
+}
+
 .summary {
 	margin: 10% 5% 2% 16%;
 	width: 70%;
@@ -196,24 +226,30 @@ table {
 	color: white;
 }
 
-.srf{
+.srf {
 	background-color: #ffbf00;
 }
-.gross_pay{
+
+.gross_pay {
 	background-color: lightblue;
 }
-.gross_total{
+
+.gross_total {
 	background-color: #0073e6;
 }
-.deduction{
+
+.deduction {
 	background-color: pink;
 }
-.total_deduction{
-	background-color:  palevioletred;
+
+.total_deduction {
+	background-color: palevioletred;
 }
-.pay{
+
+.pay {
 	background-color: burlywood;
 }
-.net_pay{
+
+.net_pay {
 	background-color: #cc9900;
 }
