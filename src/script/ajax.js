@@ -59,13 +59,14 @@ function addchild(){
 	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="child_name[]" id="child_name" class="form-control text-transform" autocomplete="off" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="child_birth[]" id="child_birth" class="form-control" autocomplete="off" required><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
+var increment2 = 1;
 function addchild2(){
-	increment++;
+	increment2++;
 	var dataFields = document.getElementById('child2');
 	var newDataField = document.createElement("div");
-	newDataField.setAttribute("class", "form-group removeclass"+increment);
-	var removeDiv = 'removeclass' + increment;
-	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="add_child_name[]" id="child_name" class="form-control text-transform" autocomplete="off" required="required"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="add_child_birth[]" id="child_birth" class="form-control" autocomplete="off" required><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="remove('+increment+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
+	newDataField.setAttribute("class", "form-group rem"+increment2);
+	var removeDiv = 'rem' + increment2;
+	newDataField.innerHTML = '<div class="row "><div class="form-group col-6"><label for="child_name">Name</label><input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="add_child_name[]" id="add_child_name" class="form-control text-transform" autocomplete="off"></div><div class="form-group col-6"><label for="child_birth">Date of Birth</label><div class="input-group"><input type="date" name="add_child_birth[]" id="add_child_birth" class="form-control" autocomplete="off"><div class="input-group-append"><button class="btn btn-danger" type="button" onclick="removeAcc('+increment2+');"><i class="large material-icons">remove</i></button></div></div></div></div>';
 	dataFields.appendChild(newDataField);
 }
 function remove(cid){
@@ -74,6 +75,11 @@ function remove(cid){
 function removeAcc(cid){
 	$('.rem'+cid).remove();
 }
+// function removeAll(){
+// 	for(){
+//
+// 	}
+// }
 
 function addAccount(){
 	increment++;
