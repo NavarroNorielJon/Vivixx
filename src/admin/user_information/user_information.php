@@ -121,19 +121,15 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-<<<<<<< HEAD
-							<a href='view_information.php?user_id=".$row['user_id'].
-								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
+
 
 							$message = "
 							<input name='message' value='message' style='display: none;'>
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
-=======
-							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
->>>>>>> ac5eb93d566468d5c7fb7fb24e432aac9cda0f3b
+
 							//print data in table
 							echo "
 							<tr>
