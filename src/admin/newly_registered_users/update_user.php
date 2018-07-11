@@ -8,4 +8,5 @@ $date = mysqli_real_escape_string($connect,$_POST["date"]);
 
 $update = "UPDATE mis.employee_info SET date_hired = '$date', employee_status = '$employee_status' , position = '$position' where user_id = '$user_id'; ";
 $result = $connect->query($update);
-?>
+
+header("location: newly_registered.php");
