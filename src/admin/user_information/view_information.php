@@ -543,7 +543,7 @@
                                 <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset>
+                    </fieldset> -->
 
                     <fieldset>
                         <form id="family" action="update_family" method="post">
@@ -1169,7 +1169,7 @@
                                 <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset> -->
+                    </fieldset>
 
                     <fieldset>
                         <form id="emergency" action="update_emergency" method="post">
@@ -1211,95 +1211,17 @@
                             <?php
                                 $c = 0;
                                 while ($row6 = mysqli_fetch_array($result6)) {
-                                    echo "<div class='row'>
-                                        <div class='form-group col'>
-                                            <label for='hname'>Name of Housemate</label>
-                                            <input type='text' name='hname[]' id='hname' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                        </div>
-
-                                        <div class='form-group col'>
-                                            <label for='rel'>Relationship</label>
-                                            <select class='custom-select form-group' name='hrel[]' id='hrel'>
-                                                <option selected='selected' value='".$row6['h_relationship']."' >".$row6['h_relationship']."</option>
-                                                <option value='Family'>Family</option>
-                                                <option value='Friend'>Friend</option>
-                                                <option value='Acquaintances'>Acquaintances</option>
-                                                <option value='Romantic Relationship'>Romantic Relationship</option>
-                                            </select>
-                                        </div>
-
-                                        <div class='form-group col'>
-                                            <label for='mnumber1'>Mobile Number</label>
-                                            <input type='tel' name='hnumber[]' id='mnumber' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                        </div>
-                                    </div>";
-                                    if ($result6->num_rows == 1) {
-                                        echo "
-                                                <div class='row'>
-                                                    <div class='form-group col'>
-                                                        <label for='hname'>Name of Housemate</label>
-                                                        <input type='text' name='hname[]' id='hname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                                    </div>
-
-                                                    <div class='form-group col'>
-                                                        <label for='rel'>Relationship</label>
-                                                        <select class='custom-select form-group' name='hrel[]' id='hrel2'>
-                                                            <option selected='selected' disabled='disabled'>Choose here:</option>
-                                                            <option value='Family'>Family</option>
-                                                            <option value='Friend'>Friend</option>
-                                                            <option value='Acquaintances'>Acquaintances</option>
-                                                            <option value='Romantic Relationship'>Romantic Relationship</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class='form-group col'>
-                                                        <label for='mnumber2'>Mobile Number</label>
-                                                        <input type='tel' name='hnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                                    </div>
-                                                </div>";
-                                    }
-                                }
-                             ?>
-
-                            <hr>
-                            <h6>Your Closest Living Relatives</h6>
-                            <?php
-                                while ($row7 = mysqli_fetch_array($result7)) {
-                                    echo "<div class='row'>
-                                        <div class='form-group col'>
-                                            <label for='hname'>Name of relative</label>
-                                            <input type='text' name='rname[]' id='rname' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                        </div>
-
-                                        <div class='form-group col'>
-                                            <label for='rel'>Relationship</label>
-                                            <select class='custom-select form-group' name='rrel[]' id='rrel'>
-                                                <option selected='selected' value='".$row7['r_relationship']."'>".$row7['r_relationship']."</option>
-                                                <option value='Family'>Family</option>
-                                                <option value='Friend'>Friend</option>
-                                                <option value='Acquaintances'>Acquaintances</option>
-                                                <option value='Romantic Relationship'>Romantic Relationship</option>
-                                            </select>
-                                        </div>
-
-                                        <div class='form-group col'>
-                                            <label for='rmnumber1'>Mobile Number</label>
-                                            <input type='tel' name='rnumber[]' id='rmnumber' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                        </div>
-                                    </div>
-                                    ";
-                                    if ($result7->num_rows == 1) {
+                                    if ($row6['h_relationship'] != null) {
                                         echo "<div class='row'>
                                             <div class='form-group col'>
-                                                <label for='hname'>Name of relative</label>
-                                                <input type='text' name='rname[]' id='rname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                                <label for='hname'>Name of Housemate</label>
+                                                <input type='text' name='hname[]' id='hname' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                             </div>
 
                                             <div class='form-group col'>
-                                            <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
                                                 <label for='rel'>Relationship</label>
-                                                <select class='custom-select form-group' name='rrel[]' id='rrel2'>
-                                                    <option selected='selected' disabled='disabled'>Choose here:</option>
+                                                <select class='custom-select form-group' name='hrel[]' id='hrel'>
+                                                    <option selected='selected' value='".$row6['h_relationship']."'>".$row6['h_relationship']."</option>
                                                     <option value='Family'>Family</option>
                                                     <option value='Friend'>Friend</option>
                                                     <option value='Acquaintances'>Acquaintances</option>
@@ -1308,11 +1230,91 @@
                                             </div>
 
                                             <div class='form-group col'>
-                                                <label for='rmnumber2'>Mobile Number</label>
-                                                <input type='tel' name='rnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                                <label for='mnumber1'>Mobile Number</label>
+                                                <input type='tel' name='hnumber[]' id='mnumber' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            </div>
+                                        </div>";
+                                    } else {
+                                        echo "<div class='row'>
+                                            <div class='form-group col'>
+                                                <label for='hname'>Name of Housemate</label>
+                                                <input type='text' name='hname[]' id='hname' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                             </div>
 
+                                            <div class='form-group col'>
+                                                <label for='rel'>Relationship</label>
+                                                <select class='custom-select form-group' name='hrel[]' id='hrel'>
+                                                    <option selected='selected' value='".$row6['h_relationship']."'>None</option>
+                                                    <option value='Family'>Family</option>
+                                                    <option value='Friend'>Friend</option>
+                                                    <option value='Acquaintances'>Acquaintances</option>
+                                                    <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                </select>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='mnumber1'>Mobile Number</label>
+                                                <input type='tel' name='hnumber[]' id='mnumber' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            </div>
                                         </div>";
+                                    }
+
+
+                                }
+                             ?>
+
+                            <hr>
+                            <h6>Your Closest Living Relatives</h6>
+                            <?php
+                                while ($row7 = mysqli_fetch_array($result7)) {
+                                    if ($row7['r_relationship'] != null) {
+                                        echo "<div class='row'>
+                                            <div class='form-group col'>
+                                                <label for='hname'>Name of relative</label>
+                                                <input type='text' name='rname[]' id='rname' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='rel'>Relationship</label>
+                                                <select class='custom-select form-group' name='rrel[]' id='rrel'>
+                                                    <option selected='selected' value='".$row7['r_relationship']."'>".$row7['r_relationship']."</option>
+                                                    <option value='Family'>Family</option>
+                                                    <option value='Friend'>Friend</option>
+                                                    <option value='Acquaintances'>Acquaintances</option>
+                                                    <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                </select>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='rmnumber1'>Mobile Number</label>
+                                                <input type='tel' name='rnumber[]' id='rmnumber' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            </div>
+                                        </div>
+                                        ";
+                                    } else {
+                                        echo "<div class='row'>
+                                            <div class='form-group col'>
+                                                <label for='hname'>Name of relative</label>
+                                                <input type='text' name='rname[]' id='rname' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='rel'>Relationship</label>
+                                                <select class='custom-select form-group' name='rrel[]' id='rrel'>
+                                                    <option selected='selected' value='".$row7['r_relationship']."'>None</option>
+                                                    <option value='Family'>Family</option>
+                                                    <option value='Friend'>Friend</option>
+                                                    <option value='Acquaintances'>Acquaintances</option>
+                                                    <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                </select>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='rmnumber1'>Mobile Number</label>
+                                                <input type='tel' name='rnumber[]' id='rmnumber' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            </div>
+                                        </div>
+                                        ";
                                     }
                                 }
                              ?>
@@ -1875,6 +1877,10 @@
         });
         $('#educational').ajaxForm({
             url: 'update_educ.php',
+            method: 'post'
+        });
+        $('#emergency').ajaxForm({
+            url: 'update_emergency.php',
             method: 'post'
         });
         $('#employee').ajaxForm({
