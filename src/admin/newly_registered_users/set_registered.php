@@ -20,11 +20,14 @@
                         <form action="update_user.php" method="POST" id="set_user">
                             <input type="hidden" name="user_id" value="<?php echo $user_id?>">
 
-                           
-                            <label>Department</label>
-                            <input type="text" name="department" disabled="disabled" value="<?php echo $row['department']?>">
+
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text" name="department" class="form-control" disabled="disabled" value="<?php echo $row['department']?>">
+                            </div>
                             <br>
 
+<<<<<<< HEAD
                             <label>Position</label>
                             <?php
                                 if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
@@ -71,12 +74,66 @@
                             
                             <label>Date hired</label><br>
                             <input type="date" id="date" name="date" class="form-control date">
+=======
+                            <div class="form-group">
+                                <label>Position</label>
+                                <?php
+                                    if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                            <option selected required="require" value="Online English Tutor">Online English Tutor</option>
+                                        </select>';
+                                    }else if($row['department'] === "Administration/HR Support"){
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                        <option selected required="require" value="HR Assistant">HR Assistant</option>
+                                        </select>';
+                                    }else if($row['department'] === "IT Support"){
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                        <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
+                                        </select>';
+                                    }else if($row['department'] === "Virtual Assistant"){
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option value="Indesigner">Indesigner</option>
+                                        <option value="Web Developer">Web Developer</option>
+                                        </select>';
+                                    }else{
+                                        echo '
+                                        <select class="custom-select form-control" name="position">
+                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option value="Indesigner">secret</option>
+                                        <option value="Web Developer">something </option>
+                                        </select>';
+                                    }
+                                ?>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Employee Status</label>
+                                <select class="custom-select form-control" name="employee_status">
+                                    <option selected disabled required="require">Choose Here:</option>
+                                    <option value="Freelance">Freelance</option>
+                                    <option value="Project Based">Project Based</option>
+                                    <option value="Probationary">Probationary</option>
+                                    <option value="Regular">Regular</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date hired</label><br>
+                                <input type="date" class="form-control" name="date">
+                            </div>
+>>>>>>> 956814f744c2039110ef510345bb0d67a4bacdb2
                         </form>
                         <div style="text-align:right">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>

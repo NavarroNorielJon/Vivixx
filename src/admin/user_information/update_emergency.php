@@ -1,0 +1,73 @@
+<?php
+    include '../../utilities/db.php';
+    $connect = Connect();
+
+    $user_id = $_POST["userid4"];
+    $sql = "SELECT * FROM user_info where user_id='$user_id';";
+    $result = mysqli_query($connect, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $long = mysqli_real_escape_string($connect, $_POST['lng']);
+    $lat = mysqli_real_escape_string($connect, $_POST['lat']);
+    $coordinates = $lat . "|" . $long;
+    $main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
+
+    //     //Housemate
+    $h_name = $_POST['hname'];
+    $h_relationship = $_POST['hrel'];
+    $h_mobile_number = $_POST['hnumber'];
+
+    //     //Relatives
+    $r_name = $_POST['rname'];
+    $r_relationship = $_POST['rrel'];
+    $r_mobile_number =$_POST['rnumber'];
+
+    $secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
+    $provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
+    $answer = mysqli_real_escape_string($connect, $_POST['yesorno']);
+
+    if ($answer === "Yes") {
+        $answer .= "|". ucwords(mysqli_real_escape_string($connect, $_POST['answer']));
+    }
+    $update_stmt = "UPDATE `emergency_info_sheet` SET `coordinates`='$coordinates',`main_address`='$main_address',`secondary_address`='$secondary_address',
+                    `provincial_address`='$provincial_address',`answer`='$answer' WHERE user_id='$user_id';";
+    if (mysqli_query($connect, $update_stmt) === true) {
+
+    } else {
+        echo $connect->error;
+        echo "<br>";
+        echo "<br>";
+
+    }
+    for ($i=0; $i < count($r_name); $i++) {
+        if ($r_name[$i] !== "" ) {
+            $update_stmt = "UPDATE `relatives` SET r_name`='$r_name[$i]',`r_number`='$r_mobile_number[$i]',`r_relationship`='$r_relationship[$i]' WHERE r_id='$user_id';";
+            if (mysqli_query($connect,$update_stmt) === true) {
+                echo $update_stmt;
+                echo "<br>";
+                echo "<br>";
+            } else {
+                print_r($connect->error);
+                echo "<br>";
+                echo "<br>";
+
+            }
+        }
+    }
+    for ($i=0; $i < count($h_name); $i++) {
+        if ($h_name[$i] !== "" ) {
+            $update_stmt = "UPDATE `housemates` SET h_name`='$h_name[$i]',`h_number`='$h_mobile_number[$i]',`h_relationship`='$h_relationship[$i]' WHERE h_id='$user_id';";
+            if (mysqli_query($connect,$update_stmt) === true) {
+                echo $update_stmt;
+                echo "<br>";
+                echo "<br>";
+            } else {
+                print_r($connect->error);
+                echo "<br>";
+                echo "<br>";
+
+            }
+        }
+    }
+
+?>

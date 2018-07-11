@@ -173,22 +173,22 @@ $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
 $birth_date = date('Y-m-d',strtotime($birth_date));
 
-if ($elem_status == "none") {
+if ($elem_status == "None") {
     $elementary = "None|None|None";
 } else {
     $elementary = $elem_school_name . "|" . $elem_status . "|". $elem_res;
 }
-if ($sec_status == "none") {
+if ($sec_status == "None") {
     $secondary = "None|None|None";
 } else {
     $secondary = $sec_school_name . "|". $sec_status . "|" . $sec_res;
 }
-if ($col_status == "none") {
+if ($col_status == "None") {
     $college = "None|None|None";
 } else {
     $college = $col_school_name . "|" . $col_status . "|" . $col_res;
 }
-if ($post_status == "none") {
+if ($post_status == "None") {
     $post_grad = "None|None|None";
 } else {
     $post_grad = $post_school_name . "|" . $post_status . "|" . $post_res;
