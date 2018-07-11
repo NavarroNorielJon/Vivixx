@@ -75,11 +75,7 @@ function remove(cid){
 function removeAcc(cid){
 	$('.rem'+cid).remove();
 }
-// function removeAll(){
-// 	for(){
-//
-// 	}
-// }
+
 
 function addAccount(){
 	increment++;
