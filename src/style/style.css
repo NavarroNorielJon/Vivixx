@@ -341,7 +341,7 @@
 }
 
 .update-information .update-information-header {
-	background-color: #008080;
+	background-color: #005959;
 	color: #fff;
 	max-height: 60px;
 	min-height: 60px;
@@ -500,7 +500,7 @@
 /*footer*/
 
 .footer {
-	background-color: #008080;
+	background-color: #005959;
 	bottom: 0;
 	color: white;
 	font-family: serif;
