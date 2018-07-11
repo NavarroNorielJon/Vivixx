@@ -134,11 +134,17 @@
 									<div class='item'>
 										<div class='imgTitle'>
 											<h2 class='blogTitle'>".$row['subject']."</h2>
-											<img class='images' src='data:image;base64," . $row['attachment'] . "'>
+										";
+									if ($row['attachment'] != null) {
+										echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
+									} else {
+										echo "<div class='images'>No Attachment</div>";
+									}
+									echo "
 										</div>
 										<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
 									</div>
-									";
+										";
 								}
 							?>
 						</div>
@@ -159,8 +165,8 @@
 								</div>
 
 								<div class='modal-body'>
-									<p id="am"></p>
-									<div id="dl"> </div>
+									<input type="text" class="form-control-plaintext" disabled value="" id="am">
+									<div id="dl"></div>
 								</div>
 
 								<div class='modal-footer'>

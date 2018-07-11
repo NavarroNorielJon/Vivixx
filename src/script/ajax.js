@@ -3,15 +3,17 @@ function announcement(id){
 	xmlhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200){
 			let responseJSON = JSON.parse(this.responseText);
-			document.getElementById('am').innerHTML = responseJSON.announcement;
+			document.getElementById('am').value = responseJSON.announcement;
 			document.getElementById('title').innerHTML = responseJSON.title;
-			let dl = "<h5>Documents</h5><ul>"
-			let i;
-			for(i in responseJSON.downloads){
-				dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>"
+			if (responseJSON.downloads != "") {
+				let dl = "<h5>Documents</h5><ul>"
+				let i;
+				for(i in responseJSON.downloads){
+					dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>"
+				}
+				dl += "</ul>";
+				document.getElementById('dl').innerHTML = dl;
 			}
-			dl += "</ul>";
-			document.getElementById('dl').innerHTML = dl;
 		}
 
 	};

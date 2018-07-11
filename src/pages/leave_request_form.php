@@ -1,5 +1,15 @@
 <?php
 	include '../utilities/session.php';
+	$today = date("Y-m-d");
+    $diff = date_diff(date_create($date_hired),date_create($today))->y;
+	echo $diff;
+	if($diff>=1){
+	} else {
+		echo "
+		<script>
+			window.location = '/';
+		</script>";
+	}
 ?>
 
 	<!DOCTYPE html>
@@ -7,13 +17,11 @@
 
 	<head>
 		<title>Vivixx</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../style/form-elements.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
@@ -161,17 +169,17 @@
 					<hr>
 
 					<div>
-						<h1>Inclusive days applied</h1>
+						<h1 class="text-center leave-header">Inclusive days applied</h1>
 
 						<div class="row">
 							<div class="form-group col">
 								<label for="start_date">From</label>
-								<input type="date" class="form-control" name="from" required>
+								<input type="date" data-provide="datepicker" class="form-control" name="from" id="start_date" required>
 							</div>
 
 							<div class="form-group col">
 								<label for="end_date">To</label>
-								<input type="date" class="form-control" name="to" id="end_date" required>
+								<input type="date" min="2018-07-11" onkeypress="alphabetInput(event)" class="form-control" name="to" id="end_date" required>
 							</div>
 						</div>
 
@@ -188,7 +196,8 @@
 			$('.mobile').inputmask({
 				mask: '+639dd ddd dddd'
 			});
-
+			var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("to")[0].setAttribute('min', today);
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>

@@ -4,11 +4,11 @@ ini_set('upload_max_filesize', '64M');
 include '../../utilities/db.php';
 $connect = Connect();
 
-    $subject = mysqli_real_escape_string($connect,$_POST["subject"]);
+    $subject = ucwords(mysqli_real_escape_string($connect,$_POST["subject"]));
     $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
-    $body = mysqli_real_escape_string($connect,$_POST["body"]);
-    $department = mysqli_real_escape_string($connect,$_POST["department"]);
+    $body = strtoupper(mysqli_real_escape_string($connect,$_POST["body"]));
+    $department = mysqli_real_escape_string($connect,$_POST["department"];
 
     $file_names = [];
     $file_paths = [];
@@ -21,9 +21,9 @@ $connect = Connect();
     foreach($department as $dept){
         $counter++;
         if($counter == count($department)){
-            $concat .= $dept;
+            $concat .= ucwords($dept);
         }else{
-            $concat .= $dept . ", ";
+            $concat .= ucwords($dept) . ", ";
         }
     }
     if(isset($_POST["submit"])){
