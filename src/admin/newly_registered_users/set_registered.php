@@ -27,6 +27,7 @@
                             </div>
                             <br>
 
+<<<<<<< HEAD
                             <div class="form-group">
                                 <label>Position</label>
                                 <?php
@@ -86,8 +87,57 @@
                                 <label>Date hired</label><br>
                                 <input type="date" id="date" name="date" class="form-control date">
                             </div>
+=======
+                            <label>Position</label>
+                            <?php
+                                if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position">
+                                        <option selected value="Online English Tutor">Online English Tutor</option>
+                                    </select>';
+                                }else if($row['department'] === "Administration/HR Support"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position" >
+                                    <option selected value="HR Assistant">HR Assistant</option>
+                                    </select>';
+                                }else if($row['department'] === "IT Support"){
+                                    echo '
+                                    <select class="custom-select form-control" name="position" >
+                                    <option selected value="ICT Support Specialist">ICT Support Specialist</option>
+                                    </select>';
+                                }else if($row['department'] === "Virtual Assistant"){
+                                    echo '
+                                    <select class="custom-select form-control pos" name="position" id="pos" onchange="change();">
+                                    <option selected disabled>Choose Here:</option>
+                                    <option value="Indesigner">Indesigner</option>
+                                    <option value="Web Developer">We Developer</option>
+                                    </select>';
+                                }else{
+                                    echo '
+                                    <select class="custom-select form-control position pos" name="position" id="pos1" onchange="change();"> 
+                                    <option selected disabled>Choose Here:</option>
+                                    <option value="Indesigner">secret</option>
+                                    <option value="Web Developer">something </option>
+                                    </select>';
+                                }
+                            ?>
+                           
+
+                            <label>Employee Status</label>
+                            <select class="custom-select form-control" name="employee_status" id="status">
+                                <option selected disabled>Choose Here:</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Project Based">Project Based</option>
+                                <option value="Probationary">Probationary</option>
+                                <option value="Regular">Regular</option>
+                            </select>
+                            
+                            <label>Date hired</label><br>
+                            <input type="date" id="date" name="date" class="form-control date">
+
+>>>>>>> e22a1c5a5e91464cfafe3b3665658a747c1ba71b
                         </form>
-                        <div style="text-align:right">
+                         <div style="text-align:right">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
                         </div>
@@ -122,8 +172,7 @@
     }
     function set_user() {
 		swal({
-			title: "Caution!",
-			text: "Are you sure you want to edit the announcement",
+			title: "Are you sure you want to update?",
 			icon: "warning",
 			buttons: {
 				cancel: "Cancel",
