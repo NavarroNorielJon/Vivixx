@@ -2,9 +2,7 @@
 	include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
 	$connect = Connect();
-	if($type == "admin") {
-		echo "<script>window.location = '../admin/';</script>";
-	}
+	
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);

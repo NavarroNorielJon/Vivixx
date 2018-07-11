@@ -1,5 +1,5 @@
 <?php
-    require_once 'db.php';
+    require 'db.php';
     session_start();
     $connect = Connect();
     if(isset($_SESSION['user'])){
