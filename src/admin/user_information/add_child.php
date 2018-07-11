@@ -15,6 +15,7 @@
         if ($child_name[$i] === "" && $child_birth[$i] === "") {
             continue;
         } else{
+            $child_name[$i] = ucwords($child_name[$i]);
             $insert_stmt = "INSERT INTO `user_offspring` (`n_id`,`child_name`,`child_birth_date`,`user_id`) VALUES ('$c','$child_name[$i]','$child_birth[$i]','$user_id');";
             if ($connect->query($insert_stmt) === true) {
                 echo "Successfully added";

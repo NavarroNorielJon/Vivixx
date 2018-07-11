@@ -23,7 +23,7 @@
 
                             <div class="form-group">
                                 <label>Department</label>
-                                <input type="text" name="department" class="form-control" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
+                                <input type="text" name="department" id="dept" class="form-control" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
                             </div>
                             <br>
 
@@ -33,35 +33,35 @@
                                     $main = explode("|",$row['department'])[0];
                                     if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                             <option selected required="require" value="Online English Tutor">Online English Tutor</option>
                                         </select>';
                                     }else if($main === "Administration/HR Support"){
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                         <option selected required="require" value="HR Assistant">HR Assistant</option>
                                         </select>';
                                     }else if($main === "IT Support"){
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                         <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
                                         </select>';
                                     }else if($main === "Virtual Assistant"){
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Indesigner">Indesigner</option>
                                         <option value="Web Developer">Web Developer</option>
                                         </select>';
                                     }else if ($main === "Security") {
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Security">Security</option>
                                         </select>';
                                     }else {
                                         echo '
-                                        <select class="custom-select form-control" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Housekeeping">Housekeeping</option>
                                         <option value="Utilities">Utilities</option>
@@ -84,12 +84,12 @@
 
                             <div class="form-group">
                                 <label>Date hired</label><br>
-                                <input type="date" id="date" name="date" class="form-control date">
+                                <input type="date" id="date" name="date" class="form-control">
                             </div>
                         </form>
                          <div style="text-align:right">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
+                            <button onclick='set_user();' disabled="disabled" class="btn btn-success" id="update">Update</button>
                         </div>
                     </div>
                 </div>
@@ -98,28 +98,22 @@
     </div>
 <script>
 
-    var old_status = document.getElementById('status').value;
-    var old_date = document.getElementById('date').value;
 
     $(document).change(function() {
-        if(old_status != $('#status').val() && old_date != $('#date').val()){
+        if($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "" ){
             $('#update').attr("disabled", false);
         }else{
             $('#update').attr("disabled", true);
-
         }
+        $(document).keyup(function() {
+            if($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "" ){
+                $('#update').attr("disabled", false);
+            }else{
+                $('#update').attr("disabled", true);
+            }
+        });
     });
 
-    function change() {
-        var old_position = document.getElementById('pos').value;
-        var old_position1 = document.getElementById('pos1').value;
-        if(old_position != $('#pos').val() || old_position1 != $('#pos').val()){
-            $('#update').attr("disabled", false);
-        }else{
-            $('#update').attr("disabled", true);
-
-        }
-    }
     function set_user() {
 		swal({
 			title: "Are you sure you want to update?",

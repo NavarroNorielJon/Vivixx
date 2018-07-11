@@ -107,7 +107,7 @@ if ($post_status === "g4") {
 $long = mysqli_real_escape_string($connect, $_POST['lng']);
 $lat = mysqli_real_escape_string($connect, $_POST['lat']);
 $coordinates = $lat . "|" . $long;
-$main_address = mysqli_real_escape_string($connect, $_POST['main_address']);
+$main_address = ucwords(mysqli_real_escape_string($connect, $_POST['main_address']));
 
 //     //Housemate
 $h_name = $_POST['hname'];
@@ -121,7 +121,7 @@ $r_mobile_number =$_POST['rnumber'];
 
 $secondary_address = ucwords(mysqli_real_escape_string($connect, $_POST['secondary_add']));
 $provincial_address = ucwords(mysqli_real_escape_string($connect, $_POST['provincial_add']));
-$answer = mysqli_real_escape_string($connect, $_POST['yesorno']);
+$answer = ucwords(mysqli_real_escape_string($connect, $_POST['yesorno']));
 
 if ($answer === "Yes") {
     $answer .= "|". ucwords(mysqli_real_escape_string($connect, $_POST['answer']));
@@ -171,7 +171,6 @@ $s_pass = mysqli_real_escape_string($connect, $_POST['s_password']);
 $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
 $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
-$birth_date = date('Y-m-d',strtotime($birth_date));
 
 if ($elem_status == "None") {
     $elementary = "None|None|None";
@@ -224,6 +223,7 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
              print_r($connect->error);
          }
          for ($i=0; $i < count($child_name) ; $i++) {
+             $child_name[$i] = ucwords($child_name[$i]);
              if ($child_name[$i] === "" && $child_birth[$i] === "") {
                  continue;
              } else{
@@ -240,9 +240,9 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
                          '$secondary_address','$provincial_address','$answer','$id','$id');";
          if ($connect->query($insert_stmt) === true) {
             for ($i=0; $i < count($r_name); $i++) {
+                $r_name[$i] = ucwords($r_name[$i]);
                 $c = $i + 1;
                 if ($r_name[$i] !== "" ) {
-                    $r_name[$i] = ucwords($r_name[$i]);
                     $insert_stmt = "INSERT INTO `relatives` (`r_id`,`r_name`,`r_number`,`r_relationship`,`n_id`) VALUES ('$id','$r_name[$i]','$r_mobile_number[$i]','$r_relationship[$i]','$c');";
                     if ($connect->query($insert_stmt) === true) {
                     } else {
@@ -257,9 +257,9 @@ $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`
                 }
             }
             for ($i=0; $i < count($h_name); $i++) {
+                $h_name[$i] = ucwords($h_name[$i]);
                 $c = $i + 1;
                 if ($h_name[$i] !== "" ) {
-                    $h_name[$i] = ucwords($h_name[$i]);
                     $insert_stmt = "INSERT INTO `housemates` (`h_id`,`h_name`,`h_number`,`h_relationship`,`n_id`) VALUES ('$id','$h_name[$i]','$h_mobile_number[$i]','$h_relationship[$i]','$c');";
                     if ($connect->query($insert_stmt) === true) {
                     } else {

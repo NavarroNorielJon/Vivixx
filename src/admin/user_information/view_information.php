@@ -1757,83 +1757,83 @@
             </div>
             </div>
         <script>
-        $('#sss_no').inputmask({
-            mask: 'dd-ddddddd-d'
-        });
-        $('#tin').inputmask({
-            mask: 'ddd-ddd-ddd-ddd'
-        });
-        $('#philhealth_no').inputmask({
-            mask: 'dd-ddddddddd-d'
-        });
-        $('#pagibig_id_no').inputmask({
-            mask: 'dddd-dddd-dddd'
-        });
-        $('.zip').inputmask({
-            mask: 'dddd'
-        });
-        $('.mobile').inputmask({
-            mask: '+639dd ddd dddd'
-        });
-        $('.telephone').inputmask({
-            mask: 'ddd-dddd'
-        });
-        $('.height').inputmask({
-            mask: 'dd'
-        });
-        $('.gradyear').inputmask({
-            mask: 'dddd-dd'
-        });
+            $('#sss_no').inputmask({
+                mask: 'dd-ddddddd-d'
+            });
+            $('#tin').inputmask({
+                mask: 'ddd-ddd-ddd-ddd'
+            });
+            $('#philhealth_no').inputmask({
+                mask: 'dd-ddddddddd-d'
+            });
+            $('#pagibig_id_no').inputmask({
+                mask: 'dddd-dddd-dddd'
+            });
+            $('.zip').inputmask({
+                mask: 'dddd'
+            });
+            $('.mobile').inputmask({
+                mask: '+639dd ddd dddd'
+            });
+            $('.telephone').inputmask({
+                mask: 'ddd-dddd'
+            });
+            $('.height').inputmask({
+                mask: 'dd'
+            });
+            $('.gradyear').inputmask({
+                mask: 'dddd-dd'
+            });
         </script>
         <script>
-        var map = L.map('mapid').setView([
-            16.4134367, 120.5858916
-        ], 5);
-        map.on('dragging', function() {
-            setTimeout(function() {
-                map.invalidateSize();
-            }, 400);
-        });
+            var map = L.map('mapid').setView([
+                16.4134367, 120.5858916
+            ], 5);
+            map.on('dragging', function() {
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 400);
+            });
 
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        map.doubleClickZoom.disable();
-        var marker = new L.Marker([
-            16.4134367, 120.5858916
-        ], {
-            draggable: true
-        }).addTo(map);
-        document.getElementById('lat').value = marker.getLatLng().lat;
-        document.getElementById('lng').value = marker.getLatLng().lng;
-        marker.on('drag', function() {
-            setTimeout(function() {
-                map.invalidateSize();
-            }, 400);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            map.doubleClickZoom.disable();
+            var marker = new L.Marker([
+                16.4134367, 120.5858916
+            ], {
+                draggable: true
+            }).addTo(map);
             document.getElementById('lat').value = marker.getLatLng().lat;
             document.getElementById('lng').value = marker.getLatLng().lng;
-        });
-        map.on('dblclick', function(event) {
-            setTimeout(function() {
-                map.invalidateSize();
-            }, 400);
-            marker.setLatLng(event.latlng);
-            marker.addTo(map);
-            document.getElementById('lat').value = marker.getLatLng().lat;
-            document.getElementById('lng').value = marker.getLatLng().lng;
-        });
-        marker.bindPopup("Click the map to reload.").openPopup();
-        var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-        map.on('click', function() {
-            setTimeout(function() {
-                map.invalidateSize();
-            }, 400);
-        });
+            marker.on('drag', function() {
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 400);
+                document.getElementById('lat').value = marker.getLatLng().lat;
+                document.getElementById('lng').value = marker.getLatLng().lng;
+            });
+            map.on('dblclick', function(event) {
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 400);
+                marker.setLatLng(event.latlng);
+                marker.addTo(map);
+                document.getElementById('lat').value = marker.getLatLng().lat;
+                document.getElementById('lng').value = marker.getLatLng().lng;
+            });
+            marker.bindPopup("Click the map to reload.").openPopup();
+            var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+            map.on('click', function() {
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 400);
+            });
         </script>
         <script>
-        function myFunction() {
-			document.getElementById("myDropdown").classList.toggle("showbtn");
-		}
+            function myFunction() {
+    			document.getElementById("myDropdown").classList.toggle("showbtn");
+    		}
         </script>
 
         <script type="text/javascript" src="../../script/jquery.form.min.js"></script>
@@ -1844,15 +1844,30 @@
         <script type="text/javascript" src="../../script/sweetalert.min.js"></script>
         <script type="text/javascript" src="../../script/ajax.js"></script>
         <script>
-        // $(document).ready(function () {
-        //     $(window).keyup(function() {
-    	// 		if ($('#add_child_name').val() != "" && $('#add_child_birth').val() != "") {
-    	// 			$('#sub').attr("disabled", false);
-    	// 		} else {
-    	// 			$('#sub').attr("disabled", true);
-    	// 		}
-    	// 	})
-        // });
+        $(document).change(function() {
+    		if ( $('#add_child_name').val() != "" && $('#add_child_birth').val() != "") {
+    			$('#sub').attr("disabled", false);
+    		} else {
+    			$('#sub').attr("disabled", true);
+    		}
+            $(document).keyup(function() {
+        		if ( $('#add_child_name').val() != "" && $('#add_child_birth').val() != "") {
+        			$('#sub').attr("disabled", false);
+        		} else {
+        			$('#sub').attr("disabled", true);
+        		}
+            });
+        });
+        $('#sub').click(function () {
+            swal({
+                type: 'success',
+                title: 'Successfully Added',
+                icon: 'success',
+                showConfirmButton: false
+            }).then(function (){
+                window.location ='/';
+            });
+        });
         $('#personal').ajaxForm({
             url: 'update_personal.php',
             method: 'post'
@@ -1863,17 +1878,7 @@
         });
         $('#family2').ajaxForm({
             url: 'add_child.php',
-            method: 'post',
-            success: function () {
-                swal({
-                    type: 'success',
-                    title: 'Successfully Added',
-                    icon: 'success',
-                    showConfirmButton: false
-                }).then(function (){
-                    window.location ='';
-                });
-            }
+            method: 'post'
         });
         $('#educational').ajaxForm({
             url: 'update_educ.php',
