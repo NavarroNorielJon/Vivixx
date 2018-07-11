@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	<?php include '../utilities/check_user.php'; ?>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -35,7 +36,7 @@
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 
-					<li class="nav-item active" >
+					<li class="nav-item active">
 						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
@@ -86,7 +87,6 @@
 
 					<?php
 					include '../../utilities/session.php';
-					include '../utilities/check_user.php';
 					$connect = Connect();
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
@@ -147,7 +147,7 @@
 
 	<script>
 		/* When the user clicks on the button,
-										toggle between hiding and showing the dropdown content */
+																		toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}

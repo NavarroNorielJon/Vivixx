@@ -17,7 +17,7 @@
 		function logout() {
 			window.location = '../utilities/logout.php';
 		}
-					function jon() {
+					function securityBreach() {
 						swal({
   								title: 'Security Breach!',
   								text: 'Your account has been deactivated',
@@ -29,7 +29,7 @@
 						
 					}
 					
-					window.onload = jon;
+					window.onload = securityBreach;
 			 </script>";
 		
 		die();

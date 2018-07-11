@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	<?php include '../utilities/check_user.php'; ?>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -79,7 +80,6 @@
 
 					<?php
 					include '../../utilities/session.php';
-					include '../utilities/check_user.php';
 					$connect = Connect();	
 					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null or employee_status is null or position is null);";
 					$result = $connect->query($sql);
@@ -150,7 +150,7 @@
 			$('#table').dataTable({
 				"columnDefs": [{
 					"orderable": false,
-					"targets": [3,4]
+					"targets": [3, 4]
 				}]
 			});
 			$('#table').DataTable();
