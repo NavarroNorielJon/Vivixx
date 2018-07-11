@@ -149,7 +149,7 @@
                     </div>
 
 
-                    <!-- <fieldset>
+                    <fieldset>
                         <form id="personal" action="update_personal" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="userid1" value="<?php echo $user_id ?>"/>
                             <h2>Step 1: Personal Information</h2>
@@ -543,7 +543,7 @@
                                 <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset> -->
+                    </fieldset>
 
                     <fieldset>
                         <form id="family" action="update_family" method="post">
@@ -737,8 +737,8 @@
                         </form>
                         <form id="family2" action="add_child" method="post">
                             <input type="hidden" name="userid2_5" value="<?php echo $user_id ?>"/>
-                            <div style="margin-top:15%;" class="modal fade" id="adding" tabindex="-1" role="dialog" aria-labelledby="addingLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;margin-left:18%">
+                            <div class="modal fade" id="adding" tabindex="-1" role="dialog" aria-labelledby="addingLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document" style="min-width: 130vh; max-width: 130vh">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="addingLabel">Add Child</h5>
@@ -750,7 +750,7 @@
                                             <div class="row">
                                                 <div class="form-group col-6">
                                                     <label for="child_name">Name</label>
-                                                    <input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="add_child_name[]" id="add_child_name" class="form-control text-transform" autocomplete="off">
+                                                    <input type="text" placeholder="First name M.I. Last name" onkeypress="alphabetInput(event)" name="add_child_name[]" id="addchild_name" class="form-control text-transform" autocomplete="off">
                                                 </div>
 
                                                 <div class="form-group col-6">
@@ -768,7 +768,7 @@
                                             <div id="child2"></div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" onclick="" data-dismiss="modal">Close</button>
                                             <button type="submit" id="sub" class="btn btn-primary" disabled="disabled">Add</button>
                                         </div>
                                     </div>
@@ -1321,7 +1321,7 @@
                             <?php
                             if ($row5['answer'] === "No") {
                                 $answer = $row5['answer'];
-                                $reason = " ";
+                                $reason = null;
                             } else {
                                 $answer = explode("|",$row5['answer'])[0];
                                 $reason = explode("|",$row5['answer'])[1];
@@ -1845,13 +1845,13 @@
         <script type="text/javascript" src="../../script/ajax.js"></script>
         <script>
         $(document).change(function() {
-    		if ( $('#add_child_name').val() != "" && $('#add_child_birth').val() != "") {
+    		if ($('#add_child_name').val() != "" && $('.addchild').val() != "" && $('#add_child_birth').val() != "") {
     			$('#sub').attr("disabled", false);
     		} else {
     			$('#sub').attr("disabled", true);
     		}
             $(document).keyup(function() {
-        		if ( $('#add_child_name').val() != "" && $('#add_child_birth').val() != "") {
+        		if ($('#add_child_name').val() != "" && $('.addchild').val() != "" && $('#add_child_birth').val() != "") {
         			$('#sub').attr("disabled", false);
         		} else {
         			$('#sub').attr("disabled", true);
