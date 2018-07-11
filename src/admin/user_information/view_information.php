@@ -22,8 +22,11 @@
 
     $row1 = $result1->fetch_assoc();
     $row2 = $result2->fetch_assoc();
+    $row3 = $result3->fetch_assoc();
     $row4 = $result4->fetch_assoc();
     $row5 = $result5->fetch_assoc();
+    $row6 = $result6->fetch_assoc();
+    $row7 = $result7->fetch_assoc();
     $row8 = $result8->fetch_assoc();
 
     $height = explode("'",$row1['height']);
@@ -149,9 +152,9 @@
                     </div>
 
 
-                    <!-- <fieldset>
+                    <fieldset>
                         <form id="personal" action="update_personal" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="userid" value="<?php echo $user_id ?>"/>
+                            <input type="hidden" name="userid1" value="<?php echo $user_id ?>"/>
                             <h2>Step 1: Personal Information</h2>
                             <div class="row">
                                 <div class="form-group col-4">
@@ -241,7 +244,7 @@
                                 <div class=" form-group col">
                                     <label for="gender">Gender</label>
                                     <select name="gender" id="gender" class="form-control">
-                                        <option selected="selected" value="none" ><?php echo $row1["gender"]?></option>
+                                        <option selected="selected" value="None" ><?php echo $row1["gender"]?></option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                         <option value="Rather not say">I'd rather not say</option>
@@ -275,7 +278,7 @@
                                 <div class="form-group col">
                                     <label for="blood">Blood Type</label>
                                     <select name="blood" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $row1["blood_type"]?></option>
+                                        <option selected="selected" value="None"><?php echo $row1["blood_type"]?></option>
                                         <option value="O">O</option>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
@@ -297,7 +300,7 @@
                                 <div class="form-group col-3">
     								<label>Area Code</label>
     								<select name="res_area_code" class="form-control" id="res_area_code" required="required">
-                                        <option selected="selected" value="none"><?php  echo explode("-",$row1['residential_tel_no'])[0]?></option>
+                                        <option selected="selected" value="None"><?php  echo explode("-",$row1['residential_tel_no'])[0]?></option>
                                         <optgroup label="Luzon">
                                             <option value="74">Abra (74)</option>
                                             <option value="52">Albay (52)</option>
@@ -394,7 +397,7 @@
                                 <div class="form-group col-3">
     								<label>Area Code</label>
     								<select name="per_area_code" class="form-control" id="per_area_code" required="required">
-                                        <option selected="selected" value="none"><?php  echo explode("-",$row1['permanent_tel_no'])[0]?></option>
+                                        <option selected="selected" value="None"><?php  echo explode("-",$row1['permanent_tel_no'])[0]?></option>
                                         <optgroup label="Luzon">
                                             <option value="74">Abra (74)</option>
                                             <option value="52">Albay (52)</option>
@@ -502,7 +505,7 @@
                                 <div class="form-group col">
                                     <label for="civil_status">Civil Status</label>
                                     <select name="civil_status" id="civil_status" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $row1["civil_status"]?></option>
+                                        <option selected="selected" value="None"><?php echo $row1["civil_status"]?></option>
                                         <option value="Single">Single</option>
                                         <option value="Married">Married</option>
                                         <option value="Widowed">Widowed</option>
@@ -547,6 +550,7 @@
 
                     <fieldset>
                         <form id="family" action="update_family" method="post">
+                            <input type="hidden" name="userid2" value="<?php echo $user_id ?>"/>
                             <h2>Step 2: Family Background</h2>
                             <h5 id="sample">Father's Name</h5>
                             <div class="row">
@@ -606,38 +610,122 @@
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-2">
-                                    <label for="occupation">Occupation</label>
-                                    <input type="text" name="occupation" id="occupation" placeholder="occupation" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" value="<?php echo $row2['occupation'];?>">
-                                </div>
+								<div class="form-group col-5">
+									<label for="occupation">Occupation</label>
+									<input type="text" name="occupation" id="occupation" placeholder="occupation" value="<?php echo $row2['occupation'];?>" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								</div>
 
-                                <div class="form-group col-2">
-                                    <label for="employer">Employer</label>
-                                    <input type="text" name="employer" id="employer" placeholder="employer" class="form-control text-transform" autocomplete="off" value="<?php echo $row2['employer'];?>">
-                                </div>
+								<div class="form-group col-5">
+									<label for="employer">Employer</label>
+									<input type="text" name="employer" id="employer" placeholder="employer" value="<?php echo $row2['employer'];?>" class="form-control text-transform" autocomplete="off">
+								</div>
 
-                                <div class="form-group col">
-                                    <label for="business_address">Business Address</label>
-                                    <input type="text" name="business_address" id="business_address" placeholder="business address" class="form-control text-transform" autocomplete="off" value="<?php echo $row2['business_address'];?>">
-                                </div>
+							</div>
+							<div class="row">
+								<div class="form-group col">
+									<label for="business_address">Business Address</label>
+									<input type="text" name="business_address" id="business_address" placeholder="business address" value="<?php echo $row2['business_address'];?>" class="form-control text-transform" autocomplete="off">
+								</div>
 
-                                <div class="form-group col-3">
-                                    <label for="spouse_tel_no">Telephone NO.</label>
-                                    <input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" autocomplete="off" class="form-control telephone" value="<?php echo $row2['spouse_tel_no'];?>">
-                                </div>
-                            </div>
+								<div class="form-group col-3">
+									<label>Area Code</label>
+									<select name="sp_area_code" class="form-control" id="sp_area_code">
+                                        <option selected="selected" value="None"><?php if($row2['spouse_tel_no'] !== null){
+                                            echo explode("-", $row2['spouse_tel_no'])[0];}else{echo "None";} ?></option>
+                                        <optgroup label="Luzon">
+                                            <option value="74">Abra (74)</option>
+                                            <option value="52">Albay (52)</option>
+                                            <option value="42">Aurora (42)</option>
+                                            <option value="47">Bataan (47)</option>
+                                            <option value="78">Batanes (78)</option>
+                                            <option value="43">Batangas (43)</option>
+                                            <option value="74">Benguet (74)</option>
+                                            <option value="44">Bulacan (44)</option>
+                                            <option value="78">Cagayan Valley (78)</option>
+                                            <option value="54">Camarines Norte/Sur (54)</option>
+                                            <option value="52">Catanduanes (52)</option>
+                                            <option value="46">Cavite Province (46)</option>
+                                            <option value="74">Ifugao Province (74)</option>
+                                            <option value="77">Ilocos Norte/Sur (77)</option>
+                                            <option value="78">Isabela Province(78)</option>
+                                            <option value="74">Kalinga-Apayao (74)</option>
+                                            <option value="49">Laguna (49)</option>
+                                            <option value="72">La Union (72)</option>
+                                            <option value="42">Marinduque (42)</option>
+                                            <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                            <option value="74">Mountain Province (74)</option>
+                                            <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                            <option value="48">Palawan (48)</option>
+                                            <option value="45">Pampanga (45)</option>
+                                            <option value="75">Pangasinan (75)</option>
+                                            <option value="42">Quezon Province (42)</option>
+                                            <option value="78">Quirino Province (78)</option>
+                                            <option value="2">Rizal Province (2)</option>
+                                            <option value="56">Sorsogon Province (56)</option>
+                                            <option value="45">Tarlac (45)</option>
+                                            <option value="47">Zambales (47)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Visayas">
+                                            <option value="36">Aklan (36)</option>
+                                            <option value="36">Antique (36)</option>
+                                            <option value="53">Biliran (53)</option>
+                                            <option value="38">Bohol (38)</option>
+                                            <option value="36">Capiz (36)</option>
+                                            <option value="32">Cebu Province (32)</option>
+                                            <option value="33">Guimaras (33)</option>
+                                            <option value="33">Iloilo Province (33)</option>
+                                            <option value="53">Leyte (53)</option>
+                                            <option value="56">Masbate Province (56)</option>
+                                            <option value="88">Misamis Occidental and Oriental (88)</option>
+                                            <option value="34">Negros Occidental Occidental (34)</option>
+                                            <option value="35">Negros Occidental Oriental (35)</option>
+                                            <option value="42">Romblon (42)</option>
+                                            <option value="55">Eastern Samar (55)</option>
+                                            <option value="55">Northern Samar(55)</option>
+                                            <option value="55">Western Samar (55)</option>
+                                            <option value="35">Siquijor (35)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Mindanao">
+                                            <option value="85">Agusan (85)</option>
+                                            <option value="62">Basilan (62)</option>
+                                            <option value="88">Bukidnon (88)</option>
+                                            <option value="88">Camiguin (88)</option>
+                                            <option value="84">Davao del Norte (84)</option>
+                                            <option value="82">Davao del Sur (82)</option>
+                                            <option value="87">Davao Oriental (87)</option>
+                                            <option value="63">Lanao del Norte (63)</option>
+                                            <option value="64">Maguindanao (64)</option>
+                                            <option value="64">North Cotobato (64)</option>
+                                            <option value="65">North Cotobato (65)</option>
+                                            <option value="83">Sarangani (83)</option>
+                                            <option value="83">South Cotobato (83)</option>
+                                            <option value="64">Sultan Kudarat (64)</option>
+                                            <option value="86">Surigao (86)</option>
+                                            <option value="68">Tawi Tawi (68)</option>
+                                            <option value="65">Zamboanga (65)</option>
+                                        </optgroup>
+                                    </select>
+								</div>
+
+								<div class="form-group col-3">
+									<label for="spouse_tel_no">Telephone NO.</label>
+									<input type="tel" name="spouse_tel_no" id="spouse_tel_no" placeholder="XXX-XXXX" value="<?php if ($row2['spouse_tel_no'] !== null ){echo explode("-", $row2['spouse_tel_no'])[1];echo explode("-", $row2['spouse_tel_no'])[2];}else{echo "None";}?>" autocomplete="off" class="form-control telephone">
+								</div>
+							</div>
 
                             <h5>Child/Children's Information</h5>
                             <?php
-                                while ($row3 = mysqli_fetch_array($result3)) {
+                                for ($i=0; $i<$result3->num_rows;$i++) {
                                     echo '<div class="row">
                                         <div class="form-group col-6">
                                             <label for="child_name">Name</label>
-                                            <input type="text" value="'. $row3['child_name'] .'" class="form-control text-transform" autocomplete="off">
+                                            <input type="text" value="bobo" class="form-control text-transform" autocomplete="off">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="child_birth">Date of Birth</label>
-                                            <input type="text" value="'. $row3['child_birth_date'] .'" class="form-control" autocomplete="off">
+                                            <input type="text" value="bobo2" class="form-control" autocomplete="off">
                                         </div>
                                     </div>';
                                 }
@@ -663,50 +751,63 @@
                             <div id="child"></div>
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
-                                <button type="button" class="btn pages btn-next">Next</button>
+                                <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
                         </form>
-                    </fieldset> -->
+                    </fieldset>
 
                     <fieldset>
                         <form id="educational" action="update_educ" method="post">
+                            <input type="hidden" name="userid3" value="<?php echo $user_id ?>"/>
                             <?php
                                 $elemname = explode("|",$row4["elementary"])[0];
-                                $elemyear = explode("|",$row4["elementary"])[1];
+                                $elemstat = explode("|",$row4["elementary"])[1];
+                                $elemyear = explode("|",$row4["elementary"])[2];
                                 $secondname = explode("|",$row4["secondary"])[0];
-                                $secondyear = explode("|",$row4["secondary"])[1];
+                                $secondstat = explode("|",$row4["secondary"])[1];
+                                $secondyear = explode("|",$row4["secondary"])[2];
                                 $collegename = explode("|",$row4["college"])[0];
-                                $collegeyear = explode("|",$row4["college"])[1];
+                                $collegestat = explode("|",$row4["college"])[1];
+                                $collegeyear = explode("|",$row4["college"])[2];
                                 $postname = explode("|",$row4["post_grad"])[0];
-                                $postyear = explode("|",$row4["post_grad"])[1];
+                                $poststat = explode("|",$row4["post_grad"])[1];
+                                $postyear = explode("|",$row4["post_grad"])[2];
 
-                                if($elemname === "None" && $elemyear === "None"){
+                                if($elemname === "None" && $elemyear === "None" ){
                                     $ename = "None";
                                     $eyear = "None";
+                                    $estat = "None";
                                 }else{
                                     $ename = $elemname;
                                     $eyear = $elemyear;
+                                    $estat = $elemstat;
                                 }
                                 if($secondname === "None" && $secondyear === "None"){
                                     $sname = "None";
                                     $syear = "None";
+                                    $sstat = "None";
                                 }else{
                                     $sname = $secondname;
                                     $syear = $secondyear;
+                                    $sstat = $secondstat;
                                 }
                                 if($collegename === "None" && $collegeyear === "None"){
                                     $cname = "None";
                                     $cyear = "None";
+                                    $cstat = "None";
                                 }else{
                                     $cname = $collegename;
                                     $cyear = $collegeyear;
+                                    $cstat = $collegestat;
                                 }
                                 if($postname === "None" && $postyear === "None"){
                                     $pname = "None";
                                     $pyear = "None";
+                                    $pstat = "None";
                                 }else{
                                     $pname = $postname;
                                     $pyear = $postyear;
+                                    $pstat = $poststat;
                                 }
                             ?>
                             <h2>Step 3: Educational Background</h2>
@@ -721,6 +822,7 @@
                                         $('#option1').change(function () {
                                             $('#g1').hide();
                                             $('#u1').hide();
+                                            $('#<?php echo $estat?>').hide();
                                             $('#' + $(this).val()).show();
                                             if ($('#option1').val() === "g1") {
                                                 $('#elem_yr_grad').attr('required', 'true');
@@ -741,10 +843,36 @@
                                 <div class="form-group col">
                                     <label for="option1">Status</label>
                                     <select name="option1" id="option1" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $eyear?></option>
+                                        <option selected="selected" value="<?php echo $estat?>"><?php echo $estat?></option>
+                                        <option value="None">None</option>
                                         <option value="g1">Graduate</option>
                                         <option value="u1">Undergraduate</option>
                                     </select>
+                                </div>
+
+                                <div class="form-group col" id="<?php echo $estat?>">
+                                    <?php
+                                        if ($estat == "Graduate") {
+                                            echo "
+                                                <label for='yr_grad'>Year Graduated</label>
+                                                <input type='text' name='elem_old_yr' id='elem_old_yr' placeholder='Ex. 1995-96' value='".$eyear."' class='form-control gradyear' autocomplete='off'>
+                                                ";
+                                        } elseif ($estat == "Undergraduate") {
+                                            echo "
+                                                <label for='yr_grad'>Highest Level</label>
+                                                <select name='elem_old_level' id='elem_old_level' class='form-control'>
+                                                    <option value='".$eyear."'>".$eyear."</option>
+                                                    <option value='None'>None</option>
+                                                    <option value='Grade 1'>Grade 1</option>
+                                                    <option value='Grade 2'>Grade 2</option>
+                                                    <option value='Grade 3'>Grade 3</option>
+                                                    <option value='Grade 4'>Grade 4</option>
+                                                    <option value='Grade 5'>Grade 5</option>
+                                                    <option value='Grade 6'>Grade 6</option>
+                                                </select>
+                                                ";
+                                        }
+                                     ?>
                                 </div>
 
                                 <div class="form-group col" id="g1" style="display:none">
@@ -754,7 +882,15 @@
 
                                 <div class="form-group col" id="u1" style="display:none">
                                     <label for="high_level">Highest Level</label>
-                                    <input type="text" name="elem_high_level" id="elem_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                    <select name="elem_high_level" id="elem_high_level" class="form-control">
+                                        <option selected="selected" value="None">None</option>
+                                        <option value="Grade 1">Grade 1</option>
+                                        <option value="Grade 2">Grade 2</option>
+                                        <option value="Grade 3">Grade 3</option>
+                                        <option value="Grade 4">Grade 4</option>
+                                        <option value="Grade 5">Grade 5</option>
+                                        <option value="Grade 6">Grade 6</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -770,6 +906,7 @@
                                         $('#option2').change(function () {
                                             $('#g2').hide();
                                             $('#u2').hide();
+                                            $('#<?php echo $sstat?>').hide();
                                             $('#' + $(this).val()).show();
                                             if ($('#option2').val() === "g2") {
                                                 $('#sec_yr_grad').attr('required', 'true');
@@ -790,10 +927,41 @@
                                 <div class="form-group col">
                                     <label for="option2">Status</label>
                                     <select name="option2" id="option2" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $syear?></option>
+                                        <option selected="selected" value="<?php echo $sstat?>"><?php echo $sstat?></option>
+                                        <option value="None">None</option>
                                         <option value="g2">Graduate</option>
                                         <option value="u2">Undergraduate</option>
                                     </select>
+                                </div>
+
+                                <div class="form-group col" id="<?php echo $sstat?>">
+                                    <?php
+                                        if ($sstat == "Graduate") {
+                                            echo "
+                                                <label for='yr_grad'>Year Graduated</label>
+                                                <input type='text' name='sec_old_yr' id='sec_old_yr' placeholder='Ex. 1995-96' value='".$syear."' class='form-control gradyear' autocomplete='off'>
+                                                ";
+                                        } elseif ($sstat == "Undergraduate") {
+                                            echo "
+                                                <label for='yr_grad'>Highest Level</label>
+                                                <select name='sec_old_level' id='sec_old_level' class='form-control'>
+                                                    <option selected='selected' value='".$syear."'>".$syear."</option>
+                                                    <option value='None'>None</option>
+                                                    <option value='1st Year'>1st Year</option>
+                                                    <option value='2nd Year'>2nd Year</option>
+                                                    <option value='3rd Year'>3rd Year</option>
+                                                    <option value='4th Year'>4th Year</option>
+                                                    <option value='Grade 7'>Grade 7</option>
+                                                    <option value='Grade 8'>Grade 8</option>
+                                                    <option value='Grade 9'>Grade 9</option>
+                                                    <option value='Grade 10'>Grade 10</option>
+                                                    <option value='Grade 11'>Grade 11</option>
+                                                    <option value='Grade 12'>Grade 12</option>
+                                                </select>
+                                                <input type='text' name='sec_old_level' id='sec_old_level' placeholder='(If Undergraduate)' value='".$syear."' class='form-control' autocomplete='off'>
+                                                ";
+                                        }
+                                     ?>
                                 </div>
 
                                 <div class="form-group col" id="g2" style="display:none">
@@ -820,6 +988,7 @@
                                         $('#option3').change(function () {
                                             $('#g3').hide();
                                             $('#u3').hide();
+                                            $('#<?php echo $cstat?>').hide();
                                             $('#' + $(this).val()).show();
                                             if ($('#option3').val() === "g3") {
                                                 $('#col_yr_grad').attr('required', 'true');
@@ -841,10 +1010,35 @@
                                 <div class="form-group col">
                                     <label for="option3">Status</label>
                                     <select name="option3" id="option3" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $cyear?></option>
+                                        <option selected="selected" value="<?php echo $cstat?>"><?php echo $cstat?></option>
+                                        <option value="None">None</option>
                                         <option value="g3">Graduate</option>
                                         <option value="u3">Undergraduate</option>
                                     </select>
+                                </div>
+
+                                <div class="form-group col" id="<?php echo $cstat?>">
+                                    <?php
+                                        if ($cstat == "Graduate") {
+                                            echo "
+                                                <label for='yr_grad'>Year Graduated</label>
+                                                <input type='text' name='col_old_yr' id='col_old_yr' placeholder='Ex. 1995-96' value='".$cyear."' class='form-control gradyear' autocomplete='off'>
+                                                ";
+                                        } elseif ($cstat == "Undergraduate") {
+                                            echo "
+                                                <label for='yr_grad'>Highest Level</label>
+                                                <select name='col_old_level' id='col_old_level' class='form-control'>
+                                                    <option selected='selected' value='".$cyear."'>".$cyear."</option>
+                                                    <option value='None'>None</option>
+                                                    <option value='1st Year'>1st Year</option>
+                                                    <option value='2nd Year'>2nd Year</option>
+                                                    <option value='3rd Year'>3rd Year</option>
+                                                    <option value='4th Year'>4th Year</option>
+                                                    <option value='5th Year'>5th Year</option>
+                                                </select>
+                                                ";
+                                        }
+                                     ?>
                                 </div>
 
                                 <div class="form-group col" id="g3" style="display:none">
@@ -854,7 +1048,14 @@
 
                                 <div class="form-group col" id="u3" style="display:none">
                                     <label for="high_level">Highest Level</label>
-                                    <input type="text" name="col_high_level" id="col_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                    <select name="col_high_level" id="col_high_level" class="form-control">
+                                        <option selected="selected" value="None">None</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="5th Year">5th Year</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -876,7 +1077,6 @@
                                                 $('#pos_yr_grad').attr('required', 'true');
                                                 $('#pos_school_name').attr('required', 'true');
                                                 $('#pos_high_level').removeAttr('required').removeClass('input-error');
-
                                             } else if ($('#option4').val() === "u4") {
                                                 $('#pos_high_level').attr('required', 'true');
                                                 $('#pos_school_name').attr('required', 'true');
@@ -892,10 +1092,44 @@
                                 <div class="form-group col">
                                     <label for="option4">Status</label>
                                     <select name="option4" id="option4" class="form-control">
-                                        <option selected="selected" value="none"><?php echo $pyear?></option>
+                                        <option selected="selected" value="<?php echo $pyear?>"><?php echo $pyear?></option>
+                                        <option value="None"><?php echo $pyear?></option>
                                         <option value="g4">Graduate</option>
                                         <option value="u4">Undergraduate</option>
                                     </select>
+                                </div>
+
+                                <?php
+                                    if ($pstat == "Graduate") {
+                                        echo "
+                                            <label for='yr_grad'>Year Graduated</label>
+                                            <input type='text' name='post_old_yr' id='sec_old_yr' placeholder='Ex. 1995-96' value='".$pyear."' class='form-control gradyear' autocomplete='off'>
+                                            ";
+                                    } elseif ($pstat == "Undergraduate") {
+                                        echo "
+                                            <label for='yr_grad'>Highest Level</label>
+                                            <select name='pos_old_yr' id='pos_old_yr' class='form-control'>
+                                                <option selected='selected' value='".$pyear."'>".$pyear."</option>
+                                                <option value='None'>None</option>
+                                                <option value='1st Year'>1st Year</option>
+                                                <option value='2nd Year'>2nd Year</option>
+                                                <option value='3rd Year'>3rd Year</option>
+                                                <option value='4th Year'>4th Year</option>
+                                                <option value='Grade 7'>Grade 7</option>
+                                                <option value='Grade 8'>Grade 8</option>
+                                                <option value='Grade 9'>Grade 9</option>
+                                                <option value='Grade 10'>Grade 10</option>
+                                                <option value='Grade 11'>Grade 11</option>
+                                                <option value='Grade 12'>Grade 12</option>
+                                            </select>
+                                            <input type='text' name='pos_old_level' id='pos_old_level' placeholder='(If Undergraduate)' value='".$syear."' class='form-control' autocomplete='off'>
+                                            ";
+                                    }
+                                 ?>
+
+                                <div class="form-group col" id="" style="display:none">
+                                    <label for="yr_grad">Year Graduated</label>
+                                    <input type="text" name="" id="pos_yr_grad" value="" class="form-control" autocomplete="off">
                                 </div>
 
                                 <div class="form-group col" id="g4" style="display:none">
@@ -916,134 +1150,56 @@
                         </form>
                     </fieldset>
 
-                    <fieldset>
-                        <h2>Step 4: Emergency Information Sheet</h2>
-                        <h5>Main City Address</h5>
-                        <div>
-                            <div id="mapid"></div>
+                    <!-- <fieldset>
+                        <form id="emergency" action="update_emergency" method="post">
+                            <input type="hidden" name="userid4" value="<?php echo $user_id ?>"/>
+                            <h2>Step 4: Emergency Information Sheet</h2>
+                            <h5>Main City Address</h5>
+                            <div>
+                                <div id="mapid"></div>
+                                <input type="text" id="lat" name="lat" value="<?php echo $coordinates[0];?>" class="d-none" hidden>
+    							<input type="text" id="lng" name="lng" value="<?php echo $coordinates[1];?>" class="d-none" hidden>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label>
+                                            <h6>Main address</h6>
+                                        </label>
+                                        <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" value="<?php echo $row5['main_address'];?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <super>(Your alternate address when you are not at Main City Address)</super>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="secondary_add">
+                                            <h6>Secondary City Address</h6>
+                                        </label>
+                                        <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address" value="<?php if ($row5['secondary_address'] !== "") {echo $row5['secondary_address'];}?>">
+                                    </div>
 
-                            <input type="text" id="lat" name="lat" value="<?php echo $coordinates[0];?>" class="d-none" hidden>
-							<input type="text" id="lng" name="lng" value="<?php echo $coordinates[1];?>" class="d-none" hidden>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label>
-                                        <h6>Main address</h6>
-                                    </label>
-                                    <input type="text" id="main_address" placeholder="main address" class="form-control text-transform" name="main_address" value="<?php echo $row5['main_address'];?>">
+                                    <div class="form-group col">
+                                        <label>
+                                            <h6>Provincial/Permanent Address</h6>
+                                        </label>
+                                        <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" value="<?php echo $row5['provincial_address'];?>">
+                                    </div>
                                 </div>
                             </div>
-                            <br>
-                            <super>(Your alternate address when you are not at Main City Address)</super>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label for="secondary_add">
-                                        <h6>Secondary City Address</h6>
-                                    </label>
-                                    <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address" value="<?php if ($row5['secondary_address'] !== "") {echo $row5['secondary_address'];}?>">
-                                </div>
-
-                                <div class="form-group col">
-                                    <label>
-                                        <h6>Provincial/Permanent Address</h6>
-                                    </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" value="<?php echo $row5['provincial_address'];?>">
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <h6>Your Housemates</h6>
-                        <?php
-                            while ($row6 = mysqli_fetch_array($result6)) {
-                                echo "<div class='row'>
-                                    <div class='form-group col'>
-                                        <label for='hname'>Name of Housemate</label>
-                                        <input type='text' name='hname[]' id='hname1' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='rel'>Relationship</label>
-                                        <select class='custom-select form-group' name='hrel[]' id='hrel1'>
-                                            <option selected='selected' value='".$row6['h_relationship']."' disabled='disabled'>".$row6['h_relationship']."</option>
-                                            <option value='Family'>Family</option>
-                                            <option value='Friend'>Friend</option>
-                                            <option value='Acquaintances'>Acquaintances</option>
-                                            <option value='Romantic Relationship'>Romantic Relationship</option>
-                                        </select>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='mnumber1'>Mobile Number</label>
-                                        <input type='tel' name='mnumber[]' id='mnumber1' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                    </div>
-                                </div>";
-                                if ($result6->num_rows == 1) {
-                                    echo "
-                                                                    <div class='row'>
-                                                                        <div class='form-group col'>
-                                                                            <label for='hname'>Name of Housemate</label>
-                                                                            <input type='text' name='hname[]' id='hname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                                                        </div>
-
-                                                                        <div class='form-group col'>
-                                                                            <label for='rel'>Relationship</label>
-                                                                            <select class='custom-select form-group' name='hrel[]' id='hrel2'>
-                                                                                <option selected='selected' disabled='disabled'>Choose here:</option>
-                                                                                <option value='Family'>Family</option>
-                                                                                <option value='Friend'>Friend</option>
-                                                                                <option value='Acquaintances'>Acquaintances</option>
-                                                                                <option value='Romantic Relationship'>Romantic Relationship</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class='form-group col'>
-                                                                            <label for='mnumber2'>Mobile Number</label>
-                                                                            <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                                                        </div>
-                                                                    </div>";
-                                }
-                            }
-                         ?>
-
-                        <hr>
-                        <h6>Your Closest Living Relatives</h6>
-                        <?php
-                            while ($row7 = mysqli_fetch_array($result7)) {
-                                echo "<div class='row'>
-                                    <div class='form-group col'>
-                                        <label for='hname'>Name of relative</label>
-                                        <input type='text' name='rname[]' id='rname1' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='rel'>Relationship</label>
-                                        <select class='custom-select form-group' name='rrel[]' id='rrel1'>
-                                            <option selected='selected' value='".$row7['r_relationship']."' disabled='disabled'>".$row7['r_relationship']."</option>
-                                            <option value='Family'>Family</option>
-                                            <option value='Friend'>Friend</option>
-                                            <option value='Acquaintances'>Acquaintances</option>
-                                            <option value='Romantic Relationship'>Romantic Relationship</option>
-                                        </select>
-                                    </div>
-
-                                    <div class='form-group col'>
-                                        <label for='rmnumber1'>Mobile Number</label>
-                                        <input type='tel' name='rmnumber[]' id='rmnumber1' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
-                                    </div>
-                                </div>
-
-                                ";
-                                if ($result7->num_rows <2) {
+                            <hr>
+                            <h6>Your Housemates</h6>
+                            <?php
+                                $c = 0;
+                                for ($i = 0; $i < count($result6->num_rows) ;$i++) {
                                     echo "<div class='row'>
                                         <div class='form-group col'>
-                                            <label for='hname'>Name of relative</label>
-                                            <input type='text' name='rname[]' id='rname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                            <label for='hname'>Name of Housemate</label>
+                                            <input type='text' name='hname[]' id='hname".$c++."' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                         </div>
 
                                         <div class='form-group col'>
-                                        <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
                                             <label for='rel'>Relationship</label>
-                                            <select class='custom-select form-group' name='rrel[]' id='rrel2'>
-                                                <option selected='selected' disabled='disabled'>Choose here:</option>
+                                            <select class='custom-select form-group' name='hrel[]' id='hrel".$c++."'>
+                                                <option selected='selected' value='".$row6['h_relationship']."' >".$row6['h_relationship']."</option>
                                                 <option value='Family'>Family</option>
                                                 <option value='Friend'>Friend</option>
                                                 <option value='Acquaintances'>Acquaintances</option>
@@ -1052,163 +1208,557 @@
                                         </div>
 
                                         <div class='form-group col'>
-                                            <label for='rmnumber2'>Mobile Number</label>
-                                            <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            <label for='mnumber1'>Mobile Number</label>
+                                            <input type='tel' name='mnumber[]' id='mnumber".$c++."' value='".$row6['h_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        </div>
+                                    </div>";
+                                    if ($result6->num_rows == 1) {
+                                        echo "
+                                                                        <div class='row'>
+                                                                            <div class='form-group col'>
+                                                                                <label for='hname'>Name of Housemate</label>
+                                                                                <input type='text' name='hname[]' id='hname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                                                            </div>
+
+                                                                            <div class='form-group col'>
+                                                                                <label for='rel'>Relationship</label>
+                                                                                <select class='custom-select form-group' name='hrel[]' id='hrel2'>
+                                                                                    <option selected='selected' disabled='disabled'>Choose here:</option>
+                                                                                    <option value='Family'>Family</option>
+                                                                                    <option value='Friend'>Friend</option>
+                                                                                    <option value='Acquaintances'>Acquaintances</option>
+                                                                                    <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                            <div class='form-group col'>
+                                                                                <label for='mnumber2'>Mobile Number</label>
+                                                                                <input type='tel' name='mnumber[]' id='mnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                                                            </div>
+                                                                        </div>";
+                                    }
+                                }
+                             ?>
+
+                            <hr>
+                            <h6>Your Closest Living Relatives</h6>
+                            <?php
+                                for ($i = 0; $i < count($result7->num_rows) ;$i++) {
+                                    echo "<div class='row'>
+                                        <div class='form-group col'>
+                                            <label for='hname'>Name of relative</label>
+                                            <input type='text' name='rname[]' id='rname".$c++."' value='".$row7['r_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                         </div>
 
-                                    </div>";
+                                        <div class='form-group col'>
+                                            <label for='rel'>Relationship</label>
+                                            <select class='custom-select form-group' name='rrel[]' id='rrel".$c++."'>
+                                                <option selected='selected' value='".$row7['r_relationship']."'>".$row7['r_relationship']."</option>
+                                                <option value='Family'>Family</option>
+                                                <option value='Friend'>Friend</option>
+                                                <option value='Acquaintances'>Acquaintances</option>
+                                                <option value='Romantic Relationship'>Romantic Relationship</option>
+                                            </select>
+                                        </div>
+
+                                        <div class='form-group col'>
+                                            <label for='rmnumber1'>Mobile Number</label>
+                                            <input type='tel' name='rmnumber[]' id='rmnumber".$c++."' value='".$row7['r_number']."' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                        </div>
+                                    </div>
+                                    ";
+                                    if ($result7->num_rows == 1) {
+                                        echo "<div class='row'>
+                                            <div class='form-group col'>
+                                                <label for='hname'>Name of relative</label>
+                                                <input type='text' name='rname[]' id='rname2' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                            <input type='text' name='rrel[]' id='rrel2' placeholder='Relationship' class='form-control text-transform' autocomplete='off'>
+                                                <label for='rel'>Relationship</label>
+                                                <select class='custom-select form-group' name='rrel[]' id='rrel2'>
+                                                    <option selected='selected' disabled='disabled'>Choose here:</option>
+                                                    <option value='Family'>Family</option>
+                                                    <option value='Friend'>Friend</option>
+                                                    <option value='Acquaintances'>Acquaintances</option>
+                                                    <option value='Romantic Relationship'>Romantic Relationship</option>
+                                                </select>
+                                            </div>
+
+                                            <div class='form-group col'>
+                                                <label for='rmnumber2'>Mobile Number</label>
+                                                <input type='tel' name='rmnumber[]' id='rmnumber2' placeholder='+639XX XXX XXXX' class='form-control mobile' autocomplete='off'>
+                                            </div>
+
+                                        </div>";
+                                    }
                                 }
+                             ?>
+                            <?php
+                            if ($row5['answer'] === "No") {
+                                $answer = $row5['answer'];
+                                $reason = " ";
+                            } else {
+                                $answer = explode("|",$row5['answer'])[0];
+                                $reason = explode("|",$row5['answer'])[1];
                             }
-                         ?>
-                        <?php
-                        if ($row5['answer'] === "No") {
-                            $answer = $row5['answer'];
-                            $reason = " ";
-                        } else {
-                            $answer = explode("|",$row5['answer'])[0];
-                            $reason = explode("|",$row5['answer'])[1];
-                        }
-                        ?>
-                        <div class="row">
-                            <div class="form-group col-4">
-                                <label for="quest">Do you plan on relocating soon?
-                                </label>
-                                <select name="yesorno" id="quest" class="form-control">
-                                    <option selected="selected" disabled="disabled"><?php echo $answer?></option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
+                            ?>
+                            <script>
+								$(function() {
+									$('#quest').change(function() {
+										$('#Yes').hide();
+										$('#' + $(this).val()).show();
+										if ($('#quest').val() == "Yes") {
+											$('#answer').attr('required', 'true');
+										} else {
+											$('#answer').removeAttr('required').removeClass('input-error');
+										}
+									});
+								});
+
+							</script>
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="quest">Do you plan on relocating soon?
+                                    </label>
+                                    <select name="yesorno" id="quest" class="form-control">
+                                        <option selected="selected" disabled="disabled"><?php echo $answer?></option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col" id="Yes">
+                                    <label for="answer">If yes, where will be your new address?</label>
+                                    <input type="text" name="answer" id="answer" placeholder="Address" class="form-control" autocomplete="off" value="<?php echo $reason?>">
+                                </div>
                             </div>
 
-                            <div class="form-group col">
-                                <label for="answer">If yes, where will be your new address?</label>
-                                <input type="text" name="answer" id="answer" placeholder="Address" class="form-control" autocomplete="off" value="<?php echo $reason?>">
+                            <div class="f1-buttons">
+                                <button type="button" class="btn pages btn-previous">Previous</button>
+                                <button type="submit" class="btn pages btn-next">Next</button>
                             </div>
-                        </div>
-
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="button" class="btn pages btn-next">Next</button>
-                        </div>
-                    </fieldset>
+                        </form>
+                    </fieldset> -->
 
                     <fieldset>
-                        <h2>Step 5: Employee Info Sheet</h2>
-                        <div class="row">
-                            <div class="form-group col-4">
-                                <label>Tutor's Full Name</label>
-                                <input type="text" name="tutor_name" id="tutor_name" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row8["persona"]?>">
+                        <form id="employee" action="update_employee" method="post">
+                            <input type="hidden" name="userid5" value="<?php echo $user_id ?>"/>
+                            <h2>Step 5: Employee Info Sheet</h2>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Persona</label>
+                                    <input type="text" name="persona" id="persona" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row8["persona"]?>">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Mobile Number</label>
+                                    <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile" value="<?php echo $row8["mobile_number"]?>">
+                                </div>
+
+                                <div class="form-group col">
+    								<label>Area Code</label>
+    								<select name="l_area_code" class="form-control" id="l_area_code">
+                                        <option selected="selected" value="none"><?php echo explode("-",$row8["landline"])[0]?></option>
+                                        <optgroup label="Luzon">
+                                            <option value="74">Abra (74)</option>
+                                            <option value="52">Albay (52)</option>
+                                            <option value="42">Aurora (42)</option>
+                                            <option value="47">Bataan (47)</option>
+                                            <option value="78">Batanes (78)</option>
+                                            <option value="43">Batangas (43)</option>
+                                            <option value="74">Benguet (74)</option>
+                                            <option value="44">Bulacan (44)</option>
+                                            <option value="78">Cagayan Valley (78)</option>
+                                            <option value="54">Camarines Norte/Sur (54)</option>
+                                            <option value="52">Catanduanes (52)</option>
+                                            <option value="46">Cavite Province (46)</option>
+                                            <option value="74">Ifugao Province (74)</option>
+                                            <option value="77">Ilocos Norte/Sur (77)</option>
+                                            <option value="78">Isabela Province(78)</option>
+                                            <option value="74">Kalinga-Apayao (74)</option>
+                                            <option value="49">Laguna (49)</option>
+                                            <option value="72">La Union (72)</option>
+                                            <option value="42">Marinduque (42)</option>
+                                            <option value="43">Mindoro Occidental/Oriental (43)</option>
+                                            <option value="74">Mountain Province (74)</option>
+                                            <option value="44">Nueva Ecija/Viscaya (44)</option>
+                                            <option value="48">Palawan (48)</option>
+                                            <option value="45">Pampanga (45)</option>
+                                            <option value="75">Pangasinan (75)</option>
+                                            <option value="42">Quezon Province (42)</option>
+                                            <option value="78">Quirino Province (78)</option>
+                                            <option value="2">Rizal Province (2)</option>
+                                            <option value="56">Sorsogon Province (56)</option>
+                                            <option value="45">Tarlac (45)</option>
+                                            <option value="47">Zambales (47)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Visayas">
+                                            <option value="36">Aklan (36)</option>
+                                            <option value="36">Antique (36)</option>
+                                            <option value="53">Biliran (53)</option>
+                                            <option value="38">Bohol (38)</option>
+                                            <option value="36">Capiz (36)</option>
+                                            <option value="32">Cebu Province (32)</option>
+                                            <option value="33">Guimaras (33)</option>
+                                            <option value="33">Iloilo Province (33)</option>
+                                            <option value="53">Leyte (53)</option>
+                                            <option value="56">Masbate Province (56)</option>
+                                            <option value="88">Misamis Occidental and Oriental (88)</option>
+                                            <option value="34">Negros Occidental Occidental (34)</option>
+                                            <option value="35">Negros Occidental Oriental (35)</option>
+                                            <option value="42">Romblon (42)</option>
+                                            <option value="55">Eastern Samar (55)</option>
+                                            <option value="55">Northern Samar(55)</option>
+                                            <option value="55">Western Samar (55)</option>
+                                            <option value="35">Siquijor (35)</option>
+                                        </optgroup>
+
+                                        <optgroup label="Mindanao">
+                                            <option value="85">Agusan (85)</option>
+                                            <option value="62">Basilan (62)</option>
+                                            <option value="88">Bukidnon (88)</option>
+                                            <option value="88">Camiguin (88)</option>
+                                            <option value="84">Davao del Norte (84)</option>
+                                            <option value="82">Davao del Sur (82)</option>
+                                            <option value="87">Davao Oriental (87)</option>
+                                            <option value="63">Lanao del Norte (63)</option>
+                                            <option value="64">Maguindanao (64)</option>
+                                            <option value="64">North Cotobato (64)</option>
+                                            <option value="65">North Cotobato (65)</option>
+                                            <option value="83">Sarangani (83)</option>
+                                            <option value="83">South Cotobato (83)</option>
+                                            <option value="64">Sultan Kudarat (64)</option>
+                                            <option value="86">Surigao (86)</option>
+                                            <option value="68">Tawi Tawi (68)</option>
+                                            <option value="65">Zamboanga (65)</option>
+                                        </optgroup>
+                                    </select>
+    							</div>
+
+                                <div class="form-group col">
+                                    <label>Landline Number</label>
+                                    <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo explode("-",$row8["landline"])[1]?><?php echo explode("-",$row8["landline"])[2]?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Employee Status</label>
+                                    <select class="custom-select form-control" name="employee_status">
+                                        <option selected value="<?php echo $row8["landline"]?>"><?php echo $row8["employee_status"]?></option>
+                                        <option value="Freelance">Freelance</option>
+                                        <option value="Project Based">Project Based</option>
+                                        <option value="Probationary">Probationary</option>
+                                        <option value="Regular">Regular</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col">
+                                    <label>Position</label>
+                                    <?php
+                                    $main = explode("|",$row8['department'])[0];
+                                        if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                                <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                                <option selected required="require" value="Online English Tutor">Online English Tutor</option>
+                                            </select>';
+                                        }else if($main === "Administration/HR Support"){
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                            <option selected required="require" value="HR Assistant">HR Assistant</option>
+                                            </select>';
+                                        }else if($main === "IT Support"){
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                            <option value="ICT Support Specialist">ICT Support Specialist</option>
+                                            </select>';
+                                        }else if($main === "Virtual Assistant"){
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                            <option value="Indesigner">Indesigner</option>
+                                            <option value="Web Developer">Web Developer</option>
+                                            </select>';
+                                        }else if ($main === "Maintainance") {
+                                            echo '
+                                            <select class="custom-select form-control" name="position">
+                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                            <option value="Housekeeping">Housekeeping</option>
+                                            <option value="Utilities">Utilities</option>
+                                            </select>';
+                                        }
+                                    ?>
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Date Hired</label>
+                                    <input type="date" name="date_hired" class="form-control" value="<?php echo $row8["date_hired"]?>">
+                                </div>
                             </div>
 
-                            <div class="form-group col">
-                                <label>Mobile Number</label>
-                                <input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile" value="<?php echo $row8["mobile_number"]?>">
+                            <?php
+                                $department = explode("|",$row8['department']);
+                                $account = explode("|",$row8['account']);
+                                $i = 0;
+                                echo "
+                                <div class='row'>
+                                    <script>
+                                        $(function() {
+                                            $('#department').change(function() {
+                                                $('#orig').hide();
+                                                $('#ash').hide();
+                                                $('#its').hide();
+                                                $('#nva').hide();
+                                                $('#main').hide();
+                                                $('#sec').hide();
+                                                $('#voa').hide();
+                                                $('#ve').hide();
+                                                $('#va').hide();
+                                                $('#' + $(this).val()).show();
+                                            });
+                                        });
+
+                                    </script>
+                                    <div class='form-group col'>
+                                        <label for='department'>Main Department</label>
+                                        <select class='custom-select form-group' name='department[]' id='department'>
+                                            <option selected='selected' value='".$department[$i]."'>".$department[$i]."</option>
+                                            <option value='ash'>Administration/HR Support</option>
+                                            <option value='its'>IT Support</option>
+                                            <option value='main'>Maintenance</option>
+                                            <option value='nva'>Non-voice Account</option>
+                                            <option value='sec'>Security</option>
+                                            <option value='ve'>Video ESL</option>
+                                            <option value='va'>Virtual Assistant</option>
+                                            <option value='voa'>Voice Account</option>
+                                        </select>
+                                    </div>
+
+                                    <div class='form-group col'>
+                                        <label for='position'>Main Account</label>
+                                        <div class='input-group'>
+                                            <select class='custom-select form-group' name='account[]'>
+                                                <optgroup id='orig'>
+                                                    <option selected='selected' value='".$account[$i]."'>".$account[$i]."</option>
+                                                </optgroup>
+
+                                                <optgroup label='Administration/HR Support' id='ash' style='display:none'>
+                                                    <option value='HR Assistant'>HR Assistant</option>
+                                                    <option value='IDP Staff'>IDP Staff</option>
+                                                    <option value='Operations Support'>Operations Support</option>
+                                                    <option value='Springboard Staff'>Springboard Staff</option>
+                                                </optgroup>
+
+                                                <optgroup label='IT Support' id='its' style='display:none'>
+                                                    <option value='ICT Specialist'>ICT Specialist</option>
+                                                </optgroup>
+
+                                                <optgroup label='Non-voice Account' id='nva' style='display:none'>
+                                                    <option value='April Writing'>April Writing</option>
+                                                    <option value='CL/IL'>CL/IL</option>
+                                                </optgroup>
+
+                                                <optgroup label='Voice Account' id='voa' style='display:none'>
+                                                    <option value='ELANSO'>ELANSO</option>
+                                                    <option value='Phone ESL'>Phone ESL</option>
+                                                </optgroup>
+
+                                                <optgroup label='Video ESL' id='ve' style='display:none'>
+                                                    <option value='First Future'>First Future</option>
+                                                    <option value='Key English'>Key English</option>
+                                                </optgroup>
+
+                                                <optgroup label='Virtual Assistant' id='va' style='display:none'>
+                                                    <option value='Drag and drop'>Drag and drop</option>
+                                                    <option value='Job Getter'>Job Getter</option>
+                                                </optgroup>
+
+                                                <optgroup label='Security' id='sec' style='display:none'>
+                                                    <option value='Security'>Security</option>
+                                                </optgroup>
+
+                                                <optgroup label='Maintenance' id='main' style='display:none'>
+                                                    <option value='Housekeeping'>Housekeeping</option>
+                                                    <option value='Utility'>Utility</option>
+                                                </optgroup>
+                                            </select>
+                                            <div class='input-group-append'>
+                                                <button class='btn btn-success' type='button' onclick='addAccount()'>
+                                                    <i class='small material-icons'>add</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                ";
+                                for ($i=1; $i <count($department) ; $i++) {
+                                    echo "
+
+
+
+
+                                    <div class='row'>
+                                        <script>
+                                            $(function () {
+                                                $('#department".$i."').change(function () {
+                                                    $('#orig".$i."').hide();
+                                                    $('#ash".$i."').hide();
+                                                    $('#its".$i."').hide();
+                                                    $('#nva".$i."').hide();
+                                                    $('#main".$i."').hide();
+                                                    $('#sec".$i."').hide();
+                                                    $('#voa".$i."').hide();
+                                                    $('#ve".$i."').hide();
+                                                    $('#va".$i."').hide();
+                                                    $('#' + (
+                                                        $(this).val() + ".$i."
+                                                    )).show();
+                                                });
+                                            });
+                                        </script>
+                                        <div class='form-group col'>
+                                            <label for='department'>Additional Department</label>
+                                            <select class='custom-select form-group' name='department[]' id='department".$i."'>
+                                                <option selected='selected' value='".$department[$i]."'>".$department[$i]."</option>
+                                                <option value='ash'>Administration/HR Support</option>
+                                                <option value='its'>IT Support</option>
+                                                <option value='main'>Maintenance</option>
+                                                <option value='nva'>Non-voice Account</option>
+                                                <option value='sec'>Security</option>
+                                                <option value='ve'>Video ESL</option>
+                                                <option value='va'>Virtual Assistant</option>
+                                                <option value='voa'>Voice Account</option>
+                                            </select>
+                                        </div>
+                                        <div class='form-group col'>
+                                            <label >Additional Account</label>
+                                            <div class='input-group'>
+                                                <select class='custom-select form-group' name='account[]'>
+                                                    <optgroup id='orig".$i."'>
+                                                        <option selected='selected' value='".$account[$i]."'>".$account[$i]."</option>
+                                                    </optgroup>
+                                                    <optgroup label='Administration/HR Support' id='ash".$i."' style='display:none'>
+                                                        <option value='HR Assistant'>HR Assistant</option>
+                                                        <option value='IDP Staff'>IDP Staff</option>
+                                                        <option value='Operations Support'>Operations Support</option>
+                                                        <option value='Springboard Staff'>Springboard Staff</option>
+                                                    </optgroup>
+                                                    <optgroup label='IT Support' id='its".$i."' style='display:none'>
+                                                        <option value='ICT Specialist'>ICT Specialist</option>
+                                                    </optgroup>
+                                                    <optgroup label='Non-voice Account' id='nva".$i."' style='display:none'>
+                                                        <option value='April Writing'>April Writing</option>
+                                                        <option value='CL/IL'>CL/IL</option>
+                                                    </optgroup>
+                                                    <optgroup label='Voice Account' id='voa".$i."' style='display:none'>
+                                                        <option value='ELANSO'>ELANSO</option>
+                                                        <option value='Phone ESL'>Phone ESL</option>
+                                                    </optgroup>
+                                                    <optgroup label='Video ESL' id='ve".$i."' style='display:none'>
+                                                        <option value='First Future'>First Future</option>
+                                                        <option value='Key English'>Key English</option>
+                                                    </optgroup>
+                                                    <optgroup label='Virtual Assistant' id='va".$i."' style='display:none'>
+                                                        <option value='Drag and drop'>Drag and drop</option>
+                                                        <option value='Job Getter'>Job Getter</option>
+                                                    </optgroup>
+                                                    <optgroup label='Security' id='sec".$i."' style='display:none'>
+                                                        <option value='Security'>Security</option>
+                                                    </optgroup>
+                                                    <optgroup label='Maintenance' id='main".$i."' style='display:none'>
+                                                        <option value='Housekeeping'>Housekeeping</option>
+                                                        <option value='Utility'>Utility</option>
+                                                    </optgroup>
+                                                </select>
+                                                <div class='input-group-append'>
+                                                    <button class='btn btn-danger' type='button' onclick='remove(".$i.");'>
+                                                        <i class='small material-icons'>remove</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ";
+                                }
+
+                            ?>
+                            <div id='new_acc'></div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Company Email address</label>
+                                    <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control" value="<?php echo $row8["comp_email"]?>">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" value="<?php echo $row8["comp_email_password"]?>">
+                                </div>
                             </div>
 
-                            <div class="form-group col">
-                                <label>Landline Number</label>
-                                <input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo $row8["landline"]?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Employee Status</label>
-                                <select class="custom-select form-control" name="employee_status">
-                                    <option selected disabled required="require">Choose Here:</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Project Based">Project Based</option>
-                                    <option value="Probationary">Probationary</option>
-                                    <option value="Regular">Regular</option>
-                                </select>
-                            </div>
-                            <div class="form-group col">
-                                <label>Position</label>
-                                <select class="custom-select form-control" name="position">
-                                    <option selected disabled>Choose Here:</option>
-                                    <option value="head">head</option>
-                                    <option value="assistant">assistant</option>
-                                    <option value="secret">secret</option>
-                                </select>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Skype Account</label>
+                                    <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control" value="<?php echo $row8["skype"]?>">
+                                </div>
+
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" value="<?php echo $row8["skype_password"]?>">
+                                </div>
                             </div>
 
-                            <div class="form-group col">
-                                <label>Date Hired</label>
-                                <input type="date" name="date_hired" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label>Department</label>
-                                <select class="custom-select form-group" name="department" id="department">
-                                    <option selected="selected" disabled="disabled"><?php echo $row8["department"]?></option>
-                                    <option value="Administration / HR Support">Administration / HR Support</option>
-                                    <option value="IT Support">IT Support</option>
-                                    <option value="Maintenance">Maintenance</option>
-                                    <option value="Non-Voice Account">Non-Voice Account</option>
-                                    <option value="Phone ESL">Phone ESL</option>
-                                    <option value="Security">Security</option>
-                                    <option value="Video ESL">Video ESL</option>
-                                    <option value="Virtual Assistant">Virtual Assistant</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-6">
-                                <label>Main Account</label>
-                                <input type="text" name="acc[]" id="acc" placeholder="Accounts" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row8["account"]?>">
-                            </div>
-                        </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>QQ Number</label>
+                                    <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control" value="<?php echo $row8["qq_number"]?>">
+                                </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Company Email address</label>
-                                <input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control" value="<?php echo $row8["comp_email"]?>">
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" value="<?php echo $row8["qq_password"]?>">
+                                </div>
                             </div>
-
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" value="<?php echo $row8["comp_email_password"]?>">
+                            <div class="f1-buttons">
+                                <button type="button" class="btn pages btn-previous">Previous</button>
+                                <button type="submit" class="btn pages btn-submit">Submit</button>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Skype Account</label>
-                                <input type="text" name="skype" id="skype" placeholder="Skype" class="form-control" value="<?php echo $row8["skype"]?>">
-                            </div>
-
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" value="<?php echo $row8["skype_password"]?>">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>QQ Number</label>
-                                <input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control" value="<?php echo $row8["qq_number"]?>">
-                            </div>
-
-                            <div class="form-group col">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" value="<?php echo $row8["qq_password"]?>">
-                            </div>
-                        </div>
-                        <div class="f1-buttons">
-                            <button type="button" class="btn pages btn-previous">Previous</button>
-                            <button type="submit" class="btn pages btn-submit" id="submit_btn">Submit</button>
-                        </div>
+                        </form>
                     </fieldset>
                 </div>
             </div>
         </div>
         <script>
-            $('#sss_no').inputmask({mask: 'dd-ddddddd-d'});
-            $('#tin').inputmask({mask: 'ddd-ddd-ddd-ddd'});
-            $('#philhealth_no').inputmask({mask: 'dd-ddddddddd-d'});
-            $('.zip').inputmask({mask: 'dddd'});
-            $('#pagibig_id_no').inputmask({mask: 'dddd-dddd-dddd'});
-            $('.mobile').inputmask({mask: '+639dd ddd dddd'});
-            $('.telephone').inputmask({mask: 'ddd-dddd'});
-            $('.height').inputmask({mask: 'dd'});
+        $('#sss_no').inputmask({
+            mask: 'dd-ddddddd-d'
+        });
+        $('#tin').inputmask({
+            mask: 'ddd-ddd-ddd-ddd'
+        });
+        $('#philhealth_no').inputmask({
+            mask: 'dd-ddddddddd-d'
+        });
+        $('#pagibig_id_no').inputmask({
+            mask: 'dddd-dddd-dddd'
+        });
+        $('.zip').inputmask({
+            mask: 'dddd'
+        });
+        $('.mobile').inputmask({
+            mask: '+639dd ddd dddd'
+        });
+        $('.telephone').inputmask({
+            mask: 'ddd-dddd'
+        });
+        $('.height').inputmask({
+            mask: 'dd'
+        });
+        $('.gradyear').inputmask({
+            mask: 'dddd-dd'
+        });
         </script>
         <script>
         var map = L.map('mapid').setView([
@@ -1271,6 +1821,18 @@
         <script>
         $('#personal').ajaxForm({
             url: 'update_personal.php',
+            method: 'post'
+        });
+        $('#family').ajaxForm({
+            url: 'update_family.php',
+            method: 'post'
+        });
+        $('#educational').ajaxForm({
+            url: 'update_educ.php',
+            method: 'post'
+        });
+        $('#employee').ajaxForm({
+            url: 'update_employee.php',
             method: 'post'
         });
         </script>
