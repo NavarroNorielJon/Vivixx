@@ -232,6 +232,46 @@
 					}
 				}
 			}
+			
+			$('#s_date').calendar({
+				type: 'date',
+				endCalendar: $('#e_date'),
+				formatter: {
+					date: function(date) {
+						if (!date) return '';
+						let day = date.getDate() + '';
+						if (day.length < 2) {
+							day = '0' + day;
+						}
+						let month = (date.getMonth() + 1) + '';
+						if (month.length < 2) {
+							month = '0' + month;
+						}
+						let year = date.getFullYear();
+						return year + '-' + month + '-' + day;
+					}
+				}
+			});
+
+			$('#e_date').calendar({
+				type: 'date',
+				startCalendar: $('#s_date'),
+				formatter: {
+					date: function(date) {
+						if (!date) return '';
+						let day = date.getDate() + '';
+						if (day.length < 2) {
+							day = '0' + day;
+						}
+						let month = (date.getMonth() + 1) + '';
+						if (month.length < 2) {
+							month = '0' + month;
+						}
+						let year = date.getFullYear();
+						return year + '-' + month + '-' + day;
+					}
+				}
+			});
 
 		</script>
 
@@ -354,46 +394,6 @@
 					counter();
 
 				});
-			});
-
-			$('#start_date').calendar({
-				type: 'date',
-				endCalendar: $('#end_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
-			});
-
-			$('#end_date').calendar({
-				type: 'date',
-				startCalendar: $('#start_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
 			});
 
 		</script>

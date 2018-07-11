@@ -121,9 +121,6 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-<<<<<<< HEAD
-							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
-=======
 							<a href='view_information.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
@@ -133,7 +130,6 @@
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
->>>>>>> 7ce8758585f7b69ae3c9074ea4823aaea37d9295
 							//print data in table
 							echo "
 							<tr>
