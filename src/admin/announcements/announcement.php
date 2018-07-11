@@ -28,12 +28,6 @@
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
-		<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
-	<script src="https://unpkg.com/maxlength-contenteditable@1.0.0/dist/maxlength-contenteditable.js">
-	maxlengthContentEditableModule.maxlengthContentEditable();
-	</script> -->
 	</head>
 
 	<body>
@@ -219,8 +213,7 @@
 		</div>
 
 		<script>
-			/* When the user clicks on the button, 
-																											toggle between hiding and showing the dropdown content */
+			/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

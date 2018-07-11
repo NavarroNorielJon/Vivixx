@@ -21,6 +21,11 @@
 </head>
 
 <body>
+	<?php 
+	include '../../utilities/session.php';
+	include '../utilities/check_user.php'; 
+	$connect = Connect();
+	?>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -35,7 +40,7 @@
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
 					</li>
 
-					<li class="nav-item active" >
+					<li class="nav-item active">
 						<button onclick="myFunction()" class="dropbtn">Employees</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="../user_information/user_information.php">Employees</a>
@@ -85,9 +90,7 @@
 					</thead>
 
 					<?php
-					include '../../utilities/session.php';
-					include '../utilities/check_user.php';
-					$connect = Connect();
+					
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
 						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
@@ -118,7 +121,19 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
+<<<<<<< HEAD
 							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
+=======
+							<a href='view_information.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
+								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+
+							$message = "
+							<input name='message' value='message' style='display: none;'>
+							<a href='personal_message.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
+								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
+>>>>>>> 7ce8758585f7b69ae3c9074ea4823aaea37d9295
 							//print data in table
 							echo "
 							<tr>
@@ -129,6 +144,7 @@
 							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
 							<td>" . $show ."</td>
+							<td>" . $message . "</td>
 							</tr>";
 						}
 
@@ -142,10 +158,23 @@
 	</div>
 
 	<div id="result"></div>
+	<div id="res"></div>
 
 	<script>
+		$(document).ready(function() {
+			$('.message').click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href'),
+					success: function(res) {
+						$('#res').html(res);
+					}
+				});
+			});
+		});
+
 		/* When the user clicks on the button,
-										toggle between hiding and showing the dropdown content */
+																		toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}
@@ -173,7 +202,7 @@
 			$('#table').dataTable({
 				"columnDefs": [{
 					"orderable": false,
-					"targets": [5, 6]
+					"targets": [6, 7]
 				}]
 			});
 			$('#table').DataTable();
