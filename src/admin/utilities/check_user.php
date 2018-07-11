@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_SESSION['user'])){
         $current_user = $_SESSION['user'];
         $stmt = "SELECT * FROM user natural join user_info WHERE username='$current_user' or email='$current_user';";
@@ -7,7 +8,7 @@
         $username = $row['username'];
 		
     }
-	$connect = Connect();
+ 	$connect = Connect();
 	echo "<script type='text/javascript' src='../script/sweetalert.min.js'></script>";
 	
 	if($type == "user"){

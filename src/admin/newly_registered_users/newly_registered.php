@@ -21,7 +21,11 @@
 </head>
 
 <body>
-	<?php include '../utilities/check_user.php'; ?>
+	<?php 
+	include '../../utilities/session.php';
+	include '../utilities/check_user.php'; 
+	$connect = Connect();
+	?>
 	<div id="wrapper">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -78,9 +82,7 @@
 						</tr>
 					</thead>
 
-					<?php
-					include '../../utilities/session.php';
-					$connect = Connect();	
+					<?php	
 					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null or employee_status is null or position is null);";
 					$result = $connect->query($sql);
 
