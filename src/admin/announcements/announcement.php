@@ -154,7 +154,7 @@
 							<div class="row form-group">
 								<div class="col">
 									<label for="title">Title</label>
-									<input name="subject" type="text" class="form-control" placeholder="Title" id="subject" required>
+									<input name="subject" type="text" class="form-control text-transform" placeholder="Title" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">
@@ -190,7 +190,7 @@
 							<label for="text">Content:</label>
 							<div class="d-flex ">
 								<div class="p-2" id="border">
-									<p contenteditable="true" id="editable"></p>
+									<p contenteditable="true" class="form-control" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
 									<div class="text-center">
 										Remaining characters: <span id="totalChars">1500</span><br/>
@@ -232,6 +232,46 @@
 					}
 				}
 			}
+			
+			$('#s_date').calendar({
+				type: 'date',
+				endCalendar: $('#e_date'),
+				formatter: {
+					date: function(date) {
+						if (!date) return '';
+						let day = date.getDate() + '';
+						if (day.length < 2) {
+							day = '0' + day;
+						}
+						let month = (date.getMonth() + 1) + '';
+						if (month.length < 2) {
+							month = '0' + month;
+						}
+						let year = date.getFullYear();
+						return year + '-' + month + '-' + day;
+					}
+				}
+			});
+
+			$('#e_date').calendar({
+				type: 'date',
+				startCalendar: $('#s_date'),
+				formatter: {
+					date: function(date) {
+						if (!date) return '';
+						let day = date.getDate() + '';
+						if (day.length < 2) {
+							day = '0' + day;
+						}
+						let month = (date.getMonth() + 1) + '';
+						if (month.length < 2) {
+							month = '0' + month;
+						}
+						let year = date.getFullYear();
+						return year + '-' + month + '-' + day;
+					}
+				}
+			});
 
 		</script>
 
@@ -354,46 +394,6 @@
 					counter();
 
 				});
-			});
-
-			$('#start_date').calendar({
-				type: 'date',
-				endCalendar: $('#end_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
-			});
-
-			$('#end_date').calendar({
-				type: 'date',
-				startCalendar: $('#start_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
 			});
 
 		</script>

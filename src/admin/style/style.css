@@ -1,5 +1,11 @@
 /*This stylesheet is created mainly for the styling of the admin's side*/
+.text-transform {
+	text-transform: capitalize;
+}
+p::first-letter{
+	text-transform: capitalize;
 
+}
 textarea {
 	display: none !important;
 }

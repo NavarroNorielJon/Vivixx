@@ -541,6 +541,7 @@
                             </div>
                             <div class="f1-buttons">
                                 <button type="submit" class="btn pages btn-next">Next</button>
+                                <button type="submit" class="btn pages btn-success submit">Submit</button>
                             </div>
                         </form>
                     </fieldset>
@@ -712,7 +713,9 @@
 								</div>
 							</div>
 
-                            <h5>Child/Children's Information</h5>
+                            <h5>Child/Children's Information <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adding">
+                              Add Child
+                            </button></h5>
                             <?php
                                 while ($row3 = mysqli_fetch_array($result3)) {
                                     echo '<div class="row">
@@ -727,12 +730,11 @@
                                     </div>';
                                 }
                             ?>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adding">
-                              Add Child
-                            </button>
+
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
                                 <button type="submit" class="btn pages btn-next">Next</button>
+                                <button type="submit" class="btn pages btn-success submit">Submit</button>
                             </div>
                         </form>
                         <form id="family2" action="add_child" method="post">
@@ -1167,6 +1169,7 @@
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
                                 <button type="submit" class="btn pages btn-next">Next</button>
+                                <button type="submit" class="btn pages btn-success submit">Submit</button>
                             </div>
                         </form>
                     </fieldset>
@@ -1361,6 +1364,7 @@
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
                                 <button type="submit" class="btn pages btn-next">Next</button>
+                                <button type="submit" class="btn pages btn-success submit">Submit</button>
                             </div>
                         </form>
                     </fieldset>
@@ -1749,7 +1753,7 @@
                             </div>
                             <div class="f1-buttons">
                                 <button type="button" class="btn pages btn-previous">Previous</button>
-                                <button type="submit" class="btn pages btn-submit">Submit</button>
+                                <button type="submit" class="btn pages btn-success submit">Submit</button>
                             </div>
                         </form>
                     </fieldset>
@@ -1865,7 +1869,17 @@
                 icon: 'success',
                 showConfirmButton: false
             }).then(function (){
-                window.location ='/';
+                window.location ='/admin/user_information/view_information.php?user_id=<?php echo $user_id;?>';
+            });
+        });
+        $('.submit').click(function () {
+            swal({
+                type: 'success',
+                title: 'Successfully Done!',
+                icon: 'success',
+                showConfirmButton: false
+            }).then(function (){
+                window.location ='/admin/user_information/view_information.php?user_id=<?php echo $user_id;?>';
             });
         });
         $('#personal').ajaxForm({
