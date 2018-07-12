@@ -15,7 +15,7 @@
             <div class="modal-body">
 				<div class="summary">
 					<table border=1>
-						<th class="header">Income Name</th>
+						<th class="header">Type</th>
 						<th class="header">Amount</th>
 
 						<tr class="srf">
