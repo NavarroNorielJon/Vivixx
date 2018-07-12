@@ -329,7 +329,8 @@
 
 
 			};
-
+			
+			//counter for text limit
 			$(document).ready(function() {
 				var content_id = 'editable';
 
@@ -345,7 +346,6 @@
 
 				function check_charcount(content_id, max, e) {
 					if (e.which != 8 && $('#' + content_id).text().length > max) {
-						// $('#'+content_id).text($('#'+content_id).text().substring(0, max));
 						e.preventDefault();
 					}
 				}
@@ -358,56 +358,17 @@
 
 				});
 			});
-
-			 $(function(){
-        $("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
-        $("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
-            var minValue = $(this).val();
-            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-            minValue.setDate(minValue.getDate()+1);
-            $("#e_date").datepicker( "option", "minDate", minValue );
-        })
-    });
-
-			// $('#s_date').calendar({
-			// 	type: 'date',
-			// 	endCalendar: $('#e_date'),
-			// 	formatter: {
-			// 		date: function(date) {
-			// 			if (!date) return '';
-			// 			let day = date.getDate() + '';
-			// 			if (day.length < 2) {
-			// 				day = '0' + day;
-			// 			}
-			// 			let month = (date.getMonth() + 1) + '';
-			// 			if (month.length < 2) {
-			// 				month = '0' + month;
-			// 			}
-			// 			let year = date.getFullYear();
-			// 			return year + '-' + month + '-' + day;
-			// 		}
-			// 	}
-			// });
-
-			// $('#e_date').calendar({
-			// 	type: 'date',
-			// 	startCalendar: $('#s_date'),
-			// 	formatter: {
-			// 		date: function(date) {
-			// 			if (!date) return '';
-			// 			let day = date.getDate() + '';
-			// 			if (day.length < 2) {
-			// 				day = '0' + day;
-			// 			}
-			// 			let month = (date.getMonth() + 1) + '';
-			// 			if (month.length < 2) {
-			// 				month = '0' + month;
-			// 			}
-			// 			let year = date.getFullYear();
-			// 			return year + '-' + month + '-' + day;
-			// 		}
-			// 	}
-			// });
+			
+			//date range
+			$(function(){
+        		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
+        		$("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+					var minValue = $(this).val();
+					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+					minValue.setDate(minValue.getDate()+1);
+					$("#e_date").datepicker( "option", "minDate", minValue );
+				})
+			});
 
 		</script>
 	</body>
