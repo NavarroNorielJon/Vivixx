@@ -71,7 +71,7 @@
 			</nav>
 
 			<!-- table for viewing user information -->
-			<div class="container user-content">
+			<div class="container content">
 				<div class="text-center">
 					<h1>EMPLOYEE INFORMATION</h1>
 				</div>
@@ -130,7 +130,7 @@
 							<input name='message' value='message' style='display: none;'>
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='btn btn-primary message'>Send Message</a>";
+								"& lname=" .$row['last_name'] ."' class='btn message'>Send Message</a>";
 							//print data in table
 							echo "
 							<tr class='table-data'>

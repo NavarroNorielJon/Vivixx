@@ -33,7 +33,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-				<div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse" id="navbar-content">
 					<ul class="navbar-nav">
 
 						<li class="nav-item active dropdown">
@@ -69,7 +69,7 @@
 				</div>
 			</nav>
 
-			<div class="accounts-content container">
+			<div class="content container">
 				<div class="text-center">
 					<h1 class="accounts-header">ACCOUNTS</h1>
 				</div>
@@ -157,7 +157,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-																																																																																															toggle between hiding and showing the dropdown content */
+																																																																																																					toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

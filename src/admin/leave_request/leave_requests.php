@@ -34,7 +34,7 @@
     			<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="navbar-content">
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
@@ -65,12 +65,12 @@
 			</div>
 		</nav>
 
-		<div class="leave-request-content container">
+		<div class="content container">
 			<div class="text-center">
 				<h1>Leave Requests</h1>
 			</div>
 
-			<div class="tale-container">
+			<div class="table-container">
 				<table class="table" id="leave">
 					<thead>
 						<tr class="table-header">
@@ -118,7 +118,7 @@
 
 	<script>
 		/* When the user clicks on the button, 
-																																		toggle between hiding and showing the dropdown content */
+																																										toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}
