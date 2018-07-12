@@ -30,7 +30,7 @@ $connect = Connect();
     if(isset($_POST["submit"])){
         foreach($_FILES['file']['name'] as $child) {
             $file_names[] = $child;
-            $file_paths[] = 'file uploads/'.$child;
+            $file_paths[] = 'files/'.$child;
         }
         foreach($_FILES['file']['tmp_name'] as $child) {
             $file_tmp_names[] = $child;
