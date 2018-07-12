@@ -260,6 +260,7 @@
 				$('#table').DataTable();
 			});
 
+			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
 				swal({
 						title: 'Are you sure?',
@@ -329,8 +330,7 @@
 
 
 			};
-			
-			//counter for text limit
+
 			$(document).ready(function() {
 				var content_id = 'editable';
 

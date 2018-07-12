@@ -138,6 +138,7 @@
 		});
 	</script>
 	<script>
+		//show modal for editing information
 		$(document).ready(function() {
 			$("#edit").modal("show");
 		});
@@ -160,7 +161,8 @@
 				$('#totalChars').text(remainder);
 			}
 		};
-
+		
+		//counter for text limit
 		$(document).ready(function() {
 			var content_id = 'editable';
 			max = 1499;
