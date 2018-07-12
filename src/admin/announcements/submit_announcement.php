@@ -23,7 +23,7 @@ $connect = Connect();
         if($counter == count($department)){
             $concat .= ucwords($dept);
         }else{
-            $concat .= ucwords($dept) . ", ";
+            $concat .= ucwords($dept) . ",";
         }
     }
     if(isset($_POST["submit"])){
@@ -42,7 +42,7 @@ $connect = Connect();
             if($counter == count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
-                $file_name .= $name .", ";
+                $file_name .= $name .",";
             }
         }
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";

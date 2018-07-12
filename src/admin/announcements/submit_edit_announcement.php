@@ -24,7 +24,7 @@ $connect = Connect();
         if($counter == count($department)){
             $concat .= $dept;
         }else{
-            $concat .= $dept . ", ";
+            $concat .= $dept . ",";
         }
     }
     $counter = 0;
@@ -44,11 +44,11 @@ $connect = Connect();
             if($counter === count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
-                $file_name .= $name .", ";
+                $file_name .= $name .",";
             }
         }
         $counter = 0;
-        
+
         if($_POST["department"][0] == "none"){
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate' where announcement_id='$announcement_id';";
             $connect->query($sql);
@@ -65,7 +65,7 @@ $connect = Connect();
                 $connect->query($add_attachment);
             }else if($file_name[$x] != "" && $_POST["attachment"] == ""){
                 move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                $temp_file = base64_encode(file_get_contents("file uploads/".$file_names[$x]));
+                $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
                 $add_attachment = "INSERT into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
                 $connect->query($add_attachment);
             }else{
