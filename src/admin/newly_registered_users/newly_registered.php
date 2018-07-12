@@ -69,7 +69,7 @@
 		<!-- table for viewing user information -->
 		<div class="user-content container">
 			<div class="text-center">
-				<h1>New Registered Employee</h1>
+				<h1>NEW REGISTERED EMPLOYEE</h1>
 			</div>
 
 			<div class="table-container">
@@ -80,7 +80,7 @@
 							<th>Middle Name</th>
 							<th>Last Name</th>
 							<th>Email</th>
-							<th>Edit or View data</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
