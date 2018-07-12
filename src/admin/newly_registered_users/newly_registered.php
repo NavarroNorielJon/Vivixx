@@ -67,7 +67,7 @@
 		</nav>
 
 		<!-- table for viewing user information -->
-		<div class="user-content container">
+		<div class="content container">
 			<div class="text-center">
 				<h1>NEW REGISTERED EMPLOYEE</h1>
 			</div>

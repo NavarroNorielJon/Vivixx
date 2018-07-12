@@ -36,8 +36,8 @@
 	<body>
 		<?php include '../utilities/check_user.php'; ?>
 
-		<div id="wrapper">
-			<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
+		<div class="wrapper">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark navigation-bar">
 				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -78,7 +78,7 @@
 				</div>
 			</nav>
 
-			<div class="announcement-content container-fluid">
+			<div class="content container">
 				<div class="row">
 					<div class="col-10 text-center">
 						<h1>Announcements</h1>
@@ -91,7 +91,7 @@
 					</div>
 				</div>
 
-				<div class="announcement-table">
+				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
 							<tr>
@@ -124,7 +124,7 @@
 							//print data in table
 
 							echo "
-							<tr>
+							<tr class='table-data';>
 							<td>" . ucwords($row['subject']) . "</td>
 							<td>" . $row['start_date'] . "</td>
 							<td>" . $row['end_date'] . "</td>
@@ -359,15 +359,19 @@
 
 				});
 			});
-			
+
 			//date range
-			$(function(){
-        		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
-        		$("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+			$(function() {
+				$("#e_date").datepicker({
+					dateFormat: 'yy-mm-dd'
+				});
+				$("#s_date").datepicker({
+					dateFormat: 'yy-mm-dd'
+				}).bind("change", function() {
 					var minValue = $(this).val();
 					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-					minValue.setDate(minValue.getDate()+1);
-					$("#e_date").datepicker( "option", "minDate", minValue );
+					minValue.setDate(minValue.getDate() + 1);
+					$("#e_date").datepicker("option", "minDate", minValue);
 				})
 			});
 

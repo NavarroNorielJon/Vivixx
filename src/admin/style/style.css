@@ -215,25 +215,22 @@ textarea {
 
 /*end of navigation bar*/
 
-/*account*/
-
-.wrapper .accounts-content {
-	margin: 10% auto 5% auto;
-}
-
-/*end of account*/
-
 /*user information*/
-
-.wrapper .user-content {
-	margin: 10% auto 5% auto;
-}
 
 .message {
 	margin-top: 5px;
+	background-color: gray;
+	color: #fff;
+}
+
+.message:hover {
+	background-color: #8c8c8c;
+	color: #fff;
 }
 
 /*end of user information*/
+
+/*leave request*/
 
 /*utilities*/
 
@@ -252,7 +249,7 @@ textarea {
 /*table*/
 
 .table {
-	margin: 0 auto;
+	margin: 0;
 	width: 100%;
 	clear: both;
 	border-collapse: collapse;
@@ -273,31 +270,21 @@ textarea {
 }
 
 .table-container .table-data:nth-child(odd) {
-	font-size: 1.2rem;
 	background-color: transparent;
 	border-style: none;
+	font-size: 1.2rem;
 }
 
 .table-container .table-data:nth-child(even) {
 	background-color: rgba(128, 128, 128, 0.4);
 	border-style: none;
+	font-size: 1.2rem;
 }
 
 /*end of table*/
 
-.wrapper .announcement-content .announcement-table {
-	margin: 5vh 10vh;
-	width: 100%;
+.wrapper .content {
+	margin: 10% auto;
 }
-
-#wrapper .index-content {
-	margin-top: 90px;
-}
-
-#wrapper .leave-request-content {
-	margin-top: 100px;
-}
-
-
 
 /*end of utilities*/
