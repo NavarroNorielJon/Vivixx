@@ -10,7 +10,6 @@
         $username = $row["username"];
         $user_id = $row['user_id'];
 		$type = $row['type'];
-		echo "$user_id";
     }
 
 	if(!isset($_SESSION['user'])){
