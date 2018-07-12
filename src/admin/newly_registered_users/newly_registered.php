@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="../style/datatables.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<!--scripts-->
 	<script type="text/javascript" src="../../script/datatables.min.js"></script>
@@ -18,6 +19,7 @@
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
 	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
 	<script src="../../script/jquery.form.min.js"></script>
+	<script src="../../script/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -83,7 +85,7 @@
 					</thead>
 
 					<?php	
-					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null or employee_status is null or position is null);";
+					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){

@@ -9,8 +9,6 @@ $connect = Connect();
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $department = $_POST["department"];
-    print_r($enddate);
-    print_r($startdate);
 
     $file_names = [];
     $file_paths = [];
@@ -62,10 +60,10 @@ $connect = Connect();
                     $connect->query($add_attachment);
 
                 }else{
-                    //header("location: announcement.php");
+                    header("location: announcement.php");
                 }
 
             }
 
     }
-//header("location: announcement.php");
+header("location: announcement.php");

@@ -29,7 +29,7 @@
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../../script/jquery-ui.js"></script>
 
 	</head>
 
@@ -157,20 +157,20 @@
 							<div class="row form-group">
 								<div class="col">
 									<label for="title">Subject</label>
-									<input name="subject" type="text" class="form-control" placeholder="Subject" id="subject" required>
+									<input name="subject" type="text" autocomplete="off" class="form-control" placeholder="Subject" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
-										<input type="text" id="s_date" name="start_date" class="form-control date" required placeholder="yy-mm-dd">
+										<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
 								<div class="col ui calendar" id="end_date">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
-										<input type="text" id="e_date" name="end_date" class="form-control date" required placeholder="yy-mm-dd">
+										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
@@ -207,7 +207,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+								<input type="submit" class="btn btn-primary" onlick="pota();" name="submit" value="Submit">
 							</div>
 						</form>
 					</div>
@@ -260,6 +260,7 @@
 				$('#table').DataTable();
 			});
 
+			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
 				swal({
 						title: 'Are you sure?',
@@ -296,6 +297,7 @@
 					$("#container-announcement").submit();
 				}
 			});
+
 
 			//script for calling modal
 			$(document).ready(function() {
@@ -345,7 +347,6 @@
 
 				function check_charcount(content_id, max, e) {
 					if (e.which != 8 && $('#' + content_id).text().length > max) {
-						// $('#'+content_id).text($('#'+content_id).text().substring(0, max));
 						e.preventDefault();
 					}
 				}
@@ -358,56 +359,17 @@
 
 				});
 			});
-
-			 $(function(){
-        $("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
-        $("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
-            var minValue = $(this).val();
-            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-            minValue.setDate(minValue.getDate()+1);
-            $("#e_date").datepicker( "option", "minDate", minValue );
-        })
-    });
-
-			// $('#s_date').calendar({
-			// 	type: 'date',
-			// 	endCalendar: $('#e_date'),
-			// 	formatter: {
-			// 		date: function(date) {
-			// 			if (!date) return '';
-			// 			let day = date.getDate() + '';
-			// 			if (day.length < 2) {
-			// 				day = '0' + day;
-			// 			}
-			// 			let month = (date.getMonth() + 1) + '';
-			// 			if (month.length < 2) {
-			// 				month = '0' + month;
-			// 			}
-			// 			let year = date.getFullYear();
-			// 			return year + '-' + month + '-' + day;
-			// 		}
-			// 	}
-			// });
-
-			// $('#e_date').calendar({
-			// 	type: 'date',
-			// 	startCalendar: $('#s_date'),
-			// 	formatter: {
-			// 		date: function(date) {
-			// 			if (!date) return '';
-			// 			let day = date.getDate() + '';
-			// 			if (day.length < 2) {
-			// 				day = '0' + day;
-			// 			}
-			// 			let month = (date.getMonth() + 1) + '';
-			// 			if (month.length < 2) {
-			// 				month = '0' + month;
-			// 			}
-			// 			let year = date.getFullYear();
-			// 			return year + '-' + month + '-' + day;
-			// 		}
-			// 	}
-			// });
+			
+			//date range
+			$(function(){
+        		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
+        		$("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+					var minValue = $(this).val();
+					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+					minValue.setDate(minValue.getDate()+1);
+					$("#e_date").datepicker( "option", "minDate", minValue );
+				})
+			});
 
 		</script>
 	</body>
