@@ -1,12 +1,17 @@
 <?php
 	include '../utilities/session.php';
+	include '../utilities/check_user_type.php';
+	$connect = Connect();
+	$sql = "SELECT date_hired FROM employee_info where user_id=$user_id;";
+	$result = mysqli_query($connect,$sql);
+	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$date_hired = $row['date_hired'];
 	$today = date("Y-m-d");
     $diff = date_diff(date_create($date_hired),date_create($today))->y;
-	if($diff>=1){
+	if($diff>=1 && $date_hired != ""){
 	} else {
 		echo "
 		<script>
-			window.location = '/';
 			swal({
 				type: 'error',
 				title: 'You are not yet spending 1 year in this company, Sorry.',
@@ -14,6 +19,7 @@
 				icon:'error',
 				timer: 2500
 			});
+			window.location='/';
 		</script>";
 	}
 ?>
@@ -180,32 +186,32 @@
 					<h1 class="text-center leave-header">Inclusive days applied</h1>
 
 					<div class="row">
-							<div class="form-group col">
-								<div class="col ui calendar" id="today_date">
-									<div class="ui input left icon">
-										<label for="start_date">Start Date</label>
-										<input type="text" id="today" name="from" class="form-control date" value="<?php echo $today; ?>" autocomplete="off" placeholder="yy-mm-dd">
-									</div>
+						<div class="form-group col">
+							<div class="col ui calendar" id="today_date">
+								<div class="ui input left icon">
+									<label for="start_date">Start Date</label>
+									<input type="text" id="today" name="from" class="form-control date" value="<?php echo $today; ?>" autocomplete="off" placeholder="yy-mm-dd">
 								</div>
 							</div>
+						</div>
 
-							<div class="form-group col">
-								<div class="col ui calendar" id="start_date">
-									<div class="ui input left icon">
-										<label for="start_date">Start Date</label>
-										<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
-									</div>
+						<div class="form-group col">
+							<div class="col ui calendar" id="start_date">
+								<div class="ui input left icon">
+									<label for="start_date">Start Date</label>
+									<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
+						</div>
 
-							<div class="form-group col">
-								<div class="col ui calendar" id="end_date">
-									<div class="ui input left icon">
-										<label for="end_date">End Date</label>
-										<input type="text" id="e_date" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
-									</div>
+						<div class="form-group col">
+							<div class="col ui calendar" id="end_date">
+								<div class="ui input left icon">
+									<label for="end_date">End Date</label>
+									<input type="text" id="e_date" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
+						</div>
 					</div>
 
 					<div class="row">
@@ -225,42 +231,51 @@
 			$('.date').inputmask({
 				mask: 'dddd-dd-dd'
 			});
-			$(function(){
-				$("#s_date").datepicker({ dateFormat: 'yy-mm-dd'});
-				$(document).ready(function(){
-					$("#today").datepicker({ dateFormat: 'yy-mm-dd'}).bind("change",function(){
+			$(function() {
+				$("#s_date").datepicker({
+					dateFormat: 'yy-mm-dd'
+				});
+				$(document).ready(function() {
+					$("#today").datepicker({
+						dateFormat: 'yy-mm-dd'
+					}).bind("change", function() {
 						var min = $(this).val();
 						min = $.datepicker.parseDate("yy-mm-dd", min);
-						min.setDate(min.getDate()+20);
-						$("#s_date").datepicker( "option", "minDate", min);
+						min.setDate(min.getDate() + 20);
+						$("#s_date").datepicker("option", "minDate", min);
 					});
 				});
-				$("#e_date").datepicker({ dateFormat: 'yy-mm-dd'});
-				$("#s_date").datepicker({ dateFormat: 'yy-mm-dd'}).bind("change",function(){
+				$("#e_date").datepicker({
+					dateFormat: 'yy-mm-dd'
+				});
+				$("#s_date").datepicker({
+					dateFormat: 'yy-mm-dd'
+				}).bind("change", function() {
 					var minValue = $(this).val();
 					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-					minValue.setDate(minValue.getDate()+1);
-					$("#e_date").datepicker( "option", "minDate", minValue);
+					minValue.setDate(minValue.getDate() + 1);
+					$("#e_date").datepicker("option", "minDate", minValue);
 				});
 
 
 			});
 			$(function() {
-				$('#s_date').change(function (){
-					if($('#s_date').val() !== ""){
+				$('#s_date').change(function() {
+					if ($('#s_date').val() !== "") {
 						$('#e_date').removeAttr("disabled");
 					} else {
-						$('#e_date').attr("disabled",'true');
+						$('#e_date').attr("disabled", 'true');
 					}
 				});
-				$('#s_date').keyup(function (){
-					if($('#s_date').val() !== "" ){
+				$('#s_date').keyup(function() {
+					if ($('#s_date').val() !== "") {
 						$('#e_date').removeAttr("disabled");
 					} else {
-						$('#e_date').attr("disabled",'true');
+						$('#e_date').attr("disabled", 'true');
 					}
 				});
 			});
+
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>

@@ -1,6 +1,7 @@
 <?php
 	include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
+
 	if($type == "admin") {
 		echo "<script>window.location = '../admin/';</script>";
 	}

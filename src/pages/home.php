@@ -1,7 +1,6 @@
 <?php
 	include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
-	include '../utilities/check_user_type.php';
 	$connect = Connect();
 	
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
@@ -30,7 +29,7 @@
 					<a class="sidebar-logo" href="home"><img src="../img/Lion.png" alt="sidebar-logo"></a>
 				</div>
 
-				<!-- Sidebar Links -->
+				<!-- Sidebar Links-->
 				<ul class="list-unstyled components">
 					<li>
 						<a href="profile" class="sidebar-item">

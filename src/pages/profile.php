@@ -1,6 +1,8 @@
 <?php
     include '../utilities/session.php';
+    include '../utilities/check_user_type.php';
 	include '../utilities/check_user_info.php';
+
     $today = date("Y-m-d");
     $age = date_diff(date_create($birth_date),date_create($today))->y;
 
