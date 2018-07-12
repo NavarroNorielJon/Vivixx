@@ -2,10 +2,6 @@
 	text-transform: capitalize;
 }
 
-p::first-letter {
-	text-transform: capitalize;
-
-}
 
 textarea {
 	display: none !important;
