@@ -18,7 +18,7 @@
             $status = $row["status"];
             if ($count == 1) {
                 if (password_verify($password, $passwordVerify) && $status === "enabled") {
-                    if ($_SESSION['user'] = $user && $type === "user") {
+                    if ($_SESSION['user'] = $user && ($type === "user")) {
                         $test = "SELECT * FROM user_info NATURAL JOIN user WHERE email='$user' or username='$user' and
                             (birth_place is null and birth_place is null and contact_number is null and gender is null and height is null
                             and weight is null and blood_type is null and residential_address is null and residential_zip is null and

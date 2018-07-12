@@ -1,15 +1,7 @@
 <?php
     include '../utilities/session.php';
-    
-	if ($type === "admin") {
-		header("location:/admin/accounts/accounts_status");
-	} else
-	
-		if ($birth_date != null && $birth_place != null && $contact_number != null &&
-	   	$gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
-	    && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null && $type = "user") {
-			header("location:/pages/home");
-	}
+    include '../utilities/check_user_type.php';
+
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
@@ -56,7 +48,7 @@
 
 		<div class="row">
 			<div class="container">
-				<form role="form" id="update_form" action="../utilities/update_info" method="post" class="f1">
+				<form role="form" action="../utilities/update_info" method="post" class="f1">
 					<div class="f1-steps">
 						<div class="f1-progress">
 							<div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -71,7 +63,9 @@
 							<div class="f1-step-icon">
 								<i class="fa fa-user"></i>
 							</div>
-							<p>Family Background</p>
+							<p>Family Background
+
+							</p>
 						</div>
 						<div class="f1-step">
 							<div class="f1-step-icon">
@@ -531,14 +525,14 @@
 
 						<div class="row">
 							<div class="form-group col-3">
-								<label>Do you have Spouse?</label>
+								<label>Do you have a spouse?</label>
 								<select id="s_status" class="custom-select form-control">
                                     <option selected="selected">No</option>
                                     <option value="spouse">Yes</option>
                                 </select>
 							</div>
 							<div class="form-group col-3">
-								<label>Do you have Child/Children?</label>
+								<label>Do you have a child/children?</label>
 								<select required="required" id="c_status" class="custom-select form-control">
                                     <option selected="selected">No</option>
                                     <option value="child">Yes</option>
