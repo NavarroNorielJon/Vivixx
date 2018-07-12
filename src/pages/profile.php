@@ -36,7 +36,7 @@
 				<ul class="list-unstyled components">
 					<li class="active">
 						<a href="profile" class="sidebar-item">
-					<i class="material-icons">person</i><?php echo "$first_name"?></a>
+					<i class="material-icons">person</i><?php echo $row['first_name']?></a>
 						<a href="profile.php" class="icon"><i class="material-icons">person</i></a>
 					</li>
 					<li>

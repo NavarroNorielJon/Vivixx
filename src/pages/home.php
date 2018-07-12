@@ -35,7 +35,7 @@ include '../utilities/session.php';
 					<li>
 						<a href="profile" class="sidebar-item">
 										<i class="material-icons">person</i>
-										<?php echo "$first_name"?>
+										<?php echo $row['first_name']?>
 									</a>
 
 						<a href="profile" class="icon" data-toggle="tooltip" data-placement="right" title="Profile">
