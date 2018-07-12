@@ -2,7 +2,6 @@
 	include '../utilities/session.php';
 	$today = date("Y-m-d");
     $diff = date_diff(date_create($date_hired),date_create($today))->y;
-	echo $diff;
 	if($diff>=1){
 	} else {
 		echo "
@@ -20,13 +19,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
 		<script src="../script/scripts.js"></script>
+
 	</head>
 
 	<body style="background-color: #e6e6e6;">
