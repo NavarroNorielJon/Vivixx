@@ -77,11 +77,6 @@ textarea {
 	display: block;
 }
 
-.message {
-	margin-top: 50px;
-	margin-left: -100px;
-}
-
 .show {
 	display: block;
 }
@@ -226,29 +221,35 @@ textarea {
 	margin: 10% auto 5% auto;
 }
 
-.accounts-content .accounts-table {
-	background-color: transparent;
-	margin: 0 auto;
-	max-width 100%;
-	min-width 100%;
-	padding: 10px;
+/*end of account*/
 
+/*user information*/
+
+.wrapper .user-content {
+	margin: 10% auto 5% auto;
 }
 
-.accounts-content .accounts-table .table-header {
-	background-color: rgb(128, 128, 128);
+.message {
+	margin-top: 5px;
 }
 
-.accounts-content .accounts-table .accounts-table-data {
-	font-size: 1.2rem;
-	background-color: transparent;
-	border-style: none;
+/*end of user information*/
+
+/*utilities*/
+
+/*background*/
+
+.background {
+	background-attachment: fixed;
+	background-image: url(../../img/bg_admin.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.accounts-content .accounts-table .accounts-table-data:nth-child(even) {
-	background-color: rgba(128, 128, 128, 0.4);
-	border-style: none;
-}
+/*end of background*/
+
+/*table*/
 
 .table {
 	margin: 0 auto;
@@ -259,25 +260,30 @@ textarea {
 	word-wrap: break-word;
 }
 
-/*end of account*/
-
-/*user information*/
-
-.wrapper .user-content {
-	margin: 10% auto;
+.table-container {
+	background-color: transparent;
+	margin: 0 auto;
+	max-width 100%;
+	min-width 100%;
+	padding: 10px;
 }
 
-/*end of user information*/
-
-/*utilities*/
-
-.background {
-	background-attachment: fixed;
-	background-image: url(../../img/bg_admin.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.table-container .table-header {
+	background-color: rgb(128, 128, 128);
 }
+
+.table-container .table-data:nth-child(odd) {
+	font-size: 1.2rem;
+	background-color: transparent;
+	border-style: none;
+}
+
+.table-container .table-data:nth-child(even) {
+	background-color: rgba(128, 128, 128, 0.4);
+	border-style: none;
+}
+
+/*end of table*/
 
 .wrapper .announcement-content .announcement-table {
 	margin: 5vh 10vh;

@@ -531,14 +531,14 @@
 
 						<div class="row">
 							<div class="form-group col-3">
-								<label>Do you have Spouse?</label>
+								<label>Do you have a spouse?</label>
 								<select id="s_status" class="custom-select form-control">
                                     <option selected="selected">No</option>
                                     <option value="spouse">Yes</option>
                                 </select>
 							</div>
 							<div class="form-group col-3">
-								<label>Do you have Child/Children?</label>
+								<label>Do you have a child/children?</label>
 								<select required="required" id="c_status" class="custom-select form-control">
                                     <option selected="selected">No</option>
                                     <option value="child">Yes</option>
