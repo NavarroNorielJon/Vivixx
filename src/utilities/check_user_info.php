@@ -34,4 +34,8 @@
 		|| $civil_status == null || $sss_no == null || $tin == null || $philhealth_no == null || $pagibig_id_no == null) && $type == "user") {
 		header("location:/pages/update_information");
 	}
+	
+	if ($type != "user"){
+		echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
+	}
 ?>
