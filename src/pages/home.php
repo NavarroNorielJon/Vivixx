@@ -1,4 +1,5 @@
 <?php
+include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
 	$connect = Connect();
 
@@ -23,101 +24,101 @@
 
 	<body class="home">
 		<div class="wrapper">
-			<!--
-<nav class="sidebar">
-	<div class="sidebar-header">
-		<a class="sidebar-logo" href="home"><img src="../img/Lion.png" alt="sidebar-logo"></a>
-	</div>
 
-	Sidebar Links
-	<ul class="list-unstyled components">
-		<li>
-			<a href="profile" class="sidebar-item">
-							<i class="material-icons">person</i>
-							<?php echo "$first_name"?>
-						</a>
+			<nav class="sidebar">
+				<div class="sidebar-header">
+					<a class="sidebar-logo" href="home"><img src="../img/Lion.png" alt="sidebar-logo"></a>
+				</div>
 
-			<a href="profile" class="icon" data-toggle="tooltip" data-placement="right" title="Profile">
-							<i class="material-icons">person</i>
-						</a>
-		</li>
+				<!-- Sidebar Links -->
+				<ul class="list-unstyled components">
+					<li>
+						<a href="profile" class="sidebar-item">
+										<i class="material-icons">person</i>
+										<?php echo "$first_name"?>
+									</a>
 
-		<li class="active">
-			<a href="home" class="sidebar-item">
-							<i class="material-icons">home</i>Home
-						</a>
+						<a href="profile" class="icon" data-toggle="tooltip" data-placement="right" title="Profile">
+										<i class="material-icons">person</i>
+									</a>
+					</li>
 
-			<a class="icon" href="home" data-toggle="tooltip" data-placement="right" title="Home">
-							<i class="material-icons">home</i>
-						</a>
-		</li>
+					<li class="active">
+						<a href="home" class="sidebar-item">
+										<i class="material-icons">home</i>Home
+									</a>
 
-		<li>
-			<a href="notification.php" class="sidebar-item">
-							<i class="material-icons">mail</i>Notifications
-						</a>
+						<a class="icon" href="home" data-toggle="tooltip" data-placement="right" title="Home">
+										<i class="material-icons">home</i>
+									</a>
+					</li>
 
-			<a class="icon" href="notification.php" data-toggle="tooltip" data-placement="right" title="Notifications">
-							<i class="material-icons">mail</i>
-						</a>
-		</li>
+					<li>
+						<a href="notification.php" class="sidebar-item">
+										<i class="material-icons">mail</i>Notifications
+									</a>
 
-		<li>
-			<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false">
-							<i class="material-icons">work</i>
-							Requests
-						</a>
+						<a class="icon" href="notification.php" data-toggle="tooltip" data-placement="right" title="Notifications">
+										<i class="material-icons">mail</i>
+									</a>
+					</li>
 
-			<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false">
-							<i class="material-icons">work</i>
-						</a>
+					<li>
+						<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false">
+										<i class="material-icons">work</i>
+										Requests
+									</a>
 
-			<ul class="collapse list-unstyled" id="requests">
-				<li class="active">
-					<a href="salary_request.php" class="sidebar-item">
-									Salary Request</a>
-				</li>
+						<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false">
+										<i class="material-icons">work</i>
+									</a>
 
-				<li class="active">
-					<a href="leave_request_form" class="sidebar-item">Leave Request</a>
-				</li>
+						<ul class="collapse list-unstyled" id="requests">
+							<li class="active">
+								<a href="salary_request.php" class="sidebar-item">
+												Salary Request</a>
+							</li>
 
-				<li class="active">
-					<a href="salary_request.php" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
-				</li>
+							<li class="active">
+								<a href="leave_request_form" class="sidebar-item">Leave Request</a>
+							</li>
 
-				<li class="active">
-					<a href="leave_request_form.php" class="icon" data-toggle="tooltip" data-placement="right" title="Leave Request">LR</a>
-				</li>
-			</ul>
-		</li>
+							<li class="active">
+								<a href="salary_request.php" class="icon" data-toggle="tooltip" data-placement="right" title="Salary Request">SR</a>
+							</li>
 
-		<li>
-			<a href="about.php" class="sidebar-item">
-							<i class="material-icons">info</i>
-							About
-						</a>
+							<li class="active">
+								<a href="leave_request_form.php" class="icon" data-toggle="tooltip" data-placement="right" title="Leave Request">LR</a>
+							</li>
+						</ul>
+					</li>
 
-			<a class="icon" href="about.php" data-toggle="tooltip" data-placement="right" title="About">
-							<i class="material-icons">info</i>
-						</a>
-		</li>
+					<li>
+						<a href="about.php" class="sidebar-item">
+										<i class="material-icons">info</i>
+										About
+									</a>
 
-		<hr>
+						<a class="icon" href="about.php" data-toggle="tooltip" data-placement="right" title="About">
+										<i class="material-icons">info</i>
+									</a>
+					</li>
 
-		<li>
-			<a href="../utilities/logout.php" class="sidebar-item logout">
-							<i class="material-icons">power_settings_new</i>
-							Logout
-						</a>
+					<hr>
 
-			<a class="icon" href="../utilities/logout.php" data-toggle="tooltip" data-placement="right" title="Logout">
-							<i class="material-icons">power_settings_new</i>
-						</a>
-		</li>
-	</ul>
-</nav>
--->
+					<li>
+						<a href="../utilities/logout.php" class="sidebar-item logout">
+										<i class="material-icons">power_settings_new</i>
+										Logout
+									</a>
+
+						<a class="icon" href="../utilities/logout.php" data-toggle="tooltip" data-placement="right" title="Logout">
+										<i class="material-icons">power_settings_new</i>
+									</a>
+					</li>
+				</ul>
+			</nav>
+
 
 			<div class="content">
 				<h1 style="text-align:center">Announcements and Events</h1>
