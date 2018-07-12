@@ -88,15 +88,11 @@
 						<div class="col-4">
 							<div style="height:250px;width:250px;border: 2px solid black;">
 								<?php echo $image;?>
-								<!-- <form action="../utilities/upload.php" method="POST" enctype="multipart/form-data">
-							<input class="btn-primary" type="file" name="image"><br>
-							<button class="btn btn-primary" type="submit" name="upload">Upload</button>
-							</form> -->
 							</div>
 						</div>
 					</div>
 
-					<div class="row  birth_information">
+					<div class="row birth_information">
 						<div class="form-group col-4">
 							<label for="birth_place"> Birth Place</label>
 							<input type="text" id="first" class="form-control-plaintext" value="<?php echo " $birth_place ";?>" disabled>
