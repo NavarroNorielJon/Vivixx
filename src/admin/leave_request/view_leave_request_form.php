@@ -41,25 +41,25 @@
                                 if($row['department'] === "Phone ESL" || $row['department'] === "Video ESL" || $row['department'] === "Non-Voice Account"){
                                     echo '
                                     <label>Position</label>
-                                    <select class="custom-select form-control" name="position" required>
+                                    <select class="custom-select form-control" disabled name="position" required>
                                         <option selected required="require" value="Online English Tutor">Online English Tutor</option>
                                     </select>';
                                 }else if($row['department'] === "Administration/HR Support"){
                                     echo '
                                     <label>Position</label>
-                                    <select class="custom-select form-control" name="position" required>
+                                    <select class="custom-select form-control" disabled name="position" required>
                                     <option selected required="require" value="HR Assistant">HR Assistant</option>
                                     </select>';
                                 }else if($row['department'] === "IT Support"){
                                     echo '
                                     <label>Position</label>
-                                    <select class="custom-select form-control" name="position" required>
+                                    <select class="custom-select form-control" disabled name="position" required>
                                     <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
                                     </select>';
                                 }else if($row['department'] === "Virtual Assistant"){
                                     echo '
                                     <label>Position</label>
-                                    <select class="custom-select form-control" name="position" required>
+                                    <select class="custom-select form-control" disabled name="position" required>
                                     <option selected required="require" disabled>Choose Here:</option>
                                     <option value="Indesigner">Indesigner</option>
                                     <option value="Web Developer">We Developer</option>
@@ -67,7 +67,7 @@
                                 }else{
                                     echo '
                                     <label>Position</label>
-                                    <select class="custom-select form-control" name="position" required>
+                                    <select class="custom-select form-control" disabled name="position" required>
                                     <option selected required="require" disabled>Choose Here:</option>
                                     <option value="Indesigner">secret</option>
                                     <option value="Web Developer">something </option>
@@ -78,7 +78,7 @@
 
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
-                            <input type="date" class="form-control" id="date_hired" name="dateHired" required>
+                            <input type="date" class="form-control" id="date_hired" name="dateHired" disabled required value="<?php echo $row['date_hired']?>">
                         </div>
 
                         <div class="form-group col">
