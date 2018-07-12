@@ -1,5 +1,6 @@
 <?php
     include '../utilities/session.php';
+    include '../utilities/check_user_type.php';
 	include '../utilities/check_user_info.php';
 
     $today = date("Y-m-d");

@@ -63,9 +63,7 @@
 							<div class="f1-step-icon">
 								<i class="fa fa-user"></i>
 							</div>
-							<p>Family Background
-
-							</p>
+							<p>Family Background</p>
 						</div>
 						<div class="f1-step">
 							<div class="f1-step-icon">
