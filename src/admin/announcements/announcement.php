@@ -33,7 +33,7 @@
 
 	</head>
 
-	<body>
+	<body class="background">
 		<?php include '../utilities/check_user.php'; ?>
 
 		<div class="wrapper">

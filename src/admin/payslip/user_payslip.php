@@ -20,7 +20,7 @@
 	<script src="../../script/jquery.form.min.js"></script>
 </head>
 
-<body>
+<body class="background">
 	<?php 
 	include '../../utilities/session.php';
 	include '../utilities/check_user.php'; 
@@ -52,7 +52,7 @@
 						<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="payslip.php">Payslip</a>
+						<a class="nav-link" href="user_payslip.php">Payslip</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>

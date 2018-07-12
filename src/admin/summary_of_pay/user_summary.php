@@ -20,7 +20,7 @@
 	<script src="../../script/jquery.form.min.js"></script>
 </head>
 
-<body>
+<body class="background">
 	<?php 
 	include '../../utilities/session.php';
 	include '../utilities/check_user.php'; 
