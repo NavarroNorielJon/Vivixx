@@ -15,7 +15,7 @@
 	<html>
 
 	<head>
-		<title>Vivixx Ph | Profile</title>
+		<title>Vivixx PH | Profile</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
