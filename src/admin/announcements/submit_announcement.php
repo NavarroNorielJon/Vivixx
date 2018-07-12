@@ -26,6 +26,7 @@ $connect = Connect();
             $concat .= ucwords($dept) . ", ";
         }
     }
+    $counter = 0;
     if(isset($_POST["submit"])){
         foreach($_FILES['file']['name'] as $child) {
             $file_names[] = $child;
@@ -45,6 +46,7 @@ $connect = Connect();
                 $file_name .= $name .", ";
             }
         }
+        $counter = 0;
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
