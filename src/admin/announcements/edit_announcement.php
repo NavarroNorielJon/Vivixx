@@ -30,12 +30,12 @@
 
 							<div class="form-group col">
 								<label for="date">Start Date</label>
-								<input type="date" class="form-control" id="s_date" name="start_date" value="<?php echo $row['start_date']?>">
+								<input type="text" class="form-control" autocomplet="off" id="s_date" name="start_date" value="<?php echo $row['start_date']?>">
 							</div>
 
 							<div class="form-group col">
 								<label for="date">End Date</label>
-								<input type="date" class="form-control" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
+								<input type="text" class="form-control" autocomplet="off" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 
 							<div class="form-group col">
@@ -138,6 +138,7 @@
 		});
 	</script>
 	<script>
+		//show modal for editing information
 		$(document).ready(function() {
 			$("#edit").modal("show");
 		});
@@ -160,7 +161,8 @@
 				$('#totalChars').text(remainder);
 			}
 		};
-
+		
+		//counter for text limit
 		$(document).ready(function() {
 			var content_id = 'editable';
 			max = 1499;
@@ -186,4 +188,15 @@
 
 			});
 		});
+
+		//date range
+		$(function(){
+        		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
+        		$("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+					var minValue = $(this).val();
+					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+					minValue.setDate(minValue.getDate()+1);
+					$("#e_date").datepicker( "option", "minDate", minValue );
+				})
+			});
 	</script>

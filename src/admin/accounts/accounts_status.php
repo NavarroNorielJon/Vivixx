@@ -23,11 +23,11 @@
 		<script src="../../script/jquery.form.min.js"></script>
 	</head>
 
-	<body>
-		<div id="wrapper">
-			<?php include '../utilities/check_user.php';?>
+	<body class="background">
+		<?php include '../utilities/check_user.php';?>
 
-			<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
+		<div class="wrapper">
+			<nav class="fixed-top navbar navbar-dark navbar-expand-lg  navigation-bar">
 				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -70,15 +70,14 @@
 			</nav>
 
 			<div class="accounts-content container">
-
 				<div class="text-center">
-					<h1>Accounts</h1>
+					<h1 class="accounts-header">ACCOUNTS</h1>
 				</div>
 
 				<div class="accounts-table">
 					<table class="table" id="table">
 						<thead>
-							<tr>
+							<tr class="table-header">
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>Username</th>
@@ -107,7 +106,7 @@
 							
 							//print data in table
 							echo "
-							<tr>
+							<tr class='accounts-table-data'>
 							<td>" . ucwords($row['first_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
 							<td>" . $row['username'] . "</td>
@@ -158,7 +157,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-																																						toggle between hiding and showing the dropdown content */
+																																																																																toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

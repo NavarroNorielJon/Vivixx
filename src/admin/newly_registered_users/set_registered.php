@@ -33,35 +33,35 @@
                                     $main = explode("|",$row['department'])[0];
                                     if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                             <option selected required="require" value="Online English Tutor">Online English Tutor</option>
                                         </select>';
                                     }else if($main === "Administration/HR Support"){
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" value="HR Assistant">HR Assistant</option>
                                         </select>';
                                     }else if($main === "IT Support"){
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" value="ICT Support Specialist">ICT Support Specialist</option>
                                         </select>';
                                     }else if($main === "Virtual Assistant"){
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Indesigner">Indesigner</option>
                                         <option value="Web Developer">Web Developer</option>
                                         </select>';
                                     }else if ($main === "Security") {
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Security">Security</option>
                                         </select>';
                                     }else {
                                         echo '
-                                        <select class="custom-select form-control" id="pos" name="position">
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" disabled>Choose Here:</option>
                                         <option value="Housekeeping">Housekeeping</option>
                                         <option value="Utilities">Utilities</option>
@@ -84,7 +84,7 @@
 
                             <div class="form-group">
                                 <label>Date hired</label><br>
-                                <input type="date" id="date" name="date" class="form-control">
+                                <input type="text" id="date" name="date" class="form-control" required="required" placeholder="yy-mm-dd">
                             </div>
                         </form>
                          <div style="text-align:right">
@@ -98,7 +98,7 @@
     </div>
 <script>
 
-
+    $("#date").datepicker({ dateFormat: 'yy-mm-dd' });
     $(document).change(function() {
         if($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "" ){
             $('#update').attr("disabled", false);
