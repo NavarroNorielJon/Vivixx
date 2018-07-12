@@ -128,6 +128,9 @@
 .home {
 	background-color: #f2f2f2;
 }
+#am::first-letter{
+	text-transform: capitalize;
+}
 
 /*slider*/
 

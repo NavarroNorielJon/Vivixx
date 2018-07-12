@@ -1,8 +1,11 @@
 <?php
 	include '../utilities/session.php';
-	include '../utilities/check_user_info.php';
 	$connect = Connect();
-	
+	include '../utilities/check_user_info.php';
+	if ($type == "admin"){
+		echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
+	}
+
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
@@ -131,11 +134,17 @@
 									<div class='item'>
 										<div class='imgTitle'>
 											<h2 class='blogTitle'>".$row['subject']."</h2>
-											<img class='images' src='data:image;base64," . $row['attachment'] . "'>
+										";
+									if ($row['attachment'] != null) {
+										echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
+									} else {
+										echo "<div class='images'>No Attachment</div>";
+									}
+									echo "
 										</div>
 										<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
 									</div>
-									";
+										";
 								}
 							?>
 						</div>
@@ -156,8 +165,8 @@
 								</div>
 
 								<div class='modal-body'>
-									<p id="am"></p>
-									<div id="dl"> </div>
+									<input type="text" class="form-control-plaintext" disabled value="" id="am">
+									<div id="dl"></div>
 								</div>
 
 								<div class='modal-footer'>

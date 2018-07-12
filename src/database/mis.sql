@@ -107,7 +107,7 @@ CREATE TABLE `emergency_info_sheet` (
 
 LOCK TABLES `emergency_info_sheet` WRITE;
 /*!40000 ALTER TABLE `emergency_info_sheet` DISABLE KEYS */;
-INSERT INTO `emergency_info_sheet` VALUES (40,49,'16.4134367|120.5858916','Bakakeng, Eagle Crest Phase 1','','Concepcion, Tarlac','Yes|Wqewqeeqwe',49,49),(41,50,'15.48081309380798|120.58851242065431','05 calle antonio san sebastian village tarlac city','','05 Calle Antonio San Sebastian Village Tarlac City','No',50,50),(42,51,'15.481739515201728|120.60589599539527','sada','Sdasdsad','Asdada','No',51,51),(43,54,'14.57650617601295|121.05616965280271','asddaswqeqw','Qwewq','Qweqeewq','No',54,54),(44,55,'15.779566422584283|121.83286581289126','qwewqeqwe','','Qweqw','No',55,55),(45,56,'16.26952287293715|120.94120132426423','+63912 321 3131','','+63912 321 3131','No',56,56),(46,57,'16.024695711685315|119.88195814192296','+63913 122 1312','+63913 122 1312','+63913 122 1312','No',57,57),(47,58,'16.387895376889567|120.59077123400148','+63913 211 2321','+63913 211 2321','+63913 211 2321','No',58,58),(48,59,'15.938090138857234|121.07294516587582','+63921 321 3123','+63921 321 3123','+63921 321 3123','No',59,59),(49,60,'16.21889452706432|121.72054326144965','+63912 321 3213','+63912 321 3213','+63912 321 3213','No',60,60),(50,64,'15.42680855084793|120.81876184442082','dsadwqe','Wqewqewq','Wqwqewqewqe','No',64,64);
+INSERT INTO `emergency_info_sheet` VALUES (40,49,'16.4134367|120.5858916','Bakakeng, Eagle Crest Phase 1','','Concepcion, Tarlac','No',49,49),(41,50,'15.48081309380798|120.58851242065431','05 calle antonio san sebastian village tarlac city','','05 Calle Antonio San Sebastian Village Tarlac City','No',50,50),(42,51,'15.481739515201728|120.60589599539527','sada','Sdasdsad','Asdada','No',51,51),(43,54,'14.57650617601295|121.05616965280271','asddaswqeqw','Qwewq','Qweqeewq','No',54,54),(44,55,'15.779566422584283|121.83286581289126','qwewqeqwe','','Qweqw','No',55,55),(45,56,'16.26952287293715|120.94120132426423','+63912 321 3131','','+63912 321 3131','No',56,56),(46,57,'16.024695711685315|119.88195814192296','+63913 122 1312','+63913 122 1312','+63913 122 1312','No',57,57),(47,58,'16.387895376889567|120.59077123400148','+63913 211 2321','+63913 211 2321','+63913 211 2321','No',58,58),(48,59,'15.938090138857234|121.07294516587582','+63921 321 3123','+63921 321 3123','+63921 321 3123','No',59,59),(49,60,'16.21889452706432|121.72054326144965','+63912 321 3213','+63912 321 3213','+63912 321 3213','No',60,60),(50,64,'15.42680855084793|120.81876184442082','dsadwqe','Wqewqewq','Wqwqewqewqe','No',64,64);
 /*!40000 ALTER TABLE `emergency_info_sheet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `housemates` (
 
 LOCK TABLES `housemates` WRITE;
 /*!40000 ALTER TABLE `housemates` DISABLE KEYS */;
-INSERT INTO `housemates` VALUES (1,49,'Qwewqee','+63921 321 3213','Family',1),(2,50,'zealbert','+63956 565 6565','Acquaintances',NULL),(3,51,'asdas','+63922 123 1323','Family',NULL),(4,54,'qwewq','+63921 321 1312','Friend',NULL),(5,55,'wqewq','+63921 323 1312','Friend',NULL),(6,56,'marc lawrence','+63963 912 3213','Friend',NULL),(7,56,'sison gregorio','+63963 912 3213','Family',NULL),(8,57,'+63913 122 1312','+63963 913 1221','Romantic Relationship',NULL),(9,58,'+63913 211 2321','+63963 913 2112','Acquaintances',NULL),(10,59,'+63921 321 3123','+63963 921 3213','Friend',NULL),(11,60,'+63912 321 3213','+63963 912 3213','Family',NULL),(12,64,'Qwewqee','+63921 321 3213','Family',1),(13,64,'Wqeqweqwe','+63932 131 2321','Family',2);
+INSERT INTO `housemates` VALUES (1,49,'Qwewqee','+63921 321 3213','Family',1),(2,50,'Qwewqee','+63921 321 3213','Family',1),(3,51,'Qwewqee','+63921 321 3213','Family',1),(4,54,'Qwewqee','+63921 321 3213','Family',1),(5,55,'Qwewqee','+63921 321 3213','Family',1),(6,56,'Qwewqee','+63921 321 3213','Family',1),(7,56,'sison gregorio','+63963 912 3213','Family',2),(8,57,'Qwewqee','+63921 321 3213','Family',1),(9,58,'Qwewqee','+63921 321 3213','Family',1),(10,59,'Qwewqee','+63921 321 3213','Family',1),(11,60,'Qwewqee','+63921 321 3213','Family',1),(12,64,'Qwewqee','+63921 321 3213','Family',1),(13,64,'Wqeqweqwe','+63932 131 2321','Family',2);
 /*!40000 ALTER TABLE `housemates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,6 +249,34 @@ LOCK TABLES `logs` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `notification`
+--
+
+DROP TABLE IF EXISTS `notification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notification` (
+  `id_notification` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `date` date NOT NULL,
+  `staus` enum('new','read') NOT NULL,
+  PRIMARY KEY (`id_notification`),
+  KEY `user_id_idx` (`user_id`),
+  CONSTRAINT `user_notif` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notification`
+--
+
+LOCK TABLES `notification` WRITE;
+/*!40000 ALTER TABLE `notification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notification` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `relatives`
 --
 
@@ -274,7 +302,7 @@ CREATE TABLE `relatives` (
 
 LOCK TABLES `relatives` WRITE;
 /*!40000 ALTER TABLE `relatives` DISABLE KEYS */;
-INSERT INTO `relatives` VALUES (1,49,'Wqeqw','+63921 321 3213','Acquaintances',1),(2,49,'berta','+63956 565 6565','Romantic Relationship',2),(3,51,'dasdadsa','+63921 321 3213','Friend',NULL),(4,54,'adsadas','+63921 321 3321','Acquaintances',NULL),(5,55,'+63921 323 1312','+63963 921 3231','Acquaintances',NULL),(6,56,'+63912 321 3131','+63963 912 3213','Friend',NULL),(7,56,'+63912 321 3131','+63963 912 3213','Family',NULL),(8,57,'+63913 122 1312','+63963 913 1221','Acquaintances',NULL),(9,58,'+63913 211 2321','+63963 913 2112','Acquaintances',NULL),(10,59,'+63921 321 3123','+63963 921 3213','Family',NULL),(11,60,'+63912 321 3213','+63963 912 3213','Family',NULL),(12,64,'Wqeqw','+63921 321 3213','Acquaintances',1),(13,64,NULL,NULL,NULL,2);
+INSERT INTO `relatives` VALUES (1,49,'Wqeqw','+63921 321 3213','Acquaintances',1),(2,49,'berta','+63956 565 6565','Romantic Relationship',2),(3,51,'dasdadsa','+63921 321 3213','Friend',NULL),(4,54,'adsadas','+63921 321 3321','Acquaintances',NULL),(5,55,'+63921 323 1312','+63963 921 3231','Acquaintances',NULL),(6,56,'+63912 321 3131','+63963 912 3213','Friend',NULL),(7,56,'+63912 321 3131','+63963 912 3213','Family',NULL),(8,57,'+63913 122 1312','+63963 913 1221','Acquaintances',NULL),(9,58,'+63913 211 2321','+63963 913 2112','Acquaintances',NULL),(10,59,'+63921 321 3123','+63963 921 3213','Family',NULL),(11,60,'+63912 321 3213','+63963 912 3213','Family',NULL),(12,64,'Wqeqw','+63921 321 3213','Acquaintances',1),(13,64,'berta','+63956 565 6565','Romantic Relationship',2);
 /*!40000 ALTER TABLE `relatives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +333,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('AAAsdasdasd',52,'asda@gmail.com','$2y$10$9aBQaPTm38MFdVClXOG4r.nw.x48WtVP6sQmvDeN0q/Sqb4WNt1rW','2018-07-06','enabled','user'),('EEAsd',58,'qwe@asd.qwe','$2y$10$biiQhNO8CJTiYoT6S2spWeb4deUhHa6MnCzvBYDpneuXvGAHk9cqG','2018-07-07','enabled','user'),('EEEw',55,'gregoriorenz12@gmail.com','$2y$10$jRGKdZ3TYz1.P7T0QKD8f.dJbDhP.syIGH1cu5B3meWzP6CrNxDnC','2018-07-07','enabled','user'),('EEwe',61,'ew@las.com','$2y$10$G5IQYTMLWMeP3zh.6ixBX.sgBvv0DR97qvsAdx079Hd62mMdK/Y3K','2018-07-09','enabled','user'),('EWE',57,'qwe@password.com','$2y$10$Ri3WJMNuyiQhajQO6CYRC.Ca7DkLD4y0FSeDd4DDFVmPFswJR5GRC','2018-07-07','enabled','user'),('EWEEw',56,'ewasd@sad.com','$2y$10$RtBeC9Q7GObyCqX26GtS5eAw1UbOipbWVKeDCJE/8VQ44XCNL1TgW','2018-07-07','enabled','user'),('JADoe',59,'pas@asd.com','$2y$10$FQhcuj/us417rz0po7CNn..VrbJC2Oy5eocd0MWF0xarBKWBb0FZO','2018-07-07','enabled','user'),('JWDoe',60,'pass@asd.xcom','$2y$10$apagzfkzlEVqrCG0WlyEbuC.pFj9oVXVyDzutp2Recf4gxACwvIFq','2018-07-07','enabled','user'),('NOPNavarro',63,'2161880@slu.edu.ph','$2y$10$jbtGIMssQ6X0pr7hYh5oS.vKUOw57WPkQ5wb/LWhAgpUZYNzSoJZ.','2018-07-10','enabled','user'),('NPNavarro',49,'norieljon.navarro.1998@gmail.com','$2y$10$Z1YFk5Hx8JmcNkpciY2ytet4W5Fd6ZPzt02gLeJ.GZYj1wBzVwe/C','2018-07-06','enabled','user'),('OKNAbuiza',62,'awmiko27@gmail.com','$2y$10$LQeB4CUv8nkd0YAeBU5gXeJstHmfVp3m475aqKTsS1cCY2r23..Yy','2018-07-10','enabled','user'),('ONAbuiza',50,'2161920@slu.edu.ph','$2y$10$2sO4pnBgX6.qVQ7yX.5CTemCMC4Hg4DLJS7huPgHJPLLg.YD8kgSe','2018-07-06','disabled','user'),('QEw',51,'ewq@asd.com','$2y$10$lxmWxr6p.fNLu5RJHufNRO.KgAZIR9w.YXrp9ioIh9i1dbaM6gASC','2018-07-06','enabled','user'),('QQQwe',53,'qwe@ga.com','$2y$10$4Lek/bcnT3M3t9ksQpqRIeyfc2FF7VThnfD3GH6qdPZvpJfeqX3kC','2018-07-06','enabled','user'),('SSSample',64,'sample@sadl.com','$2y$10$mfknAT5y2LuUgxDZj5Klz.9jVIuzIsIA6hvpthd5avXM3TFW3j2CC','2018-07-11','enabled','user'),('ULG',4,'gregorio1@gmail.com','$2y$10$z//Kd9HFzVFL7o.z1eRIpu.aeWyYlF2WUCHS/VXzzyCjoJ40hnmSK','2018-06-15','enabled','admin'),('WEw',54,'wq@as.cs','$2y$10$z//Kd9HFzVFL7o.z1eRIpu.aeWyYlF2WUCHS/VXzzyCjoJ40hnmSK','2018-07-07','enabled','user');
+INSERT INTO `user` VALUES ('AAAsdasdasd',52,'asda@gmail.com','$2y$10$9aBQaPTm38MFdVClXOG4r.nw.x48WtVP6sQmvDeN0q/Sqb4WNt1rW','2018-07-06','enabled','user'),('EEAsd',58,'qwe@asd.qwe','$2y$10$biiQhNO8CJTiYoT6S2spWeb4deUhHa6MnCzvBYDpneuXvGAHk9cqG','2018-07-07','enabled','user'),('EEEw',55,'gregoriorenz12@gmail.com','$2y$10$jRGKdZ3TYz1.P7T0QKD8f.dJbDhP.syIGH1cu5B3meWzP6CrNxDnC','2018-07-07','enabled','user'),('EEwe',61,'ew@las.com','$2y$10$G5IQYTMLWMeP3zh.6ixBX.sgBvv0DR97qvsAdx079Hd62mMdK/Y3K','2018-07-09','enabled','user'),('EWE',57,'qwe@password.com','$2y$10$Ri3WJMNuyiQhajQO6CYRC.Ca7DkLD4y0FSeDd4DDFVmPFswJR5GRC','2018-07-07','enabled','user'),('EWEEw',56,'ewasd@sad.com','$2y$10$RtBeC9Q7GObyCqX26GtS5eAw1UbOipbWVKeDCJE/8VQ44XCNL1TgW','2018-07-07','enabled','user'),('JADoe',59,'pas@asd.com','$2y$10$FQhcuj/us417rz0po7CNn..VrbJC2Oy5eocd0MWF0xarBKWBb0FZO','2018-07-07','enabled','user'),('JWDoe',60,'pass@asd.xcom','$2y$10$apagzfkzlEVqrCG0WlyEbuC.pFj9oVXVyDzutp2Recf4gxACwvIFq','2018-07-07','enabled','user'),('NOPNavarro',63,'2161880@slu.edu.ph','$2y$10$jbtGIMssQ6X0pr7hYh5oS.vKUOw57WPkQ5wb/LWhAgpUZYNzSoJZ.','2018-07-10','enabled','user'),('NPNavarro',49,'norieljon.navarro.1998@gmail.com','$2y$10$Z1YFk5Hx8JmcNkpciY2ytet4W5Fd6ZPzt02gLeJ.GZYj1wBzVwe/C','2018-07-06','enabled','user'),('OKNAbuiza',62,'awmiko27@gmail.com','$2y$10$LQeB4CUv8nkd0YAeBU5gXeJstHmfVp3m475aqKTsS1cCY2r23..Yy','2018-07-10','enabled','user'),('ONAbuiza',50,'2161920@slu.edu.ph','$2y$10$2sO4pnBgX6.qVQ7yX.5CTemCMC4Hg4DLJS7huPgHJPLLg.YD8kgSe','2018-07-06','disabled','user'),('QEw',51,'ewq@asd.com','$2y$10$lxmWxr6p.fNLu5RJHufNRO.KgAZIR9w.YXrp9ioIh9i1dbaM6gASC','2018-07-06','enabled','user'),('QQQwe',53,'qwe@ga.com','$2y$10$4Lek/bcnT3M3t9ksQpqRIeyfc2FF7VThnfD3GH6qdPZvpJfeqX3kC','2018-07-06','enabled','user'),('SSSample',64,'sample@sadl.com','$2y$10$mfknAT5y2LuUgxDZj5Klz.9jVIuzIsIA6hvpthd5avXM3TFW3j2CC','2018-07-11','disabled','user'),('ULG',4,'gregorio1@gmail.com','$2y$10$z//Kd9HFzVFL7o.z1eRIpu.aeWyYlF2WUCHS/VXzzyCjoJ40hnmSK','2018-06-15','enabled','admin'),('WEw',54,'wq@as.cs','$2y$10$z//Kd9HFzVFL7o.z1eRIpu.aeWyYlF2WUCHS/VXzzyCjoJ40hnmSK','2018-07-07','enabled','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -445,7 +473,7 @@ CREATE TABLE `user_offspring` (
   PRIMARY KEY (`off_id`),
   KEY `userid_idx` (`user_id`),
   CONSTRAINT `userid` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1 COMMENT='name and birthdate of the child/children of user';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -454,7 +482,7 @@ CREATE TABLE `user_offspring` (
 
 LOCK TABLES `user_offspring` WRITE;
 /*!40000 ALTER TABLE `user_offspring` DISABLE KEYS */;
-INSERT INTO `user_offspring` VALUES (1,'Okimwa','2018-07-23',49,1),(2,'Abuiza','2018-07-15',49,2),(4,'Okimwa','2018-07-23',51,1),(5,'Abuiza','2018-07-15',51,2),(21,'sadad','2018-07-24',51,3),(29,'jhgf','2018-07-11',51,4),(30,'qweqwewewq','2018-07-11',51,5);
+INSERT INTO `user_offspring` VALUES (1,'Okimwa','2018-07-23',49,1),(2,'Abuiza','2018-07-15',49,2),(4,'Okimwa','2018-07-23',51,1),(5,'Abuiza','2018-07-15',51,2),(21,'sadad','2018-07-24',51,3),(39,'Wqewqeqewqe','2018-07-17',51,4);
 /*!40000 ALTER TABLE `user_offspring` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -467,4 +495,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-11 13:28:36
+-- Dump completed on 2018-07-11 15:31:49

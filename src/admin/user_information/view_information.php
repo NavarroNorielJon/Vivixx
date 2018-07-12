@@ -156,10 +156,13 @@
                             <div class="row">
                                 <div class="form-group col-4">
                                     <?php
-                                    if ($row1['prof_image'] !== 'null') {
+                                    if ($row1['prof_image'] !== null) {
                                         echo "<img src='data:image/jpg;base64,". $row1['prof_image'] . "' style='height:2in;width:2in;'>";
                                         echo "<br>";
                                     } else {
+                                        echo "No Profile Image";
+                                        echo "<br>";
+
                                     }
                                     ?>
                                     <label for="prof_image">Profile Image</label>
@@ -168,10 +171,13 @@
 
                                 <div class="form-group col-4">
                                     <?php
-                                    if ($row1['signature'] !== 'null') {
+                                    if ($row1['signature'] !== null) {
                                         echo "<img src='data:image/jpg;base64,". $row1['signature'] . "' style='height:2in;width:2in;'>";
                                         echo "<br>";
                                     } else {
+                                        echo "No Signature";
+                                        echo "<br>";
+
                                     }
                                     ?>
                                     <label for="prof_image">Signature</label>
@@ -1792,7 +1798,7 @@
         <script>
             var map = L.map('mapid').setView([
                 16.4134367, 120.5858916
-            ], 5);
+            ], 15);
             map.on('dragging', function() {
                 setTimeout(function() {
                     map.invalidateSize();
