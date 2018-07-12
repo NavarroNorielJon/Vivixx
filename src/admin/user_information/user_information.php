@@ -122,15 +122,15 @@
 
 							$show = "
 							<input name='show' value='show' style='display: none;'>
-							<a href='view_information.php?user_id=".$row['user_id']."' class='show btn btn-primary'>Show more</a>";
-
+							<a href='view_information.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
+								"& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 
 							$message = "
 							<input name='message' value='message' style='display: none;'>
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
-
 							//print data in table
 							echo "
 							<tr>
