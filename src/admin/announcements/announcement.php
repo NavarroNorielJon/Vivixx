@@ -29,7 +29,7 @@
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../../script/jquery-ui.js"></script>
 
 	</head>
 
@@ -157,20 +157,20 @@
 							<div class="row form-group">
 								<div class="col">
 									<label for="title">Subject</label>
-									<input name="subject" type="text" class="form-control" placeholder="Subject" id="subject" required>
+									<input name="subject" type="text" autocomplete="off" class="form-control" placeholder="Subject" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
-										<input type="text" id="s_date" name="start_date" class="form-control date" required placeholder="yy-mm-dd">
+										<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
 								<div class="col ui calendar" id="end_date">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
-										<input type="text" id="e_date" name="end_date" class="form-control date" required placeholder="yy-mm-dd">
+										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
@@ -207,7 +207,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+								<input type="submit" class="btn btn-primary" onlick="pota();" name="submit" value="Submit">
 							</div>
 						</form>
 					</div>
@@ -297,6 +297,7 @@
 					$("#container-announcement").submit();
 				}
 			});
+
 
 			//script for calling modal
 			$(document).ready(function() {
