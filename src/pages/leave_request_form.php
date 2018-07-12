@@ -7,6 +7,13 @@
 		echo "
 		<script>
 			window.location = '/';
+			swal({
+				type: 'error',
+				title: 'You are not yet spending 1 year in this company, Sorry.',
+				showConfirmButton: true,
+				icon:'error',
+				timer: 2500
+			});
 		</script>";
 	}
 ?>
@@ -21,11 +28,14 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
+		<script type="text/javascript" src="../script/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script src="../script/jquery.backstretch.min.js"></script>
-		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-		<script src="../script/scripts.js"></script>
+		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../script/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="../script/bootstrap/jasny-bootstrap.js"></script>
+		<script type="text/javascript" src="../script/scripts.js"></script>
+
 
 	</head>
 
@@ -167,27 +177,43 @@
 						</div>
 					</div>
 					<hr>
+					<h1 class="text-center leave-header">Inclusive days applied</h1>
 
-					<div>
-						<h1 class="text-center leave-header">Inclusive days applied</h1>
-
-						<div class="row">
+					<div class="row">
 							<div class="form-group col">
-								<label for="start_date">From</label>
-								<input type="date" data-provide="datepicker" class="form-control" name="from" id="start_date" required>
+								<div class="col ui calendar" id="today_date">
+									<div class="ui input left icon">
+										<label for="start_date">Start Date</label>
+										<input type="text" id="today" name="from" class="form-control date" value="<?php echo $today; ?>" autocomplete="off" placeholder="yy-mm-dd">
+									</div>
+								</div>
 							</div>
 
 							<div class="form-group col">
-								<label for="end_date">To</label>
-								<input type="date" min="2018-07-11" onkeypress="alphabetInput(event)" class="form-control" name="to" id="end_date" required>
+								<div class="col ui calendar" id="start_date">
+									<div class="ui input left icon">
+										<label for="start_date">Start Date</label>
+										<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									</div>
+								</div>
 							</div>
-						</div>
 
-						<div style="text-align:right">
+							<div class="form-group col">
+								<div class="col ui calendar" id="end_date">
+									<div class="ui input left icon">
+										<label for="end_date">End Date</label>
+										<input type="text" id="e_date" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
+									</div>
+								</div>
+							</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col" style="text-align:right">
 							<button class="btn btn-primary">Submit</button>
 						</div>
-
 					</div>
+
 				</form>
 			</div>
 		</div>
@@ -196,8 +222,45 @@
 			$('.mobile').inputmask({
 				mask: '+639dd ddd dddd'
 			});
-			var today = new Date().toISOString().split('T')[0];
-document.getElementsByName("to")[0].setAttribute('min', today);
+			$('.date').inputmask({
+				mask: 'dddd-dd-dd'
+			});
+			$(function(){
+				$("#s_date").datepicker({ dateFormat: 'yy-mm-dd'});
+				$(document).ready(function(){
+					$("#today").datepicker({ dateFormat: 'yy-mm-dd'}).bind("change",function(){
+						var min = $(this).val();
+						min = $.datepicker.parseDate("yy-mm-dd", min);
+						min.setDate(min.getDate()+20);
+						$("#s_date").datepicker( "option", "minDate", min);
+					});
+				});
+				$("#e_date").datepicker({ dateFormat: 'yy-mm-dd'});
+				$("#s_date").datepicker({ dateFormat: 'yy-mm-dd'}).bind("change",function(){
+					var minValue = $(this).val();
+					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+					minValue.setDate(minValue.getDate()+1);
+					$("#e_date").datepicker( "option", "minDate", minValue);
+				});
+
+
+			});
+			$(function() {
+				$('#s_date').change(function (){
+					if($('#s_date').val() !== ""){
+						$('#e_date').removeAttr("disabled");
+					} else {
+						$('#e_date').attr("disabled",'true');
+					}
+				});
+				$('#s_date').keyup(function (){
+					if($('#s_date').val() !== "" ){
+						$('#e_date').removeAttr("disabled");
+					} else {
+						$('#e_date').attr("disabled",'true');
+					}
+				});
+			});
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>

@@ -16,7 +16,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="../../style/jquery-ui.css">
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -29,7 +29,7 @@
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../../script/jquery-ui.js"></script>
 
 	</head>
 
@@ -360,14 +360,14 @@
 			});
 
 			 $(function(){
-        $("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
-        $("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
-            var minValue = $(this).val();
-            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-            minValue.setDate(minValue.getDate()+1);
-            $("#e_date").datepicker( "option", "minDate", minValue );
-        })
-    });
+		        $("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
+		        $("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+		            var minValue = $(this).val();
+		            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+		            minValue.setDate(minValue.getDate()+1);
+		            $("#e_date").datepicker( "option", "minDate", minValue );
+		        })
+    		});
 
 			// $('#s_date').calendar({
 			// 	type: 'date',
