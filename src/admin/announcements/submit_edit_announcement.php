@@ -41,7 +41,7 @@ $connect = Connect();
         }
         foreach($_FILES['file']['name'] as $name){
             $counter++;
-            if($counter === count($_FILES['file']['name'])){
+            if($counter == count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
                 $file_name .= $name .",";

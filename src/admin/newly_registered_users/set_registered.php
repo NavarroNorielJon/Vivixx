@@ -23,9 +23,8 @@
 
                             <div class="form-group">
                                 <label>Department</label>
-                                <input type="text" name="department" id="dept" class="form-control" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
+                                <input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
                             </div>
-                            <br>
 
                             <div class="form-group">
                                 <label>Position</label>
