@@ -1,5 +1,5 @@
 <?php
-	$stmt = "SELECT * FROM mis.user NATURAL JOIN user_info WHERE user_id='$user_id';";
+	$stmt = "SELECT * FROM user NATURAL JOIN user_info WHERE user_id='$user_id';";
     $results = mysqli_query($connect, $stmt);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
 	$prof_image = $row['prof_image'];
@@ -28,13 +28,13 @@
     $tin = $row['tin'];
     $philhealth_no = $row['philhealth_no'];
     $pagibig_id_no = $row['pagibig_id_no'];
-	
+
 	if(($birth_date == null || $birth_place == null || $contact_number == null ||
 	   $gender == null || $height == null || $weight == null || $blood_type == null || $residential_address == null || $residential_zip == null || $residential_tel_no == null || $permanent_address == null || $permanent_zip == null || $permanent_tel_no == null || $citizenship == null
 		|| $civil_status == null || $sss_no == null || $tin == null || $philhealth_no == null || $pagibig_id_no == null) && $type == "user") {
 		header("location:/pages/update_information");
 	}
-	
+
 	if ($type != "user"){
 		echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
 	}
