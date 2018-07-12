@@ -20,14 +20,14 @@
 	<script src="../../script/jquery.form.min.js"></script>
 </head>
 
-<body>
+<body class="background">
 
 	<?php
 	include '../../utilities/session.php';
 	include '../utilities/check_user.php';
 	$connect = Connect();
 	?>
-		<div id="wrapper">
+		<div class="wrapper">
 			<nav class="fixed-top navbar navbar-dark navbar-expand-lg navigation-bar">
 				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,12 +71,12 @@
 			</nav>
 
 			<!-- table for viewing user information -->
-			<div class="user-content container-fluid">
+			<div class=" container user-content">
 				<div class="text-center">
-					<h1>Employee Information</h1>
+					<h1>EMPLOYEE INFORMATION</h1>
 				</div>
 
-				<div style="margin: 5vh 15vh;">
+				<div>
 					<table class="table" id="table">
 						<thead>
 							<tr>
