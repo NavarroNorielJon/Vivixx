@@ -260,8 +260,8 @@ textarea {
 .table-container {
 	background-color: transparent;
 	margin: 0 auto;
-	max-width 100%;
-	min-width 100%;
+	max-width: 100%;
+	min-width: 100%;
 	padding: 10px;
 }
 
