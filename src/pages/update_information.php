@@ -13,12 +13,14 @@
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
 		<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
+        <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 		<script src="../script/scripts.js"></script>
 		<link type="text/css" rel="stylesheet" href="../leaflet/leaflet.css">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection" />
@@ -89,10 +91,15 @@
 						<h2 class="header">Step 1: Personal Information</h2>
 						<div class="row">
 
-							<div class="form-group col">
-								<label>Birthdate</label>
-								<input type="date" name="birth_date" id="bdate" class="form-control" required="required">
-							</div>
+
+                            <div class="form-group col">
+    							<div class="ui calendar" id="birth_date">
+    								<div class="ui input left icon">
+    									<label for="start_date">Start Date</label>
+    									<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+    								</div>
+    							</div>
+    						</div>
 
 							<div class="form-group col">
 								<label>Place of Birth</label>
@@ -146,10 +153,10 @@
 								<label for="height">Height</label>
 								<div class="row no-gutters ">
 									<div class="form-group col">
-										<input type="text" name="ft" id="ft" class="form-control" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" required="required">
+										<input type="text" name="ft" id="ft" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" required="required">
 									</div>
 									<div class="form-group col">
-										<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" required="required">
+										<input type="text" name="in" id="in" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(in.)" required="required">
 									</div>
 								</div>
 							</div>
@@ -1368,12 +1375,21 @@
 			$('.telephone').inputmask({
 				mask: 'ddd-dddd'
 			});
-			$('.height').inputmask({
-				mask: 'dd'
-			});
 			$('.gradyear').inputmask({
 				mask: 'dddd-dd'
 			});
+            $("#bdate").datepicker({
+				dateFormat: 'yy-mm-dd'
+			});
+            $('.height').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            });
+            $('.height').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            });
+            $('#weight').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            });
 		</script>
 		<script>
 			var map = L.map('mapid').setView([
