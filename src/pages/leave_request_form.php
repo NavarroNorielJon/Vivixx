@@ -1,9 +1,10 @@
 <?php
 	include '../utilities/session.php';
 	$connect = Connect();
-	$sql = "SELECT date_hired FROM employee_info where user_id=$user_id;";
-	$result = mysqli_query($connect,$sql);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
+	$res = mysqli_query($connect,$stmt);
+	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+	$department = $row['department'];
 	$date_hired = $row['date_hired'];
 	$today = date("Y-m-d");
     $diff = date_diff(date_create($date_hired),date_create($today))->y;
@@ -11,13 +12,7 @@
 	} else {
 		echo "
 		<script>
-			swal({
-				type: 'error',
-				title: 'You are not yet spending 1 year in this company, Sorry.',
-				showConfirmButton: true,
-				icon:'error',
-				timer: 2500
-			});
+
 			window.location='/';
 		</script>";
 	}
@@ -56,7 +51,7 @@
 					<li>
 						<a href="profile.php" class="sidebar-item">
 							<i class="material-icons">person</i>
-							<?php echo "$first_name"?></a>
+							<?php echo $row['first_name']?></a>
 						<a href="profile.php" class="icon">
 							<i class="material-icons">person</i>
 						</a>
