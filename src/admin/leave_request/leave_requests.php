@@ -70,7 +70,7 @@
 				<h1>Leave Requests</h1>
 			</div>
 
-			<div class="tale-container">
+			<div class="table-container">
 				<table class="table" id="leave">
 					<thead>
 						<tr class="table-header">
@@ -118,7 +118,7 @@
 
 	<script>
 		/* When the user clicks on the button, 
-																																								toggle between hiding and showing the dropdown content */
+																																										toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");
 		}

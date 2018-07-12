@@ -82,14 +82,15 @@ textarea {
 }
 
 .summary {
-	margin: 10% 5% 2% 16%;
-	width: 70%;
+	margin: 5% 5%;
+	width: 100%;
 }
 
 .summary tr,
 .value {
 	border: 0.5px solid black;
 	padding-left: 20px;
+	width: 86.8%;
 }
 
 .summary .value {

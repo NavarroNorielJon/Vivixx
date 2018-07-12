@@ -84,7 +84,9 @@
 						</a>
 						<ul class="collapse list-unstyled" id="requests">
 							<li class="active">
-								<a href="#" class="sidebar-item">Salary Request</a>
+								<input name='edit' value='salary' style='display: none;'>
+								<a href="salary_request.php" data-target="#salary" class="sidebar-item salary">
+												Salary Request</a>
 							</li>
 							<li class="active">
 								<a href="leave_request_form" class="sidebar-item">Leave Request</a>
@@ -211,8 +213,20 @@
 				</form>
 			</div>
 		</div>
-
+		<div id="salary_form"></div>
+		
 		<script>
+			$(document).ready(function() {
+				$('.salary').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#salary_form').html(res);
+						}
+					});
+				});
+			});
 			$('.mobile').inputmask({
 				mask: '+639dd ddd dddd'
 			});

@@ -30,12 +30,12 @@
 
 							<div class="form-group col">
 								<label for="date">Start Date</label>
-								<input type="text" class="form-control" autocomplet="off" id="s_date" name="start_date" value="<?php echo $row['start_date']?>">
+								<input type="text" class="form-control" autocomplete="off" id="s_date" name="start_date" value="<?php echo $row['start_date']?>">
 							</div>
 
 							<div class="form-group col">
 								<label for="date">End Date</label>
-								<input type="text" class="form-control" autocomplet="off" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
+								<input type="text" class="form-control" autocomplete="off" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 
 							<div class="form-group col">
@@ -161,7 +161,7 @@
 				$('#totalChars').text(remainder);
 			}
 		};
-		
+
 		//counter for text limit
 		$(document).ready(function() {
 			var content_id = 'editable';
