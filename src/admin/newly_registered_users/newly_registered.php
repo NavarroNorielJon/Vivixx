@@ -22,14 +22,14 @@
 	<script src="../../script/jquery-ui.js"></script>
 </head>
 
-<body>
+<body class="background">
 	<?php 
 	include '../../utilities/session.php';
 	include '../utilities/check_user.php'; 
 	$connect = Connect();
 	?>
-	<div id="wrapper">
-		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
+	<div class="wrapper">
+		<nav class="fixed-top navbar navbar-expand-lg navbar-dark navigation-bar">
 			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
@@ -67,20 +67,20 @@
 		</nav>
 
 		<!-- table for viewing user information -->
-		<div class="user-content container-fluid">
+		<div class="user-content container">
 			<div class="text-center">
-				<h1>New Registered Employee</h1>
+				<h1>NEW REGISTERED EMPLOYEE</h1>
 			</div>
 
-			<div style="margin: 5vh 15vh;">
+			<div class="table-container">
 				<table class="table" id="table">
 					<thead>
-						<tr>
+						<tr class="table-header">
 							<th>First Name</th>
 							<th>Middle Name</th>
 							<th>Last Name</th>
 							<th>Email</th>
-							<th>Edit or View data</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
@@ -97,12 +97,12 @@
 								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
 							//print data in table
 							echo "
-							<tr>
-							<td>" . ucwords($row['first_name']) . "</td>
-							<td>" . ucwords($row['middle_name']) . "</td>
-							<td>" . ucwords($row['last_name']) . "</td>
-							<td>" . $row['email'] . "</td>
-							<td>" . $show ."</td>
+							<tr class='table-data';>
+								<td>" . ucwords($row['first_name']) . "</td>
+								<td>" . ucwords($row['middle_name']) . "</td>
+								<td>" . ucwords($row['last_name']) . "</td>
+								<td>" . $row['email'] . "</td>
+								<td>" . $show ."</td>
 							</tr>";
 						}
 

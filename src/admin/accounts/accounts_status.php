@@ -33,7 +33,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-				<div class="collapse navbar-collapse" id="navbar-content">
+				<div class="collapse navbar-collapse">
 					<ul class="navbar-nav">
 
 						<li class="nav-item active dropdown">
@@ -74,7 +74,7 @@
 					<h1 class="accounts-header">ACCOUNTS</h1>
 				</div>
 
-				<div class="accounts-table">
+				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
 							<tr class="table-header">
@@ -106,7 +106,7 @@
 							
 							//print data in table
 							echo "
-							<tr class='accounts-table-data'>
+							<tr class='table-data'>
 							<td>" . ucwords($row['first_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
 							<td>" . $row['username'] . "</td>
@@ -157,7 +157,7 @@
 
 		<script>
 			/* When the user clicks on the button, 
-																																																																																toggle between hiding and showing the dropdown content */
+																																																																																															toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

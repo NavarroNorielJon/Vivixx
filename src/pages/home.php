@@ -1,11 +1,9 @@
 <?php
 	include '../utilities/session.php';
-	$connect = Connect();
 	include '../utilities/check_user_info.php';
-	if ($type == "admin"){
-		echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
-	}
-
+	include '../utilities/check_user_type.php';
+	$connect = Connect();
+	
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);

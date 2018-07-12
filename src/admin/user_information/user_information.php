@@ -71,22 +71,22 @@
 			</nav>
 
 			<!-- table for viewing user information -->
-			<div class=" container user-content">
+			<div class="container user-content">
 				<div class="text-center">
 					<h1>EMPLOYEE INFORMATION</h1>
 				</div>
 
-				<div>
+				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
-							<tr>
+							<tr class="table-header">
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>Gender</th>
 								<th>Address</th>
 								<th>Contact Number</th>
 								<th>Email</th>
-								<th>Edit or View data</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 
@@ -130,23 +130,21 @@
 							<input name='message' value='message' style='display: none;'>
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
-								"& lname=" .$row['last_name'] ."' class='message btn btn-primary'>Send Message</a>";
+								"& lname=" .$row['last_name'] ."' class='btn btn-primary message'>Send Message</a>";
 							//print data in table
 							echo "
-							<tr>
+							<tr class='table-data'>
 							<td>" . ucwords($row['first_name']) . "</td>
 							<td>" . ucwords($row['last_name']) . "</td>
 							<td>" . $gender . "</td>
 							<td>" . $address . "</td>
 							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
-							<td>" . $show ."</td>
-							<td>" . $message . "</td>
+							<td>" . $show . $message ."</td>
 							</tr>";
 						}
 
 					}
-
 					$connect-> close();
 					?>
 					</table>
@@ -170,8 +168,7 @@
 				});
 			});
 
-			/* When the user clicks on the button,
-																			toggle between hiding and showing the dropdown content */
+			/* When the user clicks on the button, toggle between hiding and showing the dropdown content*/
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}
@@ -199,7 +196,7 @@
 				$('#table').dataTable({
 					"columnDefs": [{
 						"orderable": false,
-						"targets": [6, 7]
+						"targets": [5, 6]
 					}]
 				});
 				$('#table').DataTable();
