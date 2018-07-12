@@ -171,7 +171,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="address_leave">Contact Address during leave</label>
-								<input type="text" placeholder="Address" class="form-control text-transform" name="contact_address" id="address_leave" required>
+								<input type="text" placeholder="Address" class="form-control text-transform" autocomplete="off" name="contact_address" id="address_leave" required>
 							</div>
 
 							<div class="form-group col">
@@ -214,7 +214,7 @@
 			</div>
 		</div>
 		<div id="salary_form"></div>
-		
+
 		<script>
 			$(document).ready(function() {
 				$('.salary').click(function(e) {
