@@ -157,7 +157,7 @@
 							<div class="row form-group">
 								<div class="col">
 									<label for="title">Subject</label>
-									<input name="subject" type="text" autocomplete="off" class="form-control" placeholder="Subject" id="subject" required>
+									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">

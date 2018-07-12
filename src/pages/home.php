@@ -137,7 +137,7 @@
 									if ($row['attachment'] != null) {
 										echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
 									} else {
-										echo "<div class='images'>No Attachment</div>";
+										echo "<img class='images' src='../img/announcement.jpg'>";
 									}
 									echo "
 										</div>
