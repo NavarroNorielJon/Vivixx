@@ -1,6 +1,7 @@
 <?php
 	include '../utilities/session.php';
 	 include '../utilities/check_user_info.php';
+
 	$connect = Connect();
 	$sql = "SELECT date_hired FROM employee_info where user_id=$user_id;";
 	$result = mysqli_query($connect,$sql);

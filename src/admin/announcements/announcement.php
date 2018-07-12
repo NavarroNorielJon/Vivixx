@@ -207,7 +207,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<input type="submit" class="btn btn-primary" onlick="pota();" name="submit" value="Submit">
+								<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 							</div>
 						</form>
 					</div>
@@ -359,7 +359,7 @@
 
 				});
 			});
-
+			
 			//date range
 			$(function(){
         		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
