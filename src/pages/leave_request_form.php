@@ -3,10 +3,9 @@
 	 include '../utilities/check_user_info.php';
 
 	$connect = Connect();
-	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
+	$stmt= "SELECT * FROM employee_info WHERE user_id='$user_id';";
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-	$department = $row['department'];
 	$date_hired = $row['date_hired'];
 	$today = date("Y-m-d");
     $diff = date_diff(date_create($date_hired),date_create($today))->y;
@@ -14,8 +13,9 @@
 	} else {
 		echo "
 		<script>
-
-			window.location='/';
+			$(function(){
+				$().ready
+			});
 		</script>";
 	}
 ?>
@@ -53,7 +53,7 @@
 					<li>
 						<a href="profile.php" class="sidebar-item">
 							<i class="material-icons">person</i>
-							<?php echo $row['first_name']?></a>
+							<?php echo "$first_name"?></a>
 						<a href="profile.php" class="icon">
 							<i class="material-icons">person</i>
 						</a>
@@ -182,17 +182,9 @@
 					<h1 class="text-center leave-header">Inclusive days applied</h1>
 
 					<div class="row">
-						<div class="form-group col">
-							<div class="col ui calendar" id="today_date">
-								<div class="ui input left icon">
-									<label for="start_date">Start Date</label>
-									<input type="text" id="today" name="from" class="form-control date" value="<?php echo $today; ?>" autocomplete="off" placeholder="yy-mm-dd">
-								</div>
-							</div>
-						</div>
 
 						<div class="form-group col">
-							<div class="col ui calendar" id="start_date">
+							<div class="ui calendar" id="start_date">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
 									<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
@@ -201,7 +193,7 @@
 						</div>
 
 						<div class="form-group col">
-							<div class="col ui calendar" id="end_date">
+							<div class="ui calendar" id="end_date">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
 									<input type="text" id="e_date" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
@@ -227,34 +219,24 @@
 			$('.date').inputmask({
 				mask: 'dddd-dd-dd'
 			});
-			$(function() {
-				$("#s_date").datepicker({
-					dateFormat: 'yy-mm-dd'
-				});
-				$(document).ready(function() {
-					$("#today").datepicker({
-						dateFormat: 'yy-mm-dd'
-					}).bind("change", function() {
-						var min = $(this).val();
-						min = $.datepicker.parseDate("yy-mm-dd", min);
-						min.setDate(min.getDate() + 20);
-						$("#s_date").datepicker("option", "minDate", min);
-					});
-				});
-				$("#e_date").datepicker({
-					dateFormat: 'yy-mm-dd'
-				});
+			$("#s_date").datepicker({
+				dateFormat: 'yy-mm-dd',
+				minDate: new Date((new Date()).setDate(new Date().getDate() +20))
+			});
+			$("#e_date").datepicker({
+				dateFormat: 'yy-mm-dd'
+			});
+			$(function(){
 				$("#s_date").datepicker({
 					dateFormat: 'yy-mm-dd'
 				}).bind("change", function() {
-					var minValue = $(this).val();
-					minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-					minValue.setDate(minValue.getDate() + 1);
-					$("#e_date").datepicker("option", "minDate", minValue);
+					var min = $(this).val();
+					min = $.datepicker.parseDate("yy-mm-dd", min);
+					min.setDate(min.getDate() + 1);
+					$("#e_date").datepicker("option", "minDate", min);
 				});
-
-
 			});
+
 			$(function() {
 				$('#s_date').change(function() {
 					if ($('#s_date').val() !== "") {
