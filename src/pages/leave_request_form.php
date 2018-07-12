@@ -1,12 +1,18 @@
 <?php
 	include '../utilities/session.php';
+	include '../utilities/check_user_info.php';
+	include '../utilities/check_user_type.php';
+	$connect = Connect();
+	$sql = "SELECT date_hired FROM employee_info where user_id=$user_id;";
+	$result = mysqli_query($connect,$sql);
+	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$date_hired = $row['date_hired'];
 	$today = date("Y-m-d");
     $diff = date_diff(date_create($date_hired),date_create($today))->y;
-	if($diff>=1){
+	if($diff>=1 && $date_hired != ""){
 	} else {
 		echo "
 		<script>
-			window.location = '/';
 			swal({
 				type: 'error',
 				title: 'You are not yet spending 1 year in this company, Sorry.',
