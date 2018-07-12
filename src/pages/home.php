@@ -75,8 +75,8 @@
 
 						<ul class="collapse list-unstyled" id="requests">
 							<li class="active">
-								<a href="salary_request.php" class="sidebar-item">
-												Salary Request</a>
+								<input name='edit' value='salary' style='display: none;'>
+								<a href="salary_request.php" data-target="#salary" class="sidebar-item salary">Salary Request</a>
 							</li>
 
 							<li class="active">
@@ -178,11 +178,8 @@
 					</div>
 				</div>
 			</div>
-			<div>
 
-
-			</div>
-
+			<div id="salary_form"></div>
 		</div>
 
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
@@ -195,7 +192,17 @@
 				duration: 1000,
 				interval: 3500
 			});
-
+			$(document).ready(function() {
+				$('.salary').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#salary_form').html(res);
+						}
+					});
+				});
+			});
 		</script>
 
 	</body>

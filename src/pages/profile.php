@@ -52,7 +52,10 @@
 						<a href="#requests" class="sidebar-item" data-toggle="collapse" aria-expanded="false"> <i class="material-icons">work</i> Requests</a>
 						<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false"><i class="material-icons">work</i></a>
 						<ul class="collapse list-unstyled" id="requests">
-							<li class="active"><a href="salary_request.php" class="sidebar-item">Salary Request</a></li>
+							<li class="active">
+                                <input name='edit' value='salary' style='display: none;'>
+                                <a href="salary_request.php" data-target="#salary" class="sidebar-item salary">Salary Request</a>
+                            </li>
 							<li class="active"><a href="leave_request_form" class="sidebar-item">Leave Request</a></li>
 							<li class="active"><a href="salary_request.php" class="icon">SR</a></li>
 							<li class="active"><a href="leave_request_form.php" class="icon">LR</a>
@@ -124,11 +127,25 @@
 				</div>
 			</div>
 		</div>
+        <div id="salary_form"></div>
 
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/popper.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../script/ajax.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.salary').click(function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr('href'),
+                        success: function(res) {
+                            $('#salary_form').html(res);
+                        }
+                    });
+                });
+            });
+        </script>
 	</body>
 
 

@@ -5,7 +5,7 @@
 	if($type == "admin") {
 		echo "<script>window.location = '../admin/';</script>";
 	}
-	
+
 ?>
 
 	<!DOCTYPE html>
@@ -67,7 +67,8 @@
 
 						<ul class="collapse list-unstyled" id="requests">
 							<li class="active">
-								<a href="salary_request.php" class="sidebar-item">Salary Request</a>
+								<input name='edit' value='salary' style='display: none;'>
+                                <a href="salary_request.php" data-target="#salary" class="sidebar-item salary">Salary Request</a>
 							</li>
 
 							<li class="active">
@@ -108,14 +109,28 @@
 				</ul>
 			</nav>
 
-			<div id="content" style="margin-left: 20%;">
-			</div>
+			<div id="content" style="margin-left: 20%;"></div>
+			<div id="salary_form"></div>
+			
 		</div>
 
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/popper.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script>
+            $(document).ready(function() {
+                $('.salary').click(function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr('href'),
+                        success: function(res) {
+                            $('#salary_form').html(res);
+                        }
+                    });
+                });
+            });
+        </script>
 	</body>
 
 	</html>
