@@ -127,7 +127,6 @@
 										}
 									});
 								});
-
 							</script>
 							<div class=" form-group col">
 								<label for="gender">Gender</label>
@@ -389,7 +388,6 @@
 										}
 									});
 								});
-
 							</script>
 
 							<div class="form-group col">
@@ -504,7 +502,6 @@
 									}
 								});
 							});
-
 						</script>
 						<script>
 							$(function() {
@@ -520,7 +517,6 @@
 									}
 								});
 							});
-
 						</script>
 
 						<div class="row">
@@ -715,21 +711,20 @@
 											$('#elem_yr_grad').attr('required', 'true');
 											$('#elem_school_name').attr('required', 'true');
 											$('#elem_high_level').removeAttr('required').removeClass('input-error');
-                                            $('#elem_name').removeClass('d-none');
+											$('#elem_name').removeClass('d-none');
 										} else if ($('#option1').val() === "u1") {
 											$('#elem_school_name').attr('required', 'true');
 											$('#elem_high_level').attr('required', 'true');
 											$('#elem_yr_grad').removeAttr('required').removeClass('input-error');
-                                            $('#elem_name').removeClass('d-none');
+											$('#elem_name').removeClass('d-none');
 										} else {
-                                            $('#elem_name').addClass('d-none');
+											$('#elem_name').addClass('d-none');
 											$('#elem_school_name').removeAttr('required').removeClass('input-error');
 											$('#elem_high_level').removeAttr('required').removeClass('input-error');
 											$('#elem_yr_grad').removeAttr('required').removeClass('input-error');
 										}
 									});
 								});
-
 							</script>
 							<div class="form-group col">
 								<label for="option1">Status</label>
@@ -775,22 +770,21 @@
 										if ($('#option2').val() === "g2") {
 											$('#sec_yr_grad').attr('required', 'true');
 											$('#sec_school_name').attr('required', 'true');
-                                            $('#sec_name').removeClass('d-none');
+											$('#sec_name').removeClass('d-none');
 											$('#sec_high_level').removeAttr('required').removeClass('input-error');
 										} else if ($('#option2').val() === "u2") {
 											$('#sec_school_name').attr('required', 'true');
-                                            $('#sec_name').removeClass('d-none');
+											$('#sec_name').removeClass('d-none');
 											$('#sec_high_level').attr('required', 'true');
 											$('#sec_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#sec_school_name').removeAttr('required').removeClass('input-error');
 											$('#sec_yr_grad').removeAttr('required').removeClass('input-error');
-                                            $('#sec_name').addClass('d-none');
+											$('#sec_name').addClass('d-none');
 											$('#sec_high_level').removeAttr('required').removeClass('input-error');
 										}
 									});
 								});
-
 							</script>
 							<div class="form-group col">
 								<label for="option2">Status</label>
@@ -840,24 +834,23 @@
 										$('#' + $(this).val()).show();
 										if ($('#option3').val() === "g3") {
 											$('#col_yr_grad').attr('required', 'true');
-                                            $('#col_name').removeClass('d-none');
+											$('#col_name').removeClass('d-none');
 											$('#col_school_name').attr('required', 'true');
 											$('#col_high_level').removeAttr('required').removeClass('input-error');
 
 										} else if ($('#option3').val() === "u3") {
 											$('#col_high_level').attr('required', 'true');
-                                            $('#col_name').removeClass('d-none');
+											$('#col_name').removeClass('d-none');
 											$('#col_school_name').attr('required', 'true');
 											$('#col_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#col_school_name').removeAttr('required').removeClass('input-error');
 											$('#col_yr_grad').removeAttr('required').removeClass('input-error');
-                                            $('#col_name').addClass('d-none');
+											$('#col_name').addClass('d-none');
 											$('#col_high_level').removeAttr('required').removeClass('input-error');
 										}
 									});
 								});
-
 							</script>
 							<div class="form-group col">
 								<label for="option3">Status</label>
@@ -902,24 +895,23 @@
 										$('#' + $(this).val()).show();
 										if ($('#option4').val() === "g4") {
 											$('#pos_yr_grad').attr('required', 'true');
-                                            $('#post_name').removeClass('d-none');
+											$('#post_name').removeClass('d-none');
 											$('#pos_school_name').attr('required', 'true');
 											$('#pos_high_level').removeAttr('required').removeClass('input-error');
 
 										} else if ($('#option4').val() === "u4") {
 											$('#pos_high_level').attr('required', 'true');
-                                            $('#post_name').removeClass('d-none');
+											$('#post_name').removeClass('d-none');
 											$('#pos_school_name').attr('required', 'true');
 											$('#pos_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#pos_school_name').removeAttr('required').removeClass('input-error');
 											$('#pos_high_level').removeAttr('required').removeClass('input-error');
-                                            $('#post_name').addClass('d-none');
+											$('#post_name').addClass('d-none');
 											$('#pos_yr_grad').removeAttr('required').removeClass('input-error');
 										}
 									});
 								});
-
 							</script>
 							<div class="form-group col">
 								<label for="option4">Status</label>
@@ -1096,7 +1088,6 @@
 										}
 									});
 								});
-
 							</script>
 							<div class="form-group col-4">
 								<label for="quest">Do you plan on relocating soon?
@@ -1235,7 +1226,6 @@
 										$('#' + $(this).val()).show();
 									});
 								});
-
 							</script>
 							<div class="form-group col">
 								<label for="department">Main Department</label>
@@ -1386,7 +1376,6 @@
 			$('.gradyear').inputmask({
 				mask: 'dddd-dd'
 			});
-
 		</script>
 		<script>
 			var map = L.map('mapid').setView([
@@ -1432,7 +1421,6 @@
 					map.invalidateSize();
 				}, 400);
 			});
-
 		</script>
 
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
