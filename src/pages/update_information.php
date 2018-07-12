@@ -1,15 +1,13 @@
 <?php
     include '../utilities/session.php';
-    
-	if ($type === "admin") {
-		header("location:/admin/accounts/accounts_status");
-	} else
-	
-		if ($birth_date != null && $birth_place != null && $contact_number != null &&
-	   	$gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
-	    && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null && $type = "user") {
-			header("location:/pages/home");
-	}
+    //
+	// if ($type === "admin") {
+	// 	header("location:/admin/accounts/accounts_status");
+	// } elseif ($birth_date != null && $birth_place != null && $contact_number != null &&
+	//    	$gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
+	//     && $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null && $type = "user") {
+	// 		header("location:/pages/home");
+	// }
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
@@ -56,7 +54,7 @@
 
 		<div class="row">
 			<div class="container">
-				<form role="form" id="update_form" action="../utilities/update_info" method="post" class="f1">
+				<form role="form"action="../utilities/update_info" method="post" class="f1">
 					<div class="f1-steps">
 						<div class="f1-progress">
 							<div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -707,7 +705,7 @@
 						<h2 class="header">Step 3: Educational Background</h2>
 						<h5>Elementary</h5>
 						<div class="row">
-							<div class="form-group col">
+							<div class="form-group col d-none" id="elem_name">
 								<label for="school_name">Name of School</label>
 								<input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
@@ -721,11 +719,14 @@
 											$('#elem_yr_grad').attr('required', 'true');
 											$('#elem_school_name').attr('required', 'true');
 											$('#elem_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#elem_name').removeClass('d-none');
 										} else if ($('#option1').val() === "u1") {
 											$('#elem_school_name').attr('required', 'true');
 											$('#elem_high_level').attr('required', 'true');
 											$('#elem_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#elem_name').removeClass('d-none');
 										} else {
+                                            $('#elem_name').addClass('d-none');
 											$('#elem_school_name').removeAttr('required').removeClass('input-error');
 											$('#elem_high_level').removeAttr('required').removeClass('input-error');
 											$('#elem_yr_grad').removeAttr('required').removeClass('input-error');
@@ -765,7 +766,7 @@
 
 						<h5>Secondary</h5>
 						<div class="row">
-							<div class="form-group col">
+							<div class="form-group col d-none" id="sec_name">
 								<label for="school_name">Name of School</label>
 								<input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
@@ -778,14 +779,17 @@
 										if ($('#option2').val() === "g2") {
 											$('#sec_yr_grad').attr('required', 'true');
 											$('#sec_school_name').attr('required', 'true');
+                                            $('#sec_name').removeClass('d-none');
 											$('#sec_high_level').removeAttr('required').removeClass('input-error');
 										} else if ($('#option2').val() === "u2") {
 											$('#sec_school_name').attr('required', 'true');
+                                            $('#sec_name').removeClass('d-none');
 											$('#sec_high_level').attr('required', 'true');
 											$('#sec_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#sec_school_name').removeAttr('required').removeClass('input-error');
 											$('#sec_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#sec_name').addClass('d-none');
 											$('#sec_high_level').removeAttr('required').removeClass('input-error');
 										}
 									});
@@ -827,7 +831,7 @@
 
 						<h5>College</h5>
 						<div class="row">
-							<div class="form-group col">
+							<div class="form-group col d-none" id="col_name">
 								<label for="school_name">Name of School</label>
 								<input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
@@ -840,16 +844,19 @@
 										$('#' + $(this).val()).show();
 										if ($('#option3').val() === "g3") {
 											$('#col_yr_grad').attr('required', 'true');
+                                            $('#col_name').removeClass('d-none');
 											$('#col_school_name').attr('required', 'true');
 											$('#col_high_level').removeAttr('required').removeClass('input-error');
 
 										} else if ($('#option3').val() === "u3") {
 											$('#col_high_level').attr('required', 'true');
+                                            $('#col_name').removeClass('d-none');
 											$('#col_school_name').attr('required', 'true');
 											$('#col_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#col_school_name').removeAttr('required').removeClass('input-error');
 											$('#col_yr_grad').removeAttr('required').removeClass('input-error');
+                                            $('#col_name').addClass('d-none');
 											$('#col_high_level').removeAttr('required').removeClass('input-error');
 										}
 									});
@@ -886,7 +893,7 @@
 
 						<h5>Post Grad</h5>
 						<div class="row">
-							<div class="form-group col">
+							<div class="form-group col d-none" id="post_name">
 								<label for="school_name">Name of School</label>
 								<input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
@@ -899,16 +906,19 @@
 										$('#' + $(this).val()).show();
 										if ($('#option4').val() === "g4") {
 											$('#pos_yr_grad').attr('required', 'true');
+                                            $('#post_name').removeClass('d-none');
 											$('#pos_school_name').attr('required', 'true');
 											$('#pos_high_level').removeAttr('required').removeClass('input-error');
 
 										} else if ($('#option4').val() === "u4") {
 											$('#pos_high_level').attr('required', 'true');
+                                            $('#post_name').removeClass('d-none');
 											$('#pos_school_name').attr('required', 'true');
 											$('#pos_yr_grad').removeAttr('required').removeClass('input-error');
 										} else {
 											$('#pos_school_name').removeAttr('required').removeClass('input-error');
 											$('#pos_high_level').removeAttr('required').removeClass('input-error');
+                                            $('#post_name').addClass('d-none');
 											$('#pos_yr_grad').removeAttr('required').removeClass('input-error');
 										}
 									});
