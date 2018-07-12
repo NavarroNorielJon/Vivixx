@@ -1,8 +1,8 @@
 <?php
-$stmt = "SELECT * FROM mis.user NATURAL JOIN user_info NATURAL JOIN employee_info WHERE username='$current_user' or email='$current_user';";
+	$stmt = "SELECT * FROM mis.user NATURAL JOIN user_info NATURAL JOIN employee_info WHERE 		username='$current_user' or email='$current_user';";
        $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-	$prof_image = $row['prof_image'];
+		$prof_image = $row['prof_image'];
         $email = $row['email'];
 		$type = $row['type'];
         $first_name = $row['first_name'];
@@ -29,7 +29,8 @@ $stmt = "SELECT * FROM mis.user NATURAL JOIN user_info NATURAL JOIN employee_inf
         $philhealth_no = $row['philhealth_no'];
         $pagibig_id_no = $row['pagibig_id_no'];
         $date_hired = $row['date_hired'];
-	if( $birth_date == null || $birth_place == null || $contact_number == null ||
+	
+if( $birth_date == null || $birth_place == null || $contact_number == null ||
 	   $gender == null || $height == null || $weight == null || $blood_type == null || $residential_address == null || $residential_zip == null || $residential_tel_no == null || $permanent_address == null || $permanent_zip == null || $permanent_tel_no == null || $citizenship == null
 		|| $civil_status == null || $sss_no == null || $tin == null || $philhealth_no == null || $pagibig_id_no == null) {
 		header("location:/pages/update_information");
