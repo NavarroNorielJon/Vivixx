@@ -5,15 +5,13 @@ function announcement(id){
 			let responseJSON = JSON.parse(this.responseText);
 			document.getElementById('am').value = responseJSON.announcement;
 			document.getElementById('title').innerHTML = responseJSON.title;
-			if (responseJSON.downloads != "") {
-				let dl = "<h5>Documents</h5><ul>"
-				let i;
-				for(i in responseJSON.downloads){
-					dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>"
-				}
-				dl += "</ul>";
-				document.getElementById('dl').innerHTML = dl;
+			let dl = "<h5>Documents</h5><ul>"
+			let i;
+			for(i in responseJSON.downloads){
+				dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>"
 			}
+			dl += "</ul>";
+			document.getElementById('dl').innerHTML = dl;
 		}
 
 	};

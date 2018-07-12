@@ -23,7 +23,7 @@ $connect = Connect();
         if($counter == count($department)){
             $concat .= ucwords($dept);
         }else{
-            $concat .= ucwords($dept) . ", ";
+            $concat .= ucwords($dept) . ",";
         }
     }
     $counter = 0;
@@ -43,7 +43,7 @@ $connect = Connect();
             if($counter == count($_FILES['file']['name'])){
                 $file_name .= $name;
             }else{
-                $file_name .= $name .", ";
+                $file_name .= $name .",";
             }
         }
         $counter = 0;
