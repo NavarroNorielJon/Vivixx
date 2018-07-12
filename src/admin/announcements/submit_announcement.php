@@ -7,8 +7,10 @@ $connect = Connect();
     $subject = ucwords(mysqli_real_escape_string($connect,$_POST["subject"]));
     $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
-    $body = strtoupper(mysqli_real_escape_string($connect,$_POST["body"]));
-    $department = mysqli_real_escape_string($connect,$_POST["department"];
+    $body = mysqli_real_escape_string($connect,$_POST["body"]);
+    $department = $_POST["department"];
+    print_r($enddate);
+    print_r($startdate);
 
     $file_names = [];
     $file_paths = [];
@@ -60,10 +62,10 @@ $connect = Connect();
                     $connect->query($add_attachment);
 
                 }else{
-                    header("location: announcement.php");
+                    //header("location: announcement.php");
                 }
 
             }
 
     }
-header("location: announcement.php");
+//header("location: announcement.php");

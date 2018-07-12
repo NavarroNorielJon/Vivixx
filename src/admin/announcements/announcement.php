@@ -16,6 +16,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -28,6 +29,8 @@
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	</head>
 
 	<body>
@@ -153,21 +156,21 @@
 						<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
 							<div class="row form-group">
 								<div class="col">
-									<label for="title">Title</label>
-									<input name="subject" type="text" class="form-control text-transform" placeholder="Title" id="subject" required>
+									<label for="title">Subject</label>
+									<input name="subject" type="text" class="form-control" placeholder="Subject" id="subject" required>
 								</div>
 
 								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
-										<input type="date" id="s_date" name="start_date" class="form-control date" required>
+										<input type="text" id="s_date" name="start_date" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
 								<div class="col ui calendar" id="end_date">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
-										<input type="date" id="e_date" name="end_date" class="form-control date" required>
+										<input type="text" id="e_date" name="end_date" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
@@ -190,7 +193,7 @@
 							<label for="text">Content:</label>
 							<div class="d-flex ">
 								<div class="p-2" id="border">
-									<p contenteditable="true" class="form-control" id="editable"></p>
+									<p contenteditable="true" id="editable"></p>
 									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
 									<div class="text-center">
 										Remaining characters: <span id="totalChars">1500</span><br/>
@@ -232,46 +235,6 @@
 					}
 				}
 			}
-			
-			$('#s_date').calendar({
-				type: 'date',
-				endCalendar: $('#e_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
-			});
-
-			$('#e_date').calendar({
-				type: 'date',
-				startCalendar: $('#s_date'),
-				formatter: {
-					date: function(date) {
-						if (!date) return '';
-						let day = date.getDate() + '';
-						if (day.length < 2) {
-							day = '0' + day;
-						}
-						let month = (date.getMonth() + 1) + '';
-						if (month.length < 2) {
-							month = '0' + month;
-						}
-						let year = date.getFullYear();
-						return year + '-' + month + '-' + day;
-					}
-				}
-			});
 
 		</script>
 
@@ -395,6 +358,56 @@
 
 				});
 			});
+
+			 $(function(){
+        $("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
+        $("#s_date").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+            var minValue = $(this).val();
+            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+            minValue.setDate(minValue.getDate()+1);
+            $("#e_date").datepicker( "option", "minDate", minValue );
+        })
+    });
+
+			// $('#s_date').calendar({
+			// 	type: 'date',
+			// 	endCalendar: $('#e_date'),
+			// 	formatter: {
+			// 		date: function(date) {
+			// 			if (!date) return '';
+			// 			let day = date.getDate() + '';
+			// 			if (day.length < 2) {
+			// 				day = '0' + day;
+			// 			}
+			// 			let month = (date.getMonth() + 1) + '';
+			// 			if (month.length < 2) {
+			// 				month = '0' + month;
+			// 			}
+			// 			let year = date.getFullYear();
+			// 			return year + '-' + month + '-' + day;
+			// 		}
+			// 	}
+			// });
+
+			// $('#e_date').calendar({
+			// 	type: 'date',
+			// 	startCalendar: $('#s_date'),
+			// 	formatter: {
+			// 		date: function(date) {
+			// 			if (!date) return '';
+			// 			let day = date.getDate() + '';
+			// 			if (day.length < 2) {
+			// 				day = '0' + day;
+			// 			}
+			// 			let month = (date.getMonth() + 1) + '';
+			// 			if (month.length < 2) {
+			// 				month = '0' + month;
+			// 			}
+			// 			let year = date.getFullYear();
+			// 			return year + '-' + month + '-' + day;
+			// 		}
+			// 	}
+			// });
 
 		</script>
 	</body>
