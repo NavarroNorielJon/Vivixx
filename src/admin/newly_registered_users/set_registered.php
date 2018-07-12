@@ -14,7 +14,7 @@
             <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
                 <div class="modal-content"  style="border-radius: 0;">
                     <div class="modal-header">
-                        <h1><?php echo $first_name . " " . $middle_name . " " . $last_name . " " . $user_id?></h1>
+                        <h1><?php echo $first_name . " " . $middle_name . " " . $last_name?></h1>
                     </div>
                     <div class="modal-body">
                         <form action="update_user.php" method="POST" id="set_user">
