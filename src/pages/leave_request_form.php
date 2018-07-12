@@ -20,6 +20,7 @@
 				icon:'error',
 				timer: 2500
 			});
+			window.location='/';
 		</script>";
 	}
 ?>
