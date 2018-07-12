@@ -21,75 +21,76 @@
 </head>
 
 <body>
+
 	<?php
 	include '../../utilities/session.php';
 	include '../utilities/check_user.php';
 	$connect = Connect();
 	?>
-	<div id="wrapper">
-		<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+		<div id="wrapper">
+			<nav class="fixed-top navbar navbar-dark navbar-expand-lg navigation-bar">
+				<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbar-content">
-				<ul class="navbar-nav">
+				<div class="collapse navbar-collapse" id="navbar-content">
+					<ul class="navbar-nav">
 
-					<li class="nav-item">
-						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
-					</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
+						</li>
 
-					<li class="nav-item active">
-						<button onclick="myFunction()" class="dropbtn">Employees</button>
-						<div id="myDropdown" class="dropdown-content">
-							<a href="../user_information/user_information.php">Employees</a>
-							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
-						</div>
-					</li>
+						<li class="nav-item active">
+							<button onclick="myFunction()" class="dropbtn">Employees</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="../user_information/user_information.php">Employees</a>
+								<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
+							</div>
+						</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
-					</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
+						</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
-					</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
+						</li>
 
-					<li class="nav-item">
-						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+						<li class="nav-item">
+							<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
-		<!-- table for viewing user information -->
-		<div class="user-content container-fluid">
-			<div class="text-center">
-				<h1>Employee Information</h1>
-			</div>
+			<!-- table for viewing user information -->
+			<div class="user-content container-fluid">
+				<div class="text-center">
+					<h1>Employee Information</h1>
+				</div>
 
-			<div style="margin: 5vh 15vh;">
-				<table class="table" id="table">
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Gender</th>
-							<th>Address</th>
-							<th>Contact Number</th>
-							<th>Email</th>
-							<th>Edit or View data</th>
-						</tr>
-					</thead>
+				<div style="margin: 5vh 15vh;">
+					<table class="table" id="table">
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Gender</th>
+								<th>Address</th>
+								<th>Contact Number</th>
+								<th>Email</th>
+								<th>Edit or View data</th>
+							</tr>
+						</thead>
 
-					<?php
+						<?php
 
 					$sql = "SELECT * FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
@@ -148,63 +149,63 @@
 
 					$connect-> close();
 					?>
-				</table>
+					</table>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="result"></div>
-	<div id="res"></div>
+		<div id="result"></div>
+		<div id="res"></div>
 
-	<script>
-		$(document).ready(function() {
-			$('.message').click(function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href'),
-					success: function(res) {
-						$('#res').html(res);
-					}
+		<script>
+			$(document).ready(function() {
+				$('.message').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#res').html(res);
+						}
+					});
 				});
 			});
-		});
 
-		/* When the user clicks on the button,
-																		toggle between hiding and showing the dropdown content */
-		function myFunction() {
-			document.getElementById("myDropdown").classList.toggle("showbtn");
-		}
+			/* When the user clicks on the button,
+																			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("showbtn");
+			}
 
-		// Close the dropdown if the user clicks outside of it
-		window.onclick = function(event) {
-			if (!event.target.matches('.dropbtn')) {
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+				if (!event.target.matches('.dropbtn')) {
 
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-					var openDropdown = dropdowns[i];
-					if (openDropdown.classList.contains('showbtn')) {
-						openDropdown.classList.remove('showbtn');
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('showbtn')) {
+							openDropdown.classList.remove('showbtn');
+						}
 					}
 				}
 			}
-		}
 
-	</script>
+		</script>
 
-	<!--script for calling data table library-->
-	<script>
-		$(document).ready(function() {
-			$('#table').dataTable({
-				"columnDefs": [{
-					"orderable": false,
-					"targets": [6, 7]
-				}]
+		<!--script for calling data table library-->
+		<script>
+			$(document).ready(function() {
+				$('#table').dataTable({
+					"columnDefs": [{
+						"orderable": false,
+						"targets": [6, 7]
+					}]
+				});
+				$('#table').DataTable();
 			});
-			$('#table').DataTable();
-		});
 
-	</script>
+		</script>
 
 </body>
 

@@ -97,7 +97,7 @@
 
 /*end of forgot password modal*/
 
-/*sign up form*/
+/*signup modal*/
 
 .signup-modal {
 	border-radius: 0;
@@ -121,6 +121,8 @@
 	width: 120%;
 }
 
+/*end of signup modal*/
+
 /* end of index */
 
 /* home */
@@ -128,7 +130,8 @@
 .home {
 	background-color: #f2f2f2;
 }
-#am::first-letter{
+
+#am::first-letter {
 	text-transform: capitalize;
 }
 
