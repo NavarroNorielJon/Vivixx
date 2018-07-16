@@ -124,17 +124,18 @@
             dataType: 'html',
             success: function (data) {
                 alert(data);
-                alert(data.stat);
-                if(data.stat == "User has no more remaining leave credits"){
+                let dat = JSON.parse(data);
+                alert(dat.stat);
+                if(dat.stat == "User has no more remaining leave credits"){
                     swal({
                         type: 'error',
-                        title: data,
+                        title: dat.stat,
                         icon: 'error',
                         showConfirmButton: true,
                     }).then(function(){
                         window.location = '../leave_request/leave_requests';
                     });
-                } else if (data.stat == "Rejected") {
+                } else if (dat.stat == "Rejected") {
                     $.post({
                         url: 'send_mail.php',
                         data: {
@@ -143,7 +144,7 @@
                         }, success: function () {
                             swal({
                                 type: 'error',
-                                title: data,
+                                title: dat.stat,
                                 icon: 'error',
                                 showConfirmButton: true,
                             }).then(function(){
@@ -152,16 +153,16 @@
                         }
                     });
 
-                } else if (data.stat == "Error in updating status") {
+                } else if (dat.stat == "Error in updating status") {
                     swal({
                         type: 'error',
-                        title: data,
+                        title: dat.stat,
                         icon: 'error',
                         showConfirmButton: true,
                     }).then(function(){
                         window.location = '../leave_request/leave_requests';
                     });
-                } else if (data.stat == "Accepted") {
+                } else if (dat.stat == "Accepted") {
                     $.post({
                         url: '../../mailing/accept_or_reject.php',
                         data: {
@@ -170,7 +171,7 @@
                         }, success: function () {
                             swal({
                                 type: 'success',
-                                title: data,
+                                title: dat.stat,
                                 icon: 'success',
                                 showConfirmButton: true,
                             }).then(function(){
