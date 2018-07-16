@@ -51,7 +51,7 @@
 						echo"
 						<i class='material-icons'>mail</i>Notifications ($count)</a>
 						<a class='icon' href='notification.php'>
-                		<i class='material-icons'>mail ($count)</i>		
+                		<i class='material-icons'>mail</i>		
 						";
 					}else {
 						echo"
