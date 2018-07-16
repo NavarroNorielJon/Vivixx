@@ -48,7 +48,7 @@
 						</thead>
 
 						<?php
-					$sql = "SELECT * from notification;";
+					$sql = "SELECT * from notification where user_id = '$user_id';";
 					$result = $connect->query($sql);
         			$row = mysqli_fetch_array($results, MYSQLI_ASSOC);
 						
@@ -64,6 +64,14 @@
 										<td><strong>". $row["date"] ."</strong></td>
 										<td>". $button ."</td>
 									</tr>";	
+							}else {
+								echo "
+									<tr class='table-data'>
+										<td>". $row["subject"] ."</td>
+										<td>". $row["date"] ."</td>
+										<td>". $button ."</td>
+									</tr>
+									";	
 							}
 						}
 					}
