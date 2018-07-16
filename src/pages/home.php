@@ -89,7 +89,6 @@
 				</div>
 			</div>
 
-			<div id="salary_form"></div>
 		</div>
 
 		<script type="text/javascript">
@@ -97,6 +96,7 @@
 				duration: 1000,
 				interval: 3500
 			});
+			$('#home').addClass('active');
 		</script>
 
 	</body>

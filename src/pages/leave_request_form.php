@@ -136,7 +136,6 @@
 				</form>
 			</div>
 		</div>
-		<div id="salary_form"></div>
 
 		<script>
 			$(document).ready(function() {

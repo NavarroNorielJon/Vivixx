@@ -81,12 +81,12 @@
 						<label for="permanent_address">Permanent Address</label>
 						<input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo " $permanent_address ";?>" disabled>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
-        <div id="salary_form"></div>
+        <script>
+            $('#profile').addClass('active');
+        </script>
 
 
 	</body>
