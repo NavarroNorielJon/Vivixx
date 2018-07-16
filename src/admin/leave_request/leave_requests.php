@@ -78,7 +78,7 @@
 							<th>Middle Name</th>
 							<th>Last Name</th>
 							<th>Contact Number</th>
-							<th>View</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
