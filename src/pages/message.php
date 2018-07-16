@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="text-right">
-					<button type="submit" class="btn btn-primary">Close</button>
+					<button type="submit" class="btn btn-primary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
