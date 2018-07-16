@@ -161,6 +161,7 @@
 				});
 				$('#table').DataTable();
 			});
+			$('#emp').addClass('active');
 
 		</script>
 

@@ -38,13 +38,13 @@
                     <div class="row">
                         <div class="form-group col">
                             <label>Position</label>
-                            <input type="text" class="form-control-plaintext" id="position" name="position" readonly  required value="<?php echo $row['position']?>">
+                            <input type="text" class="form-control-plaintext" id="position" name="position" readonly required value="<?php echo $row['position']?>">
 
                         </div>
 
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
-                            <input type="date" class="form-control-plaintext" id="date_hired" name="dateHired" readonly  required value="<?php echo $row['date_hired']?>">
+                            <input type="date" class="form-control-plaintext" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
                         </div>
 
                         <div class="form-group col">

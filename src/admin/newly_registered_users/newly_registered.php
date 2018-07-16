@@ -79,7 +79,7 @@
 			</div>
 		</div>
 		<div id="result"></div>
-		
+
 	</div>
 
 	<script>
@@ -125,6 +125,7 @@
 			});
 			$('#table').DataTable();
 		});
+		$('#emp').addClass('active');
 
 	</script>
 </body>

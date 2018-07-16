@@ -123,7 +123,7 @@
 			});
 			$('#table').DataTable();
 		});
-
+		$('#sum').addClass('active');
 	</script>
 </body>
 

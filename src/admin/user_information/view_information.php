@@ -1878,6 +1878,8 @@
             url: 'update_employee.php',
             method: 'post'
         });
+        $('#emp').addClass('active');
+
         </script>
     </body>
 
