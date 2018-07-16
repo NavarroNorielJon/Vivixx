@@ -43,14 +43,3 @@
     header('Content-Type: application/json');
     echo json_encode(['stat'=>$stat, 'status'=>$status, 'email'=>$email]);
 ?>
-<<<<<<< HEAD
-=======
-<form id="status" action="../../mailing/accept_or_reject.php" method="post">
-    <input type="hidden" name="status" value="<?php echo $status; ?>">
-    <input type="hidden" name="email" value="<?php echo $email; ?>">
-</form>
-
-<script>
-    //$("#status").submit();
-</script>
->>>>>>> 1abbe747e621053d3706233cca0086694067b787

@@ -20,7 +20,7 @@
     $count = mysqli_num_rows($res);
 
     if($count > 0){
-        $set = $count;
+        $new = $count;
     }else{
         $new ="0";
     }
