@@ -32,7 +32,7 @@ jQuery.validator.addMethod("existing_email", function(value, element) {
     });
     return status;
 }, "Email already exists, Please use another email.");
-$( "#signup_form" ).validate({
+$("#s_form" ).validate({
     rules: {
         email: {
             email: true,
@@ -47,34 +47,6 @@ $( "#signup_form" ).validate({
         }
     }
 });
-$('#signup_form').ajaxForm({
-    url: '../utilities/registration.php',
-    method: 'post',
-    error: function (){
-        swal({
-            type: 'error',
-            title: 'Error!',
-            text: "Invalid input",
-            showConfirmButton: true,
-            icon:'error',
-            timer: 2500
-        });
-    },
-    success: function (data) {
-        console.log(data);
-        swal({
-            type: 'success',
-            title: 'Successfully Registered',
-            text: "Your username is " + data,
-            icon: 'success',
-            showConfirmButton: true,
-        }).then(function(){
-            window.location = '/';
-        });
-
-    }
-});
-
 $('#leave_form').ajaxForm({
     url: '../utilities/leave_request.php',
     method: 'post',

@@ -11,17 +11,20 @@
         });
     });
 </script>
+<script src="../../script/jquery.form.min.js"></script>
+<script src="../../script/jquery.validate.min.js"></script>
+<script src="../../script/additional-methods.min.js"></script>
 <?php
     $new_reg = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
     $res = $connect->query($new_reg);
     $count = mysqli_num_rows($res);
 
     if($count > 0){
-        $set = $count;
+        $new = $count;
     }else{
         $new ="0";
     }
-    
+
 
     $leave = "SELECT status from leave_req where status='pending';";
     $res1 = $connect->query($leave);
@@ -44,7 +47,7 @@
         <ul class="navbar-nav">
             <li>
                 <input name='edit' value='signup' style='display: none;'>
-                <a href="../fragments/signup.php" data-target="#signup" class="btn btn-primary signup">Add User</a>
+                <a href="../fragments/signup.php" data-target="#signup" class="nav-link signup">Add User</a>
             </li>
 
             <li id="acc" class="nav-item">

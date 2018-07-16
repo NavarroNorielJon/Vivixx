@@ -1,4 +1,3 @@
-<script src="../../script/jquery.min.js"></script>
 <?php
 
     include '../../utilities/session.php';
@@ -22,35 +21,25 @@
             $used++;
             $update = "UPDATE `mis`.`leave_req` SET `status`='accepted',`remaining`='$remaining', `used`='$used', `position` = '$position', `date_hired` = '$date_hired' WHERE `leave_req_id`='$req_id';";
             $status = "accepted";
-        }else{
-            echo"
-                <script>
-                    alert('user has no more remaining leave credits');
-                    window.location = 'leave_requests.php';
-                </script>
-            ";
-        }
+            $stat = "Accepted";
 
+        }else{
+            $stat = "User has no more remaining leave credits";
+            exit();
+        }
         //header("location:leave_requests.php?accepted");
     }else if(isset($_POST["reject"])){
         $update = "UPDATE `mis`.`leave_req` SET `status`='rejected', `position` = '$position', `date_hired` = '$date_hired' WHERE `leave_req_id`='$req_id';";
         $status="rejected";
+        $stat = "Rejected";
+
         //header("location:leave_requests.php?rejected");
     }else{
-        echo "
-            <script>
-                alert('Error in updating status');
-            </script>
-        ";
+        $stat = "Error in updating status";
+        exit();
     }
     $result = $connect->query($update);
-
+    // exit();
+    header('Content-Type: application/json');
+    echo json_encode(['stat'=>$stat, 'status'=>$status, 'email'=>$email]);
 ?>
-<form id="status" action="../../mailing/accept_or_reject.php" method="post">
-    <input type="hidden" name="status" value="<?php echo $status; ?>">
-    <input type="hidden" name="email" value="<?php echo $email; ?>">
-</form>
-
-<script>
-    //$("#status").submit();
-</script>
