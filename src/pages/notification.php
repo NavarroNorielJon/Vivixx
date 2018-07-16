@@ -76,18 +76,6 @@
 
 		<div id="salary_form"></div>
 		<script>
-			$(document).ready(function() {
-				$('.salary').click(function(e) {
-					e.preventDefault();
-					$.ajax({
-						url: $(this).attr('href'),
-						success: function(res) {
-							$('#salary_form').html(res);
-						}
-					});
-				});
-			});
-
 			//script for calling datatables library
 			$(document).ready(function() {
 				$('#table').dataTable({

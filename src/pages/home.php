@@ -38,33 +38,41 @@
 							<?php
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
 								$announcement = mysqli_query($connect, $query);
-								while ($row = mysqli_fetch_array($announcement)) {
-									echo "
-									<div class='item'>
-										<div class='imgTitle'>
-											<h2 class='blogTitle'>".$row['subject']."</h2>
-										";
-									if ($row['attachment'] != null) {
-										echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
-									} else {
-										echo "<img class='images' src='../img/announcement.jpg'>";
-									}
-									echo "
+								if($announcement->num_rows >	 1 ){
+									while ($row = mysqli_fetch_array($announcement)) {
+										echo "
+										<div class='item'>
+											<div class='imgTitle'>
+												<h2 class='blogTitle'>".$row['subject']."</h2>
+											";
+										if ($row['attachment'] != null) {
+											echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
+										} else {
+											echo "<img class='images' src='../img/announcement.jpg'>";
+										}
+										echo "
+											</div>
+											<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
 										</div>
-										<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
-									</div>
-										";
+											";
+									}
+								} else {
+									echo "<br><br><br><br><br><br><h1 style='text-align:center'>No Announcement.</h1>";
 								}
 							?>
 						</div>
-						<div class="text-center">
-							<button class="MS-left">
-								<i class="fa fa-angle-left" aria-hidden="true"></i>
-							</button>
-							<button class="MS-right">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-							</button>
-						</div>
+						<?php
+						if ($announcement->num_rows > 1 ) {
+							echo '<div class="text-center">
+								<button class="MS-left">
+									<i class="fa fa-angle-left" aria-hidden="true"></i>
+								</button>
+								<button class="MS-right">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>
+								</button>
+							</div>';
+						}
+						 ?>
 					</div>
 					<div class='modal fade' id='announcement' role='dialog'>
 						<div class='modal-dialog'>
