@@ -24,14 +24,13 @@
 		<script type="text/javascript" src="../script/popper.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript" src="../script/datatables.js"></script>
 
 	</head>
 
 	<body>
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
-			<div id="content"></div>
-			<div id="salary_form"></div>
 			<div class="content">
 				<div class="table-container">
 					<table class="table" id="table">
@@ -39,7 +38,6 @@
 							<tr class="table-header">
 								<th>Subject</th>
 								<th>Message</th>
-								<th>Status</th>
 								<th>Date</th>
 								<th>Action</th>
 							</tr>
@@ -49,17 +47,22 @@
 					$sql = "SELECT * from notification;";
 					$result = $connect->query($sql);
         			$row = mysqli_fetch_array($results, MYSQLI_ASSOC);
+					
+					$button = "				
+					<a href='message.php?subject=".$row['subject']."' data-toggle='modal' class='btn message btn-primary'>Read</a>";
+						
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							//print data in table
-							echo "
-							<tr class='table-data'>
-							<td>". $row["subject"] ."</td>
-							<td>". $row["message"] ."</td>
-							<td>". $row["status"] ."</td>
-							<td>". $row["date"] ."</td>
-							<td>". $row["date"] ."</td>
-							</tr>";
+							if($row["status"] == "new"){
+								echo "
+									<tr class='table-data'>
+										<td><strong>". $row["subject"] ."</strong></td>
+										<td><strong>". $row["message"] ."</strong></td>
+										<td><strong>". $row["date"] ."</strong></td>
+										<td>". $button ."</td>
+									</tr>";	
+							}
 						}
 					}
 
@@ -68,15 +71,10 @@
 					</table>
 				</div>
 			</div>
+			<div id="message"></div>
 		</div>
 
-		<div id="content"></div>
-
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
-		<script type="text/javascript" src="../script/datatables.js"></script>
+		<div id="salary_form"></div>
 		<script>
 			$(document).ready(function() {
 				$('.salary').click(function(e) {
@@ -95,12 +93,24 @@
 				$('#table').dataTable({
 					"columnDefs": [{
 						"orderable": false,
-						"targets": 4
+						"targets": 3
 					}]
 				});
 				$('#table').DataTable();
 			});
 			$('#notif').addClass('active');
+
+			$(document).ready(function() {
+				$('.message').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#message').html(res);
+						}
+					});
+				});
+			});
 
 		</script>
 	</body>
