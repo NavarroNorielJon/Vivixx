@@ -19,16 +19,16 @@
 		<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="../style/datatables.css">
+		<link rel="stylesheet" href="../admin/style/datatables.css">
 
 		<!--scripts-->
-		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="../../script/datatables.min.js"></script>
-		<script type="text/javascript" src="../../script/ajax.js"></script>
-		<script type="text/javascript" src="../../script/popper.min.js"></script>
-		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../script/datatables.min.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript" src="../script/popper.min.js"></script>
+		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 
 	</head>
 
@@ -36,12 +36,12 @@
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
 			<div class="content">
+				<h1 style="margin-bottom: 20px;">INBOX</h1>
 				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
 							<tr class="table-header">
 								<th>Subject</th>
-								<th>Message</th>
 								<th>Date</th>
 								<th>Action</th>
 							</tr>
@@ -61,7 +61,6 @@
 								echo "
 									<tr class='table-data'>
 										<td><strong>". $row["subject"] ."</strong></td>
-										<td><strong>". $row["message"] ."</strong></td>
 										<td><strong>". $row["date"] ."</strong></td>
 										<td>". $button ."</td>
 									</tr>";	
@@ -79,7 +78,7 @@
 
 		<!-- <div id="salary_form"></div> -->
 		<script>
-		$(document).ready(function() {
+			$(document).ready(function() {
 				$('.message-modal').click(function(e) {
 					e.preventDefault();
 					$.ajax({
@@ -95,14 +94,12 @@
 				$('#table').dataTable({
 					"columnDefs": [{
 						"orderable": false,
-						"targets": 3
+						"targets": 2
 					}]
 				});
 				$('#table').DataTable();
 			});
 			$('#notif').addClass('active');
-
-			
 
 		</script>
 	</body>

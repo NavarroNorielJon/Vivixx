@@ -13,7 +13,7 @@
 					</div>
 
 					<div style="text-align: right;">
-						<button type="submit" class="btn btn-primary">Send Email</button>
+						<button type="submit" class="btn btn-primary">Close</button>
 					</div>
 				</form>
 			</div>
@@ -22,5 +22,6 @@
 </div>
 
 <script>
-    $("#sample").modal("show");
+	$("#sample").modal("show");
+
 </script>
