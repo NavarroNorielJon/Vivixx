@@ -11,6 +11,9 @@
         });
     });
 </script>
+<script src="../../script/jquery.form.min.js"></script>
+<script src="../../script/jquery.validate.min.js"></script>
+<script src="../../script/additional-methods.min.js"></script>
 
 
 <nav class="fixed-top navbar navbar-dark navbar-expand-lg  navigation-bar">
@@ -23,7 +26,7 @@
         <ul class="navbar-nav">
             <li>
                 <input name='edit' value='signup' style='display: none;'>
-                <a href="../fragments/signup.php" data-target="#signup" class="btn btn-primary signup">Add User</a>
+                <a href="../fragments/signup.php" data-target="#signup" class="nav-link signup">Add User</a>
             </li>
 
             <li id="acc" class="nav-item">

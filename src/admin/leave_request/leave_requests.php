@@ -17,15 +17,22 @@
 
 	<!--scripts-->
 	<script type="text/javascript" src="../../script/datatables.min.js"></script>
+	<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../script/datatables.min.js"></script>
 	<script type="text/javascript" src="../../script/ajax.js"></script>
 	<script type="text/javascript" src="../../script/popper.min.js"></script>
 	<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
 	<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
+	<script src="../../script/jquery.validate.min.js"></script>
+	<script src="../../script/additional-methods.min.js"></script>
 	<script src="../../script/jquery.form.min.js"></script>
+	<script src="../style/bootstrap-multiselect.js"></script>
+	<script src="../../script/jquery-ui.js"></script>
+
 </head>
 
 <body class="background">
-	<?php include '../utilities/check_user.php'; ?>
 
 	<div class="wrapper">
 		<?php include '../fragments/navbar.php'; ?>
@@ -80,7 +87,6 @@
 		</div>
 
 		<div id="result"></div>
-		<div id="signup_form"></div>
 
 	</div>
 
@@ -135,6 +141,7 @@
 		$('#leave_r').addClass('active');
 
 	</script>
+
 </body>
 
 </html>

@@ -20,7 +20,7 @@
 
 
 			<div class="modal-body signup-body">
-				<form id="signup_form" action="registration.php" method="post">
+				<form id="s_form" action="../fragments/registration.php" method="post">
 
 					<div class="row form-group">
 						<div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -67,5 +67,54 @@
 <script>
     $(document).ready(function(){
         $("#signup").modal("show");
+    });
+	$.validator.methods.email = function( value, element ) {
+       return this.optional( element ) || /[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,}/.test( value );
+    };
+    jQuery.validator.addMethod("existing_email", function(value, element) {
+        let status;
+        $.ajax({
+            url: '../../utilities/validator.php?email=' + value,
+            success: function (data) {
+                if (data ==='0') {
+                    status = true;
+                }else {
+                    status = false;
+                }
+            },
+            async: false
+        });
+        return status;
+    }, "Email already exists, Please use another email.");
+    $( "#s_form" ).validate({
+		errorClass: 'error',
+        rules: {
+            email: {
+                email: true,
+                existing_email: true,
+            },
+            password: {
+                required: true,
+                minlength: 8,
+            },
+            confirm_password: {
+                equalTo: "#regpass"
+            }
+        }
+    });
+    $('#s_form').ajaxForm({
+        url: '../fragments/registration.php',
+        method: 'post',
+        success: function (data) {
+            swal({
+                type: 'success',
+                title: 'Successfully Registered',
+                text: "Your username is " + data,
+                icon: 'success',
+                showConfirmButton: true,
+            }).then(function(){
+                window.location = '/';
+            });
+        }
     });
 </script>
