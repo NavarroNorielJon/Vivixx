@@ -27,8 +27,8 @@
     $res1 = $connect->query($leave);
     $count1 = mysqli_num_rows($res1);
 
-    if($count > 0){
-        $leave = $count;
+    if($count1 > 0){
+        $leave = $count1;
     }else{
         $leave ="0";
     }
