@@ -1,13 +1,15 @@
 <?php 
 	include "../utilities/db.php";	
+	$msg_id = $_GET['msg_id'];
 	$subject = $_GET['subject'];
 	$message = $_GET['message'];
 	$date = $_GET['date'];
 ?>
+<form action="read_message.php" method="post">
 <div class="modal fade message-modal" id="sample" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document" style="min-width: 60%; max-width: 60%;">
 		<div class="modal-content message-content">
-
+			<input type="hidden" name="msg_id" value="<?php echo $msg_id?>">
 			<div class="modal-body message-body">
 				<div class="form-group">
 					<div class="row">
@@ -34,8 +36,10 @@
 		</div>
 	</div>
 </div>
+</form>
 
 <script>
+
 	$("#sample").modal("show");
 
 </script>

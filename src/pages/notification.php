@@ -55,7 +55,7 @@
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							$button = "				
-								<a href='message.php?subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
+								<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
 							//print data in table
 							if($row["status"] == "new"){
 								echo "
