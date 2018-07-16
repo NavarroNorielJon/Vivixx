@@ -14,9 +14,10 @@ if (isset($_SESSION['user'])) {
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link type="text/css" rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link type="text/css" rel="stylesheet" href="style/style.css">
 	</head>
 
 	<body class="index background">

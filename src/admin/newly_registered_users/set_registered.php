@@ -10,25 +10,27 @@
     $row = $result->fetch_assoc();
 ?>
 
-    <div class="modal fade" id="set" tabindex="-1" role="dialog" >
-            <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
-                <div class="modal-content"  style="border-radius: 0;">
-                    <div class="modal-header">
-                        <h1><?php echo $first_name . " " . $middle_name . " " . $last_name?></h1>
-                    </div>
-                    <div class="modal-body">
-                        <form action="update_user.php" method="POST" id="set_user">
-                            <input type="hidden" name="user_id" value="<?php echo $user_id?>">
+	<div class="modal fade" id="set" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
+			<div class="modal-content" style="border-radius: 0;">
+				<div class="modal-header">
+					<h1>
+						<?php echo $first_name . " " . $middle_name . " " . $last_name?>
+					</h1>
+				</div>
+				<div class="modal-body">
+					<form action="update_user.php" method="POST" id="set_user">
+						<input type="hidden" name="user_id" value="<?php echo $user_id?>">
 
 
-                            <div class="form-group">
-                                <label>Department</label>
-                                <input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" disabled="disabled" value="<?php echo explode("|",$row['department'])[0]?>">
-                            </div>
+						<div class="form-group">
+							<label>Department</label>
+							<input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" disabled="disabled" value="<?php echo explode(" | ",$row['department'])[0]?>">
+						</div>
 
-                            <div class="form-group">
-                                <label>Position</label>
-                                <?php
+						<div class="form-group">
+							<label>Position</label>
+							<?php
                                     $main = explode("|",$row['department'])[0];
                                     if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
                                         echo '
@@ -67,71 +69,73 @@
                                         </select>';
                                     }
                                 ?>
-                            </div>
+						</div>
 
 
-                            <div class="form-group">
-                                <label>Employee Status</label>
-                                <select class="custom-select form-control" name="employee_status" id="status">
+						<div class="form-group">
+							<label>Employee Status</label>
+							<select class="custom-select form-control" name="employee_status" id="status">
                                     <option selected disabled>Choose Here:</option>
                                     <option value="Freelance">Freelance</option>
                                     <option value="Project Based">Project Based</option>
                                     <option value="Probationary">Probationary</option>
                                     <option value="Regular">Regular</option>
                                 </select>
-                            </div>
+						</div>
 
-                            <div class="form-group">
-                                <label>Date hired</label><br>
-                                <input type="text" id="date" name="date" class="form-control" required="required" placeholder="yy-mm-dd">
-                            </div>
-                        </form>
-                         <div style="text-align:right">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button onclick='set_user();' disabled="disabled" class="btn btn-success" id="update">Update</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<script>
-
-    $("#date").datepicker({ dateFormat: 'yy-mm-dd' });
-    $(document).change(function() {
-        if($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "" ){
-            $('#update').attr("disabled", false);
-        }else{
-            $('#update').attr("disabled", true);
-        }
-        $(document).keyup(function() {
-            if($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "" ){
-                $('#update').attr("disabled", false);
-            }else{
-                $('#update').attr("disabled", true);
-            }
-        });
-    });
-
-    function set_user() {
-		swal({
-			title: "Are you sure you want to update?",
-			icon: "warning",
-			buttons: {
-				cancel: "Cancel",
-				confirm: true,
-			},
-		})
-		.then((result) => {
-			if (result) {
-				$('#set_user').submit();
+						<div class="form-group">
+							<label>Date hired</label><br>
+							<input type="text" id="date" name="date" class="form-control" required="required" placeholder="yy-mm-dd">
+						</div>
+					</form>
+					<div style="text-align:right">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+						<button onclick='set_user();' disabled="disabled" class="btn btn-success" id="update">Update</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		$("#date").datepicker({
+			dateFormat: 'yy-mm-dd'
+		});
+		$(document).change(function() {
+			if ($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "") {
+				$('#update').attr("disabled", false);
 			} else {
-				swal("Canceled", "", "error");
+				$('#update').attr("disabled", true);
 			}
-		})
-	}
+			$(document).keyup(function() {
+				if ($('#status').val() != "" && $('#date').val() != "" && $('#pos').val() != "" && $().val('#dept') != "") {
+					$('#update').attr("disabled", false);
+				} else {
+					$('#update').attr("disabled", true);
+				}
+			});
+		});
 
-    $(document).ready(function(){
-        $("#set").modal("show");
-    });
-</script>
+		function set_user() {
+			swal({
+					title: "Are you sure you want to update?",
+					icon: "warning",
+					buttons: {
+						cancel: "Cancel",
+						confirm: true,
+					},
+				})
+				.then((result) => {
+					if (result) {
+						$('#set_user').submit();
+					} else {
+						swal("Canceled", "", "error");
+					}
+				})
+		}
+
+		$(document).ready(function() {
+			$("#set").modal("show");
+		});
+
+	</script>
