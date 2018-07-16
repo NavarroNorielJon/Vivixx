@@ -19,7 +19,6 @@ $email = mysqli_real_escape_string($conn, $email);
 
 $sql = "SELECT * FROM user where email = '$email';";
 $result = $conn->query($sql);
-echo $subject . " " .$message ." " .$date ." " . $email;
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $password = $row['password'];
@@ -66,20 +65,16 @@ try {
 
     //Content
     $body = file_get_contents("style.html");
-    $body .= "<div id='main_content'>";
-    $body .= "
-    <h1>".$subject."</h1>";
+    $body .= "<div id='main_content' style='text-align:left'>";
     $body .= $message;
     $body .= "</div>";
 
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Reset Password';
+    $mail->Subject = $subject;
     $mail->Body = $body;
-    $mail->AltBody = 'You have requested for changing password';
 
     $mail->send();
     $mail->ClearAllRecipients();
-    
     echo "
         <script>
             alert('Email sucessfully sent, please check your email.');
