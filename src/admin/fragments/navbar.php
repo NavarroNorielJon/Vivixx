@@ -11,7 +11,28 @@
         });
     });
 </script>
+<?php
+    $new_reg = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
+    $res = $connect->query($new_reg);
+    $count = mysqli_num_rows($res);
 
+    if($count > 0){
+        $set = $count;
+    }else{
+        $new ="0";
+    }
+    
+
+    $leave = "SELECT status from leave_req where status='pending';";
+    $res1 = $connect->query($leave);
+    $count1 = mysqli_num_rows($res1);
+
+    if($count > 0){
+        $leave = $count;
+    }else{
+        $leave ="0";
+    }
+?>
 
 <nav class="fixed-top navbar navbar-dark navbar-expand-lg  navigation-bar">
     <a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
@@ -34,12 +55,12 @@
                 <button onclick="myFunction()" class="dropbtn">Employees</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="../user_information/user_information.php">Employees</a>
-                    <a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
+                    <a href="../newly_registered_users/newly_registered.php">New Registered Employees(<span style="color:red;"><?php echo $new?></span>)</a>
                 </div>
             </li>
 
             <li id="leave_r" class="nav-item">
-                <a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
+                <a class="nav-link" href="../leave_request/leave_requests.php">Leave Request(<span style="color:red;"><?php echo $leave?></span>)</a>
             </li>
 
             <li id="sum" class="nav-item">
