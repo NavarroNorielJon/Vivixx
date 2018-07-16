@@ -63,7 +63,7 @@
 
 		//script for content counter
 		var counter = function() {
-			var value = $('#editable').text();
+			var value = $('#message-editable').text();
 			var negative = 500;
 
 			if (value.length == 0) {
@@ -83,7 +83,7 @@
 		};
 
 		$(document).ready(function() {
-			var content_id = 'editable';
+			var content_id = 'message-editable';
 
 			max = 499;
 
@@ -101,11 +101,11 @@
 					e.preventDefault();
 				}
 			}
-			$('#text').keyup(counter);
-			$('#editable').keyup(function() {
+			$('#message-text').keyup(counter);
+			$('#message-editable').keyup(function() {
 
-				var text = $('#editable').html();
-				$('#text').html(text);
+				var text = $('#message-editable').html();
+				$('#message-text').html(text);
 				counter();
 
 			});

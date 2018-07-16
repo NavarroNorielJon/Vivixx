@@ -2,10 +2,6 @@
 	text-transform: capitalize;
 }
 
-p::first-letter {
-	text-transform: capitalize;
-
-}
 
 textarea {
 	display: none !important;
@@ -82,7 +78,7 @@ textarea {
 }
 
 .summary {
-	margin: 5% 5%;
+	margin: 5% 8.4%;
 	width: 100%;
 }
 
@@ -90,16 +86,17 @@ textarea {
 .value {
 	border: 0.5px solid black;
 	padding-left: 20px;
-	width: 86.8%;
 }
 
 .summary .value {
 	text-align: right;
+	width: 30vw;
 	padding-right: 20px;
 }
 
 .summary .header {
 	padding: 2%;
+	width: 30vw;
 	font-size: 1rem;
 	background-color: #005959;
 	color: white;
@@ -107,6 +104,7 @@ textarea {
 
 .srf {
 	background-color: #ffbf00;
+	width: 50vw;
 }
 
 .gross_pay {
