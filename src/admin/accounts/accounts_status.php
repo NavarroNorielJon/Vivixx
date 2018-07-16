@@ -168,7 +168,8 @@
 				});
 				$('#table').DataTable();
 			});
-
+			$('#acc').addClass('active');
+			
 		</script>
 	</body>
 

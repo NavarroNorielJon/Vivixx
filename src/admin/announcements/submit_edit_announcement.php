@@ -9,7 +9,7 @@ $connect = Connect();
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $announcement_id = mysqli_real_escape_string($connect,$_POST["id"]);
-    $department = mysqli_real_escape_string($connect,$_POST["department"]);
+    $department = $_POST["department"];
 
     $file_names = [];
     $file_paths = [];
@@ -27,6 +27,7 @@ $connect = Connect();
             $concat .= $dept . ",";
         }
     }
+    print_r($concat);
     $counter = 0;
     if(isset($_POST["edit"])){
         foreach($_FILES['file']['name'] as $child) {

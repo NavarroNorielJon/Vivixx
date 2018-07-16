@@ -177,7 +177,7 @@
 			</div>
 		</div>
 		<div id="signup_form"></div>
-		
+
 		<script>
 			/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 			function myFunction() {
@@ -337,6 +337,7 @@
 					$("#e_date").datepicker("option", "minDate", minValue);
 				})
 			});
+			$('#an').addClass('active');
 
 		</script>
 	</body>

@@ -81,7 +81,7 @@
 
 		<div id="result"></div>
 		<div id="signup_form"></div>
-		
+
 	</div>
 
 	<script>
@@ -132,6 +132,7 @@
 			});
 			$('#leave').DataTable();
 		});
+		$('#leave_r').addClass('active');
 
 	</script>
 </body>

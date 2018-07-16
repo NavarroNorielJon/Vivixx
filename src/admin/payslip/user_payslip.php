@@ -122,6 +122,7 @@
 			});
 			$('#table').DataTable();
 		});
+		$('#pay').addClass('active');
 
 	</script>
 </body>

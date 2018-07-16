@@ -45,8 +45,8 @@ if (isset($_SESSION['user'])) {
 				<div class="text-center">
 					<button type="submit" class="btn login-button" name="submit">Login</button>
 					<p style="display: inline-block;">
-						<a href="#!" data-toggle="modal" data-target="#forgot-password-form" class="forgot-link">Forgot password?</a> or
-						
+						<a href="#!" data-toggle="modal" data-target="#forgot-password-form" class="forgot-link">Forgot password?</a>
+
 					</p>
 				</div>
 			</form>
