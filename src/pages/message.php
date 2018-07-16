@@ -1,8 +1,8 @@
-<?php include "../utilities/db.php";
+<?php 
+	include "../utilities/db.php";	
 	$subject = $_GET['subject'];
 ?>
-
-<div class="modal fade message-modal" id="message-modal" tabindex="-1" role="dialog">
+<div class="modal fade message-modal" id="sample" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content message-content">
 
@@ -22,6 +22,5 @@
 </div>
 
 <script>
-	$('#message-modal').show();
-
+    $("#sample").modal("show");
 </script>

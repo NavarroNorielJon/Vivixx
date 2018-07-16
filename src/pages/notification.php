@@ -16,15 +16,19 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style.css">
-		<link rel="stylesheet" href="../admin/style/datatables.css">
+		<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
-		<script type="text/javascript" src="../script/datatables.js"></script>
+		<link rel="stylesheet" href="../style/datatables.css">
+
+		<!--scripts-->
+		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../../script/datatables.min.js"></script>
+		<script type="text/javascript" src="../../script/ajax.js"></script>
+		<script type="text/javascript" src="../../script/popper.min.js"></script>
+		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
 
 	</head>
 
@@ -47,12 +51,11 @@
 					$sql = "SELECT * from notification;";
 					$result = $connect->query($sql);
         			$row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-					
-					$button = "				
-					<a href='message.php?subject=".$row['subject']."' data-toggle='modal' class='btn message btn-primary'>Read</a>";
 						
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
+							$button = "				
+								<a href='message.php?subject=".$row['subject']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
 							//print data in table
 							if($row["status"] == "new"){
 								echo "
@@ -74,8 +77,19 @@
 			<div id="message"></div>
 		</div>
 
-		<div id="salary_form"></div>
+		<!-- <div id="salary_form"></div> -->
 		<script>
+		$(document).ready(function() {
+				$('.message-modal').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#message').html(res);
+						}
+					});
+				});
+			});
 			//script for calling datatables library
 			$(document).ready(function() {
 				$('#table').dataTable({
@@ -88,17 +102,7 @@
 			});
 			$('#notif').addClass('active');
 
-			$(document).ready(function() {
-				$('.message').click(function(e) {
-					e.preventDefault();
-					$.ajax({
-						url: $(this).attr('href'),
-						success: function(res) {
-							$('#message').html(res);
-						}
-					});
-				});
-			});
+			
 
 		</script>
 	</body>
