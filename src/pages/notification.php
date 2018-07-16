@@ -30,7 +30,7 @@
 	<body>
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
-			<div id="content" style="margin-left: 20%;"></div>
+			<div id="content"></div>
 			<div id="salary_form"></div>
 			<div class="content">
 				<div class="table-container">
@@ -101,6 +101,7 @@
 				$('#table').DataTable();
 			});
 			$('#notif').addClass('active');
+
 		</script>
 	</body>
 
