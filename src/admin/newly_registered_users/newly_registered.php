@@ -23,48 +23,13 @@
 </head>
 
 <body class="background">
-	<?php 
+	<?php
 	include '../../utilities/session.php';
-	include '../utilities/check_user.php'; 
+	include '../utilities/check_user.php';
 	$connect = Connect();
 	?>
 	<div class="wrapper">
-		<nav class="fixed-top navbar navbar-expand-lg navbar-dark navigation-bar">
-			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbar-content">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
-					</li>
-					<li class="nav-item active">
-						<button onclick="myFunction()" class="dropbtn">Employees</button>
-						<div id="myDropdown" class="dropdown-content">
-							<a href="../user_information/user_information.php">Employees</a>
-							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../summary_of_pay/user_summary.php">Summary of Pay</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../payslip/user_payslip.php">Payslip</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<?php include '../fragments/navbar.php'; ?>
 
 		<!-- table for viewing user information -->
 		<div class="content container">
@@ -84,7 +49,7 @@
 						</tr>
 					</thead>
 
-					<?php	
+					<?php
 					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
 					$result = $connect->query($sql);
 
@@ -114,6 +79,7 @@
 			</div>
 		</div>
 		<div id="result"></div>
+		
 	</div>
 
 	<script>
@@ -129,7 +95,7 @@
 			});
 		});
 
-		/* When the user clicks on the button, 
+		/* When the user clicks on the button,
 								toggle between hiding and showing the dropdown content */
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("showbtn");

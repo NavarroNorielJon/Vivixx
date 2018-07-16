@@ -7,7 +7,7 @@
 	<html lang="en">
 
 	<head>
-		<title>Update Information</title>
+		<title>Vivixx PH | Update Information</title>
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">

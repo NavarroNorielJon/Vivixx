@@ -287,3 +287,25 @@ textarea {
 }
 
 /*end of utilities*/
+
+.signup-modal {
+	border-radius: 0;
+}
+
+.signup-modal .signup-body {
+	padding: 3% 5% 3% 5%;
+}
+
+.signup-modal .signup-content {
+	border-radius: 0;
+}
+
+.signup-modal .signup-header {
+	background-color: #e6e6e6;
+	font-family: arial;
+}
+
+.signup-modal .signup-logo {
+	height: 100%;
+	width: 120%;
+}

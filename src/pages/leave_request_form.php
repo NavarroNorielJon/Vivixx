@@ -24,7 +24,7 @@
 	<html>
 
 	<head>
-		<title>Vivixx</title>
+		<title>Vivixx PH | Leave Request</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,84 +43,7 @@
 
 	<body style="background-color: #e6e6e6;">
 		<div class="wrapper">
-			<nav class="sidebar">
-				<div class="sidebar-header">
-					<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
-				</div>
-
-				<!-- Sidebar Links -->
-				<ul class="list-unstyled components">
-					<li>
-						<a href="profile.php" class="sidebar-item">
-							<i class="material-icons">person</i>
-							<?php echo "$first_name"?></a>
-						<a href="profile.php" class="icon">
-							<i class="material-icons">person</i>
-						</a>
-					</li>
-
-					<li>
-						<a href="home.php" class="sidebar-item">
-							<i class="material-icons">home</i>Home</a>
-						<a class="icon" href="home.php">
-							<i class="material-icons">home</i>
-						</a>
-					</li>
-
-					<li>
-						<a href="notification.php" class="sidebar-item">
-							<i class="material-icons">mail</i>Notifications</a>
-						<a class="icon" href="notification.php">
-							<i class="material-icons">mail</i>
-						</a>
-					</li>
-
-					<li class="active">
-						<a href="#requests" data-toggle="collapse" class="sidebar-item" aria-expanded="false">
-							<i class="material-icons">work</i>
-							Requests</a>
-						<a href="#requests" data-toggle="collapse" class="icon" aria-expanded="false">
-							<i class="material-icons">work</i>
-						</a>
-						<ul class="collapse list-unstyled" id="requests">
-							<li class="active">
-								<input name='edit' value='salary' style='display: none;'>
-								<a href="salary_request.php" data-target="#salary" class="sidebar-item salary">
-												Salary Request</a>
-							</li>
-							<li class="active">
-								<a href="leave_request_form" class="sidebar-item">Leave Request</a>
-							</li>
-
-							<li class="active">
-								<a href="#requests" class="icon">SR</a>
-							</li>
-							<li class="active">
-								<a href="leave_request_form" class="icon">LR</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="about.php" class="sidebar-item">
-							<i class="material-icons">info</i>
-							About
-						</a>
-						<a class="icon" href="about.php">
-							<i class="material-icons">info</i>
-						</a>
-					</li>
-					<hr>
-					<li>
-						<a href="../utilities/logout.php" class="sidebar-item logout">
-							<i class="material-icons">power_settings_new</i>
-							Logout
-						</a>
-						<a class="icon" href="../utilities/logout.php">
-							<i class="material-icons">power_settings_new</i>
-						</a>
-					</li>
-				</ul>
-			</nav>
+			<?php include 'fragments/sidebar.php'; ?>
 
 			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST">
