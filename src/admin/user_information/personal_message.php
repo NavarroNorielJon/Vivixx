@@ -4,7 +4,8 @@
     $user_id = $_GET["user_id"];
     $fname = $_GET["fname"];
     $mname = $_GET["mname"];
-    $lname = $_GET["lname"];
+	$lname = $_GET["lname"];
+	$email = $_GET["email"];
 ?>
 
 	<div class="modal fade" id="message" tabindex="-1" role="dialog">
@@ -21,6 +22,7 @@
 				<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 					<form action="send_message.php" id="container-announcement" method="POST">
 						<input type="hidden" name="user_id" value="<?php echo $user_id?>">
+						<input type="hidden" name="email" value="<?php echo $email?>">
 						<div class="row form-group">
 							<div class="col">
 								<label for="title">Subject</label>
@@ -30,7 +32,7 @@
 							<div class="col ui calendar" id="date">
 								<div class="ui input left icon">
 									<label for="date">Date</label>
-									<input type="text" name="date" disabled class="form-control-plaintext date" required value="<?php echo $curr_date;?>">
+									<input type="text" name="date" readonly="true" class="form-control-plaintext date" required value="<?php echo $curr_date;?>">
 								</div>
 							</div>
 						</div>
