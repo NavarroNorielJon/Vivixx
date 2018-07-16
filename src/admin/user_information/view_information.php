@@ -63,42 +63,8 @@
 
     <body>
         <div class="wrapper">
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark navigation-bar">
-    			<a href="../accounts/accounts_status.php" class="navbar-brand">Vivixx</a>
-    			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="#navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-        			<span class="navbar-toggler-icon"></span>
-                </button>
+            <?php include '../fragments/navbar.php'; ?>
 
-    			<div class="collapse navbar-collapse" id="navbar-content">
-    				<ul class="navbar-nav">
-    					<li class="nav-item">
-    						<a class="nav-link" href="../accounts/accounts_status.php">Accounts</a>
-    					</li>
-    					<li class="nav-item active">
-    						<button onclick="myFunction()" class="dropbtn">Employees</button>
-    						<div id="myDropdown" class="dropdown-content">
-    							<a href="../user_information/user_information.php">Employees</a>
-    							<a href="../newly_registered_users/newly_registered.php">New Registered Employees</a>
-    						</div>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../summary_of_pay.php">Summary of Pay</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../payslip.php">Payslip</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../announcements/announcement.php">Announcement</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link logout" href="../utilities/logout.php">Logout</a>
-    					</li>
-    				</ul>
-    			</div>
-    		</nav>
 
             <div class="container" style="margin-top: 40px;">
                 <div role="form" action="update_info"  method="post" class="f1">
@@ -719,7 +685,7 @@
 								</div>
 							</div>
 
-                            <h5>Child/Children's Information <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adding">
+                            <h5>Child/Children's Information <button type="button" class="btn btn-info" data-toggle="modal" data-target="#adding">
                               Add Child
                             </button></h5>
                             <?php
@@ -1910,15 +1876,7 @@
         });
         $('#employee').ajaxForm({
             url: 'update_employee.php',
-            method: 'post',
-            success: function () {
-                swal({
-                    type: 'success',
-                    title: 'Done',
-                    icon: 'success',
-                    showConfirmButton: false
-                });
-            }
+            method: 'post'
         });
         </script>
     </body>

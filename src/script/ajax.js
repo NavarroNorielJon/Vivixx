@@ -105,10 +105,6 @@ function verifyLogin() {
 	});
 }
 
-function nextForm(currId,nextId){
-  document.getElementById(currId).classList.add("d-none");
-  document.getElementById(nextId).classList.remove("d-none");
-}
 
 function alphabetInput(evt){
 	var alphabet = String.fromCharCode(evt.which);
@@ -122,3 +118,7 @@ function numberInput(evt){
 		evt.preventDefault();
 	}
 }
+$('#profile').click(function(){
+	$(this).addClass('active');
+	$('#home').removeClass('active');
+});
