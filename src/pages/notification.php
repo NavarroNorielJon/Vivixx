@@ -41,10 +41,10 @@
 					<table class="table" id="table">
 						<thead>
 							<tr class="table-header">
-								<th style="width:550px;">Subject</th>
-								<th style="width:60px;">Date</th>
+								<th style="width:300px;">Subject</th>
+								<th style="width:70px;">Date</th>
 								<th style="width:60px;">Status</th>
-								<th style="width:60px;">Action</th>
+								<th style="width:40px;">Action</th>
 							</tr>
 						</thead>
 
@@ -64,6 +64,49 @@
 										<td><strong>". $row["subject"] ."</strong></td>
 										<td><strong>". $row["date"] ."</strong></td>
 										<td><strong>New</strong></td>
+										<td>". $button ."</td>
+									</tr>";	
+							}else {
+								echo "
+									<tr class='table-data'>
+										<td>". $row["subject"] ."</td>
+										<td>". $row["date"] ."</td>
+										<td>Read</td>
+										<td>". $button ."</td>
+									</tr>
+									";	
+							}
+						}
+					}
+					?>
+					</table>
+				</div>
+
+				<h1 style="margin-top: 10%;">LOGS</h1>
+				<div class="table-container">
+					<table class="table" id="table2">
+						<thead>
+							<tr class="table-header">
+								<th style="width:550px;">Date Filed</th>
+								<th style="width:60px;">Reason</th>
+								<th style="width:60px;">Status</th>
+							</tr>
+						</thead>
+
+						<?php
+					$sql2 = "SELECT * from leave_req where user_id = '$user_id';";
+					$result2 = $connect->query($sql2);
+        			$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+						
+					if($result2-> num_rows > 0){
+						while($row2 = $result2->fetch_assoc()){
+							//print data in table
+							if($row["status"] == "new"){
+								echo "
+									<tr class='table-data'>
+										<td><strong>". $row2["date_filed"] ."</strong></td>
+										<td><strong>". $row2["reason"] ."</strong></td>
+										<td><strong>". $row2["status"] ."</strong></td>
 										<td>". $button ."</td>
 									</tr>";	
 							}else {
@@ -115,6 +158,7 @@
 			//						});
 			//						$('#notif').addClass('active');
 
+			//	table for the messages
 			$(document).ready(function() {
 				$('#table').DataTable({
 					"order": [
@@ -123,6 +167,16 @@
 				});
 				$('#table').DataTable();
 			});
+			// table for the logs of leave request
+			$(document).ready(function() {
+				$('#table2').DataTable({
+					"order": [
+						[2, "asc"]
+					]
+				});
+				$('#table').DataTable();
+			});
+			$('#notif').addClass('active');
 
 		</script>
 	</body>
