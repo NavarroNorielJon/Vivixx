@@ -98,7 +98,26 @@ if (isset($_SESSION['user'])) {
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js" crossorigin="anonymous"></script>
 		<!-- Created Scripts -->
-		<script src="script/ajax.js"></script>
+		<script>
+        $('#login').ajaxForm({
+            url: '../utilities/login.php',
+            method: 'post',
+            success: function (data) {
+                if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
+                    || data === 'Invalid Username or password'){
+                    swal({
+                        title: data,
+                        icon:'error',
+                        timer: 2500
+                    });
+                } else {
+                    console.log(data);
+                    window.location = data;
+                }
+            }
+        });
+        
+        </script>
 		<script src="script/alerts.js"></script>
 	</body>
 

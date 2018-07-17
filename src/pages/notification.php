@@ -135,22 +135,6 @@
 					});
 				});
 			});
-
-
-			//			script for calling datatables library
-			//						$(document).ready(function() {
-			//							$('#table').dataTable({
-			//								"columnDefs": [{
-			//									"order": [
-			//										[2, "asc"]
-			//									],
-			//									"targets": 3
-			//								}]
-			//							});
-			//							$('#table').DataTable();
-			//						});
-			//						$('#notif').addClass('active');
-
 			//	table for the messages
 			$(document).ready(function() {
 				$('#table').DataTable({

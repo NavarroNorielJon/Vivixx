@@ -6,21 +6,21 @@ function announcement(id){
 			document.getElementById('am').innerHTML = responseJSON.announcement;
 			document.getElementById('title').innerHTML = responseJSON.title;
 			if (responseJSON.downloads != "") {
-				let dl = "<h5>Documents</h5><ul>"
+				let dl = "<h5>Documents</h5><ul>";
 				let i;
 				for(i in responseJSON.downloads){
-					dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>"
+					dl += "<li><a href='../admin/announcements/files/"+ responseJSON.downloads[i] +"' download>"+ responseJSON.downloads[i] +"</a></li>";
 				}
 				dl += "</ul>";
 				document.getElementById('dl').innerHTML = dl;
+			}else {
+				document.getElementById('dl').innerHTML = '';
 			}
 		}
-
 	};
 	xmlhttp.open("GET", "../utilities/announcements.php?id=" + id, true);
 	xmlhttp.send();
 }
-
 
 
 function showHide(password,ic) {
