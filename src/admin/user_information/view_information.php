@@ -838,37 +838,56 @@
                                 <div class="form-group col">
                                     <label for="option1">Status</label>
                                     <select name="option1" id="option1" class="form-control">
-                                        <option selected="selected" value="<?php echo $estat?>"><?php echo $estat?></option>
-                                        <option value="None">None</option>
-                                        <option value="g1">Graduate</option>
-                                        <option value="u1">Undergraduate</option>
+                                        <?php
+                                            if($estat == "Graduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option selected value="g1">'.$estat.'</option>
+                                                <option value="u1">Undergraduate</option>
+                                                ';
+                                            } elseif($estat == "Undergraduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option value="g1">Graduate</option>
+                                                <option selected value="u1">'.$estat.'</option>
+                                                ';
+                                            } else {
+                                                echo '
+                                                <option selected value="'.$estat.'">'.$estat.'</option>
+                                                <option value="g1">Graduate</option>
+                                                <option value="u1">Undergraduate</option>
+                                                ';
+                                            }
+                                         ?>
                                     </select>
                                 </div>
 
-                                <div class="form-group col" id="<?php echo $estat?>">
                                     <?php
                                         if ($estat == "Graduate") {
                                             echo "
-                                                <label for='yr_grad'>Year Graduated</label>
-                                                <input type='text' name='elem_old_yr' id='elem_old_yr' placeholder='Ex. 1995-96' value='".$eyear."' class='form-control gradyear' autocomplete='off'>
+                                                <div class='form-group col' id='g1'>
+                                                    <label for='yr_grad'>Year Graduated</label>
+                                                    <input type='text' name='elem_old_yr' id='elem_old_yr' placeholder='Ex. 1995-96' value='".$eyear."' class='form-control gradyear' autocomplete='off'>
+                                                </div>
                                                 ";
                                         } elseif ($estat == "Undergraduate") {
                                             echo "
-                                                <label for='yr_grad'>Highest Level</label>
-                                                <select name='elem_old_level' id='elem_old_level' class='form-control'>
-                                                    <option value='".$eyear."'>".$eyear."</option>
-                                                    <option value='None'>None</option>
-                                                    <option value='Grade 1'>Grade 1</option>
-                                                    <option value='Grade 2'>Grade 2</option>
-                                                    <option value='Grade 3'>Grade 3</option>
-                                                    <option value='Grade 4'>Grade 4</option>
-                                                    <option value='Grade 5'>Grade 5</option>
-                                                    <option value='Grade 6'>Grade 6</option>
-                                                </select>
+                                                <div class='form-group col' id='u1'>
+                                                    <label for='yr_grad'>Highest Level</label>
+                                                    <select name='elem_old_level' id='elem_old_level' class='form-control'>
+                                                        <option value='".$eyear."'>".$eyear."</option>
+                                                        <option value='None'>None</option>
+                                                        <option value='Grade 1'>Grade 1</option>
+                                                        <option value='Grade 2'>Grade 2</option>
+                                                        <option value='Grade 3'>Grade 3</option>
+                                                        <option value='Grade 4'>Grade 4</option>
+                                                        <option value='Grade 5'>Grade 5</option>
+                                                        <option value='Grade 6'>Grade 6</option>
+                                                    </select>
+                                                </div>
                                                 ";
                                         }
                                      ?>
-                                </div>
 
                                 <div class="form-group col" id="g1" style="display:none">
                                     <label for="yr_grad">Year Graduated</label>
@@ -922,42 +941,60 @@
                                 <div class="form-group col">
                                     <label for="option2">Status</label>
                                     <select name="option2" id="option2" class="form-control">
-                                        <option selected="selected" value="<?php echo $sstat?>"><?php echo $sstat?></option>
-                                        <option value="None">None</option>
-                                        <option value="g2">Graduate</option>
-                                        <option value="u2">Undergraduate</option>
+                                        <?php
+                                            if($sstat == "Graduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option selected value="g2">'.$sstat.'</option>
+                                                <option value="u2">Undergraduate</option>
+                                                ';
+                                            } elseif($sstat == "Undergraduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option value="g2">Graduate</option>
+                                                <option selected value="u2">'.$sstat.'</option>
+                                                ';
+                                            } else {
+                                                echo '
+                                                <option selected value="'.$sstat.'">'.$sstat.'</option>
+                                                <option value="g2">Graduate</option>
+                                                <option value="u2">Undergraduate</option>
+                                                ';
+                                            }
+                                         ?>
                                     </select>
                                 </div>
 
-                                <div class="form-group col" id="<?php echo $sstat?>">
                                     <?php
                                         if ($sstat == "Graduate") {
                                             echo "
-                                                <label for='yr_grad'>Year Graduated</label>
-                                                <input type='text' name='sec_old_yr' id='sec_old_yr' placeholder='Ex. 1995-96' value='".$syear."' class='form-control gradyear' autocomplete='off'>
+                                                <div class='form-group col' id='g2'>
+                                                    <label for='yr_grad'>Year Graduated</label>
+                                                    <input type='text' name='sec_old_yr' id='sec_old_yr' placeholder='Ex. 1995-96' value='".$syear."' class='form-control gradyear' autocomplete='off'>
+                                                </div>
                                                 ";
                                         } elseif ($sstat == "Undergraduate") {
                                             echo "
-                                                <label for='yr_grad'>Highest Level</label>
-                                                <select name='sec_old_level' id='sec_old_level' class='form-control'>
-                                                    <option selected='selected' value='".$syear."'>".$syear."</option>
-                                                    <option value='None'>None</option>
-                                                    <option value='1st Year'>1st Year</option>
-                                                    <option value='2nd Year'>2nd Year</option>
-                                                    <option value='3rd Year'>3rd Year</option>
-                                                    <option value='4th Year'>4th Year</option>
-                                                    <option value='Grade 7'>Grade 7</option>
-                                                    <option value='Grade 8'>Grade 8</option>
-                                                    <option value='Grade 9'>Grade 9</option>
-                                                    <option value='Grade 10'>Grade 10</option>
-                                                    <option value='Grade 11'>Grade 11</option>
-                                                    <option value='Grade 12'>Grade 12</option>
-                                                </select>
-                                                <input type='text' name='sec_old_level' id='sec_old_level' placeholder='(If Undergraduate)' value='".$syear."' class='form-control' autocomplete='off'>
+                                                <div class='form-group col' id='u2'>
+                                                    <label for='yr_grad'>Highest Level</label>
+                                                    <select name='sec_old_level' id='sec_old_level' class='form-control'>
+                                                        <option selected='selected' value='".$syear."'>".$syear."</option>
+                                                        <option value='None'>None</option>
+                                                        <option value='1st Year'>1st Year</option>
+                                                        <option value='2nd Year'>2nd Year</option>
+                                                        <option value='3rd Year'>3rd Year</option>
+                                                        <option value='4th Year'>4th Year</option>
+                                                        <option value='Grade 7'>Grade 7</option>
+                                                        <option value='Grade 8'>Grade 8</option>
+                                                        <option value='Grade 9'>Grade 9</option>
+                                                        <option value='Grade 10'>Grade 10</option>
+                                                        <option value='Grade 11'>Grade 11</option>
+                                                        <option value='Grade 12'>Grade 12</option>
+                                                    </select>
+                                                </div>
                                                 ";
                                         }
                                      ?>
-                                </div>
 
                                 <div class="form-group col" id="g2" style="display:none">
                                     <label for="yr_grad">Year Graduated</label>
@@ -966,7 +1003,19 @@
 
                                 <div class="form-group col" id="u2" style="display:none">
                                     <label for="high_level">Highest Level</label>
-                                    <input type="text" name="sec_high_level" id="sec_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                    <select name='sec_high_level' id='sec_high_level' class='form-control'>
+                                        <option value='None'>None</option>
+                                        <option value='1st Year'>1st Year</option>
+                                        <option value='2nd Year'>2nd Year</option>
+                                        <option value='3rd Year'>3rd Year</option>
+                                        <option value='4th Year'>4th Year</option>
+                                        <option value='Grade 7'>Grade 7</option>
+                                        <option value='Grade 8'>Grade 8</option>
+                                        <option value='Grade 9'>Grade 9</option>
+                                        <option value='Grade 10'>Grade 10</option>
+                                        <option value='Grade 11'>Grade 11</option>
+                                        <option value='Grade 12'>Grade 12</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -1005,36 +1054,55 @@
                                 <div class="form-group col">
                                     <label for="option3">Status</label>
                                     <select name="option3" id="option3" class="form-control">
-                                        <option selected="selected" value="<?php echo $cstat?>"><?php echo $cstat?></option>
-                                        <option value="None">None</option>
-                                        <option value="g3">Graduate</option>
-                                        <option value="u3">Undergraduate</option>
+                                        <?php
+                                            if($cstat == "Graduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option selected value="g3">'.$cstat.'</option>
+                                                <option value="u3">Undergraduate</option>
+                                                ';
+                                            } elseif($cstat == "Undergraduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option value="g3">Graduate</option>
+                                                <option selected value="u3">'.$cstat.'</option>
+                                                ';
+                                            } else {
+                                                echo '
+                                                <option selected value="'.$cstat.'">'.$cstat.'</option>
+                                                <option value="g3">Graduate</option>
+                                                <option value="u3">Undergraduate</option>
+                                                ';
+                                            }
+                                         ?>
                                     </select>
                                 </div>
 
-                                <div class="form-group col" id="<?php echo $cstat?>">
                                     <?php
                                         if ($cstat == "Graduate") {
                                             echo "
-                                                <label for='yr_grad'>Year Graduated</label>
-                                                <input type='text' name='col_old_yr' id='col_old_yr' placeholder='Ex. 1995-96' value='".$cyear."' class='form-control gradyear' autocomplete='off'>
+                                                <div class='form-group col' id='g3'>
+                                                    <label for='yr_grad'>Year Graduated</label>
+                                                    <input type='text' name='col_old_yr' id='col_old_yr' placeholder='Ex. 1995-96' value='".$cyear."' class='form-control gradyear' autocomplete='off'>
+                                                </div>
                                                 ";
                                         } elseif ($cstat == "Undergraduate") {
                                             echo "
-                                                <label for='yr_grad'>Highest Level</label>
-                                                <select name='col_old_level' id='col_old_level' class='form-control'>
-                                                    <option selected='selected' value='".$cyear."'>".$cyear."</option>
-                                                    <option value='None'>None</option>
-                                                    <option value='1st Year'>1st Year</option>
-                                                    <option value='2nd Year'>2nd Year</option>
-                                                    <option value='3rd Year'>3rd Year</option>
-                                                    <option value='4th Year'>4th Year</option>
-                                                    <option value='5th Year'>5th Year</option>
-                                                </select>
+                                                <div class='form-group col' id='u3'>
+                                                    <label for='yr_grad'>Highest Level</label>
+                                                    <select name='col_old_level' id='col_old_level' class='form-control'>
+                                                        <option selected='selected' value='".$cyear."'>".$cyear."</option>
+                                                        <option value='None'>None</option>
+                                                        <option value='1st Year'>1st Year</option>
+                                                        <option value='2nd Year'>2nd Year</option>
+                                                        <option value='3rd Year'>3rd Year</option>
+                                                        <option value='4th Year'>4th Year</option>
+                                                        <option value='5th Year'>5th Year</option>
+                                                    </select>
+                                                </div>
                                                 ";
                                         }
                                      ?>
-                                </div>
 
                                 <div class="form-group col" id="g3" style="display:none">
                                     <label for="yr_grad">Year Graduated</label>
@@ -1087,45 +1155,62 @@
                                 <div class="form-group col">
                                     <label for="option4">Status</label>
                                     <select name="option4" id="option4" class="form-control">
-                                        <option selected="selected" value="<?php echo $pyear?>"><?php echo $pyear?></option>
-                                        <option value="None"><?php echo $pyear?></option>
-                                        <option value="g4">Graduate</option>
-                                        <option value="u4">Undergraduate</option>
+                                        <?php
+                                            if($pstat == "Graduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option selected value="g4">'.$pstat.'</option>
+                                                <option value="u4">Undergraduate</option>
+                                                ';
+                                            } elseif($pstat == "Undergraduate"){
+                                                echo '
+                                                <option value="None">None</option>
+                                                <option value="g4">Graduate</option>
+                                                <option selected value="u4">'.$pstat.'</option>
+                                                ';
+                                            } else {
+                                                echo '
+                                                <option selected value="'.$pstat.'">'.$pstat.'</option>
+                                                <option value="g4">Graduate</option>
+                                                <option value="u4">Undergraduate</option>
+                                                ';
+                                            }
+                                         ?>
                                     </select>
                                 </div>
 
                                 <?php
                                     if ($pstat == "Graduate") {
                                         echo "
-                                            <label for='yr_grad'>Year Graduated</label>
-                                            <input type='text' name='post_old_yr' id='sec_old_yr' placeholder='Ex. 1995-96' value='".$pyear."' class='form-control gradyear' autocomplete='off'>
+                                            <div class='form-group col' id='g4'>
+                                                <label for='yr_grad'>Year Graduated</label>
+                                                <input type='text' name='post_old_yr' id='post_old_yr' placeholder='Ex. 1995-96' value='".$pyear."' class='form-control gradyear' autocomplete='off'>
+                                            </div>
                                             ";
                                     } elseif ($pstat == "Undergraduate") {
                                         echo "
-                                            <label for='yr_grad'>Highest Level</label>
-                                            <select name='pos_old_yr' id='pos_old_yr' class='form-control'>
-                                                <option selected='selected' value='".$pyear."'>".$pyear."</option>
-                                                <option value='None'>None</option>
-                                                <option value='1st Year'>1st Year</option>
-                                                <option value='2nd Year'>2nd Year</option>
-                                                <option value='3rd Year'>3rd Year</option>
-                                                <option value='4th Year'>4th Year</option>
-                                                <option value='Grade 7'>Grade 7</option>
-                                                <option value='Grade 8'>Grade 8</option>
-                                                <option value='Grade 9'>Grade 9</option>
-                                                <option value='Grade 10'>Grade 10</option>
-                                                <option value='Grade 11'>Grade 11</option>
-                                                <option value='Grade 12'>Grade 12</option>
-                                            </select>
-                                            <input type='text' name='pos_old_level' id='pos_old_level' placeholder='(If Undergraduate)' value='".$syear."' class='form-control' autocomplete='off'>
+                                            <div class='form-group col' id='u4'>
+                                                <label for='yr_grad'>Highest Level</label>
+                                                <select name='pos_old_level' id='pos_old_level' class='form-control'>
+                                                    <option selected='selected' value='".$pyear."'>".$pyear."</option>
+                                                    <option value='None'>None</option>
+                                                    <option value='1st Year'>1st Year</option>
+                                                    <option value='2nd Year'>2nd Year</option>
+                                                    <option value='3rd Year'>3rd Year</option>
+                                                    <option value='4th Year'>4th Year</option>
+                                                    <option value='Grade 7'>Grade 7</option>
+                                                    <option value='Grade 8'>Grade 8</option>
+                                                    <option value='Grade 9'>Grade 9</option>
+                                                    <option value='Grade 10'>Grade 10</option>
+                                                    <option value='Grade 11'>Grade 11</option>
+                                                    <option value='Grade 12'>Grade 12</option>
+                                                </select>
+                                            </div>
                                             ";
                                     }
                                  ?>
 
-                                <div class="form-group col" id="" style="display:none">
-                                    <label for="yr_grad">Year Graduated</label>
-                                    <input type="text" name="" id="pos_yr_grad" value="" class="form-control" autocomplete="off">
-                                </div>
+
 
                                 <div class="form-group col" id="g4" style="display:none">
                                     <label for="yr_grad">Year Graduated</label>
@@ -1134,7 +1219,19 @@
 
                                 <div class="form-group col" id="u4" style="display:none">
                                     <label for="high_level">Highest Level</label>
-                                    <input type="text" name="pos_high_level" id="pos_high_level" placeholder="(If Undergraduate)" class="form-control" autocomplete="off">
+                                    <select name='pos_high_level' id='pos_high_level' class='form-control'>
+                                        <option value='None'>None</option>
+                                        <option value='1st Year'>1st Year</option>
+                                        <option value='2nd Year'>2nd Year</option>
+                                        <option value='3rd Year'>3rd Year</option>
+                                        <option value='4th Year'>4th Year</option>
+                                        <option value='Grade 7'>Grade 7</option>
+                                        <option value='Grade 8'>Grade 8</option>
+                                        <option value='Grade 9'>Grade 9</option>
+                                        <option value='Grade 10'>Grade 10</option>
+                                        <option value='Grade 11'>Grade 11</option>
+                                        <option value='Grade 12'>Grade 12</option>
+                                    </select>
                                 </div>
 
                             </div>

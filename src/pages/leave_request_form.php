@@ -1,22 +1,7 @@
 <?php
 	include '../utilities/session.php';
-	 include '../utilities/check_user_info.php';
+	include '../utilities/check_user_info.php';
 
-	$connect = Connect();
-	$stmt= "SELECT * FROM employee_info WHERE user_id='$user_id';";
-	$res = mysqli_query($connect,$stmt);
-	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-	$date_hired = $row['date_hired'];
-	$today = date("Y-m-d");
-    $diff = date_diff(date_create($date_hired),date_create($today))->y;
-	if($diff>=1 && $date_hired != ""){
-	} else {
-		echo "
-		<script>
-			$(function(){
-			});
-		</script>";
-	}
 ?>
 
 	<!DOCTYPE html>
@@ -135,7 +120,6 @@
 				</form>
 			</div>
 		</div>
-
 		<script>
 			$(document).ready(function() {
 				$('.salary').click(function(e) {
