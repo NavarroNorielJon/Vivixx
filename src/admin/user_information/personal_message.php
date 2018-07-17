@@ -112,5 +112,31 @@
 
 			});
 		});
+        $('#container-announcement').ajaxForm({
+            url:'send_message.php',
+            method: 'post',
+            success: function (data) {
+                $.post({
+                    url: '../../mailing/send_message.php',
+                    method: 'post',
+                    data: {
+                        subject: data.subject,
+                        date: data.date,
+                        body: data.body,
+                        email: data.email,
+                    },
+                    success: function (){
+                        swal({
+                            type: 'success',
+                            title: 'Message and Email Successfully Sent',
+                            icon: 'success',
+                            timer: 5000
+                        }).then(function () {
+                            location.reload();
+                        });
+                    }
+                });
+            }
+        });
 
 	</script>

@@ -122,7 +122,6 @@
         $('#accept_reject').ajaxForm({
             url: 'accept_or_reject.php',
             method: 'post',
-
             success: function (data) {
                 let dat = data;
                 if(dat.stat == "User has no more remaining leave credits"){
