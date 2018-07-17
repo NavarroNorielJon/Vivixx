@@ -245,42 +245,30 @@
 	margin-top: -15%;
 }
 
-.profile .profile-content .birth_information {
+.profile .profile-content .ghw {
 	margin-left: -1vw;
 	margin-top: -15%;
-	width: 80%;
 }
 
-.profile .profile-content .birth_information input[type=text] {
+.profile .profile-content .ghw .weight {
+	margin-left: -8vw;
+}
+
+.profile .profile-content .birth_information {
+	margin-left: -1vw;
+}
+
+.profile .profile-content .birth_information .age {
+	margin-left: -8vw;
+}
+
+.profile .profile-content input[type=text] {
 	font-size: 1.5vw;
+	font-variant: small-caps;
 }
 
 .profile .profile-content .city-address {
 	margin-left: -1vw;
-}
-
-.profile .profile-content .city-address input[type=text] {
-	font-size: 1.5vw;
-	width: 600px;
-}
-
-.profile .profile-content .name {
-	font-size: 1.5vw;
-	width: 350px;
-}
-
-.profile .profile-content .number input[type=text] {
-	font-size: 1.5vw;
-	width: 600px;
-}
-
-.profile .profile-content .permanent-address {
-	margin-left: -1vw;
-}
-
-.profile .profile-content .permanent-address input[type=text] {
-	font-size: 1.5vw;
-	width: 600px;
 }
 
 /*end*/

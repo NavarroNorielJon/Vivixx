@@ -56,6 +56,21 @@
 						</div>
 					</div>
 
+					<div class="row ghw">
+						<div class="form-group col-4">
+							<label for="gender"> Gender</label>
+							<input type="text" id="gender" class="form-control-plaintext" value="<?php echo $gender?>" disabled>
+						</div>
+						<div class="form-group col-4">
+							<label for="height">Height</label>
+							<input type="text" id="height" class="form-control-plaintext" value="<?php echo $height;?>" disabled>
+						</div>
+						<div class="form-group col-4 weight">
+							<label for="weight">Weight</label>
+							<input type="text" id="weight" class="form-control-plaintext" value="<?php echo $weight;?> kg" disabled>
+						</div>
+					</div>
+
 					<div class="row birth_information">
 						<div class="form-group col-4">
 							<label for="birth_place"> Birth Place</label>
@@ -67,83 +82,59 @@
 							<input type="text" id="first" class="form-control-plaintext" value="<?php echo $birth_date->format('F d, Y');?>" disabled>
 						</div>
 
-						<div class="form-group col-4">
+						<div class="form-group col-4 age">
 							<label for="age">Age</label>
 							<input type="text" id="age" class="form-control-plaintext" value="<?php echo $age;?>" disabled>
 						</div>
 					</div>
 
-                    <div class="row city-address">
-                        <div class="form-group col-4">
-    						<label for="residential_address">Residential Address</label>
-    						<input type="text" id="residential_address" class="form-control-plaintext" value="<?php echo $residential_address;?>" disabled>
-    					</div>
-                        <div class="form-group col-4">
-    						<label for="residential_zip">Residential Zip</label>
-    						<input type="text" id="residential_zip" class="form-control-plaintext" value="<?php echo $residential_zip;?>" disabled>
-    					</div>
-                        <div class="form-group col-4">
-    						<label for="residential_tel_no">Residential Telephone Number</label>
-    						<input type="text" id="residential_tel_no" class="form-control-plaintext" value="<?php echo $residential_tel_no;?>" disabled>
-    					</div>
-                    </div>
-                    <div class="row city-address">
-                        <div class="form-group col-4 permanent-address">
-    						<label for="permanent_address">Permanent Address</label>
-    						<input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo $permanent_address;?>" disabled>
-    					</div>
-                        <div class="form-group col-4">
-    						<label for="permanent_zip">Permanent Zip</label>
-    						<input type="text" id="permanent_zip" class="form-control-plaintext" value="<?php echo $permanent_zip;?>" disabled>
-    					</div>
-                        <div class="form-group col-4">
-    						<label for="permanent_tel_no">Residential Telephone Number</label>
-    						<input type="text" id="permanent_tel_no" class="form-control-plaintext" value="<?php echo $permanent_tel_no;?>" disabled>
-    					</div>
-                    </div>
-                    <div class="row city-address">
-                        <div class="form-group col-4">
-            				<label for="gender"> Gender</label>
-            				<input type="text" id="gender" class="form-control-plaintext" value="<?php echo $gender?>" disabled>
-        				</div>
-                        <div class="form-group col-4">
-            				<label for="height">Height</label>
-            				<input type="text" id="height" class="form-control-plaintext" value="<?php echo $height;?>" disabled>
-        				</div>
-        				<div class="form-group col-4">
-            				<label for="weight">Weight</label>
-            				<input type="text" id="weight" class="form-control-plaintext" value="<?php echo $weight;?> kg" disabled>
-        				</div>
-                    </div>
+					<div class="row city-address">
+						<div class="form-group col-4">
+							<label for="residential_address">Residential Address</label>
+							<input type="text" id="residential_address" class="form-control-plaintext" value="<?php echo $residential_address;?>" disabled>
+						</div>
+						<div class="form-group col-4">
+							<label for="residential_zip">Residential Zip</label>
+							<input type="text" id="residential_zip" class="form-control-plaintext" value="<?php echo $residential_zip;?>" disabled>
+						</div>
+						<div class="form-group col-4">
+							<label for="residential_tel_no">Residential Telephone Number</label>
+							<input type="text" id="residential_tel_no" class="form-control-plaintext" value="<?php echo $residential_tel_no;?>" disabled>
+						</div>
+					</div>
+					<div class="row city-address">
+						<div class="form-group col-4 permanent-address">
+							<label for="permanent_address">Permanent Address</label>
+							<input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo $permanent_address;?>" disabled>
+						</div>
+						<div class="form-group col-4">
+							<label for="permanent_zip">Permanent Zip</label>
+							<input type="text" id="permanent_zip" class="form-control-plaintext" value="<?php echo $permanent_zip;?>" disabled>
+						</div>
+						<div class="form-group col-4">
+							<label for="permanent_tel_no">Residential Telephone Number</label>
+							<input type="text" id="permanent_tel_no" class="form-control-plaintext" value="<?php echo $permanent_tel_no;?>" disabled>
+						</div>
+					</div>
 
-                    <div class="row">
-                        <div class="form-group col-4">
-            				<label for="citizenship">Citizenship</label>
-            				<input type="text" id="citizenship" class="form-control-plaintext" value="<?php echo $citizenship;?>" disabled>
-        				</div>
-                        <div class="form-group col-4">
-            				<label for="civil_status">Civil Status</label>
-            				<input type="text" id="civil_status" class="form-control-plaintext" value="<?php echo $civil_status;?>" disabled>
-        				</div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col">
-            				<label for="sss">SSS ID No.</label>
-            				<input type="text" id="sss" class="form-control-plaintext" value="<?php echo $sss_no;?>" disabled>
-        				</div>
-                        <div class="form-group col">
-            				<label for="tin">TIN</label>
-            				<input type="text" id="tin" class="form-control-plaintext" value="<?php echo $tin;?>" disabled>
-        				</div>
-                        <div class="form-group col">
-            				<label for="philhealth_no">PHILHEALTH ID No.</label>
-            				<input type="text" id="philhealth_no" class="form-control-plaintext" value="<?php echo $philhealth_no;?>" disabled>
-        				</div>
-                        <div class="form-group col">
-            				<label for="pagibig_id_no">PAG-IBIG ID No</label>
-            				<input type="text" id="pagibig_id_no" class="form-control-plaintext" value="<?php echo $pagibig_id_no;?>" disabled>
-        				</div>
-                    </div>
+					<div class="row">
+						<div class="form-group col">
+							<label for="sss">SSS ID No.</label>
+							<input type="text" id="sss" class="form-control-plaintext" value="<?php echo $sss_no;?>" disabled>
+						</div>
+						<div class="form-group col">
+							<label for="tin">TIN</label>
+							<input type="text" id="tin" class="form-control-plaintext" value="<?php echo $tin;?>" disabled>
+						</div>
+						<div class="form-group col">
+							<label for="philhealth_no">PHILHEALTH ID No.</label>
+							<input type="text" id="philhealth_no" class="form-control-plaintext" value="<?php echo $philhealth_no;?>" disabled>
+						</div>
+						<div class="form-group col">
+							<label for="pagibig_id_no">PAG-IBIG ID No</label>
+							<input type="text" id="pagibig_id_no" class="form-control-plaintext" value="<?php echo $pagibig_id_no;?>" disabled>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -155,4 +146,4 @@
 
 	</body>
 
-</html>
+	</html>
