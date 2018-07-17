@@ -118,15 +118,17 @@
 					swal({
 		                type: 'success',
 		                title: 'Successfully Registered',
-		                // text: "Your username is " + dat.username,
+		                text: "Your username is " + dat.username,
 		                icon: 'success',
 		                showConfirmButton: true,
 		            }).then(function(){
 		                swal({
 							type: 'success',
-			                title: 'Successfully Registered',
+			                title: 'Email Successfully Sent',
 			                icon: 'success',
 			                showConfirmButton: false,
+						}).then(function (){
+							window.location = '/';
 						});
 		            });
 				}

@@ -11,9 +11,12 @@ require 'vendor/autoload.php';
 include '../utilities/db.php';
 $conn = Connect();
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$username = mysqli_real_escape_string($conn, $_POST['username']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+$email = $_POST['email'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$username = mysqli_real_escape_string($conn, $username);
+$email = mysqli_real_escape_string($conn, $email);
+$password = mysqli_real_escape_string($conn, $password);
 
 
 $developmentMode = true;
@@ -51,27 +54,23 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content
-    if($_POST["status"] == "accepted"){
+    $body = file_get_contents("style.html");
+    $body .= "<div id='main_content'>";
+    $body .= "
+    <h1>Your Account Has been Activated</h1>
+    <p>Your Username is <strong>". $username ."</strong> and your temporary password is <strong>". $password ."</strong></p>";
+    $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
+    $body .= "</div>";
 
-        $body = file_get_contents("style.html");
-        $body .= "<div id='main_content'>";
-        $body .= "
-        <h1>Your Account Has been Activated</h1>
-        <p>Your Username is "+. $username .+" and your temporary password is "+. $password .+"</p>";
-        $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
-        $body .= "</div>";
+    $mail->isHTML(true); // Set email format to HTML
+    $mail->Subject = 'Registered Account';
+    $mail->Body = $body;
+    $mail->AltBody = 'Your account has been activated';
 
-        $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Registered Account';
-        $mail->Body = $body;
-        $mail->AltBody = 'Your Account';
+    $mail->send();
+    $mail->ClearAllRecipients();
 
-        $mail->send();
-        $mail->ClearAllRecipients();
-    }
+    echo "Email sucessfully sent, please check your email.";
 } catch (Exception $e) {
-    echo "
-    <script>
-        alert('Message could not be sent. Mailer Error: , $mail->ErrorInfo');
-    </script>";
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
