@@ -26,12 +26,12 @@
                     <div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="employee_name" name="employeeName" disabled value="<?php echo ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last)?>">
+							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="employee_name" name="employeeName" readonly value="<?php echo ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last)?>">
 						</div>
 
 						<div class="form-group col">
 							<label for="department">Department</label>
-							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="department" name="dept" disabled value="<?php echo $row['department']?>">
+							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="department" name="dept" readonly value="<?php echo $row['department']?>">
 						</div>
 					</div>
 
@@ -44,47 +44,47 @@
 
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
-                            <input type="date" class="form-control-plaintext" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
+                            <input type="text" class="form-control-plaintext" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
                         </div>
 
                         <div class="form-group col">
                             <label for="date_filed">Date Filed</label>
-                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="date_filed" name="dateFilled" disabled value="<?php echo $row['date_filed']?>">
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="date_filed" name="dateFilled" readonly value="<?php echo $row['date_filed']?>">
                         </div>
 				    </div><hr>
 
                     <div>
                         <div class="form-group">
                             <label for="other_reason">Reason for Leave</label>
-                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="reason" disabled value="<?php echo $row['reason']?>">
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="reason" readonly value="<?php echo $row['reason']?>">
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label for="credit">Maximum Leave Credits</label>
-                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="credit" disabled value="5">
+                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="credit" readonly value="5">
                             </div>
 
                             <div class="form-group col">
                                 <label for="used">Used Leave Credits</label>
-                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="used" disabled value="<?php echo $row['used']?>">
+                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="used" readonly value="<?php echo $row['used']?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="balance">Remaining Balance</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="balance" disabled value="<?php echo $row['remaining']?>">
+                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="balance" readonly value="<?php echo $row['remaining']?>">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
                                 <label for="address_leave">Contact Address during leave</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="address_leave" disabled value="<?php echo $row['contact_address']?>">
+                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="address_leave" readonly value="<?php echo $row['contact_address']?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="number_leave">Contact Number during leave</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="number_leave" disabled value="<?php echo $row['contact_number']?>">
+                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="number_leave" readonly value="<?php echo $row['contact_number']?>">
                             </div>
                         </div>
 				    </div><hr>
@@ -95,12 +95,12 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="start_date">From</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" disabled value="<?php echo $row['from']?>">
+                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" readonly value="<?php echo $row['from']?>">
                             </div>
 
                             <div class="form-group col">
                                 <label for="end_date">To</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="end_date" disabled value="<?php echo $row['to']?>">
+                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="end_date" readonly value="<?php echo $row['to']?>">
                             </div>
                         </div>
 				    </div>
