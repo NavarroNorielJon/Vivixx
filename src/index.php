@@ -13,7 +13,9 @@ if (isset($_SESSION['user'])) {
 		<title>Vivixx</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Icon -->
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheet -->
 		<link type="text/css" rel="stylesheet" href="style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,7 +48,6 @@ if (isset($_SESSION['user'])) {
 					<button type="submit" class="btn login-button" name="submit">Login</button>
 					<p style="display: inline-block;">
 						<a href="#!" data-toggle="modal" data-target="#forgot-password-form" class="forgot-link">Forgot password?</a>
-
 					</p>
 				</div>
 			</form>
@@ -87,16 +88,18 @@ if (isset($_SESSION['user'])) {
 		</div>
 		<!-- End of forgot password modal -->
 
-
-		<script src="script/jquery-3.2.1.min.js"></script>
-		<script src="script/jquery.form.min.js"></script>
-		<script src="script/jquery.validate.min.js"></script>
-		<script src="script/additional-methods.min.js"></script>
-		<script src="script/alerts.js"></script>
-		<script src="script/popper.min.js"></script>
-		<script src="script/bootstrap/bootstrap.min.js"></script>
-		<script src="script/sweetalert.min.js"></script>
+		<!-- Scripts -->
+		<!-- CDN -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js" crossorigin="anonymous"></script>
+		<!-- Created Scripts -->
 		<script src="script/ajax.js"></script>
+		<script src="script/alerts.js"></script>
 	</body>
 
 	</html>

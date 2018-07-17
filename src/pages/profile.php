@@ -13,6 +13,7 @@
 ?>
 	<!DOCTYPE html>
 	<html>
+
 	<head>
 		<title>Vivixx PH | Profile</title>
 		<meta charset="utf-8">
@@ -21,7 +22,7 @@
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="../style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/popper.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../script/ajax.js"></script>
@@ -29,7 +30,7 @@
 
 	<body class="profile">
 		<div class="wrapper">
-            <?php include 'fragments/sidebar.php';?>
+			<?php include 'fragments/sidebar.php';?>
 
 
 			<div class="container-fluid">
@@ -49,7 +50,7 @@
 						</div>
 
 						<div class="col-4">
-							<div style="height:250px;width:250px;border: 2px solid black;">
+							<div style="height:264px; width:264.5px;border-style: inset; border-width: 7px; border-color: #f5f5f0;">
 								<?php echo $image;?>
 							</div>
 						</div>
@@ -84,9 +85,10 @@
 				</div>
 			</div>
 		</div>
-        <script>
-            $('#profile').addClass('active');
-        </script>
+		<script>
+			$('#profile').addClass('active');
+
+		</script>
 
 
 	</body>
