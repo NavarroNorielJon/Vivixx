@@ -38,7 +38,7 @@
 							<?php
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments like('%All%') group by 1;";
 								$announcement = mysqli_query($connect, $query);
-								if($announcement->num_rows >	 1 ){
+								if($announcement->num_rows >1 ){
 									while ($row = mysqli_fetch_array($announcement)) {
 										echo "
 										<div class='item'>
@@ -78,7 +78,7 @@
 								</div>
 
 								<div class='modal-body'>
-									<input type="text" class="form-control-plaintext" disabled value="" id="am">
+									<div id="am"></div>
 									<div id="dl"></div>
 								</div>
 

@@ -10,12 +10,6 @@
     $position = mysqli_real_escape_string($connect,$_POST["position"]);
     $date_hired = mysqli_real_escape_string($connect,$_POST["dateHired"]);
     $update = "";
-    // $date = date('Y');
-    // $todate = '2018-04-30';
-    // $nxt_yr = date('Y',strtotime($date. '+1 years'));
-    // if($date != ){
-    //
-    // }
 
     if(isset($_POST["accept"])){
         if($remaining  > 0 && $remaining <= 5){

@@ -75,11 +75,6 @@ try {
 
     $mail->send();
     $mail->ClearAllRecipients();
-    echo "
-        <script>
-            alert('Email sucessfully sent, please check your email.');
-            window.location='../admin/user_information/user_information.php';
-        </script>";
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
