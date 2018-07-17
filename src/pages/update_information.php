@@ -704,7 +704,7 @@
 						<div class="row">
 							<div class="form-group col d-none" id="elem_name">
 								<label for="school_name">Name of School</label>
-								<input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="elem_school_name" id="elem_school_name" placeholder="Name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 							<script>
 								$(function() {
@@ -764,7 +764,7 @@
 						<div class="row">
 							<div class="form-group col d-none" id="sec_name">
 								<label for="school_name">Name of School</label>
-								<input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="sec_school_name" id="sec_school_name" placeholder="Name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 							<script>
 								$(function() {
@@ -828,7 +828,7 @@
 						<div class="row">
 							<div class="form-group col d-none" id="col_name">
 								<label for="school_name">Name of School</label>
-								<input type="text" name="col_school_name" id="col_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="col_school_name" id="col_school_name" placeholder="Name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 
 							<script>
@@ -889,7 +889,7 @@
 						<div class="row">
 							<div class="form-group col d-none" id="post_name">
 								<label for="school_name">Name of School</label>
-								<input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name of School" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="pos_school_name" id="pos_school_name" placeholder="Name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 
 							<script>
