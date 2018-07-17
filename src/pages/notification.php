@@ -86,24 +86,31 @@
 					<table class="table" id="table2">
 						<thead>
 							<tr class="table-header">
-								<th style="width:550px;">Date Filed</th>
-								<th style="width:60px;">Reason</th>
+								<th style="width:550px;">Reason</th>
+								<th style="width:50px;">Date Filed</th>
 								<th style="width:60px;">Status</th>
 							</tr>
 						</thead>
 
 						<?php
-					$sql2 = "SELECT * FROM leave_req where user_id=64;";
+					$sql2 = "SELECT * FROM leave_req where user_id='$user_id';";
 					$result2 = $connect->query($sql2);
 
 					if($result2-> num_rows > 0){
 						while($row2 = mysqli_fetch_array($result2)){
+							if($row2['status'] == "pending") {
+								$status = "<td style='color: #e6b800;'>Pending</td>";
+							}elseif($row2['status'] == "accepted") {
+								$status = "<td style='color: green;'>Accepted</td>";
+							}else {
+								$status = "<td style='color: red;'>Rejected</td>";
+							}
 							//print data in table
 							echo "
 								<tr class='table-data'>
-									<td>". $row2["date_filed"] ."</td>
 									<td>". $row2["reason"] ."</td>
-									<td>". $row2["status"] ."</td>
+									<td>". $row2["date_filed"] ."</td>
+									$status
 								</tr>";
 						}
 					}

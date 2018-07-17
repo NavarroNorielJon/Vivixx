@@ -25,7 +25,7 @@
 
 	</head>
 
-	<body style="background-color: #e6e6e6;">
+	<body style="background-color:#f5f5f0;">
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
 
@@ -140,12 +140,12 @@
 			});
 			$("#s_date").datepicker({
 				dateFormat: 'yy-mm-dd',
-				minDate: new Date((new Date()).setDate(new Date().getDate() +20))
+				minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
 			});
 			$("#e_date").datepicker({
 				dateFormat: 'yy-mm-dd'
 			});
-			$(function(){
+			$(function() {
 				$("#s_date").datepicker({
 					dateFormat: 'yy-mm-dd'
 				}).bind("change", function() {

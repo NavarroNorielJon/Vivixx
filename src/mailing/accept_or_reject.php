@@ -21,6 +21,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $password = $row['password'];
         $username = $row['username'];
+		$firstname = $row['first_name'];
     }
 } else {
     echo "
@@ -72,8 +73,8 @@ try {
         $body .= "<div id='main_content'>";
         $body .= "
         <h1>Leave Request Accepted</h1>
-        <p>You have requested for a leave request and it was accepted</p>";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
+        <p>Dear $firstname, your leave request has been accepted.</p>";
+        $body .= "<p>If you did not request for any leave request, ignore this message</p>";
         $body .= "</div>";
 
         $mail->isHTML(true); // Set email format to HTML
@@ -89,9 +90,8 @@ try {
         $body .= "<div id='main_content'>";
         $body .= "
         <h1>Leave Request Rejected</h1>
-        <p>You have requested for a leave request and it was rejected</p>
-        ";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
+        <p>Dear $firstname, your leave request has been rejected, if you have any questions please head to the HR office.</p>";
+        $body .= "<p>If you did not request for a leave request, ignore this message</p>";
         $body .= "</div>";
 
         $mail->isHTML(true); // Set email format to HTML
