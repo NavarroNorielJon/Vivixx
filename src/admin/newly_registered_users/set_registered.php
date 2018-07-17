@@ -25,7 +25,7 @@
 
 						<div class="form-group">
 							<label>Department</label>
-							<input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" disabled="disabled" value="<?php echo explode(" | ",$row['department'])[0]?>">
+							<input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" readonly value="<?php echo explode(" | ",$row['department'])[0]?>">
 						</div>
 
 						<div class="form-group">
@@ -50,20 +50,20 @@
                                     }else if($main === "Virtual Assistant"){
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
-                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option selected required="require" readonly>Choose Here:</option>
                                         <option value="Indesigner">Indesigner</option>
                                         <option value="Web Developer">Web Developer</option>
                                         </select>';
                                     }else if ($main === "Security") {
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
-                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option selected required="require" readonly>Choose Here:</option>
                                         <option value="Security">Security</option>
                                         </select>';
                                     }else {
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
-                                        <option selected required="require" disabled>Choose Here:</option>
+                                        <option selected required="require" readonly>Choose Here:</option>
                                         <option value="Housekeeping">Housekeeping</option>
                                         <option value="Utilities">Utilities</option>
                                         </select>';
@@ -75,7 +75,7 @@
 						<div class="form-group">
 							<label>Employee Status</label>
 							<select class="custom-select form-control" name="employee_status" id="status">
-                                    <option selected disabled>Choose Here:</option>
+                                    <option selected readonly>Choose Here:</option>
                                     <option value="Freelance">Freelance</option>
                                     <option value="Project Based">Project Based</option>
                                     <option value="Probationary">Probationary</option>
@@ -90,7 +90,7 @@
 					</form>
 					<div style="text-align:right">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-						<button onclick='set_user();' disabled="disabled" class="btn btn-success" id="update">Update</button>
+						<button onclick='set_user();' disabled class="btn btn-success" id="update">Update</button>
 					</div>
 				</div>
 			</div>
