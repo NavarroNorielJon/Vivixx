@@ -2,6 +2,7 @@
 	ini_set('max_execution_time', 300);
 	include '../../utilities/session.php';
 	$connect = Connect();
+	error_reporting(0);
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -17,6 +18,8 @@
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
 		<link rel="stylesheet" href="../../style/jquery-ui.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/richtext.min.css">
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -33,6 +36,9 @@
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
+		<script src="../style/jquery.richtext.min.js"></script>
+		
+		
 
 	</head>
 
@@ -50,7 +56,7 @@
 					</div>
 
 					<div class="col-2">
-						<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
+						<a href="#!" data-toggle="modal" data-target="#add-announcement-form" onclick="removeToolbar()" class="btn btn-primary">
 						Add Announcement
 					</a>
 					</div>
@@ -151,24 +157,26 @@
                                 	<option value="Video ESL">Video ESL</option>
                                 	<option value="Virtual Assistant">Virtual Assistant</option>
 									<option value="Maintenance">Maintenance</option>
-                        		</select>
+                        			</select>
 								</div>
 							</div>
 
 							<label for="text">Content:</label>
-							<div class="d-flex ">
+							<div class="d-flex">
+							<input type="hidden" name="body">
 								<div class="p-2" id="border">
-									<p contenteditable="true" id="editable"></p>
-									<textarea hidden class="form-control" name="body" id='text' placeholder="Content" column="5" required></textarea>
+									<!-- <p contenteditable="true" id="editable"></p> -->
+									<textarea class="form-control body" name="body" id='text' placeholder="Content" column="5" required></textarea>
 									<div class="text-center">
-										Remaining characters: <span id="totalChars">1500</span><br/>
+										Remaining characters: <span id="totalChars">1500</span><br>
 									</div>
 								</div>
 							</div>
+							
 
 							<span class="btn btn-default btn-file">
-							<input type="file" name="file[]" multiple>
-						</span>
+								<input type="file" name="file[]" multiple>
+							</span>
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -205,6 +213,7 @@
 		</script>
 
 		<script>
+		
 			$('#department').multiselect({
 				templates: {
 					li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
@@ -216,12 +225,7 @@
 					"columnDefs": [{
 							"orderable": false,
 							"targets": [4, 5]
-						},
-						{
-							"width": "200px",
-							"targets": 3
 						}
-
 					]
 				});
 				$('#table').DataTable();
@@ -269,6 +273,7 @@
 			//script for calling modal
 			$(document).ready(function() {
 				$('.edit').click(function(e) {
+					$('.richText-toolbar').remove();
 					e.preventDefault();
 					$.ajax({
 						url: $(this).attr('href'),
@@ -298,34 +303,37 @@
 
 
 			};
+			$('.body').richText();
+			let removeToolbar = function(){
+				$('.richText-toolbar').remove();
+			}
+			// $(document).ready(function() {
+			// 	var content_id = 'editable';
 
-			$(document).ready(function() {
-				var content_id = 'editable';
+			// 	max = 1499;
 
-				max = 1499;
+			// 	//binding keyup/down events on the contenteditable div
+			// 	$('#' + content_id).keyup(function(e) {
+			// 		check_charcount(content_id, max, e);
+			// 	});
+			// 	$('#' + content_id).keydown(function(e) {
+			// 		check_charcount(content_id, max, e);
+			// 	});
 
-				//binding keyup/down events on the contenteditable div
-				$('#' + content_id).keyup(function(e) {
-					check_charcount(content_id, max, e);
-				});
-				$('#' + content_id).keydown(function(e) {
-					check_charcount(content_id, max, e);
-				});
+			// 	function check_charcount(content_id, max, e) {
+			// 		if (e.which != 8 && $('#' + content_id).text().length > max) {
+			// 			e.preventDefault();
+			// 		}
+			// 	}
+			// 	$('#text').keyup(counter);
+			// 	$('#editable').keyup(function() {
 
-				function check_charcount(content_id, max, e) {
-					if (e.which != 8 && $('#' + content_id).text().length > max) {
-						e.preventDefault();
-					}
-				}
-				$('#text').keyup(counter);
-				$('#editable').keyup(function() {
+			// 		var text = $('#editable').html();
+			// 		$('#text').html(text);
+			// 		counter();
 
-					var text = $('#editable').html();
-					$('#text').html(text);
-					counter();
-
-				});
-			});
+			// 	});
+			// });
 
 			//date range
 			$(function() {
@@ -344,6 +352,7 @@
 			$('#an').addClass('active');
 
 		</script>
+		
 	</body>
-
+	
 	</html>

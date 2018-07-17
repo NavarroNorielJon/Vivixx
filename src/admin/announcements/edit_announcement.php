@@ -4,7 +4,8 @@
     $announcement_id = $_GET["announcement_id"];
     $edit_announcement = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) where announcement_id='$announcement_id';";
     $result = $connect->query($edit_announcement);
-    $row = $result->fetch_assoc();
+	$row = $result->fetch_assoc();
+	error_reporting(0);
 ?>
 	<div class="modal fade" id="edit" tabindex="-1" role="dialog">
 
@@ -57,10 +58,7 @@
 						<div style="text-align:left">
 							<div class="d-flex ">
 								<div class="p-2" id="border">
-									<p contenteditable="true" id="editable">
-									<?php echo $row["announcement"]?>
-									</p>
-									<textarea style="display:none;" class="form-control" name="body" id='text' placeholder="Content" column="5" required><?php echo $row["announcement"]?></textarea>
+									<textarea class="form-control body" name="body" id='text' placeholder="Content" column="5" required><?php echo $row["announcement"]?></textarea>
 									<div class="text-center">
 										Remaining characters: <span id="totalChars">1500</span><br/>
 									</div>
@@ -89,6 +87,9 @@
 	</div>
 
 	<script>
+		$('#edit').on('hidden.bs.modal', function (e) {
+			$('#border div.richText div.richText').remove();
+		});
 		$('#department').multiselect({
 			templates: {
 				li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
@@ -161,33 +162,36 @@
 				$('#totalChars').text(remainder);
 			}
 		};
+		$('.body').richText();
+		
+				$('.richText-toolbar').remove();
+			
+		// //counter for text limit
+		// $(document).ready(function() {
+		// 	var content_id = 'editable';
+		// 	max = 1499;
+		// 	//binding keyup/down events on the contenteditable div
+		// 	$('#' + content_id).keyup(function(e) {
+		// 		check_charcount(content_id, max, e);
+		// 	});
+		// 	$('#' + content_id).keydown(function(e) {
+		// 		check_charcount(content_id, max, e);
+		// 	});
 
-		//counter for text limit
-		$(document).ready(function() {
-			var content_id = 'editable';
-			max = 1499;
-			//binding keyup/down events on the contenteditable div
-			$('#' + content_id).keyup(function(e) {
-				check_charcount(content_id, max, e);
-			});
-			$('#' + content_id).keydown(function(e) {
-				check_charcount(content_id, max, e);
-			});
+		// 	function check_charcount(content_id, max, e) {
+		// 		if (e.which != 8 && $('#' + content_id).text().length > max) {
+		// 			e.preventDefault();
+		// 		}
+		// 	}
+		// 	$('#text').keyup(counter);
+		// 	$('#editable').keyup(function() {
 
-			function check_charcount(content_id, max, e) {
-				if (e.which != 8 && $('#' + content_id).text().length > max) {
-					e.preventDefault();
-				}
-			}
-			$('#text').keyup(counter);
-			$('#editable').keyup(function() {
+		// 		var text = $('#editable').html();
+		// 		$('#text').html(text);
+		// 		counter();
 
-				var text = $('#editable').html();
-				$('#text').html(text);
-				counter();
-
-			});
-		});
+		// 	});
+		// });
 
 		//date range
 		$(function(){
