@@ -3,7 +3,7 @@
 	$msg_id = $_GET['msg_id'];
 	$subject = $_GET['subject'];
 	$message = $_GET['message'];
-	$message = preg_replace( "/\r|\n/", "", $message );
+	$message = strip_tags($message);
 	$date = $_GET['date'];
 ?>
 <form action="read_message.php" method="post">

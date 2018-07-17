@@ -21,4 +21,4 @@
 <script>
     $("#send_message").submit();
 </script>
-    //header("location: user_information.php");
+ //header("location: user_information.php");
