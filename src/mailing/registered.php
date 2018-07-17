@@ -11,26 +11,11 @@ require 'vendor/autoload.php';
 include '../utilities/db.php';
 $conn = Connect();
 
-$email = $_POST['email'];
-$email = mysqli_real_escape_string($conn, $email);
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
 
-$sql = "SELECT * FROM user where email = '$email';";
-$result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $password = $row['password'];
-        $username = $row['username'];
-    }
-} else {
-    echo "
-            <script>
-                alert('That email is not being used by any account.');
-                window.history.back();
-            </script>
-        ";
-        exit();
-}
 $developmentMode = true;
 $mail = new PHPMailer($developmentMode); // Passing `true` enables exceptions
 try {
@@ -71,33 +56,15 @@ try {
         $body = file_get_contents("style.html");
         $body .= "<div id='main_content'>";
         $body .= "
-        <h1>Leave Request Accepted</h1>
-        <p>You have requested for a leave request and it was accepted</p>";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
+        <h1>Your Account Has been Activated</h1>
+        <p>Your Username is "+. $username .+" and your temporary password is "+. $password .+"</p>";
+        $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
         $body .= "</div>";
 
         $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave Request';
+        $mail->Subject = 'Registered Account';
         $mail->Body = $body;
-        $mail->AltBody = 'You have requested for a leave request';
-
-        $mail->send();
-        $mail->ClearAllRecipients();
-
-    }else{
-        $body = file_get_contents("style.html");
-        $body .= "<div id='main_content'>";
-        $body .= "
-        <h1>Leave Request Rejected</h1>
-        <p>You have requested for a leave request and it was rejected</p>
-        ";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
-        $body .= "</div>";
-
-        $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave Request';
-        $mail->Body = $body;
-        $mail->AltBody = 'You have requested for a leave request';
+        $mail->AltBody = 'Your Account';
 
         $mail->send();
         $mail->ClearAllRecipients();
