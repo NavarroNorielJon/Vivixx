@@ -22,9 +22,9 @@
     $count = mysqli_num_rows($res);
 
     if($count > 0){
-        $new = $count;
+        $new = "(<span style='color:red;'>".$count."</span>)";
     }else{
-        $new ="0";
+        $new ="";
     }
 
 
@@ -33,9 +33,9 @@
     $count1 = mysqli_num_rows($res1);
 
     if($count1 > 0){
-        $leave = $count1;
+        $leave = "(<span style='color:red;'>".$count1."</span>)";
     }else{
-        $leave ="0";
+        $leave ="";
     }
 ?>
 
@@ -64,12 +64,12 @@
 					<button onclick="myFunction()" class="dropbtn">Employees</button>
 					<div id="myDropdown" class="dropdown-content">
 						<a href="../user_information/user_information.php">Employees</a>
-						<a href="../newly_registered_users/newly_registered.php">New Registered Employees(<span style="color:red;"><?php echo $new?></span>)</a>
+						<a href="../newly_registered_users/newly_registered.php">New Registered Employees<?php echo $new?></a>
 					</div>
 				</li>
 
 				<li id="leave_r" class="nav-item">
-					<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request(<span style="color:red;"><?php echo $leave?></span>)</a>
+					<a class="nav-link" href="../leave_request/leave_requests.php">Leave Request<?php echo $leave?></a>
 				</li>
 
 				<li id="pay" class="nav-item">

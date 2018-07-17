@@ -40,7 +40,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css" media="screen, projection">
         <link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-        <link type="text/css" rel="stylesheet" href="../../style/style2.css" media="screen, projection">
         <link rel="stylesheet" href="../../style/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../../style/form-elements.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,7 +131,7 @@
                                     }
                                     ?>
                                     <label for="prof_image">Profile Image</label>
-                                    <input type="file" name="prof_image" id="pro"/>
+                                    <input type="file" name="prof_image" class="form-control" id="pro"/>
                                 </div>
 
                                 <div class="form-group col-4">
@@ -147,7 +146,7 @@
                                     }
                                     ?>
                                     <label for="prof_image">Signature</label>
-                                    <input type="file" name="signature" id="sig"/>
+                                    <input type="file" name="signature" class="form-control" id="sig"/>
                                 </div>
                             </div>
 
@@ -484,7 +483,7 @@
                                     </select>
                                 </div>
 
-                                <div id='others' style='display:none' class="form-group col-4">
+                                <div id='Others' style='display:none' class="form-group col-4">
                                     <label for="other_civil">(Please Specify)</label>
                                     <input id="oth" class="form-control" placeholder="" name="other_civil">
                                 </div>
@@ -1191,20 +1190,7 @@
                                         echo "
                                             <div class='form-group col' id='u4'>
                                                 <label for='yr_grad'>Highest Level</label>
-                                                <select name='pos_old_level' id='pos_old_level' class='form-control'>
-                                                    <option selected='selected' value='".$pyear."'>".$pyear."</option>
-                                                    <option value='None'>None</option>
-                                                    <option value='1st Year'>1st Year</option>
-                                                    <option value='2nd Year'>2nd Year</option>
-                                                    <option value='3rd Year'>3rd Year</option>
-                                                    <option value='4th Year'>4th Year</option>
-                                                    <option value='Grade 7'>Grade 7</option>
-                                                    <option value='Grade 8'>Grade 8</option>
-                                                    <option value='Grade 9'>Grade 9</option>
-                                                    <option value='Grade 10'>Grade 10</option>
-                                                    <option value='Grade 11'>Grade 11</option>
-                                                    <option value='Grade 12'>Grade 12</option>
-                                                </select>
+                                                <input type='text' name='pos_old_level' id='pos_old_level' placeholder='Highest Level' value='".$pyear."' class='form-control' autocomplete='off'>
                                             </div>
                                             ";
                                     }
@@ -1219,19 +1205,8 @@
 
                                 <div class="form-group col" id="u4" style="display:none">
                                     <label for="high_level">Highest Level</label>
-                                    <select name='pos_high_level' id='pos_high_level' class='form-control'>
-                                        <option value='None'>None</option>
-                                        <option value='1st Year'>1st Year</option>
-                                        <option value='2nd Year'>2nd Year</option>
-                                        <option value='3rd Year'>3rd Year</option>
-                                        <option value='4th Year'>4th Year</option>
-                                        <option value='Grade 7'>Grade 7</option>
-                                        <option value='Grade 8'>Grade 8</option>
-                                        <option value='Grade 9'>Grade 9</option>
-                                        <option value='Grade 10'>Grade 10</option>
-                                        <option value='Grade 11'>Grade 11</option>
-                                        <option value='Grade 12'>Grade 12</option>
-                                    </select>
+                                    <input type="text" name="pos_high_level" id="pos_high_level" placeholder="Highest Level" class="form-control" autocomplete="off">
+
                                 </div>
 
                             </div>
@@ -1261,13 +1236,12 @@
                                     </div>
                                 </div>
                                 <br>
-                                <super>(Your alternate address when you are not at Main City Address)</super>
                                 <div class="row">
                                     <div class="form-group col">
                                         <label for="secondary_add">
-                                            <h6>Secondary City Address</h6>
+                                            <h6>Baguio City Address</h6>
                                         </label>
-                                        <input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address" value="<?php if ($row5['secondary_address'] !== "") {echo $row5['secondary_address'];}?>">
+                                        <input type="text" name="secondary_add" class="form-control text-transform" placeholder="Baguio City Address" value="<?php if ($row5['secondary_address'] !== "") {echo $row5['secondary_address'];}?>">
                                     </div>
 
                                     <div class="form-group col">
@@ -1279,14 +1253,14 @@
                                 </div>
                             </div>
                             <hr>
-                            <h6>Your Housemates</h6>
+                            <h6>Your Housemates/Guardians</h6>
                             <?php
                                 $c = 0;
                                 while ($row6 = mysqli_fetch_array($result6)) {
                                     if ($row6['h_relationship'] != null) {
                                         echo "<div class='row'>
                                             <div class='form-group col'>
-                                                <label for='hname'>Name of Housemate</label>
+                                                <label for='hname'>Name of Housemate/Guardian</label>
                                                 <input type='text' name='hname[]' id='hname' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                             </div>
 
@@ -1309,7 +1283,7 @@
                                     } else {
                                         echo "<div class='row'>
                                             <div class='form-group col'>
-                                                <label for='hname'>Name of Housemate</label>
+                                                <label for='hname'>Name of Housemate/Guardian</label>
                                                 <input type='text' name='hname[]' id='hname' value='".$row6['h_name']."' placeholder='name' onkeypress='alphabetInput(event)' class='form-control text-transform' autocomplete='off'>
                                             </div>
 
@@ -1330,8 +1304,6 @@
                                             </div>
                                         </div>";
                                     }
-
-
                                 }
                              ?>
 
@@ -1976,7 +1948,6 @@
             method: 'post'
         });
         $('#emp').addClass('active');
-
         </script>
     </body>
 

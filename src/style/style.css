@@ -1,4 +1,8 @@
 /* index */
+.logout {
+	color: #fff;
+	text-decoration: none;
+}
 
 .index {
 	margin: 0;
@@ -97,9 +101,12 @@
 
 /*end of forgot password modal*/
 
-/*signup modal*/
-
-/*end of signup modal*/
+.modal-title{
+	color: black;
+}
+.modal-body{
+	color: black;
+}
 
 /* end of index */
 
@@ -309,7 +316,7 @@
 }
 
 .update-information .row .container #update_form {
-	margin: 15% 0 0 0;
+	margin: 8% 0 3% 0;
 }
 
 .update-information .update-information-header {

@@ -30,23 +30,29 @@
 			<?php include 'fragments/sidebar.php'; ?>
 
 			<div class="leave">
-				<form id="leave_form" action="../utilities/leave_request" method="POST">
+				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
 					<h1 class="text-center leave-header">LEAVE APPLICATION FORM</h1>
 					<script>
 						$(function() {
-							$('#reason1').change(function() {
+							$('#type').change(function() {
 								$('#others').hide();
-								$('#Emergency').hide();
+								$('#attach').hide();
 								$('#' + $(this).val()).show();
-								if ($('#reason1').val() === "Emergency") {
-									$('#emerge').attr('required', 'true');
-									$('#other_reason').removeAttr('required');
-								} else if ($('#reason1').val() == "others") {
+								if ($('#type').val() === "Emergency") {
+									$('#others').show();
+									$('#attach').show();
 									$('#other_reason').attr('required', 'true');
-									$('#emerge').removeAttr('required');
+									$('#attachment').attr('required', 'true');
+								} else if ($('#type').val() === "others") {
+									$('#attach').show();
+									$('#other_reason').attr('required', 'true');
+									$('#attachment').attr('required', 'true');
+								} else if ($('#type').val() === "Sick Leave") {
+									$('#attach').show();
+									$('#attachment').attr('required', 'true');
 								} else {
-									$('#emerge').removeAttr('required');
 									$('#other_reason').removeAttr('required');
+									$('#attachment').removeAttr('required');
 								}
 							});
 						});
@@ -55,7 +61,7 @@
 					<div>
 						<div>
 							<label>Leave Type</label>
-							<select class="custom-select form-group" name="type" id="reason1" required>
+							<select class="custom-select form-group" name="type" id="type" required>
 								<option selected="selected" disabled="disabled">Choose Here:</option>
 								<option value="Vacation">Vacation</option>
 								<option value="Emergency">Emergency Leave</option>
@@ -70,9 +76,9 @@
 							<label for="other_reason">Reason</label>
 							<input type="text" class="form-control" placeholder="Reason" name="others" id="other_reason">
 						</div>
-						<div id="Emergency" class="form-group" style='display:none'>
-							<label>Reason</label>
-							<input type="text" class="form-control" placeholder="Reason" name="emer" id="emerge">
+						<div id="attach" class="form-group" style='display:none'>
+							<label for="other_reason">Supporting Document</label>
+							<input type="file" class="form-control" name="attachment" id="attachment">
 						</div>
 
 						<div class="row">

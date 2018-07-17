@@ -72,7 +72,23 @@ $('#leave_form').ajaxForm({
         });
     }
 });
-
+$('#login').ajaxForm({
+    url: '../utilities/login.php',
+    method: 'post',
+    success: function (data) {
+        if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
+            || data === 'Invalid Username or password'){
+            swal({
+                title: data,
+                icon:'error',
+                timer: 2500
+            });
+        } else {
+            console.log(data);
+            window.location = data;
+        }
+    }
+});
 $('#reset_form').ajaxForm({
     url: '../mailing/send_reset.php',
     method: 'post',
