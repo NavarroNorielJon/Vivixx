@@ -33,7 +33,6 @@
 	</head>
 
 	<body class="background">
-		<?php include '../utilities/check_user.php';?>
 
 		<div class="wrapper">
 			<?php include '../fragments/navbar.php'; ?>
@@ -169,7 +168,7 @@
 				$('#table').DataTable();
 			});
 			$('#acc').addClass('active');
-			
+
 		</script>
 	</body>
 

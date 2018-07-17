@@ -45,12 +45,7 @@
 
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 							<label for="regpass">Password</label>
-							<input type="password" name="password" id="regpass" class="form-control" placeholder="Password" required="required">
-						</div>
-
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-							<label for="cpassword">Confirm Password</label>
-							<input type="password" name="confirm_password" id="cpassword" class="form-control" placeholder="Confirm Password" required="required">
+							<input type="text" name="password" id="regpass" class="form-control" placeholder="Password" required="required">
 						</div>
 					</div>
 
@@ -96,9 +91,6 @@
             password: {
                 required: true,
                 minlength: 8,
-            },
-            confirm_password: {
-                equalTo: "#regpass"
             }
         }
     });
@@ -118,7 +110,6 @@
 					swal({
 		                type: 'success',
 		                title: 'Successfully Registered',
-		                text: "Your username is " + dat.username,
 		                icon: 'success',
 		                showConfirmButton: true,
 		            }).then(function(){
@@ -128,12 +119,13 @@
 			                icon: 'success',
 			                showConfirmButton: false,
 						}).then(function (){
-							window.location = '/';
+							location.reload();
 						});
 		            });
 				}
 			});
         }
     });
+
 
 </script>
