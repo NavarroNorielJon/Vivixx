@@ -122,8 +122,8 @@
                     data: {
                         subject: data.subject,
                         date: data.date,
-                        body:data.body,
-                        email:data.email,
+                        body: data.body,
+                        email: data.email,
                     },
                     success: function (){
                         swal({
