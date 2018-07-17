@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="col-4">
-							<div style="height:264px; width:264.5px;border-style: groove; border-width: 7px; border-color: #f5f5f0;">
+							<div style="height:264px; width:264.5px;border-style: inset; border-width: 7px; border-color: black;">
 								<?php echo $image;?>
 							</div>
 						</div>
