@@ -51,11 +51,10 @@
 						<?php
 					$sql = "SELECT * from notification where user_id = '$user_id';";
 					$result = $connect->query($sql);
-        			$row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-						
+
 					if($result-> num_rows > 0){
-						while($row = $result->fetch_assoc()){
-							$button = "				
+						while($row = mysqli_fetch_array($result)){
+							$button = "
 								<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
 							//print data in table
 							if($row["status"] == "new"){
@@ -65,7 +64,7 @@
 										<td><strong>". $row["date"] ."</strong></td>
 										<td><strong>New</strong></td>
 										<td>". $button ."</td>
-									</tr>";	
+									</tr>";
 							}else {
 								echo "
 									<tr class='table-data'>
@@ -74,7 +73,7 @@
 										<td>Read</td>
 										<td>". $button ."</td>
 									</tr>
-									";	
+									";
 							}
 						}
 					}
@@ -94,31 +93,18 @@
 						</thead>
 
 						<?php
-					$sql2 = "SELECT * from leave_req where user_id = '$user_id';";
+					$sql2 = "SELECT * FROM leave_req where user_id=64;";
 					$result2 = $connect->query($sql2);
-        			$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
-						
+
 					if($result2-> num_rows > 0){
-						while($row2 = $result2->fetch_assoc()){
+						while($row2 = mysqli_fetch_array($result2)){
 							//print data in table
-							if($row["status"] == "new"){
-								echo "
-									<tr class='table-data'>
-										<td><strong>". $row2["date_filed"] ."</strong></td>
-										<td><strong>". $row2["reason"] ."</strong></td>
-										<td><strong>". $row2["status"] ."</strong></td>
-										<td>". $button ."</td>
-									</tr>";	
-							}else {
-								echo "
-									<tr class='table-data'>
-										<td>". $row["subject"] ."</td>
-										<td>". $row["date"] ."</td>
-										<td>Read</td>
-										<td>". $button ."</td>
-									</tr>
-									";	
-							}
+							echo "
+								<tr class='table-data'>
+									<td>". $row2["date_filed"] ."</td>
+									<td>". $row2["reason"] ."</td>
+									<td>". $row2["status"] ."</td>
+								</tr>";
 						}
 					}
 

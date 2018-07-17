@@ -46,11 +46,8 @@
 
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
-<<<<<<< HEAD
-                            <input type="text" class="form-control-plaintext" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
-=======
-                            <input type="date" class="form-control-plaintext" style="font-size:1.5rem;" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
->>>>>>> f1479eb3c3679e20282581464c85dc16e604b17c
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
+
                         </div>
 
                         <div class="form-group col">
@@ -135,7 +132,7 @@
                         icon: 'error',
                         showConfirmButton: true,
                     }).then(function(){
-                        window.location = '../leave_request/leave_requests';
+                        location.reload();
                     });
                 } else if (dat.stat == "Rejected") {
                     $.post({
@@ -158,7 +155,7 @@
                                     icon: 'success',
                                     showConfirmButton: true
                                 }).then(function (){
-                                    window.location = '../leave_request/leave_requests';
+                                    location.reload();
                                 });
                             });
                         }
@@ -171,7 +168,7 @@
                         icon: 'error',
                         showConfirmButton: true,
                     }).then(function(){
-                        window.location = '../leave_request/leave_requests';
+                        location.reload();
                     });
                 } else if (dat.stat == "Accepted") {
                     $.post({
@@ -194,7 +191,7 @@
                                     icon: 'success',
                                     showConfirmButton: true
                                 }).then(function (){
-                                    window.location = '../leave_request/leave_requests';
+                                    location.reload();
                                 });
                             });
                         }
