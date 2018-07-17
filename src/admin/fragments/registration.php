@@ -13,7 +13,6 @@ if (!empty($_POST['middle_name'])) {
 $last_name = ucwords(mysqli_real_escape_string($connect, $_POST['last_name']));
 $email = mysqli_real_escape_string($connect, $_POST['email']);
 $password = mysqli_real_escape_string($connect, $_POST['password']);
-$cpassword = mysqli_real_escape_string($connect, $_POST['confirm_password']);
 
 
 $stmt = "SELECT username from user";
