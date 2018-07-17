@@ -213,10 +213,10 @@
 }
 
 .images {
-	max-height: 400px;
-	max-width: 1050px;
-	min-height: 400px;
-	min-width: 1050px;
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
 }
 
 /*end*/

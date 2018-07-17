@@ -36,7 +36,7 @@
 					<div>
 						<div class="MS-content">
 							<?php
-								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments = 'All' group by 1;";
+								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments like('%All%') group by 1;";
 								$announcement = mysqli_query($connect, $query);
 								if($announcement->num_rows >	 1 ){
 									while ($row = mysqli_fetch_array($announcement)) {
@@ -45,11 +45,7 @@
 											<div class='imgTitle'>
 												<h2 class='blogTitle'>".$row['subject']."</h2>
 											";
-										if ($row['attachment'] != null) {
-											echo "<img class='images' src='data:image;base64,".$row['attachment']."'>";
-										} else {
-											echo "<img class='images' src='../img/announcement.jpg'>";
-										}
+										echo "<img class='images' src='../img/announcement-default1.jpg'>";
 										echo "
 											</div>
 											<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
@@ -105,6 +101,7 @@
 				interval: 3500
 			});
 			$('#home').addClass('active');
+
 		</script>
 
 	</body>
