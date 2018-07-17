@@ -22,8 +22,8 @@
 	$row1 = mysqli_fetch_array($res, MYSQLI_ASSOC);
 	$date_hired = $row1['date_hired'];
 	$today = date("Y-m-d");
-    $diff = date_diff(date_create($date_hired),date_create($today));
-	$diff = $diff->format('%y');
+    $diff = date_diff(date_create($date_hired),date_create($today))->y;
+
 ?>
 	<nav class="sidebar">
 		<div class="sidebar-header">

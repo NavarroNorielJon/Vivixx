@@ -986,7 +986,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of Housemate</label>
-								<input type="text" name="hname[]" id="hname1" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
+								<input type="text" name="hname[]" id="hname1" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
 							</div>
 
 							<div class="form-group col">
@@ -1010,7 +1010,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of Housemate</label>
-								<input type="text" name="hname[]" id="hname2" placeholder="name of housemate" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="hname[]" id="hname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 
 							<div class="form-group col">
@@ -1035,7 +1035,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of Relative</label>
-								<input type="text" name="rname[]" id="rname1" placeholder="name of relative" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
+								<input type="text" name="rname[]" id="rname1" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
 							</div>
 
 							<div class="form-group col">
@@ -1059,7 +1059,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of relative</label>
-								<input type="text" name="rname[]" id="rname2" placeholder="name of relative" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
+								<input type="text" name="rname[]" id="rname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
 							</div>
 
 							<div class="form-group col">
