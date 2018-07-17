@@ -10,7 +10,6 @@
 			});
 		});
 	});
-
 </script>
 
 <?php
@@ -18,6 +17,13 @@
 	$result = $connect->query($sql);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
 	$count = mysqli_num_rows($result);
+	$stmt= "SELECT * FROM employee_info WHERE user_id='$user_id';";
+	$res = mysqli_query($connect,$stmt);
+	$row1 = mysqli_fetch_array($res, MYSQLI_ASSOC);
+	$date_hired = $row1['date_hired'];
+	$today = date("Y-m-d");
+    $diff = date_diff(date_create($date_hired),date_create($today));
+	$diff = $diff->format('%y');
 ?>
 	<nav class="sidebar">
 		<div class="sidebar-header">
@@ -73,20 +79,40 @@
                 <i class="material-icons">work</i>
             </a>
 				<ul class="collapse list-unstyled" id="requests">
-					<li class="active">
-						<input name='edit' value='salary' style='display: none;'>
-						<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
-					</li>
-					<li class="active">
-						<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
-					</li>
 
-					<li class="active">
-						<a href="fragments/salary_request.php" data-target="#salary" class="icon">SR</a>
-					</li>
-					<li class="active">
-						<a href="leave_request_form" class="icon">LR</a>
-					</li>
+					<?php
+					if($diff>=1 && $date_hired != ""){
+						echo '
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+							</li>
+							<li class="active">
+								<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
+							</li>
+
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request.php" data-target="#salary" class="icon">SR</a>
+							</li>
+							<li class="active">
+								<a href="leave_request_form" class="icon">LR</a>
+							</li>
+						';
+					} else {
+						echo '
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+							</li>
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request.php" data-target="#salary" class="icon">SR</a>
+							</li>
+						';
+					}
+					?>
+
 				</ul>
 			</li>
 			<hr>

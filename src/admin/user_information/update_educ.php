@@ -12,10 +12,18 @@
 
     if ($elem_status === "g1") {
         $elem_status = "Graduate";
-        $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_yr_grad']));
+        if (!empty($_POST['elem_old_yr'])) {
+            $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_old_yr']));
+        } else{
+            $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_yr_grad']));
+        }
     } elseif ($elem_status === "u1") {
         $elem_status = "Undergraduate";
-        $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_high_level']));
+        if (!empty($_POST['elem_old_level'])) {
+            $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_old_level']));
+        } else {
+            $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_high_level']));
+        }
     } else {
         if ($elem_status === "Graduate") {
             $elem_res = ucwords(mysqli_real_escape_string($connect, $_POST['elem_old_yr']));
@@ -29,10 +37,18 @@
 
     if ($sec_status === "g2") {
         $sec_status = "Graduate";
-        $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
+        if (!empty($_POST['sec_old_yr'])) {
+            $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_old_yr']));
+        } else{
+            $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_yr_grad']));
+        }
     } elseif ($sec_status === "u2") {
         $sec_status = "Undergraduate";
-        $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_high_level']));
+        if (!empty($_POST['sec_old_level'])) {
+            $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_old_level']));
+        } else {
+            $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_high_level']));
+        }
     } else {
         if ($sec_status === "Graduate") {
             $sec_res = ucwords(mysqli_real_escape_string($connect, $_POST['sec_old_yr']));
@@ -46,10 +62,18 @@
 
     if ($col_status === "g3") {
         $col_status = "Graduate";
-        $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
+        if (!empty($_POST['col_old_yr'])) {
+            $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_old_yr']));
+        } else{
+            $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_yr_grad']));
+        }
     }elseif ($col_status === "u3") {
         $col_status = "Undergraduate";
-        $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_high_level']));
+        if (!empty($_POST['col_old_level'])) {
+            $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_old_level']));
+        } else {
+            $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_high_level']));
+        }
     } else {
         if ($col_status === "Graduate") {
             $col_res = ucwords(mysqli_real_escape_string($connect, $_POST['col_old_yr']));
@@ -63,10 +87,18 @@
 
     if ($post_status === "g4") {
         $post_status = "Graduate";
-        $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
+        if (!empty($_POST['post_old_yr'])) {
+            $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['post_old_yr']));
+        } else{
+            $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_yr_grad']));
+        }
     }elseif ($post_status === "u4") {
         $post_status = "Undergraduate";
-        $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_high_level']));
+        if (!empty($_POST['pos_old_level'])) {
+            $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_old_level']));
+        } else {
+            $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_high_level']));
+        }
     } else {
         if ($post_status === "Graduate") {
             $post_res = ucwords(mysqli_real_escape_string($connect, $_POST['pos_old_yr']));
