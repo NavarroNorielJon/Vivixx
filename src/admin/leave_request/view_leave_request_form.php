@@ -121,11 +121,9 @@
         $('#accept_reject').ajaxForm({
             url: 'accept_or_reject.php',
             method: 'post',
-            dataType: 'html',
+
             success: function (data) {
-                alert(data);
-                let dat = JSON.parse(data);
-                alert(dat.stat);
+                let dat = data;
                 if(dat.stat == "User has no more remaining leave credits"){
                     swal({
                         type: 'error',
@@ -137,18 +135,27 @@
                     });
                 } else if (dat.stat == "Rejected") {
                     $.post({
-                        url: 'send_mail.php',
+                        url: '../../mailing/accept_or_reject.php',
                         data: {
-                            status: data.status,
-                            email: data.email
-                        }, success: function () {
+                            status: dat.status,
+                            email: dat.email
+                        },
+                        success: function () {
                             swal({
                                 type: 'error',
                                 title: dat.stat,
                                 icon: 'error',
-                                showConfirmButton: true,
-                            }).then(function(){
-                                window.location = '../leave_request/leave_requests';
+                                showLoaderOnConfirm: true
+
+                            }).then(function (){
+                                swal({
+                                    type: 'success',
+                                    title: 'Email Successfully Sent',
+                                    icon: 'success',
+                                    showConfirmButton: true
+                                }).then(function (){
+                                    window.location = '../leave_request/leave_requests';
+                                });
                             });
                         }
                     });
@@ -166,16 +173,25 @@
                     $.post({
                         url: '../../mailing/accept_or_reject.php',
                         data: {
-                            status: data.status,
-                            email: data.email
-                        }, success: function () {
+                            status: dat.status,
+                            email: dat.email
+                        },
+                        success: function () {
                             swal({
                                 type: 'success',
                                 title: dat.stat,
                                 icon: 'success',
                                 showConfirmButton: true,
-                            }).then(function(){
-                                window.location = '../leave_request/leave_requests';
+                                showLoaderOnConfirm: true
+                            }).then(function (){
+                                swal({
+                                    type: 'success',
+                                    title: 'Email Successfully Sent',
+                                    icon: 'success',
+                                    showConfirmButton: true
+                                }).then(function (){
+                                    window.location = '../leave_request/leave_requests';
+                                });
                             });
                         }
                     });

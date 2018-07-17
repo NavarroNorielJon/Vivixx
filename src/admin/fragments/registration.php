@@ -47,7 +47,7 @@ if (!empty($middle_name) || $middle_name != '') {
     }
 }
 
-
+$pass = $password;
 $password = password_hash($password, PASSWORD_DEFAULT);
 $insert_stmt = "INSERT INTO `user` (`username`,`email`,`password`,`date_registered`) VALUES ('$username','$email','$password',NOW());";
 if ($connect->query($insert_stmt) === true) {
@@ -62,5 +62,7 @@ if ($connect->query($insert_stmt) === true) {
     }
     $connect->query($insert_stmt);
 }
+
 Disconnect($connect);
-echo $username;
+header('Content-Type: application/json');
+echo json_encode(['username'=>$username, 'email'=>$email, 'password'=>$pass]);
