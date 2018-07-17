@@ -1,3 +1,4 @@
+
 <?php
     include '../../utilities/db.php';
     $connect = Connect();
@@ -10,7 +11,8 @@
 	$user_middle = $_GET["mname"];
     $user_last = $_GET["lname"];
 ?>
-    <form action="accept_or_reject.php" method="POST">
+
+    <form id="accept_reject" action="accept_or_reject.php" method="POST">
     <div class="modal fade" id="request" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document" style="min-width: 130vh; max-width: 130vh;">
             <div class="modal-content"  style="border-radius: 0;">
@@ -38,13 +40,17 @@
                     <div class="row">
                         <div class="form-group col">
                             <label>Position</label>
-                            <input type="text" class="form-control-plaintext" id="position" name="position" readonly required value="<?php echo $row['position']?>">
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="position" name="position" readonly required value="<?php echo $row['position']?>">
 
                         </div>
 
                         <div class="form-group col">
                             <label for="date_hired">Date Hired</label>
+<<<<<<< HEAD
                             <input type="text" class="form-control-plaintext" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
+=======
+                            <input type="date" class="form-control-plaintext" style="font-size:1.5rem;" id="date_hired" name="dateHired" readonly required value="<?php echo $row['date_hired']?>">
+>>>>>>> f1479eb3c3679e20282581464c85dc16e604b17c
                         </div>
 
                         <div class="form-group col">
@@ -116,6 +122,71 @@
     </div>
     </form>
     <script>
+        $('#accept_reject').ajaxForm({
+            url: 'accept_or_reject.php',
+            method: 'post',
+            dataType: 'html',
+            success: function (data) {
+                alert(data);
+                let dat = JSON.parse(data);
+                alert(dat.stat);
+                if(dat.stat == "User has no more remaining leave credits"){
+                    swal({
+                        type: 'error',
+                        title: dat.stat,
+                        icon: 'error',
+                        showConfirmButton: true,
+                    }).then(function(){
+                        window.location = '../leave_request/leave_requests';
+                    });
+                } else if (dat.stat == "Rejected") {
+                    $.post({
+                        url: 'send_mail.php',
+                        data: {
+                            status: data.status,
+                            email: data.email
+                        }, success: function () {
+                            swal({
+                                type: 'error',
+                                title: dat.stat,
+                                icon: 'error',
+                                showConfirmButton: true,
+                            }).then(function(){
+                                window.location = '../leave_request/leave_requests';
+                            });
+                        }
+                    });
+
+                } else if (dat.stat == "Error in updating status") {
+                    swal({
+                        type: 'error',
+                        title: dat.stat,
+                        icon: 'error',
+                        showConfirmButton: true,
+                    }).then(function(){
+                        window.location = '../leave_request/leave_requests';
+                    });
+                } else if (dat.stat == "Accepted") {
+                    $.post({
+                        url: '../../mailing/accept_or_reject.php',
+                        data: {
+                            status: data.status,
+                            email: data.email
+                        }, success: function () {
+                            swal({
+                                type: 'success',
+                                title: dat.stat,
+                                icon: 'success',
+                                showConfirmButton: true,
+                            }).then(function(){
+                                window.location = '../leave_request/leave_requests';
+                            });
+                        }
+                    });
+
+                }
+            }
+        });
         $(document).ready(function(){
             $("#request").modal("show");
         });

@@ -27,6 +27,9 @@
 		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
 		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
+		<script src="../../script/jquery.validate.min.js"></script>
+		<script src="../../script/additional-methods.min.js"></script>
+		<script src="../../script/alerts.js"></script>
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
@@ -215,9 +218,10 @@
 							"targets": [4, 5]
 						},
 						{
-							"width": "400px",
+							"width": "200px",
 							"targets": 3
 						}
+
 					]
 				});
 				$('#table').DataTable();
