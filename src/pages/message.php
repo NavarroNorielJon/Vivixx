@@ -7,7 +7,7 @@
 	$date = $_GET['date'];
 ?>
 <form action="read_message.php" method="post">
-	<div class="modal fade message-modal" id="sample" tabindex="-1" role="dialog">
+	<div class="modal fade message-modal" id="sample" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog" role="document" style="min-width: 60%; max-width: 60%;">
 			<div class="modal-content message-content">
 				<input type="hidden" name="msg_id" value="<?php echo $msg_id?>">

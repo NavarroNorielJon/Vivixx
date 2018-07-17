@@ -12,25 +12,13 @@ include '../utilities/db.php';
 $conn = Connect();
 
 $email = $_POST['email'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$username = mysqli_real_escape_string($conn, $username);
 $email = mysqli_real_escape_string($conn, $email);
+$password = mysqli_real_escape_string($conn, $password);
 
-$sql = "SELECT * FROM user where email = '$email';";
-$result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $password = $row['password'];
-        $username = $row['username'];
-    }
-} else {
-    echo "
-            <script>
-                alert('That email is not being used by any account.');
-                window.history.back();
-            </script>
-        ";
-        exit();
-}
 $developmentMode = true;
 $mail = new PHPMailer($developmentMode); // Passing `true` enables exceptions
 try {
@@ -66,45 +54,23 @@ try {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content
-    if($_POST["status"] == "accepted"){
+    $body = file_get_contents("style.html");
+    $body .= "<div id='main_content'>";
+    $body .= "
+    <h1>Your Account Has been Activated</h1>
+    <p>Your Username is <strong>". $username ."</strong> and your temporary password is <strong>". $password ."</strong></p>";
+    $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
+    $body .= "</div>";
 
-        $body = file_get_contents("style.html");
-        $body .= "<div id='main_content'>";
-        $body .= "
-        <h1>Leave Request Accepted</h1>
-        <p>You have requested for a leave request and it was accepted</p>";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
-        $body .= "</div>";
+    $mail->isHTML(true); // Set email format to HTML
+    $mail->Subject = 'Registered Account';
+    $mail->Body = $body;
+    $mail->AltBody = 'Your account has been activated';
 
-        $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave Request';
-        $mail->Body = $body;
-        $mail->AltBody = 'You have requested for a leave request';
+    $mail->send();
+    $mail->ClearAllRecipients();
 
-        $mail->send();
-        $mail->ClearAllRecipients();
-
-    }else{
-        $body = file_get_contents("style.html");
-        $body .= "<div id='main_content'>";
-        $body .= "
-        <h1>Leave Request Rejected</h1>
-        <p>You have requested for a leave request and it was rejected</p>
-        ";
-        $body .= "<p>If you didn't request for the leave, ignore this message</p>";
-        $body .= "</div>";
-
-        $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = 'Leave Request';
-        $mail->Body = $body;
-        $mail->AltBody = 'You have requested for a leave request';
-
-        $mail->send();
-        $mail->ClearAllRecipients();
-    }
+    echo "Email sucessfully sent, please check your email.";
 } catch (Exception $e) {
-    echo "
-    <script>
-        alert('Message could not be sent. Mailer Error: , $mail->ErrorInfo');
-    </script>";
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }

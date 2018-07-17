@@ -14,7 +14,6 @@
 		echo "
 		<script>
 			$(function(){
-				$().ready
 			});
 		</script>";
 	}

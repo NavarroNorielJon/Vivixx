@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="../admin/style/datatables.css">
 
 		<!--scripts-->
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-3.3.1.js"></script>
 		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="../script/datatables.min.js"></script>
 		<script type="text/javascript" src="../script/ajax.js"></script>
@@ -43,6 +43,7 @@
 							<tr class="table-header">
 								<th style="width:550px;">Subject</th>
 								<th style="width:60px;">Date</th>
+								<th style="width:60px;">Status</th>
 								<th style="width:60px;">Action</th>
 							</tr>
 						</thead>
@@ -62,6 +63,7 @@
 									<tr class='table-data'>
 										<td><strong>". $row["subject"] ."</strong></td>
 										<td><strong>". $row["date"] ."</strong></td>
+										<td><strong>New</strong></td>
 										<td>". $button ."</td>
 									</tr>";	
 							}else {
@@ -69,6 +71,7 @@
 									<tr class='table-data'>
 										<td>". $row["subject"] ."</td>
 										<td>". $row["date"] ."</td>
+										<td>Read</td>
 										<td>". $button ."</td>
 									</tr>
 									";	
@@ -84,7 +87,6 @@
 			<div id="message"></div>
 		</div>
 
-		<!-- <div id="salary_form"></div> -->
 		<script>
 			$(document).ready(function() {
 				$('.message-modal').click(function(e) {
@@ -97,17 +99,30 @@
 					});
 				});
 			});
-			//script for calling datatables library
+
+
+			//			script for calling datatables library
+			//						$(document).ready(function() {
+			//							$('#table').dataTable({
+			//								"columnDefs": [{
+			//									"order": [
+			//										[2, "asc"]
+			//									],
+			//									"targets": 3
+			//								}]
+			//							});
+			//							$('#table').DataTable();
+			//						});
+			//						$('#notif').addClass('active');
+
 			$(document).ready(function() {
-				$('#table').dataTable({
-					"columnDefs": [{
-						"orderable": false,
-						"targets": 2
-					}]
+				$('#table').DataTable({
+					"order": [
+						[2, "asc"]
+					]
 				});
 				$('#table').DataTable();
 			});
-			$('#notif').addClass('active');
 
 		</script>
 	</body>

@@ -106,15 +106,34 @@
         url: '../fragments/registration.php',
         method: 'post',
         success: function (data) {
-            swal({
-                type: 'success',
-                title: 'Successfully Registered',
-                text: "Your username is " + data,
-                icon: 'success',
-                showConfirmButton: true,
-            }).then(function(){
-                window.location = '/';
-            });
+			let dat = data;
+			$.post({
+				url: '../../mailing/registered.php',
+				data: {
+					username: dat.username,
+					email: dat.email,
+					password: dat.password
+				},
+				success: function () {
+					swal({
+		                type: 'success',
+		                title: 'Successfully Registered',
+		                text: "Your username is " + dat.username,
+		                icon: 'success',
+		                showConfirmButton: true,
+		            }).then(function(){
+		                swal({
+							type: 'success',
+			                title: 'Email Successfully Sent',
+			                icon: 'success',
+			                showConfirmButton: false,
+						}).then(function (){
+							window.location = '/';
+						});
+		            });
+				}
+			});
         }
     });
+
 </script>
