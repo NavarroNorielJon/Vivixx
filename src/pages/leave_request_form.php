@@ -1,7 +1,6 @@
 <?php
 	include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
-
 ?>
 
 	<!DOCTYPE html>
@@ -32,6 +31,8 @@
 			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
 					<h1 class="text-center leave-header">LEAVE APPLICATION FORM</h1>
+					<h2>Balance:
+					</h2>
 					<script>
 						$(function() {
 							$('#type').change(function() {
@@ -144,7 +145,7 @@
 			$('.date').inputmask({
 				mask: 'dddd-dd-dd'
 			});
-			$(function sample(){
+			$(function sample() {
 				if ($('#type').val() == "Emergency") {
 					$("#s_date").datepicker({
 						dateFormat: 'yy-mm-dd',
