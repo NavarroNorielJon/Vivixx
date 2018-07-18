@@ -34,10 +34,10 @@
 	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
 		&& $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null) && $type == "user") {
 		header("location:/pages/home");
-	}else {		
+	}else {
 		if ($type != "user"){
 			echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
-		}	
+		}
 	}
 
 ?>
@@ -1041,6 +1041,16 @@
 							</div>
 						</div>
 						<hr>
+                        <script>
+                            $(function() {
+                                $('#option4').change(function() {
+                                    $('#g4').hide();
+                                    $('#u4').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+
+                        </script>
 						<h6>Your Housemates/Guardians</h6>
 						<div class="row">
 							<div class="form-group col">
@@ -1112,7 +1122,6 @@
 								<label for="rmnumber1">Mobile Number</label>
 								<input type="tel" name="rnumber[]" id="rnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
 							</div>
-
 						</div>
 
 						<div class="row" style="display:none">
@@ -1369,7 +1378,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label>Company Email address</label>
-								<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+								<input type="text" name="com_email" id="com_email" placeholder="Company Email address" class="form-control">
 							</div>
 
 							<div class="form-group col">
