@@ -92,6 +92,12 @@
 							<a href='personal_message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."& email=".$row['email'] ."' class='btn message'>Send Message</a>";
+
+							$view_message = "
+							<input name='view_msg' value='view_msg' style='display: none;'>
+							<a href='view_message.php?user_id=".$row['user_id'].
+							"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
+							"& lname=" .$row['last_name']."' class='btn message'>View Messages</a>";
 							//print data in table
 							echo "
 							<tr class='table-data'>
@@ -101,7 +107,7 @@
 							<td>" . $address . "</td>
 							<td>" . $contact . "</td>
 							<td>" . $row['email'] . "</td>
-							<td>" . $show . $message ."</td>
+							<td>" . $show . $message . $view_message."</td>
 							</tr>";
 						}
 
