@@ -1041,7 +1041,7 @@
 							</div>
 						</div>
 						<hr>
-                        <script>
+                        <!-- <script>
                             $(function() {
                                 $('#option4').change(function() {
                                     $('#g4').hide();
@@ -1049,8 +1049,7 @@
                                     $('#' + $(this).val()).show();
                                 });
                             });
-
-                        </script>
+                        </script> -->
 						<h6>Your Housemates/Guardians</h6>
 						<div class="row">
 							<div class="form-group col">
@@ -1076,7 +1075,7 @@
 
 						</div>
 
-						<div class="row" style="display:none">
+						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of Housemate</label>
 								<input type="text" name="hname[]" id="hname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
@@ -1124,7 +1123,7 @@
 							</div>
 						</div>
 
-						<div class="row" style="display:none">
+						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of relative</label>
 								<input type="text" name="rname[]" id="rname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
