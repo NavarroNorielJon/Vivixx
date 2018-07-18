@@ -2,7 +2,6 @@
 	ini_set('max_execution_time', 300);
 	include '../../utilities/session.php';
 	$connect = Connect();
-	error_reporting(0);
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -283,6 +282,7 @@
 			$('.body').richText();
 			let removeToolbar = function(){
 				$('.richText-toolbar').remove();
+			}
 
 			//date range
 			$(function() {
