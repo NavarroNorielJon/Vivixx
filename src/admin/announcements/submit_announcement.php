@@ -65,7 +65,5 @@ $connect = Connect();
                 $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES (NULL,NULL,'$announcement_id');";
                 $connect->query($add_attachment);
             }
-            
-
     }
 header("location: announcement.php");
