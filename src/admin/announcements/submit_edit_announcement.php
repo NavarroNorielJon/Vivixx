@@ -9,6 +9,7 @@ $connect = Connect();
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $announcement_id = mysqli_real_escape_string($connect,$_POST["id"]);
+    $status = mysqli_real_escape_string($connect,$_POST["status"]);
     $department = $_POST["department"];
 
     $file_names = [];
@@ -51,10 +52,10 @@ $connect = Connect();
         $counter = 0;
 
         if($_POST["department"][0] == "none"){
-            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate' where announcement_id='$announcement_id';";
+            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `status`='$status' where announcement_id='$announcement_id';";
             $connect->query($sql);
         }else{
-            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat' where announcement_id='$announcement_id';";
+            $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat', `status`='$status' where announcement_id='$announcement_id';";
             $connect->query($sql);
         }
         for($x = 0; $x< count($file_names); $x++){

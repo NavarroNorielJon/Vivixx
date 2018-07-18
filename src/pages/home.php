@@ -39,16 +39,24 @@
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments like('%All%') group by 1;";
 								$announcement = mysqli_query($connect, $query);
 								if($announcement->num_rows >1 ){
-									while ($row = mysqli_fetch_array($announcement)) {
-										echo "
-										<div class='item'>
-											<div class='imgTitle'>
-												<h2 class='blogTitle'>".$row['subject']."</h2>
-											";
+									while ($row1 = mysqli_fetch_array($announcement)) {
+										if ($row1['status'] == "on") {
+											echo "
+											<div class='item'>
+												<div class='imgTitle'>
+													<h2 class='blogTitle'>".$row1['subject']. "Due Date:" .$row1['end_date'] ."</h2>
+												";
+										} else {
+											echo "
+											<div class='item'>
+												<div class='imgTitle'>
+													<h2 class='blogTitle'>".$row1['subject']."</h2>
+												";
+										}
 										echo "<img class='images' src='../img/announcement-default1.jpg'>";
 										echo "
 											</div>
-											<a href='#announcement' data-toggle='modal' onclick='announcement(".$row['announcement_id']."); return false'>Read More</a>
+											<a href='#announcement' data-toggle='modal' onclick='announcement(".$row1['announcement_id']."); return false'>Read More</a>
 										</div>
 											";
 									}

@@ -39,6 +39,30 @@
 								<input type="text" class="form-control" autocomplete="off" id="e_date" name="end_date" value="<?php echo $row['end_date']?>">
 							</div>
 
+                            <div class="form-group col">
+                                <label>Due dates:</label>
+                                <div class="form-control">
+                                    <div class="switch">
+                                        <?php
+                                            if ($row['status'] == "on") {
+                                                echo '<input type="radio" class="switch-input" name="status" value="on" id="on" checked>
+                                                <label for="on" class="switch-label switch-label-off">ON</label>
+                                                <input type="radio" class="switch-input" name="status" value="off" id="off">
+                                                <label for="off" class="switch-label switch-label-on">OFF</label>
+                                                <span class="switch-selection"></span>';
+                                            }else {
+                                                echo '<input type="radio" class="switch-input" name="status" value="on" id="on" >
+                                                <label for="on" class="switch-label switch-label-off">ON</label>
+                                                <input type="radio" class="switch-input" name="status" value="off" id="off" checked>
+                                                <label for="off" class="switch-label switch-label-on">OFF</label>
+                                                <span class="switch-selection"></span>';
+                                            }
+
+                                         ?>
+                                     </div>
+                                 </div>
+                            </div>
+
 							<div class="form-group col">
 								<label for="departments">Department</label>
 								<select class="custom-select form-group" id="department" name="department[]" required multiple="multiple">
@@ -121,7 +145,10 @@
 		var old_sdate = document.getElementById('s_date').value;
 		var old_edate = document.getElementById('e_date').value;
 		var old_department = document.getElementById('department').value;
-		var old_text = document.getElementById('text').value;
+        var old_text = document.getElementById('text').value;
+        var old_on = document.getElementById('on').value;
+        var old_off = document.getElementById('off').value;
+
 
 		$(document).keyup(function() {
 			if (old_sub != $('#subject').val() || old_text != $('#text').val()) {
@@ -131,7 +158,7 @@
 			}
 		});
 		$(document).change(function() {
-			if (old_sub != $('#subject').val() || old_text != $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() || $('#file').val()) {
+			if (old_sub != $('#subject').val() || old_text != $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() ||  old_on != old_off) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);
@@ -166,7 +193,7 @@
 
 				$('.richText-toolbar').remove();
 
-		
+
 		//date range
 		$(function(){
         		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });

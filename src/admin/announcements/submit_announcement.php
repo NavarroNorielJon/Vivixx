@@ -8,6 +8,7 @@ $connect = Connect();
     $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
+    $status = mysqli_real_escape_string($connect,$_POST["status"]);
     $department = $_POST["department"];
 
     $file_names = [];
@@ -47,7 +48,7 @@ $connect = Connect();
             }
         }
         $counter = 0;
-            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat');";
+            $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`, `status`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat', '$status');";
             $connect->query($sql);
             $get_latest_announcement = "select max(announcement_id) as id from announcement;";
             $result = $connect->query($get_latest_announcement);
@@ -62,6 +63,8 @@ $connect = Connect();
                     $connect->query($add_attachment);
 
                 }else{
+                    $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES (NULL,NULL,'$announcement_id');";
+                    $connect->query($add_attachment);
                     header("location: announcement.php");
                 }
 
