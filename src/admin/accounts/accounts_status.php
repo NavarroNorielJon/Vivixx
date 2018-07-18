@@ -68,7 +68,7 @@
 							if($row1['end_of_contract'] === ""){
 								echo ":)";
 							}else{
-								if($row['end_of_contract'] === date("Y-m-d")){
+								if($row1['end_of_contract'] === date("Y-m-d")){
 									$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
 									$res = $connect->query($disabled);
 									
