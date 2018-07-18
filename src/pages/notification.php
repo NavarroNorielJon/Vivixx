@@ -50,7 +50,7 @@
 
 						<?php
 							$sql = "SELECT * from notification where user_id = '$user_id';";
-							$result = $connect->query($sql);
+							$result = mysqli_query($connect,$sql);
 
 							if($result->num_rows > 0){
 								while($row = mysqli_fetch_array($result)){
