@@ -1793,36 +1793,36 @@
 								<div class="row">
 									<div class="form-group col">
 										<label>Company Email address</label>
-										<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control" value="<?php echo $row8[" comp_email "]?>">
+										<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control" value="<?php echo $row8['comp_email']?>">
 									</div>
 
 									<div class="form-group col">
 										<label>Password</label>
-										<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" value="<?php echo $row8[" comp_email_password "]?>">
+										<input type="text" placeholder="Password" name="c_password" id="c_password" class="form-control" value="<?php echo $row8['comp_email_password']?>">
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="form-group col">
 										<label>Skype Account</label>
-										<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control" value="<?php echo $row8[" skype "]?>">
+										<input type="text" name="skype" id="skype" placeholder="Skype" class="form-control" value="<?php echo $row8['skype']?>">
 									</div>
 
 									<div class="form-group col">
 										<label>Password</label>
-										<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" value="<?php echo $row8[" skype_password "]?>">
+										<input type="text" placeholder="Password" name="s_password" id="s_password" class="form-control" value="<?php echo $row8['skype_password']?>">
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="form-group col">
 										<label>QQ Number</label>
-										<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control" value="<?php echo $row8[" qq_number "]?>">
+										<input type="text" name="qq_num" id="qq_num" placeholder="QQ Number" class="form-control" value="<?php echo $row8['qq_number']?>">
 									</div>
 
 									<div class="form-group col">
 										<label>Password</label>
-										<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" value="<?php echo $row8[" qq_password "]?>">
+										<input type="text" placeholder="Password" name="qq_password" id="qq_password" class="form-control" value="<?php echo $row8['qq_password']?>">
 									</div>
 								</div>
 								<div class="f1-buttons">

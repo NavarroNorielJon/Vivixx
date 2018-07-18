@@ -52,7 +52,7 @@
 					<input name='edit' value='signup' style='display: none;'>
 					<a href="../fragments/signup" data-target="#signup" class="nav-link signup">Add User</a>
 				</li>
-				
+
 				<li id="acc" class="nav-item">
 					<a class="nav-link" href="../accounts/accounts_status">Accounts</a>
 				</li>
@@ -62,8 +62,8 @@
 				</li>
 
 				<li id="emp" class="nav-item">
-					<button onclick="myFunction()" class="dropbtn">Employees</button>
-					<div id="myDropdown" class="dropdown-content">
+					<button onclick="drop()" class="dropbtn">Employees</button>
+					<div id="drop" class="dropdown-content">
 						<a href="../user_information/user_information">Employees</a>
 						<a href="../newly_registered_users/newly_registered">New Registered Employees<?php echo $new?></a>
 					</div>
@@ -89,3 +89,23 @@
 		</div>
 	</nav>
 	<div id="signup_form"></div>
+	<script>
+		function drop() {
+			document.getElementById("drop").classList.toggle("showbtn");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('showbtn')) {
+						openDropdown.classList.remove('showbtn');
+					}
+				}
+			}
+		}
+	</script>
