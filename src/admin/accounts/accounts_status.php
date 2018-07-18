@@ -56,24 +56,16 @@
 						</thead>
 
 						<?php
-					$sql = "select username, email, first_name, last_name, status from user natural join user_info where type='user';";
+					$sql = "select username, email, first_name, last_name, end_of_contract, status from user natural join user_info natural join employee_info where type='user';";
 					$result = $connect->query($sql);
-
-					$emp_info = "SELECT end_of_contract from employee_info";
-					$res = $connect->query($emp_info);
-					$row1 = mysqli_fetch_array($res, MYSQLI_ASSOC);
 					if($result->num_rows > 0){
 						while($row = $result->fetch_assoc()){
 
-							if($row1['end_of_contract'] === ""){
-								echo ":)";
-							}else{
-								if($row1['end_of_contract'] === date("Y-m-d")){
+							if($row['end_of_contract'] != ""){
+								if($row['end_of_contract'] === date("Y-m-d")){
 									$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
 									$res = $connect->query($disabled);
-
 								}
-
 							}
 
 							if($row["status"] === "enabled"){
