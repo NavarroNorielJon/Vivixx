@@ -26,28 +26,28 @@
 	include '../utilities/check_user.php';
 	$connect = Connect();
 	?>
-	<div class="wrapper">
-		<?php include '../fragments/navbar.php'; ?>
+		<div class="wrapper">
+			<?php include '../fragments/navbar.php'; ?>
 
-		<!-- table for viewing user information -->
-		<div class="content container">
-			<div class="text-center">
-				<h1>Users Payslip</h1>
-			</div>
+			<!-- table for viewing user information -->
+			<div class="content container">
+				<div class="text-center">
+					<h1>Users Payslip</h1>
+				</div>
 
-			<div class="table-container">
-				<table class="table" id="table">
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Middle Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-							<th>Action</th>
-						</tr>
-					</thead>
+				<div class="table-container">
+					<table class="table" id="table">
+						<thead>
+							<tr class="table-header">
+								<th>First Name</th>
+								<th>Middle Name</th>
+								<th>Last Name</th>
+								<th>Email</th>
+								<th>Action</th>
+							</tr>
+						</thead>
 
-					<?php
+						<?php
 					$sql = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is not null and employee_status is not null and position is not null);";
 					$result = $connect->query($sql);
 
@@ -73,38 +73,38 @@
 
 					$connect-> close();
 					?>
-				</table>
+					</table>
+				</div>
 			</div>
+			<div id="result"></div>
 		</div>
-		<div id="result"></div>
-	</div>
 
-	<script>
-		$(document).ready(function() {
-			$('.show').click(function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href'),
-					success: function(res) {
-						$('#result').html(res);
-					}
+		<script>
+			$(document).ready(function() {
+				$('.show').click(function(e) {
+					e.preventDefault();
+					$.ajax({
+						url: $(this).attr('href'),
+						success: function(res) {
+							$('#result').html(res);
+						}
+					});
 				});
 			});
-		});
 
-		//script for calling data table library
-		$(document).ready(function() {
-			$('#table').dataTable({
-				"columnDefs": [{
-					"orderable": false,
-					"targets": [3, 4]
-				}]
+			//script for calling data table library
+			$(document).ready(function() {
+				$('#table').dataTable({
+					"columnDefs": [{
+						"orderable": false,
+						"targets": [3, 4]
+					}]
+				});
+				$('#table').DataTable();
 			});
-			$('#table').DataTable();
-		});
-		$('#pay').addClass('active');
+			$('#pay').addClass('active');
 
-	</script>
+		</script>
 </body>
 
 </html>
