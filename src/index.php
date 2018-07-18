@@ -116,9 +116,9 @@ if (isset($_SESSION['user'])) {
                 }
             }
         });
-        
+
         </script>
-		<script src="script/alerts.js"></script>
+		<script src="script/ajax.js"></script>
 	</body>
 
 	</html>

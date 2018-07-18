@@ -25,7 +25,7 @@
 
 						<div class="form-group">
 							<label>Department</label>
-							<input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" readonly value="<?php echo explode(" | ",$row['department'])[0]?>">
+							<input type="text" name="department" id="dept" class="form-control-plaintext" style="font-size:1.5rem;" readonly value="<?php echo explode("|",$row['department'])[0]  ?>">
 						</div>
 
 						<div class="form-group">
@@ -60,6 +60,12 @@
                                         <option selected required="require" readonly>Choose Here:</option>
                                         <option value="Security">Security</option>
                                         </select>';
+                                    }else if ($main === "Voice Account") {
+                                        echo '
+                                        <select class="custom-select form-control" id="pos" name="position" required="required">
+                                        <option selected required="require" readonly>Choose Here:</option>
+                                        <option value="Security">Security</option>
+                                        </select>';
                                     }else {
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
@@ -75,17 +81,23 @@
 						<div class="form-group">
 							<label>Employee Status</label>
 							<select class="custom-select form-control" name="employee_status" id="status">
-                                    <option selected readonly>Choose Here:</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Project Based">Project Based</option>
-                                    <option value="Probationary">Probationary</option>
-                                    <option value="Regular">Regular</option>
-                                </select>
+                                <option selected readonly>Choose Here:</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Project Based">Project Based</option>
+                                <option value="Probationary">Probationary</option>
+                                <option value="Regular">Regular</option>
+                            </select>
+						</div>
+
+                        <div class="form-group">
+							<label>End Of Contract</label>
+                            <input type="text" id="eoc" name="eoc" class="form-control" autocomplete="off" required="required" placeholder="yy-mm-dd">
+
 						</div>
 
 						<div class="form-group">
 							<label>Date hired</label><br>
-							<input type="text" id="date" name="date" class="form-control" required="required" placeholder="yy-mm-dd">
+							<input type="text" id="date" name="date" class="form-control" autocomplete="off" required="required" placeholder="yy-mm-dd">
 						</div>
 					</form>
 					<div style="text-align:right">
@@ -99,6 +111,9 @@
 	</div>
 	<script>
 		$("#date").datepicker({
+			dateFormat: 'yy-mm-dd'
+		});
+        $("#eoc").datepicker({
 			dateFormat: 'yy-mm-dd'
 		});
 		$(document).change(function() {

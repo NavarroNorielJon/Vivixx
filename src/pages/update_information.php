@@ -1,6 +1,5 @@
 <?php
     include '../utilities/session.php';
-    include '../utilities/check_user_type.php';
 
 ?>
 	<!DOCTYPE html>
@@ -11,7 +10,7 @@
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<link type="text/css" rel="stylesheet" href="../style/style2.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
@@ -41,11 +40,34 @@
                 </i>
             </a>
 
-			<a class="btn help" data-toggle="modal" data-target="#hints">
+			<button class="btn help" data-toggle="modal" data-target="#hints">
                 <i class="material-icons">
                     help
                 </i>
-            </a>
+            </button>
+
+
+            <!-- Modal -->
+            <div class='modal fade' id='hints' role='dialog'>
+                <div class='modal-dialog modal-dialog-centered'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h4 class='modal-title' id="title">Instructions</h4>
+                        </div>
+
+                        <div class='modal-body'>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-danger' data-dismiss='modal'>
+                            Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 		</div>
 
 		<div class="row">
@@ -90,12 +112,10 @@
 					<fieldset>
 						<h2 class="header">Step 1: Personal Information</h2>
 						<div class="row">
-
-
                             <div class="form-group col">
     							<div class="ui calendar" id="birth_date">
     								<div class="ui input left icon">
-    									<label for="start_date">Start Date</label>
+    									<label for="start_date">Birth Date</label>
     									<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
     								</div>
     							</div>
@@ -115,7 +135,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="facebook">Facebook Link</label>
-								<input type="text" name="facebook" id="facebook" placeholder="Facebook Link" class="form-control" autocomplete="off" required="required">
+								<input type="text" name="facebook" id="facebook" placeholder="Facebook Link" class="form-control" autocomplete="off">
 							</div>
 						</div>
 
@@ -404,7 +424,7 @@
                                     <option value="Widowed">Widowed</option>
                                     <option value="Annulled">Annulled</option>
                                     <option value="Separated">Separated</option>
-                                    <option value="Others">Others</option>
+                                    <option value="others">Others</option>
                                 </select>
 
 							</div>
@@ -418,22 +438,22 @@
 						<div class="row">
 							<div class="form-group col">
 								<label for="sss_no">SSS NO.</label>
-								<input type="text" name="sss_no" id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control" required="required">
+								<input type="text" name="sss_no" id="sss_no" placeholder="XX-XXXXXXX-X" autocomplete="off" class="form-control">
 							</div>
 
 							<div class="form-group col">
 								<label for="tin">TIN</label>
-								<input type="text" name="tin" id="tin" placeholder="XXX-XXX-XXX-XXX" autocomplete="off" class="form-control" required="required">
+								<input type="text" name="tin" id="tin" placeholder="XXX-XXX-XXX-XXX" autocomplete="off" class="form-control">
 							</div>
 
 							<div class="form-group col">
 								<label for="philhealth_no ">PHILHEALTH NO.</label>
-								<input type="text" name="philhealth_no" id="philhealth_no" placeholder="XX-XXXXXXXXX-X" autocomplete="off" class="form-control" required="required">
+								<input type="text" name="philhealth_no" id="philhealth_no" placeholder="XX-XXXXXXXXX-X" autocomplete="off" class="form-control">
 							</div>
 
 							<div class="form-group col">
 								<label for="pagibig_id_no">PAG-IBIG ID NO.</label>
-								<input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="XXXX-XXXX-XXXX" autocomplete="off" class="form-control" required="required">
+								<input type="text" name="pagibig_id_no" id="pagibig_id_no" placeholder="XXXX-XXXX-XXXX" autocomplete="off" class="form-control">
 							</div>
 						</div>
 						<div class="f1-buttons">
@@ -934,11 +954,8 @@
 
 							<div class="form-group col" id="u4" style="display:none">
 								<label for="high_level">Highest Level</label>
-								<select name="pos_high_level" id="pos_high_level" class="form-control">
-                                    <option selected="selected" value="None">None</option>
-                                    <option value="g4">Graduate</option>
-                                    <option value="u4">Undergraduate</option>
-                                </select>
+                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="Highest Level" class="form-control" autocomplete="off">
+
 							</div>
 						</div>
 						<div class="f1-buttons">
@@ -964,28 +981,27 @@
 								</div>
 							</div>
 							<br>
-							<super>(Your alternate address when you are not at Main City Address)</super>
 							<div class="row">
 								<div class="form-group col">
 									<label for="secondary_add">
-                                        <h6>Secondary City Address</h6>
+                                        <h6>Baguio City Address</h6>
                                     </label>
-									<input type="text" name="secondary_add" class="form-control text-transform" placeholder="secondary address">
+									<input type="text" name="secondary_add" class="form-control text-transform" placeholder="Baguio City Address">
 								</div>
 
 								<div class="form-group col">
 									<label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-									<input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
+                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
 								</div>
 							</div>
 						</div>
 						<hr>
-						<h6>Your Housemates</h6>
+						<h6>Your Housemates/Guardians</h6>
 						<div class="row">
 							<div class="form-group col">
-								<label for="hname">Name of Housemate</label>
+								<label for="hname">Name of Housemate/Guardian</label>
 								<input type="text" name="hname[]" id="hname1" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off" required="required">
 							</div>
 
@@ -1007,7 +1023,7 @@
 
 						</div>
 
-						<div class="row">
+						<div class="row" style="display:none">
 							<div class="form-group col">
 								<label for="hname">Name of Housemate</label>
 								<input type="text" name="hname[]" id="hname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
@@ -1056,7 +1072,7 @@
 
 						</div>
 
-						<div class="row">
+						<div class="row" style="display:none">
 							<div class="form-group col">
 								<label for="hname">Name of relative</label>
 								<input type="text" name="rname[]" id="rname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
