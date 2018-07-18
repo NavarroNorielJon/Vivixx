@@ -42,9 +42,11 @@
 									while ($row1 = mysqli_fetch_array($announcement)) {
 										if ($row1['status'] == "on") {
 											echo "
+
 											<div class='item'>
+											<h3 style='margin-top:2%; color:red'>Due Date: ".$row1['end_date'] ."</h3>
+
 												<div class='imgTitle'>
-												<h3 style='align:right; color:red'>Due Date: ".$row1['end_date'] ."</h3>
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
 										} else {

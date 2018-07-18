@@ -56,23 +56,23 @@
 						</thead>
 
 						<?php
-					$sql = "select username, email, first_name, last_name,end_of_contract, status from user natural join user_info natural join employee_info where type='user';";
+					$sql = "select username, email, first_name, last_name,3end_of_contract, status from user natural join user_info natural join employee_info where type='user';";
 					$result = $connect->query($sql);
-					
+
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
-							
+
 							if($row['end_of_contract'] === ""){
 								echo ":)";
 							}else{
 								if($row['end_of_contract'] === date("Y-m-d")){
 									$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
 									$res = $connect->query($disabled);
-									
+
 								}
-								
+
 							}
-							
+
 							if($row["status"] === "enabled"){
 								$button = "
 								<input name='disable' value='Disable' style='display: none;'>
@@ -137,7 +137,7 @@
 
 		<script>
 			/* When the user clicks on the button,toggle between hiding and showing the dropdown content */
-			
+
 			//script for calling modal
 			$(document).ready(function() {
 				$('.show').click(function(e) {
