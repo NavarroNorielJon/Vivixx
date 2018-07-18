@@ -44,7 +44,8 @@
 											echo "
 											<div class='item'>
 												<div class='imgTitle'>
-													<h2 class='blogTitle'>".$row1['subject']. "Due Date:" .$row1['end_date'] ."</h2>
+												<h3 style='align:right; color:red'>Due Date: ".$row1['end_date'] ."</h3>
+													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
 										} else {
 											echo "
@@ -55,10 +56,10 @@
 										}
 										echo "<img class='images' src='../img/announcement-default1.jpg'>";
 										echo "
-											</div>
-											<a href='#announcement' data-toggle='modal' onclick='announcement(".$row1['announcement_id']."); return false'>Read More</a>
-										</div>
-											";
+											</div>";
+										echo "<a href='#announcement' data-toggle='modal' onclick='announcement(".$row1['announcement_id']."); return false'>Read More</a>
+										</div>";
+
 									}
 								} else {
 									echo "<br><br><br><br><br><br><h1 style='text-align:center'>No Announcement.</h1>";
