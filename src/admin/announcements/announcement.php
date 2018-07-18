@@ -178,10 +178,7 @@
 							<input type="hidden" name="body">
 								<div class="p-2" id="border">
 									<!-- <p contenteditable="true" id="editable"></p> -->
-									<textarea class="form-control body" name="body" id='text' placeholder="Content" column="5" required></textarea>
-									<div class="text-center">
-										Remaining characters: <span id="totalChars">1500</span><br>
-									</div>
+									<textarea class="form-control body" name="body" id="text" placeholder="Content" column="5" required></textarea>
 								</div>
 							</div>
 
@@ -272,26 +269,7 @@
 					});
 				});
 			});
-			//script for content counter
-			var counter = function() {
-				var value = $('#editable').text();
-				var negative = 1500;
-
-				if (value.length == 0) {
-					$('#totalChars').text(1500);
-					return;
-				} else if (value.length >= 1500) {
-					$('#totalChars').text(0);
-					return;
-				} else {
-					var regex = /\s+/gi;
-					var totalChars = value.length;
-					var remainder = negative - totalChars;
-					$('#totalChars').text(remainder);
-				}
-
-
-			};
+			
 			$('.body').richText();
 			let removeToolbar = function(){
 				$('.richText-toolbar').remove();

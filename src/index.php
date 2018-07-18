@@ -37,7 +37,7 @@ if (isset($_SESSION['user'])) {
 					<div class="input-group">
 						<input type="password" placeholder="Password" name="login_password" id="password" class="form-control" required="required">
 						<div class="input-group-append">
-							<button type="button" class="btn eye" onclick="showHide('password','icon')">
+							<button type="button" class="btn eye" onclick="showHide('password','icon')" tabindex="-1">
 							<i class="material-icons" id="icon">visibility</i>
 						</button>
 						</div>
@@ -99,25 +99,25 @@ if (isset($_SESSION['user'])) {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js" crossorigin="anonymous"></script>
 		<!-- Created Scripts -->
 		<script>
-        $('#login').ajaxForm({
-            url: '../utilities/login.php',
-            method: 'post',
-            success: function (data) {
-                if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist'
-                    || data === 'Invalid Username or password'){
-                    swal({
-                        title: data,
-                        icon:'error',
-                        timer: 2500
-                    });
-                } else {
-                    console.log(data);
-                    window.location = data;
-                }
-            }
-        });
+			$('#login').ajaxForm({
+				url: '../utilities/login.php',
+				method: 'post',
+				success: function(data) {
+					if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist' ||
+						data === 'Invalid Username or password') {
+						swal({
+							title: data,
+							icon: 'error',
+							timer: 2500
+						});
+					} else {
+						console.log(data);
+						window.location = data;
+					}
+				}
+			});
 
-        </script>
+		</script>
 		<script src="script/ajax.js"></script>
 	</body>
 
