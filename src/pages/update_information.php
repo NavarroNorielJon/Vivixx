@@ -171,13 +171,9 @@
 
 							<div class="form-group col">
 								<label for="height">Height</label>
-								<div class="row no-gutters ">
-									<div class="form-group col">
-										<input type="text" name="ft" id="ft" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" required="required">
-									</div>
-									<div class="form-group col">
-										<input type="text" name="in" id="in" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(in.)" required="required">
-									</div>
+								<div class="input-group">
+                                    <input type="text" name="ft" id="ft" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" required="required">
+                                    <input type="text" name="in" id="in" class="form-control height" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(in.)" required="required">
 								</div>
 							</div>
 
