@@ -37,8 +37,8 @@
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
 		<script src="../style/jquery.richtext.min.js"></script>
-		
-		
+
+
 
 	</head>
 
@@ -172,7 +172,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 
 							<span class="btn btn-default btn-file">
 								<input type="file" name="file[]" multiple>
@@ -190,30 +190,7 @@
 		<div id="signup_form"></div>
 
 		<script>
-			/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-			function myFunction() {
-				document.getElementById("myDropdown").classList.toggle("showbtn");
-			}
 
-			// Close the dropdown if the user clicks outside of it
-			window.onclick = function(event) {
-				if (!event.target.matches('.dropbtn')) {
-
-					var dropdowns = document.getElementsByClassName("dropdown-content");
-					var i;
-					for (i = 0; i < dropdowns.length; i++) {
-						var openDropdown = dropdowns[i];
-						if (openDropdown.classList.contains('showbtn')) {
-							openDropdown.classList.remove('showbtn');
-						}
-					}
-				}
-			}
-
-		</script>
-
-		<script>
-		
 			$('#department').multiselect({
 				templates: {
 					li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
@@ -306,34 +283,6 @@
 			$('.body').richText();
 			let removeToolbar = function(){
 				$('.richText-toolbar').remove();
-			}
-			// $(document).ready(function() {
-			// 	var content_id = 'editable';
-
-			// 	max = 1499;
-
-			// 	//binding keyup/down events on the contenteditable div
-			// 	$('#' + content_id).keyup(function(e) {
-			// 		check_charcount(content_id, max, e);
-			// 	});
-			// 	$('#' + content_id).keydown(function(e) {
-			// 		check_charcount(content_id, max, e);
-			// 	});
-
-			// 	function check_charcount(content_id, max, e) {
-			// 		if (e.which != 8 && $('#' + content_id).text().length > max) {
-			// 			e.preventDefault();
-			// 		}
-			// 	}
-			// 	$('#text').keyup(counter);
-			// 	$('#editable').keyup(function() {
-
-			// 		var text = $('#editable').html();
-			// 		$('#text').html(text);
-			// 		counter();
-
-			// 	});
-			// });
 
 			//date range
 			$(function() {
@@ -352,7 +301,7 @@
 			$('#an').addClass('active');
 
 		</script>
-		
+
 	</body>
-	
+
 	</html>

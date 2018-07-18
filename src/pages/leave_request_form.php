@@ -144,9 +144,18 @@
 			$('.date').inputmask({
 				mask: 'dddd-dd-dd'
 			});
-			$("#s_date").datepicker({
-				dateFormat: 'yy-mm-dd',
-				minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
+			$(function sample(){
+				if ($('#type').val() == "Emergency") {
+					$("#s_date").datepicker({
+						dateFormat: 'yy-mm-dd',
+						minDate: new Date((new Date()).setDate(new Date().getDate() + 1))
+					});
+				} else {
+					$("#s_date").datepicker({
+						dateFormat: 'yy-mm-dd',
+						minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
+					});
+				}
 			});
 			$("#e_date").datepicker({
 				dateFormat: 'yy-mm-dd'

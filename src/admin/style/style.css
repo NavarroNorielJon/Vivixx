@@ -333,15 +333,20 @@ navigation-bar .navbar-collapse {
 /*end of signup*/
 
 /*view information*/
+#mapid{
+	border: solid 2px black;
+	height: 500px;
+	width: 100%;
 
+}
 .wrapper .view-information-container {
-	margin: 8% auto;
+	margin: 4% auto;
 }
 
 .wrapper .f1 {
 	border-radius: 0;
 	color: black;
-	margin: 8% 3%;
+	margin: 1% 8%;
 	padding: 25px;
 }
 
