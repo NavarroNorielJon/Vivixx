@@ -28,47 +28,22 @@
                         $_SESSION['user'] = $user;
                         $result = mysqli_query($connect,$test);
                         if ($result->num_rows > 0 ) {
-                            //header('location:../pages/update_information');
                             echo 'pages/update_information';
                         } else {
-                            //header('location:../pages/home');
                             echo "pages/home";
                         }
                     } elseif ($type === "admin") {
-                       // header('location:../admin/announcements/announcement.php');
                         echo "admin/accounts/accounts_status";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
-                    //http_response_code(500);
                     echo "Invalid Password";
-//                    echo "<script>
-//                            alert('Invalid password');
-//                            window.location = '/';
-//                             </script>";
                 }elseif (password_verify($password, $passwordVerify) && $status === "disabled") {
-                   // http_response_code(500);
                     echo "Your account is disabled";
-//                    echo "<script>
-//                            alert('Your account is disabled');
-//                            window.location = '/';
-//                             </script>";
                 }
             } else{
-               // http_response_code(500);
                 echo "User does not exist";
-//                echo "<script>
-//                        alert('User does not exist');
-//                        window.location = '/';
-//                         </script>";
-//                         exit;
             }
         } else {
-            //http_response_code(500);
             echo "Invalid Username or password";
-//            echo "<script>
-//                    alert('Invalid username or password.');
-//                    window.location = '/';
-//                     </script>";
-//                     exit;
         }
     }
