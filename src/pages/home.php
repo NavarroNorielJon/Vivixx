@@ -31,7 +31,7 @@
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
 			<div class="content">
-				<h1 style="text-align:center">Announcements and Events</h1>
+				<h1 style="text-align:center; font-family:rock;">Announcements/Events</h1>
 				<div class="mixedSlider" id="mixedSlider">
 					<div>
 						<div class="MS-content">

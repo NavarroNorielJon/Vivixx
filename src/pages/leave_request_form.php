@@ -30,9 +30,7 @@
 
 			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
-					<h1 class="text-center leave-header">LEAVE APPLICATION FORM</h1>
-					<h2>Balance:
-					</h2>
+					<h1 class="text-center leave-header" style="font-family: rock">LEAVE APPLICATION FORM</h1>
 					<script>
 						$(function() {
 							$('#type').change(function() {
@@ -98,7 +96,6 @@
 					<h1 class="text-center leave-header">Inclusive days applied</h1>
 
 					<div class="row">
-
 						<div class="form-group col">
 							<div class="ui calendar" id="start_date">
 								<div class="ui input left icon">
@@ -123,7 +120,6 @@
 							<button class="btn btn-primary">Submit</button>
 						</div>
 					</div>
-
 				</form>
 			</div>
 		</div>
