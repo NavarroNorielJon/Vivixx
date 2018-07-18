@@ -62,7 +62,7 @@
 					$emp_info = "SELECT end_of_contract from employee_info";
 					$res = $connect->query($emp_info);
 					$row1 = mysqli_fetch_array($res, MYSQLI_ASSOC);
-					if($result-> num_rows > 0){
+					if($result->num_rows > 0){
 						while($row = $result->fetch_assoc()){
 
 							if($row1['end_of_contract'] === ""){
