@@ -33,18 +33,17 @@
 	</head>
 
 	<body class="background">
-		<?php include '../utilities/check_user.php'; ?>
 		<div class="wrapper">
 			<?php include '../fragments/navbar.php'; ?>
 
 
 			<div class="content container">
 				<div class="text-center">
-					<h1>Summary of Leave Request</h1>
+					<h1>Summary of Leave Request by Month</h1>
 				</div>
 
 				<div class="table-container">
-					<table class="table" id="leave">
+					<table class="table" id="leave_month">
 						<thead>
 							<tr class="table-header">
 								<th>First Name</th>
@@ -55,41 +54,52 @@
                                 <th>Leave Type</th>
 							</tr>
 						</thead>
+						<select id="month" name="month" class="form-control col-1">
+							<option value="All">All</option>
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
 
 						<?php
-					$sql = "select * from leave_req where status='accepted' or status='rejected' and MONTH(`date_filed`)=MONTH(NOW()) 
-                    and YEAR(`date_filed`)=YEAR(NOW());";
-					$result = $connect->query($sql);
+							$sql = "select * from leave_req;";
+							$result = $connect->query($sql);
 
-					if($result-> num_rows > 0){
-						while($row = $result->fetch_assoc()){
-							$fname = explode(",",$row["employee"])[0];
-							$mname = explode(",",$row["employee"])[1];
-							$lname = explode(",",$row["employee"])[2];
-							$show = "
-							<input name='show' value='show' style='display: none;'>
-							<a href='view_leave_request_form.php?user_id=".$row['user_id']."&req_id=".$row['leave_req_id']."&fname=".$fname."&mname=".$mname."&lname=".$lname."'   class='show btn btn-primary'>Show more</a>";
+							if($result->num_rows > 0){
+								while($row = $result->fetch_assoc()){
+									$fname = explode(",",$row["employee"])[0];
+									$mname = explode(",",$row["employee"])[1];
+									$lname = explode(",",$row["employee"])[2];
 
-							//print data in table
-							echo "
-							<tr class='table-data';>
-							<td>" . ucwords($fname) . "</td>
-							<td>" . ucwords($mname) . "</td>
-							<td>" . ucwords($lname) . "</td>
-							<td>" . $row['date_filed'] . "</td>
-                            <td>" . $row['status'] ."</td>
-                            <td>" . $row['reason'] . "</td>
-							</tr>";
-						}
-					}
-
-					$connect-> close();
-					?>
+									//print data in table
+									echo "
+									<tr class='table-data';>
+									<td>" . ucwords($fname) . "</td>
+									<td>" . ucwords($mname) . "</td>
+									<td>" . ucwords($lname) . "</td>
+									<td>" . $row['date_filed'] . "</td>
+		                            <td>" . $row['status'] ."</td>
+		                            <td>" . $row['reason'] . "</td>
+									</tr>";
+								}
+							}
+						?>
 					</table>
 				</div>
+
+
+
 			</div>
 
-			<div id="result"></div>
 
 		</div>
 
@@ -132,15 +142,30 @@
 			});
 
 			//script for calling datatables library
+
 			$(document).ready(function() {
-				$('#leave').dataTable({
+				$('#leave_month').dataTable({
 					"columnDefs": [{
 						"orderable": false
 					}]
+	}
 				});
-				$('#leave').DataTable();
+				let table = $('#leave_month').DataTable();
 			});
 			$('#leave_r').addClass('active');
+			$.fn.dataTable.ext.search.push(
+				function (settings, data) {
+					let month = $("#month").val();
+					let table_month =  new Date(data[3]);
+					if (month === 'All') {
+						return true;
+					}
+					return Number(table_month.getMonth()+1)==month;
+				}
+			);
+			$('#month').change(function(){
+				$('#leave_month').DataTable().draw();
+			});
 
 		</script>
 

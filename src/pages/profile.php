@@ -74,12 +74,12 @@
 					<div class="row birth_information">
 						<div class="form-group col-4">
 							<label for="birth_place"> Birth Place</label>
-							<input type="text" id="first" class="form-control-plaintext" value="<?php echo $birth_place;?>" disabled>
+							<input type="text" id="birth_place" class="form-control-plaintext" value="<?php echo $birth_place;?>" disabled>
 						</div>
 
 						<div class="form-group col-4">
 							<label for="birth_date">Birth Date</label>
-							<input type="text" id="first" class="form-control-plaintext" value="<?php echo $birth_date->format('F d, Y');?>" disabled>
+							<input type="text" id="birth_date" class="form-control-plaintext" value="<?php echo $birth_date->format('F d, Y');?>" disabled>
 						</div>
 
 						<div class="form-group col-4 age">

@@ -49,35 +49,35 @@
 						</thead>
 
 						<?php
-					$sql = "SELECT * from notification where user_id = '$user_id';";
-					$result = $connect->query($sql);
+							$sql = "SELECT * from notification where user_id = '$user_id';";
+							$result = $connect->query($sql);
 
-					if($result-> num_rows > 0){
-						while($row = mysqli_fetch_array($result)){
-							$button = "
-								<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
-							//print data in table
-							if($row["status"] == "new"){
-								echo "
-									<tr class='table-data'>
-										<td><strong>". $row["subject"] ."</strong></td>
-										<td><strong>". $row["date"] ."</strong></td>
-										<td><strong>New</strong></td>
-										<td>". $button ."</td>
-									</tr>";
-							}else {
-								echo "
-									<tr class='table-data'>
-										<td>". $row["subject"] ."</td>
-										<td>". $row["date"] ."</td>
-										<td>Read</td>
-										<td>". $button ."</td>
-									</tr>
-									";
+							if($result->num_rows > 0){
+								while($row = mysqli_fetch_array($result)){
+									$button = "
+										<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
+									//print data in table
+									if($row["status"] == "new"){
+										echo "
+											<tr class='table-data'>
+												<td><strong>". $row["subject"] ."</strong></td>
+												<td><strong>". $row["date"] ."</strong></td>
+												<td><strong>New</strong></td>
+												<td>". $button ."</td>
+											</tr>";
+									}else {
+										echo "
+											<tr class='table-data'>
+												<td>". $row["subject"] ."</td>
+												<td>". $row["date"] ."</td>
+												<td>Read</td>
+												<td>". $button ."</td>
+											</tr>
+											";
+									}
+								}
 							}
-						}
-					}
-					?>
+						?>
 					</table>
 				</div>
 
@@ -93,30 +93,30 @@
 						</thead>
 
 						<?php
-					$sql2 = "SELECT * FROM leave_req where user_id='$user_id';";
-					$result2 = $connect->query($sql2);
+							$sql2 = "SELECT * FROM leave_req where user_id='$user_id';";
+							$result2 = $connect->query($sql2);
 
-					if($result2-> num_rows > 0){
-						while($row2 = mysqli_fetch_array($result2)){
-							if($row2['status'] == "pending") {
-								$status = "<td style='color: #e6b800;'>Pending</td>";
-							}elseif($row2['status'] == "accepted") {
-								$status = "<td style='color: green;'>Accepted</td>";
-							}else {
-								$status = "<td style='color: red;'>Rejected</td>";
+							if($result2->num_rows > 0){
+								while($row2 = mysqli_fetch_array($result2)){
+									if($row2['status'] == "pending") {
+										$status = "<td style='color: #e6b800;'>Pending</td>";
+									}elseif($row2['status'] == "accepted") {
+										$status = "<td style='color: green;'>Accepted</td>";
+									}else {
+										$status = "<td style='color: red;'>Rejected</td>";
+									}
+									//print data in table
+									echo "
+										<tr class='table-data'>
+											<td>". $row2["reason"] ."</td>
+											<td>". $row2["date_filed"] ."</td>
+											$status
+										</tr>";
+								}
 							}
-							//print data in table
-							echo "
-								<tr class='table-data'>
-									<td>". $row2["reason"] ."</td>
-									<td>". $row2["date_filed"] ."</td>
-									$status
-								</tr>";
-						}
-					}
 
-					$connect-> close();
-					?>
+							$connect->close();
+						?>
 					</table>
 				</div>
 			</div>
