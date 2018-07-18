@@ -163,36 +163,10 @@
 			}
 		};
 		$('.body').richText();
-		
+
 				$('.richText-toolbar').remove();
-			
-		// //counter for text limit
-		// $(document).ready(function() {
-		// 	var content_id = 'editable';
-		// 	max = 1499;
-		// 	//binding keyup/down events on the contenteditable div
-		// 	$('#' + content_id).keyup(function(e) {
-		// 		check_charcount(content_id, max, e);
-		// 	});
-		// 	$('#' + content_id).keydown(function(e) {
-		// 		check_charcount(content_id, max, e);
-		// 	});
 
-		// 	function check_charcount(content_id, max, e) {
-		// 		if (e.which != 8 && $('#' + content_id).text().length > max) {
-		// 			e.preventDefault();
-		// 		}
-		// 	}
-		// 	$('#text').keyup(counter);
-		// 	$('#editable').keyup(function() {
-
-		// 		var text = $('#editable').html();
-		// 		$('#text').html(text);
-		// 		counter();
-
-		// 	});
-		// });
-
+		
 		//date range
 		$(function(){
         		$("#e_date").datepicker({ dateFormat: 'yy-mm-dd' });
