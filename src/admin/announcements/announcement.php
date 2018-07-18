@@ -78,7 +78,7 @@
 						<?php
 					$sql = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) group by 1;";
 					$result = $connect->query($sql);
-
+					
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							if(isset($row['attachment'])){
