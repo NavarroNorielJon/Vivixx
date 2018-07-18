@@ -38,7 +38,7 @@
 							<?php
 								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments like('%All%') group by 1;";
 								$announcement = mysqli_query($connect, $query);
-								if($announcement->num_rows >1 ){
+								if($announcement->num_rows >0 ){
 									while ($row1 = mysqli_fetch_array($announcement)) {
 										if ($row1['status'] == "on") {
 											echo "
