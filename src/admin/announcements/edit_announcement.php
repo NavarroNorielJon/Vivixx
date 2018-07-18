@@ -59,9 +59,6 @@
 							<div class="d-flex ">
 								<div class="p-2" id="border">
 									<textarea class="form-control body" name="body" id='text' placeholder="Content" column="5" required><?php echo $row["announcement"]?></textarea>
-									<div class="text-center">
-										Remaining characters: <span id="totalChars">1500</span><br/>
-									</div>
 								</div>
 							</div>
 
@@ -144,24 +141,6 @@
 			$("#edit").modal("show");
 		});
 
-		//script for content counter
-		var counter = function() {
-			var value = $('#editable').text();
-			var negative = 1500;
-
-			if (value.length == 0) {
-				$('#totalChars').text(1500);
-				return;
-			} else if (value.length >= 1500) {
-				$('#totalChars').text(0);
-				return;
-			} else {
-				var regex = /\s+/gi;
-				var totalChars = value.length;
-				var remainder = negative - totalChars;
-				$('#totalChars').text(remainder);
-			}
-		};
 		$('.body').richText();
 		
 				$('.richText-toolbar').remove();
