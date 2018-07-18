@@ -1,5 +1,44 @@
 <?php
     include '../utilities/session.php';
+	$stmt = "SELECT * FROM user NATURAL JOIN user_info WHERE user_id='$user_id';";
+    $results = mysqli_query($connect, $stmt);
+    $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
+	$prof_image = $row['prof_image'];
+    $email = $row['email'];
+	$type = $row['type'];
+    $first_name = $row['first_name'];
+    $middle_name = $row['middle_name'];
+    $last_name = $row['last_name'];
+    $full_name = $first_name ." " . $middle_name ." " . $last_name;
+    $birth_date = date_create($row['birth_date']);
+    $birth_place = $row['birth_place'];
+    $contact_number = $row['contact_number'];
+    $gender = $row['gender'];
+    $height = $row['height'];
+    $weight = $row['weight'];
+    $blood_type = $row['blood_type'];
+    $residential_address = $row['residential_address'];
+    $residential_zip = $row['residential_zip'];
+    $residential_tel_no = $row['residential_tel_no'];
+    $permanent_address = $row['permanent_address'];
+    $permanent_zip = $row['permanent_zip'];
+    $permanent_tel_no = $row['permanent_tel_no'];
+    $citizenship = $row['citizenship'];
+    $civil_status = $row['civil_status'];
+    $sss_no = $row['sss_no'];
+    $tin = $row['tin'];
+    $philhealth_no = $row['philhealth_no'];
+    $pagibig_id_no = $row['pagibig_id_no'];
+
+	if (($birth_date != null || $birth_place != null || $contact_number != null ||
+	   $gender != null || $height != null || $weight != null || $blood_type != null || $residential_address != null || $residential_zip != null || $residential_tel_no != null || $permanent_address != null || $permanent_zip != null || $permanent_tel_no != null || $citizenship != null
+		|| $civil_status != null || $sss_no != null || $tin != null || $philhealth_no != null || $pagibig_id_no != null) && $type == "user") {
+		header("location:/pages/home");
+	}
+
+	if ($type != "user"){
+		echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
+	}
 
 ?>
 	<!DOCTYPE html>
@@ -12,14 +51,14 @@
 		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
 		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
-        <link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
+		<link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
 		<link rel="stylesheet" href="../style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
 		<script src="../script/jquery.backstretch.min.js"></script>
 		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-        <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
 		<script src="../script/scripts.js"></script>
 		<link type="text/css" rel="stylesheet" href="../leaflet/leaflet.css">
 		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection" />
@@ -47,26 +86,26 @@
             </button>
 
 
-            <!-- Modal -->
-            <div class='modal fade' id='hints' role='dialog'>
-                <div class='modal-dialog modal-dialog-centered'>
-                    <div class='modal-content'>
-                        <div class='modal-header'>
-                            <h4 class='modal-title' id="title">Instructions</h4>
-                        </div>
+			<!-- Modal -->
+			<div class='modal fade' id='hints' role='dialog'>
+				<div class='modal-dialog modal-dialog-centered'>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<h4 class='modal-title' id="title">Instructions</h4>
+						</div>
 
-                        <div class='modal-body'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
+						<div class='modal-body'>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
 
-                        <div class='modal-footer'>
-                            <button type='button' class='btn btn-danger' data-dismiss='modal'>
+						<div class='modal-footer'>
+							<button type='button' class='btn btn-danger' data-dismiss='modal'>
                             Close
                             </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div>
 
@@ -112,14 +151,14 @@
 					<fieldset>
 						<h2 class="header">Step 1: Personal Information</h2>
 						<div class="row">
-                            <div class="form-group col">
-    							<div class="ui calendar" id="birth_date">
-    								<div class="ui input left icon">
-    									<label for="start_date">Birth Date</label>
-    									<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
-    								</div>
-    							</div>
-    						</div>
+							<div class="form-group col">
+								<div class="ui calendar" id="birth_date">
+									<div class="ui input left icon">
+										<label for="start_date">Birth Date</label>
+										<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									</div>
+								</div>
+							</div>
 
 							<div class="form-group col">
 								<label>Place of Birth</label>
@@ -152,6 +191,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class=" form-group col">
 								<label for="gender">Gender</label>
@@ -409,6 +449,7 @@
 										}
 									});
 								});
+
 							</script>
 
 							<div class="form-group col">
@@ -523,6 +564,7 @@
 									}
 								});
 							});
+
 						</script>
 						<script>
 							$(function() {
@@ -538,6 +580,7 @@
 									}
 								});
 							});
+
 						</script>
 
 						<div class="row">
@@ -746,6 +789,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class="form-group col">
 								<label for="option1">Status</label>
@@ -806,6 +850,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class="form-group col">
 								<label for="option2">Status</label>
@@ -872,6 +917,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class="form-group col">
 								<label for="option3">Status</label>
@@ -933,6 +979,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class="form-group col">
 								<label for="option4">Status</label>
@@ -950,7 +997,7 @@
 
 							<div class="form-group col" id="u4" style="display:none">
 								<label for="high_level">Highest Level</label>
-                                <input type="text" name="pos_high_level" id="pos_high_level" placeholder="Highest Level" class="form-control" autocomplete="off">
+								<input type="text" name="pos_high_level" id="pos_high_level" placeholder="Highest Level" class="form-control" autocomplete="off">
 
 							</div>
 						</div>
@@ -989,7 +1036,7 @@
 									<label>
                                         <h6>Provincial/Permanent Address</h6>
                                     </label>
-                                    <input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
+									<input type="text" name="provincial_add" placeholder="provincial address" class="form-control text-transform" required="required">
 								</div>
 							</div>
 						</div>
@@ -1105,6 +1152,7 @@
 										}
 									});
 								});
+
 							</script>
 							<div class="form-group col-4">
 								<label for="quest">Do you plan on relocating soon?
@@ -1243,6 +1291,7 @@
 										$('#' + $(this).val()).show();
 									});
 								});
+
 							</script>
 							<div class="form-group col">
 								<label for="department">Main Department</label>
@@ -1390,18 +1439,19 @@
 			$('.gradyear').inputmask({
 				mask: 'dddd-dd'
 			});
-            $("#bdate").datepicker({
+			$("#bdate").datepicker({
 				dateFormat: 'yy-mm-dd'
 			});
-            $('.height').bind('cut copy paste', function (e) {
-                e.preventDefault();
-            });
-            $('.height').bind('cut copy paste', function (e) {
-                e.preventDefault();
-            });
-            $('#weight').bind('cut copy paste', function (e) {
-                e.preventDefault();
-            });
+			$('.height').bind('cut copy paste', function(e) {
+				e.preventDefault();
+			});
+			$('.height').bind('cut copy paste', function(e) {
+				e.preventDefault();
+			});
+			$('#weight').bind('cut copy paste', function(e) {
+				e.preventDefault();
+			});
+
 		</script>
 		<script>
 			var map = L.map('mapid').setView([
@@ -1447,6 +1497,7 @@
 					map.invalidateSize();
 				}, 400);
 			});
+
 		</script>
 
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
