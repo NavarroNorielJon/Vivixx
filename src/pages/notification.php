@@ -36,7 +36,7 @@
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
 			<div class="content">
-				<h1 style="margin-bottom: 20px;">INBOX</h1>
+				<h1 style="margin-bottom: 20px; font-family: rock">INBOX</h1>
 				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
@@ -81,7 +81,7 @@
 					</table>
 				</div>
 
-				<h1 style="margin-top: 10%;">LOGS</h1>
+				<h1 style="margin-top: 10%; font-family: rock">LOGS</h1>
 				<div class="table-container">
 					<table class="table" id="table2">
 						<thead>

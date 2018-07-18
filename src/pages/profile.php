@@ -35,7 +35,7 @@
 
 			<div class="container-fluid">
 				<div class="profile-header">
-					<h1> PERSONAL INFORMATION </h1>
+					<h1 style="font-family:rock"> PERSONAL INFORMATION </h1>
 					<hr>
 				</div>
 				<div class="profile-content">

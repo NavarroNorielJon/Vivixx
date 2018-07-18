@@ -1,4 +1,5 @@
 /* index */
+
 .logout {
 	color: #fff;
 	text-decoration: none;
@@ -101,10 +102,11 @@
 
 /*end of forgot password modal*/
 
-.modal-title{
+.modal-title {
 	color: black;
 }
-.modal-body{
+
+.modal-body {
 	color: black;
 }
 
@@ -576,6 +578,11 @@ a[aria-expanded="true"] {
 /* end */
 
 /* utilities */
+
+@font-face {
+	font-family: rock;
+	src: url(../fonts/RockwellStd.otf);
+}
 
 .text-transform {
 	text-transform: capitalize;

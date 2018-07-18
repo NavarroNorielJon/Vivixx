@@ -10,6 +10,7 @@
 			});
 		});
 	});
+
 </script>
 
 <?php
@@ -27,7 +28,7 @@
 ?>
 	<nav class="sidebar">
 		<div class="sidebar-header">
-			<a class="sidebar-logo" href="home"><img src="../img/Lion.png"></a>
+			<a class="sidebar-logo" href="home" tabindex="-1"><img src="../img/Lion.png"></a>
 		</div>
 
 		<!-- Sidebar Links -->

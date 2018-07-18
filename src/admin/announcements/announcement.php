@@ -77,7 +77,7 @@
 						<?php
 					$sql = "SELECT * FROM mis.announcement left join mis.announcement_attachments using(announcement_id) group by 1;";
 					$result = $connect->query($sql);
-					
+
 					if($result-> num_rows > 0){
 						while($row = $result->fetch_assoc()){
 							if(isset($row['attachment'])){
@@ -143,7 +143,7 @@
 										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
-
+								
 								<div class="form-group col">
 									<label for="department">Department</label>
 									<select class="custom-select form-group" name="department[]" id="department" required multiple="multiple">
@@ -277,7 +277,20 @@
 				})
 			});
 			$('#an').addClass('active');
-
+			$('#container-announcement').ajaxForm({
+			    url: 'submit_announcement.php',
+			    method: 'post',
+			    success: function () {
+			        swal({
+			            type: 'success',
+			            title: 'Announcement Added',
+			            icon: 'success',
+			            timer: 2500
+			        }).then(function(){
+			            location.reload();
+			        });
+			    }
+			});
 		</script>
 
 	</body>
