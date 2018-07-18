@@ -113,7 +113,7 @@
 
 
 					<fieldset>
-						<form id="personal" action="update_personal" method="post" enctype="multipart/form-data" class="jumbotron">
+						<form id="personal" action="update_personal" method="post" enctype="multipart/form-data">
 							<input type="hidden" name="userid1" value="<?php echo $user_id ?>" />
 							<h2>Step 1: Personal Information</h2>
 							<div class="row">
