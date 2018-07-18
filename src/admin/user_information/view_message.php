@@ -12,18 +12,18 @@
 
 				<!-- Body -->
 				<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
-                    <div class="table-container">
-                        <table class="table" id="sample">
-                            <thead>
-                                <tr class="table-header">
-                                    <th>Subject</th>
-                                    <th>Date Announced</th>
-                                    <th>Date Read</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
+					<div class="table-container">
+						<table class="table" id="sample">
+							<thead>
+								<tr class="table-header">
+									<th>Subject</th>
+									<th>Date Announced</th>
+									<th>Date Read</th>
+									<th>Status</th>
+								</tr>
+							</thead>
 
-                            <?php
+							<?php
                                 $sql = "SELECT * FROM mis.notification where user_id='$user_id';";
                                 $result = $connect->query($sql);
 
@@ -41,11 +41,11 @@
             
                                 }
                             ?>
-                        </table>
-                    </div>
-						<div style="text-align:right">
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
+						</table>
+					</div>
+					<div style="text-align:right">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -55,13 +55,14 @@
 		$(document).ready(function() {
 			$("#view").modal("show");
 		});
-        
-        $(document).ready(function() {
-				$('#sample').dataTable({
-					"columnDefs": [{
-						"orderable": false
-					}]
-				});
-				$('#sample').DataTable();
+
+		$(document).ready(function() {
+			$('#sample').dataTable({
+				"columnDefs": [{
+					"orderable": false
+				}]
 			});
+			$('#sample').DataTable();
+		});
+
 	</script>

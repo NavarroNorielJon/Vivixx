@@ -64,7 +64,7 @@
 				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
-							<tr>
+							<tr class="table-header">
 								<th>Subject</th>
 								<th>Start Date</th>
 								<th>End Date</th>
@@ -143,7 +143,7 @@
 										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
-								
+
 								<div class="form-group col">
 									<label>Due dates:</label>
 									<div class="form-control">
@@ -175,7 +175,7 @@
 
 							<label for="text">Content:</label>
 							<div class="d-flex">
-							<input type="hidden" name="body">
+								<input type="hidden" name="body">
 								<div class="p-2" id="border">
 									<!-- <p contenteditable="true" id="editable"></p> -->
 									<textarea class="form-control body" name="body" id="text" placeholder="Content" column="5" required></textarea>
@@ -199,7 +199,6 @@
 		<div id="signup_form"></div>
 
 		<script>
-
 			$('#department').multiselect({
 				templates: {
 					li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
@@ -209,10 +208,9 @@
 			$(document).ready(function() {
 				$('#table').dataTable({
 					"columnDefs": [{
-							"orderable": false,
-							"targets": [4, 5]
-						}
-					]
+						"orderable": false,
+						"targets": [4, 5]
+					}]
 				});
 				$('#table').DataTable();
 			});
@@ -269,9 +267,9 @@
 					});
 				});
 			});
-			
+
 			$('.body').richText();
-			let removeToolbar = function(){
+			let removeToolbar = function() {
 				$('.richText-toolbar').remove();
 			}
 
@@ -291,19 +289,20 @@
 			});
 			$('#an').addClass('active');
 			$('#container-announcement').ajaxForm({
-			    url: 'submit_announcement.php',
-			    method: 'post',
-			    success: function () {
-			        swal({
-			            type: 'success',
-			            title: 'Announcement Added',
-			            icon: 'success',
-			            timer: 2500
-			        }).then(function(){
-			            location.reload();
-			        });
-			    }
+				url: 'submit_announcement.php',
+				method: 'post',
+				success: function() {
+					swal({
+						type: 'success',
+						title: 'Announcement Added',
+						icon: 'success',
+						timer: 2500
+					}).then(function() {
+						location.reload();
+					});
+				}
 			});
+
 		</script>
 
 	</body>
