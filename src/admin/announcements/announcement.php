@@ -145,17 +145,30 @@
 								</div>
 
 								<div class="form-group col">
+									<label>Due dates:</label>
+									<div class="form-control">
+										<div class="switch">
+											<input type="radio" class="switch-input" name="status" value="on" id="on" >
+											<label for="on" class="switch-label switch-label-off">ON</label>
+											<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
+											<label for="off" class="switch-label switch-label-on">OFF</label>
+											<span class="switch-selection"></span>
+										 </div>
+									 </div>
+								</div>
+
+								<div class="form-group col">
 									<label for="department">Department</label>
 									<select class="custom-select form-group" name="department[]" id="department" required multiple="multiple">
-									<option value="All Departments">All Departments</option>
-                                	<option value="Administration">Administration</option>
-                                	<option value="Administration/HR Support">Administration/HR Support</option>
-                                	<option value="IT Support">IT Support</option>
-                                	<option value="Non-voice Account">Non-voice Account</option>
-                                	<option value="Phone ESL">Phone ESL</option>
-                                	<option value="Video ESL">Video ESL</option>
-                                	<option value="Virtual Assistant">Virtual Assistant</option>
-									<option value="Maintenance">Maintenance</option>
+										<option value="All Departments">All Departments</option>
+	                                	<option value="Administration">Administration</option>
+	                                	<option value="Administration/HR Support">Administration/HR Support</option>
+	                                	<option value="IT Support">IT Support</option>
+	                                	<option value="Non-voice Account">Non-voice Account</option>
+	                                	<option value="Phone ESL">Phone ESL</option>
+	                                	<option value="Video ESL">Video ESL</option>
+	                                	<option value="Virtual Assistant">Virtual Assistant</option>
+										<option value="Maintenance">Maintenance</option>
                         			</select>
 								</div>
 							</div>

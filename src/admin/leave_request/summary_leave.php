@@ -41,7 +41,23 @@
 				<div class="text-center">
 					<h1>Summary of Leave Request by Month</h1>
 				</div>
-
+				<div class="">
+					<select id="month" name="month" class="form-control col-2">
+						<option value="All">All</option>
+						<option value="1">January</option>
+						<option value="2">February</option>
+						<option value="3">March</option>
+						<option value="4">April</option>
+						<option value="5">May</option>
+						<option value="6">June</option>
+						<option value="7">July</option>
+						<option value="8">August</option>
+						<option value="9">September</option>
+						<option value="10">October</option>
+						<option value="11">November</option>
+						<option value="12">December</option>
+					</select>
+				</div>
 				<div class="table-container">
 					<table class="table" id="leave_month">
 						<thead>
@@ -54,21 +70,7 @@
                                 <th>Leave Type</th>
 							</tr>
 						</thead>
-						<select id="month" name="month" class="form-control col-1">
-							<option value="All">All</option>
-							<option value="1">January</option>
-							<option value="2">February</option>
-							<option value="3">March</option>
-							<option value="4">April</option>
-							<option value="5">May</option>
-							<option value="6">June</option>
-							<option value="7">July</option>
-							<option value="8">August</option>
-							<option value="9">September</option>
-							<option value="10">October</option>
-							<option value="11">November</option>
-							<option value="12">December</option>
-						</select>
+
 
 						<?php
 							$sql = "select * from leave_req;";
@@ -125,7 +127,6 @@
 					"columnDefs": [{
 						"orderable": false
 					}]
-	}
 				});
 				let table = $('#leave_month').DataTable();
 			});
