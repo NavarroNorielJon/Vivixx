@@ -91,7 +91,7 @@
 
                         <div class="form-group">
 							<label>End Of Contract</label>
-                            <input type="text" id="eoc" name="eoc" class="form-control" autocomplete="off" required="required" placeholder="yy-mm-dd">
+                            <input type="text" id="eoc" name="eoc" class="form-control" autocomplete="off" placeholder="yy-mm-dd">
 
 						</div>
 
