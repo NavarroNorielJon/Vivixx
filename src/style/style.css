@@ -458,12 +458,10 @@
 	max-width: 30vw;
 	min-width: 30vw;
 	padding: 5vh 5vh 5vh 5vh;
-	transition: all 0.7s;
 }
 
 .resetPassword input[type=password] {
 	border-radius: 0;
-	width: 70%;
 }
 
 /*end*/

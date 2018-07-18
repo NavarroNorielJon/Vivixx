@@ -20,28 +20,30 @@
 		<form action="../utilities/validate_reset_password.php" id="reset_pass" method="POST">
 			<input type="text" name="account" style="display:none; " value="<?php echo $_GET['account'];?>">
 
-			<div class="form-group">
-				<label for="new_password">New Password</label>
+			<div class="form-group" style="display: block">
+				<label>New Password</label>
 				<div class="input-group">
-					<input type="password" class="form-control" name="password" id="new_pass" placeholder="Enter New Password" id="new_password" required>
+					<input type="password" class="form-control" name="password" id="new_pass" placeholder="Enter New Password" required>
 					<div class="input-group-append">
 						<button type="button" class="btn eye" onclick="showHide('new_pass','icon1')">
-                            <i class="material-icons" id="icon1">visibility</i>
+                            <i class="material-icons" id="icon1" tabindex="-1">visibility</i>
                         </button>
 					</div>
 				</div>
+				<label for="new_pass" generated="true" class="error"></label>
 			</div>
 
 			<div class="form-group">
-				<label for="confirm_password">Re-enter Password</label>
+				<label>Re-enter Password</label>
 				<div class="input-group">
 					<input type="password" class="form-control" name="confirm_password" id="conf_pass" placeholder="Re-enter Password" required>
 					<div class="input-group-append">
-						<button type="button" class="btn eye" onclick="showHide('r_password','icon2')">
+						<button type="button" class="btn eye" onclick="showHide('conf_pass','icon2')">
                             <i class="material-icons" id="icon2">visibility</i>
                         </button>
 					</div>
 				</div>
+				<label for="conf_pass" generated="true" class="error"></label>
 			</div>
 
 			<div class="text-right">
