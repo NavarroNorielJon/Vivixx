@@ -41,6 +41,7 @@
             
                                 }
                             ?>
+                        </table>
                     </div>
 						<div style="text-align:right">
 							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

@@ -70,7 +70,11 @@
 				</li>
 
 				<li id="leave_r" class="nav-item">
-					<a class="nav-link" href="../leave_request/leave_requests">Leave Request<?php echo $leave?></a>
+					<button onclick="drop1()" class="dropbtn">Leave</button>
+					<div id="drop1" class="dropdown-content">
+						<a class="nav-link" href="../leave_request/leave_requests">Leave Request</a>
+						<a class="nav-link" href="../leave_request/summary_leave">Leave Request Summary<?php echo $leave?></a>
+					</div>
 				</li>
 
 				<li id="pay" class="nav-item">
@@ -92,6 +96,9 @@
 	<script>
 		function drop() {
 			document.getElementById("drop").classList.toggle("showbtn");
+		}
+		function drop1() {
+			document.getElementById("drop1").classList.toggle("showbtn");
 		}
 
 		// Close the dropdown if the user clicks outside of it
