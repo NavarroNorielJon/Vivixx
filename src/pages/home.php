@@ -1,6 +1,6 @@
 <?php
 	include '../utilities/session.php';
- include '../utilities/check_user_info.php';
+ 	include '../utilities/check_user_info.php';
 	$connect = Connect();
 
 	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
@@ -51,6 +51,7 @@
 										} else {
 											echo "
 											<div class='item'>
+											<h3 style=' opacity:0'>Due Date: ".$row1['end_date'] ."sada</h3>
 												<div class='imgTitle'>
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
@@ -70,11 +71,11 @@
 						<?php
 						if ($announcement->num_rows > 1 ) {
 							echo '<div class="text-center">
-								<button class="MS-left">
-									<i class="fa fa-angle-left" aria-hidden="true"></i>
+								<button class="MS-left btn btn-info">
+									<i class="material-icons">navigate_before</i>
 								</button>
-								<button class="MS-right">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>
+								<button class="MS-right btn btn-info">
+									<i class="material-icons">navigate_next</i>
 								</button>
 							</div>';
 						}

@@ -1,5 +1,4 @@
 <?php
-include 'db.php';
 include 'session.php';
 $connect = Connect();
 
@@ -8,7 +7,11 @@ $connect = Connect();
 $birth_date = mysqli_real_escape_string($connect, $_POST['birth_date']);
 $birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place']));
 $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
-$facebook = mysqli_real_escape_string($connect, $_POST['facebook']);
+if (!empty($_POST['facebook'])) {
+    $facebook ="'" . mysqli_real_escape_string($connect, $_POST['facebook'])."'";
+} else {
+    $facebook = 'NULL';
+}
 $gender = mysqli_real_escape_string($connect, $_POST['gender']);
 if ($gender === "Other") {
     $gender = mysqli_real_escape_string($connect, $_POST['spec']);
@@ -31,11 +34,26 @@ if ($civil_status === "others") {
     $civil_status = ucwords(mysqli_real_escape_string($connect, $_POST['other_civil']));
 }
 
-$sss_no = mysqli_real_escape_string($connect, $_POST['sss_no']);
-$tin = mysqli_real_escape_string($connect, $_POST['tin']);
-$philhealth_no = mysqli_real_escape_string($connect, $_POST['philhealth_no']);
-$pagibig_id_no = mysqli_real_escape_string($connect, $_POST['pagibig_id_no']);
-
+if (!empty($_POST['sss_no'])) {
+    $sss_no ="'" . mysqli_real_escape_string($connect, $_POST['sss_no'])."'";
+} else {
+    $sss_no = 'NULL';
+}
+if (!empty($_POST['tin'])) {
+    $tin ="'" . mysqli_real_escape_string($connect, $_POST['tin'])."'";
+} else {
+    $tin = 'NULL';
+}
+if (!empty($_POST['philhealth_no'])) {
+    $philhealth_no ="'" . mysqli_real_escape_string($connect, $_POST['philhealth_no'])."'";
+} else {
+    $philhealth_no = 'NULL';
+}
+if (!empty($_POST['pagibig_id_no'])) {
+    $pagibig_id_no ="'" . mysqli_real_escape_string($connect, $_POST['pagibig_id_no'])."'";
+} else {
+    $pagibig_id_no = 'NULL';
+}
 //family background
 $spouse_first_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_first_name']));
 $spouse_middle_name = ucwords(mysqli_real_escape_string($connect, $_POST['spouse_middle_name']));
@@ -196,11 +214,11 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $id = $row['user_id'];
 
 $update_stmt = "UPDATE `user_info` SET `birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
- `facebook_link`='$facebook',`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
+ `facebook_link`=$facebook,`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
  `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
  `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship',
- `civil_status`='$civil_status', `sss_no`='$sss_no', `tin`='$tin',
- `philhealth_no`='$philhealth_no', `pagibig_id_no`='$pagibig_id_no' WHERE `user_id`='$id';";
+ `civil_status`='$civil_status', `sss_no`=$sss_no, `tin`=$tin,
+ `philhealth_no`=$philhealth_no, `pagibig_id_no`=$pagibig_id_no WHERE `user_id`='$id';";
  if ($connect->query($update_stmt) === true) {
     if ($spouse_first_name === "" && $spouse_middle_name === "" && $spouse_last_name === "" && $occupation === "" && $employer === "" && $business_address === "") {
         $insert_stmt = "INSERT INTO `user_background`(`user_id`,`father_first_name`,`father_middle_name`,`father_last_name`,
