@@ -116,25 +116,26 @@ if (isset($_SESSION['user'])) {
 					}
 				}
 			});
-            $('#reset_form').ajaxForm({
-            	url: '../mailing/send_reset.php',
-            	method: 'post',
-            	success: function (data) {
-            		if (data === 'That email is not being used by any account.') {
-            			swal({
-            				title: data,
-            				icon: 'error',
-            			});
-            		} else if (data === 'Email sucessfully sent, please check your email.') {
-            			swal({
-            				title: data,
-            				icon: 'success'
-            			}).then(function () {
-            				window.location = '/';
-            			});
-                    } 
-            	}
-            });
+			$('#reset_form').ajaxForm({
+				url: '../mailing/send_reset.php',
+				method: 'post',
+				success: function(data) {
+					if (data === 'That email is not being used by any account.') {
+						swal({
+							title: data,
+							icon: 'error',
+						});
+					} else if (data === 'Email sucessfully sent, please check your email.') {
+						swal({
+							title: data,
+							icon: 'success'
+						}).then(function() {
+							window.location = '/';
+						});
+					}
+				}
+			});
+
 		</script>
 		<script src="script/ajax.js"></script>
 	</body>
