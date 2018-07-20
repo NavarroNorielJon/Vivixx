@@ -72,7 +72,7 @@
 						</div>
 						<div id="others" class="form-group" style='display:none'>
 							<label for="other_reason">Reason</label>
-							<input type="text" class="form-control" placeholder="Reason" name="others" id="other_reason">
+							<input type="text" class="form-control text-transform" placeholder="Reason" name="reason" id="other_reason">
 						</div>
 						<div id="attach" class="form-group" style='display:none'>
 							<label for="other_reason">Supporting Document</label>
@@ -103,9 +103,19 @@
 								if ($('#type').val() === "Emergency" || $('#type').val() === "Sick Leave" || $('#type').val() === "others") {
 									$('#e1').show();
 									$('#s1').show();
+									$('#e_date1').attr("required", 'true');
+									$('#s_date1').attr("required", 'true');
+									$('#s_date2').removeAttr("required");
+									$('#e_date2').removeAttr("required");
+
 								} else {
 									$('#e2').show();
 									$('#s2').show();
+									$('#e_date2').attr("required", 'true');
+									$('#s_date2').attr("required", 'true');
+									$('#s_date1').removeAttr("required");
+									$('#e_date1').removeAttr("required");
+
 								}
 							});
 						});
@@ -116,7 +126,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date1" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									<input type="text" id="s_date1" name="from1" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -124,7 +134,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date2" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									<input type="text" id="s_date2" name="from2" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -133,7 +143,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" id="e_date1" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
+									<input type="text" id="e_date1" name="to1" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -141,7 +151,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" id="e_date2" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
+									<input type="text" id="e_date2" name="to2" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>

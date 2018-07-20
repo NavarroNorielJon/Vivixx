@@ -7,6 +7,9 @@
     $leave_request = "SELECT *, email from leave_req join user using(user_id) where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
+    $cret = "SELECT used, credits from employee_info where user_id='$user_id'";
+    $result1 = $connect->query($cret);
+    $row1 = $result1->fetch_assoc();
 	$user = $_GET["fname"];
 	$user_middle = $_GET["mname"];
     $user_last = $_GET["lname"];
@@ -20,9 +23,10 @@
 					<h1>Leave Request Form</h1>
                 </div>
                 <input type="hidden" name="req_id" value="<?php echo $req_id?>">
+                <input type="hidden" name="user_id" value="<?php echo $row["user_id"]?>">
                 <input type="hidden" name="email" value="<?php echo $row["email"]?>">
-                <input type="hidden" name="used" value="<?php echo $row["used"]?>">
-                <input type="hidden" name="remaining" value="<?php echo $row["remaining"]?>">
+                <input type="hidden" name="used" value="<?php echo $row1["used"]?>">
+                <input type="hidden" name="remaining" value="<?php echo $row1["credits"]?>">
 
                 <div class="modal-body">
                     <div class="row">
@@ -54,43 +58,57 @@
                             <label for="date_filed">Date Filed</label>
                             <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="date_filed" name="dateFilled" readonly value="<?php echo $row['date_filed']?>">
                         </div>
-				    </div><hr>
+				    </div>
+                    <hr>
 
-                    <div>
-                        <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col">
                             <label for="other_reason">Reason for Leave</label>
                             <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="reason" readonly value="<?php echo $row['reason']?>">
                         </div>
+                        <?php
+                            if ($row['attachment'] != "") {
+                                echo '<div class="form-group col">
+                                    <label>Supporting Document</label>
+                                    <img src="data:image/jpg;base64,'. $row['attachment'] . '" style="height:50%;width:50%;">
+                                </div>';
+                            }else {
+                                echo '<div class="form-group col">
+                                    <label>No Supporting Document</label>
+                                </div>';
+                            }
+                         ?>
+                    </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="credit">Maximum Leave Credits</label>
-                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="credit" readonly value="5">
-                            </div>
-
-                            <div class="form-group col">
-                                <label for="used">Used Leave Credits</label>
-                                <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="used" readonly value="<?php echo $row['used']?>">
-                            </div>
-
-                            <div class="form-group col">
-                                <label for="balance">Remaining Balance</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="balance" readonly value="<?php echo $row['remaining']?>">
-                            </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="credit">Maximum Leave Credits</label>
+                            <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="credit" readonly value="5">
                         </div>
 
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="address_leave">Contact Address during leave</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="address_leave" readonly value="<?php echo $row['contact_address']?>">
-                            </div>
-
-                            <div class="form-group col">
-                                <label for="number_leave">Contact Number during leave</label>
-                                <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="number_leave" readonly value="<?php echo $row['contact_number']?>">
-                            </div>
+                        <div class="form-group col">
+                            <label for="used">Used Leave Credits</label>
+                            <input type="text" class="form-control-plaintext"  style="font-size:1.5rem;" id="used" readonly value="<?php echo $row1['used']?>">
                         </div>
-				    </div><hr>
+
+                        <div class="form-group col">
+                            <label for="balance">Remaining Balance</label>
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="balance" readonly value="<?php echo $row1['credits']?>">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="address_leave">Contact Address during leave</label>
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="address_leave" readonly value="<?php echo $row['contact_address']?>">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="number_leave">Contact Number during leave</label>
+                            <input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="number_leave" readonly value="<?php echo $row['contact_number']?>">
+                        </div>
+                    </div>
+                    <hr>
 
                     <div>
                         <h1>Inclusive days applied</h1>
@@ -124,14 +142,12 @@
             method: 'post',
             success: function (data) {
                 let dat = data;
-                if(dat.stat == "User has no more remaining leave credits"){
+                if(data == "User has no more remaining leave credits"){
                     swal({
                         type: 'error',
-                        title: dat.stat,
+                        title: data,
                         icon: 'error',
                         showConfirmButton: true,
-                    }).then(function(){
-                        location.reload();
                     });
                 } else if (dat.stat == "Rejected") {
                     $.post({
@@ -143,7 +159,7 @@
                         success: function () {
                             swal({
                                 type: 'error',
-                                title: dat.stat,
+                                title: "Disapproved",
                                 icon: 'error',
                                 showLoaderOnConfirm: true
 
@@ -179,7 +195,7 @@
                         success: function () {
                             swal({
                                 type: 'success',
-                                title: dat.stat,
+                                title: "Approved",
                                 icon: 'success',
                                 showConfirmButton: true,
                                 showLoaderOnConfirm: true

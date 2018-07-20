@@ -155,13 +155,11 @@
         $('#set_user').ajaxForm({
         	url: 'update_user.php',
         	method: 'post',
-
         	success: function () {
         		swal({
         			type: 'success',
-        			title: 'Success!',
+        			title: 'Done!',
         			icon: 'success',
-        			text: "Thank you!",
         			timer: 2500
         		}).then(function () {
                     location.reload();
