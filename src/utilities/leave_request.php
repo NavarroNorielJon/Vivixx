@@ -17,6 +17,12 @@
     } elseif ($reason === ""){
         exit();
     }
+    if ( !empty($_POST['attachment'])) {
+        $attachement = "'".mysqli_real_escape_string($connect, $_POST['attachment'])."'";
+    } else {
+        $attachement = 'NULL';
+
+    }
 	$contact_address = ucwords(mysqli_real_escape_string($connect, $_POST['contact_address']));
     $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
     $from = mysqli_real_escape_string($connect, $_POST['from']);
@@ -26,11 +32,10 @@
     $date_hired = date('Y-m-d', strtotime($date_hired));
 
     $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`,
-		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
+		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`,`attachment`)
 		VALUES ('$user_id', '$employee', '$department', '$date_hired', NOW(), '$reason', '$contact_address',
-		'$contact_number', '$from', '$to') ;";
+		'$contact_number', '$from', '$to', $attachement) ;";
     if ($connect->query($insert_stmt) === true) {
-        echo $insert_stmt;
     } else {
         print_r($connect->error);
     }

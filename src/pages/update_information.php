@@ -34,10 +34,6 @@
 	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
 		&& $civil_status != null ) && $type == "user") {
 		header("location:/pages/home");
-	}else {
-		if ($type != "user"){
-			echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
-		}
 	}
 
 ?>
@@ -155,7 +151,7 @@
 								<div class="ui calendar" id="birth_date">
 									<div class="ui input left icon">
 										<label for="start_date">Birth Date</label>
-										<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+										<input type="text" id="bdate" name="birth_date" class="form-control date" autocomplete="off" required placeholder="yyyy-mm-dd">
 									</div>
 								</div>
 							</div>
@@ -1459,7 +1455,9 @@
 			$('#weight').bind('cut copy paste', function(e) {
 				e.preventDefault();
 			});
-
+            $('.date').inputmask({
+				mask: 'dddd-dd-dd'
+			});
 		</script>
 		<script>
 			var map = L.map('mapid').setView([
