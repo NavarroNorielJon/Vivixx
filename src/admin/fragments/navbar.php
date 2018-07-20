@@ -47,7 +47,6 @@
 
 		<div class="collapse navbar-collapse" id="navbar-content">
 			<ul class="navbar-nav">
-
 				<li>
 					<input name='edit' value='signup' style='display: none;'>
 					<a href="../fragments/signup" data-target="#signup" class="nav-link signup">Add User</a>
@@ -61,6 +60,9 @@
 					<a class="nav-link" href="../announcements/announcement">Announcement</a>
 				</li>
 
+				<li class="nav-item">
+					<a class="nav-link" href="../utilities/backup">Backup</a>
+				</li>
 
 				<li id="emp" class="nav-item">
 					<div class="dropdown">
@@ -94,10 +96,6 @@
 				<li class="nav-item">
 					<a class="nav-link logout" href="../utilities/logout">Logout</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="../utilities/backup">Backup</a>
-				</li>
-
 			</ul>
 		</div>
 	</nav>
