@@ -89,26 +89,9 @@ $('#login').ajaxForm({
 		}
 	}
 });
-$('#reset_form').ajaxForm({
-	url: '../mailing/send_reset.php',
-	method: 'post',
-	success: function (data) {
-		if (data === 'That email is not being used by any account.') {
-			swal({
-				title: data,
-				icon: 'error',
-			});
-		} else if (data === 'Email sucessfully sent, please check your email.') {
-			swal({
-				title: data,
-				icon: 'success'
-			}).then(function () {
-				window.location = '/';
-			});
-		}
-	}
-});
+
 $("#reset_pass").validate({
+	errorClass: 'error',
 	rules: {
 		password: {
 			required: true,
@@ -137,6 +120,13 @@ $('#reset_pass').ajaxForm({
 			}).then(function () {
 				window.location = '/';
 			});
+		}else {
+			swal({
+				title: data,
+				icon: 'error',
+			}).then(function () {
+				window.location = '/';
+			});
 		}
 	}
 });
@@ -150,6 +140,13 @@ $('#status').ajaxForm({
 				icon: 'error',
 			});
 		} else if (data === 'Error in updating status') {
+			swal({
+				title: data,
+				icon: 'error'
+			}).then(function () {
+				window.location = '/';
+			});
+		} else {
 			swal({
 				title: data,
 				icon: 'error'

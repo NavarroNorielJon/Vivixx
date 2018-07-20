@@ -110,7 +110,7 @@ function verifyLogin() {
 
 function alphabetInput(evt){
 	var alphabet = String.fromCharCode(evt.which);
-	if(!(/[\w\b\s]/.test(alphabet))) {
+	if(!(/[a-zA-z\-\,\.\/\b\s]/.test(alphabet))) {
 		evt.preventDefault();
 	}
 }

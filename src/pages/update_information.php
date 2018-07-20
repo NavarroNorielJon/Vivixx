@@ -32,12 +32,8 @@
 
 	if (($birth_date != null && $birth_place != null && $contact_number != null &&
 	   $gender != null && $height != null && $weight != null && $blood_type != null && $residential_address != null && $residential_zip != null && $residential_tel_no != null && $permanent_address != null && $permanent_zip != null && $permanent_tel_no != null && $citizenship != null
-		&& $civil_status != null && $sss_no != null && $tin != null && $philhealth_no != null && $pagibig_id_no != null) && $type == "user") {
+		&& $civil_status != null ) && $type == "user") {
 		header("location:/pages/home");
-	}else {		
-		if ($type != "user"){
-			echo "<script>window.location = '../admin/accounts/accounts_status';</script>";
-		}	
 	}
 
 ?>
@@ -155,7 +151,7 @@
 								<div class="ui calendar" id="birth_date">
 									<div class="ui input left icon">
 										<label for="start_date">Birth Date</label>
-										<input type="text" id="bdate" name="birth_date" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+										<input type="text" id="bdate" name="birth_date" class="form-control date" autocomplete="off" required placeholder="yyyy-mm-dd">
 									</div>
 								</div>
 							</div>
@@ -1041,6 +1037,15 @@
 							</div>
 						</div>
 						<hr>
+                        <!-- <script>
+                            $(function() {
+                                $('#option4').change(function() {
+                                    $('#g4').hide();
+                                    $('#u4').hide();
+                                    $('#' + $(this).val()).show();
+                                });
+                            });
+                        </script> -->
 						<h6>Your Housemates/Guardians</h6>
 						<div class="row">
 							<div class="form-group col">
@@ -1066,7 +1071,7 @@
 
 						</div>
 
-						<div class="row" style="display:none">
+						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of Housemate</label>
 								<input type="text" name="hname[]" id="hname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
@@ -1112,10 +1117,9 @@
 								<label for="rmnumber1">Mobile Number</label>
 								<input type="tel" name="rnumber[]" id="rnumber1" placeholder="+639XX XXX XXXX" class="form-control mobile" autocomplete="off" required="required">
 							</div>
-
 						</div>
 
-						<div class="row" style="display:none">
+						<div class="row">
 							<div class="form-group col">
 								<label for="hname">Name of relative</label>
 								<input type="text" name="rname[]" id="rname2" placeholder="name" onkeypress="alphabetInput(event)" class="form-control text-transform" autocomplete="off">
@@ -1369,7 +1373,7 @@
 						<div class="row">
 							<div class="form-group col">
 								<label>Company Email address</label>
-								<input type="text" name="com_email" id="com_email" placeholder="Company Email addres" class="form-control">
+								<input type="text" name="com_email" id="com_email" placeholder="Company Email address" class="form-control">
 							</div>
 
 							<div class="form-group col">
@@ -1451,7 +1455,9 @@
 			$('#weight').bind('cut copy paste', function(e) {
 				e.preventDefault();
 			});
-
+            $('.date').inputmask({
+				mask: 'dddd-dd-dd'
+			});
 		</script>
 		<script>
 			var map = L.map('mapid').setView([

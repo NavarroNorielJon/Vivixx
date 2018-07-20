@@ -26,7 +26,7 @@
 
 	<body style="background-color:#f5f5f0;">
 		<div class="wrapper">
-			<?php include 'fragments/sidebar.php'; ?>
+			<?php include 'fragments/sidebar.php';?>
 
 			<div class="leave">
 				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
@@ -45,7 +45,6 @@
 								} else if ($('#type').val() === "others") {
 									$('#attach').show();
 									$('#other_reason').attr('required', 'true');
-									$('#attachment').attr('required', 'true');
 								} else if ($('#type').val() === "Sick Leave") {
 									$('#attach').show();
 									$('#attachment').attr('required', 'true');
@@ -73,7 +72,7 @@
 						</div>
 						<div id="others" class="form-group" style='display:none'>
 							<label for="other_reason">Reason</label>
-							<input type="text" class="form-control" placeholder="Reason" name="others" id="other_reason">
+							<input type="text" class="form-control text-transform" placeholder="Reason" name="reason" id="other_reason">
 						</div>
 						<div id="attach" class="form-group" style='display:none'>
 							<label for="other_reason">Supporting Document</label>
@@ -93,23 +92,66 @@
 						</div>
 					</div>
 					<hr>
-					<h1 class="text-center leave-header">Inclusive days applied</h1>
+					<h1 class="text-center leave-header" style="font-family: rock">Inclusive days applied</h1>
+					<script>
+						$(function() {
+							$('#type').change(function() {
+								$('#e1').hide();
+								$('#e2').hide();
+								$('#s1').hide();
+								$('#s2').hide();
+								if ($('#type').val() === "Emergency" || $('#type').val() === "Sick Leave" || $('#type').val() === "others") {
+									$('#e1').show();
+									$('#s1').show();
+									$('#e_date1').attr("required", 'true');
+									$('#s_date1').attr("required", 'true');
+									$('#s_date2').removeAttr("required");
+									$('#e_date2').removeAttr("required");
 
+								} else {
+									$('#e2').show();
+									$('#s2').show();
+									$('#e_date2').attr("required", 'true');
+									$('#s_date2').attr("required", 'true');
+									$('#s_date1').removeAttr("required");
+									$('#e_date1').removeAttr("required");
+
+								}
+							});
+						});
+
+					</script>
 					<div class="row">
-						<div class="form-group col">
-							<div class="ui calendar" id="start_date">
+						<div class="form-group col" id="s1">
+							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									<input type="text" id="s_date1" name="from1" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
+								</div>
+							</div>
+						</div>
+						<div class="form-group col" id="s2" style="display:none">
+							<div class="ui calendar">
+								<div class="ui input left icon">
+									<label for="start_date">Start Date</label>
+									<input type="text" id="s_date2" name="from2" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
 
-						<div class="form-group col">
-							<div class="ui calendar" id="end_date">
+						<div class="form-group col" id="e1">
+							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" id="e_date" name="to" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
+									<input type="text" id="e_date1" name="to1" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
+								</div>
+							</div>
+						</div>
+						<div class="form-group col" id="e2" style="display:none">
+							<div class="ui calendar">
+								<div class="ui input left icon">
+									<label for="end_date">End Date</label>
+									<input type="text" id="e_date2" name="to2" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -135,52 +177,76 @@
 					});
 				});
 			});
+
+            $(function() {
+				$("#s_date1").datepicker({
+					dateFormat: 'yy-mm-dd'
+				}).bind("change", function() {
+					var min = $(this).val();
+					min = $.datepicker.parseDate("yy-mm-dd", min);
+					min.setDate(min.getDate() + 1);
+					$("#e_date1").datepicker("option", "minDate", min);
+				});
+			});
+			$("#s_date1").datepicker({
+				dateFormat: 'yy-mm-dd',
+				minDate: new Date((new Date()).setDate(new Date().getDate() + 1))
+			});
+			$("#s_date2").datepicker({
+				dateFormat: 'yy-mm-dd',
+				minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
+			});
+			$(function() {
+				$("#s_date2").datepicker({
+					dateFormat: 'yy-mm-dd'
+				}).bind("change", function() {
+					var min = $(this).val();
+					min = $.datepicker.parseDate("yy-mm-dd", min);
+					min.setDate(min.getDate() + 1);
+					$("#e_date2").datepicker("option", "minDate", min);
+				});
+			});
+			$("#e_date1").datepicker({
+				dateFormat: 'yy-mm-dd'
+			});
+			$("#e_date2").datepicker({
+				dateFormat: 'yy-mm-dd'
+			});
+
 			$('.mobile').inputmask({
 				mask: '+639dd ddd dddd'
 			});
 			$('.date').inputmask({
 				mask: 'dddd-dd-dd'
 			});
-			$(function sample() {
-				if ($('#type').val() == "Emergency") {
-					$("#s_date").datepicker({
-						dateFormat: 'yy-mm-dd',
-						minDate: new Date((new Date()).setDate(new Date().getDate() + 1))
-					});
-				} else {
-					$("#s_date").datepicker({
-						dateFormat: 'yy-mm-dd',
-						minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
-					});
-				}
-			});
-			$("#e_date").datepicker({
-				dateFormat: 'yy-mm-dd'
-			});
-			$(function() {
-				$("#s_date").datepicker({
-					dateFormat: 'yy-mm-dd'
-				}).bind("change", function() {
-					var min = $(this).val();
-					min = $.datepicker.parseDate("yy-mm-dd", min);
-					min.setDate(min.getDate() + 1);
-					$("#e_date").datepicker("option", "minDate", min);
-				});
-			});
 
 			$(function() {
-				$('#s_date').change(function() {
-					if ($('#s_date').val() !== "") {
-						$('#e_date').removeAttr("disabled");
+				$('#s_date1').change(function() {
+					if ($('#s_date1').val() != "") {
+						$('#e_date1').removeAttr("disabled");
 					} else {
-						$('#e_date').attr("disabled", 'true');
+						$('#e_date1').attr("disabled", 'true');
 					}
 				});
-				$('#s_date').keyup(function() {
-					if ($('#s_date').val() !== "") {
-						$('#e_date').removeAttr("disabled");
+				$('#s_date1').keyup(function() {
+					if ($('#s_date1').val() != "") {
+						$('#e_date1').removeAttr("disabled");
 					} else {
-						$('#e_date').attr("disabled", 'true');
+						$('#e_date1').attr("disabled", 'true');
+					}
+				});
+				$('#s_date2').change(function() {
+					if ($('#s_date2').val() != "") {
+						$('#e_date2').removeAttr("disabled");
+					} else {
+						$('#e_date2').attr("disabled", 'true');
+					}
+				});
+				$('#s_date2').keyup(function() {
+					if ($('#s_date2').val() != "") {
+						$('#e_date2').removeAttr("disabled");
+					} else {
+						$('#e_date2').attr("disabled", 'true');
 					}
 				});
 			});

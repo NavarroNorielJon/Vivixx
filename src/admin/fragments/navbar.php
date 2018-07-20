@@ -72,8 +72,8 @@
 				<li id="leave_r" class="nav-item">
 					<button onclick="drop1()" class="dropbtn">Leave</button>
 					<div id="drop1" class="dropdown-content">
-						<a class="nav-link" href="../leave_request/leave_requests">Leave Request</a>
-						<a class="nav-link" href="../leave_request/summary_leave">Leave Request Summary<?php echo $leave?></a>
+						<a class="nav-link" href="../leave_request/leave_requests">Leave Request<?php echo $leave?></a>
+						<a class="nav-link" href="../leave_request/summary_leave">History</a>
 					</div>
 				</li>
 

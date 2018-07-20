@@ -36,7 +36,7 @@
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php'; ?>
 			<div class="content">
-				<h1 style="margin-bottom: 20px; font-family: rock">INBOX</h1>
+				<h1 style="margin-bottom: 20px;">INBOX</h1>
 				<div class="table-container">
 					<table class="table" id="table">
 						<thead>
@@ -55,7 +55,7 @@
 							if($result->num_rows > 0){
 								while($row = mysqli_fetch_array($result)){
 									$button = "
-										<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Read</a>";
+										<a href='message.php?msg_id=".$row['id_notification']."& subject=".$row['subject']." & message=".$row['message']." & date=".$row['date']."' data-toggle='modal' class='btn btn-primary message-modal'>Open</a>";
 									//print data in table
 									if($row["status"] == "new"){
 										echo "
@@ -81,7 +81,7 @@
 					</table>
 				</div>
 
-				<h1 style="margin-top: 10%; font-family: rock">LOGS</h1>
+				<h1 style="margin-top: 10%;">LOGS</h1>
 				<div class="table-container">
 					<table class="table" id="table2">
 						<thead>
