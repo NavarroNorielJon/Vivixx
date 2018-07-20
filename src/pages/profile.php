@@ -120,19 +120,19 @@
 					<div class="row">
 						<div class="form-group col">
 							<label for="sss">SSS ID No.</label>
-							<input type="text" id="sss" class="form-control-plaintext" value="<?php echo $sss_no;?>" disabled>
+							<input type="text" id="sss" class="form-control-plaintext" value="<?php if($sss_no!="") {echo $sss_no;} else {echo "N/A";}?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="tin">TIN</label>
-							<input type="text" id="tin" class="form-control-plaintext" value="<?php echo $tin;?>" disabled>
+							<input type="text" id="tin" class="form-control-plaintext" value="<?php if($tin!="") {echo $tin;} else {echo "N/A";} ?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="philhealth_no">PHILHEALTH ID No.</label>
-							<input type="text" id="philhealth_no" class="form-control-plaintext" value="<?php echo $philhealth_no;?>" disabled>
+							<input type="text" id="philhealth_no" class="form-control-plaintext" value="<?php if($philhealth_no!="") {echo $philhealth_no;} else {echo "N/A";} ?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="pagibig_id_no">PAG-IBIG ID No</label>
-							<input type="text" id="pagibig_id_no" class="form-control-plaintext" value="<?php echo $pagibig_id_no;?>" disabled>
+							<input type="text" id="pagibig_id_no" class="form-control-plaintext" value="<?php if($pagibig_id_no!="") {echo $pagibig_id_no;} else {echo "N/A";} ?>" disabled>
 						</div>
 					</div>
 				</div>
