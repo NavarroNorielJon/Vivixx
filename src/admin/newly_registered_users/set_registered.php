@@ -32,7 +32,7 @@
 							<label>Position</label>
 							<?php
                                     $main = explode("|",$row['department'])[0];
-                                    if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
+                                    if($main === "Voice Account" || $main === "Non-Voice Account"){
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
                                             <option selected required="require" value="Online English Tutor">Online English Tutor</option>
@@ -60,13 +60,7 @@
                                         <option selected required="require" readonly>Choose Here:</option>
                                         <option value="Security">Security</option>
                                         </select>';
-                                    }else if ($main === "Voice Account") {
-                                        echo '
-                                        <select class="custom-select form-control" id="pos" name="position" required="required">
-                                        <option selected required="require" readonly>Choose Here:</option>
-                                        <option value="Security">Security</option>
-                                        </select>';
-                                    }else {
+                                    }else if ($main === "Maintainance") {
                                         echo '
                                         <select class="custom-select form-control" id="pos" name="position" required="required">
                                         <option selected required="require" readonly>Choose Here:</option>

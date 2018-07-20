@@ -12,27 +12,6 @@
 	echo "<script type='text/javascript' src='../script/sweetalert.min.js'></script>";
 	
 	if($type == "user"){
-		$update ="UPDATE user SET status='disabled' WHERE username='$username'";
-		$result = $connect->query($update);
-		echo "<script>
-		function logout() {
-			window.location = '../utilities/logout.php';
-		}
-					function securityBreach() {
-						swal({
-  								title: 'Security Breach!',
-  								text: 'Your account has been deactivated',
-								icon: 'error',
-  								buttons: false,
-								closeOnClickOutside: false
-							});
-						setTimeout(logout, 2000);
-						
-					}
-					
-					window.onload = securityBreach;
-			 </script>";
-		
-		die();
+		header("location:/pages/home");
 	}	
 ?>

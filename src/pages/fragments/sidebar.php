@@ -37,7 +37,7 @@
 			<li id="profile" class="nav-item">
 				<a href="profile.php" class="nav-link sidebar-item">
                 <i class="material-icons">person</i>
-                <?php echo "$first_name"?></a>
+                <?php echo $first_name?></a>
 				<a href="profile.php" class="icon">
                 <i class="material-icons">person</i>
             </a>

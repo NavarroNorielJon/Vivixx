@@ -1,5 +1,6 @@
 <?php
 	include '../../utilities/session.php';
+	include '../utilities/check_user.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -33,7 +34,6 @@
 	</head>
 
 	<body class="background">
-		<?php include '../utilities/check_user.php'; ?>
 		<div class="wrapper">
 			<?php include '../fragments/navbar.php'; ?>
 
@@ -92,7 +92,7 @@
 
 		<script>
 			/* When the user clicks on the button,
-																																													toggle between hiding and showing the dropdown content */
+																																																																																																																																																																																																																																																																																																																																	toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("showbtn");
 			}

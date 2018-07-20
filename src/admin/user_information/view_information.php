@@ -1557,7 +1557,7 @@
 									<label>Position</label>
 									<?php
                                     $main = explode("|",$row8['department'])[0];
-                                        if($main === "Phone ESL" || $main === "Video ESL" || $main === "Non-Voice Account"){
+                                        if($main === "Voice Account" || $main === "Non-Voice Account"){
                                             echo '
                                             <select class="custom-select form-control" name="position">
                                                 <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
