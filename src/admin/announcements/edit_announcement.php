@@ -168,10 +168,10 @@
 			$("#edit").modal("show");
 		});
 
-		$('.body').richText();
+		// $('.body').richText();
 
-				$('.richText-toolbar').remove();
-
+		// 		$('.richText-toolbar').remove();
+		CKEDITOR.replace( 'text' );
 
 		//date range
 		$(function(){

@@ -36,6 +36,7 @@
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
 		<script src="../style/jquery.richtext.min.js"></script>
+		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 
 
 
@@ -55,7 +56,7 @@
 					</div>
 
 					<div class="col-2">
-						<a href="#!" data-toggle="modal" data-target="#add-announcement-form" onclick="removeToolbar()" class="btn btn-primary">
+						<a href="#!" data-toggle="modal" data-target="#add-announcement-form" class="btn btn-primary">
 						Add Announcement
 					</a>
 					</div>
@@ -257,7 +258,7 @@
 			//script for calling modal
 			$(document).ready(function() {
 				$('.edit').click(function(e) {
-					$('.richText-toolbar').remove();
+					// $('.richText-toolbar').remove();
 					e.preventDefault();
 					$.ajax({
 						url: $(this).attr('href'),
@@ -267,11 +268,13 @@
 					});
 				});
 			});
+			
+			CKEDITOR.replace( 'text' );
 
-			$('.body').richText();
-			let removeToolbar = function() {
-				$('.richText-toolbar').remove();
-			}
+			// $('.body').richText();
+			// let removeToolbar = function() {
+			// 	$('.richText-toolbar').remove();
+			// }
 
 			//date range
 			$(function() {
