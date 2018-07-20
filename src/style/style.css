@@ -1,22 +1,18 @@
 /* index */
 
 .index {
-	margin: 0;
-	max-height: 100%;
-	min-height: 100%;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	min-width: 1024px;
 }
 
 .index .index-image {
 	display: block;
 	height: auto;
-	margin: 3% auto 5% auto;
+	margin: 5% auto 5% auto;
 	padding: 0;
 	width: 50%;
-}
-
-.index .index-form {
-	background-color: rgb(128, 128, 128);
-	height: 100vh;
 }
 
 .index .forgot-link:hover {
@@ -25,11 +21,11 @@
 
 .index .login {
 	border-radius: 0;
-	margin: 5% auto 3% auto;
-	max-height: 570px;
-	max-width: 400px;
-	min-height: 570px;
-	min-width: 400px;
+	margin: 3.8% auto;
+	max-height: 550px;
+	max-width: 410px;
+	min-height: 550px;
+	min-width: 410px;
 	padding: 20px 15px 30px 15px;
 }
 
@@ -44,7 +40,6 @@
 
 .index .login-button:hover {
 	background-color: #fac213;
-
 }
 
 .index .signup-link:hover {
@@ -55,24 +50,28 @@
 
 .forgot-password-modal .forgot-password-content {
 	border-radius: 0;
-	height: 270px;
+	max-height: 300px;
+	min-height: 300px;
 }
 
-.forgot-password-modal .forgot-password-content .forgot-password-header {
+.forgot-password-modal .forgot-password-content .modal-header {
 	background-color: #e6e6e6;
+	height: 95px;
 }
 
 .forgot-password-modal .forgot-password-logo {
 	height: 100%;
-	width: 120%
+	width: 125%
 }
 
 .forgot-password-modal .forgot-password-content .forgot-password-header .header {
 	color: #262626;
-	font-family: arial;
+	font-family: rock;
+	font-size: 3em;
 }
 
 .forgot-password-modal .forgot-password-content .forgot-password-body {
+	height: 80%;
 	padding: 30px 30px 30px 30px;
 }
 
@@ -967,61 +966,6 @@ a[aria-expanded="true"] {
 
 /*PC*/
 
-@media screen and (width: 1920px) and (height:1200px) {
-	.index .index-image {
-		height: auto;
-		margin: 5% auto 10% auto;
-		width: 60%;
-	}
-
-	.index .login {
-		font-size: 1.5rem;
-		margin: 5% auto auto auto;
-		max-height: 1030px;
-		max-width: 680px;
-		min-height: 1030px;
-		min-width: 680px;
-		padding: 20px;
-	}
-
-	.index .login button[type=submit] {
-		font-size: 1.5rem;
-	}
-
-	/*forgot password modal*/
-	.forgot-password-modal .forgot-password-content {
-		max-height: 270px;
-		min-height: 270px;
-		max-width: 515px;
-		min-width: 515px;
-	}
-
-	.forgot-password-modal .modal-dialog {
-		height: 2700px;
-		width: 515px;
-	}
-
-	.forgot-password-modal .forgot-password-logo {
-		width: 110%
-	}
-
-	.forgot-password-modal .forgot-password-content .forgot-password-header .header {
-		font-size: 2rem;
-		margin: 10px auto auto auto;
-	}
-
-	.forgot-password-modal .forgot-password-content .forgot-password-body {
-		padding: 30px;
-	}
-
-	.forgot-password-modal .forgot-password-content .forgot-password-body input[type=email] {
-		margin-bottom: 10px;
-	}
-	/*end of forgot password modal*/
-}
-
-}
-
 @media(max-width: 900px) {
 	.leave {
 		margin-left: 10%;
@@ -1062,6 +1006,76 @@ a[aria-expanded="true"] {
 	.signup-form .signup-header .signup-h1 {
 		font-size: 3vw
 	}
+}
+
+@media screen and (width: 1920px) and (height: 1200px) {
+	.index .index-image {
+		height: auto;
+		margin: 10% auto;
+		width: 60%;
+	}
+
+	.index .login {
+		font-size: 2em;
+		margin: 5% auto auto auto;
+		max-height: 1030px;
+		max-width: 680px;
+		min-height: 1030px;
+		min-width: 680px;
+		padding: 20px;
+	}
+
+	.index .login input {
+		font-size: 1em;
+	}
+
+	.index .login button {
+		font-size: 1em;
+	}
+
+	/*forgot password modal*/
+	.forgot-password-modal .forgot-password-content {
+		margin: auto auto auto -180px;
+		max-height: 450px;
+		min-height: 450px;
+		max-width: 860px;
+		min-width: 860px;
+	}
+
+	.forgot-password-modal .forgot-password-logo {
+		width: 110%
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-header {
+		height: 160px;
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-header .header {
+		font-size: 5em;
+		margin: auto auto auto 20px;
+	}
+
+
+	.forgot-password-modal .forgot-password-content .forgot-password-body {
+		padding: 30px;
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-body input[type=email] {
+		margin-bottom: 10px;
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-body label {
+		font-size: 2em;
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-body input {
+		font-size: 2em;
+	}
+
+	.forgot-password-modal .forgot-password-content .forgot-password-body button {
+		font-size: 2em;
+	}
+	/*end of forgot password modal*/
 }
 
 

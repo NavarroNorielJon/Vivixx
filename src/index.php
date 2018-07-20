@@ -64,7 +64,7 @@ if (isset($_SESSION['user'])) {
 								<img src="img/Lion.png" alt="-forgot-password-logo" class="forgot-password-logo">
 							</div>
 
-							<div class="col-10">
+							<div class="col-10 text-left">
 								<h1 class="header">Forgot Password</h1>
 							</div>
 						</div>
