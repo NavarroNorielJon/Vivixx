@@ -86,7 +86,7 @@
 						echo '
 							<li class="active">
 								<input name="edit" value="salary" style="display: none;">
-								<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+								<a href="fragments/salary_request" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
 							</li>
 							<li class="active">
 								<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
@@ -94,7 +94,7 @@
 
 							<li class="active">
 								<input name="edit" value="salary" style="display: none;">
-								<a href="fragments/salary_request.php" data-target="#salary" class="icon">SR</a>
+								<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
 							</li>
 							<li class="active">
 								<a href="leave_request_form" class="icon">LR</a>
@@ -112,7 +112,7 @@
 
 						<li class="active">
 							<input name="edit" value="salary" style="display: none;">
-							<a href="fragments/salary_request.php" data-target="#salary" class="icon">SR</a>
+							<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
 						</li>
 						<li class="active">
 							<a href="leave_request_form" class="icon">LR</a>

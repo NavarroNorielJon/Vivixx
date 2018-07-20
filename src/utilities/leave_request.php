@@ -1,4 +1,6 @@
 <?php
+    ini_set('post_max_size', '64M');
+    ini_set('upload_max_filesize', '64M');
     include 'session.php';
     $connect = Connect();
     $sql = "SELECT first_name, middle_name, last_name, department, date_hired, employee_status, position FROM user_info NATURAL JOIN employee_info where user_id = '$user_id';";
@@ -11,24 +13,34 @@
     $position = $row['position'];
     $reason = mysqli_real_escape_string($connect, $_POST['type']);
     if ($reason === "others") {
-        $reason = mysqli_real_escape_string($connect, $_POST['others']);
-    } elseif ($reason === "Emergency") {
-        $reason = mysqli_real_escape_string($connect, $_POST['emer']);
+        $reason = ucwords(mysqli_real_escape_string($connect, $_POST['reason']));
+    } elseif ($reason === "Emergency" || $reason === "Sick Leave") {
+        $reason .= "-" .ucwords(mysqli_real_escape_string($connect, $_POST['reason']));
+        $from = mysqli_real_escape_string($connect, $_POST['from1']);
+        $to = mysqli_real_escape_string($connect, $_POST['to1']);
     } elseif ($reason === ""){
         exit();
+    } else {
+        $from = mysqli_real_escape_string($connect, $_POST['from2']);
+        $to = mysqli_real_escape_string($connect, $_POST['to2']);
+    }
+    if ( $_FILES['attachment']['tmp_name'] != "") {
+        $attachment = "'".base64_encode(file_get_contents($_FILES['attachment']['tmp_name']))."'";
+    } else {
+        $attachment = 'NULL';
+
     }
 	$contact_address = ucwords(mysqli_real_escape_string($connect, $_POST['contact_address']));
     $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
-    $from = mysqli_real_escape_string($connect, $_POST['from']);
-    $to = mysqli_real_escape_string($connect, $_POST['to']);
+
 	$from = date('Y-m-d', strtotime($from));
     $to = date('Y-m-d', strtotime($to));
     $date_hired = date('Y-m-d', strtotime($date_hired));
 
     $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`,
-		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`)
+		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`,`attachment`)
 		VALUES ('$user_id', '$employee', '$department', '$date_hired', NOW(), '$reason', '$contact_address',
-		'$contact_number', '$from', '$to') ;";
+		'$contact_number', '$from', '$to', $attachment) ;";
     if ($connect->query($insert_stmt) === true) {
         echo $insert_stmt;
     } else {

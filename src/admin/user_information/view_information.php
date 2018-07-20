@@ -1,4 +1,6 @@
 <?php
+    ini_set('post_max_size', '64M');
+    ini_set('upload_max_filesize', '64M');
     include '../../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
@@ -226,14 +228,10 @@
 
 								<div class="form-group col">
 									<label for="height">Height</label>
-									<div class="row no-gutters ">
-										<div class="form-group col">
-											<input type="text" name="ft" id="ft" class="form-control" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" value="<?php echo $height[0]; ?>">
-										</div>
+									<div class="input-group">
+                                        <input type="text" name="ft" id="ft" class="form-control" onkeypress="numberInput(event)" maxlength="2" autocomplete="off" placeholder="(ft.)" value="<?php echo $height[0]; ?>">
+                                        <input type="text" name="in" id="in" class="form-control" autocomplete="off" placeholder="(in.)" value="<?php echo $height[1]; ?>">
 
-										<div class="form-group col">
-											<input type="text" name="in" id="in" class="form-control height" autocomplete="off" placeholder="(in.)" value="<?php echo $height[1]; ?>">
-										</div>
 									</div>
 								</div>
 
@@ -483,7 +481,7 @@
                                     </select>
 								</div>
 
-								<div id='others' style='display:none' class="form-group col-4">
+								<div id='Others' style='display:none' class="form-group col-4">
 									<label for="other_civil">(Please Specify)</label>
 									<input id="oth" class="form-control" placeholder="" name="other_civil">
 								</div>
@@ -1450,18 +1448,18 @@
 							<div class="row">
 								<div class="form-group col">
 									<label>Persona</label>
-									<input type="text" name="persona" id="persona" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row8[" persona "]?>">
+									<input type="text" name="persona" id="persona" placeholder="full name" onkeypress="alphabetInput(event)" class="form-control text-transform" value="<?php echo $row8['persona']?>">
 								</div>
 
 								<div class="form-group col">
 									<label>Mobile Number</label>
-									<input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile" value="<?php echo $row8[" mobile_number "]?>">
+									<input type="tel" name="mobile" id="mobile" placeholder="+639XX XXX XXXX" class="form-control mobile" value="<?php echo $row8['mobile_number']?>">
 								</div>
 
 								<div class="form-group col">
 									<label>Area Code</label>
 									<select name="l_area_code" class="form-control" id="l_area_code">
-                                        <option selected="selected" value="none"><?php echo explode("-",$row8["landline"])[0]?></option>
+                                        <option selected="selected" value="none"><?php echo explode("-",$row8['landline'])[0]?></option>
                                         <optgroup label="Luzon">
                                             <option value="74">Abra (74)</option>
                                             <option value="52">Albay (52)</option>
@@ -1541,7 +1539,7 @@
 
 								<div class="form-group col">
 									<label>Landline Number</label>
-									<input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo explode(" - ",$row8["landline "])[1]?><?php echo explode("- ",$row8["landline "])[2]?>">
+									<input type="tel" name="landline" id="landline" placeholder="XXX-XXXX" class="form-control telephone" value="<?php echo explode(" - ",$row8['landline'])[1]?><?php echo explode("- ",$row8['landline'])[2]?>">
 								</div>
 							</div>
 							<div class="row">
@@ -1603,7 +1601,7 @@
 
 								<div class="form-group col">
 									<label>Date Hired</label>
-									<input type="date" name="date_hired" class="form-control" value="<?php echo $row8[" date_hired "]?>">
+									<input type="date" name="date_hired" class="form-control" value="<?php echo $row8['date_hired']?>">
 								</div>
 							</div>
 

@@ -41,9 +41,12 @@
 				<div class="text-center">
 					<h1 class="accounts-header">ACCOUNTS</h1>
 				</div>
+				<div class="text-left">
+					<h1 class="accounts-header">Enabled Accounts</h1>
+				</div>
 
 				<div class="table-container">
-					<table class="table" id="table">
+					<table class="table" id="table_enable">
 						<thead>
 							<tr class="table-header">
 								<th>First Name</th>
@@ -56,54 +59,98 @@
 						</thead>
 
 						<?php
-					$sql = "select username, email, first_name, last_name, status from user natural join user_info where type='user';";
-					$result = $connect->query($sql);
-					
-					$emp_info = "SELECT end_of_contract from employee_info";
-					$res = $connect->query($emp_info);
-					$row1 = mysqli_fetch_array($res, MYSQLI_ASSOC);
-					if($result-> num_rows > 0){
-						while($row = $result->fetch_assoc()){
-							
-							if($row1['end_of_contract'] === ""){
-								echo ":)";
-							}else{
-								if($row1['end_of_contract'] === date("Y-m-d")){
-									$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
-									$res = $connect->query($disabled);
-									
+							$sql = "SELECT username, email, first_name, last_name, end_of_contract, status FROM user NATURAL JOIN user_info NATURAL JOIN employee_info where type='user' and status ='enabled';";
+							$result = $connect->query($sql);
+							if($result->num_rows > 0){
+								while($row = $result->fetch_assoc()){
+
+									if($row['end_of_contract'] != ""){
+										if($row['end_of_contract'] === date("Y-m-d")){
+											$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
+											$res = $connect->query($disabled);
+										}
+									}
+
+									if($row["status"] === "enabled"){
+										$button = "
+										<input name='disable' value='Disable' style='display: none;'>
+										<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
+									}else{
+										$button = "
+										<input name='enable' value='Enable' style='display: none;'>
+										<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
+									}
+
+									//print data in table
+									echo "
+									<tr class='table-data'>
+									<td>" . ucwords($row['first_name']) . "</td>
+									<td>" . ucwords($row['last_name']) . "</td>
+									<td>" . $row['username'] . "</td>
+									<td>" . $row['email'] . "</td>
+									<td>" . $row['status'] . "</td>
+									<td>" .$button."</td>
+									</tr>";
 								}
-								
 							}
-							
-							if($row["status"] === "enabled"){
-								$button = "
-								<input name='disable' value='Disable' style='display: none;'>
-								<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
-							}else{
-								$button = "
-								<input name='enable' value='Enable' style='display: none;'>
-								<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
-							}
-
-							//print data in table
-							echo "
-							<tr class='table-data'>
-							<td>" . ucwords($row['first_name']) . "</td>
-							<td>" . ucwords($row['last_name']) . "</td>
-							<td>" . $row['username'] . "</td>
-							<td>" . $row['email'] . "</td>
-							<td>" . $row['status'] . "</td>
-							<td>" .$button."</td>
-							</tr>";
-						}
-					}
-
-					$connect-> close();
-					?>
+						?>
 					</table>
 				</div>
+				<br>
+				<div class="text-left">
+					<h1 class="accounts-header">Disabled Accounts</h1>
+				</div>
+				<div class="table-container">
+					<table class="table" id="table_disable">
+						<thead>
+							<tr class="table-header">
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+								<th>Email</th>
+								<th>Status</th>
+								<th>Action</th>
+							</tr>
+						</thead>
 
+						<?php
+							$sql = "SELECT username, email, first_name, last_name, end_of_contract, status FROM user NATURAL JOIN user_info NATURAL JOIN employee_info where type='user' and status='disabled';";
+							$result = $connect->query($sql);
+							if($result->num_rows > 0){
+								while($row = $result->fetch_assoc()){
+
+									if($row['end_of_contract'] != ""){
+										if($row['end_of_contract'] === date("Y-m-d")){
+											$disabled ="UPDATE user SET status='disabled' WHERE username='".$row['username']."'";
+											$res = $connect->query($disabled);
+										}
+									}
+
+									if($row["status"] === "enabled"){
+										$button = "
+										<input name='disable' value='Disable' style='display: none;'>
+										<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
+									}else{
+										$button = "
+										<input name='enable' value='Enable' style='display: none;'>
+										<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
+									}
+
+									//print data in table
+									echo "
+									<tr class='table-data'>
+									<td>" . ucwords($row['first_name']) . "</td>
+									<td>" . ucwords($row['last_name']) . "</td>
+									<td>" . $row['username'] . "</td>
+									<td>" . $row['email'] . "</td>
+									<td>" . $row['status'] . "</td>
+									<td>" .$button."</td>
+									</tr>";
+								}
+							}
+						?>
+					</table>
+				</div>
 				<div id="result1"></div>
 
 			</div>
@@ -140,7 +187,7 @@
 
 		<script>
 			/* When the user clicks on the button,toggle between hiding and showing the dropdown content */
-			
+
 			//script for calling modal
 			$(document).ready(function() {
 				$('.show').click(function(e) {
@@ -156,13 +203,20 @@
 
 			//script for calling datatables library
 			$(document).ready(function() {
-				$('#table').dataTable({
+				$('#table_enable').dataTable({
 					"columnDefs": [{
 						"orderable": false,
 						"targets": 5
 					}]
 				});
-				$('#table').DataTable();
+				$('#table_enable').DataTable();
+				$('#table_disable').dataTable({
+					"columnDefs": [{
+						"orderable": false,
+						"targets": 5
+					}]
+				});
+				$('#table_disable').DataTable();
 			});
 			$('#acc').addClass('active');
 

@@ -152,5 +152,18 @@
 		$(document).ready(function() {
 			$("#set").modal("show");
 		});
-
+        $('#set_user').ajaxForm({
+        	url: 'update_user.php',
+        	method: 'post',
+        	success: function () {
+        		swal({
+        			type: 'success',
+        			title: 'Done!',
+        			icon: 'success',
+        			timer: 2500
+        		}).then(function () {
+                    location.reload();
+                });
+        	}
+        });
 	</script>
