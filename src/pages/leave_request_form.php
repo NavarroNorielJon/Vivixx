@@ -27,9 +27,8 @@
 	<body style="background-color:#f5f5f0;">
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php';?>
-			<!-- id="leave_form" -->
 			<div class="leave">
-				<form  action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
+				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
 					<h1 class="text-center leave-header" style="font-family: rock">LEAVE APPLICATION FORM</h1>
 					<script>
 						$(function() {

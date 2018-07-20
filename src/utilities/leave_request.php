@@ -11,7 +11,7 @@
     $date_hired = $row['date_hired'];
     $employee_status = $row['employee_status'];
     $position = $row['position'];
-    if (!empty($_POST['type'])) {
+    if (!empty($_POST['type']) && !empty($_POST['to2']) && !empty($_POST['from2'])) {
         $reason = mysqli_real_escape_string($connect, $_POST['type']);
     } else {
         echo "Please complete all the necessary information";
@@ -29,12 +29,13 @@
         $from = mysqli_real_escape_string($connect, $_POST['from2']);
         $to = mysqli_real_escape_string($connect, $_POST['to2']);
     }
-    if ( $_FILES['attachment']['tmp_name'] != "") {
+
+    if (!empty($_POST['attachment'])) {
         $attachment = "'".base64_encode(file_get_contents($_FILES['attachment']['tmp_name']))."'";
     } else {
         $attachment = 'NULL';
-
     }
+
 	$contact_address = ucwords(mysqli_real_escape_string($connect, $_POST['contact_address']));
     $contact_number = mysqli_real_escape_string($connect, $_POST['contact_number']);
 
@@ -46,10 +47,7 @@
 		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`,`attachment`)
 		VALUES ('$user_id', '$employee', '$department', '$date_hired', NOW(), '$reason', '$contact_address',
 		'$contact_number', '$from', '$to', $attachment) ;";
-    if ($connect->query($insert_stmt) === true) {
-        echo $insert_stmt;
-    } else {
-        print_r($connect->error);
-    }
+    $connect->query($insert_stmt);
+    echo "Thank you for Requesting.";
 
 ?>

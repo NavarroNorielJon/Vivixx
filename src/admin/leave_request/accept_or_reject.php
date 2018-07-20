@@ -9,14 +9,18 @@
     $used = mysqli_real_escape_string($connect,$_POST["used"]);
     $remaining = mysqli_real_escape_string($connect,$_POST["remaining"]);
     $update = "";
-
+    $subject = "Leave Request";
+    $body = "";
     if(isset($_POST["accept"])){
         if($remaining  > 0 && $remaining <= 5){
             --$remaining;
             ++$used;
+            $body .= "Your Request has been Approved by the admin";
             $update = "UPDATE `leave_req` SET `status`='accepted' WHERE `leave_req_id`='$req_id';";
             $update1 = "UPDATE `employee_info` SET `credits`='$remaining', `used`='$used' WHERE `user_id`='$user_id';";
+            $update2 = "INSERT INTO notification (`user_id`, `subject`, `date`, `message`, `status`) VALUES ('$user_id', '$subject', NOW(), '$body', 'new');";
             $connect->query($update1);
+            $connect->query($update2);
             $status = "accepted";
             $stat = "Accepted";
 
@@ -27,6 +31,9 @@
         //header("location:leave_requests.php?accepted");
     }else if(isset($_POST["reject"])){
         $update = "UPDATE `leave_req` SET `status`='rejected' WHERE `leave_req_id`='$req_id';";
+        $body .= "Your Request has been Disapproved by the admin";
+        $update2 = "INSERT INTO notification (`user_id`, `subject`, `date`, `message`, `status`) VALUES ('$user_id', '$subject', NOW(), '$body', 'new');";
+        $connect->query($update2);
         $status="rejected";
         $stat = "Rejected";
 

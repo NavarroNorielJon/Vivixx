@@ -50,26 +50,25 @@ $("#s_form").validate({
 $('#leave_form').ajaxForm({
 	url: '../utilities/leave_request.php',
 	method: 'post',
-	error: function () {
-		swal({
-			type: 'error',
-			title: 'Error!',
-			text: "Invalid input",
-			showConfirmButton: true,
-			icon: 'error',
-			timer: 2500
-		});
-	},
-	success: function () {
-		swal({
-			type: 'success',
-			title: 'Done',
-			text: "Wait for the admin to confirm.",
-			icon: 'success',
-			showConfirmButton: true,
-		}).then(function () {
-			window.location = '/pages/leave_request_form';
-		});
+	success: function (data) {
+		if (data === "Thank you for Requesting.") {
+			swal({
+				type: 'success',
+				title: data,
+				text: "Please Wait for the admin to confirm.",
+				icon: 'success',
+				showConfirmButton: true,
+			}).then(function () {
+				location.reload();
+			});
+		} else {
+			swal({
+				type: 'error',
+				title: data,
+				icon: 'error',
+				showConfirmButton: true,
+			});
+		}
 	}
 });
 $('#login').ajaxForm({
