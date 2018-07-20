@@ -147,7 +147,7 @@ CREATE TABLE `employee_info` (
 INSERT INTO employee_info VALUES("36","49","StarBoi","+63944 564 9898","45-493-2322","Virtual Assistant","Indesigner","Company Address","admin","Skype Account","admin","QQ Number ","qqq","2018-07-26","2018-07-18","Project Based","Web Developer","5","0");
 INSERT INTO employee_info VALUES("51","93","Bulilit","+63977 682 7540","Choose Area Code:-","Security","Security","albert@vivixx.ph","password","assdasd@gmail.com","password","1515151515","password","2018-07-27","","Project Based","Security","0","5");
 INSERT INTO employee_info VALUES("52","96","","","Choose Area Code:-","IT Support","ICT Specialist","sample","sample","sample","sample","sample","sample","2018-07-25","0000-00-00","Freelance","ICT Support Specialist","0","5");
-INSERT INTO employee_info VALUES("53","98","Wqeqwweq","+63921 321 3213","74-232-1321","Administration/HR Support","IDP Staff","wqeqe","21wqeq","wqe","eqwe","qwe","qweq","2018-07-25","2018-07-10","Project Based","HR Assistant","0","5");
+INSERT INTO employee_info VALUES("53","98","Wqeqwweq","+63921 321 3213","74-232-1321","Administration/HR Support","IDP Staff","wqeqe","21wqeq","wqe","eqwe","qwe","qweq","2018-07-25","2018-07-10","Project Based","HR Assistant","1","4");
 INSERT INTO employee_info VALUES("54","","","","","","","","","","","","","","","","","0","5");
 
 
@@ -193,7 +193,7 @@ CREATE TABLE `leave_req` (
   UNIQUE KEY `leave_req_id_UNIQUE` (`leave_req_id`),
   KEY `leave-user_idx` (`user_id`),
   CONSTRAINT `leave-user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 INSERT INTO leave_req VALUES("1","49","Noriel, Pangilinan, Navarro","IT department","ICT Specialist","2018-12-12","2018-10-12","Emergency","Concepcion","+639 223 2323","2018-05-09","2018-07-22","accepted","");
 INSERT INTO leave_req VALUES("2","49","Noriel, Pangilinan, Navarro","IT department","ICT Specialist","2018-12-12","2018-01-12","Emergency","Concepcion","+639 223 2323","2018-05-09","2018-07-22","accepted","");
@@ -202,6 +202,8 @@ INSERT INTO leave_req VALUES("5","96","Marc Lawrence,Sison,Gregorio","IT Support
 INSERT INTO leave_req VALUES("8","49","Noriel Jon,Pangilinan,Navarro","Virtual Assistant","","2018-07-26","2018-07-20","Maternal Leave","Qweqw","+63921 312 1331","2018-08-30","2018-09-21","rejected","");
 INSERT INTO leave_req VALUES("9","96","Marc Lawrence,Sison,Gregorio","IT Support","","2018-07-25","2018-07-20","Choose Here:","Qwewe","+63913 132 1332","1970-01-01","1970-01-01","pending","");
 INSERT INTO leave_req VALUES("10","96","Marc Lawrence,Sison,Gregorio","IT Support","","2018-07-25","2018-07-20","Choose Here:","Qweqwe","+63921 321 3131","1970-01-01","1970-01-01","pending","");
+INSERT INTO leave_req VALUES("21","98","asda,Asd,Asd","Administration/HR Support","","2018-07-25","2018-07-20","Vacation","Qweqw","+63912 131 2323","2018-08-30","2018-08-31","accepted","");
+INSERT INTO leave_req VALUES("22","98","asda,Asd,Asd","Administration/HR Support","","2018-07-25","2018-07-20","Paternal Leave","Qwee","+63921 321 3213","2018-08-30","2018-08-31","rejected","");
 
 
 
@@ -228,10 +230,12 @@ CREATE TABLE `notification` (
   PRIMARY KEY (`id_notification`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `user_notif` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 INSERT INTO notification VALUES("10","49","Sample","sample content","2018-07-18","read","2018-07-18");
 INSERT INTO notification VALUES("11","49","asd","sadasdasdad","2018-07-18","read","2018-07-18");
+INSERT INTO notification VALUES("12","98","Leave Request","Your Request has been Approved by the admin","2018-07-20","read","2018-07-20");
+INSERT INTO notification VALUES("13","98","Leave Request","Your Request has been Disapproved by the admin","2018-07-20","read","2018-07-20");
 
 
 

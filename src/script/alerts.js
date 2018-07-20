@@ -55,9 +55,8 @@ $('#leave_form').ajaxForm({
 			swal({
 				type: 'success',
 				title: data,
-				text: "Please Wait for the admin to confirm.",
+				text: "Please wait for the admin to confirm.",
 				icon: 'success',
-				showConfirmButton: true,
 			}).then(function () {
 				location.reload();
 			});
@@ -66,7 +65,6 @@ $('#leave_form').ajaxForm({
 				type: 'error',
 				title: data,
 				icon: 'error',
-				showConfirmButton: true,
 			});
 		}
 	}

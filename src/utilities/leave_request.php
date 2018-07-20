@@ -11,7 +11,7 @@
     $date_hired = $row['date_hired'];
     $employee_status = $row['employee_status'];
     $position = $row['position'];
-    if (!empty($_POST['type']) && !empty($_POST['to2']) && !empty($_POST['from2'])) {
+    if (!empty($_POST['type'])) {
         $reason = mysqli_real_escape_string($connect, $_POST['type']);
     } else {
         echo "Please complete all the necessary information";

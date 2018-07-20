@@ -128,7 +128,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date1" name="from1" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
+									<input type="text" id="s_date1" name="from1" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required  placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -136,7 +136,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date2" name="from2" class="form-control date" onkeypress="numberInput(event)" autocomplete="off"  placeholder="yyyy-mm-dd">
+									<input type="text" id="s_date2" name="from2" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -145,7 +145,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" id="e_date1" name="to1" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
+									<input type="text" id="e_date1" name="to1" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -153,7 +153,7 @@
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>
-									<input type="text" id="e_date2" name="to2" class="form-control date" autocomplete="off" disabled  placeholder="yyyy-mm-dd">
+									<input type="text" id="e_date2" name="to2" class="form-control date" autocomplete="off" disabled required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>

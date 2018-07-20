@@ -1,3 +1,5 @@
+<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+
 <script>
 	$(document).ready(function() {
 		$('.salary').click(function(e) {
@@ -101,22 +103,39 @@
 							</li>
 						';
 					} else {
+						// echo '
+						// <li class="active">
+						// 	<input name="edit" value="salary" style="display: none;">
+						// 	<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+						// </li>
+						// <li class="active">
+						// 	<a onclick="leave()" class="nav-link sidebar-item">Leave Request</a>
+						// </li>
+						//
+						// <li class="active">
+						// 	<input name="edit" value="salary" style="display: none;">
+						// 	<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
+						// </li>
+						// <li class="active">
+						// 	<a onclick="leave()" class="icon">LR</a>
+						// </li>
+						// ';
 						echo '
-						<li class="active">
-							<input name="edit" value="salary" style="display: none;">
-							<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
-						</li>
-						<li class="active">
-							<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
-						</li>
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+							</li>
+							<li class="active">
+								<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
+							</li>
 
-						<li class="active">
-							<input name="edit" value="salary" style="display: none;">
-							<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
-						</li>
-						<li class="active">
-							<a href="leave_request_form" class="icon">LR</a>
-						</li>
+							<li class="active">
+								<input name="edit" value="salary" style="display: none;">
+								<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
+							</li>
+							<li class="active">
+								<a href="leave_request_form" class="icon">LR</a>
+							</li>
 						';
 					}
 					?>
@@ -135,3 +154,12 @@
 		</ul>
 	</nav>
 	<div id="salary_form"></div>
+	<script>
+		function leave() {
+			swal({
+				type: 'info',
+				title: "Please Stay for at least one year.",
+				icon: 'info',
+			});
+		}
+	</script>
