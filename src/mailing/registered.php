@@ -60,7 +60,7 @@ try {
     <h1>Your Account Has been Activated</h1>
     <p>Your Username is <strong>\"". $username ."\"</strong> and your temporary password is <strong>\"". $password ."\"</strong></p>";
     $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
-    $body .= "<a class='pure-button pure-button-primary' href='http://vivixx.org/pages/reset_password.php?account=" . $username . "." . $password . "'>Reset My Password</a>";
+    $body .= "<a class='pure-button pure-button-primary' href='http://vivixx.org/pages/reset_password.php?account=" . $username . "." . $password . "'>Enter your new Password?</a>";
     $body .= "</div>";
 
     $mail->isHTML(true); // Set email format to HTML

@@ -44,8 +44,7 @@
 											echo "
 
 											<div class='item'>
-											<h3 style='margin-top:2%; color:red'>Due Date: ".$row1['end_date'] ."</h3>
-
+											<h3 style=' color:red'>Due Date: ".$row1['end_date'] ."</h3>
 												<div class='imgTitle'>
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";

@@ -109,6 +109,7 @@ $('#reset_form').ajaxForm({
 	}
 });
 $("#reset_pass").validate({
+	errorClass: 'error',
 	rules: {
 		password: {
 			required: true,

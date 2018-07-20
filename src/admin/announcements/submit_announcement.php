@@ -53,7 +53,7 @@ $connect = Connect();
             $result = $connect->query($get_latest_announcement);
             $results = $result->fetch_assoc();
             $announcement_id = $results['id'];
-            
+
             if(!empty($file_tmp_names[$x])){
                 for($x = 0; $x< count($file_names); $x++){
                     move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);

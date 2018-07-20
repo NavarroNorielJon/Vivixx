@@ -98,9 +98,10 @@
 					<div class="row">
 						<div class="form-group col">
 							<div class="ui calendar" id="start_date">
-								<div class="ui input left icon">
+								<div class="ui input left icon" id="nicgon">
 									<label for="start_date">Start Date</label>
-									<input type="text" id="s_date" name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+									<input type="text"  name="from" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
+                                    <input type="text"  name="from1" class="form-control date" onkeypress="numberInput(event)" autocomplete="off" required placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 						</div>
@@ -135,29 +136,36 @@
 					});
 				});
 			});
-			$('.mobile').inputmask({
-				mask: '+639dd ddd dddd'
-			});
-			$('.date').inputmask({
-				mask: 'dddd-dd-dd'
-			});
-			$(function sample() {
-				if ($('#type').val() == "Emergency") {
-					$("#s_date").datepicker({
-						dateFormat: 'yy-mm-dd',
-						minDate: new Date((new Date()).setDate(new Date().getDate() + 1))
-					});
-				} else {
-					$("#s_date").datepicker({
-						dateFormat: 'yy-mm-dd',
-						minDate: new Date((new Date()).setDate(new Date().getDate() + 20))
-					});
-				}
-			});
-			$("#e_date").datepicker({
-				dateFormat: 'yy-mm-dd'
-			});
-			$(function() {
+            jQuery('#nicgon').find("input[name='from']").hide();
+            jQuery('#nicgon').find("input[name='from1']").hide();
+            $('#type').on('change', function(){
+						
+						var option = jQuery(this).find("option:selected").val();
+						if(option === "Emergency"||option ==="Sick Leave"||option ==="Sent Home")
+						{
+                            jQuery('#nicgon').find("input[name='from1']").attr('id', 's_date');
+                            jQuery('#nicgon').find("input[name='from']").hide();
+                            $('#e_date').removeAttr("disabled");
+							jQuery('#nicgon').find("input[name='from1']").show().datepicker({ defaultDate: new Date() });
+                            $("#end_date").datepicker(); 
+                            jQuery('#end_date').find("input[name='to']").datepicker({ defaultDate: 1 });
+                            
+              
+						}
+						else 
+						{
+                            jQuery('#nicgon').find("input[name='from']").attr('id', 's_date');
+                            jQuery('#nicgon').find("input[name='from1']").hide();
+                            $('#e_date').removeAttr("disabled");
+							jQuery('#nicgon').find("input[name='from']").show().datepicker({ defaultDate: 20 });
+                            
+                           jQuery('#end_date').find("input[name='to']").datepicker();
+                            
+                   
+                            
+                            
+						}
+                /*	$(function() {
 				$("#s_date").datepicker({
 					dateFormat: 'yy-mm-dd'
 				}).bind("change", function() {
@@ -166,11 +174,24 @@
 					min.setDate(min.getDate() + 1);
 					$("#e_date").datepicker("option", "minDate", min);
 				});
+			});*/
+            });
+            
+            
+			$('.mobile').inputmask({
+				mask: '+639dd ddd dddd'
 			});
-
+			$('.date').inputmask({
+				mask: 'dddd-dd-dd'
+			});
+		
+			
+            
+		
+            /*
 			$(function() {
 				$('#s_date').change(function() {
-					if ($('#s_date').val() !== "") {
+					if ($('#s_date').val() != "") {
 						$('#e_date').removeAttr("disabled");
 					} else {
 						$('#e_date').attr("disabled", 'true');
@@ -183,7 +204,7 @@
 						$('#e_date').attr("disabled", 'true');
 					}
 				});
-			});
+			});*/
 
 		</script>
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
