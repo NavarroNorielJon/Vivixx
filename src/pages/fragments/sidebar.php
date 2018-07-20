@@ -37,35 +37,36 @@
 
 		<ul class="nav flex-column">
 			<li id="profile" class="nav-item">
-				<a href="profile.php" class="nav-link sidebar-item">
-                <i class="material-icons">person</i>
-                <?php echo $first_name?></a>
-				<a href="profile.php" class="icon">
+				<a href="profile" class="nav-link sidebar-item">
+                	<i class="material-icons">person</i>
+                	<?php echo $first_name?>
+				</a>
+				<a href="profile" class="icon">
                 <i class="material-icons">person</i>
             </a>
 			</li>
 
 			<li id="home" class="nav-item ">
-				<a href="home.php" class="nav-link sidebar-item ">
+				<a href="home" class="nav-link sidebar-item ">
                 <i class="material-icons">home</i>Home</a>
-				<a class="icon" href="home.php">
+				<a class="icon" href="home">
                 <i class="material-icons">home</i>
             </a>
 			</li>
 
 			<li id="notif" class="nav-item">
-				<a href="notification.php" class="nav-link sidebar-item">
+				<a href="notification" class="nav-link sidebar-item">
 					<?php
 					if($count > 0){
 						echo"
 						<i class='material-icons'>mail</i>Notifications ($count)</a>
-						<a class='icon' href='notification.php'>
+						<a class='icon' href='notification'>
                 		<i class='material-icons'>mail</i>
 						";
 					}else {
 						echo"
 						<i class='material-icons'>mail</i>Notifications</a>
-						<a class='icon' href='notification.php'>
+						<a class='icon' href='notification'>
                 		<i class='material-icons'>mail</i>
 						";
 					}
@@ -103,51 +104,51 @@
 							</li>
 						';
 					} else {
-						// echo '
-						// <li class="active">
-						// 	<input name="edit" value="salary" style="display: none;">
-						// 	<a href="fragments/salary_request.php" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
-						// </li>
-						// <li class="active">
-						// 	<a onclick="leave()" class="nav-link sidebar-item">Leave Request</a>
-						// </li>
-						//
-						// <li class="active">
-						// 	<input name="edit" value="salary" style="display: none;">
-						// 	<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
-						// </li>
-						// <li class="active">
-						// 	<a onclick="leave()" class="icon">LR</a>
-						// </li>
-						// ';
 						echo '
-							<li class="active">
-								<input name="edit" value="salary" style="display: none;">
-								<a href="fragments/salary_request" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
-							</li>
-							<li class="active">
-								<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
-							</li>
+						<li class="active">
+							<input name="edit" value="salary" style="display: none;">
+							<a href="fragments/salary_request" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+						</li>
+						<li class="active">
+							<a onclick="leave()" class="nav-link sidebar-item">Leave Request</a>
+						</li>
 
-							<li class="active">
-								<input name="edit" value="salary" style="display: none;">
-								<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
-							</li>
-							<li class="active">
-								<a href="leave_request_form" class="icon">LR</a>
-							</li>
+						<li class="active">
+							<input name="edit" value="salary" style="display: none;">
+							<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
+						</li>
+						<li class="active">
+							<a onclick="leave()" class="icon">LR</a>
+						</li>
 						';
+						// echo '
+						// 	<li class="active">
+						// 		<input name="edit" value="salary" style="display: none;">
+						// 		<a href="fragments/salary_request" data-target="#salary" class="nav-link sidebar-item salary">Salary Request</a>
+						// 	</li>
+						// 	<li class="active">
+						// 		<a href="leave_request_form" class="nav-link sidebar-item">Leave Request</a>
+						// 	</li>
+						//
+						// 	<li class="active">
+						// 		<input name="edit" value="salary" style="display: none;">
+						// 		<a href="fragments/salary_request" data-target="#salary" class="icon">SR</a>
+						// 	</li>
+						// 	<li class="active">
+						// 		<a href="leave_request_form" class="icon">LR</a>
+						// 	</li>
+						// ';
 					}
 					?>
 				</ul>
 			</li>
 			<hr>
 			<li>
-				<a href="../utilities/logout.php" class="nav-link sidebar-item logout">
+				<a href="../utilities/logout" class="nav-link sidebar-item logout">
                 <i class="material-icons">power_settings_new</i>
                 Logout
             </a>
-				<a class="icon" href="../utilities/logout.php">
+				<a class="icon" href="../utilities/logout">
                 <i class="material-icons">power_settings_new</i>
             </a>
 			</li>

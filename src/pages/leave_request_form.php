@@ -1,6 +1,19 @@
 <?php
 	include '../utilities/session.php';
 	include '../utilities/check_user_info.php';
+	$query = "SELECT * FROM employee_info WHERE user_id='$user_id';";
+	$results = mysqli_query($connect,$query);
+	$res = mysqli_fetch_array($results, MYSQLI_ASSOC);
+	$hired_date = $res['date_hired'];
+	$todate = date("Y-m-d");
+    $difference = date_diff(date_create($hired_date),date_create($todate))->y;
+	if ($difference<1 && $hired_date == "") {
+		echo "
+			<script>
+				location.href = '/pages/home';
+			</script>
+		";
+	}
 ?>
 
 	<!DOCTYPE html>

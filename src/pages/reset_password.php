@@ -25,8 +25,8 @@
 				<div class="input-group">
 					<input type="password" class="form-control" name="password" id="new_pass" placeholder="Enter New Password" required>
 					<div class="input-group-append">
-						<button type="button" class="btn eye" onclick="showHide('new_pass','icon1')">
-                            <i class="material-icons" id="icon1" tabindex="-1">visibility</i>
+						<button type="button" class="btn eye" onclick="showHide('new_pass','icon1')" tabindex="-1">
+                            <i class="material-icons" id="icon1" >visibility</i>
                         </button>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 				<div class="input-group">
 					<input type="password" class="form-control" name="confirm_password" id="conf_pass" placeholder="Re-enter Password" required>
 					<div class="input-group-append">
-						<button type="button" class="btn eye" onclick="showHide('conf_pass','icon2')">
+						<button type="button" class="btn eye" onclick="showHide('conf_pass','icon2')" tabindex="-1">
                             <i class="material-icons" id="icon2">visibility</i>
                         </button>
 					</div>
