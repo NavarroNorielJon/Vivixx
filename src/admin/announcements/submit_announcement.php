@@ -54,16 +54,16 @@ $connect = Connect();
             $results = $result->fetch_assoc();
             $announcement_id = $results['id'];
 
-            if(!empty($file_tmp_names[$x])){
                 for($x = 0; $x< count($file_names); $x++){
-                    move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-                    $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
-                    $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES ('$file_name','$temp_file','$announcement_id');";
-                    $connect->query($add_attachment);
-                }else{
-                $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES (NULL,NULL,'$announcement_id');";
-                $connect->query($add_attachment);
-            }
+                    if (!empty($file_tmp_names[$x])) {
+                        move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
+                        $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
+                        $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES ('$file_name','$temp_file','$announcement_id');";
+                        $connect->query($add_attachment);
+                    }else{
+                        $add_attachment = "INSERT INTO announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) VALUES (NULL,NULL,'$announcement_id');";
+                        $connect->query($add_attachment);
+                }
         }
     }
     print_r($add_attachment);
