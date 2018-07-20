@@ -27,9 +27,9 @@
 	<body style="background-color:#f5f5f0;">
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php';?>
-
+			<!-- id="leave_form" -->
 			<div class="leave">
-				<form id="leave_form" action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
+				<form  action="../utilities/leave_request" method="POST" enctype="multipart/form-data">
 					<h1 class="text-center leave-header" style="font-family: rock">LEAVE APPLICATION FORM</h1>
 					<script>
 						$(function() {
@@ -92,7 +92,8 @@
 						</div>
 					</div>
 					<hr>
-					<h1 class="text-center leave-header" style="font-family: rock">Inclusive days applied</h1>
+					<h1 class="text-center leave-header" id="header" style="font-family: rock;display:none">Inclusive days applied</h1>
+
 					<script>
 						$(function() {
 							$('#type').change(function() {
@@ -100,17 +101,19 @@
 								$('#e2').hide();
 								$('#s1').hide();
 								$('#s2').hide();
+								$('#header').hide();
 								if ($('#type').val() === "Emergency" || $('#type').val() === "Sick Leave" || $('#type').val() === "others") {
 									$('#e1').show();
 									$('#s1').show();
+									$('#header').show();
 									$('#e_date1').attr("required", 'true');
 									$('#s_date1').attr("required", 'true');
 									$('#s_date2').removeAttr("required");
 									$('#e_date2').removeAttr("required");
-
 								} else {
 									$('#e2').show();
 									$('#s2').show();
+									$('#header').show();
 									$('#e_date2').attr("required", 'true');
 									$('#s_date2').attr("required", 'true');
 									$('#s_date1').removeAttr("required");
@@ -122,7 +125,7 @@
 
 					</script>
 					<div class="row">
-						<div class="form-group col" id="s1">
+						<div class="form-group col" id="s1" style="display:none">
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="start_date">Start Date</label>
@@ -139,7 +142,7 @@
 							</div>
 						</div>
 
-						<div class="form-group col" id="e1">
+						<div class="form-group col" id="e1" style="display:none">
 							<div class="ui calendar">
 								<div class="ui input left icon">
 									<label for="end_date">End Date</label>

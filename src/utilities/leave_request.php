@@ -11,7 +11,12 @@
     $date_hired = $row['date_hired'];
     $employee_status = $row['employee_status'];
     $position = $row['position'];
-    $reason = mysqli_real_escape_string($connect, $_POST['type']);
+    if (!empty($_POST['type'])) {
+        $reason = mysqli_real_escape_string($connect, $_POST['type']);
+    } else {
+        echo "Please complete all the necessary information";
+        exit();
+    }
     if ($reason === "others") {
         $reason = ucwords(mysqli_real_escape_string($connect, $_POST['reason']));
     } elseif ($reason === "Emergency" || $reason === "Sick Leave") {

@@ -61,21 +61,27 @@
 					<a class="nav-link" href="../announcements/announcement">Announcement</a>
 				</li>
 
-				<li id="emp" class="nav-item dropbtn">
-					<button onclick="drop()" class="dropbtn">Employees</button>
-					<div id="drop" class="dropdown-content">
-						<a href="../user_information/user_information">Employees</a>
-						<a href="../newly_registered_users/newly_registered">New Registered Employees<?php echo $new?></a>
+
+				<li id="emp" class="nav-item">
+					<div class="dropdown">
+						<button class="dropbtn" disabled>Employees</button>
+						<div class="dropdown-content">
+							<a href="../user_information/user_information">Employees</a>
+							<a href="../newly_registered_users/newly_registered">New Registered Employees<?php echo $new?></a>
+						</div>
 					</div>
 				</li>
 
-				<li id="leave_r" class="nav-item dropbtn">
-					<button onclick="drop1()" class="dropbtn">Leave</button>
-					<div id="drop1" class="dropdown-content">
-						<a class="nav-link" href="../leave_request/leave_requests">Leave Request<?php echo $leave?></a>
-						<a class="nav-link" href="../leave_request/summary_leave">History</a>
+				<li id="leave_r" class="nav-item">
+					<div class="dropdown">
+						<button class="dropbtn" disabled>Leave</button>
+						<div class="dropdown-content">
+							<a class="nav-link" href="../leave_request/leave_requests">Leave Request<?php echo $leave?></a>
+							<a class="nav-link" href="../leave_request/summary_leave">History</a>
+						</div>
 					</div>
 				</li>
+
 
 				<li id="pay" class="nav-item">
 					<a class="nav-link" href="../payslip/user_payslip">Payslip</a>
@@ -88,33 +94,11 @@
 				<li class="nav-item">
 					<a class="nav-link logout" href="../utilities/logout">Logout</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="../utilities/backup">Backup</a>
+				</li>
 
 			</ul>
 		</div>
 	</nav>
 	<div id="signup_form"></div>
-	<script>
-		function drop() {
-			document.getElementById("drop").classList.toggle("showbtn");
-		}
-
-		function drop1() {
-			document.getElementById("drop1").classList.toggle("showbtn");
-		}
-
-		// Close the dropdown if the user clicks outside of it
-		window.onclick = function(event) {
-			if (!event.target.matches('.dropbtn')) {
-
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-					var openDropdown = dropdowns[i];
-					if (openDropdown.classList.contains('showbtn')) {
-						openDropdown.classList.remove('showbtn');
-					}
-				}
-			}
-		}
-
-	</script>
