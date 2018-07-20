@@ -1,6 +1,7 @@
 <?php
 	ini_set('max_execution_time', 300);
 	include '../../utilities/session.php';
+	include '../utilities/check_user.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -42,7 +43,6 @@
 	</head>
 
 	<body class="background">
-		<?php include '../utilities/check_user.php'; ?>
 
 		<div class="wrapper">
 			<?php include '../fragments/navbar.php'; ?>
@@ -148,13 +148,13 @@
 									<label>Due dates:</label>
 									<div class="form-control">
 										<div class="switch">
-											<input type="radio" class="switch-input" name="status" value="on" id="on" >
+											<input type="radio" class="switch-input" name="status" value="on" id="on">
 											<label for="on" class="switch-label switch-label-off">ON</label>
 											<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
 											<label for="off" class="switch-label switch-label-on">OFF</label>
 											<span class="switch-selection"></span>
-										 </div>
-									 </div>
+										</div>
+									</div>
 								</div>
 
 								<div class="form-group col">

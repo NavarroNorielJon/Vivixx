@@ -61,7 +61,7 @@
 					<a class="nav-link" href="../announcements/announcement">Announcement</a>
 				</li>
 
-				<li id="emp" class="nav-item">
+				<li id="emp" class="nav-item dropbtn">
 					<button onclick="drop()" class="dropbtn">Employees</button>
 					<div id="drop" class="dropdown-content">
 						<a href="../user_information/user_information">Employees</a>
@@ -69,7 +69,7 @@
 					</div>
 				</li>
 
-				<li id="leave_r" class="nav-item">
+				<li id="leave_r" class="nav-item dropbtn">
 					<button onclick="drop1()" class="dropbtn">Leave</button>
 					<div id="drop1" class="dropdown-content">
 						<a class="nav-link" href="../leave_request/leave_requests">Leave Request<?php echo $leave?></a>
@@ -97,6 +97,7 @@
 		function drop() {
 			document.getElementById("drop").classList.toggle("showbtn");
 		}
+
 		function drop1() {
 			document.getElementById("drop1").classList.toggle("showbtn");
 		}
@@ -115,4 +116,5 @@
 				}
 			}
 		}
+
 	</script>
