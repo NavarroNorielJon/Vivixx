@@ -72,23 +72,14 @@
         } else {
             $c = $i+1;
             $update_stmt = "UPDATE `user_offspring` SET `child_name`='$child_name[$i]',`child_birth_date`='$child_birth[$i]' WHERE n_id='$c';";
-            if (mysqli_query($connect, $update_stmt) === true) {
-                echo $update_stmt;
-                echo "<br>";
+            mysqli_query($connect, $update_stmt);
 
-            } else {
-                print_r($connect->error);
-            }
         }
     }
     $update_stmt ="UPDATE `user_background` SET `spouse_first_name`= $spouse_first_name,`spouse_middle_name`=$spouse_middle_name,`spouse_last_name`=$spouse_last_name,
     `occupation`=$occupation,`employer`=$employer,`business_address`=$business_address,`spouse_tel_no`=$spouse_tel_no,`father_first_name`='$father_first_name',
     `father_middle_name`=$father_middle_name,`father_last_name`='$father_last_name',
     `mother_first_name`='$mother_first_name',`mother_middle_name`=$mother_middle_name,`mother_last_name`='$mother_last_name' WHERE user_id='$user_id'";
-    if (mysqli_query($connect, $update_stmt) === true) {
-        echo $update_stmt;
-        echo "<br>";
-    } else {
-        echo $connect->error;
-    }
+    mysqli_query($connect, $update_stmt);
+
 ?>

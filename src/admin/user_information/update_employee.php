@@ -55,8 +55,5 @@
 
     $update_stmt = "UPDATE `employee_info` SET `persona`='$persona',`mobile_number`='$mobile',`landline`='$landline',`department`='$departments',`account`='$accounts',`comp_email`='$com_email',
                     `comp_email_password`='$e_pass',`skype`='$skype',`skype_password`='$s_pass',`qq_number`='$qq_num',`qq_password`='$qq_pass' WHERE user_id='$user_id';";
-    if (mysqli_query($connect, $update_stmt) === true) {
-    } else {
-        echo $connect->error;
-    }
+    mysqli_query($connect, $update_stmt);
 ?>

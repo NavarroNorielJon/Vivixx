@@ -121,10 +121,11 @@
 							<div class="row">
 								<div class="form-group col-4">
 									<?php
-                                    if ($row1['prof_image'] !== null) {
+                                    if ($row1['prof_image'] != "") {
                                         echo "<img src='data:image/jpg;base64,". $row1['prof_image'] . "' style='height:2in;width:2in;'>";
                                         echo "<br>";
                                     } else {
+                                        echo '<div style="height:2in;width:2in;"></div>';
                                         echo "No Profile Image";
                                         echo "<br>";
 
@@ -136,10 +137,11 @@
 
 								<div class="form-group col-4">
 									<?php
-                                    if ($row1['signature'] !== null) {
+                                    if ($row1['signature'] != "") {
                                         echo "<img src='data:image/jpg;base64,". $row1['signature'] . "' style='height:2in;width:2in;'>";
                                         echo "<br>";
                                     } else {
+                                        echo '<div style="height:2in;width:2in;"></div>';
                                         echo "No Signature";
                                         echo "<br>";
 
@@ -153,17 +155,17 @@
 							<div class="row">
 								<div class="form-group col">
 									<label>First Name</label>
-									<input type="text" name="first_name" id="fname" class="form-control-plaintext" value="<?php echo $row1['first_name'];?>" placeholder="First Name">
+									<input type="text" name="first_name" id="fname" class="form-control-plaintext text-transform" value="<?php echo $row1['first_name'];?>" placeholder="First Name">
 								</div>
 
 								<div class="form-group col">
 									<label>Middle Name</label>
-									<input type="text" name="middle_name" id="mname" class="form-control-plaintext" value="<?php echo $row1['middle_name'];?>" placeholder="Middle Name">
+									<input type="text" name="middle_name" id="mname" class="form-control-plaintext text-transform" value="<?php echo $row1['middle_name'];?>" placeholder="Middle Name">
 								</div>
 
 								<div class="form-group col-4">
 									<label>Last Name</label>
-									<input type="text" name="last_name" id="lname" class="form-control-plaintext" value="<?php echo $row1['last_name'];?>" placeholder="Last Name">
+									<input type="text" name="last_name" id="lname" class="form-control-plaintext text-transform" value="<?php echo $row1['last_name'];?>" placeholder="Last Name">
 								</div>
 							</div>
 
@@ -1646,7 +1648,7 @@
                                     <div class='form-group col'>
                                         <label for='position'>Main Account</label>
                                         <div class='input-group'>
-                                            <select class='custom-select form-group' name='account[]'>
+                                            <select class='custom-select form-group' name='account[]' id='account'>
                                                 <optgroup id='orig'>
                                                     <option selected='selected' value='".$account[$i]."'>".$account[$i]."</option>
                                                 </optgroup>

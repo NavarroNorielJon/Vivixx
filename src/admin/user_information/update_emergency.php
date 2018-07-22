@@ -35,46 +35,22 @@
     }
     $update_stmt = "UPDATE `emergency_info_sheet` SET `coordinates`='$coordinates',`main_address`='$main_address',`secondary_address`='$secondary_address',
                     `provincial_address`='$provincial_address',`answer`='$answer' WHERE user_id='$user_id';";
-    if (mysqli_query($connect, $update_stmt) === true) {
+    mysqli_query($connect, $update_stmt);
 
-    } else {
-        echo $connect->error;
-        echo "<br>";
-        echo "<br>";
-
-    }
     for ($i=0; $i < count($r_name); $i++) {
         $c = $i+1;
         if ($r_name[$i] !== "" ) {
             $update_stmt = "UPDATE `relatives` SET `r_name`='$r_name[$i]',`r_number`='$r_mobile_number[$i]',`r_relationship`='$r_relationship[$i]' WHERE n_id='$c';";
-            if (mysqli_query($connect,$update_stmt) === true) {
-                echo $update_stmt;
-                echo "<br>";
-                echo "<br>";
-            } else {
-                print_r($connect->error);
-                echo $update_stmt;
+            mysqli_query($connect, $update_stmt);
 
-                echo "<br>";
-                echo "<br>";
-            }
         }
     }
     for ($i=0; $i < count($h_name); $i++) {
         $c = $i+1;
         if ($h_name[$i] !== "" ) {
             $update_stmt = "UPDATE `housemates` SET `h_name`='$h_name[$i]',`h_number`='$h_mobile_number[$i]',`h_relationship`='$h_relationship[$i]' WHERE n_id='$c';";
-            if (mysqli_query($connect,$update_stmt) === true) {
-                echo $update_stmt;
-                echo "<br>";
-                echo "<br>";
-            } else {
-                echo $update_stmt;
-                print_r($connect->error);
-                echo "<br>";
-                echo "<br>";
+            mysqli_query($connect, $update_stmt);
 
-            }
         }
 
     }
