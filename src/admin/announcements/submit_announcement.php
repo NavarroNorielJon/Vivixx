@@ -70,5 +70,4 @@ $connect = Connect();
         }
             
     }
-    print_r($add_attachment);
 //header("location: announcement.php");

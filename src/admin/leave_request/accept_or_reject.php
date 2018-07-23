@@ -8,6 +8,7 @@
     $email = mysqli_real_escape_string($connect,$_POST["email"]);
     $used = mysqli_real_escape_string($connect,$_POST["used"]);
     $remaining = mysqli_real_escape_string($connect,$_POST["remaining"]);
+    $firstname = mysqli_real_escape_string($connect, $_POST["emp_name"]);
     $update = "";
     $subject = "Leave Request";
     $body = "";
@@ -45,5 +46,5 @@
     $connect->query($update);
     // exit();
     header('Content-Type: application/json');
-    echo json_encode(['stat'=>$stat, 'status'=>$status, 'email'=>$email]);
+    echo json_encode(['stat'=>$stat, 'status'=>$status, 'email'=>$email , 'name'=>$firstname]);
 ?>

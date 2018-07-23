@@ -43,9 +43,9 @@
     $to = date('Y-m-d', strtotime($to));
     $date_hired = date('Y-m-d', strtotime($date_hired));
 
-    $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`,
+    $insert_stmt = "INSERT INTO `leave_req` (`user_id`, `employee`, `department`, `position`,
 		 `date_hired`, `date_filed`, `reason`, `contact_address`, `contact_number`, `from`, `to`,`attachment`)
-		VALUES ('$user_id', '$employee', '$department', '$date_hired', NOW(), '$reason', '$contact_address',
+		VALUES ('$user_id', '$employee', '$department', '$position', '$date_hired', NOW(), '$reason', '$contact_address',
 		'$contact_number', '$from', '$to', $attachment) ;";
     $connect->query($insert_stmt);
     echo "Thank you for Requesting.";

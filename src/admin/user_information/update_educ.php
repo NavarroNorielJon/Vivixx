@@ -129,8 +129,5 @@
     }
 
     $update_stmt = "UPDATE `user_educ` SET `elementary`='$elementary',`secondary`='$secondary',`college`='$college',`post_grad`='$post_grad' WHERE user_id='$user_id';";
-    if (mysqli_query($connect, $update_stmt) === true) {
-    } else {
-        echo $connect->error;
-    }
+    mysqli_query($connect, $update_stmt);
 ?>

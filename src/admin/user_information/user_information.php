@@ -57,8 +57,7 @@
 						(birth_date is not null and birth_place is not null and contact_number is not null and gender is not null and height is not null
 						and weight is not null and blood_type is not null and residential_address is not null and residential_zip is not null and
 						residential_tel_no is not null and permanent_address is not null and permanent_zip is not null and permanent_tel_no is not null
-						and citizenship is not null and civil_status is not null and sss_no is not null and tin is not null and philhealth_no and
-						pagibig_id_no is not null) and (date_hired is not null and employee_status is not null and position is not null);";
+						and citizenship is not null and civil_status is not null) and (date_hired is not null and employee_status is not null and position is not null);";
 					$result = $connect->query($sql);
 
 					if($result-> num_rows > 0){

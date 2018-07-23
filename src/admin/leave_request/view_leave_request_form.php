@@ -7,12 +7,13 @@
     $leave_request = "SELECT *, email from leave_req join user using(user_id) where user_id='$user_id' and leave_req_id='$req_id';";
     $result = $connect->query($leave_request);
     $row = $result->fetch_assoc();
-    $cret = "SELECT used, credits from employee_info where user_id='$user_id'";
+    $cret = "SELECT  used, credits from employee_info where user_id='$user_id'";
     $result1 = $connect->query($cret);
     $row1 = $result1->fetch_assoc();
 	$user = $_GET["fname"];
 	$user_middle = $_GET["mname"];
     $user_last = $_GET["lname"];
+    $emp_name = $user . " " . $user_middle . " " . $user_last;
 ?>
 
     <form id="accept_reject" action="accept_or_reject.php" method="POST">
@@ -27,12 +28,13 @@
                 <input type="hidden" name="email" value="<?php echo $row["email"]?>">
                 <input type="hidden" name="used" value="<?php echo $row1["used"]?>">
                 <input type="hidden" name="remaining" value="<?php echo $row1["credits"]?>">
+                <input type="hidden" name="emp_name" value="<?php echo explode(",",$row["employee"])[0]?>">
 
                 <div class="modal-body">
                     <div class="row">
 						<div class="form-group col">
 							<label for="employee_name">Employee</label>
-							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="employee_name" name="employeeName" readonly value="<?php echo ucwords($user) . " " . ucwords($user_middle) . " " . ucwords($user_last)?>">
+							<input type="text" class="form-control-plaintext" style="font-size:1.5rem;" id="employee_name" name="employeeName" readonly value="<?php echo $emp_name;?>">
 						</div>
 
 						<div class="form-group col">
@@ -154,7 +156,8 @@
                         url: '../../mailing/accept_or_reject.php',
                         data: {
                             status: dat.status,
-                            email: dat.email
+                            email: dat.email,
+                            emp_name: dat.name
                         },
                         success: function () {
                             swal({
@@ -190,7 +193,8 @@
                         url: '../../mailing/accept_or_reject.php',
                         data: {
                             status: dat.status,
-                            email: dat.email
+                            email: dat.email,
+                            emp_name: dat.name
                         },
                         success: function () {
                             swal({
