@@ -40,7 +40,6 @@
 		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 
 
-
 	</head>
 
 	<body class="background">
@@ -130,19 +129,55 @@
 									<label for="title">Subject</label>
 									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
 								</div>
+								<script>
+									$(function() {
+										$('#calendar').change(function() {
+											console.log('sample');
+											$('#se_calendar').hide();
+											$('#date_duration').hide();
+											$('#' + $(this).val()).show();
+											if ($('#calendar').val() == "open") {
+												$('#s_date').attr('required', 'true');
+												$('#e_date').attr('required', 'true');
+											} else if($('#calendar').val() == "duration"){
+												$('#date_duration').attr('required', 'true');
+											}else{
+												$('#se_calendar').removeAttr('required').removeClass('input-error');
+											}
+										});
+									});
 
-								<div class="col ui calendar" id="start_date">
+								</script>
+								<div class="form-group col">
+									<select name="calendar" id="calendar" class="form-control">
+                                        <option selected="selected" value="None" >Choose here:</option>
+                                        <option value="open">Open Calendar</option>
+                                        <option value="duration">Duration</option>
+                                    </select>
+								</div>
+
+								<div id="se_calendar">
+								<div class="col ui calendar" id="start_date" style="display:none">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
 										<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
-								<div class="col ui calendar" id="end_date">
+								<div class="col ui calendar" id="end_date" style="display:none">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
 										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
+								</div>
+								</div>
+
+								<div id="date_duration" style="display:none">
+									<select name="duration" id="duration" class="form-control">
+                                        <option selected="selected" value="None" >Choose here:</option>
+                                        <option value="1week">1 week</option>
+                                        <option value="2weeks">2 weeks</option>
+                                    </select>
 								</div>
 
 								<div class="form-group col">
@@ -198,7 +233,7 @@
 			</div>
 		</div>
 		<div id="signup_form"></div>
-
+		
 		<script>
 			$('#department').multiselect({
 				templates: {
