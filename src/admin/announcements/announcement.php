@@ -275,7 +275,7 @@
 							});
 						} else {
 							swal(
-								'Not Deleted!',
+								'Canceled!',
 								'Your file is safe.',
 								'success'
 							);
@@ -286,7 +286,11 @@
 			$("input[type = 'submit']").click(function() {
 				var $fileUpload = $("input[type='file']");
 				if (parseInt($fileUpload.get(0).files.length) > 4) {
-					alert("You are only allowed to upload a maximum of 4 files");
+					swal({
+						title: "You are only allowed to upload a maximum of 4 files",
+						type: 'success',
+						icon: 'warning'
+					});
 					return false;
 				} else {
 					$("#container-announcement").submit();
@@ -307,7 +311,7 @@
 					});
 				});
 			});
-			
+
 			CKEDITOR.replace( 'text' );
 
 			// $('.body').richText();

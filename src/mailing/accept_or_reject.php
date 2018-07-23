@@ -11,9 +11,8 @@ require 'vendor/autoload.php';
 include '../utilities/db.php';
 $conn = Connect();
 
-$email = $_POST['email'];
-$email = mysqli_real_escape_string($conn, $email);
-
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$firstname = mysqli_real_escape_string($conn, $_POST['emp_name']);
 $sql = "SELECT * FROM user where email = '$email';";
 $result = $conn->query($sql);
 
@@ -21,7 +20,6 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $password = $row['password'];
         $username = $row['username'];
-		$firstname = $row['first_name'];
     }
 } else {
     echo "
@@ -73,7 +71,7 @@ try {
         $body .= "<div id='main_content'>";
         $body .= "
         <h1>Leave Request Accepted</h1>
-        <p>Dear $firstname, your leave request has been accepted.</p>";
+        <p>Dear <strong>$firstname</strong>, your leave request has been accepted.</p>";
         $body .= "<p>If you did not request for any leave request, ignore this message</p>";
         $body .= "</div>";
 
@@ -90,7 +88,7 @@ try {
         $body .= "<div id='main_content'>";
         $body .= "
         <h1>Leave Request Rejected</h1>
-        <p>Dear $firstname, your leave request has been rejected, if you have any questions please head to the HR office.</p>";
+        <p>Dear <strong>$firstname</strong>, your leave request has been rejected, if you have any questions please head to the HR office.</p>";
         $body .= "<p>If you did not request for a leave request, ignore this message</p>";
         $body .= "</div>";
 
