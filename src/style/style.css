@@ -694,8 +694,7 @@ a[aria-expanded="true"] {
 }
 
 @media screen and (width: 1680px) and (height: 1050px) {
-	/* index */
-	.index {
+	index .index {
 		margin: 0;
 		height: 100%;
 		width: 100%;
@@ -810,11 +809,11 @@ a[aria-expanded="true"] {
 	.index .login {
 		border-radius: 0;
 		font-size: 1.5em;
-		margin: 3% auto;
-		max-height: 680px;
-		max-width: 510px;
-		min-height: 680px;
-		min-width: 510px;
+		margin: 5.2% auto;
+		max-height: 560px;
+		max-width: 410px;
+		min-height: 560px;
+		min-width: 410px;
 		padding: 20px 50px 20px 50px;
 	}
 
@@ -825,11 +824,20 @@ a[aria-expanded="true"] {
 	}
 
 	.index .login input {
-		font-size: 1em;
+		font-size: 0.5em;
 	}
 
+	.index .login label {
+		font-size: 0.5em;
+	}
+
+	.index .login a {
+		font-size: 0.8em;
+	}
+
+
 	.index .login-button {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 }
 
@@ -876,6 +884,43 @@ a[aria-expanded="true"] {
 	}
 }
 
+/*tablet*/
+
+@media screen and (max-width: 769px) and (max-height: 1025px) {
+	/* index */
+	.index {
+		margin: 0;
+		max-height: 100%;
+		min-height: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+
+	.index .login {
+		border-radius: 0;
+		font-size: 1.5em;
+		margin: 0;
+		max-height: 1024px;
+		max-width: 768px;
+		min-height: 1024px;
+		min-width: 768px;
+		padding: 20px 50px 20px 50px;
+	}
+
+	.index .login .index-image {
+		height: auto;
+		margin: 5% auto 8% auto;
+		width: 50%;
+	}
+
+	.index .login input {
+		font-size: 1em;
+	}
+
+	.index .login-button {
+		font-size: 1em;
+	}
+}
 
 /*
 
