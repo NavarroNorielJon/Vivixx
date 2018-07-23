@@ -174,7 +174,7 @@
 								</div>
 
 								<div id="date_duration" style="display:none">
-									<input type="number" name="ample" max="31" maxLength="2">
+									<input type="number" name="sample" max="31" maxLength="2">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
                                         <option value="1week">1 week</option>
