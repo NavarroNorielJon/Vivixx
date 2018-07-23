@@ -1,6 +1,6 @@
 <?php
-	include '../../utilities/session.php';
-	include '../utilities/check_user.php';
+	include 'utilities/session.php';
+	include 'utilities/check_user.php';
 	$connect = Connect();
 ?>
 
@@ -11,31 +11,31 @@
 		<title>Vivixx Ph</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="../style/datatables.css">
-		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
-		<link rel="stylesheet" href="../../style/jquery-ui.css">
+		<link rel="stylesheet" href="style/datatables.css">
+		<link rel="stylesheet" href="style/bootstrap-multiselect.css">
+		<link rel="stylesheet" href="style/jquery-ui.css">
 
 		<!--scripts-->
-		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="../../script/datatables.min.js"></script>
-		<script type="text/javascript" src="../../script/ajax.js"></script>
-		<script type="text/javascript" src="../../script/popper.min.js"></script>
-		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
-		<script src="../../script/jquery.form.min.js"></script>
-		<script src="../style/bootstrap-multiselect.js"></script>
-		<script src="../../script/jquery-ui.js"></script>
+		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../script/datatables.min.js"></script>
+		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript" src="../script/popper.min.js"></script>
+		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
+		<script src="../script/jquery.form.min.js"></script>
+		<script src="style/bootstrap-multiselect.js"></script>
+		<script src="../script/jquery-ui.js"></script>
 	</head>
 
 	<body class="background">
 		<div class="wrapper">
-			<?php include '../fragments/navbar.php'; ?>
+			<?php include 'fragments/navbar.php'; ?>
 
 			<div class="content container">
 				<div class="text-center">
@@ -74,11 +74,11 @@
 									if($row["status"] === "enabled"){
 										$button = "
 										<input name='disable' value='Disable' style='display: none;'>
-										<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
+										<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
 									}else{
 										$button = "
 										<input name='enable' value='Enable' style='display: none;'>
-										<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
+										<a href='accounts/accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='accounts/update_status();' class='show btn btn-success'>Enable</a>";
 									}
 
 									//print data in table
@@ -129,11 +129,11 @@
 									if($row["status"] === "enabled"){
 										$button = "
 										<input name='disable' value='Disable' style='display: none;'>
-										<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
+										<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
 									}else{
 										$button = "
 										<input name='enable' value='Enable' style='display: none;'>
-										<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
+										<a href='accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
 									}
 
 									//print data in table
