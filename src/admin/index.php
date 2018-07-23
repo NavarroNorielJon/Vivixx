@@ -11,7 +11,7 @@
 		<title>Vivixx Ph</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="style/style.css" media="screen, projection">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,7 +30,7 @@
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script src="../script/jquery.form.min.js"></script>
 		<script src="style/bootstrap-multiselect.js"></script>
-		<script src="script/jquery-ui.js"></script>
+		<script src="../script/jquery-ui.js"></script>
 	</head>
 
 	<body class="background">

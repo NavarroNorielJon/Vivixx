@@ -32,8 +32,9 @@
                         } else {
                             echo "pages/home";
                         }
-                    } elseif ($_SESSION['user'] = $user && $type === "admin") {
-                        echo "admin/";
+                    } elseif ($type === "admin") {
+                        $_SESSION['user'] = $user;
+                        echo "/admin";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
                     echo "Invalid Password";

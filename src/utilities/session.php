@@ -12,8 +12,8 @@
 		$type = $row['type'];
     }
 
-	if(!isset($_SESSION['user'])){
-        header('location:/');
-    }
+	if($type === "admin"){
+        header('location:/admin');
+    } 
 
 ?>
