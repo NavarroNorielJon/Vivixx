@@ -18,8 +18,8 @@
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
 		<link rel="stylesheet" href="../../style/jquery-ui.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../style/richtext.min.css">
+		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/richtext.min.css"> -->
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -36,9 +36,8 @@
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
-		<script src="../style/jquery.richtext.min.js"></script>
+		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
 		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
-
 
 
 	</head>
@@ -130,7 +129,35 @@
 									<label for="title">Subject</label>
 									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
 								</div>
+								<script>
+									$(function() {
+										$('#calendar').change(function() {
+											console.log('sample');
+											$('#se_calendar').hide();
+											$('#date_duration').hide();
+											if ($('#calendar').val() == "open") {
+												$('#se_calendar').show();
+												$('#s_date').attr('required', 'true');
+												$('#e_date').attr('required', 'true');
+											} else if($('#calendar').val() == "duration"){
+												$('#date_duration').show();
+												$('#date_duration').attr('required', 'true');
+											}else{
+												$('#se_calendar').removeAttr('required').removeClass('input-error');
+											}
+										});
+									});
 
+								</script>
+								<div class="form-group col">
+									<select name="calendar" id="calendar" class="form-control">
+                                        <option selected="selected" disabled="disabled" >Choose here:</option>
+                                        <option value="open">Open Calendar</option>
+                                        <option value="duration">Duration</option>
+                                    </select>
+								</div>
+
+								<div id="se_calendar" style="display:none">
 								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
@@ -143,6 +170,18 @@
 										<label for="end_date">End Date</label>
 										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
+								</div>
+								</div>
+
+								<div id="date_duration" style="display:none">
+									<input type="number" name="ample" max="31" maxLength="2">
+									<select name="duration" id="duration" class="form-control">
+                                        <option selected="selected" value="None" >Choose here:</option>
+                                        <option value="1week">1 week</option>
+                                        <option value="2weeks">2 weeks</option>
+										<option value="1month">1 month</option>
+										<option value="2weeks">2 weeks</option>
+                                    </select>
 								</div>
 
 								<div class="form-group col">
@@ -198,7 +237,7 @@
 			</div>
 		</div>
 		<div id="signup_form"></div>
-
+		
 		<script>
 			$('#department').multiselect({
 				templates: {
@@ -295,20 +334,18 @@
 				})
 			});
 			$('#an').addClass('active');
-			$('#container-announcement').ajaxForm({
-				url: 'submit_announcement.php',
-				method: 'post',
-				success: function() {
-					swal({
-						type: 'success',
-						title: 'Announcement Added',
-						icon: 'success',
-						timer: 2500
-					}).then(function() {
-						location.reload();
-					});
-				}
-			});
+			// $('#container-announcement').ajaxForm({
+			// 	url: 'submit_announcement.php',
+			// 	method: 'post',
+			// 	success: function() {
+			// 		swal({
+			// 			type: 'success',
+			// 			title: 'Announcement Added',
+			// 			icon: 'success',
+			// 		});
+
+			// 	}
+			// });
 
 		</script>
 
