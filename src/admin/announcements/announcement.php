@@ -18,8 +18,8 @@
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
 		<link rel="stylesheet" href="../../style/jquery-ui.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../style/richtext.min.css">
+		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/richtext.min.css"> -->
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -36,7 +36,7 @@
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
-		<script src="../style/jquery.richtext.min.js"></script>
+		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
 		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 
 
@@ -291,20 +291,18 @@
 				})
 			});
 			$('#an').addClass('active');
-			$('#container-announcement').ajaxForm({
-				url: 'submit_announcement.php',
-				method: 'post',
-				success: function() {
-					swal({
-						type: 'success',
-						title: 'Announcement Added',
-						icon: 'success',
-						timer: 2500
-					}).then(function() {
-						location.reload();
-					});
-				}
-			});
+			// $('#container-announcement').ajaxForm({
+			// 	url: 'submit_announcement.php',
+			// 	method: 'post',
+			// 	success: function() {
+			// 		swal({
+			// 			type: 'success',
+			// 			title: 'Announcement Added',
+			// 			icon: 'success',
+			// 		});
+
+			// 	}
+			// });
 
 		</script>
 
