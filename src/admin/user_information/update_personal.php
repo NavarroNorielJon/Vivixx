@@ -111,7 +111,7 @@
          `civil_status`='$civil_status', `sss_no`=$sss_no, `tin`=$tin,
          `philhealth_no`=$philhealth_no, `pagibig_id_no`=$pagibig_id_no WHERE `user_id`='$user_id';";
     } elseif (!empty($_FILES['prof_image']['tmp_name']) && !empty($_FILES['signature']['tmp_name'])) {
-        $update_stmt = "UPDATE `user_info` SET `prof_image`=$prof_image,`signature`=$signature,`first_name`='$first_name',`middle_name`='$middle_name',`last_name`='$last_name',`birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
+        $update_stmt = "UPDATE `user_info` SET `prof_image`=$prof_image,`signature`=$signature,`first_name`='$first_name',`middle_name`=$middle_name,`last_name`='$last_name',`birth_date`='$birth_date', `birth_place`='$birth_place', `contact_number`='$contact_number',
          `facebook_link`=$facebook,`gender`='$gender', `height`=\"$height\", `weight`='$weight',`blood_type`='$blood_type',`residential_address`='$residential_address',
          `residential_zip`='$residential_zip', `residential_tel_no`='$residential_tel_no', `permanent_address`='$permanent_address',
          `permanent_zip`='$permanent_zip', `permanent_tel_no`='$permanent_tel_no', `citizenship`='$citizenship',
