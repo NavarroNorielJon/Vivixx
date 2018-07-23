@@ -135,11 +135,12 @@
 											console.log('sample');
 											$('#se_calendar').hide();
 											$('#date_duration').hide();
-											$('#' + $(this).val()).show();
 											if ($('#calendar').val() == "open") {
+												$('#se_calendar').show();
 												$('#s_date').attr('required', 'true');
 												$('#e_date').attr('required', 'true');
 											} else if($('#calendar').val() == "duration"){
+												$('#date_duration').show();
 												$('#date_duration').attr('required', 'true');
 											}else{
 												$('#se_calendar').removeAttr('required').removeClass('input-error');
@@ -150,21 +151,21 @@
 								</script>
 								<div class="form-group col">
 									<select name="calendar" id="calendar" class="form-control">
-                                        <option selected="selected" value="None" >Choose here:</option>
+                                        <option selected="selected" disabled="disabled" >Choose here:</option>
                                         <option value="open">Open Calendar</option>
                                         <option value="duration">Duration</option>
                                     </select>
 								</div>
 
-								<div id="se_calendar">
-								<div class="col ui calendar" id="start_date" style="display:none">
+								<div id="se_calendar" style="display:none">
+								<div class="col ui calendar" id="start_date">
 									<div class="ui input left icon">
 										<label for="start_date">Start Date</label>
 										<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
 									</div>
 								</div>
 
-								<div class="col ui calendar" id="end_date" style="display:none">
+								<div class="col ui calendar" id="end_date">
 									<div class="ui input left icon">
 										<label for="end_date">End Date</label>
 										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
@@ -173,10 +174,13 @@
 								</div>
 
 								<div id="date_duration" style="display:none">
+									<input type="number" name="ample" max="31" maxLength="2">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
                                         <option value="1week">1 week</option>
                                         <option value="2weeks">2 weeks</option>
+										<option value="1month">1 month</option>
+										<option value="2weeks">2 weeks</option>
                                     </select>
 								</div>
 
