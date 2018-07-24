@@ -6,12 +6,14 @@
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $username = $row['username'];
-		
+        $type = $row['type'];
+
     }
  	$connect = Connect();
-	echo "<script type='text/javascript' src='../script/sweetalert.min.js'></script>";
-	
+
 	if($type == "user"){
 		header("location:/pages/home");
-	}	
+	} else {
+        header("location:/admin/");
+    }
 ?>
