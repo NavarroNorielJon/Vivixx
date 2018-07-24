@@ -87,11 +87,11 @@
 							if($row["connection"] === "resume"){
 								$connection = "
 								<input name='pause' value='pause' style='display: none;'>
-								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-danger'>Pause</a>";
+								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-warning'>Pause</a>";
 							}else{
 								$connection = "
 								<input name='resume' value='resume' style='display: none;'>
-								<a href=update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-success'>Resume</a>";
+								<a href='update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-success'>Resume</a>";
 							}
 
 							$edit = "
