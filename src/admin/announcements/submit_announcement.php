@@ -5,12 +5,13 @@ include '../../utilities/db.php';
 $connect = Connect();
 
     $subject = ucwords(mysqli_real_escape_string($connect,$_POST["subject"]));
-    $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
-    $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
+    // $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
+    // $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $status =  $_POST["status"];
     $department = $_POST["department"];
-    print_r($body);
+    // $num = $_POST["num"];
+    // $duration = $_POST["duration"];
     $file_names = [];
     $file_paths = [];
     $file_tmp_names = [];
@@ -47,6 +48,29 @@ $connect = Connect();
                 $file_name .= $name .",";
             }
         }
+
+        if(isset($_POST["start_date"]) && isset($_POST["end_date"])){
+            $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
+            $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
+        }else if($_POST["duration"] === "day"){
+            $startdate = date("Y-m-d");
+            $num = mysqli_real_escape_string($connect,$_POST["num"]);
+            $enddate = date("Y-m-d", strtotime( "+ $num days" .$startdate));  
+        }else if($_POST["duration"] === "week"){
+            $startdate = date("Y-m-d");
+            $num = mysqli_real_escape_string($connect,$_POST["num"]);
+            $enddate = date("Y-m-d", strtotime( "+ $num week" .$startdate));  
+        }else if($_POST["duration"] === "month"){
+            $startdate = date("Y-m-d");
+            $num = mysqli_real_escape_string($connect,$_POST["num"]);
+            $enddate = date("Y-m-d", strtotime( "+ $num month" .$startdate));
+        }else{
+            $startdate = date("Y-m-d");
+            $num = mysqli_real_escape_string($connect,$_POST["num"]);
+            $enddate = date("Y-m-d", strtotime( "+ $num year" .$startdate)); 
+        }
+        print_r($startdate);
+        print_r($enddate);
         $counter = 0;
             $sql = "INSERT into `announcement` (`subject`, `announcement`, `start_date`, `end_date`, `departments`, `status`) VALUES ('$subject', '$body', '$startdate', '$enddate', '$concat','$status');";
             $connect->query($sql);

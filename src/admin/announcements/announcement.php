@@ -132,7 +132,6 @@
 								<script>
 									$(function() {
 										$('#calendar').change(function() {
-											console.log('sample');
 											$('#se_calendar').hide();
 											$('#date_duration').hide();
 											if ($('#calendar').val() == "open") {
@@ -174,13 +173,13 @@
 								</div>
 
 								<div id="date_duration" style="display:none">
-									<input type="number" name="sample" max="31" maxLength="2">
+									<input type="text" name="num" pattern="\d*" min="0" maxlength="3">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
-                                        <option value="1week">1 week</option>
-                                        <option value="2weeks">2 weeks</option>
-										<option value="1month">1 month</option>
-										<option value="2weeks">2 weeks</option>
+                                        <option value="day">day/s</option>
+                                        <option value="week">week/s</option>
+										<option value="month">month/s</option>
+										<option value="year">year/s</option>
                                     </select>
 								</div>
 
