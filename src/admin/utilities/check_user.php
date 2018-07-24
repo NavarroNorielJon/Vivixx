@@ -11,9 +11,7 @@
     }
  	$connect = Connect();
 
-	if($type == "user"){
-		header("location:/pages/home");
-	} else {
+	if($type == "admin"){
         header("location:/admin/");
-    }
+	}
 ?>
