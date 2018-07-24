@@ -1,6 +1,6 @@
 <?php
 	ini_set('max_execution_time', 300);
-	include '../../utilities/session.php';
+	include '../utilities/session.php';
 	include '../utilities/check_user.php';
 	$connect = Connect();
 ?>
@@ -139,10 +139,10 @@
 												$('#se_calendar').show();
 												$('#s_date').attr('required', 'true');
 												$('#e_date').attr('required', 'true');
-											} else if($('#calendar').val() == "duration"){
+											} else if ($('#calendar').val() == "duration") {
 												$('#date_duration').show();
 												$('#date_duration').attr('required', 'true');
-											}else{
+											} else {
 												$('#se_calendar').removeAttr('required').removeClass('input-error');
 											}
 										});
@@ -158,19 +158,19 @@
 								</div>
 
 								<div id="se_calendar" style="display:none">
-								<div class="col ui calendar" id="start_date">
-									<div class="ui input left icon">
-										<label for="start_date">Start Date</label>
-										<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+									<div class="col ui calendar" id="start_date">
+										<div class="ui input left icon">
+											<label for="start_date">Start Date</label>
+											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+										</div>
 									</div>
-								</div>
 
-								<div class="col ui calendar" id="end_date">
-									<div class="ui input left icon">
-										<label for="end_date">End Date</label>
-										<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+									<div class="col ui calendar" id="end_date">
+										<div class="ui input left icon">
+											<label for="end_date">End Date</label>
+											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+										</div>
 									</div>
-								</div>
 								</div>
 
 								<div id="date_duration" style="display:none">
@@ -237,7 +237,7 @@
 			</div>
 		</div>
 		<div id="signup_form"></div>
-		
+
 		<script>
 			$('#department').multiselect({
 				templates: {
@@ -312,7 +312,7 @@
 				});
 			});
 
-			CKEDITOR.replace( 'text' );
+			CKEDITOR.replace('text');
 
 			// $('.body').richText();
 			// let removeToolbar = function() {
