@@ -5,6 +5,12 @@
 	if(!isset($_SESSION['user'])){
         header('location:/');
     }else {
+		$current_user = $_SESSION['user'];
+        $stmt = "SELECT * FROM user WHERE username='$current_user' or email='$current_user';";
+        $results = mysqli_query($connect, $stmt);
+        $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
+		$type = $row['type'];
+		
 		if($type === "user"){
         	header('location:/pages/home');
     	} 

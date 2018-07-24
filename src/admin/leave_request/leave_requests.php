@@ -1,6 +1,5 @@
 <?php
 	include '../../utilities/session.php';
-	include '../utilities/check_user.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
