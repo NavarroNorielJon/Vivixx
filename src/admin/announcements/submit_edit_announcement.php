@@ -11,7 +11,7 @@ $connect = Connect();
     $announcement_id = mysqli_real_escape_string($connect,$_POST["id"]);
     $status =  $_POST["status"];
     $department = $_POST["department"];
-    
+
     $file_names = [];
     $file_paths = [];
     $file_tmp_names = [];
@@ -74,7 +74,6 @@ $connect = Connect();
             }
 
         }
-        print_r($add_attachment);
     }
-    
+
 //header("location: announcement.php");

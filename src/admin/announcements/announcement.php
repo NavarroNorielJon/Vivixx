@@ -147,11 +147,16 @@
 												$('#se_calendar').show();
 												$('#s_date').attr('required', 'true');
 												$('#e_date').attr('required', 'true');
+												$('#duration').removeAttr('required').removeClass('input-error');
 											} else if ($('#calendar').val() == "duration") {
 												$('#date_duration').show();
 												$('#date_duration').attr('required', 'true');
+												$('#s_date').removeAttr('required').removeClass('input-error');
+												$('#e_date').removeAttr('required').removeClass('input-error');
 											} else {
-												$('#se_calendar').removeAttr('required').removeClass('input-error');
+												$('#s_date').removeAttr('required').removeClass('input-error');
+												$('#e_date').removeAttr('required').removeClass('input-error');
+												$('#duration').removeAttr('required').removeClass('input-error');
 											}
 										});
 									});
@@ -169,20 +174,20 @@
 									<div class="col ui calendar" id="start_date">
 										<div class="ui input left icon">
 											<label for="start_date">Start Date</label>
-											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
 										</div>
 									</div>
 
 									<div class="col ui calendar" id="end_date">
 										<div class="ui input left icon">
 											<label for="end_date">End Date</label>
-											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
 										</div>
 									</div>
 								</div>
 
 								<div id="date_duration" style="display:none">
-									<input type="text" name="num" pattern="\d*" min="0" maxlength="3">
+									<input type="text" name="num" onkeypress="numberInput(event)" min="0" maxlength="3">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
                                         <option value="day">day/s</option>
@@ -350,8 +355,9 @@
 			// 			type: 'success',
 			// 			title: 'Announcement Added',
 			// 			icon: 'success',
+			// 		}).then(function () {
+			// 			location.reload();
 			// 		});
-
 			// 	}
 			// });
 
