@@ -10,4 +10,4 @@
 	}
 	
 	$result = $connect->query($update);
-?>
+
