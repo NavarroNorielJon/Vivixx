@@ -57,23 +57,24 @@ $connect = Connect();
             $sql = "UPDATE `announcement` SET `subject`='$subject', `announcement`='$body', `start_date`='$startdate',`end_date`='$enddate', `departments`='$concat', `status`='$status' where announcement_id='$announcement_id';";
             $connect->query($sql);
         }
-        // for($x = 0; $x< count($file_names); $x++){
+        for($x = 0; $x< count($file_names); $x++){
 
-        //     if($_POST["attachment"] != "" && $file_name[$x] != ""){
-        //         move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-        //         $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
-        //         $add_attachment = "UPDATE announcement_attachments SET `attachment_name`= '$file_name', `attachment` = '$temp_file', `announcement_id` = '$announcement_id';";
-        //         $connect->query($add_attachment);
-        //     }else if($file_name[$x] != "" && $_POST["attachment"] == ""){
-        //         move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
-        //         $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
-        //         $add_attachment = "INSERT into announcement_attachments (`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
-        //         $connect->query($add_attachment);
-        //     }else{
-        //         //header("location: announcement.php");
-        //     }
+            if($_POST["attachment"] != "" && $file_names[$x] != ""){
+                move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
+                $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
+                $add_attachment = "UPDATE announcement_attachments SET `attachment_name`= '$file_name', `attachment` = '$temp_file', `announcement_id` = '$announcement_id';";
+                $connect->query($add_attachment);
+            }else if($file_names[$x] != "" && $_POST["attachment"] == ""){
+                move_uploaded_file($file_tmp_names[$x], $file_paths[$x]);
+                $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
+                $add_attachment = "INSERT into announcement_attachments SET(`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
+                $connect->query($add_attachment);
+            }else{
+                //header("location: announcement.php");
+            }
 
-        // }
+        }
+        print_r($add_attachment);
     }
-    print_r($sql);
+    
 //header("location: announcement.php");

@@ -84,6 +84,16 @@
 							}else{
 								$attachment = "No attachment";
 							}
+							if($row["connection"] === "resume"){
+								$connection = "
+								<input name='pause' value='pause' style='display: none;'>
+								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-danger'>Pause</a>";
+							}else{
+								$connection = "
+								<input name='resume' value='resume' style='display: none;'>
+								<a href=update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-success'>Resume</a>";
+							}
+
 							$edit = "
 							<input name='edit' value='edit' style='display: none;'>
 							<a href='edit_announcement.php?announcement_id=".$row['announcement_id']."' class='edit btn btn-primary'>Edit</a>";
@@ -99,7 +109,7 @@
 							<td>" . $row['end_date'] . "</td>
 							<td >" . $row['announcement'] . "</td>
 							<td>" . $attachment . "</td>
-							<td>" . $edit.$delete."</td>
+							<td>" . $edit.$delete.$connection."</td>
 							</tr>";
 						}
 					}
