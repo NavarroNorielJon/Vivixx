@@ -14,6 +14,10 @@
 
 	if(!isset($_SESSION['user'])){
         header('location:/');
-    }
+    }else {
+		if($type === "user"){
+        	header('location:/pages/home');
+    	} 
+	}
 
 ?>
