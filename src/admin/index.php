@@ -1,6 +1,5 @@
 <?php
 	include 'utilities/session.php';
-	include 'utilities/check_user.php';
 	$connect = Connect();
 ?>
 
@@ -30,7 +29,7 @@
 		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
 		<script src="../script/jquery.form.min.js"></script>
 		<script src="style/bootstrap-multiselect.js"></script>
-		<script src="script/jquery-ui.js"></script>
+		<script src="../script/jquery-ui.js"></script>
 	</head>
 
 	<body class="background">

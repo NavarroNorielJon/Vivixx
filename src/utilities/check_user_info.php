@@ -33,5 +33,5 @@
 	   $gender == null || $height == null || $weight == null || $blood_type == null || $residential_address == null || $residential_zip == null || $residential_tel_no == null || $permanent_address == null || $permanent_zip == null || $permanent_tel_no == null || $citizenship == null
 		|| $civil_status == null ) && $type == "user") {
 		header("location:/pages/update_information");
-	}
+	} 
 ?>

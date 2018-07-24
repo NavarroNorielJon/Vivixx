@@ -22,8 +22,7 @@
 
 <body class="background">
 	<?php
-	include '../../utilities/session.php';
-	include '../utilities/check_user.php';
+	include '../utilities/session.php';
 	$connect = Connect();
 	?>
 		<div class="wrapper">
