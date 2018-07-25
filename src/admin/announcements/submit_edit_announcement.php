@@ -69,12 +69,13 @@ $connect = Connect();
                 $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
                 $add_attachment = "INSERT into announcement_attachments SET(`attachment_name`, `attachment`, `announcement_id`) values ('$file_name','$temp_file','$announcement_id');";
                 $connect->query($add_attachment);
+                echo "insert";
             }else{
                 //header("location: announcement.php");
             }
 
         }
-        print_r($add_attachment);
+        //print_r($add_attachment);
     }
     
 //header("location: announcement.php");
