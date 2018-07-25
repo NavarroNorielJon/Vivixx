@@ -133,8 +133,8 @@
 					<!-- Body -->
 					<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 						<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
-							<div class="row form-group">
-								<div class="col">
+							<div class="row">
+								<div class="form-group col">
 									<label for="title">Subject</label>
 									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
 								</div>
@@ -147,17 +147,23 @@
 												$('#se_calendar').show();
 												$('#s_date').attr('required', 'true');
 												$('#e_date').attr('required', 'true');
+												$('#duration').removeAttr('required').removeClass('input-error');
 											} else if ($('#calendar').val() == "duration") {
 												$('#date_duration').show();
 												$('#date_duration').attr('required', 'true');
+												$('#s_date').removeAttr('required').removeClass('input-error');
+												$('#e_date').removeAttr('required').removeClass('input-error');
 											} else {
-												$('#se_calendar').removeAttr('required').removeClass('input-error');
+												$('#s_date').removeAttr('required').removeClass('input-error');
+												$('#e_date').removeAttr('required').removeClass('input-error');
+												$('#duration').removeAttr('required').removeClass('input-error');
 											}
 										});
 									});
 
 								</script>
 								<div class="form-group col">
+									<label>Type</label>
 									<select name="calendar" id="calendar" class="form-control">
                                         <option selected="selected" disabled="disabled" >Choose here:</option>
                                         <option value="open">Open Calendar</option>
@@ -169,20 +175,21 @@
 									<div class="col ui calendar" id="start_date">
 										<div class="ui input left icon">
 											<label for="start_date">Start Date</label>
-											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
 										</div>
 									</div>
 
 									<div class="col ui calendar" id="end_date">
 										<div class="ui input left icon">
 											<label for="end_date">End Date</label>
-											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date" required placeholder="yy-mm-dd">
+											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
 										</div>
 									</div>
 								</div>
 
 								<div id="date_duration" style="display:none">
-									<input type="text" name="num" pattern="\d*" min="0" maxlength="3">
+									<label>Duration</label>
+									<input type="text" class="form-control" name="num" onkeypress="numberInput(event)" min="0" maxlength="3">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
                                         <option value="day">day/s</option>
@@ -237,7 +244,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+								<input type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit" value="Submit">
 							</div>
 						</form>
 					</div>
@@ -287,6 +294,31 @@
 								'Your file is safe.',
 								'success'
 							);
+						}
+					});
+			};
+
+			let add_announcement = function() {
+				swal({
+						title: 'Are you sure?',
+						text: "This will be posted",
+						type: 'warning',
+						buttons: true,
+					})
+					.then((result) => {
+						if (result) {
+							swal({
+								title: 'Success!',
+								text: "Announcement has been posted",
+								type: 'success',
+							}).then(function() {
+								location.reload();
+							});
+						} else {
+							swal({
+								title: 'Cancelled!',
+								type: 'success',
+							});
 						}
 					});
 			};
@@ -350,8 +382,9 @@
 			// 			type: 'success',
 			// 			title: 'Announcement Added',
 			// 			icon: 'success',
+			// 		}).then(function () {
+			// 			location.reload();
 			// 		});
-
 			// 	}
 			// });
 
