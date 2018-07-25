@@ -60,9 +60,7 @@
 					<a class="nav-link" href="/admin/announcements/announcement">Announcement</a>
 				</li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="/admin/utilities/backup">Backup</a>
-				</li>
+
 
 				<li id="emp" class="nav-item">
 					<div class="dropdown">
@@ -84,6 +82,15 @@
 					</div>
 				</li>
 
+				<li class="nav-item">
+					<div class="dropdown">
+						<button class="dropbtn" disabled>Help</button>
+						<div class="dropdown-content">
+							<a class="nav-link" href="/admin/utilities/backup">Backup</a>
+
+						</div>
+					</div>
+				</li>
 
 				<li id="pay" class="nav-item">
 					<a class="nav-link" href="/admin/payslip/user_payslip">Payslip</a>
