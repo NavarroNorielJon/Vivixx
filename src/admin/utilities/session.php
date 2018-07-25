@@ -12,7 +12,7 @@
 		$type = $row['type'];
     }
 	if(!isset($_SESSION['user'])){
-        header('location:/');
+        header('location:/admin/');
     }else {
 		if($type === "user"){
         	header('location:/pages/home');
