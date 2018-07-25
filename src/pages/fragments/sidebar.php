@@ -163,4 +163,5 @@
 				icon: 'info',
 			});
 		}
+
 	</script>
