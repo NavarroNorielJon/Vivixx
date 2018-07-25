@@ -36,7 +36,7 @@
 					<div>
 						<div class="MS-content">
 							<?php
-								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%All%') or departments like('%IT Support%') group by 1;";
+								$query = "SELECT * FROM announcement_attachments natural join announcement where (CURDATE()>=start_date and CURDATE() <= end_date) and (departments like('%All%') or departments like('%IT Support%')) and connection='resume' group by 1;";
 								$announcement = mysqli_query($connect, $query);
 								if($announcement->num_rows >0){
 									while ($row1 = mysqli_fetch_array($announcement)) {
