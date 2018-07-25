@@ -3,10 +3,10 @@
 	include '../utilities/check_user_info.php';
 	$connect = Connect();
 
-	$stmt= "SELECT * FROM user NATURAL JOIN user_info NATURAL JOIN user_background NATURAL JOIN user_educ NATURAL JOIN user_offspring NATURAL JOIN emergency_info_sheet NATURAL JOIN employee_info WHERE user_id='$user_id';";
+	$stmt= "SELECT * FROM employee_info WHERE user_id='$user_id';";
 	$res = mysqli_query($connect,$stmt);
 	$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-	$department = $row['department'];
+	$department = explode("|",$row['department'])[0];
 ?>
 
 	<!DOCTYPE html>
@@ -36,22 +36,21 @@
 					<div>
 						<div class="MS-content">
 							<?php
-								$query = "SELECT * FROM announcement_attachments natural join announcement where CURDATE()>=start_date and CURDATE() <= end_date and departments like('%".$department."%') or departments like('%All%') group by 1;";
+								$query = "SELECT * FROM announcement_attachments natural join announcement where (CURDATE()>=start_date and CURDATE() <= end_date) and (departments like('%All%') or departments like('%IT Support%')) and connection='resume' group by 1;";
 								$announcement = mysqli_query($connect, $query);
-								if($announcement->num_rows >0 ){
+								if($announcement->num_rows >0){
 									while ($row1 = mysqli_fetch_array($announcement)) {
 										if ($row1['status'] == "on") {
 											echo "
-
 											<div class='item'>
-											<h3 style=' color:red'>Due Date: ".$row1['end_date'] ."</h3>
+											<h3 style='color:red'>Due Date: ".$row1['end_date'] ."</h3>
 												<div class='imgTitle'>
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
 										} else {
 											echo "
 											<div class='item'>
-											<h3 style=' opacity:0'>Due Date: ".$row1['end_date'] ."sada</h3>
+											<h3 style='opacity:0'>Due Date: ".$row1['end_date'] ."sada</h3>
 												<div class='imgTitle'>
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
@@ -61,7 +60,6 @@
 											</div>";
 										echo "<a href='#announcement' data-toggle='modal' onclick='announcement(".$row1['announcement_id']."); return false'>Read More</a>
 										</div>";
-
 									}
 								} else {
 									echo "<br><br><br><br><br><br><h1 style='text-align:center'>No Announcement.</h1>";
