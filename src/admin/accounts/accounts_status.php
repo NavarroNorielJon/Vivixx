@@ -71,7 +71,7 @@
 									}
 									$button = "
 									<input name='disable' value='Disable' style='display: none;'>
-									<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='disable();' class='show btn btn-danger'>Disable</a>";
+									<a href='update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='disable();' class='show btn btn-danger'>Disable</a>";
 									//print data in table
 									echo "
 									<tr class='table-data'>
@@ -118,7 +118,7 @@
 									}
 									$button = "
 									<input name='enable' value='Enable' style='display: none;'>
-									<a href='accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='enable();' class='show btn btn-success'>Enable</a>";
+									<a href='update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='enable();' class='show btn btn-success'>Enable</a>";
 
 									//print data in table
 									echo "
@@ -182,7 +182,7 @@
 					})
 					.then((result) => {
 						if (result) {
-							// $.get('update_status.php');zz
+							// $.get('update_status.php');
 							swal("Success", "Account successfully enabled.", "success")
 								.then(
 									function() {

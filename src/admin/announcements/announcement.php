@@ -326,7 +326,7 @@
 			};
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
-				$.get('update_connection.php?pause='+ connection + '& id='+ id +'');
+				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
 
 				swal({
 						title: "Caution!",
