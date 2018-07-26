@@ -122,4 +122,5 @@ $connect = Connect();
                         $connect->query($add_attachment);
         }
     }
-header("location: announcement.php");
+echo $sql;
+// header("location: announcement.php");

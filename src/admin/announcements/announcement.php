@@ -135,7 +135,7 @@
 					<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 						<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="form-group col">
+								<div class="form-group col-4">
 									<label for="title">Subject</label>
 									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
 								</div>
@@ -188,28 +188,28 @@
 									</div>
 								</div>
 
-								<div id="date_duration" style="display:none">
+								<div class="form-group col" id="date_duration" style="display:none">
 									<label>Duration</label>
-									<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
-									<select name="duration" id="duration" class="form-control">
-                                        <option selected="selected" value="None" >Choose here:</option>
-                                        <option value="day">day/s</option>
-                                        <option value="week">week/s</option>
-										<option value="month">month/s</option>
-										<option value="year">year/s</option>
-                                    </select>
+									<div class="input-group">
+										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
+										<select name="duration" id="duration" class="form-control">
+	                                        <option selected="selected" value="None" >Choose here:</option>
+	                                        <option value="day">day/s</option>
+	                                        <option value="week">week/s</option>
+											<option value="month">month/s</option>
+											<option value="year">year/s</option>
+	                                    </select>
+									</div>
 								</div>
 
-								<div class="form-group col">
+								<div class="form-group col-2">
 									<label>Due dates:</label>
-									<div class="form-control">
-										<div class="switch">
-											<input type="radio" class="switch-input" name="status" value="on" id="on">
-											<label for="on" class="switch-label switch-label-off">ON</label>
-											<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
-											<label for="off" class="switch-label switch-label-on">OFF</label>
-											<span class="switch-selection"></span>
-										</div>
+									<div class="switch">
+										<input type="radio" class="switch-input" name="status" value="on" id="on">
+										<label for="on" class="switch-label switch-label-off">ON</label>
+										<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
+										<label for="off" class="switch-label switch-label-on">OFF</label>
+										<span class="switch-selection"></span>
 									</div>
 								</div>
 
@@ -245,7 +245,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit">Submit</button>
+								<button type="button" class="btn btn-primary" onclick="add_announcement()" >Submit</button>
 							</div>
 						</form>
 					</div>
@@ -272,30 +272,30 @@
 			});
 
 			//sweet alert for adding announcement
-			let add_announcement = function() {
+			function add_announcement() {
 				swal({
-						title: 'Are you sure?',
-						text: "This will be posted",
-						type: 'warning',
-						buttons: true,
+						title: "Caution!",
+						text: "Are you sure you want to add this announcement",
+						icon: "warning",
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
 					})
 					.then((result) => {
 						if (result) {
 							swal({
-								title: 'Success!',
-								text: "Announcement has been posted",
-								type: 'success',
-							}).then(function() {
-								location.reload();
+								title: "Success!",
+								text: "Announcement has been added!",
+								icon: "successs",
+							}).then(function () {
+								$('#container-announcement').submit();
 							});
 						} else {
-							swal({
-								title: 'Cancelled!',
-								type: 'success',
-							});
+							swal("Canceled", "", "error");
 						}
-					});
-			};
+					})
+			}
 
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
