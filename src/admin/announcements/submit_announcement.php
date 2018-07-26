@@ -2,7 +2,6 @@
 ini_set('post_max_size', '64M');
 ini_set('upload_max_filesize', '64M');
 include '../../utilities/db.php';
-error_reporting(0);
 $connect = Connect();
 
     $subject = ucwords(mysqli_real_escape_string($connect,$_POST["subject"]));
@@ -123,4 +122,4 @@ $connect = Connect();
                         $connect->query($add_attachment);
         }
     }
-//header("location: announcement.php");
+header("location: announcement.php");

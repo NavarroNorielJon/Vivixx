@@ -406,7 +406,7 @@
 					});
 				});
 			});
-			
+
 			//content editor
 			CKEDITOR.replace('text');
 

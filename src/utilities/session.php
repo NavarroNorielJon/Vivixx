@@ -16,7 +16,7 @@
         header('location:/');
     }else {
 		if($type === "admin"){
-        	header('location:/admin/');
+        	header('location:/admin/accounts/accounts_status');
     	}
 	}
 ?>

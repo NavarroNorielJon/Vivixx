@@ -1,6 +1,5 @@
 <?php
-	include '../utilities/session.php';
-	error_reporting(0);
+	include '../../utilities/session.php';
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -40,7 +39,7 @@
 
 			<div class="content container">
 				<div class="text-center">
-					<h1>Leave Request History</h1>
+					<h1>Summary of Leave Request by Month</h1>
 				</div>
 				<div class="">
 					<select id="month" name="month" class="form-control col-2">
@@ -68,7 +67,7 @@
 								<th>Last Name</th>
 								<th>Date Filed</th>
 								<th>Status</th>
-								<th>Leave Type</th>
+                                <th>Leave Type</th>
 							</tr>
 						</thead>
 
@@ -133,16 +132,16 @@
 			});
 			$('#leave_r').addClass('active');
 			$.fn.dataTable.ext.search.push(
-				function(settings, data) {
+				function (settings, data) {
 					let month = $("#month").val();
-					let table_month = new Date(data[3]);
+					let table_month =  new Date(data[3]);
 					if (month === 'All') {
 						return true;
 					}
-					return Number(table_month.getMonth() + 1) == month;
+					return Number(table_month.getMonth()+1)==month;
 				}
 			);
-			$('#month').change(function() {
+			$('#month').change(function(){
 				$('#leave_month').DataTable().draw();
 			});
 

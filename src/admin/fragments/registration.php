@@ -1,6 +1,5 @@
 <?php
 include '../../utilities/session.php';
-error_reporting(0);
 $connect = Connect();
 
 //user credentials

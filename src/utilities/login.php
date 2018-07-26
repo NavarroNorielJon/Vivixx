@@ -33,12 +33,11 @@
                             echo "pages/home";
                         }
                     } elseif ($type === "admin") {
-                        $_SESSION['user'] = $user;
-                        echo "/admin";
+                        echo "admin/accounts/accounts_status";
                     }
-                } elseif (!password_verify($password, $passwordVerify)) {
+                }elseif (!password_verify($password, $passwordVerify)) {
                     echo "Invalid Password";
-                } elseif (password_verify($password, $passwordVerify) && $status === "disabled") {
+                }elseif (password_verify($password, $passwordVerify) && $status === "disabled") {
                     echo "Your account is disabled";
                 }
             } else{

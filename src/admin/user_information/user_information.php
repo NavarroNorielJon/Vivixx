@@ -23,8 +23,7 @@
 <body class="background">
 
 	<?php
-	include '../utilities/session.php';
-	error_reporting(0);
+	include '../../utilities/session.php';
 	$connect = Connect();
 	?>
 		<div class="wrapper">

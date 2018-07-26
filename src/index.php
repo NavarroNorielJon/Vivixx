@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Icon -->
-		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 		<!-- Stylesheet -->
 		<link type="text/css" rel="stylesheet" href="style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
 	<body class="index background">
 		<div class="containter">
 			<form action="utilities/login.php" method="post" class="jumbotron login" id="login">
-				<img src="img/Lion.png" alt="logo" class="index-image">
+				<img src="../img/Lion.png" alt="logo" class="index-image">
 
 				<div class="form-group col-sm-12">
 					<label for="userEmail">Username or Email-Address</label>
