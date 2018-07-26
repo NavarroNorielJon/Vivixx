@@ -87,11 +87,11 @@
 							if($row["connection"] === "resume"){
 								$connection = "
 								<input name='pause' value='pause' style='display: none;'>
-								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-warning'>Pause</a>";
+								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' onclick='update_connection()' class='show btn btn-warning'>Pause</a>";
 							}else{
 								$connection = "
 								<input name='resume' value='resume' style='display: none;'>
-								<a href='update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-success'>Resume</a>";
+								<a href='update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' onclick='update_connection()' class='show btn btn-success'>Resume</a>";
 							}
 
 							$edit = "
@@ -270,6 +270,32 @@
 				$('#table').DataTable();
 			});
 
+			//sweet alert for adding announcement
+			let add_announcement = function(id) {
+				swal({
+						title: 'Are you sure?',
+						text: "This will be posted",
+						type: 'warning',
+						buttons: true,
+					})
+					.then((result) => {
+						if (result) {
+							swal({
+								title: 'Success!',
+								text: "Announcement has been posted",
+								type: 'success',
+							}).then(function() {
+								location.reload();
+							});
+						} else {
+							swal({
+								title: 'Cancelled!',
+								type: 'success',
+							});
+						}
+					});
+			};
+
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
 				swal({
@@ -297,34 +323,33 @@
 						}
 					});
 			};
-
-			
-
-			//sweet alert for adding announcement
-			let add_announcement = function() {
+			//sweet alert for resuming or pausing an announcement
+			function update_connection(id) {
 				swal({
-						title: 'Are you sure?',
-						text: "This will be posted",
-						type: 'warning',
-						buttons: true,
+						title: "Caution!",
+						text: "Are you sure you want to pause or resume this account?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
 					})
 					.then((result) => {
 						if (result) {
-							swal({
-								title: 'Success!',
-								text: "Announcement has been posted",
-								type: 'success',
-							}).then(function() {
-								location.reload();
-							});
+							// $.get('update_connection.php');
+							swal("Success", "Account successfully paused or resumed.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
 						} else {
-							swal({
-								title: 'Cancelled!',
-								type: 'success',
-							});
+							swal("Canceled", "", "error");
 						}
-					});
-			};
+					})
+			}
+
+			
 			
 			//script for checking maximum upload files
 			$("input[type = 'submit']").click(function() {
