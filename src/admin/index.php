@@ -70,17 +70,9 @@
 											$res = $connect->query($disabled);
 										}
 									}
-
-									if($row["status"] === "enabled"){
-										$button = "
-										<input name='disable' value='Disable' style='display: none;'>
-										<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
-									}else{
-										$button = "
-										<input name='enable' value='Enable' style='display: none;'>
-										<a href='accounts/accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='accounts/update_status();' class='show btn btn-success'>Enable</a>";
-									}
-
+									$button = "
+									<input name='disable' value='Disable' style='display: none;'>
+									<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='disable();' class='show btn btn-danger'>Disable</a>";
 									//print data in table
 									echo "
 									<tr class='table-data'>
@@ -125,16 +117,9 @@
 											$res = $connect->query($disabled);
 										}
 									}
-
-									if($row["status"] === "enabled"){
-										$button = "
-										<input name='disable' value='Disable' style='display: none;'>
-										<a href='accounts/update_status.php?disable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-danger'>Disable</a>";
-									}else{
-										$button = "
-										<input name='enable' value='Enable' style='display: none;'>
-										<a href='accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='update_status();' class='show btn btn-success'>Enable</a>";
-									}
+									$button = "
+									<input name='enable' value='Enable' style='display: none;'>
+									<a href='accounts/update_status.php?enable=".$row['status']."& username=".$row['username']."' onclick='enable();' class='show btn btn-success'>Enable</a>";
 
 									//print data in table
 									echo "
@@ -158,10 +143,11 @@
 		</div>
 
 		<script>
-			function update_status() {
+			//sweet alert for disabling account
+			function disable() {
 				swal({
 						title: "Caution!",
-						text: "Are you sure you want to enable or disable this account?",
+						text: "Are you sure you want to disable this account?",
 						icon: "warning",
 						dangerMode: true,
 						buttons: {
@@ -171,8 +157,34 @@
 					})
 					.then((result) => {
 						if (result) {
-							// $.get('update_status.php');
-							swal("Success", "Account successfully enabled or disabled.", "success")
+							// $.get('update_status.php');zz
+							swal("Success", "Account successfully disabled.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
+						} else {
+							swal("Canceled", "", "error");
+						}
+					})
+			}
+
+			//sweet alert for enabling account
+			function enable() {
+				swal({
+						title: "Caution!",
+						text: "Are you sure you want to enable this account?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
+					})
+					.then((result) => {
+						if (result) {
+							// $.get('update_status.php');zz
+							swal("Success", "Account successfully enabled.", "success")
 								.then(
 									function() {
 										location.reload();

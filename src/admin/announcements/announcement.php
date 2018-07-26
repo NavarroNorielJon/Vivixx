@@ -327,9 +327,11 @@
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
 				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
-				swal({
+
+				if(connection === "pause"){
+					swal({
 						title: "Caution!",
-						text: "Are you sure you want to pause or resume this account?",
+						text: "Are you sure you want to resume this announcement?",
 						icon: "warning",
 						dangerMode: true,
 						buttons: {
@@ -339,8 +341,7 @@
 					})
 					.then((result) => {
 						if (result) {
-							
-							swal("Success", "Account successfully paused or resumed.", "success")
+								swal("Success", "announcement successfully resumed.", "success")
 								.then(
 									function() {
 										location.reload();
@@ -349,9 +350,31 @@
 							swal("Canceled", "", "error");
 						}
 					})
+				}else{
+					swal({
+						title: "Caution!",
+						text: "Are you sure you want to pause this announcement?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
+					})
+					.then((result) => {
+						if (result) {
+								swal("Success", "announcement successfully paused.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
+						} else {
+							swal("Canceled", "", "error");
+						}
+					})
+				}
+				
 			}
-
-			
 			
 			//script for checking maximum upload files
 			$("button[type = 'submit']").click(function() {
