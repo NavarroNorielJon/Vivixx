@@ -37,7 +37,7 @@
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
 		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
-		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
+		<script src="../style/ckeditor/ckeditor.js"></script>
 
 
 	</head>
@@ -251,7 +251,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit">Submit</button>
+								<button type="submit" class="btn btn-primary" name="submit">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -278,35 +278,35 @@
 			});
 
 			//sweet alert for adding announcement
-			let add_announcement = function() {
-				swal({
-						title: 'Are you sure?',
-						text: "This will be posted",
-						type: 'warning',
-						buttons: true,
-					})
-					.then((result) => {
-						if (result) {
-							swal({
-								title: 'Success!',
-								text: "Announcement has been posted",
-								type: 'success',
-							}).then(function() {
-								location.reload();
-							});
-						} else {
-							swal({
-								title: 'Cancelled!',
-								type: 'success',
-							});
-						}
-					});
-			};
+			// let add_announcement = function() {
+			// 	swal({
+			// 			title: 'Are you sure?',
+			// 			text: "This will be posted",
+			// 			type: 'warning',
+			// 			buttons: true,
+			// 		})
+			// 		.then((result) => {
+			// 			if (result) {
+			// 				swal({
+			// 					title: 'Success!',
+			// 					text: "Announcement has been posted",
+			// 					type: 'success',
+			// 				}).then(function() {
+			// 					location.reload();
+			// 				});
+			// 			} else {
+			// 				swal({
+			// 					title: 'Cancelled!',
+			// 					type: 'success',
+			// 				});
+			// 			}
+			// 		});
+			// };
 
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
 				swal({
-						title: 'Are you sure?',
+						title: 'Are you sure you want to delete this announcement?',
 						text: "You won't be able to revert this!",
 						type: 'warning',
 						buttons: true,
@@ -333,9 +333,10 @@
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
 				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
-				swal({
+				if(connection === 'pause'){
+					swal({
 						title: "Caution!",
-						text: "Are you sure you want to pause or resume this account?",
+						text: "Are you sure you want to resume this announcement?",
 						icon: "warning",
 						dangerMode: true,
 						buttons: {
@@ -346,7 +347,7 @@
 					.then((result) => {
 						if (result) {
 
-							swal("Success", "Account successfully paused or resumed.", "success")
+							swal("Success", "Announcement successfully resumed.", "success")
 								.then(
 									function() {
 										location.reload();
@@ -355,6 +356,31 @@
 							swal("Canceled", "", "error");
 						}
 					})
+				}else{
+					swal({
+						title: "Caution!",
+						text: "Are you sure you want to pause this announcement?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
+					})
+					.then((result) => {
+						if (result) {
+
+							swal("Success", "Announcement successfully paused.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
+						} else {
+							swal("Canceled", "", "error");
+						}
+					})
+				}
+				
 			}
 
 
