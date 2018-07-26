@@ -133,7 +133,7 @@
 
 					<!-- Body -->
 					<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
-						<form id="container-announcement" method="POST" enctype="multipart/form-data">
+						<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
 							<div class="row">
 
 								<script>
@@ -251,7 +251,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary" onclick="add_announcement()" >Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -277,6 +277,32 @@
 				$('#table').DataTable();
 			});
 
+			//sweet alert for adding announcement
+			// function add_announcement() {
+			// 	swal({
+			// 			title: "Caution!",
+			// 			text: "Are you sure you want to add this announcement",
+			// 			icon: "warning",
+			// 			buttons: {
+			// 				cancel: "Cancel",
+			// 				confirm: true,
+			// 			},
+			// 		})
+			// 		.then((result) => {
+			// 			if (result) {
+			// 				swal({
+			// 					title: "Success!",
+			// 					text: "Announcement has been added!",
+			// 					icon: "successs",
+			// 				}).then(function () {
+			// 					$('#container-announcement').submit();
+			// 				});
+							
+			// 			} else {
+			// 				swal("Canceled", "", "error");
+			// 			}
+			// 		})
+			// }
 			// $(document).ready(function(){
 			// 	$('#container-announcement').on('submit',function(e) {  //Don't foget to change the id form
 			// 	$.ajax({
