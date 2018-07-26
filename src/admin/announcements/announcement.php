@@ -326,12 +326,11 @@
 			};
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
-				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
+				$.get('update_connection.php?pause='+ connection + '& id='+ id +'');
 
-				if(connection === "pause"){
-					swal({
+				swal({
 						title: "Caution!",
-						text: "Are you sure you want to resume this announcement?",
+						text: "Are you sure you want to pause or resume this account?",
 						icon: "warning",
 						dangerMode: true,
 						buttons: {
@@ -341,7 +340,8 @@
 					})
 					.then((result) => {
 						if (result) {
-								swal("Success", "announcement successfully resumed.", "success")
+							$.get('update_connection.php');
+							swal("Success", "Account successfully paused or resumed.", "success")
 								.then(
 									function() {
 										location.reload();
@@ -350,47 +350,24 @@
 							swal("Canceled", "", "error");
 						}
 					})
-				}else{
-					swal({
-						title: "Caution!",
-						text: "Are you sure you want to pause this announcement?",
-						icon: "warning",
-						dangerMode: true,
-						buttons: {
-							cancel: "Cancel",
-							confirm: true,
-						},
-					})
-					.then((result) => {
-						if (result) {
-								swal("Success", "announcement successfully paused.", "success")
-								.then(
-									function() {
-										location.reload();
-									});
-						} else {
-							swal("Canceled", "", "error");
-						}
-					})
-				}
-
 			}
 
+
+
 			//script for checking maximum upload files
-			$("button[type = 'submit']").click(function() {
-				var $fileUpload = $("input[type='file']");
-				if (parseInt($fileUpload.get(0).files.length) > 4) {
-					console.log("something");
-					swal({
-						title: "You are only allowed to upload a maximum of 4 files",
-						type: 'success',
-						icon: 'warning'
-					});
-					return false;
-				} else {
-					$("#container-announcement").submit();
-				}
-			});
+			// $("input[type = 'submit']").click(function() {
+			// 	var $fileUpload = $("input[type='file']");
+			// 	if (parseInt($fileUpload.get(0).files.length) > 4) {
+			// 		swal({
+			// 			title: "You are only allowed to upload a maximum of 4 files",
+			// 			type: 'success',
+			// 			icon: 'warning'
+			// 		});
+			// 		return false;
+			// 	} else {
+			// 		$("#container-announcement").submit();
+			// 	}
+			// });
 
 
 			//script for calling modal
