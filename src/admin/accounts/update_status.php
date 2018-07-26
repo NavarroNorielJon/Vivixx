@@ -1,5 +1,7 @@
 <?php
-	include '../../utilities/session.php';
+
+	include '../utilities/session.php';
+	error_reporting(0);
 	$connect = Connect();
 	$username = mysqli_real_escape_string($connect,$_GET["username"]);
 
@@ -8,6 +10,6 @@
 	}else{
 		$update ="UPDATE user SET status='disabled' WHERE username='$username'";
 	}
-	
+
 	$result = $connect->query($update);
 ?>

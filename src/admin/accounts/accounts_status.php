@@ -1,5 +1,7 @@
 <?php
-	include '../../utilities/session.php';
+
+	include '../utilities/session.php';
+	error_reporting(0);
 	$connect = Connect();
 ?>
 
@@ -170,7 +172,7 @@
 					})
 					.then((result) => {
 						if (result) {
-							$.get('update_status.php');
+							// $.get('update_status.php');
 							swal("Success", "Account successfully enabled or disabled.", "success")
 								.then(
 									function() {

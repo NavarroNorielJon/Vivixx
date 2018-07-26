@@ -1,6 +1,7 @@
 <?php
 	ini_set('max_execution_time', 300);
 	include '../utilities/session.php';
+	error_reporting(0);
 	$connect = Connect();
 ?>
 	<!DOCTYPE html>
@@ -87,11 +88,11 @@
 							if($row["connection"] === "resume"){
 								$connection = "
 								<input name='pause' value='pause' style='display: none;'>
-								<a href='update_connection.php?pause=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-warning'>Pause</a>";
+								<button onclick='update_connection(\"".$row['connection']."\",".$row['announcement_id'].")' class='show btn btn-warning'>Pause</button>";
 							}else{
 								$connection = "
 								<input name='resume' value='resume' style='display: none;'>
-								<a href='update_connection.php?resume=".$row['connection']."& id=".$row['announcement_id']."' class='show btn btn-success'>Resume</a>";
+								<button onclick='update_connection(\"".$row['connection']."\",".$row['announcement_id'].")' class='show btn btn-success'>Resume</button>";
 							}
 
 							$edit = "
@@ -189,7 +190,7 @@
 
 								<div id="date_duration" style="display:none">
 									<label>Duration</label>
-									<input type="text" class="form-control" name="num" onkeypress="numberInput(event)" min="0" maxlength="3">
+									<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
 									<select name="duration" id="duration" class="form-control">
                                         <option selected="selected" value="None" >Choose here:</option>
                                         <option value="day">day/s</option>
@@ -244,7 +245,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<input type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit" value="Submit">
+								<button type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -269,6 +270,33 @@
 				});
 				$('#table').DataTable();
 			});
+
+			//sweet alert for adding announcement
+			let add_announcement = function() {
+				swal({
+						title: 'Are you sure?',
+						text: "This will be posted",
+						type: 'warning',
+						buttons: true,
+					})
+					.then((result) => {
+						if (result) {
+							$.post('submit_announcement.php');
+							swal({
+								title: 'Success!',
+								text: "Announcement has been posted",
+								type: 'success',
+							}).then(function() {
+								location.reload();
+							});
+						} else {
+							swal({
+								title: 'Cancelled!',
+								type: 'success',
+							});
+						}
+					});
+			};
 
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
@@ -297,49 +325,50 @@
 						}
 					});
 			};
+			//sweet alert for resuming or pausing an announcement
+			let update_connection = function(connection,id) {
+				$.get('update_connection.php?pause='+ connection + '& id='+ id +'');
 
-			
-
-			//sweet alert for adding announcement
-			let add_announcement = function() {
 				swal({
-						title: 'Are you sure?',
-						text: "This will be posted",
-						type: 'warning',
-						buttons: true,
+						title: "Caution!",
+						text: "Are you sure you want to pause or resume this account?",
+						icon: "warning",
+						dangerMode: true,
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
 					})
 					.then((result) => {
 						if (result) {
-							swal({
-								title: 'Success!',
-								text: "Announcement has been posted",
-								type: 'success',
-							}).then(function() {
-								location.reload();
-							});
+							$.get('update_connection.php');
+							swal("Success", "Account successfully paused or resumed.", "success")
+								.then(
+									function() {
+										location.reload();
+									});
 						} else {
-							swal({
-								title: 'Cancelled!',
-								type: 'success',
-							});
+							swal("Canceled", "", "error");
 						}
-					});
-			};
-			
+					})
+			}
+
+
+
 			//script for checking maximum upload files
-			$("input[type = 'submit']").click(function() {
-				var $fileUpload = $("input[type='file']");
-				if (parseInt($fileUpload.get(0).files.length) > 4) {
-					swal({
-						title: "You are only allowed to upload a maximum of 4 files",
-						type: 'success',
-						icon: 'warning'
-					});
-					return false;
-				} else {
-					$("#container-announcement").submit();
-				}
-			});
+			// $("input[type = 'submit']").click(function() {
+			// 	var $fileUpload = $("input[type='file']");
+			// 	if (parseInt($fileUpload.get(0).files.length) > 4) {
+			// 		swal({
+			// 			title: "You are only allowed to upload a maximum of 4 files",
+			// 			type: 'success',
+			// 			icon: 'warning'
+			// 		});
+			// 		return false;
+			// 	} else {
+			// 		$("#container-announcement").submit();
+			// 	}
+			// });
 
 
 			//script for calling modal
@@ -355,7 +384,7 @@
 					});
 				});
 			});
-			
+
 			//content editor
 			CKEDITOR.replace('text');
 
