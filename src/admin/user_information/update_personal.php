@@ -1,6 +1,7 @@
 <?php
 
     include '../../utilities/db.php';
+    error_reporting(0);
     $connect = Connect();
 
     $user_id = $_POST["userid1"];

@@ -17,6 +17,7 @@
 <script src="../../script/additional-methods.min.js"></script>
 
 <?php
+	error_reporting(0);
     $new_reg = "SELECT user_id, first_name, middle_name, last_name, department,email FROM user_info NATURAL JOIN user natural join employee_info WHERE type='user' and (date_hired is null and employee_status is null and position is null);";
     $res = $connect->query($new_reg);
     $count = mysqli_num_rows($res);

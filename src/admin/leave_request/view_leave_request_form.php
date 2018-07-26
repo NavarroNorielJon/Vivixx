@@ -1,6 +1,7 @@
 
 <?php
     include '../../utilities/db.php';
+    error_reporting(0);
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $req_id = $_GET["req_id"];

@@ -1,6 +1,7 @@
 <?php
 
     include '../utilities/session.php';
+    error_reporting(0);
     $connect = Connect();
     date_default_timezone_set('Asia/Manila');
     $req_id = mysqli_real_escape_string($connect,$_POST["req_id"]);
