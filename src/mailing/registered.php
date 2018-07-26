@@ -18,6 +18,13 @@ $username = mysqli_real_escape_string($conn, $username);
 $email = mysqli_real_escape_string($conn, $email);
 $password = mysqli_real_escape_string($conn, $password);
 
+$sql = "SELECT password FROM user where email = '$email';";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$pass = $row['password'];
+
+
+
 
 $developmentMode = true;
 $mail = new PHPMailer($developmentMode); // Passing `true` enables exceptions
@@ -59,6 +66,8 @@ try {
     $body .= "
     <h1>Your Account Has been Activated</h1>
     <p>Your Username is <strong>\"". $username ."\"</strong> and your temporary password is <strong>\"". $password ."\"</strong></p>";
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
     $body .= "<p>If your account is not working, Please use your registered email first then contact HR</p>";
     $body .= "<a class='pure-button pure-button-primary' href='http://vivixx.ph/pages/reset_password.php?account=" . $username . "." . $password . "'>Enter your new Password?</a>";
     $body .= "</div>";
