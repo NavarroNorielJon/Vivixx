@@ -37,7 +37,7 @@
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
 		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
-		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
+		<script src="../style/ckeditor/ckeditor.js"></script>
 
 
 	</head>
@@ -133,7 +133,7 @@
 
 					<!-- Body -->
 					<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
-						<form action="submit_announcement.php" id="container-announcement" method="POST" enctype="multipart/form-data">
+						<form id="container-announcement" method="POST" enctype="multipart/form-data">
 							<div class="row">
 								<div class="form-group col">
 									<label for="title">Subject</label>
@@ -270,7 +270,27 @@
 				});
 				$('#table').DataTable();
 			});
-
+			
+			// $(document).ready(function(){
+			// 	$('#container-announcement').on('submit',function(e) {  //Don't foget to change the id form
+			// 	$.ajax({
+			// 		url:'submit_announcement.php', //===PHP file name====
+			// 		data:$(this).serialize(),
+			// 		type:'POST',
+			// 		success:function(){
+			// 			console.log("something");
+			// 			//Success Message == 'Title', 'Message body', Last one leave as it is
+			// 			swal("¡Success!", "Message sent!", "success");
+						
+			// 		},
+			// 		error:function(){
+			// 			//Error Message == 'Title', 'Message body', Last one leave as it is
+			// 			swal("Oops...", "Something went wrong :(", "error");
+			// 		}
+			// 		});
+			// 		e.preventDefault(); //This is to Avoid Page Refresh and Fire the Event "Click"
+			// 	});
+			// });
 			//sweet alert for adding announcement
 			let add_announcement = function() {
 				swal({
@@ -281,13 +301,22 @@
 					})
 					.then((result) => {
 						if (result) {
-							swal({
-								title: 'Success!',
-								text: "Announcement has been posted",
-								type: 'success',
-							}).then(function() {
-								location.reload();
+							$.ajax({
+								url:'submit_announcement.php', //===PHP file name====
+								data:$(this).serialize(),
+								type:'POST',
+								success:function(){
+									swal({
+										title: 'Success!',
+										text: "Announcement has been posted",
+										type: 'success',
+									}).then(function() {
+										location.reload();
+									});
+									
+								}
 							});
+							
 						} else {
 							swal({
 								title: 'Cancelled!',
@@ -380,7 +409,6 @@
 			$("button[type = 'submit']").click(function() {
 				var $fileUpload = $("input[type='file']");
 				if (parseInt($fileUpload.get(0).files.length) > 4) {
-					console.log("something");
 					swal({
 						title: "You are only allowed to upload a maximum of 4 files",
 						type: 'success',

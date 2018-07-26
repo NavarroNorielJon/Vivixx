@@ -87,7 +87,7 @@
 
 							$message = "
 							<input name='message' value='message' style='display: none;'>
-							<a href='personal_message.php?user_id=".$row['user_id'].
+							<a href='message.php?user_id=".$row['user_id'].
 								"& fname=".$row['first_name']."& mname=".$row['middle_name'] .
 								"& lname=" .$row['last_name'] ."& email=".$row['email'] ."' class='btn message'>Send Message</a>";
 
