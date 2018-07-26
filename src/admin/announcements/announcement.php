@@ -188,7 +188,7 @@
 									</div>
 								</div>
 
-								<div class="form-group col" id="date_duration" style="display:none">
+								<div class="form-group col-4" id="date_duration" style="display:none">
 									<label>Duration</label>
 									<div class="input-group">
 										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
@@ -297,6 +297,52 @@
 			// 			}
 			// 		})
 			// }
+			// $(document).ready(function(){
+			// 	$('#container-announcement').on('submit',function(e) {  //Don't foget to change the id form
+			// 	$.ajax({
+			// 		url:'submit_announcement.php', //===PHP file name====
+			// 		data:$(this).serialize(),
+			// 		type:'POST',
+			// 		success:function(){
+			// 			console.log("something");
+			// 			//Success Message == 'Title', 'Message body', Last one leave as it is
+			// 			swal("¡Success!", "Message sent!", "success");
+
+			// 		},
+			// 		error:function(){
+			// 			//Error Message == 'Title', 'Message body', Last one leave as it is
+			// 			swal("Oops...", "Something went wrong :(", "error");
+			// 		}
+			// 		});
+			// 		e.preventDefault(); //This is to Avoid Page Refresh and Fire the Event "Click"
+			// 	});
+			// });
+			//sweet alert for adding announcement
+			function add_announcement() {
+				swal({
+						title: "Caution!",
+						text: "Are you sure you want to add this announcement",
+						icon: "warning",
+						buttons: {
+							cancel: "Cancel",
+							confirm: true,
+						},
+					})
+					.then((result) => {
+						if (result) {
+							swal({
+								title: "Success!",
+								text: "Announcement has been added!",
+								icon: "successs",
+							}).then(function () {
+								$('#container-announcement').submit();
+							});
+
+						} else {
+							swal("Canceled", "", "error");
+						}
+					})
+			}
 
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
