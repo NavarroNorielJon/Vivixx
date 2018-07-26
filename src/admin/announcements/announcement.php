@@ -188,7 +188,7 @@
 									</div>
 								</div>
 
-								<div class="form-group col" id="date_duration" style="display:none">
+								<div class="form-group col-4" id="date_duration" style="display:none">
 									<label>Duration</label>
 									<div class="input-group">
 										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
@@ -270,7 +270,7 @@
 				});
 				$('#table').DataTable();
 			});
-			
+
 			// $(document).ready(function(){
 			// 	$('#container-announcement').on('submit',function(e) {  //Don't foget to change the id form
 			// 	$.ajax({
@@ -281,7 +281,7 @@
 			// 			console.log("something");
 			// 			//Success Message == 'Title', 'Message body', Last one leave as it is
 			// 			swal("¡Success!", "Message sent!", "success");
-						
+
 			// 		},
 			// 		error:function(){
 			// 			//Error Message == 'Title', 'Message body', Last one leave as it is
@@ -311,7 +311,7 @@
 							}).then(function () {
 								$('#container-announcement').submit();
 							});
-							
+
 						} else {
 							swal("Canceled", "", "error");
 						}
