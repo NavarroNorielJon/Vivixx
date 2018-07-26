@@ -1,7 +1,7 @@
 <?php
     ini_set('post_max_size', '64M');
     ini_set('upload_max_filesize', '64M');
-    include '../../utilities/session.php';
+    include '../utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $personal_info = "SELECT * FROM user_info where user_id=$user_id;";

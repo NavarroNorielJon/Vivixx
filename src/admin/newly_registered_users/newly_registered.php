@@ -24,7 +24,7 @@
 
 <body class="background">
 	<?php
-	include '../../utilities/session.php';
+	include '../utilities/session.php';
 	$connect = Connect();
 	?>
 	<div class="wrapper">
@@ -33,11 +33,11 @@
 		<!-- table for viewing user information -->
 		<div class="content container">
 			<div class="text-center">
-				<h1>NEW REGISTERED EMPLOYEE</h1>
+				<h1>New Registered Employee</h1>
 			</div>
 
 			<div class="table-container">
-				<table class="table" id="table">
+				<table class="table" id="new_reg">
 					<thead>
 						<tr class="table-header">
 							<th>First Name</th>
@@ -71,11 +71,53 @@
 						}
 
 					}
-
-					$connect-> close();
 					?>
 				</table>
 			</div>
+
+			<div class="text-center">
+				<h1>Incomplete Information</h1>
+			</div>
+
+			<div class="table-container">
+				<table class="table" id="inc">
+					<thead>
+						<tr class="table-header">
+							<th>First Name</th>
+							<th>Middle Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+
+					<?php
+					$sql = "SELECT user_id, first_name, middle_name, last_name, email FROM user NATURAL JOIN user_info WHERE type='user' and (birth_place is null and birth_place is null and contact_number is null and gender is null and height is null and weight is null and blood_type is null and residential_address is null and residential_zip is null and residential_tel_no is null and permanent_address is null and permanent_zip is null and permanent_tel_no is null and citizenship is null and civil_status is null);";
+					$result = $connect->query($sql);
+
+					if($result-> num_rows > 0){
+						while($row = $result->fetch_assoc()){
+
+							$show = "
+							<input name='show' value='show' style='display: none;'>
+							<a href='set_registered.php?user_id=".$row['user_id'].
+								"& fname=".$row['first_name'] ."& mname=".$row["middle_name"] ."& lname=" .$row['last_name'] ."' class='show btn btn-primary'>Show more</a>";
+							//print data in table
+							echo "
+							<tr class='table-data';>
+								<td>" . ucwords($row['first_name']) . "</td>
+								<td>" . ucwords($row['middle_name']) . "</td>
+								<td>" . ucwords($row['last_name']) . "</td>
+								<td>" . $row['email'] . "</td>
+							</tr>";
+						}
+
+					}
+
+					?>
+				</table>
+			</div>
+
+
 		</div>
 		<div id="result"></div>
 
@@ -96,13 +138,22 @@
 
 		//script for calling data table library
 		$(document).ready(function() {
-			$('#table').dataTable({
+			$('#new_reg').dataTable({
 				"columnDefs": [{
 					"orderable": false,
 					"targets": [3, 4]
 				}]
 			});
-			$('#table').DataTable();
+			$('#new_reg').DataTable();
+		});
+		$(document).ready(function() {
+			$('#inc').dataTable({
+				"columnDefs": [{
+					"orderable": false,
+					"targets": [3, 4]
+				}]
+			});
+			$('#inc').DataTable();
 		});
 		$('#emp').addClass('active');
 
