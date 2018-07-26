@@ -7,7 +7,7 @@
         $stmt = "SELECT * FROM user WHERE username='$current_user' or email='$current_user';";
         $results = mysqli_query($connect, $stmt);
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
-        $username = $row['username'];
+        $username = $row["username"];
         $user_id = $row['user_id'];
 		$type = $row['type'];
     }

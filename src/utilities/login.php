@@ -33,7 +33,6 @@
                             echo "pages/home";
                         }
                     } elseif ($type === "admin") {
-                        $_SESSION['user'] = $user;
                         echo "admin/accounts/accounts_status";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
