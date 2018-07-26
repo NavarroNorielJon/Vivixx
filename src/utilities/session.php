@@ -19,4 +19,6 @@
         	header('location:/admin/accounts/accounts_status');
     	}
 	}
+
+	echo "<script>alert('$type');</script>";
 ?>

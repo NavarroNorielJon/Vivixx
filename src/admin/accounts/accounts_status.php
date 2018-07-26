@@ -1,5 +1,5 @@
 <?php
-	include '../../utilities/session.php';
+	include '../utilities/session.php';
 	$connect = Connect();
 ?>
 
