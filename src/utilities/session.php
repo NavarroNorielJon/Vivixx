@@ -11,12 +11,12 @@
         $user_id = $row['user_id'];
 		$type = $row['type'];
     }
-	
+
 	if(!isset($_SESSION['user'])){
         header('location:/');
     }else {
 		if($type === "admin"){
-        	header('location:/admin');
-    	} 
-	} 
+        	header('location:/admin/');
+    	}
+	}
 ?>

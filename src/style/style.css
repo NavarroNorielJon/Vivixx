@@ -101,6 +101,11 @@
 	text-transform: capitalize;
 }
 
+.container {
+	max-width: 100%;
+	min-width: 100%;
+}
+
 /*slider*/
 
 .mixedSlider {
@@ -207,8 +212,8 @@
 
 .content {
 	margin-left: 20%;
-	max-width: 1050px;
-	min-width: 1050px;
+	max-width: 80%;
+	min-width: 80%;
 	padding: 3% 2% 3% 2%;
 }
 
@@ -491,8 +496,8 @@
 	background-color: #008080;
 	height: 100%;
 	left: 0;
-	max-width: 250px;
-	min-width: 250px;
+	max-width: 20%;
+	min-width: 20%;
 	overflow: hidden;
 	position: fixed;
 	top: 0;
@@ -518,7 +523,7 @@
 
 .sidebar .sidebar-header img {
 	height: auto;
-	margin-left: 30px;
+	margin: 5% 15%;
 	width: 70%;
 }
 
@@ -539,7 +544,7 @@
 .sidebar ul li a {
 	color: white;
 	display: block;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
 	padding: 10px;
 }
 
@@ -562,6 +567,7 @@ a[aria-expanded="true"] {
 
 .wrapper {
 	display: flex;
+	width: 100%;
 }
 
 /* end */
@@ -883,49 +889,3 @@ a[aria-expanded="true"] {
 		font-size: 0.5em;
 	}
 }
-
-/*tablet*/
-
-@media screen and (max-width: 769px) and (max-height: 1025px) {
-	/* index */
-	.index {
-		margin: 0;
-		max-height: 100%;
-		min-height: 100%;
-		max-width: 100%;
-		min-width: 100%;
-	}
-
-	.index .login {
-		border-radius: 0;
-		font-size: 1.5em;
-		margin: 0;
-		max-height: 1024px;
-		max-width: 768px;
-		min-height: 1024px;
-		min-width: 768px;
-		padding: 20px 50px 20px 50px;
-	}
-
-	.index .login .index-image {
-		height: auto;
-		margin: 5% auto 8% auto;
-		width: 50%;
-	}
-
-	.index .login input {
-		font-size: 1em;
-	}
-
-	.index .login-button {
-		font-size: 1em;
-	}
-}
-
-/*
-
-.logout {
-	color: #fff;
-	text-decoration: none;
-}
-*/

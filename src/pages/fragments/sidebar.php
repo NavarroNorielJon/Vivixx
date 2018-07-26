@@ -159,8 +159,9 @@
 		function leave() {
 			swal({
 				type: 'info',
-				title: "Please Stay for at least one year.",
+				title: "These feature is unavailable due to",
 				icon: 'info',
 			});
 		}
+
 	</script>

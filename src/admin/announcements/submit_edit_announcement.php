@@ -69,12 +69,8 @@ $connect = Connect();
                 $temp_file = base64_encode(file_get_contents("files/".$file_names[$x]));
                 $add_attachment = "UPDATE announcement_attachments SET `attachment_name`= '$file_name', `attachment` = '$temp_file' where `announcement_id` = '$announcement_id';";
                 $connect->query($add_attachment);
-            }else{
-                //header("location: announcement.php");
             }
-            
         }
-        print_r($add_attachment);
     }
 
 //header("location: announcement.php");
