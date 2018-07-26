@@ -281,7 +281,6 @@
 					})
 					.then((result) => {
 						if (result) {
-							$.post('submit_announcement.php');
 							swal({
 								title: 'Success!',
 								text: "Announcement has been posted",
@@ -327,8 +326,7 @@
 			};
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
-				$.get('update_connection.php?pause='+ connection + '& id='+ id +'');
-
+				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
 				swal({
 						title: "Caution!",
 						text: "Are you sure you want to pause or resume this account?",
@@ -341,7 +339,7 @@
 					})
 					.then((result) => {
 						if (result) {
-							$.get('update_connection.php');
+
 							swal("Success", "Account successfully paused or resumed.", "success")
 								.then(
 									function() {
@@ -356,19 +354,20 @@
 
 
 			//script for checking maximum upload files
-			// $("input[type = 'submit']").click(function() {
-			// 	var $fileUpload = $("input[type='file']");
-			// 	if (parseInt($fileUpload.get(0).files.length) > 4) {
-			// 		swal({
-			// 			title: "You are only allowed to upload a maximum of 4 files",
-			// 			type: 'success',
-			// 			icon: 'warning'
-			// 		});
-			// 		return false;
-			// 	} else {
-			// 		$("#container-announcement").submit();
-			// 	}
-			// });
+			$("button[type = 'submit']").click(function() {
+				var $fileUpload = $("input[type='file']");
+				if (parseInt($fileUpload.get(0).files.length) > 4) {
+					console.log("something");
+					swal({
+						title: "You are only allowed to upload a maximum of 4 files",
+						type: 'success',
+						icon: 'warning'
+					});
+					return false;
+				} else {
+					$("#container-announcement").submit();
+				}
+			});
 
 
 			//script for calling modal
