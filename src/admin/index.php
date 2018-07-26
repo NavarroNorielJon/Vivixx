@@ -1,1 +1,1 @@
-<?php include "utilities/session.php" ?>
+<?php    ?>
