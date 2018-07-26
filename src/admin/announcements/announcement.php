@@ -191,9 +191,9 @@
 								<div id="date_duration" style="display:none">
 									<label>Duration</label>
 									<div class="input-group">
-										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
+										<input type="text" class="form-control" id="num" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
 										<select name="duration" id="duration" class="form-control">
-	                                        <option selected="selected" value="None" >Choose here:</option>
+	                                        <option selected="selected" value="" disabled>Choose here:</option>
 	                                        <option value="day">day/s</option>
 	                                        <option value="week">week/s</option>
 											<option value="month">month/s</option>
@@ -237,10 +237,10 @@
 
 							<label for="text">Content:</label>
 							<div class="d-flex">
-								<input type="hidden" name="body">
+								<input type="hidden" name="body" required>
 								<div class="p-2" id="border">
 									<!-- <p contenteditable="true" id="editable"></p> -->
-									<textarea class="form-control body" name="body" id="text" placeholder="Content" column="5" required></textarea>
+									<textarea class="form-control body" name="body" id="text" placeholder="Content" column="5" required="required"></textarea>
 								</div>
 							</div>
 
@@ -251,7 +251,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary" name="submit">Submit</button>
+								<button type="submit" class="btn btn-primary" disabled id="submit" name="submit">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -261,6 +261,16 @@
 		<div id="signup_form"></div>
 
 		<script>
+
+		$(function(){
+			$(document).change(function () {
+				if(($('#s_date').val() != "" && $('#e_date').val() != "") || ($('#num').val() != "" && $('#duration').val() != null) ){
+					$('#submit').prop("disabled",false);
+				}else{
+					$('#submit').prop("disabled",true);
+				}
+			});
+		});
 			$('#department').multiselect({
 				templates: {
 					li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>'
