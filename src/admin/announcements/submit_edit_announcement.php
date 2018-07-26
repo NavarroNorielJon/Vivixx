@@ -73,4 +73,4 @@ $connect = Connect();
         }
     }
 
-//header("location: announcement.php");
+header("location: announcement.php");

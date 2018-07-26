@@ -9,4 +9,4 @@ $announcement_id = mysqli_real_escape_string($connect,$_GET["id"]);
     }
     $connect->query($connection);
     print_r($connection);
-// header("location: announcement.php");
+header("location: announcement.php");

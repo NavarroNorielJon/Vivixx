@@ -298,6 +298,9 @@
 					});
 			};
 
+			
+
+			//sweet alert for adding announcement
 			let add_announcement = function() {
 				swal({
 						title: 'Are you sure?',
@@ -322,7 +325,8 @@
 						}
 					});
 			};
-
+			
+			//script for checking maximum upload files
 			$("input[type = 'submit']").click(function() {
 				var $fileUpload = $("input[type='file']");
 				if (parseInt($fileUpload.get(0).files.length) > 4) {
@@ -351,13 +355,9 @@
 					});
 				});
 			});
-
+			
+			//content editor
 			CKEDITOR.replace('text');
-
-			// $('.body').richText();
-			// let removeToolbar = function() {
-			// 	$('.richText-toolbar').remove();
-			// }
 
 			//date range
 			$(function() {

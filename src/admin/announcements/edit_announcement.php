@@ -95,7 +95,7 @@
 					</form>
 					<div style="text-align:right">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						<button disabled="disabled" id="but" onclick="edit_status();" class="btn btn-primary">Edit</button>
+						<button onclick="edit_status();" class="btn btn-primary">Edit</button>
 					</div>
 				</div>
 
@@ -134,33 +134,6 @@
 					}
 				})
 		}
-	</script>
-
-	<script>
-		//script for editing of announcement
-		var old_sub = document.getElementById('subject').value;
-		var old_sdate = document.getElementById('s_date').value;
-		var old_edate = document.getElementById('e_date').value;
-		var old_department = document.getElementById('department').value;
-        var old_text = document.getElementById('text').value;
-        var old_on = document.getElementById('on').value;
-        var old_off = document.getElementById('off').value;
-
-
-		$(document).keyup(function() {
-			if (old_sub != $('#subject').val() || $('#text').val()) {
-				$('#but').attr("disabled", false);
-			} else {
-				$('#but').attr("disabled", true);
-			}
-		});
-		$(document).change(function() {
-			if (old_sub != $('#subject').val() || $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() ||  old_on != old_off) {
-				$('#but').attr("disabled", false);
-			} else {
-				$('#but').attr("disabled", true);
-			}
-		});
 	</script>
 	<script>
 		//show modal for editing information
