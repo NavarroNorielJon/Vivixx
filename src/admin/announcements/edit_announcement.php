@@ -148,14 +148,14 @@
 
 
 		$(document).keyup(function() {
-			if (old_sub != $('#subject').val() || old_text != $('#text').val()) {
+			if (old_sub != $('#subject').val() || $('#text').val()) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);
 			}
 		});
 		$(document).change(function() {
-			if (old_sub != $('#subject').val() || old_text != $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() ||  old_on != old_off) {
+			if (old_sub != $('#subject').val() || $('#text').val() || old_sdate != $('#s_date').val() || old_edate != $('#e_date').val() || old_department != $('#department').val() ||  old_on != old_off) {
 				$('#but').attr("disabled", false);
 			} else {
 				$('#but').attr("disabled", true);
