@@ -14,7 +14,7 @@
 				<!-- Header -->
 				<div class="modal-header add-announcement-header">
 					<h1>Send Personal Message to
-						<?php echo $fname . " " . $mname . " " . $lname?>
+						<?php echo $fname ?>
 					</h1>
 				</div>
 
@@ -58,7 +58,7 @@
 		</div>
 </div>
 	</div>
-	
+
 
 	<script>
 		$(document).ready(function() {

@@ -33,7 +33,7 @@
 		<!-- table for viewing user information -->
 		<div class="content container">
 			<div class="text-center">
-				<h1>New Registered Employee</h1>
+				<h1>Pending Employees</h1>
 			</div>
 
 			<div class="table-container">
@@ -76,7 +76,7 @@
 			</div>
 
 			<div class="text-center">
-				<h1>Incomplete Information</h1>
+				<h1>New Registered Employee</h1>
 			</div>
 
 			<div class="table-container">
@@ -150,7 +150,6 @@
 			$('#inc').dataTable({
 				"columnDefs": [{
 					"orderable": false,
-					"targets": [3, 4]
 				}]
 			});
 			$('#inc').DataTable();

@@ -37,7 +37,7 @@
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
 		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
-		<script src="../style/ckeditor/ckeditor.js"></script>
+		<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 
 
 	</head>
@@ -87,7 +87,7 @@
 							}
 							if($row["connection"] === "resume"){
 								$connection = "
-								<input name='resume' value='pause' style='display: none;'>
+								<input name='pause' value='pause' style='display: none;'>
 								<button onclick='update_connection(\"".$row['connection']."\",".$row['announcement_id'].")' class='show btn btn-warning'>Pause</button>";
 							}else{
 								$connection = "
@@ -188,7 +188,7 @@
 
 								</div>
 
-								<div class="form-group col" id="date_duration" style="display:none">
+								<div id="date_duration" style="display:none">
 									<label>Duration</label>
 									<div class="input-group">
 										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
@@ -202,11 +202,26 @@
 									</div>
 								</div>
 
+								<div class="form-group col">
+									<label>Due dates:</label>
+									<div class="switch">
+										<input type="radio" class="switch-input" name="status" value="on" id="on">
+										<label for="on" class="switch-label switch-label-off">ON</label>
+										<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
+										<label for="off" class="switch-label switch-label-on">OFF</label>
+										<span class="switch-selection"></span>
+									</div>
+								</div>
 
-
+							</div>
+							<div class="row">
+								<div class="form-group col">
+									<label for="title">Subject</label>
+									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
+								</div>
 								<div class="form-group col">
 									<label for="department">Department</label>
-									<select class="form-group custom-select " name="department[]" id="department" required multiple="multiple">
+									<select class="custom-select form-group" name="department[]" id="department" required multiple="multiple">
 										<option value="All Departments">All Departments</option>
 	                                	<option value="Administration">Administration</option>
 	                                	<option value="Administration/HR Support">Administration/HR Support</option>
@@ -219,22 +234,7 @@
                         			</select>
 								</div>
 							</div>
-							<div class="row">
-								<div class="form-group col-4">
-									<label for="title">Subject</label>
-									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
-								</div>
-								<div class="form-group col-2">
-									<label>Due dates:</label>
-									<div class="switch">
-										<input type="radio" class="switch-input" name="status" value="on" id="on">
-										<label for="on" class="switch-label switch-label-off">ON</label>
-										<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
-										<label for="off" class="switch-label switch-label-on">OFF</label>
-										<span class="switch-selection"></span>
-									</div>
-								</div>
-							</div>
+
 							<label for="text">Content:</label>
 							<div class="d-flex">
 								<input type="hidden" name="body">
@@ -251,7 +251,7 @@
 
 							<div style="text-align:right">
 								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary" onclick="add_announcement()" name="submit">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -278,77 +278,30 @@
 			});
 
 			//sweet alert for adding announcement
-			// function add_announcement() {
-			// 	swal({
-			// 			title: "Caution!",
-			// 			text: "Are you sure you want to add this announcement",
-			// 			icon: "warning",
-			// 			buttons: {
-			// 				cancel: "Cancel",
-			// 				confirm: true,
-			// 			},
-			// 		})
-			// 		.then((result) => {
-			// 			if (result) {
-			// 				swal({
-			// 					title: "Success!",
-			// 					text: "Announcement has been added!",
-			// 					icon: "successs",
-			// 				}).then(function () {
-			// 					$('#container-announcement').submit();
-			// 				});
-							
-			// 			} else {
-			// 				swal("Canceled", "", "error");
-			// 			}
-			// 		})
-			// }
-			// $(document).ready(function(){
-			// 	$('#container-announcement').on('submit',function(e) {  //Don't foget to change the id form
-			// 	$.ajax({
-			// 		url:'submit_announcement.php', //===PHP file name====
-			// 		data:$(this).serialize(),
-			// 		type:'POST',
-			// 		success:function(){
-			// 			console.log("something");
-			// 			//Success Message == 'Title', 'Message body', Last one leave as it is
-			// 			swal("¡Success!", "Message sent!", "success");
-
-			// 		},
-			// 		error:function(){
-			// 			//Error Message == 'Title', 'Message body', Last one leave as it is
-			// 			swal("Oops...", "Something went wrong :(", "error");
-			// 		}
-			// 		});
-			// 		e.preventDefault(); //This is to Avoid Page Refresh and Fire the Event "Click"
-			// 	});
-			// });
-			//sweet alert for adding announcement
-			function add_announcement() {
+			let add_announcement = function() {
 				swal({
-						title: "Caution!",
-						text: "Are you sure you want to add this announcement",
-						icon: "warning",
-						buttons: {
-							cancel: "Cancel",
-							confirm: true,
-						},
+						title: 'Are you sure?',
+						text: "This will be posted",
+						type: 'warning',
+						buttons: true,
 					})
 					.then((result) => {
 						if (result) {
 							swal({
-								title: "Success!",
-								text: "Announcement has been added!",
-								icon: "successs",
-							}).then(function () {
-								$('#container-announcement').submit();
+								title: 'Success!',
+								text: "Announcement has been posted",
+								type: 'success',
+							}).then(function() {
+								location.reload();
 							});
-
 						} else {
-							swal("Canceled", "", "error");
+							swal({
+								title: 'Cancelled!',
+								type: 'success',
+							});
 						}
-					})
-			}
+					});
+			};
 
 			//sweet alert for deleting announcement
 			let del_announcement = function(id) {
@@ -380,7 +333,6 @@
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
 				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
-
 				swal({
 						title: "Caution!",
 						text: "Are you sure you want to pause or resume this account?",
@@ -393,7 +345,7 @@
 					})
 					.then((result) => {
 						if (result) {
-							$.get('update_connection.php');
+
 							swal("Success", "Account successfully paused or resumed.", "success")
 								.then(
 									function() {
@@ -411,6 +363,7 @@
 			$("button[type = 'submit']").click(function() {
 				var $fileUpload = $("input[type='file']");
 				if (parseInt($fileUpload.get(0).files.length) > 4) {
+					console.log("something");
 					swal({
 						title: "You are only allowed to upload a maximum of 4 files",
 						type: 'success',
