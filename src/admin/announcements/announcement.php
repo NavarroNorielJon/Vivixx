@@ -135,10 +135,7 @@
 					<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 						<form id="container-announcement" method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="form-group col-4">
-									<label for="title">Subject</label>
-									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
-								</div>
+
 								<script>
 									$(function() {
 										$('#calendar').change(function() {
@@ -173,22 +170,25 @@
 								</div>
 
 								<div id="se_calendar" style="display:none">
-									<div class="col ui calendar" id="start_date">
-										<div class="ui input left icon">
-											<label for="start_date">Start Date</label>
-											<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
+									<div class="input-group">
+										<div class="col ui calendar" id="start_date">
+											<div class="ui input left icon">
+												<label for="start_date">Start Date</label>
+												<input type="text" id="s_date" name="start_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
+											</div>
+										</div>
+
+										<div class="col ui calendar" id="end_date">
+											<div class="ui input left icon">
+												<label for="end_date">End Date</label>
+												<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
+											</div>
 										</div>
 									</div>
 
-									<div class="col ui calendar" id="end_date">
-										<div class="ui input left icon">
-											<label for="end_date">End Date</label>
-											<input type="text" id="e_date" name="end_date" autocomplete="off" class="form-control date"  placeholder="yy-mm-dd">
-										</div>
-									</div>
 								</div>
 
-								<div class="form-group col-4" id="date_duration" style="display:none">
+								<div class="form-group col" id="date_duration" style="display:none">
 									<label>Duration</label>
 									<div class="input-group">
 										<input type="text" class="form-control" name="num" autocomplete='off'onkeypress="numberInput(event)" min="0" maxlength="3">
@@ -202,20 +202,11 @@
 									</div>
 								</div>
 
-								<div class="form-group col-2">
-									<label>Due dates:</label>
-									<div class="switch">
-										<input type="radio" class="switch-input" name="status" value="on" id="on">
-										<label for="on" class="switch-label switch-label-off">ON</label>
-										<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
-										<label for="off" class="switch-label switch-label-on">OFF</label>
-										<span class="switch-selection"></span>
-									</div>
-								</div>
+
 
 								<div class="form-group col">
 									<label for="department">Department</label>
-									<select class="custom-select form-group" name="department[]" id="department" required multiple="multiple">
+									<select class="form-group custom-select " name="department[]" id="department" required multiple="multiple">
 										<option value="All Departments">All Departments</option>
 	                                	<option value="Administration">Administration</option>
 	                                	<option value="Administration/HR Support">Administration/HR Support</option>
@@ -228,7 +219,22 @@
                         			</select>
 								</div>
 							</div>
-
+							<div class="row">
+								<div class="form-group col-4">
+									<label for="title">Subject</label>
+									<input name="subject" type="text" autocomplete="off" class="form-control text-transform" placeholder="Subject" id="subject" required>
+								</div>
+								<div class="form-group col-2">
+									<label>Due dates:</label>
+									<div class="switch">
+										<input type="radio" class="switch-input" name="status" value="on" id="on">
+										<label for="on" class="switch-label switch-label-off">ON</label>
+										<input type="radio" class="switch-input" name="status" value="off" id="off" checked>
+										<label for="off" class="switch-label switch-label-on">OFF</label>
+										<span class="switch-selection"></span>
+									</div>
+								</div>
+							</div>
 							<label for="text">Content:</label>
 							<div class="d-flex">
 								<input type="hidden" name="body">
