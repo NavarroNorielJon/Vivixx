@@ -39,7 +39,7 @@
 
 			<div class="content container">
 				<div class="text-center">
-					<h1>Summary of Leave Request by Month</h1>
+					<h1>Summary of Leave Requests</h1>
 				</div>
 				<div class="">
 					<select id="month" name="month" class="form-control col-2">
