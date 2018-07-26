@@ -87,7 +87,7 @@
 							}
 							if($row["connection"] === "resume"){
 								$connection = "
-								<input name='pause' value='pause' style='display: none;'>
+								<input name='resume' value='pause' style='display: none;'>
 								<button onclick='update_connection(\"".$row['connection']."\",".$row['announcement_id'].")' class='show btn btn-warning'>Pause</button>";
 							}else{
 								$connection = "
@@ -373,9 +373,9 @@
 						}
 					})
 				}
-				
+
 			}
-			
+
 			//script for checking maximum upload files
 			$("button[type = 'submit']").click(function() {
 				var $fileUpload = $("input[type='file']");
