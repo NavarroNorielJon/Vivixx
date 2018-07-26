@@ -327,7 +327,6 @@
 			//sweet alert for resuming or pausing an announcement
 			let update_connection = function(connection,id) {
 				$.get('update_connection.php?connection='+ connection + '& id='+ id +'');
-				console.log(connection);
 				swal({
 						title: "Caution!",
 						text: "Are you sure you want to pause or resume this account?",
