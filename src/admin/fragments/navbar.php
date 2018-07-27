@@ -27,7 +27,6 @@
         $new ="";
     }
 
-
     $leave = "SELECT status from leave_req where status='pending';";
     $res1 = $connect->query($leave);
     $count1 = mysqli_num_rows($res1);
@@ -36,7 +35,8 @@
         $leave = "(<span style='color:red;'>".$count1."</span>)";
     }else{
         $leave ="";
-    }
+	}
+	
 ?>
 
 	<nav class="fixed-top navbar navbar-dark navbar-expand-lg  navigation-bar">
@@ -55,6 +55,7 @@
 							<input name='edit' value='signup' style='display: none;'>
 							<a href="../fragments/signup" data-target="#signup" class="nav-link signup">Add User</a>
 							<a class="nav-link" href="../utilities/backup">Backup</a>
+							<a class="nav-link" href="../fragments/reset_password.php?account=<?php echo $username. "." . $password ?>">Change password</a>
 						</div>
 					</div>
 				</li>
