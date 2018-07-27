@@ -81,5 +81,3 @@
     `father_middle_name`=$father_middle_name,`father_last_name`='$father_last_name',
     `mother_first_name`='$mother_first_name',`mother_middle_name`=$mother_middle_name,`mother_last_name`='$mother_last_name' WHERE user_id='$user_id'";
     mysqli_query($connect, $update_stmt);
-
-?>

@@ -65,5 +65,3 @@
     $update_stmt = "UPDATE `employee_info` SET `persona`='$persona',`mobile_number`='$mobile',`landline`='$landline',`department`='$departments',`account`='$accounts',`employee_status`='$employee_status',`position`='$position',`date_hired`='$date_hired',`end_of_contract`=$eoc,
     `comp_email`='$com_email',`comp_email_password`='$e_pass',`skype`='$skype',`skype_password`='$s_pass',`qq_number`='$qq_num',`qq_password`='$qq_pass' WHERE user_id='$user_id';";
     mysqli_query($connect, $update_stmt);
-    echo $update_stmt;
-?>

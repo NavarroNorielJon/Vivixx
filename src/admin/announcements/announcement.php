@@ -18,7 +18,6 @@
 		<link rel="stylesheet" href="../style/datatables.css">
 		<link rel="stylesheet" href="../style/bootstrap-multiselect.css">
 		<link rel="stylesheet" href="../../style/jquery-ui.css">
-		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" href="../style/richtext.min.css"> -->
 
 		<!--scripts-->
 		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
@@ -35,7 +34,6 @@
 		<script src="../../script/jquery.form.min.js"></script>
 		<script src="../style/bootstrap-multiselect.js"></script>
 		<script src="../../script/jquery-ui.js"></script>
-		<!-- <script src="../style/jquery.richtext.min.js"></script> -->
 		<script src="../style/ckeditor/ckeditor.js"></script>
 
 	</head>
@@ -276,8 +274,7 @@
 				});
 				$('#table').DataTable();
 			});
-			// sweet alert for adding announcement let add_announcement = function() { 	swal({ 			title: 'Are you sure?', 			text: "This will be posted", 			type: 'warning', 			buttons: true, 		}) 		.then((result) => { 			if (result) { 				swal({ 					title:
-			// 'Success!', 					text: "Announcement has been posted", 					type: 'success', 				}).then(function() { 					location.reload(); 				}); 			} else { 				swal({ 					title: 'Cancelled!', 					type: 'success', 				}); 			} 		}); }; sweet alert for
+
 			// deleting announcement
 			let del_announcement = function (id) {
 				swal({title: 'Are you sure you want to delete this announcement?', text: "You won't be able to revert this!", type: 'warning', buttons: true}).then((result) => {
@@ -372,8 +369,6 @@
 				})
 			});
 			$('#an').addClass('active');
-			// $('#container-announcement').ajaxForm({ 	url: 'submit_announcement.php', 	method: 'post', 	success: function() { 		swal({ 			type: 'success', 			title: 'Announcement Added', 			icon: 'success', 		}).then(function () { 			location.reload(); 		}); }
-			// });
 		</script>
 
 	</body>

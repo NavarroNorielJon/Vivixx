@@ -126,5 +126,3 @@
          `philhealth_no`=$philhealth_no, `pagibig_id_no`=$pagibig_id_no WHERE `user_id`='$user_id';";
     }
     mysqli_query($connect, $update_stmt);
-    echo $update_stmt;
-?>
