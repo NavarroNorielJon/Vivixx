@@ -27,5 +27,5 @@ if ($result->num_rows > 0) {
         exit();
     }
 } else {
-    echo "Error resetting your password, this link might be already expired.";
+    echo "Sorry, The link is already expired!";
 }
