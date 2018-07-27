@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_row($result)) {
     $tables[] = $row[0];
 }
 
-$sqlScript = "";
+$sqlScript = "set FOREIGN_KEY_CHECKS=0;\n\n";
 foreach ($tables as $table) {
 
     // Prepare SQLscript for creating table structure
@@ -63,7 +63,7 @@ if(!empty($sqlScript))
 {
     // Save the SQL script to a backup file
     $date=date("Y-m-d");
-    $backup_file_name = $database_name . '_backup_' . $date . '.sql';
+    $backup_file_name = $database_name . 'backup' . $date . '.sql';
     $fileHandler = fopen($backup_file_name, 'w+');
     $number_of_lines = fwrite($fileHandler, $sqlScript);
     fclose($fileHandler);
