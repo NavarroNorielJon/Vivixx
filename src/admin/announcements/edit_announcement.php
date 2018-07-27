@@ -103,8 +103,6 @@
 
 
 		</div>
-
-
 	</div>
 
 	<script>
@@ -141,9 +139,6 @@
 			$("#edit").modal("show");
 		});
 
-		// $('.body').richText();
-
-		// 		$('.richText-toolbar').remove();
 		CKEDITOR.replace( 'text' );
 
 		//date range

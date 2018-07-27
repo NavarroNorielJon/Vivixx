@@ -29,7 +29,6 @@
             echo  "User has no more remaining leave credits";
             exit();
         }
-        //header("location:leave_requests.php?accepted");
     }else if(isset($_POST["reject"])){
         $update = "UPDATE `leave_req` SET `status`='rejected' WHERE `leave_req_id`='$req_id';";
         $body .= "Your Request has been Disapproved by the admin";
@@ -37,8 +36,6 @@
         $connect->query($update2);
         $status="rejected";
         $stat = "Rejected";
-
-        //header("location:leave_requests.php?rejected");
     }else{
         $stat = "Error in updating status";
         exit();

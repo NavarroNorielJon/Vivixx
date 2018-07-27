@@ -9,4 +9,4 @@ $announcement_id = mysqli_real_escape_string($connect,$_GET["id"]);
         $connection = "UPDATE `announcement` SET `connection`='pause' WHERE `announcement_id`='$announcement_id'";
     }
     $connect->query($connection);
-//header("location: announcement.php");
+

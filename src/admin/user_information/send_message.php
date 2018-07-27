@@ -12,4 +12,4 @@
     mysqli_query($connect,$sql);
     header('Content-Type: application/json');
     echo json_encode(['subject'=>$subject, 'date'=>$date, 'email'=>$email , 'body'=>$body]);
-?>
+

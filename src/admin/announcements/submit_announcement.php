@@ -5,14 +5,10 @@ include '../../utilities/db.php';
 $connect = Connect();
 
     $subject = ucwords(mysqli_real_escape_string($connect,$_POST["subject"]));
-    // $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
-    // $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
     $body = mysqli_real_escape_string($connect,$_POST["body"]);
     $option = mysqli_real_escape_string($connect,$_POST["calendar"]);
     $status =  $_POST["status"];
     $department = $_POST["department"];
-    // $num = $_POST["num"];
-    // $duration = $_POST["duration"];
     $file_names = [];
     $file_paths = [];
     $file_tmp_names = [];

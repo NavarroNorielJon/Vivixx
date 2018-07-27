@@ -1,4 +1,4 @@
-<?php
+message<?php
     include '../../utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
@@ -13,7 +13,7 @@
 				<!-- Body -->
 				<div class="modal-body" style=" padding: 20px 20px 20px 20px;">
 					<div class="table-container">
-						<table class="table" id="sample">
+						<table class="table" id="message">
 							<thead>
 								<tr class="table-header">
 									<th>Subject</th>
@@ -38,7 +38,7 @@
                                         <td>" . $row['status'] . "</td>
                                         </tr>";
                                     }
-            
+
                                 }
                             ?>
 						</table>
@@ -57,12 +57,12 @@
 		});
 
 		$(document).ready(function() {
-			$('#sample').dataTable({
+			$('#message').dataTable({
 				"columnDefs": [{
 					"orderable": false
 				}]
 			});
-			$('#sample').DataTable();
+			$('#message').DataTable();
 		});
 
 	</script>

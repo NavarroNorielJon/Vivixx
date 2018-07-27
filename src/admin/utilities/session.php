@@ -9,7 +9,8 @@
         $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
         $username = $row["username"];
         $user_id = $row['user_id'];
-		$type = $row['type'];
+        $type = $row['type'];
+        $password = $row['password'];
     }
 	if(!isset($_SESSION['user'])){
         header('location:/admin/accounts');

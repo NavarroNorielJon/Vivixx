@@ -4,10 +4,10 @@ ini_set('upload_max_filesize', '64M');
 include '../../utilities/db.php';
 $connect = Connect();
 
-    $subject = mysqli_real_escape_string($connect,$_POST["subject"]);
+    $subject = strtouppper(mysqli_real_escape_string($connect,$_POST["subject"]));
     $startdate = mysqli_real_escape_string($connect,$_POST["start_date"]);
     $enddate = mysqli_real_escape_string($connect,$_POST["end_date"]);
-    $body = mysqli_real_escape_string($connect,$_POST["body"]);
+    $body = strtouppper(mysqli_real_escape_string($connect,$_POST["body"]));
     $announcement_id = mysqli_real_escape_string($connect,$_POST["id"]);
     $status =  $_POST["status"];
     $department = $_POST["department"];
