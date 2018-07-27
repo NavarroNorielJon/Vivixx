@@ -16,6 +16,15 @@
     }
     $department = $_POST['department'];
     $account = $_POST['account'];
+    $position = mysqli_real_escape_string($connect, $_POST['position']);
+    $date_hired = mysqli_real_escape_string($connect, $_POST['date_hired']);
+    if(!empty($_POST["eoc"])){
+        $eoc ="'" .mysqli_real_escape_string($connect,$_POST["eoc"])."'";
+    }else{
+        $eoc = 'NULL';
+    }
+    $employee_status = mysqli_real_escape_string($connect, $_POST['employee_status']);
+
     $departments = "";
     $accounts = "";
     for ($i=0; $i < count($department); $i++) {
@@ -53,7 +62,8 @@
     $qq_num = mysqli_real_escape_string($connect, $_POST['qq_num']);
     $qq_pass = mysqli_real_escape_string($connect, $_POST['qq_password']);
 
-    $update_stmt = "UPDATE `employee_info` SET `persona`='$persona',`mobile_number`='$mobile',`landline`='$landline',`department`='$departments',`account`='$accounts',`comp_email`='$com_email',
-                    `comp_email_password`='$e_pass',`skype`='$skype',`skype_password`='$s_pass',`qq_number`='$qq_num',`qq_password`='$qq_pass' WHERE user_id='$user_id';";
+    $update_stmt = "UPDATE `employee_info` SET `persona`='$persona',`mobile_number`='$mobile',`landline`='$landline',`department`='$departments',`account`='$accounts',`employee_status`='$employee_status',`position`='$position',`date_hired`='$date_hired',`end_of_contract`=$eoc,
+    `comp_email`='$com_email',`comp_email_password`='$e_pass',`skype`='$skype',`skype_password`='$s_pass',`qq_number`='$qq_num',`qq_password`='$qq_pass' WHERE user_id='$user_id';";
     mysqli_query($connect, $update_stmt);
+    echo $update_stmt;
 ?>

@@ -1548,7 +1548,7 @@
 								<div class="form-group col">
 									<label>Employee Status</label>
 									<select class="custom-select form-control" name="employee_status">
-                                        <option selected value="<?php echo $row8["landline"]?>"><?php echo $row8["employee_status"]?></option>
+                                        <option selected value="<?php echo $row8["employee_status"]?>"><?php echo $row8["employee_status"]?></option>
                                         <option value="Freelance">Freelance</option>
                                         <option value="Project Based">Project Based</option>
                                         <option value="Probationary">Probationary</option>
@@ -1604,6 +1604,10 @@
 								<div class="form-group col">
 									<label>Date Hired</label>
 									<input type="date" name="date_hired" class="form-control" value="<?php echo $row8['date_hired']?>">
+								</div>
+                                <div class="form-group col">
+									<label>End of Contract</label>
+									<input type="date" name="eoc" class="form-control" value="<?php echo $row8['end_of_contract']?>">
 								</div>
 							</div>
 

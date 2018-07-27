@@ -154,7 +154,7 @@
         			type: 'success',
         			title: 'Done!',
         			icon: 'success',
-        			timer: 2500
+        			// timer: 2500
         		}).then(function () {
                     location.reload();
                 });
