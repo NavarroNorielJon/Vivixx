@@ -1,5 +1,5 @@
 <?php
-    include 'mis/db.php';
+    include 'db.php';
     session_start();
     $connect = Connect();
     if (isset($_POST["userOrEmail"]) && isset($_POST["login_password"])) {
@@ -28,13 +28,13 @@
                         $_SESSION['user'] = $user;
                         $result = mysqli_query($connect,$test);
                         if ($result->num_rows > 0 ) {
-                            echo 'mis/pages/update_information';
+                            echo 'pages/update_information';
                         } else {
-                            echo "mis/pages/home";
+                            echo "pages/home";
                         }
                     } elseif ($type === "admin") {
 						$_SESSION['user'] = $user;
-                        echo "mis/admin/accounts/accounts_status";
+                        echo "admin/accounts/accounts_status";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
                     echo "Invalid Password";
