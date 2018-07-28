@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../script/sweetalert.min.js"></script>
+<script type="text/javascript" src="../mis/script/sweetalert.min.js"></script>
 
 <script>
 	$(document).ready(function() {
@@ -30,7 +30,7 @@
 ?>
 	<nav class="sidebar">
 		<div class="sidebar-header">
-			<a class="sidebar-logo" href="home" tabindex="-1"><img src="../img/Lion.png"></a>
+			<a class="sidebar-logo" href="home" tabindex="-1"><img src="../mis/img/Lion.png"></a>
 		</div>
 
 		<!-- Sidebar Links -->
@@ -144,11 +144,11 @@
 			</li>
 			<hr>
 			<li>
-				<a href="../utilities/logout" class="nav-link sidebar-item logout">
+				<a href="../mis/utilities/logout" class="nav-link sidebar-item logout">
                 <i class="material-icons">power_settings_new</i>
                 Logout
             </a>
-				<a class="icon" href="../utilities/logout">
+				<a class="icon" href="../mis/utilities/logout">
                 <i class="material-icons">power_settings_new</i>
             </a>
 			</li>

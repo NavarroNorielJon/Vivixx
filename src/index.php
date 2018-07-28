@@ -1,5 +1,5 @@
 <?php
-include 'utilities/db.php';
+include 'mis/utilities/db.php';
 session_start();
 
 if (isset($_SESSION['user'])) {
@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Icon -->
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
 		<!-- Stylesheet -->
 		<link type="text/css" rel="stylesheet" href="style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,8 +24,8 @@ if (isset($_SESSION['user'])) {
 
 	<body class="index background">
 		<div class="containter">
-			<form action="utilities/login.php" method="post" class="jumbotron login" id="login">
-				<img src="../img/Lion.png" alt="logo" class="index-image">
+			<form action="mis/utilities/login.php" method="post" class="jumbotron login" id="login">
+				<img src="../mis/img/Lion.png" alt="logo" class="index-image">
 
 				<div class="form-group col-sm-12">
 					<label for="userEmail">Username or Email-Address</label>
@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])) {
 					<div class="modal-header forgot-password-header">
 						<div class="row">
 							<div class="col-2">
-								<img src="img/Lion.png" alt="-forgot-password-logo" class="forgot-password-logo">
+								<img src="mis/img/Lion.png" alt="-forgot-password-logo" class="forgot-password-logo">
 							</div>
 
 							<div class="col-10 text-left">
@@ -72,7 +72,7 @@ if (isset($_SESSION['user'])) {
 
 					<!-- Body -->
 					<div class="modal-body forgot-password-body">
-						<form action="mailing/send_reset.php" id="reset_form" method="POST">
+						<form action="mis/mailing/send_reset.php" id="reset_form" method="POST">
 							<div class="form-group">
 								<label for="forgot_email">E-mail Address</label>
 								<input type="email" class="form-control" id="forgot_email" placeholder="E-mail Address" name="email" required>
@@ -100,7 +100,7 @@ if (isset($_SESSION['user'])) {
 		<!-- Created Scripts -->
 		<script>
 			$('#login').ajaxForm({
-				url: '../utilities/login.php',
+				url: '../mis/utilities/login.php',
 				method: 'post',
 				success: function(data) {
 					if (data === 'Invalid Password' || data === 'Your account is disabled' || data === 'User does not exist' ||
@@ -117,7 +117,7 @@ if (isset($_SESSION['user'])) {
 				}
 			});
 			$('#reset_form').ajaxForm({
-				url: '../mailing/send_reset.php',
+				url: '../mis/mailing/send_reset.php',
 				method: 'post',
 				success: function(data) {
 					if (data === 'That email is not being used by any account.') {
@@ -130,14 +130,14 @@ if (isset($_SESSION['user'])) {
 							title: data,
 							icon: 'success'
 						}).then(function() {
-							window.location = '/';
+							window.location = '/mis/';
 						});
 					}
 				}
 			});
 
 		</script>
-		<script src="script/ajax.js"></script>
+		<script src="mis/script/ajax.js"></script>
 	</body>
 
 	</html>

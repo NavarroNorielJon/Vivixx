@@ -7,9 +7,9 @@
 	<title>Vivixx PH | Reset Password</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="../style/style.css">
+	<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
+	<link type="text/css" rel="stylesheet" href="../mis/style/bootstrap/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="../mis/style/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -17,7 +17,7 @@
 	<div class="container-fluid resetPassword" id="resetPassword">
 		<h3>Reset Password</h3>
 		<hr><br>
-		<form action="../utilities/validate_reset_password.php" id="reset_pass" method="POST">
+		<form action="../mis/utilities/validate_reset_password.php" id="reset_pass" method="POST">
 			<input type="text" name="account" style="display:none; " value="<?php echo $_GET['account'];?>">
 
 			<div class="form-group" style="display: block">
@@ -52,14 +52,14 @@
 		</form>
 	</div>
 
-	<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-	<script src="../script/jquery.form.min.js"></script>
-	<script src="../script/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="../script/popper.min.js"></script>
-	<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-	<script type="text/javascript" src="../script/ajax.js"></script>
-	<script type="text/javascript" src="../script/alerts.js"></script>
+	<script type="text/javascript" src="../mis/script/jquery-3.2.1.min.js"></script>
+	<script src="../mis/script/jquery.form.min.js"></script>
+	<script src="../mis/script/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../mis/script/popper.min.js"></script>
+	<script type="text/javascript" src="../mis/script/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../mis/script/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../mis/script/ajax.js"></script>
+	<script type="text/javascript" src="../mis/script/alerts.js"></script>
 </body>
 
 </html>

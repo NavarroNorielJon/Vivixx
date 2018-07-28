@@ -1,5 +1,5 @@
 <?php
- 	include_once 'db.php';
+ 	include_once 'mis/db.php';
     session_start();
     $connect = Connect();
     if(isset($_SESSION['user'])){
@@ -13,10 +13,10 @@
     }
 
 	if(!isset($_SESSION['user'])){
-        header('location:/');
+        header('location:/mis/');
     }else {
 		if($type === "admin"){
-        	header('location:/admin/accounts/accounts_status');
+        	header('location:/mis/admin/accounts/accounts_status');
     	}
 	}
 ?>

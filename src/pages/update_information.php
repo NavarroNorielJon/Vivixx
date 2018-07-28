@@ -1,5 +1,5 @@
 <?php
-    include '../utilities/session.php';
+    include '../mis/utilities/session.php';
 	$stmt = "SELECT * FROM user NATURAL JOIN user_info WHERE user_id='$user_id';";
     $results = mysqli_query($connect, $stmt);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
@@ -42,34 +42,34 @@
 
 	<head>
 		<title>Vivixx PH | Update Information</title>
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-		<link rel="stylesheet" href="../style/font-awesome/css/font-awesome.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/jquery-ui.css">
-		<link rel="stylesheet" href="../style/form-elements.css">
+		<link type="text/css" rel="stylesheet" href="../mis/style/bootstrap/bootstrap.min.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../mis/style/style.css" media="screen, projection">
+		<link rel="stylesheet" href="../mis/style/font-awesome/css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="../mis/style/jquery-ui.css">
+		<link rel="stylesheet" href="../mis/style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script src="../script/jquery.backstretch.min.js"></script>
-		<script src="../script/bootstrap/jasny-bootstrap.js"></script>
-		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
-		<script src="../script/scripts.js"></script>
-		<link type="text/css" rel="stylesheet" href="../leaflet/leaflet.css">
-		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection" />
-		<script src="../leaflet/leaflet.js"></script>
-		<link rel="stylesheet" href="../leaflet/leaflet.css" />
-		<script src="../leaflet/leaflet-src.js"></script>
-		<script src="../leaflet/esri-leaflet-debug.js"></script>
-		<link rel="stylesheet" href="../leaflet/esri-leaflet-geocoder.css">
-		<script src="../leaflet/esri-leaflet-geocoder-debug.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../mis/script/bootstrap/bootstrap.min.js"></script>
+		<script src="../mis/script/jquery.backstretch.min.js"></script>
+		<script src="../mis/script/bootstrap/jasny-bootstrap.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery-ui.min.js"></script>
+		<script src="../mis/script/scripts.js"></script>
+		<link type="text/css" rel="stylesheet" href="../mis/leaflet/leaflet.css">
+		<link type="text/css" rel="stylesheet" href="../mis/style/style.css" media="screen, projection" />
+		<script src="../mis/leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="../mis/leaflet/leaflet.css" />
+		<script src="../mis/leaflet/leaflet-src.js"></script>
+		<script src="../mis/leaflet/esri-leaflet-debug.js"></script>
+		<link rel="stylesheet" href="../mis/leaflet/esri-leaflet-geocoder.css">
+		<script src="../mis/leaflet/esri-leaflet-geocoder-debug.js"></script>
 	</head>
 
 	<body class="update-information background">
 		<div class="update-information-header">
 			<h1>Update Information Form</h1>
-			<a href="../utilities/logout" class="btn logout">
+			<a href="../mis/utilities/logout" class="btn logout">
                 <i class="material-icons">
                     power_settings_new
                 </i>
@@ -107,7 +107,7 @@
 
 		<div class="row">
 			<div class="container">
-				<form role="form" id="update_form" action="../utilities/update_info" method="post" class="f1">
+				<form role="form" id="update_form" action="../mis/utilities/update_info" method="post" class="f1">
 					<div class="f1-steps">
 						<div class="f1-progress">
 							<div class="f1-progress-line" data-now-value="20" data-number-of-steps="6" style="width: 20%;"></div>
@@ -1506,13 +1506,13 @@
 
 		</script>
 
-		<script type="text/javascript" src="../script/jquery.form.min.js"></script>
-		<script type="text/javascript" src="../script/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="../script/additional-methods.min.js"></script>
-		<script type="text/javascript" src="../script/alerts.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery.form.min.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="../mis/script/additional-methods.min.js"></script>
+		<script type="text/javascript" src="../mis/script/alerts.js"></script>
+		<script type="text/javascript" src="../mis/script/popper.min.js"></script>
+		<script type="text/javascript" src="../mis/script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../mis/script/ajax.js"></script>
 	</body>
 
 	</html>

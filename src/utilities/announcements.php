@@ -1,5 +1,5 @@
 <?php
-    include 'db.php';
+    include 'mis/db.php';
     $connect = Connect();
     $id = $_GET['id'];
     $query = "SELECT * FROM announcement_attachments natural join announcement where announcement_id='$id' group by 1;";

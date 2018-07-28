@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'mis/db.php';
 $connect = Connect();
 
 $account = $_POST['account'];

@@ -1,7 +1,7 @@
 <?php
     ini_set('post_max_size', '64M');
     ini_set('upload_max_filesize', '64M');
-    include '../utilities/session.php';
+    include '../mis/utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $personal_info = "SELECT * FROM user_info where user_id=$user_id;";
@@ -38,32 +38,32 @@
 		<title>Vivixx Ph</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../../mis/img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css" media="screen, projection">
-		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
-		<link rel="stylesheet" href="../../style/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../style/form-elements.css">
+		<link type="text/css" rel="stylesheet" href="../../mis/style/bootstrap/bootstrap.min.css" media="screen, projection">
+		<link type="text/css" rel="stylesheet" href="../mis/style/style.css" media="screen, projection">
+		<link rel="stylesheet" href="../../mis/style/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../mis/style/form-elements.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../../script/bootstrap/bootstrap.min.js"></script>
-		<script src="../../script/jquery.backstretch.min.js"></script>
-		<script src="../../script/bootstrap/jasny-bootstrap.js"></script>
-		<script src="../../script/scripts.js"></script>
-		<link type="text/css" rel="stylesheet" href="../../leaflet/leaflet.css">
-		<script src="../../leaflet/leaflet.js"></script>
-		<link rel="stylesheet" href="../../leaflet/leaflet.css" />
-		<script src="../../leaflet/leaflet-src.js"></script>
-		<script src="../../leaflet/esri-leaflet-debug.js"></script>
-		<link rel="stylesheet" href="../../leaflet/esri-leaflet-geocoder.css">
-		<script src="../../leaflet/esri-leaflet-geocoder-debug.js"></script>
+		<script type="text/javascript" src="../../mis/script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/bootstrap/bootstrap.min.js"></script>
+		<script src="../../mis/script/jquery.backstretch.min.js"></script>
+		<script src="../../mis/script/bootstrap/jasny-bootstrap.js"></script>
+		<script src="../../mis/script/scripts.js"></script>
+		<link type="text/css" rel="stylesheet" href="../../mis/leaflet/leaflet.css">
+		<script src="../../mis/leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="../../mis/leaflet/leaflet.css" />
+		<script src="../../mis/leaflet/leaflet-src.js"></script>
+		<script src="../../mis/leaflet/esri-leaflet-debug.js"></script>
+		<link rel="stylesheet" href="../../mis/leaflet/esri-leaflet-geocoder.css">
+		<script src="../../mis/leaflet/esri-leaflet-geocoder-debug.js"></script>
 
 		<!--scripts-->
 	</head>
 
 	<body>
 		<div class="wrapper">
-			<?php include '../fragments/navbar.php'; ?>
+			<?php include '../mis/fragments/navbar.php'; ?>
 
 			<div class="view-information-container">
 				<div role="form" action="update_info" method="post" class="f1">
@@ -1921,13 +1921,13 @@
 
 		</script>
 
-		<script type="text/javascript" src="../../script/jquery.form.min.js"></script>
-		<script type="text/javascript" src="../../script/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="../../script/additional-methods.min.js"></script>
-		<script type="text/javascript" src="../../script/alerts.js"></script>
-		<script type="text/javascript" src="../../script/popper.min.js"></script>
-		<script type="text/javascript" src="../../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../../script/ajax.js"></script>
+		<script type="text/javascript" src="../../mis/script/jquery.form.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/additional-methods.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/alerts.js"></script>
+		<script type="text/javascript" src="../../mis/script/popper.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../../mis/script/ajax.js"></script>
 		<script>
 			$(document).change(function() {
 				if ($('#add_child_name').val() != "" && $('.addchild').val() != "" && $('#add_child_birth').val() != "") {

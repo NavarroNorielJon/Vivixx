@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'mis/db.php';
 $connect = Connect();
 
 $email = mysqli_real_escape_string($connect,$_REQUEST["email"]);

@@ -1,6 +1,6 @@
 
 <?php
-    include '../../utilities/db.php';
+    include '../../mis/utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $req_id = $_GET["req_id"];
@@ -153,7 +153,7 @@
                     });
                 } else if (dat.stat == "Rejected") {
                     $.post({
-                        url: '../../mailing/accept_or_reject.php',
+                        url: '../../mis/mailing/accept_or_reject.php',
                         data: {
                             status: dat.status,
                             email: dat.email,
@@ -190,7 +190,7 @@
                     });
                 } else if (dat.stat == "Accepted") {
                     $.post({
-                        url: '../../mailing/accept_or_reject.php',
+                        url: '../../mis/mailing/accept_or_reject.php',
                         data: {
                             status: dat.status,
                             email: dat.email,

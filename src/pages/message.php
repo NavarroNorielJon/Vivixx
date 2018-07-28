@@ -1,5 +1,5 @@
 <?php
-	include "../utilities/db.php";
+	include "../mis/utilities/db.php";
 	$msg_id = $_GET['msg_id'];
 	$subject = $_GET['subject'];
 	$message = $_GET['message'];

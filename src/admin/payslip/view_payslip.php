@@ -1,5 +1,5 @@
 <?php
-    include '../../utilities/db.php';
+    include '../../mis/utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $first_name = $_GET["fname"];
@@ -20,7 +20,7 @@
 									<div class="container-fluid">
 										<form action="">
 											<div class="row">
-												<div class="col-3"><img src="../../img/Lion.png" alt="Logo" style="width: auto; height:50px"></div>
+												<div class="col-3"><img src="../../mis/img/Lion.png" alt="Logo" style="width: auto; height:50px"></div>
 												<div class="col-9">
 													<h1 class="h2" style="vertical-align: center">VIVIXX CORPORATION</h1>
 												</div>

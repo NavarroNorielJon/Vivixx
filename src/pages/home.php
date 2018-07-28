@@ -1,6 +1,6 @@
 <?php
-	include '../utilities/session.php';
-	include '../utilities/check_user_info.php';
+	include '../mis/utilities/session.php';
+	include '../mis/utilities/check_user_info.php';
 	$connect = Connect();
 
 	$stmt= "SELECT * FROM employee_info WHERE user_id='$user_id';";
@@ -16,15 +16,15 @@
 		<title>Vivixx PH | Home</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style.css">
+		<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
+		<link type="text/css" rel="stylesheet" href="../mis/style/bootstrap/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="../mis/style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../script/multislider.min.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../mis/script/multislider.min.js"></script>
+		<script type="text/javascript" src="../mis/script/popper.min.js"></script>
+		<script type="text/javascript" src="../mis/script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../mis/script/ajax.js"></script>
 	</head>
 
 	<body class="home">
@@ -55,7 +55,7 @@
 													<h2 class='blogTitle'>".$row1['subject']."</h2>
 												";
 										}
-										echo "<img class='images' src='../img/announcement-default1.jpg'>";
+										echo "<img class='images' src='../mis/img/announcement-default1.jpg'>";
 										echo "
 											</div>";
 										echo "<a href='#announcement' data-toggle='modal' onclick='announcement(".$row1['announcement_id']."); return false'>Read More</a>

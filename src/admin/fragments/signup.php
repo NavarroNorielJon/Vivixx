@@ -9,7 +9,7 @@
 			<div class="modal-header signup-header">
 				<div class="row">
 					<div class="col-2">
-						<img src="../../img/Lion.png" alt="register-logo" class="signup-logo">
+						<img src="../../mis/img/Lion.png" alt="register-logo" class="signup-logo">
 					</div>
 
 					<div class="col-10">
@@ -20,7 +20,7 @@
 
 
 			<div class="modal-body signup-body">
-				<form id="s_form" action="../fragments/registration.php" method="post">
+				<form id="s_form" action="../mis/fragments/registration.php" method="post">
 
 					<div class="row form-group">
 						<div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -69,7 +69,7 @@
     jQuery.validator.addMethod("existing_email", function(value, element) {
         let status;
         $.ajax({
-            url: '../../utilities/validator.php?email=' + value,
+            url: '../../mis/utilities/validator.php?email=' + value,
             success: function (data) {
                 if (data ==='0') {
                     status = true;
@@ -95,12 +95,12 @@
         }
     });
     $('#s_form').ajaxForm({
-        url: '../fragments/registration.php',
+        url: '../mis/fragments/registration.php',
         method: 'post',
         success: function (data) {
 			let dat = data;
 			$.post({
-				url: '../../mailing/registered.php',
+				url: '../../mis/mailing/registered.php',
 				data: {
 					username: dat.username,
 					email: dat.email,

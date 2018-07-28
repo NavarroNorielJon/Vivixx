@@ -1,5 +1,5 @@
 <?php
-    include '../../utilities/db.php';
+    include '../../mis/utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $fname = $_GET["fname"];
@@ -119,7 +119,7 @@
             method: 'post',
             success: function (data) {
                 $.post({
-                    url: '../../mailing/send_message.php',
+                    url: '../../mis/mailing/send_message.php',
                     method: 'post',
                     data: {
                         subject: data.subject,

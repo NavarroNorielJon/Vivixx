@@ -1,5 +1,5 @@
 message<?php
-    include '../../utilities/db.php';
+    include '../../mis/utilities/db.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
     $fname = $_GET["fname"];

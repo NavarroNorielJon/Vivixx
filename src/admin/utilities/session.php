@@ -1,5 +1,5 @@
 <?php
-    require_once 'db.php';
+    require_once 'mis/db.php';
     session_start();
     $connect = Connect();
     if(isset($_SESSION['user'])){
@@ -13,10 +13,10 @@
         $password = $row['password'];
     }
 	if(!isset($_SESSION['user'])){
-        header('location:/admin/accounts');
+        header('location:/mis/admin/accounts');
     }else {
 		if($type === "user"){
-        	header('location:/pages/home');
+        	header('location:/mis/pages/home');
     	}
 	}
 

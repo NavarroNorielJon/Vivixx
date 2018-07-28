@@ -7,8 +7,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 //Load Composer's autoloader
-require 'vendor/autoload.php';
-include '../utilities/db.php';
+require 'mis/vendor/autoload.php';
+include '../mis/utilities/db.php';
 $conn = Connect();
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);

@@ -1,6 +1,6 @@
 <?php
-	include '../utilities/session.php';
-	include '../utilities/check_user_info.php';
+	include '../mis/utilities/session.php';
+	include '../mis/utilities/check_user_info.php';
 
 	if($type == "admin") {
 		echo "<script>window.location = '../admin/';</script>";
@@ -15,20 +15,20 @@
 		<title>Vivixx PH | Notifications</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="../../style/bootstrap/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="../style/style.css" media="screen, projection">
+		<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../mis/style/bootstrap/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="../mis/style/style.css" media="screen, projection">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="../admin/style/datatables.css">
+		<link rel="stylesheet" href="../mis/admin/style/datatables.css">
 
 		<!--scripts-->
-		<script type="text/javascript" src="../script/jquery-3.3.1.js"></script>
-		<script type="text/javascript" src="../script/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="../script/datatables.min.js"></script>
-		<script type="text/javascript" src="../script/ajax.js"></script>
-		<script type="text/javascript" src="../script/popper.min.js"></script>
-		<script type="text/javascript" src="../script/sweetalert.min.js"></script>
-		<script type="text/javascript" src="../script/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../mis/script/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../mis/script/datatables.min.js"></script>
+		<script type="text/javascript" src="../mis/script/ajax.js"></script>
+		<script type="text/javascript" src="../mis/script/popper.min.js"></script>
+		<script type="text/javascript" src="../mis/script/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../mis/script/bootstrap/bootstrap.min.js"></script>
 
 	</head>
 

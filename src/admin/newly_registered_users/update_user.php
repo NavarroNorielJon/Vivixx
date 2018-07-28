@@ -1,5 +1,5 @@
 <?php
-include '../../utilities/db.php';
+include '../../mis/utilities/db.php';
 $connect = Connect();
 $user_id = mysqli_real_escape_string($connect,$_POST["user_id"]);
 $position = mysqli_real_escape_string($connect,$_POST["position"]);

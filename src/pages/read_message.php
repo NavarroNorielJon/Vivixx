@@ -1,5 +1,5 @@
 <?php
-    include '../utilities/db.php';
+    include '../mis/utilities/db.php';
     $connect = Connect();
     $msg_id = $_POST['msg_id'];
 
