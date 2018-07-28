@@ -28,13 +28,13 @@
                         $_SESSION['user'] = $user;
                         $result = mysqli_query($connect,$test);
                         if ($result->num_rows > 0 ) {
-                            echo 'pages/update_information';
+                            echo 'mis/pages/update_information';
                         } else {
-                            echo "pages/home";
+                            echo "mis/pages/home";
                         }
                     } elseif ($type === "admin") {
 						$_SESSION['user'] = $user;
-                        echo "admin/accounts/accounts_status";
+                        echo "mis/admin/accounts/accounts_status";
                     }
                 }elseif (!password_verify($password, $passwordVerify)) {
                     echo "Invalid Password";

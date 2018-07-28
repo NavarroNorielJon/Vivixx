@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
 		<!-- Icon -->
 		<link rel="shortcut icon" href="../mis/img/favicon.ico" type="image/x-icon">
 		<!-- Stylesheet -->
-		<link type="text/css" rel="stylesheet" href="style/style.css">
+		<link type="text/css" rel="stylesheet" href="mis/style/style.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link type="text/css" rel="stylesheet" href="style/style.css">
@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
 	<body class="index background">
 		<div class="containter">
 			<form action="mis/utilities/login.php" method="post" class="jumbotron login" id="login">
-				<img src="../mis/img/Lion.png" alt="logo" class="index-image">
+				<img src="mis/../img/Lion.png" alt="logo" class="index-image">
 
 				<div class="form-group col-sm-12">
 					<label for="userEmail">Username or Email-Address</label>
