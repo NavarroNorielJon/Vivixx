@@ -28,7 +28,7 @@
 		<script type="text/javascript" src="../mis/script/ajax.js"></script>
 	</head>
 
-	<body class="profile">
+    <body class="profile">
 		<div class="wrapper">
 			<?php include 'fragments/sidebar.php';?>
 
@@ -42,11 +42,11 @@
 					<div class="row">
 						<div class="form-group col-4">
 							<label for="name">Full Name</label>
-							<input type="text" id="name" class="form-control-plaintext name" value="<?php echo $full_name;?>" disabled>
+							<input type="text" id="name" class="form-control name" value="<?php echo $full_name;?>" disabled>
 						</div>
 						<div class="form-group col-4 number">
 							<label for="contact_number">Contact Number</label>
-							<input type="text" id="contact_number" class="form-control-plaintext" value="<?php echo $contact_number;?>" disabled>
+							<input type="text" id="contact_number" class="form-control" value="<?php echo $contact_number;?>" disabled>
 						</div>
 
 						<div class="col-4">
@@ -56,83 +56,83 @@
 						</div>
 					</div>
 
-					<div class="row ghw">
+					<div class="row" style="margin-top:-15%;">
 						<div class="form-group col-4">
 							<label for="gender"> Gender</label>
-							<input type="text" id="gender" class="form-control-plaintext" value="<?php echo $gender?>" disabled>
+							<input type="text" id="gender" class="form-control" value="<?php echo $gender?>" disabled>
 						</div>
-						<div class="form-group col-4">
+						<div class="form-group col-2">
 							<label for="height">Height</label>
-							<input type="text" id="height" class="form-control-plaintext" value="<?php echo $height;?>" disabled>
+							<input type="text" id="height" class="form-control" value="<?php echo $height;?>" disabled>
 						</div>
-						<div class="form-group col-4 weight">
+						<div class="form-group col-2 weight">
 							<label for="weight">Weight</label>
-							<input type="text" id="weight" class="form-control-plaintext" value="<?php echo $weight;?> kg" disabled>
+							<input type="text" id="weight" class="form-control" value="<?php echo $weight;?> kg" disabled>
 						</div>
 					</div>
 
 					<div class="row birth_information">
 						<div class="form-group col-4">
 							<label for="birth_place"> Birth Place</label>
-							<input type="text" id="birth_place" class="form-control-plaintext" value="<?php echo $birth_place;?>" disabled>
+							<input type="text" id="birth_place" class="form-control" value="<?php echo $birth_place;?>" disabled>
 						</div>
 
-						<div class="form-group col-4">
+						<div class="form-group col-2">
 							<label for="birth_date">Birth Date</label>
-							<input type="text" id="birth_date" class="form-control-plaintext" value="<?php echo $birth_date->format('F d, Y');?>" disabled>
+							<input type="text" id="birth_date" class="form-control" value="<?php echo $birth_date->format('F d, Y');?>" disabled>
 						</div>
 
-						<div class="form-group col-4 age">
+						<div class="form-group col-2">
 							<label for="age">Age</label>
-							<input type="text" id="age" class="form-control-plaintext" value="<?php echo $age;?>" disabled>
+							<input type="text" id="age" class="form-control" value="<?php echo $age;?>" disabled>
 						</div>
 					</div>
 
 					<div class="row city-address">
 						<div class="form-group col-4">
 							<label for="residential_address">Residential Address</label>
-							<input type="text" id="residential_address" class="form-control-plaintext" value="<?php echo $residential_address;?>" disabled>
+							<input type="text" id="residential_address" class="form-control" value="<?php echo $residential_address;?>" disabled>
 						</div>
 						<div class="form-group col-4">
 							<label for="residential_zip">Residential Zip</label>
-							<input type="text" id="residential_zip" class="form-control-plaintext" value="<?php echo $residential_zip;?>" disabled>
+							<input type="text" id="residential_zip" class="form-control" value="<?php echo $residential_zip;?>" disabled>
 						</div>
 						<div class="form-group col-4">
 							<label for="residential_tel_no">Residential Telephone Number</label>
-							<input type="text" id="residential_tel_no" class="form-control-plaintext" value="<?php echo $residential_tel_no;?>" disabled>
+							<input type="text" id="residential_tel_no" class="form-control" value="<?php echo $residential_tel_no;?>" disabled>
 						</div>
 					</div>
 					<div class="row city-address">
 						<div class="form-group col-4 permanent-address">
 							<label for="permanent_address">Permanent Address</label>
-							<input type="text" id="permanent_address" class="form-control-plaintext" value="<?php echo $permanent_address;?>" disabled>
+							<input type="text" id="permanent_address" class="form-control" value="<?php echo $permanent_address;?>" disabled>
 						</div>
 						<div class="form-group col-4">
 							<label for="permanent_zip">Permanent Zip</label>
-							<input type="text" id="permanent_zip" class="form-control-plaintext" value="<?php echo $permanent_zip;?>" disabled>
+							<input type="text" id="permanent_zip" class="form-control" value="<?php echo $permanent_zip;?>" disabled>
 						</div>
 						<div class="form-group col-4">
 							<label for="permanent_tel_no">Residential Telephone Number</label>
-							<input type="text" id="permanent_tel_no" class="form-control-plaintext" value="<?php echo $permanent_tel_no;?>" disabled>
+							<input type="text" id="permanent_tel_no" class="form-control" value="<?php echo $permanent_tel_no;?>" disabled>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="form-group col">
 							<label for="sss">SSS ID No.</label>
-							<input type="text" id="sss" class="form-control-plaintext" value="<?php if($sss_no!="") {echo $sss_no;} else {echo "N/A";}?>" disabled>
+							<input type="text" id="sss" class="form-control" value="<?php if($sss_no!="") {echo $sss_no;} else {echo "N/A";}?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="tin">TIN</label>
-							<input type="text" id="tin" class="form-control-plaintext" value="<?php if($tin!="") {echo $tin;} else {echo "N/A";} ?>" disabled>
+							<input type="text" id="tin" class="form-control" value="<?php if($tin!="") {echo $tin;} else {echo "N/A";} ?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="philhealth_no">PHILHEALTH ID No.</label>
-							<input type="text" id="philhealth_no" class="form-control-plaintext" value="<?php if($philhealth_no!="") {echo $philhealth_no;} else {echo "N/A";} ?>" disabled>
+							<input type="text" id="philhealth_no" class="form-control" value="<?php if($philhealth_no!="") {echo $philhealth_no;} else {echo "N/A";} ?>" disabled>
 						</div>
 						<div class="form-group col">
 							<label for="pagibig_id_no">PAG-IBIG ID No</label>
-							<input type="text" id="pagibig_id_no" class="form-control-plaintext" value="<?php if($pagibig_id_no!="") {echo $pagibig_id_no;} else {echo "N/A";} ?>" disabled>
+							<input type="text" id="pagibig_id_no" class="form-control" value="<?php if($pagibig_id_no!="") {echo $pagibig_id_no;} else {echo "N/A";} ?>" disabled>
 						</div>
 					</div>
 				</div>

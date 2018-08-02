@@ -1555,50 +1555,76 @@
                                         <option value="Regular">Regular</option>
                                     </select>
 								</div>
+                                <script>
+                                    $(function() {
+                                        $('#department').change(function() {
+                                            $('#def').hide();
+                                            $('#adhr').hide();
+                                            $('#it').hide();
+                                            $('#nv').hide();
+                                            $('#maintain').hide();
+                                            $('#secu').hide();
+                                            $('#vir').hide();
+                                            $('#vid').hide();
+                                            if ($('#department').val() == 'orig') {
+                                                $('#def').show();
+                                            } else if ($('#department').val() == 'ash') {
+                                                $('#adhr').show();
+                                            }else if ($('#department').val() == 'its') {
+                                                $('#it').show();
+                                            }else if ($('#department').val() == 'nva' || $('#department').val() == 'voa') {
+                                                $('#nvva').show();
+                                            }else if ($('#department').val() == 'main') {
+                                                $('#maintain').show();
+                                            }else if ($('#department').val() == 'sec') {
+                                                $('#secu').show();
+                                            }else if ($('#department').val() == 've') {
+                                                $('#vid').show();
+                                            }else if ($('#department').val() == 'va') {
+                                                $('#vir').show();
+                                            }
+                                        });
+                                    });
+                                </script>
 								<div class="form-group col">
 									<label>Position</label>
-									<?php
-                                    $main = explode("|",$row8['department'])[0];
-                                        if($main === "Voice Account" || $main === "Non-Voice Account"){
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                                <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
-                                                <option selected required="require" value="Online English Tutor">Online English Tutor</option>
-                                            </select>';
-                                        }else if($main === "Administration/HR Support"){
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
-                                            <option selected required="require" value="HR Assistant">HR Assistant</option>
-                                            </select>';
-                                        }else if($main === "IT Support"){
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                    <select class='custom-select form-group' name='position' id='position'>
+                                        <optgroup label="Position" id='def'>
+                                            <option selected='selected' value='<?php echo $row8['position']; ?>'><?php echo $row8['position']; ?></option>
+                                        </optgroup>
+
+                                        <optgroup label='Administration/HR Support' id='adhr' style='display:none'>
+                                            <option value='HR Assistant'>HR Assistant</option>
+                                        </optgroup>
+
+                                        <optgroup label='IT Support' id='it' style='display:none'>
                                             <option value="ICT Support Specialist">ICT Support Specialist</option>
-                                            </select>';
-                                        }else if($main === "Virtual Assistant"){
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
+                                        </optgroup>
+
+                                        <optgroup label='Non-voice Account and Voice Account' id='nvva' style='display:none'>
+                                            <option value="Online English Tutor">Online English Tutor</option>
+                                        </optgroup>
+
+                                        <optgroup label='Video ESL' id='vid' style='display:none'>
+                                            <option value='First Future'>First Future</option>
+                                            <option value='Key English'>Key English</option>
+                                        </optgroup>
+
+                                        <optgroup label='Virtual Assistant' id='vir' style='display:none'>
                                             <option value="Indesigner">Indesigner</option>
                                             <option value="Web Developer">Web Developer</option>
-                                            </select>';
-                                        }else if ($main === "Maintainance") {
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
-                                            <option value="Housekeeping">Housekeeping</option>
-                                            <option value="Utilities">Utilities</option>
-                                            </select>';
-                                        } elseif ($main === "Security") {
-                                            echo '
-                                            <select class="custom-select form-control" name="position">
-                                            <option selected value="'. $row8['position'] .'">'. $row8['position'] .'</option>
-                                            <option value="Security">Security</option>
-                                            </select>';
-                                        }
-                                    ?>
+                                        </optgroup>
+
+                                        <optgroup label='Security' id='secu' style='display:none'>
+                                            <option value='Security'>Security</option>
+                                        </optgroup>
+
+                                        <optgroup label='Maintenance' id='maintain' style='display:none'>
+                                            <option value='Housekeeping'>Housekeeping</option>
+                                            <option value='Utility'>Utility</option>
+                                        </optgroup>
+                                    </select>
+
 								</div>
 
 								<div class="form-group col">
