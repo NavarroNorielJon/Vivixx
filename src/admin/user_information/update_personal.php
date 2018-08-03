@@ -24,6 +24,7 @@
     } else {
         $middle_name = 'NULL';
     }
+    $email = mysqli_real_escape_string($connect, $_POST['email']);
     $last_name = ucwords(mysqli_real_escape_string($connect, $_POST['last_name']));
     $birth_date = mysqli_real_escape_string($connect, $_POST['birth_date']);
     $birth_place = ucwords(mysqli_real_escape_string($connect,$_POST['birth_place']));

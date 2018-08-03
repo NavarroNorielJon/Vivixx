@@ -4,6 +4,7 @@
     include '../mis/utilities/session.php';
     $connect = Connect();
     $user_id = $_GET["user_id"];
+    $user = "SELECT * FROM user where user_id=$user_id;";
     $personal_info = "SELECT * FROM user_info where user_id=$user_id;";
     $background = "SELECT * FROM user_background where user_id=$user_id;";
     $child = "SELECT * FROM user_offspring where user_id=$user_id ;";
@@ -13,6 +14,7 @@
     $housemates = "SELECT * FROM housemates where h_id=$user_id;";
     $employee_info = "SELECT * FROM employee_info where user_id=$user_id;";
 
+    $result = mysqli_query($connect,$user);
     $result1 = mysqli_query($connect,$personal_info);
     $result2 = mysqli_query($connect,$background);
     $result3 = mysqli_query($connect,$child);
@@ -22,6 +24,7 @@
     $result7 = mysqli_query($connect,$relatives);
     $result8 = mysqli_query($connect,$employee_info);
 
+    $row = $result->fetch_assoc();
     $row1 = $result1->fetch_assoc();
     $row2 = $result2->fetch_assoc();
     $row4 = $result4->fetch_assoc();
@@ -121,34 +124,38 @@
 							<div class="row">
 								<div class="form-group col-4">
 									<?php
-                                    if ($row1['prof_image'] != "") {
-                                        echo "<img src='data:image/jpg;base64,". $row1['prof_image'] . "' style='height:2in;width:2in;'>";
-                                        echo "<br>";
-                                    } else {
-                                        echo '<div style="height:2in;width:2in;"></div>';
-                                        echo "No Profile Image";
-                                        echo "<br>";
+                                        if ($row1['prof_image'] != "") {
+                                            echo "<img src='data:image/jpg;base64,". $row1['prof_image'] . "' style='height:2in;width:2in;'>";
+                                            echo "<br>";
+                                        } else {
+                                            echo '<div style="height:2in;width:2in;"></div>';
+                                            echo "No Profile Image";
+                                            echo "<br>";
 
-                                    }
+                                        }
                                     ?>
-										<label for="prof_image">Profile Image</label>
-										<input type="file" name="prof_image" id="pro" />
+									<label for="prof_image">Profile Image</label>
+									<input type="file" name="prof_image" id="pro" />
 								</div>
 
 								<div class="form-group col-4">
 									<?php
-                                    if ($row1['signature'] != "") {
-                                        echo "<img src='data:image/jpg;base64,". $row1['signature'] . "' style='height:2in;width:2in;'>";
-                                        echo "<br>";
-                                    } else {
-                                        echo '<div style="height:2in;width:2in;"></div>';
-                                        echo "No Signature";
-                                        echo "<br>";
+                                        if ($row1['signature'] != "") {
+                                            echo "<img src='data:image/jpg;base64,". $row1['signature'] . "' style='height:2in;width:2in;'>";
+                                            echo "<br>";
+                                        } else {
+                                            echo '<div style="height:2in;width:2in;"></div>';
+                                            echo "No Signature";
+                                            echo "<br>";
 
-                                    }
+                                        }
                                     ?>
-										<label for="prof_image">Signature</label>
-										<input type="file" name="signature" id="sig" />
+									<label for="prof_image">Signature</label>
+									<input type="file" name="signature" id="sig" />
+								</div>
+                                <div class="form-group col-4">
+									<label>Email Address</label>
+									<input type="text" name="email" id="email" class="form-control-plaintext text-transform" value="<?php echo $row['email'];?>">
 								</div>
 							</div>
 
